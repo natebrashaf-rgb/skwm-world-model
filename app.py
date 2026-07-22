@@ -45,21 +45,18 @@ class Engine:
         if not p.exists(): return papers
         try:
             with open(p,encoding='utf-8') as f: c=f.read()
-            d=0;s=-1
-            for i,ch in enumerate(c):
-                if ch=='{':
-                    if d==0: s=i; d+=1
-                elif ch=='}':
-                    d-=1
-                    if d==0 and s>=0:
-                        try:
-                            o=json.loads(c[s:i+1])
-                            if 'title' in o and o['title']: o['source']='🌐 阿语文献';papers.append(o)
-                        except: pass
-                        s=-1
+            # 跳过开头的 _wm 无效条目
+            if '_wm' in c[:50]:
+                idx = c.index('{', 50)
+                c = '[' + c[idx:]
+            data = json.loads(c)
+            for item in data:
+                if isinstance(item, dict) and 'title' in item and item['title']:
+                    item['source'] = '🌐 阿语文献'
+                    papers.append(item)
         except: pass
         seen=set()
-        return [p for p in papers if not ((p.get('title',''),p.get('year','')))in seen and not seen.add((p.get('title',''),p.get('year','')))]
+        return [p for p in papers if not ((p.get('title',''),p.get('year',''))) in seen and not seen.add((p.get('title',''),p.get('year','')))]
     CN={"中阿":"china arab sino","文旅":"tourism cultural travel","旅游":"tourism travel tourist",
         "文化":"culture cultural","遗产":"heritage","数字化":"digital","阿拉伯":"arab arabic",
         "知识":"knowledge","合作":"cooperation","一带一路":"belt road","研究":"research study","语言":"language"}
@@ -88,10 +85,10 @@ class Engine:
     def _authors(self,n=12):
         a=Counter()
         for p in self.all:
-            for n in re.split(r'[,;、]',p.get('authors','')):
-                n=n.strip()
-                if len(n)>4 and n[0].isupper(): a[n]+=1
-        return a.most_common(n)
+            for name in re.split(r'[,;、]',str(p.get('authors',''))):
+                name=name.strip()
+                if len(name)>4 and name[0].isupper(): a[name]+=1
+        return a.most_common(int(n))
 
 eng = Engine()
 
