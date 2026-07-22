@@ -20,10 +20,19 @@ PORT = int(os.environ.get("PORT", 8080))
 
 class Engine:
     def __init__(self):
-        self.catalog = self._load_catalog()
-        self.arabic = self._load_arabic()
-        self.all = self.catalog + self.arabic
-        print(f"  ✅ 总计 {len(self.all)} 篇")
+        self.catalog = self._load_catalog()        # 200篇文献目录
+        self.arabic = self._load_arabic()           # 4194篇阿语文献
+        self.b1 = self._load_b1()                   # 11601篇文献主表
+        self.all = self.catalog + self.arabic + self.b1
+        # 去重
+        seen=set()
+        unique=[]
+        for p in self.all:
+            key=(p.get('title',''),str(p.get('year','')))
+            if key not in seen:
+                seen.add(key); unique.append(p)
+        self.all=unique
+        print(f'  ✅ 目录: {len(self.catalog)} + 阿语: {len(self.arabic)} + 主表: {len(self.b1)} = 总计: {len(self.all)} 篇')
     def _load_catalog(self):
         p=DATA_DIR/"literature_catalog.md"; papers=[]
         if not p.exists(): return papers
@@ -35,8 +44,10 @@ class Engine:
                 if tab and '|---' in l: continue
                 if tab and l.startswith('|'):
                     cols=[x.strip() for x in l.split('|')]
-                    if len(cols)>=5: papers.append({'title':cols[2],'authors':cols[3],'year':cols[4],
-                        'journal':cols[5] if len(cols)>5 else '','citations':cols[6] if len(cols)>6 else '0','source':'📖 目录'})
+                    if len(cols)>=5: papers.append({
+                        'title':cols[2],'authors':cols[3],'year':cols[4],
+                        'journal':cols[5] if len(cols)>5 else '','citations':cols[6] if len(cols)>6 else '0',
+                        'source':'📖 目录'})
                 elif tab and not l.startswith('|'): break
         except: pass
         return papers
@@ -45,18 +56,32 @@ class Engine:
         if not p.exists(): return papers
         try:
             with open(p,encoding='utf-8') as f: c=f.read()
-            # 跳过开头的 _wm 无效条目
             if '_wm' in c[:50]:
-                idx = c.index('{', 50)
-                c = '[' + c[idx:]
-            data = json.loads(c)
+                idx=c.index('{',50); c='['+c[idx:]
+            data=json.loads(c)
             for item in data:
-                if isinstance(item, dict) and 'title' in item and item['title']:
-                    item['source'] = '🌐 阿语文献'
-                    papers.append(item)
+                if isinstance(item,dict) and 'title' in item and item['title']:
+                    item['source']='🌐 阿语文献'; papers.append(item)
         except: pass
-        seen=set()
-        return [p for p in papers if not ((p.get('title',''),p.get('year',''))) in seen and not seen.add((p.get('title',''),p.get('year','')))]
+        return papers
+    def _load_b1(self):
+        """加载 B1_文献主表.json (11601篇)"""
+        p=DATA_DIR/"B1_文献主表.json"; papers=[]
+        if not p.exists(): return papers
+        try:
+            with open(p,encoding='utf-8') as f: c=f.read()
+            if '_wm' in c[:50]:
+                idx=c.index('{',50); c='['+c[idx:]
+            data=json.loads(c)
+            for item in data:
+                if isinstance(item,dict) and 'title' in item and item['title']:
+                    kw = item.get('keywords','') or ''
+                    if isinstance(kw,list): kw=' '.join(kw)
+                    item['source']='📚 B1主表'
+                    item['keywords_str']=str(kw)[:200]
+                    papers.append(item)
+        except Exception as e: print(f'  ⚠️ B1加载: {e}')
+        return papers
     CN={"中阿":"china arab sino","文旅":"tourism cultural travel","旅游":"tourism travel tourist",
         "文化":"culture cultural","遗产":"heritage","数字化":"digital","阿拉伯":"arab arabic",
         "知识":"knowledge","合作":"cooperation","一带一路":"belt road","研究":"research study","语言":"language"}
