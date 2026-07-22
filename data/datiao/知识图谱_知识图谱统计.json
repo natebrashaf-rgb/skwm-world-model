@@ -1,0 +1,23 @@
+{
+  "nodes": 3467,
+  "edges": 1320,
+  "entity_types": {
+    "Paper": 2000,
+    "Topic": 820,
+    "Country": 19,
+    "HeritageSite": 20,
+    "Policy": 10,
+    "Event": 4,
+    "Organization": 9,
+    "Concept": 200,
+    "Author": 385
+  },
+  "relation_types": {
+    "studies": 738,
+    "authored_by": 541,
+    "related_to": 19,
+    "located_in": 17,
+    "implements": 5
+  },
+  "_wm": "​​​​​​⁠​​​﻿"
+}
