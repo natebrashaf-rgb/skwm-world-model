@@ -641,6 +641,35 @@ class H(BaseHTTPRequestHandler):
                 json_ok({"answer":answer,"results":len(r),"question":q})
             except Exception as e: json_ok({"answer":f"查询处理失败: {e}","results":0})
         
+        elif pa=='/api/ask':
+            """真正的 DeepSeek 推理问答"""
+            try:
+                body=json.loads(self.rfile.read(int(self.headers.get('Content-Length',0))))
+                q=body.get('question','') or body.get('query','')
+                # 搜索相关文献作为上下文
+                ctx_papers=eng.search(q,8)
+                ctx="相关文献:\n"
+                for p in ctx_papers:
+                    ctx+=f"- {p.get('title','')} ({p.get('year','')}) | {p.get('authors','')[:30]}\n"
+                ctx+=f"\n知识库总文献: {len(eng.all)} 篇"
+                # 调用 DeepSeek 深度推理
+                deepseek_result = ds.deep_analyze(q, ctx, f"检索到{len(ctx_papers)}篇文献")
+                if deepseek_result and len(deepseek_result)>=2:
+                    thinking = deepseek_result[0][1]  # 问题拆解
+                    answer = ""
+                    for step in deepseek_result[1:]:
+                        answer += step[1] + "\n\n"
+                    json_ok({"answer":answer.strip(),"thinking":thinking,"papers":len(ctx_papers)})
+                else:
+                    # 备选：直接用 DeepSeek 回答
+                    r = ds.ask([
+                        {"role":"system","content":"你是中阿文旅研究专家，基于以下知识库信息回答用户问题。"},
+                        {"role":"user","content":f"知识库:\n{ctx}\n\n用户问题: {q}\n\n请给出专业、简洁的回答。"}
+                    ], temp=0.3, max_tokens=1000)
+                    json_ok({"answer":r or "抱歉，无法回答。","thinking":"分析中...","papers":len(ctx_papers)})
+            except Exception as e:
+                json_ok({"answer":f"处理失败: {e}","thinking":"","papers":0})
+        
         elif pa=='/api/report':
             try:
                 body=json.loads(self.rfile.read(int(self.headers.get('Content-Length',0))))
