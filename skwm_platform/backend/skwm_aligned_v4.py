@@ -222,6 +222,13 @@ class DataLayer:
                 if verbose: print(f"  ✅ f(动力学): XGBoost AUC≈0.94")
             except Exception as e:
                 if verbose: print(f"  ⚠️ f(动力学): 加载失败 {e}")
+        
+        # ─── 演示数据兜底（部署环境无真实数据时自动生成） ───
+        if not self.snapshots:
+            self._generate_demo_data()
+            if verbose:
+                print(f"  ℹ️ 使用演示数据（{self.n_snapshots}切片 × {self.n_state_vectors}状态向量）")
+        
         if verbose: print(f"  ✅ E(文献实体): {self.paper_count:,}篇 | E(作者实体): {self.author_count:,}位")
         
         # ─── 合作关系 R ───
@@ -315,6 +322,33 @@ class DataLayer:
         if verbose: print(f"  ✅ R(作者画像): {len(self._authors)}位作者有合作记录")
         
         return self
+    
+    def _generate_demo_data(self):
+        """无真实数据时生成最小演示数据集（Railway部署用）"""
+        import random
+        topics = ["旅游","文化","遗产","数字文旅","一带一路","中阿合作","人工智能",
+                  "可持续发展","博物馆","非遗","智慧旅游","元宇宙","大模型","跨文化传播"]
+        years = list(range(2000, 2027))
+        for y in years:
+            n_topics = min(len(topics), 5 + (y - 2000) // 3)
+            selected = topics[:n_topics]
+            self.snapshots[str(y)] = {
+                "nodes": selected,
+                "edges": [{"u": selected[i], "v": selected[j], "w": 1}
+                         for i in range(len(selected)) for j in range(i+1, len(selected))],
+                "n_nodes": len(selected),
+                "n_edges": len(selected) * (len(selected)-1) // 2,
+            }
+            self.state_vectors[str(y)] = {
+                t: [random.randint(100, 1000), random.randint(0, 100),
+                    round(random.uniform(0.1, 0.9), 4), random.randint(10, 500)]
+                for t in selected
+            }
+        self.year_range = [2000, 2026]
+        self.n_snapshots = len(years)
+        self.n_state_vectors = sum(len(v) for v in self.state_vectors.values())
+        self.paper_count = 500
+        self.author_count = 120
     
     def get_entities(self, year: int) -> Dict:
         """E: 获取某年的知识实体及其状态"""
