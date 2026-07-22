@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-🌍 中阿文旅世界模型 - 专业平台版
-=================================
-多UI集成 + 深度DeepSeek推理展示
+🌍 中阿文旅世界模型 - 旗舰版
+===========================
+对标大厂产品质感
 """
 
 import os, re, json, sys, socket, urllib.request, ssl, time
@@ -97,10 +97,10 @@ class SKWMEngine:
         return {"catalog": len(self.catalog), "arabic": len(self.arabic),
                 "total": len(self.all), "year_min": min(years) if years else 0,
                 "year_max": max(years) if years else 0,
-                "papers_by_year": dict(Counter(years).most_common(20)),
+                "papers_by_year": dict(Counter(years).most_common(25)),
                 "top_authors": self._top_authors()}
     
-    def _top_authors(self, n=15):
+    def _top_authors(self, n=12):
         authors = Counter()
         for p in self.all:
             for name in re.split(r'[,;、]', p.get('authors','')):
@@ -132,420 +132,366 @@ class DeepSeek:
                 return data["choices"][0]["message"]["content"]
         except: return None
     
-    def deep_analyze(self, query, context, results_summary):
-        """深度推理：多步分析"""
+    def deep_analyze(self, query, context, summary):
         steps = []
-        
-        # Step 1: 问题理解
-        r1 = self.ask([
-            {"role":"system","content":"你是中阿文旅研究专家。请分析用户问题的研究价值。"},
-            {"role":"user","content":f"用户问题: {query}\n\n请拆解这个问题背后的研究需求。100字内。"}
-        ], temp=0.4, max_tokens=300)
-        if r1: steps.append(("🔍 问题理解", r1))
-        
-        # Step 2: 知识检索策略
-        if engine.all:
-            r2 = self.ask([
-                {"role":"system","content":"你是一个检索策略专家。"},
-                {"role":"user","content":f"查询: {query}\n知识库: {len(engine.all)}篇文献\n\n设计最佳检索关键词组合。"}
-            ], temp=0.3, max_tokens=300)
-            if r2: steps.append(("🎯 检索策略", r2))
-        
-        # Step 3: 结果分析
-        if results_summary:
-            r3 = self.ask([
-                {"role":"system","content":"分析知识库返回的结果，给出深度洞察。"},
-                {"role":"user","content":f"查询: {query}\n结果摘要: {results_summary}\n\n分析结果中的关键发现、研究空白和趋势。"}
-            ], temp=0.3, max_tokens=500)
-            if r3: steps.append(("📊 结果分析", r3))
-        
-        # Step 4: 建议
-        r4 = self.ask([
-            {"role":"system","content":"给出可操作的研究建议。"},
-            {"role":"user","content":f"查询: {query}\n\n请给出3条针对性的研究建议，每条一行。"}
-        ], temp=0.5, max_tokens=400)
-        if r4: steps.append(("💡 研究建议", r4))
-        
+        r1 = self.ask([{"role":"system","content":"你是一个中阿文旅研究专家。请深度拆解用户的研究问题。"},
+            {"role":"user","content":f"用户问题: {query}\n\n请用中文分析这个问题背后的学术价值、研究空白和潜在方向。150字内。"}], temp=0.4, max_tokens=350)
+        if r1: steps.append(("🎯 问题拆解", r1))
+        if summary:
+            r2 = self.ask([{"role":"system","content":"你是一个学术情报分析师。"},
+                {"role":"user","content":f"查询: {query}\n检索结果: {summary}\n\n分析这个主题的研究趋势、核心发现和值得深入的方向。150字内。"}], temp=0.3, max_tokens=400)
+            if r2: steps.append(("📊 趋势洞察", r2))
+        r3 = self.ask([{"role":"system","content":"给出简洁有力的研究建议。"},
+            {"role":"user","content":f"查询: {query}\n\n给出3条针对性的下一步研究建议，用短句。每行一条。"}], temp=0.5, max_tokens=300)
+        if r3: steps.append(("💡 行动建议", r3))
         return steps
+
 
 ds = DeepSeek()
 
-
-HTML = r"""<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🌍 中阿文旅世界模型</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
+# ── 全新设计的HTML ──
+CSS = r"""
 :root {
-  --primary: #8B4513;
-  --primary-light: #A0522D;
-  --primary-dark: #6B3410;
-  --bg: #f5f2ed;
+  --navy: #1a2332;
+  --navy-light: #2a3a52;
+  --accent: #c9956b;
+  --accent-soft: #f8efe7;
+  --accent-glow: rgba(201,149,107,0.15);
+  --bg: #f7f5f2;
   --card: #ffffff;
-  --border: #e5ddd4;
-  --text: #2c1810;
-  --text-light: #7a6a5c;
-  --accent: #D4A574;
-  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  --line: #e8e3dd;
+  --text: #1a1a1a;
+  --text-light: #7a7268;
+  --shadow: 0 1px 3px rgba(26,35,50,0.06), 0 6px 16px rgba(26,35,50,0.04);
+  --radius: 12px;
+  --font: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
 }
 
-body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
-     background:var(--bg);color:var(--text);min-height:100vh;display:flex;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;
+     display:flex;flex-direction:column;line-height:1.6;-webkit-font-smoothing:antialiased;}
 
-/* 侧边栏 */
-.sidebar{width:240px;background:linear-gradient(180deg,var(--primary) 0%,var(--primary-dark) 100%);
-         color:white;padding:24px 0;display:flex;flex-direction:column;position:fixed;height:100vh;z-index:10;}
-.sidebar-logo{padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:12px;}
-.sidebar-logo h1{font-size:18px;margin-bottom:4px;}
-.sidebar-logo p{font-size:11px;opacity:0.7;}
-.nav-item{padding:12px 20px;cursor:pointer;display:flex;align-items:center;gap:10px;
-           font-size:14px;transition:all 0.2s;border-left:3px solid transparent;}
-.nav-item:hover{background:rgba(255,255,255,0.08);}
-.nav-item.active{background:rgba(255,255,255,0.12);border-left-color:var(--accent);font-weight:600;}
-.nav-item .icon{font-size:18px;width:24px;text-align:center;}
-.sidebar-footer{margin-top:auto;padding:12px 20px;font-size:11px;opacity:0.5;}
+/* ── Header ── */
+.topbar{background:var(--navy);color:white;padding:0;position:sticky;top:0;z-index:100;
+        backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:60px;gap:32px;}
+.topbar-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-0.3px;white-space:nowrap;}
+.topbar-brand span{color:var(--accent);}
+.topbar-nav{display:flex;gap:4px;flex:1;}
+.nav-btn{background:none;border:none;color:rgba(255,255,255,0.6);padding:8px 14px;border-radius:8px;
+         font:500 14px var(--font);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.nav-btn:hover{color:white;background:rgba(255,255,255,0.08);}
+.nav-btn.active{color:white;background:rgba(255,255,255,0.12);}
+.topbar-status{font-size:12px;color:rgba(255,255,255,0.4);white-space:nowrap;}
+.status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:middle;}
+.status-dot.on{background:#4ade80;box-shadow:0 0 6px rgba(74,222,128,0.4);}
+.status-dot.off{background:#888;}
 
-/* 主内容 */
-.main{margin-left:240px;flex:1;padding:24px 32px;max-width:1200px;}
-
-/* 页面标题 */
-.page-header{margin-bottom:24px;}
-.page-header h2{font-size:24px;color:var(--primary-dark);margin-bottom:4px;}
-.page-header p{color:var(--text-light);font-size:14px;}
-
-/* 卡片 */
-.card{background:var(--card);border-radius:12px;padding:20px;margin-bottom:16px;
-      box-shadow:var(--shadow);border:1px solid var(--border);}
-.card-title{font-size:15px;font-weight:600;color:var(--primary-dark);margin-bottom:12px;
-            padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;}
-
-/* 统计 */
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;}
-.stat-card{background:var(--card);border-radius:10px;padding:16px;text-align:center;
-           box-shadow:var(--shadow);border:1px solid var(--border);}
-.stat-num{font-size:28px;font-weight:bold;color:var(--primary);}
-.stat-label{font-size:12px;color:var(--text-light);margin-top:4px;}
-
-/* 搜索 */
-.search-bar{display:flex;gap:12px;margin-bottom:16px;}
-.search-bar input{flex:1;padding:12px 16px;border:2px solid var(--border);border-radius:8px;
-                  font-size:15px;transition:border-color 0.3s;}
-.search-bar input:focus{border-color:var(--primary);outline:none;}
-.search-bar select{padding:12px;border:2px solid var(--border);border-radius:8px;
-                   background:white;font-size:14px;min-width:130px;}
-.search-bar button{padding:12px 28px;background:var(--primary);color:white;border:none;
-                   border-radius:8px;font-size:15px;cursor:pointer;transition:background 0.3s;white-space:nowrap;}
-.search-bar button:hover{background:var(--primary-light);}
-.search-bar button:disabled{background:#ccc;cursor:not-allowed;}
-
-/* 结果 */
-.result-item{padding:14px;margin:8px 0;border-radius:8px;background:#faf8f5;
-             border-left:3px solid var(--accent);transition:background 0.2s;}
-.result-item:hover{background:#f5f0e8;}
-.result-item .title{font-weight:600;font-size:14px;color:var(--text);}
-.result-item .meta{font-size:12px;color:var(--text-light);margin-top:4px;}
-.result-item .badge{display:inline-block;padding:2px 8px;border-radius:4px;
-                    font-size:11px;background:var(--accent);color:white;margin-right:6px;}
-
-/* DeepSeek 推理面板 */
-.thinking-panel{background:#faf8f5;border-radius:8px;border:1px solid var(--border);margin:12px 0;}
-.thinking-step{padding:14px 16px;border-bottom:1px solid var(--border);}
-.thinking-step:last-child{border-bottom:none;}
-.thinking-step .step-header{font-weight:600;font-size:13px;color:var(--primary);margin-bottom:6px;}
-.thinking-step .step-body{font-size:13px;line-height:1.6;color:var(--text);}
-
-/* 表格 */
-table{width:100%;border-collapse:collapse;font-size:13px;}
-th{padding:10px 12px;text-align:left;background:#faf8f5;color:var(--text-light);font-weight:600;border-bottom:2px solid var(--border);}
-td{padding:10px 12px;border-bottom:1px solid var(--border);}
-tr:hover td{background:#faf8f5;}
-
-/* 隐藏控制 */
-.page{display:none;}
+/* ── Main ── */
+.main{max-width:1200px;margin:0 auto;padding:32px 24px;flex:1;width:100%;}
+.page{display:none;animation:fadeIn .3s ease;}
 .page.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-/* 负载动画 */
-.loading{text-align:center;padding:40px;color:var(--text-light);}
-.spinner{display:inline-block;width:24px;height:24px;border:3px solid var(--border);
-          border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite;}
+/* ── Hero ── */
+.hero{margin-bottom:36px;}
+.hero-eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;}
+.hero h1{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:10px;color:var(--navy);}
+.hero p{color:var(--text-light);font-size:16px;max-width:600px;}
+
+/* ── Stat Cards ── */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:28px;}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;
+      box-shadow:var(--shadow);transition:transform 0.2s;}
+.stat:hover{transform:translateY(-2px);}
+.stat-number{font-size:28px;font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1;}
+.stat-label{font-size:13px;color:var(--text-light);margin-top:5px;}
+
+/* ── Grid Panels ── */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+@media(max-width:800px){.grid-2{grid-template-columns:1fr;}}
+
+/* ── Card ── */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+      box-shadow:var(--shadow);}
+.card-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;
+            padding-bottom:10px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;}
+.card-title .badge{font-weight:400;font-size:12px;color:var(--text-light);background:var(--bg);padding:3px 10px;border-radius:20px;}
+
+/* ── Table ── */
+.table-wrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:14px;}
+th{padding:10px 12px;text-align:left;font-weight:600;color:var(--text-light);font-size:12px;
+   text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--line);}
+td{padding:10px 12px;border-bottom:1px solid var(--line);font-size:14px;}
+tr:last-child td{border-bottom:none;}
+
+/* ── Search ── */
+.search-box{display:flex;gap:12px;}
+.search-box input{flex:1;padding:12px 16px;border:2px solid var(--line);border-radius:10px;
+                  font:15px var(--font);transition:all 0.2s;background:var(--bg);}
+.search-box input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-glow);}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border:none;border-radius:10px;
+     font:600 15px var(--font);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.btn-primary{background:var(--navy);color:white;}
+.btn-primary:hover{background:var(--navy-light);transform:translateY(-1px);}
+.btn-primary:disabled{background:#ccc;cursor:not-allowed;transform:none;}
+.btn-accent{background:var(--accent);color:white;}
+.btn-accent:hover{filter:brightness(1.1);transform:translateY(-1px);}
+
+/* ── Results ── */
+.result-item{padding:14px 16px;margin:6px 0;border-radius:10px;background:var(--bg);
+             border-left:3px solid var(--accent);transition:all 0.15s;}
+.result-item:hover{background:var(--accent-soft);}
+.result-item .r-title{font-weight:600;font-size:14px;color:var(--navy);}
+.result-item .r-meta{font-size:12px;color:var(--text-light);margin-top:4px;display:flex;gap:8px;flex-wrap:wrap;}
+.result-item .r-badge{padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;
+                     background:var(--accent-soft);color:var(--accent);}
+
+/* ── Bar Chart ── */
+.bar-chart td:first-child{font-weight:500;width:120px;}
+.bar-track{height:22px;background:var(--bg);border-radius:6px;overflow:hidden;position:relative;}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),#dbb08c);border-radius:6px;
+          transition:width .6s ease;min-width:4px;}
+.bar-label{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--text-light);}
+
+/* ── DeepSeek Reasoning ── */
+.reasoning{border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.r-step{padding:16px 20px;border-bottom:1px solid var(--line);animation:fadeIn .3s ease both;}
+.r-step:last-child{border-bottom:none;}
+.r-step:nth-child(1){animation-delay:0s;}
+.r-step:nth-child(2){animation-delay:.15s;}
+.r-step:nth-child(3){animation-delay:.3s;}
+.r-step .r-head{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+.r-step .r-body{font-size:14px;line-height:1.7;color:var(--text);}
+
+/* ── Loading ── */
+.loading-state{text-align:center;padding:48px 20px;color:var(--text-light);}
+.spinner{width:28px;height:28px;border:3px solid var(--line);border-top-color:var(--accent);
+         border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 16px;}
 @keyframes spin{to{transform:rotate(360deg);}}
 
-/* 标签 */
-.tabs{display:flex;gap:4px;margin-bottom:16px;flex-wrap:wrap;}
-.tab-btn{padding:8px 16px;border-radius:6px;border:1px solid var(--border);
-         background:white;cursor:pointer;font-size:13px;transition:all 0.2s;}
-.tab-btn.active{background:var(--primary);color:white;border-color:var(--primary);}
-.tab-btn:hover:not(.active){background:#f5f0e8;}
+/* ── Footer ── */
+.footer{text-align:center;padding:32px 24px;color:var(--text-light);font-size:13px;border-top:1px solid var(--line);margin-top:auto;}
 
-@media(max-width:768px){
-  .sidebar{width:60px;}.sidebar-logo h1,.sidebar-logo p,.nav-item span{display:none;}
-  .main{margin-left:60px;padding:16px;}.search-bar{flex-wrap:wrap;}
-  .search-bar select{width:100%;}
-}
-</style>
-</head>
-<body>
+/* ── Tables details ── */
+table.compact td,table.compact th{padding:8px 10px;font-size:13px;}
+"""
 
-<div class="sidebar">
-  <div class="sidebar-logo">
-    <h1>🌍 SKWM</h1>
-    <p>中阿文旅世界模型</p>
-  </div>
-  <div class="nav-item active" onclick="switchPage('dashboard',this)">
-    <span class="icon">📊</span><span>仪表盘</span>
-  </div>
-  <div class="nav-item" onclick="switchPage('search',this)">
-    <span class="icon">🔍</span><span>文献检索</span>
-  </div>
-  <div class="nav-item" onclick="switchPage('hotspot',this)">
-    <span class="icon">🔥</span><span>热点分析</span>
-  </div>
-  <div class="nav-item" onclick="switchPage('frontier',this)">
-    <span class="icon">📈</span><span>研究前沿</span>
-  </div>
-  <div class="nav-item" onclick="switchPage('arabic',this)">
-    <span class="icon">📚</span><span>阿语文献</span>
-  </div>
-  <div class="nav-item" onclick="switchPage('about',this)">
-    <span class="icon">ℹ️</span><span>关于</span>
-  </div>
-  <div class="sidebar-footer">
-    <div>总文献: ___TOTAL___ 篇</div>
-    <div>DeepSeek: ___DS_STATUS___</div>
-  </div>
+HTML_TOP = f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>🌍 SKWM · 中阿文旅世界模型</title><style>{CSS}</style></head><body>
+
+<div class="topbar">
+<div class="topbar-inner">
+<div class="topbar-brand"><span>✦</span> SKWM</div>
+<nav class="topbar-nav" id="topnav">
+<button class="nav-btn active" data-page="dashboard">📊 总览</button>
+<button class="nav-btn" data-page="search">🔍 检索</button>
+<button class="nav-btn" data-page="analytics">📈 分析</button>
+<button class="nav-btn" data-page="arabic">📚 阿语</button>
+<button class="nav-btn" data-page="about">ℹ️ 关于</button>
+</nav>
+<div class="topbar-status"><span class="status-dot {"on" if DEEPSEEK_KEY else "off"}"></span>{'DeepSeek 在线' if DEEPSEEK_KEY else '推理离线'}</div>
+</div></div>
+
+<div class="main" id="app">"""
+
+HTML_BOTTOM = r"""
 </div>
 
-<div class="main">
-<div id="page-dashboard" class="page active">___DASHBOARD___</div>
-<div id="page-search" class="page">___SEARCH___</div>
-<div id="page-hotspot" class="page">___HOTSPOT___</div>
-<div id="page-frontier" class="page">___FRONTIER___</div>
-<div id="page-arabic" class="page">___ARABIC___</div>
-<div id="page-about" class="page">___ABOUT___</div>
-</div>
+<footer class="footer">
+<p>北京第二外国语学院 · 挑战杯项目 · 基于 World-in-World 闭循环算法</p>
+</footer>
 
 <script>
-function switchPage(id,el){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
-  if(el) el.classList.add('active');
-}
+const PAGES = ['dashboard','search','analytics','arabic','about'];
 
-function doSearch(page){
-  const q = document.getElementById(page+'-q').value.trim();
+document.getElementById('topnav').addEventListener('click', e => {
+  const btn = e.target.closest('.nav-btn');
+  if(!btn) return;
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  PAGES.forEach(p=>document.getElementById('page-'+p)?.classList.remove('active'));
+  const page = document.getElementById('page-'+btn.dataset.page);
+  if(page) page.classList.add('active');
+});
+
+function doSearch(type){
+  const q = document.getElementById(type+'-q')?.value?.trim();
   if(!q){alert('请输入查询');return;}
-  const btn = document.getElementById(page+'-btn');
-  const res = document.getElementById(page+'-result');
+  const btn = document.getElementById(type+'-btn');
+  const res = document.getElementById(type+'-result');
   btn.disabled=true; btn.textContent='⏳ 分析中...';
-  res.innerHTML='<div class="loading"><div class="spinner"></div><p style="margin-top:12px">🤔 DeepSeek 正在深度推理...</p></div>';
-  
-  // 先执行知识库查询
-  fetch('/api?type='+page+'&q='+encodeURIComponent(q))
-    .then(r=>r.text())
-    .then(html=>{res.innerHTML=html;})
-    .catch(e=>{res.innerHTML='<p style="color:red">错误: '+e.message+'</p>';})
-    .finally(()=>{btn.disabled=false; btn.textContent='🚀 开始分析';});
+  res.innerHTML='<div class="loading-state"><div class="spinner"></div><p>DeepSeek 正在深度推理...</p></div>';
+  fetch('/api?type='+type+'&q='+encodeURIComponent(q))
+    .then(r=>r.text()).then(html=>{res.innerHTML=html;})
+    .catch(e=>{res.innerHTML='<p style="color:red">请求失败</p>';})
+    .finally(()=>{btn.disabled=false;btn.innerHTML="✨ 开始分析";});
 }
 
-function switchTab(group, tab, el){
-  document.querySelectorAll('.'+group+'-tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.'+group+'-content').forEach(c=>c.style.display='none');
-  document.getElementById(group+'-'+tab).style.display='block';
-  el.classList.add('active');
-}
+document.querySelectorAll('.search-box input').forEach(inp=>{
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter')doSearch(inp.id.replace('-q',''));});
+});
 </script>
-</body>
-</html>"""
+</body></html>"""
 
 
-def build_dashboard():
+def page_dashboard():
     s = engine.stats()
-    authors_html = "".join(f"<tr><td>{i+1}</td><td>{a}</td><td>{c}</td></tr>" for i,(a,c) in enumerate(s['top_authors'][:10]))
-    years_html = "".join(f"<tr><td>{y}</td><td>{c}</td></tr>" for y,c in sorted(s['papers_by_year'].items())[-15:][::-1])
-    ds_status = "✅ 已连接" if DEEPSEEK_KEY else "⚠️ 未设置"
-    
+    ds_s = "在线" if DEEPSEEK_KEY else "未配置"
+    years_h = "".join(f"<tr><td>{y}</td><td>{c}</td></tr>" for y,c in sorted(s['papers_by_year'].items())[-12:])
+    auth_h = "".join(f"<tr><td style='width:24px;color:var(--text-light)'>{i+1}</td><td>{a}</td><td style='text-align:right;font-weight:600'>{c}</td></tr>" for i,(a,c) in enumerate(s['top_authors'][:8]))
     return f"""
-    <div class="page-header"><h2>📊 知识库仪表盘</h2><p>中阿文旅科学知识世界模型总览</p></div>
-    <div class="stats-grid">
-      <div class="stat-card"><div class="stat-num">{s['total']}</div><div class="stat-label">总文献数</div></div>
-      <div class="stat-card"><div class="stat-num">{s['catalog']}</div><div class="stat-label">文献目录</div></div>
-      <div class="stat-card"><div class="stat-num">{s['arabic']}</div><div class="stat-label">阿语文献</div></div>
-      <div class="stat-card"><div class="stat-num">{s['year_min']}-{s['year_max']}</div><div class="stat-label">时间跨度</div></div>
-      <div class="stat-card"><div class="stat-num">{ds_status.split()[0]}</div><div class="stat-label">DeepSeek</div></div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-      <div class="card"><div class="card-title">📅 文献年份分布</div><table><tr><th>年份</th><th>数量</th></tr>{years_html}</table></div>
-      <div class="card"><div class="card-title">👥 高产作者 TOP10</div><table><tr><th>#</th><th>作者</th><th>篇数</th></tr>{authors_html}</table></div>
-    </div>
-    <script>document.querySelector('.sidebar-footer div:last-child').textContent='DeepSeek: {ds_status}';</script>
-    """
-    return html
+<div class="hero"><div class="hero-eyebrow">Scientific Knowledge World Model</div>
+<h1>中阿文旅科学知识世界模型</h1><p>基于 World-in-World 闭循环算法 · DeepSeek 深度推理 · {s['total']}篇学术文献</p></div>
+<div class="stats">
+<div class="stat"><div class="stat-number">{s['total']}</div><div class="stat-label">文献总量</div></div>
+<div class="stat"><div class="stat-number">{s['catalog']}</div><div class="stat-label">文献目录</div></div>
+<div class="stat"><div class="stat-number">{s['arabic']}</div><div class="stat-label">阿拉伯语文献</div></div>
+<div class="stat"><div class="stat-number">{s['year_min']}–{s['year_max']}</div><div class="stat-label">时间跨度</div></div>
+<div class="stat"><div class="stat-number">{ds_s}</div><div class="stat-label">DeepSeek 推理</div></div>
+</div>
+<div class="grid-2">
+<div class="card"><div class="card-title">📅 年度发文分布</div><div class="table-wrap"><table class="compact">{years_h}</table></div></div>
+<div class="card"><div class="card-title">👥 核心作者</div><div class="table-wrap"><table class="compact">{auth_h}</table></div></div>
+</div>
+<div class="card"><div class="card-title">🚀 快速开始</div>
+<p style="color:var(--text-light);margin-bottom:12px">选择一个功能开始探索中阿文旅知识世界</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<button class="btn btn-primary" onclick="document.querySelector('[data-page=search]').click();setTimeout(()=>document.getElementById('search-q')?.focus(),100)">🔍 检索文献</button>
+<button class="btn btn-accent" onclick="document.querySelector('[data-page=analytics]').click()">📈 分析热点</button>
+<button class="btn btn-primary" onclick="document.querySelector('[data-page=arabic]').click()">📚 阿语文献</button>
+</div></div>"""
 
-def build_search_page():
+def page_search():
     return """
-    <div class="page-header"><h2>🔍 文献检索</h2><p>从4394篇文献中智能检索</p></div>
-    <div class="card">
-      <div class="search-bar">
-        <input id="search-q" placeholder="输入检索词，如: Arabic NLP, 文化遗产, tourism heritage..." onkeydown="if(event.key==='Enter')doSearch('search')">
-        <button id="search-btn" onclick="doSearch('search')">🚀 开始分析</button>
-      </div>
-    </div>
-    <div id="search-result"><div class="card"><p style="color:var(--text-light);text-align:center;padding:20px;">输入关键词开始检索</p></div></div>
-    """
+<div class="hero"><div class="hero-eyebrow">Literature Discovery</div>
+<h1>文献检索</h1><p>智能语义检索 · DeepSeek 深度分析</p></div>
+<div class="card" style="padding:18px 24px">
+<div class="search-box">
+<input id="search-q" placeholder="输入关键词，如：Arabic NLP、文化遗产、digital heritage...">
+<button class="btn btn-primary" id="search-btn" onclick="doSearch('search')">✨ 开始分析</button>
+</div></div>
+<div id="search-result">
+<div class="card"><p style="color:var(--text-light);text-align:center;padding:24px">输入关键词，探索 4394 篇文献</p></div></div>"""
 
-def build_hotspot_page():
+def page_analytics():
     return """
-    <div class="page-header"><h2>🔥 热点分析</h2><p>识别研究主题热度分布</p></div>
-    <div class="card">
-      <div class="search-bar">
-        <input id="hotspot-q" placeholder="输入研究方向，如: 文化遗产旅游, Arabic NLP..." onkeydown="if(event.key==='Enter')doSearch('hotspot')">
-        <button id="hotspot-btn" onclick="doSearch('hotspot')">🔥 分析热度</button>
-      </div>
-    </div>
-    <div id="hotspot-result"><div class="card"><p style="color:var(--text-light);text-align:center;padding:20px;">输入研究方向开始分析</p></div></div>
-    """
+<div class="hero"><div class="hero-eyebrow">Research Analytics</div>
+<h1>研究分析</h1><p>主题热度 · 研究前沿 · 趋势洞察</p></div>
+<div class="card" style="padding:18px 24px">
+<div class="search-box">
+<input id="analytics-q" placeholder="输入研究方向，如：tourism heritage、文化遗产数字化...">
+<button class="btn btn-accent" id="analytics-btn" onclick="doSearch('analytics')">📊 深度分析</button>
+</div></div>
+<div id="analytics-result">
+<div class="card"><p style="color:var(--text-light);text-align:center;padding:24px">输入研究方向，获取深度分析报告</p></div></div>"""
 
-def build_frontier_page():
+def page_arabic():
     return """
-    <div class="page-header"><h2>📈 研究前沿</h2><p>近3年新兴研究方向识别</p></div>
-    <div class="card">
-      <div class="search-bar">
-        <input id="frontier-q" placeholder="输入研究方向，留空则看全局前沿" onkeydown="if(event.key==='Enter')doSearch('frontier')">
-        <button id="frontier-btn" onclick="doSearch('frontier')">📈 识别前沿</button>
-      </div>
-    </div>
-    <div id="frontier-result"><div class="card"><p style="color:var(--text-light);text-align:center;padding:20px;">输入研究方向开始分析</p></div></div>
-    """
+<div class="hero"><div class="hero-eyebrow">Arabic Literature</div>
+<h1>阿拉伯语文献</h1><p>探索 4194 篇阿拉伯语学术文献</p></div>
+<div class="card" style="padding:18px 24px">
+<div class="search-box">
+<input id="arabic-q" placeholder="在阿语文献中搜索...">
+<button class="btn btn-primary" id="arabic-btn" onclick="doSearch('arabic')">🔍 检索</button>
+</div></div>
+<div id="arabic-result">
+<div class="card"><p style="color:var(--text-light);text-align:center;padding:24px">输入关键词检索阿语文献</p></div></div>"""
 
-def build_arabic_page():
-    return """
-    <div class="page-header"><h2>📚 阿拉伯语文献</h2><p>探索阿语文献数据</p></div>
-    <div class="card">
-      <div class="search-bar">
-        <input id="arabic-q" placeholder="在阿语文献中搜索..." onkeydown="if(event.key==='Enter')doSearch('arabic')">
-        <button id="arabic-btn" onclick="doSearch('arabic')">📚 检索</button>
-      </div>
-    </div>
-    <div id="arabic-result"><div class="card"><p style="color:var(--text-light);text-align:center;padding:20px;">输入关键词检索阿语文献</p></div></div>
-    """
-
-def build_about_page():
+def page_about():
+    s = engine.stats()
     return f"""
-    <div class="page-header"><h2>ℹ️ 关于本平台</h2></div>
-    <div class="card">
-      <h3 style="color:var(--primary);margin-bottom:12px;">🌍 中阿文旅科学知识世界模型</h3>
-      <p style="line-height:1.8;margin-bottom:16px;">基于 <strong>World-in-World</strong> (arXiv:2510.18135) 闭循环规划算法构建的知识服务系统。<br>
-      融合 <strong>DeepSeek 大模型推理</strong> + <strong>sk-wm 真实知识库</strong> (4394篇文献) 提供智能学科服务。</p>
-      <table>
-        <tr><td>📚 知识库规模</td><td>{engine.stats()['total']} 篇文献</td></tr>
-        <tr><td>📁 数据来源</td><td>literature_catalog.md + _arabic_bulk_metadata.json</td></tr>
-        <tr><td>🧠 推理引擎</td><td>DeepSeek-V3 (API)</td></tr>
-        <tr><td>🌐 部署平台</td><td>Railway</td></tr>
-        <tr><td>📍 所属机构</td><td>北京第二外国语学院 · 挑战杯项目</td></tr>
-      </table>
-    </div>
-    """
+<div class="hero"><div class="hero-eyebrow">About</div>
+<h1>关于本平台</h1><p>技术架构与数据来源</p></div>
+<div class="grid-2">
+<div class="card"><div class="card-title">📋 平台信息</div>
+<table class="compact">
+<tr><td style="color:var(--text-light)">项目</td><td>中阿文旅科学知识世界模型</td></tr>
+<tr><td style="color:var(--text-light)">算法</td><td>World-in-World 闭循环规划</td></tr>
+<tr><td style="color:var(--text-light)">推理引擎</td><td>DeepSeek-V3</td></tr>
+<tr><td style="color:var(--text-light)">知识库</td><td>{s['total']} 篇文献</td></tr>
+<tr><td style="color:var(--text-light)">机构</td><td>北京第二外国语学院</td></tr>
+</table></div>
+<div class="card"><div class="card-title">📚 数据来源</div>
+<table class="compact">
+<tr><td style="color:var(--text-light)">文献目录</td><td>{s['catalog']} 篇 (literature_catalog.md)</td></tr>
+<tr><td style="color:var(--text-light)">阿语文献</td><td>{s['arabic']} 篇 (OpenAlex)</td></tr>
+<tr><td style="color:var(--text-light)">时间跨度</td><td>{s['year_min']} – {s['year_max']} 年</td></tr>
+</table></div></div>"""
 
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
         path = parsed.path
+        params = parse_qs(parsed.query)
         
         if path == '/':
-            html = HTML
             s = engine.stats()
-            ds_status = "在线 ✅" if DEEPSEEK_KEY else "未配置 ⚠️"
-            html = html.replace("___TOTAL___", str(s['total']))
-            html = html.replace("___DS_STATUS___", ds_status)
-            html = html.replace("___DASHBOARD___", build_dashboard())
-            html = html.replace("___SEARCH___", build_search_page())
-            html = html.replace("___HOTSPOT___", build_hotspot_page())
-            html = html.replace("___FRONTIER___", build_frontier_page())
-            html = html.replace("___ARABIC___", build_arabic_page())
-            html = html.replace("___ABOUT___", build_about_page())
+            html = HTML_TOP
+            html += f"""<div id="page-dashboard" class="page active">{page_dashboard()}</div>"""
+            html += f"""<div id="page-search" class="page">{page_search()}</div>"""
+            html += f"""<div id="page-analytics" class="page">{page_analytics()}</div>"""
+            html += f"""<div id="page-arabic" class="page">{page_arabic()}</div>"""
+            html += f"""<div id="page-about" class="page">{page_about()}</div>"""
+            html += HTML_BOTTOM
             self.send_response(200)
-            self.send_header('Content-Type', 'text/html; charset=utf-8')
+            self.send_header('Content-Type','text/html; charset=utf-8')
             self.end_headers()
             self.wfile.write(html.encode('utf-8'))
         
         elif path == '/api':
-            params = parse_qs(parsed.query)
-            stype = params.get('type', ['search'])[0]
-            query = params.get('q', [''])[0]
-            q = query[:100]
+            stype = params.get('type',['search'])[0]
+            q = (params.get('q',[''])[0])[:100]
+            parts = []
             
-            result_parts = []
-            
-            # 1. 知识库检索
             if stype == 'search':
                 results = engine.search(q, top_k=10)
-                items = "".join(f'''<div class="result-item">
-                    <div class="title">{r.get('title','')[:80]}</div>
-                    <div class="meta"><span class="badge">{r.get('source','')}</span> {r.get('authors','')[:40]} | {r.get('year','')} | 引用:{r.get('citations','0')}</div>
-                </div>''' for r in results)
-                result_parts.append(f'<div class="card"><div class="card-title">📄 检索结果 <span style="font-weight:normal;font-size:13px">命中 {len(results)} 条</span></div>{items or "<p style=color:var(--text-light)>未找到相关文献</p>"}</div>')
-                
-                # 深度推理
-                summary = f"检索到{len(results)}篇文献" if results else "未命中"
-                reasoning = ds.deep_analyze(q, "", summary)
+                items = "".join(f'''<div class="result-item"><div class="r-title">{r.get("title","")[:80]}</div>
+                <div class="r-meta"><span class="r-badge">{r.get("source","")}</span>{r.get("year","")} · {r.get("authors","")[:40]}</div></div>''' for r in results)
+                parts.append(f'<div class="card"><div class="card-title">检索结果 <span class="badge">{len(results)} 条</span></div>{items or "<p style=color:var(--text-light)>未找到</p>"}</div>')
+                sm = f"检索到{len(results)}篇" if results else "无结果"
+                reasoning = ds.deep_analyze(q, "", sm)
                 if reasoning:
-                    steps_html = "".join(f'<div class="thinking-step"><div class="step-header">{h}</div><div class="step-body">{c}</div></div>' for h,c in reasoning)
-                    result_parts.append(f'<div class="card"><div class="card-title">🤖 DeepSeek 深度推理</div><div class="thinking-panel">{steps_html}</div></div>')
+                    steps = "".join(f'<div class="r-step"><div class="r-head">{h}</div><div class="r-body">{c}</div></div>' for h,c in reasoning)
+                    parts.append(f'<div class="card"><div class="card-title">🤖 DeepSeek 深度推理</div><div class="reasoning">{steps}</div></div>')
             
-            elif stype == 'hotspot':
+            elif stype == 'analytics':
                 results = engine.search(q, top_k=30)
                 topics = Counter()
                 for p in results:
-                    for kw in ["tourism","heritage","culture","digital","arab","language","model","data","AI","education","travel","policy","health","social","network","knowledge","learning","system","translation","corpus"]:
+                    for kw in ["tourism","heritage","culture","digital","arab","language","model","data","AI","education","travel","policy","health","network","knowledge","learning","system","translation","corpus","islamic","media","society"]:
                         if kw in str(p.get('title','')).lower(): topics[kw] += 1
-                bar_chart = "".join(f'<tr><td>{t}</td><td><div style="background:var(--accent);height:20px;width:{min(c*100//max(m for _,m in topics.most_common(10)) if topics else 1, 100)}%;border-radius:4px;min-width:20px"></div></td><td>{c}</td></tr>' for t,c in topics.most_common(12))
-                result_parts.append(f'<div class="card"><div class="card-title">🔥 主题热度 <span style="font-weight:normal;font-size:13px">基于{len(results)}篇文献</span></div><table><tr><th>主题</th><th>分布</th><th>频次</th></tr>{bar_chart}</table></div>')
-                
-                items = "".join(f'<div class="result-item"><div class="title">{r.get("title","")[:70]}</div><div class="meta">{r.get("year","")} | {r.get("source","")}</div></div>' for r in results[:5])
-                result_parts.append(f'<div class="card"><div class="card-title">📄 代表文献</div>{items}</div>')
-                
-                reasoning = ds.deep_analyze(q, f"热度分析: 关键词频次分布", f"分析了{len(results)}篇文献，{len(topics)}个主题")
+                mx = max((c for _,c in topics.most_common(8)), default=1)
+                bars = "".join(f'<tr><td>{t}</td><td><div class="bar-track"><div class="bar-fill" style="width:{c*100//mx}%"></div><span class="bar-label">{c}</span></div></td></tr>' for t,c in topics.most_common(10))
+                parts.append(f'<div class="card"><div class="card-title">🔥 主题热度分布 <span class="badge">基于 {len(results)} 篇</span></div><div class="table-wrap"><table class="compact">{bars}</table></div></div>')
+                items = "".join(f'<div class="result-item"><div class="r-title">{r.get("title","")[:70]}</div><div class="r-meta">{r.get("year","")} · {r.get("source","")}</div></div>' for r in results[:5])
+                parts.append(f'<div class="card"><div class="card-title">📄 代表文献</div>{items}</div>')
+                reasoning = ds.deep_analyze(q, f"热度分析: 关键词频次分布", f"分析了{len(results)}篇, {len(topics)}个主题")
                 if reasoning:
-                    steps_html = "".join(f'<div class="thinking-step"><div class="step-header">{h}</div><div class="step-body">{c}</div></div>' for h,c in reasoning)
-                    result_parts.append(f'<div class="card"><div class="card-title">🤖 DeepSeek 深度推理</div><div class="thinking-panel">{steps_html}</div></div>')
-            
-            elif stype == 'frontier':
-                results = engine.search(q, top_k=20) if q else []
-                all_recent = [p for p in engine.all if str(p.get('year','')).isdigit() and int(p.get('year',0)) >= 2023]
-                recent = results if q and results else all_recent
-                items = "".join(f'<div class="result-item"><div class="title">{r.get("title","")[:80]}</div><div class="meta">{r.get("year","")} | {r.get("source","")} | {r.get("authors","")[:30]}</div></div>' for r in sorted(recent, key=lambda x: -int(x.get('year',0)))[:12])
-                result_parts.append(f'<div class="card"><div class="card-title">📈 近3年文献 <span style="font-weight:normal;font-size:13px">共{len(all_recent)}篇</span></div>{items}</div>')
-                reasoning = ds.deep_analyze(q or "中阿文旅前沿", f"近3年有{len(all_recent)}篇文献", f"前沿分析")
-                if reasoning:
-                    steps_html = "".join(f'<div class="thinking-step"><div class="step-header">{h}</div><div class="step-body">{c}</div></div>' for h,c in reasoning)
-                    result_parts.append(f'<div class="card"><div class="card-title">🤖 DeepSeek 前沿分析</div><div class="thinking-panel">{steps_html}</div></div>')
+                    steps = "".join(f'<div class="r-step"><div class="r-head">{h}</div><div class="r-body">{c}</div></div>' for h,c in reasoning)
+                    parts.append(f'<div class="card"><div class="card-title">🤖 DeepSeek 深度推理</div><div class="reasoning">{steps}</div></div>')
             
             elif stype == 'arabic':
                 results = engine.search(q, top_k=10) if q else engine.arabic[:10]
                 s = engine.stats()
-                result_parts.append(f'<div class="card"><div class="card-title">📚 阿语文献概况 <span style="font-weight:normal;font-size:13px">总计{s["arabic"]}篇</span></div></div>')
-                items = "".join(f'<div class="result-item"><div class="title">{r.get("title","")[:80]}</div><div class="meta">{r.get("year","")} | {r.get("source","")} | arXiv:{r.get("arxiv_id","")}</div></div>' for r in results[:10])
-                result_parts.append(f'<div class="card"><div class="card-title">📄 样本文献</div>{items or "<p style=color:var(--text-light)>暂无数据</p>"}</div>')
+                parts.append(f'<div class="stats" style="margin-bottom:16px"><div class="stat"><div class="stat-number">{s["arabic"]}</div><div class="stat-label">阿语文献</div></div></div>')
+                items = "".join(f'<div class="result-item"><div class="r-title">{r.get("title","")[:80]}</div><div class="r-meta">{r.get("year","")} · {r.get("arxiv_id","") or ""}</div></div>' for r in results[:10])
+                parts.append(f'<div class="card"><div class="card-title">文献列表</div>{items or "<p style=color:var(--text-light)>暂无数据</p>"}</div>')
             
-            cost_info = f'<div class="card" style="text-align:right;font-size:12px;color:var(--text-light);padding:10px 16px">💳 累计消耗: {ds.total_cost} tokens (约¥{ds.total_cost/1e6*2:.4f})</div>' if DEEPSEEK_KEY else ''
-            
-            html = "".join(result_parts) + cost_info
+            cost = f'<div style="text-align:right;font-size:12px;color:var(--text-light);margin:8px 4px">💳 {ds.total_cost} tokens</div>' if DEEPSEEK_KEY else ''
+            html = "".join(parts) + cost
             self.send_response(200)
-            self.send_header('Content-Type', 'text/html; charset=utf-8')
+            self.send_header('Content-Type','text/html; charset=utf-8')
             self.end_headers()
             self.wfile.write(html.encode('utf-8'))
         
         else:
-            self.send_response(404)
-            self.send_header('Content-Type', 'text/plain')
-            self.end_headers()
-            self.wfile.write(b'404')
+            self.send_response(404); self.send_header('Content-Type','text/plain'); self.end_headers(); self.wfile.write(b'404')
     
     def log_message(self, fmt, *args):
         if '/api' in str(args[0]): print(f"  📡 {args[0]}")
@@ -553,20 +499,15 @@ class Handler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     s = engine.stats()
-    hostname = socket.gethostname()
-    try: ip = socket.gethostbyname(hostname)
-    except: ip = "127.0.0.1"
-    
-    print(f"\n{'='*60}")
-    print(f"🌍 中阿文旅世界模型 - 专业平台")
-    print(f"{'='*60}")
-    print(f"\n📚 知识库: {s['total']} 篇 (目录{s['catalog']}+阿语{s['arabic']})")
-    print(f"🧠 DeepSeek: {'已连接' if DEEPSEEK_KEY else '未设置'}")
-    print(f"\n🌐 http://localhost:{PORT}")
+    print(f"\n{'='*55}")
+    print(f"  🌍 中阿文旅世界模型 · 旗舰版")
+    print(f"{'='*55}")
+    print(f"  📚 {s['total']} 篇文献")
+    print(f"  🧠 DeepSeek: {'✅ 已连接' if DEEPSEEK_KEY else '⚠️ 未设置'}")
+    print(f"  🌐 http://localhost:{PORT}")
     if 'RAILWAY_PUBLIC_DOMAIN' in os.environ:
-        print(f"🌍 https://{os.environ['RAILWAY_PUBLIC_DOMAIN']}")
-    print(f"\n按 Ctrl+C 停止\n{'='*60}\n")
-    
+        print(f"  🌍 https://{os.environ['RAILWAY_PUBLIC_DOMAIN']}")
+    print(f"{'='*55}\n")
     server = HTTPServer(('0.0.0.0', PORT), Handler)
     try: server.serve_forever()
-    except KeyboardInterrupt: print("\n已停止"); server.server_close()
+    except KeyboardInterrupt: print("已停止"); server.server_close()
