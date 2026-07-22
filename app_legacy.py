@@ -653,13 +653,15 @@ class H(BaseHTTPRequestHandler):
                     ctx+=f"- {p.get('title','')} ({p.get('year','')}) | {p.get('authors','')[:30]}\n"
                 ctx+=f"\n知识库总文献: {len(eng.all)} 篇"
                 # 调用 DeepSeek 深度推理
-                deepseek_result = ds.deep_analyze(q, ctx, f"检索到{len(ctx_papers)}篇文献")
-                if deepseek_result and len(deepseek_result)>=2:
-                    thinking = deepseek_result[0][1]  # 问题拆解
-                    answer = ""
-                    for step in deepseek_result[1:]:
-                        answer += step[1] + "\n\n"
-                    json_ok({"answer":answer.strip(),"thinking":thinking,"papers":len(ctx_papers)})
+                deepseek_result = ds.analyze(q, ctx, f"检索到{len(ctx_papers)}篇文献")
+                if deepseek_result and len(deepseek_result)>=1:
+                    thinking = deepseek_result[0][1] if len(deepseek_result)>0 else ""
+                    # 从步骤中提取回答内容
+                    steps_text = []
+                    for step_title, step_content in deepseek_result:
+                        steps_text.append(f"【{step_title}】\n{step_content}")
+                    answer = "\n\n".join(steps_text)
+                    json_ok({"answer":answer,"thinking":thinking,"papers":len(ctx_papers)})
                 else:
                     # 备选：直接用 DeepSeek 回答
                     r = ds.ask([
