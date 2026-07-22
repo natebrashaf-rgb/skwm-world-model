@@ -26,7 +26,10 @@ import numpy as np
 # ─── 路径 ──────────────────────────────────────────────────────────
 BASE_DIR = Path(__file__).parent
 DATASETS_DIR = BASE_DIR / "datasets"
-REAL_DATA_DIR = Path(r"E:\大挑\02_deliverables\world_model")
+# 部署模式下数据文件在 world_model/ 子目录，先找本地，再找绝对路径
+REAL_DATA_DIR = BASE_DIR / "world_model"
+if not REAL_DATA_DIR.exists():
+    REAL_DATA_DIR = Path(r"E:\大挑\02_deliverables\world_model")
 DATASETS_DIR.mkdir(exist_ok=True)
 
 
@@ -223,6 +226,7 @@ class DataLayer:
         
         # ─── 合作关系 R ───
         collab_paths = [
+            BASE_DIR / "data_files" / "B2_collaboration.csv",
             REAL_DATA_DIR.parent / "B2_collaboration.csv",
             Path(r"E:\大挑\02_deliverables\B2_collaboration.csv"),
         ]
@@ -264,6 +268,7 @@ class DataLayer:
         
         # ─── 引文网络 R —— 从 GEXF 加载 studies 关系 ───
         gexf_paths = [
+            BASE_DIR / "data_files" / "knowledge_graph.gexf",
             Path(r"E:\大挑\03_knowledge_graph\knowledge_graph.gexf"),
         ]
         import xml.etree.ElementTree as ET
@@ -710,7 +715,9 @@ class ArabicAgent:
     数据来源: term_alignment.json (21,042条中阿英对齐术语)
     """
 
-    TERM_ALIGNMENT_PATH = Path(r"E:\大挑\03_knowledge_graph\term_alignment.json")
+    TERM_ALIGNMENT_PATH = Path(__file__).parent / "data_files" / "term_alignment.json"
+    if not TERM_ALIGNMENT_PATH.exists():
+        TERM_ALIGNMENT_PATH = Path(r"E:\大挑\03_knowledge_graph\term_alignment.json")
 
     def __init__(self):
         self.terms = []           # 术语列表 [{en, cn, ar, domain, freq, source}]
