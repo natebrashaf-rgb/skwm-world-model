@@ -230,11 +230,83 @@ def query_kg(req: GraphRAGReq):
     OBSIDIAN.save_qa(req.question, result)
     return result
 
-# ── 12. 飞书机器人 Webhook ──
+# ── 12. 飞书机器人（被动Webhook + 主动推送） ──
 @app.post("/api/feishu/webhook")
 async def feishu_webhook(request: Request):
     body = await request.json()
     return FEISHU.handle(body, GRAG)
+
+
+class PushReq(BaseModel):
+    topic: str = "中阿文旅"
+    user: str = "librarian"
+    year: Optional[int] = None
+
+
+@app.post("/api/feishu/push-report")
+def push_report(req: PushReq):
+    """推送学科服务报告到飞书群"""
+    y = req.year or _latest()
+    rep = CTRL.report.generate_report(req.topic, req.user, y)
+    rep = SVC.audit(rep)
+    data_summary = f"{DATA.n_snapshots}年切片 × {DATA.n_state_vectors:,}条向量"
+    result = FEISHU.push_report(
+        title=rep["title"],
+        content=rep.get("content", rep.get("summary", "")),
+        data_summary=data_summary,
+        user_type=req.user,
+    )
+    if result.get("status") == "fallback_log":
+        # 也记到 push_outbox
+        SVC.push(rep["title"], f"**{rep['title']}**\n数据：{data_summary}\n审核：{rep['audit']['status']}")
+    return {"push": result, "report": rep["title"]}
+
+
+@app.post("/api/feishu/push-hotspot")
+def push_hotspot():
+    """推送热点排行榜到飞书群"""
+    y = _latest()
+    hot = DATA.get_hot_topics(y, 10)
+    result = FEISHU.push_hotspot_alert(hot, y)
+    return {"push": result, "year": y}
+
+
+@app.post("/api/feishu/push-frontier")
+def push_frontier():
+    """推送新兴前沿到飞书群"""
+    y = _latest()
+    em = DATA.get_emerging(y, 10)
+    result = FEISHU.push_frontier_alert(em, y)
+    return {"push": result, "year": y}
+
+
+@app.post("/api/feishu/push-briefing")
+def push_briefing():
+    """推送每日简报到飞书群"""
+    y = _latest()
+    hot = DATA.get_hot_topics(y, 3)
+    em = DATA.get_emerging(y, 3)
+    total_nodes = sum(s.get("n_nodes", 0) for s in DATA.snapshots.values())
+    total_edges = sum(s.get("n_edges", 0) for s in DATA.snapshots.values())
+    result = FEISHU.push_daily_briefing(hot, em, total_nodes, total_edges)
+    return {"push": result}
+
+
+@app.get("/api/feishu/test")
+def feishu_test():
+    """测试飞书连接"""
+    result = FEISHU.push_test()
+    return result
+
+
+@app.get("/api/feishu/status")
+def feishu_status():
+    """飞书配置状态"""
+    return {
+        "configured": FEISHU.is_configured(),
+        "webhook_url": FEISHU.webhook_url[:30] + "..." if FEISHU.webhook_url else None,
+        "push_count": FEISHU.push_count,
+    }
 
 # ── 13. 报告生成（新模板版）──
 class ReportReq(BaseModel):
