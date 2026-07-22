@@ -32,6 +32,7 @@ font-size:13px;font-weight:500;color:var(--tx);cursor:pointer;transition:all .15
 .nb.act{background:var(--acg);color:var(--ac);font-weight:600}
 .nb .ico{font-size:16px;width:22px;text-align:center;flex-shrink:0}
 .nb .badge{font-size:10px;background:var(--ac);color:#fff;padding:1px 6px;border-radius:10px;margin-left:auto}
+.sb-grp{font-size:10px;font-weight:700;color:var(--tl);padding:14px 18px 4px;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
 .sb-f{padding:12px 18px;border-top:1px solid var(--ln);font-size:10px;color:var(--tl);line-height:1.5}
 
 /* ═══════ Main ═══════ */
@@ -152,18 +153,28 @@ border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.1);display:none;flex-direct
     <h1>◈ SKWM <span>v4</span></h1>
     <div class="sub">中阿文旅世界模型</div>
   </div>
-  <div class="sb-n" id="nav">
-    <button class="nb act" data-p="overview"><span class="ico">📊</span> <span>总览</span></button>
-    <button class="nb" data-p="hotspots"><span class="ico">🔥</span> <span>热点分析</span></button>
-    <button class="nb" data-p="frontier"><span class="ico">🚀</span> <span>前沿识别</span></button>
-    <button class="nb" data-p="predict"><span class="ico">📈</span> <span>趋势预测</span></button>
-    <button class="nb" data-p="kg"><span class="ico">🕸️</span> <span>知识图谱</span></button>
-    <button class="nb" data-p="science"><span class="ico">🗺️</span> <span>科学地图</span></button>
-    <button class="nb" data-p="reports"><span class="ico">📋</span> <span>学科报告</span></button>
-    <button class="nb" data-p="institutions"><span class="ico">🏛️</span> <span>机构画像</span></button>
-    <button class="nb" data-p="authors"><span class="ico">👤</span> <span>作者画像</span></button>
-    <button class="nb" data-p="timeline"><span class="ico">⏳</span> <span>时间回溯</span></button>
-  </div>
+  <div class="sb-grp">数据资源层</div>
+  <button class="nb act" data-p="overview"><span class="ico">📊</span> <span>数据总览</span></button>
+
+  <div class="sb-grp">知识组织层</div>
+  <button class="nb" data-p="kg"><span class="ico">🕸️</span> <span>知识图谱</span></button>
+
+  <div class="sb-grp">智能分析层</div>
+  <button class="nb" data-p="hotspots"><span class="ico">🔥</span> <span>热点分析</span></button>
+  <button class="nb" data-p="frontier"><span class="ico">🚀</span> <span>前沿识别</span></button>
+  <button class="nb" data-p="predict"><span class="ico">📈</span> <span>趋势预测</span></button>
+  <button class="nb" data-p="science"><span class="ico">🗺️</span> <span>科学地图</span></button>
+  <button class="nb" data-p="institutions"><span class="ico">🏛️</span> <span>机构画像</span></button>
+  <button class="nb" data-p="authors"><span class="ico">👤</span> <span>作者画像</span></button>
+
+  <div class="sb-grp">智能体服务层</div>
+  <button class="nb" data-p="pipeline"><span class="ico">🔄</span> <span>完整服务流程</span></button>
+  <button class="nb" data-p="rag"><span class="ico">🤖</span> <span>智能问答</span></button>
+  <button class="nb" data-p="reports"><span class="ico">📋</span> <span>报告生成</span></button>
+
+  <div class="sb-grp">应用服务层</div>
+  <button class="nb" data-p="feishu"><span class="ico">💬</span> <span>飞书推送</span></button>
+  <button class="nb" data-p="timeline"><span class="ico">⏳</span> <span>时间回溯</span></button>
   <div class="sb-f">北京第二外国语学院<br>挑战杯 · SKWM v4.0</div>
 </div>
 
@@ -257,9 +268,68 @@ border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.1);display:none;flex-direct
   <div id="tl-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
 </div>
 
-</div></div>
+<!-- ========== Pipeline (完整服务流程) ========== -->
+<div class="pg" id="p-pipeline">
+  <div class="hr"><div class="label">🔄 PIPELINE</div><h2>完整服务流程</h2><p>论文核心流程10步骤 — 从用户提交到知识回写闭环</p></div>
+  <div class="cd" id="pipe-controls">
+    <div class="sb" style="margin:0">
+      <input id="pipe-q" value="中阿文旅研究热点" placeholder="输入查询...">
+      <select id="pipe-user"><option value="teacher" selected>教师科研</option><option value="student">学生学习</option><option value="librarian">馆员服务</option><option value="manager">科研管理</option></select>
+      <button onclick="runPipeline()">▶ 执行流程</button>
+    </div>
+  </div>
+  <div id="pipe-result"><div class="cd" style="text-align:center;padding:40px;color:var(--tl)">点击「执行流程」查看完整10步服务流程</div></div>
+</div>
 
-<!-- ═══════ Floating Robot ═══════ -->
+<!-- ========== RAG (智能问答独立页) ========== -->
+<div class="pg" id="p-rag">
+  <div class="hr"><div class="label">🤖 GRAPHRAG</div><h2>智能问答</h2><p>基于知识图谱 + 多路召回的智能学科问答</p></div>
+  <div class="cd">
+    <div class="sb" style="margin:0">
+      <input id="rag-q" placeholder="输入问题..." value="今年中阿文旅研究热点是什么？">
+      <select id="rag-user"><option value="teacher" selected>教师科研</option><option value="student">学生学习</option><option value="librarian">馆员服务</option><option value="manager">科研管理</option></select>
+      <button onclick="askRAG()">🤖 提问</button>
+    </div>
+  </div>
+  <div id="rag-result"><div class="cd" style="text-align:center;padding:40px;color:var(--tl)">输入问题，点击提问</div></div>
+  <div class="cd"><div class="ct">💡 可以这样问</div>
+  <div style="display:flex;flex-wrap:wrap;gap:6px">
+    <span class="tag tag-c" onclick="document.getElementById('rag-q').value=this.textContent;askRAG()" style="cursor:pointer">今年文旅研究热点是什么？</span>
+    <span class="tag tag-c" onclick="document.getElementById('rag-q').value=this.textContent;askRAG()" style="cursor:pointer">未来5年什么方向会火？</span>
+    <span class="tag tag-c" onclick="document.getElementById('rag-q').value=this.textContent;askRAG()" style="cursor:pointer">查一下「旅游」这个实体</span>
+    <span class="tag tag-c" onclick="document.getElementById('rag-q').value=this.textContent;askRAG()" style="cursor:pointer">给我出一份学科报告</span>
+    <span class="tag tag-c" onclick="document.getElementById('rag-q').value=this.textContent;askRAG()" style="cursor:pointer">中阿文旅的前沿方向</span>
+  </div></div>
+</div>
+
+<!-- ========== Feishu (飞书推送) ========== -->
+<div class="pg" id="p-feishu">
+  <div class="hr"><div class="label">💬 FEISHU</div><h2>飞书推送</h2><p>推送到飞书群 · 热点/前沿/简报/报告</p></div>
+  <div class="sg" style="grid-template-columns:repeat(4,1fr)">
+    <div class="sc" onclick="pushFeishu('hotspot')" style="cursor:pointer;text-align:center;transition:all .2s">
+      <div class="si" style="font-size:28px">🔥</div>
+      <div class="sn" style="font-size:15px">热点推送</div>
+      <div class="sl">TOP 10 到飞书群</div>
+    </div>
+    <div class="sc" onclick="pushFeishu('frontier')" style="cursor:pointer;text-align:center;transition:all .2s">
+      <div class="si" style="font-size:28px">🚀</div>
+      <div class="sn" style="font-size:15px">前沿推送</div>
+      <div class="sl">新兴方向到飞书群</div>
+    </div>
+    <div class="sc" onclick="pushFeishu('briefing')" style="cursor:pointer;text-align:center;transition:all .2s">
+      <div class="si" style="font-size:28px">📅</div>
+      <div class="sn" style="font-size:15px">简报推送</div>
+      <div class="sl">每日简报到飞书群</div>
+    </div>
+    <div class="sc" onclick="pushFeishu('report')" style="cursor:pointer;text-align:center;transition:all .2s">
+      <div class="si" style="font-size:28px">📋</div>
+      <div class="sn" style="font-size:15px">报告推送</div>
+      <div class="sl">学科报告到飞书群</div>
+    </div>
+  </div>
+  <div id="feishu-status" style="margin-top:12px"></div>
+  <div class="cd"><div class="ct">飞书机器人状态</div><div id="feishu-detail"></div></div>
+</div>
 <div class="robot" id="robot" onmousedown="startDrag(event)">
   <div class="robot-pulse"></div>
   <div class="robot-bg">🤖</div>
@@ -576,13 +646,75 @@ async function loadTimelineView(){
 }
 loadTimelineView();
 
-// ═══════ Dynamic year range ═══════
-(async function(){
+// ═══════ Pipeline (完整服务流程) ═══════
+async function runPipeline(){
+  const q=document.getElementById('pipe-q').value;
+  const user=document.getElementById('pipe-user').value;
+  const el=document.getElementById('pipe-result');
+  el.innerHTML='<div class="loading"><div class="sp"></div> 执行10步流程...</div>';
   try{
-    const s=await api('/api/stats');
-    // Update year ranges if available
+    const d=await api('/api/pipeline?query='+encodeURIComponent(q)+'&user='+user);
+    const steps=d.pipeline||[];
+    el.innerHTML='<div class="cd" style="padding:0;overflow:hidden"><table style="width:100%"><tr><th style="width:40px">步</th><th>步骤</th><th>智能体</th><th>状态</th><th>详情</th></tr>'+
+      steps.map(s=>{
+        const detail=s.agent||'';
+        const info=s.input||s.task_type||s.confidence||s.safe!==undefined?`✅${s.safe||0} ⚠️${s.warn||0} 🚫${s.danger||0}`:s.detail||s.path||s.action||'';
+        return `<tr><td style="font-weight:700">${s.step}</td><td>${s.name}</td><td style="font-size:12px;color:var(--tl)">${detail}</td><td>${s.status}</td><td style="font-size:12px">${info||''}</td></tr>`;
+      }).join('')+
+      '</table></div>'+
+      `<div class="sg" style="grid-template-columns:1fr 1fr;margin-top:8px">`+
+      `<div class="sc" style="text-align:center;padding:12px"><div style="font-weight:700;font-size:18px">${d.summary?.progress||'?'}</div><div class="sl">完成进度</div></div>`+
+      `<div class="sc" style="text-align:center;padding:12px"><div style="font-size:13px;color:${d.summary?.audit_required?'#ea580c':'#16a34a'}">${d.summary?.audit_required?'⚠️ 需馆员复核':'✅ 自动通过'}</div><div class="sl">审核状态</div></div>`+
+      `</div>`;
+    if(d.answer) el.innerHTML+=`<div class="cd"><div class="ct">🤖 答案摘要</div><div style="font-size:13px;line-height:1.7;white-space:pre-wrap">${esc(d.answer.slice(0,600))}</div></div>`;
+  }catch(e){el.innerHTML='<div class="empty">流程执行失败: '+e.message+'</div>'}
+}
+
+// ═══════ RAG (智能问答) ═══════
+async function askRAG(){
+  const q=document.getElementById('rag-q').value.trim();if(!q)return;
+  const user=document.getElementById('rag-user').value;
+  const el=document.getElementById('rag-result');
+  el.innerHTML='<div class="loading"><div class="sp"></div> 思考中...</div>';
+  try{
+    const r=await fetch('/api/query/kg',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,user})});
+    const d=await r.json();
+    el.innerHTML=`<div class="cd"><div class="ct">🤖 回答</div><div style="font-size:13px;line-height:1.8;white-space:pre-wrap">${esc(d.answer||'暂无回答')}</div>`+
+      `<div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--ln);font-size:11px;color:var(--tl);display:flex;gap:12px">`+
+      `<span>置信度: ${d.confidence?Math.round(d.confidence*100)+'%':'N/A'}</span>`+
+      `<span>规则触发: ${d.rule_triggered?'是':'否'}</span>`+
+      `</div></div>`;
+  }catch(e){el.innerHTML='<div class="empty">请求失败: '+e.message+'</div>'}
+}
+document.getElementById('rag-q').addEventListener('keydown',e=>{if(e.key==='Enter')askRAG()});
+
+// ═══════ Feishu (飞书推送) ═══════
+async function pushFeishu(type){
+  const el=document.getElementById('feishu-status');
+  el.innerHTML='<span class="tag tag-c">推送中...</span>';
+  try{
+    let r;
+    if(type==='hotspot') r=await fetch('/api/feishu/push-hotspot',{method:'POST'});
+    else if(type==='frontier') r=await fetch('/api/feishu/push-frontier',{method:'POST'});
+    else if(type==='briefing') r=await fetch('/api/feishu/push-briefing',{method:'POST'});
+    else if(type==='report') r=await fetch('/api/feishu/push-report',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topic:'中阿文旅',user:'librarian'})});
+    const d=await r.json();
+    el.innerHTML=`<span class="tag ${d.push?.status==='ok'?'tag-g':'tag-o'}">${d.push?.status==='ok'?'✅ 推送成功':'📝 已记日志'}</span>`;
+  }catch(e){el.innerHTML='<span class="tag tag-o">❌ 推送失败</span>'}
+  loadFeishuStatus();
+}
+async function loadFeishuStatus(){
+  try{
+    const d=await api('/api/feishu/status');
+    document.getElementById('feishu-detail').innerHTML=
+      `<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">`+
+      `<div class="sc" style="text-align:center;padding:12px"><div class="sn" style="font-size:20px">${d.configured?'✅':'❌'}</div><div class="sl">Webhook</div></div>`+
+      `<div class="sc" style="text-align:center;padding:12px"><div class="sn" style="font-size:20px">${d.push_count||0}</div><div class="sl">推送次数</div></div>`+
+      `<div class="sc" style="text-align:center;padding:12px"><div style="font-size:11px;color:var(--tl);word-break:break-all">${d.webhook_url||'未配置'}</div><div class="sl">Webhook地址</div></div>`+
+      `</div>`;
   }catch(e){}
-})();
+}
+loadFeishuStatus();
 </script>
 </body>
 </html>

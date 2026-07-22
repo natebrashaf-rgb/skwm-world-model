@@ -600,6 +600,124 @@ def author_profiles(top_k: int = Query(default=20)):
             "total_collaborations": total_collab}
 
 
+# ── 20. 完整服务流程（论文核心流程10步骤） ──────────────────
+@app.get("/api/pipeline")
+def full_pipeline(query: str = Query(default="中阿文旅研究热点"), 
+                  user: str = Query(default="teacher")):
+    """执行完整服务流程（10步），返回每一步状态"""
+    y = _latest()
+    steps = []
+    
+    # Step 1: 用户提交
+    steps.append({"step": 1, "name": "用户提交", "agent": "飞书/Web入口",
+                  "status": "✅", "input": query, "user": user})
+    
+    # Step 2: 总控识别
+    task_type = "hotspot" if any(k in query for k in ["热点","热门","趋势","hot"]) else "general"
+    steps.append({"step": 2, "name": "任务识别", "agent": "总控智能体",
+                  "status": "✅", "task_type": task_type})
+    
+    # Step 3: 多模块调用
+    hot = DATA.get_hot_topics(y, 10) if task_type == "hotspot" else DATA.get_hot_topics(y, 5)
+    em = DATA.get_emerging(y, 5)
+    steps.append({"step": 3, "name": "模块调用", "agent": "文献库/术语库/图谱/向量库/计量",
+                  "status": "✅", "hotspots_loaded": len(hot), "frontier_loaded": len(em)})
+    
+    # Step 4: GraphRAG 生成答案
+    grag_result = GRAG.answer(query, user)
+    steps.append({"step": 4, "name": "GraphRAG 答案生成", "agent": "GraphRAG问答智能体",
+                  "status": "✅", "confidence": f"{int(grag_result.get('confidence',0)*100)}%",
+                  "rule_triggered": grag_result.get("rule_triggered", False)})
+    
+    # Step 5: 报告生成
+    topic_clean = query[:20].replace("什么","").replace("怎么","").strip()
+    report = generate_report_simple(topic_clean, user, y)
+    steps.append({"step": 5, "name": "结构化报告", "agent": "报告生成智能体",
+                  "status": "✅", "sections": len(report.get("sections", [])),
+                  "title": report.get("title", "")})
+    
+    # Step 6: 馆员审核（风险标注）
+    known = set(DATA.get_entities(y).keys())
+    audited = SVC.audit(report, known_terms=known)
+    audit_info = audited.get("audit", {})
+    steps.append({"step": 6, "name": "审核风险标注", "agent": "馆员审核智能体",
+                  "status": "⚠️" if audit_info.get("review_required") else "✅",
+                  "safe": len(audit_info.get("safe", [])),
+                  "warn": len(audit_info.get("warn", [])),
+                  "danger": len(audit_info.get("danger", [])),
+                  "action": audit_info.get("review_action", "无需复核")})
+    
+    # Step 7: 馆员人工复核（模拟）
+    steps.append({"step": 7, "name": "馆员人工复核", "agent": "学科馆员",
+                  "status": "⏳ 待复核" if audit_info.get("review_required") else "✅ 自动通过",
+                  "note": "高风险项需驳回重生成" if audit_info.get("danger") else ("低风险项建议复核" if audit_info.get("warn") else "可信结果")})
+    
+    # Step 8: 推送
+    push_result = SVC.push(report.get("title", "SKWM报告"), 
+                           f"用户: {user}\n查询: {query}\n审核: {audit_info.get('status','')}")
+    steps.append({"step": 8, "name": "结果推送", "agent": "飞书推送智能体",
+                  "status": "📨 已推送" if push_result.get("sent") else "📝 已记日志",
+                  "detail": "飞书" if push_result.get("sent") else "日志回退"})
+    
+    # Step 9: Obsidian 沉淀
+    sed = SVC.sediment(report)
+    steps.append({"step": 9, "name": "知识沉淀", "agent": "Obsidian沉淀智能体",
+                  "status": "✅", "path": sed.get("filename", "")})
+    
+    # Step 10: KG回写
+    wb = SVC.writeback([{
+        "question": query, "answer": grag_result.get("answer", "")[:500],
+        "entities": [h.get("name","") for h in hot[:3]],
+        "confidence": grag_result.get("confidence", 0.8),
+        "reviewed_by": "system_auto"
+    }])
+    steps.append({"step": 10, "name": "知识回写图谱", "agent": "知识回写闭环",
+                  "status": "✅", "entries_written": wb.get("written", 0),
+                  "total_entries": wb.get("total", 0)})
+    
+    completed = sum(1 for s in steps if s["status"].startswith("✅"))
+    warnings = sum(1 for s in steps if "⚠️" in s["status"] or "⏳" in s["status"])
+    
+    return {
+        "pipeline": steps,
+        "summary": {
+            "total_steps": len(steps),
+            "completed": completed,
+            "warnings": warnings,
+            "progress": f"{completed}/{len(steps)}",
+            "audit_required": audit_info.get("review_required", False),
+        },
+        "answer": grag_result.get("answer", "")[:1000],
+        "report_title": report.get("title", ""),
+    }
+
+
+def generate_report_simple(topic: str, user: str, year: int) -> dict:
+    """简化版报告生成（供 pipeline 调用）"""
+    hot = DATA.get_hot_topics(year, 10)
+    em = DATA.get_emerging(year, 8)
+    user_labels = {"teacher":"教师科研","student":"学生学习","librarian":"馆员服务","manager":"科研管理"}
+    sections = [
+        {"name": f"{year}年研究热点 TOP 10",
+         "data": [{"name": h["name"], "heat": h["heat"], "growth": h["growth"],
+                    "evidence": f"状态向量 {year}年"} for h in hot[:10]]},
+        {"name": "新兴前沿 TOP 8",
+         "data": [{"name": e["name"], "growth": e.get("growth",0),
+                    "evidence": f"突现检测 {year}年"} for e in em[:8]]},
+        {"name": "数据规模",
+         "data": [f"{DATA.n_snapshots}年时间切片", f"{DATA.n_state_vectors:,}条状态向量",
+                  f"21,042条三语术语", f"XGBoost AUC=0.9408"]},
+    ]
+    return {
+        "title": f"{topic}学科服务报告 ({year})",
+        "user_type": user_labels.get(user, user),
+        "data_scale": f"{DATA.n_snapshots}年 × {DATA.n_state_vectors:,}向量",
+        "sections": sections,
+    }
+
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    print(f"🚀 SKWM API 启动于 http://localhost:{port}")
+    uvicorn.run(app, host="0.0.0.0", port=port)
