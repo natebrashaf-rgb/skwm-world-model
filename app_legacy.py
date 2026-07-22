@@ -504,6 +504,35 @@ class H(BaseHTTPRequestHandler):
             c=f'<div style="text-align:right;font-size:12px;color:var(--tl);padding:4px 8px">💳 累计推理: {ds.c} tokens</div>' if DEEPSEEK_KEY else ''
             hh="".join(parts)+c
             self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.end_headers();self.wfile.write(hh.encode('utf-8'))
+        # ── 同事前端需要的接口 ──
+        elif pa=='/api/health':
+            self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers()
+            self.wfile.write(json.dumps({"status":"ok","papers":len(eng.all),"deepseek":bool(DEEPSEEK_KEY)}).encode())
+        elif pa=='/api/overview':
+            s=eng.stats();self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers()
+            self.wfile.write(json.dumps({"total":s['total'],"catalog":s['catalog'],"arabic":s['arabic'],
+                "year_min":s['ymin'],"year_max":s['ymax'],"authors":s['authors'][:10]}).encode())
+        elif pa=='/api/hotspots':
+            q=params.get('q',['tourism'])[0]
+            r=eng.search(q,30)
+            tp=Counter()
+            for p in r:
+                for kw in ["tourism","heritage","culture","digital","arab","language","model","data","AI","education","travel"]:
+                    if kw in str(p.get('title','')).lower(): tp[kw]+=1
+            self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers()
+            self.wfile.write(json.dumps({"query":q,"topics":dict(tp.most_common(15)),"papers_analyzed":len(r)}).encode())
+        elif pa=='/api/feishu/status':
+            self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers()
+            self.wfile.write(json.dumps({"connected":False,"webhook":"未配置","message":"飞书集成待配置"}).encode())
+        elif pa=='/api/query/kg':
+            q=params.get('q',[''])[0]
+            r=eng.search(q,10)
+            self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers()
+            self.wfile.write(json.dumps({"query":q,"results":[{"title":p.get('title',''),"year":p.get('year',''),
+                "authors":p.get('authors','')[:50],"source":p.get('source','')} for p in r]}).encode())
+        elif pa=='/api/feishu/webhook':
+            self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers()
+            self.wfile.write(json.dumps({"received":True,"message":"Webhook 已接收","status":"pending"}).encode())
         else:
             self.send_response(404);self.send_header('Content-Type','text/plain');self.end_headers();self.wfile.write(b'404')
     def log_message(self,fmt,*a):
