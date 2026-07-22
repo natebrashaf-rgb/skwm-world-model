@@ -1,0 +1,137 @@
+{
+  "M": [
+    {
+      "param_value": 1,
+      "success_rate": 100.0,
+      "avg_steps": 2.0
+    },
+    {
+      "param_value": 3,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 5,
+      "success_rate": 100.0,
+      "avg_steps": 2.0
+    },
+    {
+      "param_value": 8,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 12,
+      "success_rate": 100.0,
+      "avg_steps": 2.0
+    }
+  ],
+  "sigma": [
+    {
+      "param_value": 0.0,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 0.1,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 0.25,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 0.5,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 0.8,
+      "success_rate": 100.0,
+      "avg_steps": 2.0
+    }
+  ],
+  "L": [
+    {
+      "param_value": 1,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 2,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 4,
+      "success_rate": 100.0,
+      "avg_steps": 2.0
+    },
+    {
+      "param_value": 6,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 10,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    }
+  ],
+  "alpha": [
+    {
+      "param_value": 0.4,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 1.0,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 4.0,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 10.0,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 40.0,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    }
+  ],
+  "beta": [
+    {
+      "param_value": 0.0,
+      "success_rate": 100.0,
+      "avg_steps": 1.8
+    },
+    {
+      "param_value": 0.1,
+      "success_rate": 100.0,
+      "avg_steps": 2.0
+    },
+    {
+      "param_value": 0.3,
+      "success_rate": 100.0,
+      "avg_steps": 2.2
+    },
+    {
+      "param_value": 0.5,
+      "success_rate": 100.0,
+      "avg_steps": 2.6
+    },
+    {
+      "param_value": 0.8,
+      "success_rate": 100.0,
+      "avg_steps": 2.2
+    }
+  ]
+}

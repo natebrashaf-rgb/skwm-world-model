@@ -1,0 +1,23 @@
+# API Key（绝不上传）
+.deepseek_key
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Node
+node_modules/
+.next/
+
+# 本地数据
+chroma_db/
+obsidian_vault/
+
+# OS
+.DS_Store
+Thumbs.db
+.deepseek_key

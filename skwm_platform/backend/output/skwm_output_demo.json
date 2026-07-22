@@ -1,0 +1,135 @@
+{
+  "E": {
+    "entities_found": 0,
+    "top_entities": []
+  },
+  "R": {
+    "relation_types": [
+      "共现",
+      "共引",
+      "合作"
+    ],
+    "total_edges": 586912
+  },
+  "S": {
+    "hot_topics": [
+      {
+        "name": "旅游",
+        "heat": 6555,
+        "growth": 441,
+        "centrality": 0.564979,
+        "connections": 1239
+      },
+      {
+        "name": "tour",
+        "heat": 5676,
+        "growth": 304,
+        "centrality": 0.525308,
+        "connections": 1152
+      },
+      {
+        "name": "文化",
+        "heat": 3956,
+        "growth": 252,
+        "centrality": 0.48746,
+        "connections": 1069
+      },
+      {
+        "name": "nation",
+        "heat": 3119,
+        "growth": 230,
+        "centrality": 0.391245,
+        "connections": 858
+      },
+      {
+        "name": "遗产",
+        "heat": 2417,
+        "growth": 243,
+        "centrality": 0.340629,
+        "connections": 747
+      },
+      {
+        "name": "gene",
+        "heat": 2178,
+        "growth": 638,
+        "centrality": 0.26995,
+        "connections": 592
+      },
+      {
+        "name": "rate",
+        "heat": 1992,
+        "growth": 305,
+        "centrality": 0.27907,
+        "connections": 612
+      }
+    ],
+    "top_term": "旅游",
+    "top_heat": 6555
+  },
+  "T": {
+    "current_year": 2026,
+    "year_range": [
+      1895,
+      2026
+    ],
+    "emerging_topics": [
+      {
+        "name": "gene",
+        "heat": 2178,
+        "growth": 638
+      },
+      {
+        "name": "旅游",
+        "heat": 6555,
+        "growth": 441
+      },
+      {
+        "name": "generative ai",
+        "heat": 961,
+        "growth": 372
+      },
+      {
+        "name": "rate",
+        "heat": 1992,
+        "growth": 305
+      },
+      {
+        "name": "tour",
+        "heat": 5676,
+        "growth": 304
+      }
+    ],
+    "snapshots": 89
+  },
+  "C": {
+    "context": "default",
+    "available_dims": [
+      "national_policy",
+      "regional_coop",
+      "school_direction",
+      "global_situation"
+    ]
+  },
+  "U": {
+    "user_type": "teacher",
+    "user_info": {
+      "name": "教师科研",
+      "desc": "课题申报、前沿追踪、文献发现"
+    }
+  },
+  "P": {
+    "report": "中阿文旅学科服务报告 (2026)",
+    "sections": [
+      "热点主题",
+      "新兴前沿",
+      "趋势预测",
+      "报告描述"
+    ],
+    "rules": [
+      "推荐",
+      "审核",
+      "推送",
+      "沉淀"
+    ]
+  }
+}

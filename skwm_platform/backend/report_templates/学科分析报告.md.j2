@@ -1,0 +1,9 @@
+# {{ topic }} — 学科分析报告
+> 生成时间: {{ date }}
+
+## 热点主题
+{% for h in hotspots %}- **{{ h.name }}** — 热度 {{ h.heat }} | 增长 {{ h.growth }}%
+{% endfor %}
+## 年度趋势
+{% for y,d in timeline %}| {{ y }} | {{ d.nodes }} 节点 | {{ d.edges }} 关系 |
+{% endfor %}

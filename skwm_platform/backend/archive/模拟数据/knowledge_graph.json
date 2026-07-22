@@ -1,0 +1,1524 @@
+{
+  "entities": {
+    "paper_P001": {
+      "id": "paper_P001",
+      "type": "papers",
+      "name": "中阿文化遗产数字化保护路径研究",
+      "category": "文献",
+      "properties": {
+        "title": "中阿文化遗产数字化保护路径研究",
+        "year": 2024,
+        "authors": [
+          "张明",
+          "Ahmed Hassan"
+        ],
+        "lang": "中文",
+        "keywords": [
+          "文化遗产",
+          "数字化",
+          "中阿合作"
+        ],
+        "citations": 12,
+        "journal": "图书馆论坛"
+      }
+    },
+    "paper_P002": {
+      "id": "paper_P002",
+      "type": "papers",
+      "name": "丝绸之路旅游廊道建设与跨文化传播",
+      "category": "文献",
+      "properties": {
+        "title": "丝绸之路旅游廊道建设与跨文化传播",
+        "year": 2024,
+        "authors": [
+          "李华",
+          "王芳",
+          "Sara Al-Ali"
+        ],
+        "lang": "中文",
+        "keywords": [
+          "丝绸之路",
+          "旅游廊道",
+          "跨文化传播"
+        ],
+        "citations": 8,
+        "journal": "旅游学刊"
+      }
+    },
+    "paper_P003": {
+      "id": "paper_P003",
+      "type": "papers",
+      "name": "التراث الثقافي والسياحة ف",
+      "category": "文献",
+      "properties": {
+        "title": "التراث الثقافي والسياحة في الدول العربية",
+        "year": 2023,
+        "authors": [
+          "Mohammed Ali",
+          "刘洋"
+        ],
+        "lang": "阿拉伯语",
+        "keywords": [
+          "تراث ثقافي",
+          "سياحة",
+          "التعاون الصيني العربي"
+        ],
+        "citations": 5,
+        "journal": "阿拉伯世界研究"
+      }
+    },
+    "paper_P004": {
+      "id": "paper_P004",
+      "type": "papers",
+      "name": "Digital Transformation of",
+      "category": "文献",
+      "properties": {
+        "title": "Digital Transformation of Cultural Heritage Tourism in BRI",
+        "year": 2024,
+        "authors": [
+          "Chen Wei",
+          "Fatima Al-Zahra"
+        ],
+        "lang": "英文",
+        "keywords": [
+          "digital heritage",
+          "Belt and Road",
+          "cultural tourism"
+        ],
+        "citations": 15,
+        "journal": "Tourism Management"
+      }
+    },
+    "paper_P005": {
+      "id": "paper_P005",
+      "type": "papers",
+      "name": "中阿旅游合作对区域经济的影响研究",
+      "category": "文献",
+      "properties": {
+        "title": "中阿旅游合作对区域经济的影响研究",
+        "year": 2023,
+        "authors": [
+          "赵强",
+          "李华"
+        ],
+        "lang": "中文",
+        "keywords": [
+          "旅游合作",
+          "区域经济",
+          "中阿关系"
+        ],
+        "citations": 6,
+        "journal": "经济地理"
+      }
+    },
+    "paper_P006": {
+      "id": "paper_P006",
+      "type": "papers",
+      "name": "中国游客赴阿联酋旅游行为分析",
+      "category": "文献",
+      "properties": {
+        "title": "中国游客赴阿联酋旅游行为分析",
+        "year": 2024,
+        "authors": [
+          "王芳",
+          "Sarah Johnson"
+        ],
+        "lang": "中文",
+        "keywords": [
+          "中国游客",
+          "阿联酋",
+          "旅游行为"
+        ],
+        "citations": 9,
+        "journal": "旅游科学"
+      }
+    },
+    "paper_P007": {
+      "id": "paper_P007",
+      "type": "papers",
+      "name": "دور التكنولوجيا الحديثة ف",
+      "category": "文献",
+      "properties": {
+        "title": "دور التكنولوجيا الحديثة في تطوير السياحة الثقافية",
+        "year": 2024,
+        "authors": [
+          "Khalid Al-Rashid"
+        ],
+        "lang": "阿拉伯语",
+        "keywords": [
+          "التكنولوجيا",
+          "السياحة الثقافية",
+          "الابتكار"
+        ],
+        "citations": 3,
+        "journal": "مجلة السياحة"
+      }
+    },
+    "paper_P008": {
+      "id": "paper_P008",
+      "type": "papers",
+      "name": "AI-Powered Knowledge Serv",
+      "category": "文献",
+      "properties": {
+        "title": "AI-Powered Knowledge Services for Cross-Cultural Tourism",
+        "year": 2025,
+        "authors": [
+          "Zhang Ming",
+          "Chen Wei",
+          "Li Hua"
+        ],
+        "lang": "英文",
+        "keywords": [
+          "AI",
+          "knowledge service",
+          "cross-cultural tourism"
+        ],
+        "citations": 4,
+        "journal": "J. of Informetrics"
+      }
+    },
+    "paper_P009": {
+      "id": "paper_P009",
+      "type": "papers",
+      "name": "沙特阿拉伯愿景中的文旅融合战略",
+      "category": "文献",
+      "properties": {
+        "title": "沙特阿拉伯愿景中的文旅融合战略",
+        "year": 2024,
+        "authors": [
+          "周瑜",
+          "赵强"
+        ],
+        "lang": "中文",
+        "keywords": [
+          "沙特",
+          "2030愿景",
+          "文旅融合"
+        ],
+        "citations": 7,
+        "journal": "阿拉伯世界研究"
+      }
+    },
+    "paper_P010": {
+      "id": "paper_P010",
+      "type": "papers",
+      "name": "中阿高校旅游管理学科合作网络分析",
+      "category": "文献",
+      "properties": {
+        "title": "中阿高校旅游管理学科合作网络分析",
+        "year": 2023,
+        "authors": [
+          "刘洋",
+          "Ahmed Hassan",
+          "李华"
+        ],
+        "lang": "中文",
+        "keywords": [
+          "旅游教育",
+          "学科合作",
+          "中阿高校"
+        ],
+        "citations": 4,
+        "journal": "大学图书馆学报"
+      }
+    },
+    "paper_P011": {
+      "id": "paper_P011",
+      "type": "papers",
+      "name": "السياحة المستدامة في المن",
+      "category": "文献",
+      "properties": {
+        "title": "السياحة المستدامة في المنطقة العربية",
+        "year": 2024,
+        "authors": [
+          "Nadia Mansour",
+          "周瑜"
+        ],
+        "lang": "阿拉伯语",
+        "keywords": [
+          "سياحة مستدامة",
+          "البيئة",
+          "التنمية"
+        ],
+        "citations": 6,
+        "journal": "مجلة البيئة"
+      }
+    },
+    "paper_P012": {
+      "id": "paper_P012",
+      "type": "papers",
+      "name": "基于大语言模型的阿拉伯语文献智能检索系统",
+      "category": "文献",
+      "properties": {
+        "title": "基于大语言模型的阿拉伯语文献智能检索系统",
+        "year": 2025,
+        "authors": [
+          "张明",
+          "王芳"
+        ],
+        "lang": "中文",
+        "keywords": [
+          "大语言模型",
+          "阿拉伯语",
+          "智能检索"
+        ],
+        "citations": 3,
+        "journal": "情报学报"
+      }
+    },
+    "author_张明": {
+      "id": "author_张明",
+      "type": "authors",
+      "name": "张明",
+      "category": "作者",
+      "properties": {
+        "institution": "北京第二外国语学院",
+        "field": "图书馆学",
+        "papers": [
+          "P001",
+          "P008",
+          "P012"
+        ],
+        "h_index": 5
+      }
+    },
+    "author_李华": {
+      "id": "author_李华",
+      "type": "authors",
+      "name": "李华",
+      "category": "作者",
+      "properties": {
+        "institution": "北京第二外国语学院",
+        "field": "旅游管理",
+        "papers": [
+          "P002",
+          "P005",
+          "P008",
+          "P010"
+        ],
+        "h_index": 6
+      }
+    },
+    "author_王芳": {
+      "id": "author_王芳",
+      "type": "authors",
+      "name": "王芳",
+      "category": "作者",
+      "properties": {
+        "institution": "北京第二外国语学院",
+        "field": "信息管理",
+        "papers": [
+          "P002",
+          "P006",
+          "P012"
+        ],
+        "h_index": 4
+      }
+    },
+    "author_赵强": {
+      "id": "author_赵强",
+      "type": "authors",
+      "name": "赵强",
+      "category": "作者",
+      "properties": {
+        "institution": "北京第二外国语学院",
+        "field": "区域经济",
+        "papers": [
+          "P005",
+          "P009"
+        ],
+        "h_index": 3
+      }
+    },
+    "author_周瑜": {
+      "id": "author_周瑜",
+      "type": "authors",
+      "name": "周瑜",
+      "category": "作者",
+      "properties": {
+        "institution": "北京外国语大学",
+        "field": "阿拉伯语",
+        "papers": [
+          "P009",
+          "P011"
+        ],
+        "h_index": 3
+      }
+    },
+    "author_刘洋": {
+      "id": "author_刘洋",
+      "type": "authors",
+      "name": "刘洋",
+      "category": "作者",
+      "properties": {
+        "institution": "北京外国语大学",
+        "field": "阿拉伯语",
+        "papers": [
+          "P003",
+          "P010"
+        ],
+        "h_index": 4
+      }
+    },
+    "author_Ahmed Hassan": {
+      "id": "author_Ahmed Hassan",
+      "type": "authors",
+      "name": "Ahmed Hassan",
+      "category": "作者",
+      "properties": {
+        "institution": "开罗大学",
+        "field": "文化遗产",
+        "papers": [
+          "P001",
+          "P010"
+        ],
+        "h_index": 7
+      }
+    },
+    "author_Sara Al-Ali": {
+      "id": "author_Sara Al-Ali",
+      "type": "authors",
+      "name": "Sara Al-Ali",
+      "category": "作者",
+      "properties": {
+        "institution": "阿联酋大学",
+        "field": "旅游管理",
+        "papers": [
+          "P002"
+        ],
+        "h_index": 5
+      }
+    },
+    "author_Mohammed Ali": {
+      "id": "author_Mohammed Ali",
+      "type": "authors",
+      "name": "Mohammed Ali",
+      "category": "作者",
+      "properties": {
+        "institution": "开罗大学",
+        "field": "文化遗产",
+        "papers": [
+          "P003"
+        ],
+        "h_index": 6
+      }
+    },
+    "author_Chen Wei": {
+      "id": "author_Chen Wei",
+      "type": "authors",
+      "name": "Chen Wei",
+      "category": "作者",
+      "properties": {
+        "institution": "中山大学",
+        "field": "数字人文",
+        "papers": [
+          "P004",
+          "P008"
+        ],
+        "h_index": 8
+      }
+    },
+    "author_Fatima Al-Zahra": {
+      "id": "author_Fatima Al-Zahra",
+      "type": "authors",
+      "name": "Fatima Al-Zahra",
+      "category": "作者",
+      "properties": {
+        "institution": "阿联酋大学",
+        "field": "文化遗产",
+        "papers": [
+          "P004"
+        ],
+        "h_index": 4
+      }
+    },
+    "author_Sarah Johnson": {
+      "id": "author_Sarah Johnson",
+      "type": "authors",
+      "name": "Sarah Johnson",
+      "category": "作者",
+      "properties": {
+        "institution": "阿联酋大学",
+        "field": "旅游行为",
+        "papers": [
+          "P006"
+        ],
+        "h_index": 6
+      }
+    },
+    "author_Khalid Al-Rashid": {
+      "id": "author_Khalid Al-Rashid",
+      "type": "authors",
+      "name": "Khalid Al-Rashid",
+      "category": "作者",
+      "properties": {
+        "institution": "沙特国王大学",
+        "field": "旅游科技",
+        "papers": [
+          "P007"
+        ],
+        "h_index": 4
+      }
+    },
+    "author_Zhang Ming": {
+      "id": "author_Zhang Ming",
+      "type": "authors",
+      "name": "Zhang Ming",
+      "category": "作者",
+      "properties": {
+        "institution": "北京第二外国语学院",
+        "field": "知识服务",
+        "papers": [
+          "P008"
+        ],
+        "h_index": 5
+      }
+    },
+    "author_Li Hua": {
+      "id": "author_Li Hua",
+      "type": "authors",
+      "name": "Li Hua",
+      "category": "作者",
+      "properties": {
+        "institution": "北京第二外国语学院",
+        "field": "旅游管理",
+        "papers": [
+          "P008"
+        ],
+        "h_index": 6
+      }
+    },
+    "author_Nadia Mansour": {
+      "id": "author_Nadia Mansour",
+      "type": "authors",
+      "name": "Nadia Mansour",
+      "category": "作者",
+      "properties": {
+        "institution": "沙特国王大学",
+        "field": "可持续旅游",
+        "papers": [
+          "P011"
+        ],
+        "h_index": 5
+      }
+    },
+    "inst_北京第二外国语学院": {
+      "id": "inst_北京第二外国语学院",
+      "type": "institutions",
+      "name": "北京第二外国语学院",
+      "category": "机构",
+      "properties": {
+        "type": "大学",
+        "location": "北京",
+        "country": "中国",
+        "features": [
+          "外语",
+          "旅游",
+          "区域国别"
+        ],
+        "papers_count": 5
+      }
+    },
+    "inst_北京外国语大学": {
+      "id": "inst_北京外国语大学",
+      "type": "institutions",
+      "name": "北京外国语大学",
+      "category": "机构",
+      "properties": {
+        "type": "大学",
+        "location": "北京",
+        "country": "中国",
+        "features": [
+          "外语",
+          "国际传播"
+        ],
+        "papers_count": 3
+      }
+    },
+    "inst_中山大学": {
+      "id": "inst_中山大学",
+      "type": "institutions",
+      "name": "中山大学",
+      "category": "机构",
+      "properties": {
+        "type": "大学",
+        "location": "广州",
+        "country": "中国",
+        "features": [
+          "数字人文",
+          "图书情报"
+        ],
+        "papers_count": 2
+      }
+    },
+    "inst_开罗大学": {
+      "id": "inst_开罗大学",
+      "type": "institutions",
+      "name": "开罗大学",
+      "category": "机构",
+      "properties": {
+        "type": "大学",
+        "location": "开罗",
+        "country": "埃及",
+        "features": [
+          "文化遗产",
+          "考古"
+        ],
+        "papers_count": 2
+      }
+    },
+    "inst_阿联酋大学": {
+      "id": "inst_阿联酋大学",
+      "type": "institutions",
+      "name": "阿联酋大学",
+      "category": "机构",
+      "properties": {
+        "type": "大学",
+        "location": "阿布扎比",
+        "country": "阿联酋",
+        "features": [
+          "旅游管理",
+          "国际研究"
+        ],
+        "papers_count": 3
+      }
+    },
+    "inst_沙特国王大学": {
+      "id": "inst_沙特国王大学",
+      "type": "institutions",
+      "name": "沙特国王大学",
+      "category": "机构",
+      "properties": {
+        "type": "大学",
+        "location": "利雅得",
+        "country": "沙特",
+        "features": [
+          "旅游科技",
+          "可持续发展"
+        ],
+        "papers_count": 2
+      }
+    },
+    "topic_文化遗产数字化": {
+      "id": "topic_文化遗产数字化",
+      "type": "topic",
+      "name": "文化遗产数字化",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_旅游合作与经济": {
+      "id": "topic_旅游合作与经济",
+      "type": "topic",
+      "name": "旅游合作与经济",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_跨文化旅游传播": {
+      "id": "topic_跨文化旅游传播",
+      "type": "topic",
+      "name": "跨文化旅游传播",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_阿拉伯文旅政策": {
+      "id": "topic_阿拉伯文旅政策",
+      "type": "topic",
+      "name": "阿拉伯文旅政策",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_AI与知识服务": {
+      "id": "topic_AI与知识服务",
+      "type": "topic",
+      "name": "AI与知识服务",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_旅游教育与科研": {
+      "id": "topic_旅游教育与科研",
+      "type": "topic",
+      "name": "旅游教育与科研",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_可持续旅游": {
+      "id": "topic_可持续旅游",
+      "type": "topic",
+      "name": "可持续旅游",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_中阿关系研究": {
+      "id": "topic_中阿关系研究",
+      "type": "topic",
+      "name": "中阿关系研究",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_数字人文": {
+      "id": "topic_数字人文",
+      "type": "topic",
+      "name": "数字人文",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_跨语言信息处理": {
+      "id": "topic_跨语言信息处理",
+      "type": "topic",
+      "name": "跨语言信息处理",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_一带一路文旅": {
+      "id": "topic_一带一路文旅",
+      "type": "topic",
+      "name": "一带一路文旅",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_智慧旅游": {
+      "id": "topic_智慧旅游",
+      "type": "topic",
+      "name": "智慧旅游",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_区域国别研究": {
+      "id": "topic_区域国别研究",
+      "type": "topic",
+      "name": "区域国别研究",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_文旅融合": {
+      "id": "topic_文旅融合",
+      "type": "topic",
+      "name": "文旅融合",
+      "category": "主题",
+      "properties": {}
+    },
+    "topic_多语种资源建设": {
+      "id": "topic_多语种资源建设",
+      "type": "topic",
+      "name": "多语种资源建设",
+      "category": "主题",
+      "properties": {}
+    },
+    "loc_北京": {
+      "id": "loc_北京",
+      "type": "location",
+      "name": "北京",
+      "category": "地点",
+      "properties": {}
+    },
+    "loc_广州": {
+      "id": "loc_广州",
+      "type": "location",
+      "name": "广州",
+      "category": "地点",
+      "properties": {}
+    },
+    "loc_开罗": {
+      "id": "loc_开罗",
+      "type": "location",
+      "name": "开罗",
+      "category": "地点",
+      "properties": {}
+    },
+    "loc_阿布扎比": {
+      "id": "loc_阿布扎比",
+      "type": "location",
+      "name": "阿布扎比",
+      "category": "地点",
+      "properties": {}
+    },
+    "loc_利雅得": {
+      "id": "loc_利雅得",
+      "type": "location",
+      "name": "利雅得",
+      "category": "地点",
+      "properties": {}
+    },
+    "loc_丝绸之路": {
+      "id": "loc_丝绸之路",
+      "type": "location",
+      "name": "丝绸之路",
+      "category": "地点",
+      "properties": {}
+    },
+    "loc_阿联酋": {
+      "id": "loc_阿联酋",
+      "type": "location",
+      "name": "阿联酋",
+      "category": "地点",
+      "properties": {}
+    },
+    "loc_沙特阿拉伯": {
+      "id": "loc_沙特阿拉伯",
+      "type": "location",
+      "name": "沙特阿拉伯",
+      "category": "地点",
+      "properties": {}
+    },
+    "loc_埃及": {
+      "id": "loc_埃及",
+      "type": "location",
+      "name": "埃及",
+      "category": "地点",
+      "properties": {}
+    },
+    "loc_中国": {
+      "id": "loc_中国",
+      "type": "location",
+      "name": "中国",
+      "category": "地点",
+      "properties": {}
+    },
+    "pol_中阿合作论坛20": {
+      "id": "pol_中阿合作论坛20",
+      "type": "policies",
+      "name": "中阿合作论坛2024-2026行动计划",
+      "category": "政策",
+      "properties": {
+        "name": "中阿合作论坛2024-2026行动计划",
+        "year": 2024,
+        "type": "国际合作"
+      }
+    },
+    "pol_沙特2030愿景": {
+      "id": "pol_沙特2030愿景",
+      "type": "policies",
+      "name": "沙特2030愿景旅游战略",
+      "category": "政策",
+      "properties": {
+        "name": "沙特2030愿景旅游战略",
+        "year": 2023,
+        "type": "国家战略"
+      }
+    },
+    "pol_一带一路文旅合作": {
+      "id": "pol_一带一路文旅合作",
+      "type": "policies",
+      "name": "一带一路文旅合作指导意见",
+      "category": "政策",
+      "properties": {
+        "name": "一带一路文旅合作指导意见",
+        "year": 2024,
+        "type": "国家政策"
+      }
+    },
+    "pol_埃及文化旅游振兴": {
+      "id": "pol_埃及文化旅游振兴",
+      "type": "policies",
+      "name": "埃及文化旅游振兴计划",
+      "category": "政策",
+      "properties": {
+        "name": "埃及文化旅游振兴计划",
+        "year": 2024,
+        "type": "国家计划"
+      }
+    },
+    "pol_中阿文明对话倡议": {
+      "id": "pol_中阿文明对话倡议",
+      "type": "policies",
+      "name": "中阿文明对话倡议",
+      "category": "政策",
+      "properties": {
+        "name": "中阿文明对话倡议",
+        "year": 2025,
+        "type": "国际倡议"
+      }
+    },
+    "proj_中阿文化遗产数字": {
+      "id": "proj_中阿文化遗产数字",
+      "type": "projects",
+      "name": "中阿文化遗产数字化保护与智能服务",
+      "category": "项目",
+      "properties": {
+        "name": "中阿文化遗产数字化保护与智能服务",
+        "fund": "国家社科基金",
+        "year": 2024
+      }
+    },
+    "proj_一带一路文旅融合": {
+      "id": "proj_一带一路文旅融合",
+      "type": "projects",
+      "name": "一带一路文旅融合与国际传播研究",
+      "category": "项目",
+      "properties": {
+        "name": "一带一路文旅融合与国际传播研究",
+        "fund": "教育部人文社科",
+        "year": 2023
+      }
+    },
+    "proj_阿拉伯语资源智能": {
+      "id": "proj_阿拉伯语资源智能",
+      "type": "projects",
+      "name": "阿拉伯语资源智能处理与知识服务平台",
+      "category": "项目",
+      "properties": {
+        "name": "阿拉伯语资源智能处理与知识服务平台",
+        "fund": "北京市社科基金",
+        "year": 2024
+      }
+    },
+    "proj_世界模型驱动的高": {
+      "id": "proj_世界模型驱动的高",
+      "type": "projects",
+      "name": "世界模型驱动的高校图书馆智能学科服务",
+      "category": "项目",
+      "properties": {
+        "name": "世界模型驱动的高校图书馆智能学科服务",
+        "fund": "挑战杯项目",
+        "year": 2026
+      }
+    },
+    "proj_多语种学术知识对": {
+      "id": "proj_多语种学术知识对",
+      "type": "projects",
+      "name": "多语种学术知识对齐与世界模型研究",
+      "category": "项目",
+      "properties": {
+        "name": "多语种学术知识对齐与世界模型研究",
+        "fund": "北二外校内课题",
+        "year": 2025
+      }
+    },
+    "term_文化遗产": {
+      "id": "term_文化遗产",
+      "type": "terms",
+      "name": "文化遗产",
+      "category": "术语",
+      "properties": {}
+    },
+    "term_文化旅游": {
+      "id": "term_文化旅游",
+      "type": "terms",
+      "name": "文化旅游",
+      "category": "术语",
+      "properties": {}
+    },
+    "term_数字化": {
+      "id": "term_数字化",
+      "type": "terms",
+      "name": "数字化",
+      "category": "术语",
+      "properties": {}
+    },
+    "term_可持续发展": {
+      "id": "term_可持续发展",
+      "type": "terms",
+      "name": "可持续发展",
+      "category": "术语",
+      "properties": {}
+    },
+    "term_一带一路": {
+      "id": "term_一带一路",
+      "type": "terms",
+      "name": "一带一路",
+      "category": "术语",
+      "properties": {}
+    },
+    "term_中阿合作": {
+      "id": "term_中阿合作",
+      "type": "terms",
+      "name": "中阿合作",
+      "category": "术语",
+      "properties": {}
+    },
+    "term_人工智能": {
+      "id": "term_人工智能",
+      "type": "terms",
+      "name": "人工智能",
+      "category": "术语",
+      "properties": {}
+    },
+    "term_知识图谱": {
+      "id": "term_知识图谱",
+      "type": "terms",
+      "name": "知识图谱",
+      "category": "术语",
+      "properties": {}
+    },
+    "term_智慧旅游": {
+      "id": "term_智慧旅游",
+      "type": "terms",
+      "name": "智慧旅游",
+      "category": "术语",
+      "properties": {}
+    },
+    "term_跨文化传播": {
+      "id": "term_跨文化传播",
+      "type": "terms",
+      "name": "跨文化传播",
+      "category": "术语",
+      "properties": {}
+    },
+    "term_大语言模型": {
+      "id": "term_大语言模型",
+      "type": "terms",
+      "name": "大语言模型",
+      "category": "术语",
+      "properties": {}
+    },
+    "term_数字人文": {
+      "id": "term_数字人文",
+      "type": "terms",
+      "name": "数字人文",
+      "category": "术语",
+      "properties": {}
+    }
+  },
+  "relations": [
+    {
+      "type": "cites",
+      "source": "paper_P001",
+      "target": "paper_P004",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P001",
+      "target": "paper_P008",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P002",
+      "target": "paper_P005",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P002",
+      "target": "paper_P010",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P003",
+      "target": "paper_P001",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P003",
+      "target": "paper_P011",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P004",
+      "target": "paper_P008",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P005",
+      "target": "paper_P009",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P006",
+      "target": "paper_P002",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P007",
+      "target": "paper_P003",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P007",
+      "target": "paper_P011",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P009",
+      "target": "paper_P004",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P009",
+      "target": "paper_P007",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P010",
+      "target": "paper_P008",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P011",
+      "target": "paper_P007",
+      "properties": {}
+    },
+    {
+      "type": "cites",
+      "source": "paper_P012",
+      "target": "paper_P008",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_张明",
+      "target": "inst_北京第二外国语学院",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_李华",
+      "target": "inst_北京第二外国语学院",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_王芳",
+      "target": "inst_北京第二外国语学院",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_赵强",
+      "target": "inst_北京第二外国语学院",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_周瑜",
+      "target": "inst_北京外国语大学",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_刘洋",
+      "target": "inst_北京外国语大学",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_Ahmed Hassan",
+      "target": "inst_开罗大学",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_Mohammed Ali",
+      "target": "inst_开罗大学",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_Chen Wei",
+      "target": "inst_中山大学",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_Fatima Al-Zahra",
+      "target": "inst_阿联酋大学",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_Sarah Johnson",
+      "target": "inst_阿联酋大学",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_Khalid Al-Rashid",
+      "target": "inst_沙特国王大学",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_Nadia Mansour",
+      "target": "inst_沙特国王大学",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_Zhang Ming",
+      "target": "inst_北京第二外国语学院",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_Li Hua",
+      "target": "inst_北京第二外国语学院",
+      "properties": {}
+    },
+    {
+      "type": "affiliated_with",
+      "source": "author_Sara Al-Ali",
+      "target": "inst_阿联酋大学",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_文化遗产数字化",
+      "target": "paper_P001",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_文化遗产数字化",
+      "target": "paper_P004",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_旅游合作与经济",
+      "target": "paper_P005",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_旅游合作与经济",
+      "target": "paper_P009",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_跨文化旅游传播",
+      "target": "paper_P002",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_跨文化旅游传播",
+      "target": "paper_P006",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_阿拉伯文旅政策",
+      "target": "paper_P007",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_阿拉伯文旅政策",
+      "target": "paper_P009",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_阿拉伯文旅政策",
+      "target": "paper_P011",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_AI与知识服务",
+      "target": "paper_P008",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_AI与知识服务",
+      "target": "paper_P012",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_旅游教育与科研",
+      "target": "paper_P010",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_可持续旅游",
+      "target": "paper_P011",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_一带一路文旅",
+      "target": "paper_P004",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_一带一路文旅",
+      "target": "paper_P009",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_数字人文",
+      "target": "paper_P001",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_数字人文",
+      "target": "paper_P012",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_智慧旅游",
+      "target": "paper_P006",
+      "properties": {}
+    },
+    {
+      "type": "related_to",
+      "source": "topic_智慧旅游",
+      "target": "paper_P007",
+      "properties": {}
+    },
+    {
+      "type": "influences",
+      "source": "pol_中阿合作论坛20",
+      "target": "topic_旅游合作与经济",
+      "properties": {}
+    },
+    {
+      "type": "influences",
+      "source": "pol_中阿合作论坛20",
+      "target": "topic_文化遗产数字化",
+      "properties": {}
+    },
+    {
+      "type": "influences",
+      "source": "pol_中阿合作论坛20",
+      "target": "topic_跨文化旅游传播",
+      "properties": {}
+    },
+    {
+      "type": "influences",
+      "source": "pol_沙特2030愿景",
+      "target": "topic_阿拉伯文旅政策",
+      "properties": {}
+    },
+    {
+      "type": "influences",
+      "source": "pol_沙特2030愿景",
+      "target": "topic_可持续旅游",
+      "properties": {}
+    },
+    {
+      "type": "influences",
+      "source": "pol_一带一路文旅合作",
+      "target": "topic_旅游合作与经济",
+      "properties": {}
+    },
+    {
+      "type": "influences",
+      "source": "pol_一带一路文旅合作",
+      "target": "topic_跨文化旅游传播",
+      "properties": {}
+    },
+    {
+      "type": "influences",
+      "source": "pol_一带一路文旅合作",
+      "target": "topic_一带一路文旅",
+      "properties": {}
+    },
+    {
+      "type": "influences",
+      "source": "pol_埃及文化旅游振兴",
+      "target": "topic_文化遗产数字化",
+      "properties": {}
+    },
+    {
+      "type": "influences",
+      "source": "pol_埃及文化旅游振兴",
+      "target": "topic_可持续旅游",
+      "properties": {}
+    },
+    {
+      "type": "influences",
+      "source": "pol_中阿文明对话倡议",
+      "target": "topic_跨文化旅游传播",
+      "properties": {}
+    },
+    {
+      "type": "influences",
+      "source": "pol_中阿文明对话倡议",
+      "target": "topic_中阿关系研究",
+      "properties": {}
+    },
+    {
+      "type": "located_in",
+      "source": "inst_北京第二外国语学院",
+      "target": "loc_北京",
+      "properties": {}
+    },
+    {
+      "type": "located_in",
+      "source": "inst_北京外国语大学",
+      "target": "loc_北京",
+      "properties": {}
+    },
+    {
+      "type": "located_in",
+      "source": "inst_中山大学",
+      "target": "loc_广州",
+      "properties": {}
+    },
+    {
+      "type": "located_in",
+      "source": "inst_开罗大学",
+      "target": "loc_开罗",
+      "properties": {}
+    },
+    {
+      "type": "located_in",
+      "source": "inst_阿联酋大学",
+      "target": "loc_阿布扎比",
+      "properties": {}
+    },
+    {
+      "type": "located_in",
+      "source": "inst_沙特国王大学",
+      "target": "loc_利雅得",
+      "properties": {}
+    },
+    {
+      "type": "describes",
+      "source": "term_文化遗产",
+      "target": "topic_文化遗产数字化",
+      "properties": {}
+    },
+    {
+      "type": "describes",
+      "source": "term_文化旅游",
+      "target": "topic_跨文化旅游传播",
+      "properties": {}
+    },
+    {
+      "type": "describes",
+      "source": "term_数字化",
+      "target": "topic_文化遗产数字化",
+      "properties": {}
+    },
+    {
+      "type": "describes",
+      "source": "term_可持续发展",
+      "target": "topic_可持续旅游",
+      "properties": {}
+    },
+    {
+      "type": "describes",
+      "source": "term_一带一路",
+      "target": "topic_一带一路文旅",
+      "properties": {}
+    },
+    {
+      "type": "describes",
+      "source": "term_中阿合作",
+      "target": "topic_中阿关系研究",
+      "properties": {}
+    },
+    {
+      "type": "describes",
+      "source": "term_人工智能",
+      "target": "topic_AI与知识服务",
+      "properties": {}
+    },
+    {
+      "type": "describes",
+      "source": "term_知识图谱",
+      "target": "topic_AI与知识服务",
+      "properties": {}
+    },
+    {
+      "type": "describes",
+      "source": "term_智慧旅游",
+      "target": "topic_智慧旅游",
+      "properties": {}
+    },
+    {
+      "type": "describes",
+      "source": "term_跨文化传播",
+      "target": "topic_跨文化旅游传播",
+      "properties": {}
+    },
+    {
+      "type": "describes",
+      "source": "term_大语言模型",
+      "target": "topic_AI与知识服务",
+      "properties": {}
+    },
+    {
+      "type": "describes",
+      "source": "term_数字人文",
+      "target": "topic_数字人文",
+      "properties": {}
+    },
+    {
+      "type": "funds",
+      "source": "proj_中阿文化遗产数字",
+      "target": "topic_文化遗产数字化",
+      "properties": {}
+    },
+    {
+      "type": "funds",
+      "source": "proj_中阿文化遗产数字",
+      "target": "topic_AI与知识服务",
+      "properties": {}
+    },
+    {
+      "type": "funds",
+      "source": "proj_一带一路文旅融合",
+      "target": "topic_一带一路文旅",
+      "properties": {}
+    },
+    {
+      "type": "funds",
+      "source": "proj_一带一路文旅融合",
+      "target": "topic_跨文化旅游传播",
+      "properties": {}
+    },
+    {
+      "type": "funds",
+      "source": "proj_阿拉伯语资源智能",
+      "target": "topic_AI与知识服务",
+      "properties": {}
+    },
+    {
+      "type": "funds",
+      "source": "proj_阿拉伯语资源智能",
+      "target": "topic_跨语言信息处理",
+      "properties": {}
+    },
+    {
+      "type": "funds",
+      "source": "proj_世界模型驱动的高",
+      "target": "topic_AI与知识服务",
+      "properties": {}
+    },
+    {
+      "type": "funds",
+      "source": "proj_世界模型驱动的高",
+      "target": "topic_旅游教育与科研",
+      "properties": {}
+    },
+    {
+      "type": "funds",
+      "source": "proj_多语种学术知识对",
+      "target": "topic_跨语言信息处理",
+      "properties": {}
+    },
+    {
+      "type": "funds",
+      "source": "proj_多语种学术知识对",
+      "target": "topic_数字人文",
+      "properties": {}
+    }
+  ],
+  "stats": {
+    "entities": 81,
+    "relations": 91
+  }
+}

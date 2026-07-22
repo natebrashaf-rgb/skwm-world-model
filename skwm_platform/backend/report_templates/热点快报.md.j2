@@ -1,0 +1,7 @@
+# 🔥 {{ topic }} — 热点快报
+> {{ date }}
+
+{% for h in hotspots[:3] %}### {{ loop.index }}. {{ h.name }}
+- 热度: {{ h.heat }}/100
+- 增长: {{ h.growth }}%
+{% endfor %}

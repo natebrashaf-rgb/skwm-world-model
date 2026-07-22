@@ -1,2 +1,5 @@
-# 零外部依赖！只用 Python 标准库
-# 什么包都不用装，直接运行
+fastapi
+uvicorn
+numpy
+xgboost
+requests
