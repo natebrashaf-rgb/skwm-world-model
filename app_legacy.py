@@ -24,6 +24,9 @@ class Engine:
         self.catalog = self._load_catalog()        # 200篇文献目录
         self.arabic = self._load_arabic()           # 4194篇阿语文献
         self.b1 = self._load_b1()                   # 11601篇文献主表
+        self.kg_stats = self._load_kg_stats()        # 知识图谱统计
+        self.core_terms = self._load_core_terms()    # 核心术语
+        self.term_align = self._load_term_align()    # 术语对齐表
         self.all = self.catalog + self.arabic + self.b1
         # 去重
         seen=set()
@@ -33,7 +36,30 @@ class Engine:
             if key not in seen:
                 seen.add(key); unique.append(p)
         self.all=unique
-        print(f'  ✅ 目录: {len(self.catalog)} + 阿语: {len(self.arabic)} + 主表: {len(self.b1)} = 总计: {len(self.all)} 篇')
+        print(f'  ✅ 目录:{len(self.catalog)} + 阿语:{len(self.arabic)} + 主表:{len(self.b1)} = 总计:{len(self.all)} 篇')
+        if self.kg_stats: print(f'  🕸️ 知识图谱: {self.kg_stats.get("nodes",0)}节点/{self.kg_stats.get("edges",0)}边')
+    def _load_kg_stats(self):
+        p=DATA_DIR/"datiao"/"知识图谱_知识图谱统计.json"
+        if not p.exists(): return {}
+        try: return json.loads(open(p,encoding='utf-8').read())
+        except: return {}
+    def _load_core_terms(self):
+        p=DATA_DIR/"datiao"/"知识图谱_核心术语.json"
+        if not p.exists(): return []
+        try:
+            c=open(p,encoding='utf-8').read()
+            if '_wm' in c[:50]: idx=c.index('{',50);c='['+c[idx:]
+            return json.loads(c)
+        except: return []
+    def _load_term_align(self):
+        p=DATA_DIR/"datiao"/"知识图谱_术语对齐表.json"
+        if not p.exists(): return {}
+        try:
+            c=open(p,encoding='utf-8').read()
+            if '_wm' in c[:50]: idx=c.index('{',50);c='['+c[idx:]
+            data=json.loads(c)
+            return {item.get('zh',''):item for item in data if isinstance(item,dict) and 'zh' in item}
+        except: return {}
     def _load_catalog(self):
         p=DATA_DIR/"literature_catalog.md"; papers=[]
         if not p.exists(): return papers
@@ -534,15 +560,37 @@ class H(BaseHTTPRequestHandler):
             y=params.get('year',['2024'])[0]
             lang=params.get('lang',['all'])[0]
             limit=int(params.get('limit',['50'])[0])
-            # 从搜索数据构建简易图
-            r=eng.search('',min(limit*2,100))
-            nodes=[{"id":f"p{i}","label":p.get('title','')[:20],"value":int(p.get('citations',0)or 10)+5,
-                    "entity_type":"文献","heat":int(p.get('citations',0)or 10),"growth":5,"centrality":0.5,"connections":3}
-                   for i,p in enumerate(r[:limit])]
+            # 使用真实知识图谱数据
+            kg=eng.kg_stats
+            entity_types=kg.get('entity_types',{}) if kg else {}
+            type_colors={"Paper":"#dbeafe","Topic":"#fef3c7","Author":"#ccfbf1","Country":"#d1fae5",
+                         "HeritageSite":"#fce7f3","Policy":"#ede9fe","Event":"#e0e7ff","Organization":"#f5f5f4","Concept":"#fef3c7"}
+            type_groups={"Paper":"文献","Topic":"主题","Author":"作者","Country":"地点",
+                         "HeritageSite":"文旅","Policy":"政策","Event":"事件","Organization":"机构","Concept":"概念"}
+            # 从文献数据生成图谱节点
+            papers_sample=eng.search('',min(limit*2,80))
+            nodes=[]
+            for i,pp in enumerate(papers_sample[:limit]):
+                etype="Paper"; c=type_colors.get(etype,"#dbeafe")
+                nodes.append({"id":f"p{i}","label":pp.get('title','')[:15],"value":int(pp.get('citations',0)or 10)+5,
+                              "entity_type":"文献","heat":int(pp.get('citations',0)or 10),"growth":5,"centrality":0.5,"connections":3,
+                              "color":{"background":c,"border":"#60a5fa","highlight":{"background":"#bfdbfe","border":"#2563eb"}}})
+            # 主题节点
+            if eng.core_terms:
+                for i,term in enumerate(eng.core_terms[:10]):
+                    name=term.get('zh',term.get('term',''))[:15] if isinstance(term,dict) else str(term)[:15]
+                    nodes.append({"id":f"t{i}","label":name,"value":15,"entity_type":"主题","heat":50,"growth":10,
+                                  "centrality":0.7,"connections":5,"color":{"background":"#fef3c7","border":"#fbbf24"}})
+            # 边
             edges=[]
-            for i in range(min(len(nodes)-1,limit-1)):
-                edges.append({"source":nodes[i]["id"],"target":nodes[i+1]["id"],"weight":1})
-            json_ok({"nodes":nodes,"edges":edges,"stats":{"nodes_rendered":len(nodes),"edges_rendered":len(edges)}})
+            for i in range(min(len(nodes)-1,limit)):
+                edges.append({"source":nodes[i]["id"],"target":nodes[i+1]["id"],"weight":1.5})
+            # 主题-文献连接
+            for i in range(min(5,len(nodes)-10)):
+                if len(nodes)>10+i:
+                    edges.append({"source":nodes[limit+i]["id"],"target":nodes[i]["id"],"weight":0.8})
+            json_ok({"nodes":nodes,"edges":edges,"stats":{"nodes_rendered":len(nodes),"edges_rendered":len(edges),
+                     "total_nodes":kg.get('nodes',0),"total_edges":kg.get('edges',0)}})
         
         elif pa=='/api/science-map/publication-trends':
             years=Counter()
@@ -553,9 +601,14 @@ class H(BaseHTTPRequestHandler):
             json_ok({"trends":trends})
         
         elif pa=='/api/science-map/entity-types':
-            types=[{"type":"文献","count":s['total']},{"type":"作者","count":397},{"type":"主题","count":820},
-                   {"type":"机构","count":120},{"type":"术语","count":312}]
-            json_ok({"types":types,"total_entities":s['total']})
+            kg=eng.kg_stats
+            et=kg.get('entity_types',{}) if kg else {}
+            types_list=[]
+            for k,v in et.items():
+                name_map={"Paper":"文献","Topic":"主题","Author":"作者","Country":"国家",
+                          "HeritageSite":"遗产地","Policy":"政策","Event":"事件","Organization":"机构","Concept":"概念"}
+                types_list.append({"type":name_map.get(k,k),"count":v})
+            json_ok({"types":types_list,"total_entities":sum(et.values()) if et else s['total']})
         
         elif pa=='/api/overview': json_ok(s)
         
