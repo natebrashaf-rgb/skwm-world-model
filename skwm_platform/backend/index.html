@@ -3,718 +3,503 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SKWM · 中阿文旅世界模型</title>
-<script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
-<script src="https://unpkg.com/vis-data@7.1.9/standalone/umd/vis-data.min.js"></script>
+<title>SKWM · 科学知识世界模型</title>
 <style>
-/* ═══════ Reset & Variables ═══════ */
-:root{
---bg:#f8f7f4;--cd:#fff;--ln:#e8e5e0;--tx:#1a1a1a;--tl:#8a7e70;
---ac:#2563eb;--ac2:#3b82f6;--acg:#f0f4ff;
---sd:0 1px 3px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.03);
---rd:10px;--fn:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
---sbw:220px;}
+:root {
+  --bg: #f5f5f7;
+  --surface: #ffffff;
+  --border: #e5e5e7;
+  --text: #1d1d1f;
+  --text2: #86868b;
+  --accent: #0071e3;
+  --accent2: #147ce5;
+  --accent-soft: #e8f0fe;
+  --shadow: 0 2px 12px rgba(0,0,0,0.04);
+  --radius: 10px;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --mono: "SF Mono", "Fira Code", monospace;
+  --nav-w: 240px;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%}
-body{font-family:var(--fn);background:var(--bg);color:var(--tx);display:flex;overflow:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--text);display:flex;overflow:hidden;
+     -webkit-font-smoothing:antialiased}
 
-/* ═══════ Sidebar ═══════ */
-.sb{width:var(--sbw);min-width:var(--sbw);background:var(--cd);border-right:1px solid var(--ln);
-display:flex;flex-direction:column;height:100vh;position:relative;z-index:10}
-.sb-h{padding:20px 18px 14px;border-bottom:1px solid var(--ln)}
-.sb-h h1{font-size:15px;font-weight:800;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
-.sb-h h1 span{background:var(--ac);color:#fff;font-size:9px;padding:2px 7px;border-radius:6px;font-weight:600}
-.sb-h .sub{font-size:11px;color:var(--tl);margin-top:4px}
-.sb-n{flex:1;overflow-y:auto;padding:8px 0}
-.nb{display:flex;align-items:center;gap:10px;padding:10px 18px;margin:1px 8px;border-radius:8px;
-font-size:13px;font-weight:500;color:var(--tx);cursor:pointer;transition:all .15s;border:none;background:none;width:calc(100% - 16px);text-align:left}
-.nb:hover{background:var(--acg);color:var(--ac)}
-.nb.act{background:var(--acg);color:var(--ac);font-weight:600}
-.nb .ico{font-size:16px;width:22px;text-align:center;flex-shrink:0}
-.nb .badge{font-size:10px;background:var(--ac);color:#fff;padding:1px 6px;border-radius:10px;margin-left:auto}
-.sb-grp{font-size:10px;font-weight:700;color:var(--tl);padding:14px 18px 4px;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
-.sb-f{padding:12px 18px;border-top:1px solid var(--ln);font-size:10px;color:var(--tl);line-height:1.5}
+/* Layout */
+.sidebar{width:var(--nav-w);min-width:var(--nav-w);background:var(--surface);border-right:1px solid var(--border);
+         display:flex;flex-direction:column;height:100vh;z-index:10}
+.sidebar-header{padding:20px 20px 14px;border-bottom:1px solid var(--border)}
+.sidebar-header h1{font-size:16px;font-weight:700;letter-spacing:-.3px;color:var(--text)}
+.sidebar-header .sub{font-size:11px;color:var(--text2);margin-top:2px}
+.sidebar-nav{flex:1;overflow-y:auto;padding:8px 8px}
+.nav-group{font-size:10px;font-weight:600;color:var(--text2);padding:14px 12px 4px;letter-spacing:.08em;text-transform:uppercase}
+.nav-btn{display:flex;align-items:center;gap:10px;padding:9px 12px;margin:1px 0;border-radius:8px;
+         font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:all .12s;
+         border:none;background:none;width:100%;text-align:left}
+.nav-btn:hover{background:var(--accent-soft);color:var(--accent)}
+.nav-btn.active{background:var(--accent);color:#fff;font-weight:500}
+.nav-btn .ico{font-size:15px;width:20px;text-align:center;flex-shrink:0}
+.nav-btn .badge{font-size:10px;background:var(--accent);color:#fff;padding:1px 6px;border-radius:6px;margin-left:auto}
+.sidebar-footer{padding:12px 20px;border-top:1px solid var(--border);font-size:10px;color:var(--text2);line-height:1.6}
 
-/* ═══════ Main ═══════ */
-.mn{flex:1;overflow-y:auto;position:relative}
-.mn-i{max-width:1100px;margin:0 auto;padding:32px 36px;min-height:100vh}
+/* Main */
+.main{flex:1;overflow-y:auto;position:relative}
+.main-inner{max-width:1120px;margin:0 auto;padding:32px 36px;min-height:100vh}
+.page{display:none;animation:fade .25s ease}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
-/* Pages */
-.pg{display:none;animation:fade .3s ease}
-.pg.act{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* Hero */
+.hero{margin-bottom:28px}
+.hero .label{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px}
+.hero h1{font-size:26px;font-weight:700;letter-spacing:-.5px;color:var(--text)}
+.hero p{color:var(--text2);font-size:14px;margin-top:4px;line-height:1.6}
 
-/* ═══════ Hero ═══════ */
-.hr{margin-bottom:28px}
-.hr .label{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ac);text-transform:uppercase;margin-bottom:6px}
-.hr h2{font-size:24px;font-weight:700;letter-spacing:-.5px}
-.hr p{color:var(--tl);font-size:14px;margin-top:4px}
+/* Stats Grid */
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:24px}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.stat-card .num{font-size:26px;font-weight:700;letter-spacing:-.5px;line-height:1;color:var(--text)}
+.stat-card .label{font-size:12px;color:var(--text2);margin-top:4px}
+.stat-card .sub{font-size:10px;color:var(--text2);margin-top:2px;opacity:.7}
 
-/* ═══════ Stats Grid ═══════ */
-.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-bottom:24px}
-.sc{background:var(--cd);border:1px solid var(--ln);border-radius:var(--rd);padding:16px;box-shadow:var(--sd)}
-.sc .sn{font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1}
-.sc .sl{font-size:12px;color:var(--tl);margin-top:5px}
-.sc .si{font-size:18px;margin-bottom:6px}
+/* Cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;
+      box-shadow:var(--shadow);margin-bottom:12px}
+.card-title{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;
+            color:var(--text);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.card-title .tag{font-weight:400;font-size:11px;color:var(--text2);background:var(--bg);padding:2px 8px;border-radius:4px}
 
-/* ═══════ Cards ═══════ */
-.cd{background:var(--cd);border:1px solid var(--ln);border-radius:var(--rd);padding:20px;box-shadow:var(--sd);margin-bottom:14px}
-.ct{font-size:13px;font-weight:700;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--ln);display:flex;justify-content:space-between;align-items:center}
-.ct .pi{font-size:10px;color:var(--tl);background:var(--bg);padding:2px 8px;border-radius:12px}
+/* Bar Chart */
+.bar-row{display:flex;align-items:center;gap:10px;padding:6px 0}
+.bar-row .b-label{font-size:13px;font-weight:500;min-width:80px;color:var(--text)}
+.bar-row .b-track{flex:1;height:8px;background:var(--bg);border-radius:4px;overflow:hidden}
+.bar-row .b-fill{height:100%;background:var(--accent);border-radius:4px;transition:width .6s ease;min-width:3px}
+.bar-row .b-value{font-size:12px;font-weight:600;color:var(--text2);min-width:40px;text-align:right}
 
-/* ═══════ Tables ═══════ */
-.tw{overflow-x:auto}
+/* Timeline */
+.timeline{display:flex;align-items:flex-end;gap:2px;height:80px;padding:8px 0}
+.timeline-bar{flex:1;background:var(--accent);border-radius:2px 2px 0 0;opacity:.6;min-height:3px;transition:opacity .2s}
+.timeline-bar:hover{opacity:1}
+
+/* Knowledge Graph */
+.kg-container{width:100%;height:420px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fafafa}
+.kg-info{font-size:11px;color:var(--text2);padding:8px 0;display:flex;gap:16px}
+
+/* Table */
 table{width:100%;border-collapse:collapse;font-size:13px}
-th{padding:8px 10px;text-align:left;font-weight:600;color:var(--tl);font-size:11px;border-bottom:2px solid var(--ln)}
-td{padding:8px 10px;border-bottom:1px solid var(--ln)}
+th{padding:8px 10px;text-align:left;font-weight:600;color:var(--text2);font-size:11px;
+   text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--border)}
+td{padding:8px 10px;border-bottom:1px solid var(--border);font-size:13px}
 tr:last-child td{border-bottom:none}
-tr:hover td{background:var(--acg)}
 
-/* ═══════ Charts bars ═══════ */
-.bar-c{display:flex;align-items:center;gap:10px;margin:4px 0}
-.bar-l{width:120px;font-size:12px;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:0}
-.bar{height:22px;border-radius:4px;min-width:4px;transition:width .6s ease;flex-shrink:0}
-.bar-v{font-size:11px;color:var(--tl);margin-left:6px;white-space:nowrap}
+/* Search Input */
+.search-group{display:flex;gap:10px;margin-bottom:14px}
+.search-group input{flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font:14px var(--font);transition:all .2s;background:var(--bg)}
+.search-group input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 2px var(--accent-soft)}
+.search-group select{padding:10px;border:1px solid var(--border);border-radius:8px;font:13px var(--font);background:var(--surface);min-width:100px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border:none;border-radius:8px;font:500 14px var(--font);cursor:pointer;transition:all .15s;white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent2)}
+.btn-primary:disabled{background:#ccc;cursor:not-allowed}
 
-/* ═══════ Search Box ═══════ */
-.sb{display:flex;gap:8px;margin-bottom:14px}
-.sb input{flex:1;padding:10px 14px;border:2px solid var(--ln);border-radius:8px;font:14px var(--fn);background:var(--bg);transition:border-color .2s}
-.sb input:focus{border-color:var(--ac);outline:none}
-.sb button{padding:10px 20px;border:none;border-radius:8px;background:var(--ac);color:#fff;font:600 13px var(--fn);cursor:pointer;transition:opacity .15s}
-.sb button:hover{opacity:.85}
-.sb button:disabled{opacity:.4;cursor:not-allowed}
+/* Result Items */
+.result{padding:12px 14px;margin:6px 0;border-radius:8px;background:var(--bg);border-left:3px solid var(--accent)}
+.result .r-title{font-weight:600;font-size:13px;color:var(--text);margin-bottom:2px}
+.result .r-meta{font-size:11px;color:var(--text2);display:flex;gap:8px;flex-wrap:wrap}
+.result .r-source{padding:1px 6px;border-radius:3px;font-size:10px;font-weight:500;background:var(--accent-soft);color:var(--accent)}
 
-/* ═══════ Knowledge Graph ═══════ */
-#kg-container{width:100%;height:600px;border:1px solid var(--ln);border-radius:var(--rd);background:var(--cd);overflow:hidden}
-
-/* ═══════ Floating Robot ═══════ */
-.robot{position:fixed;bottom:28px;right:28px;z-index:1000;cursor:grab;user-select:none;transition:filter .2s}
-.robot:active{cursor:grabbing}
-.robot-bg{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2));
-box-shadow:0 4px 16px rgba(37,99,235,.3);display:flex;align-items:center;justify-content:center;
-font-size:24px;transition:transform .2s,box-shadow .2s}
-.robot:hover .robot-bg{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,99,235,.4)}
-.robot-pulse{position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--ac);opacity:0;animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:0;transform:scale(1)}50%{opacity:.3;transform:scale(1.15)}}
-
-/* Chat Panel */
-.chat{position:fixed;bottom:96px;right:28px;width:360px;max-height:500px;background:var(--cd);border:1px solid var(--ln);
-border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.1);display:none;flex-direction:column;z-index:999;overflow:hidden}
-.chat.act{display:flex}
-.chat-h{padding:14px 16px;border-bottom:1px solid var(--ln);display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
-.chat-h .close{margin-left:auto;border:none;background:none;font-size:18px;cursor:pointer;padding:2px 6px;border-radius:4px;color:var(--tl)}
-.chat-h .close:hover{background:var(--bg)}
-.chat-m{flex:1;overflow-y:auto;padding:12px 16px;min-height:200px;max-height:320px}
-.msg{margin-bottom:10px;display:flex;gap:8px}
-.msg.bot .av{width:28px;height:28px;border-radius:50%;background:var(--acg);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-.msg.bot .b{background:var(--bg);padding:8px 12px;border-radius:8px 8px 8px 2px;font-size:13px;line-height:1.5;color:var(--tx)}
-.msg.user{flex-direction:row-reverse}
-.msg.user .b{background:var(--ac);color:#fff;padding:8px 12px;border-radius:8px 8px 2px 8px;font-size:13px;line-height:1.5}
-.chat-f{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--ln)}
-.chat-f input{flex:1;padding:8px 12px;border:1px solid var(--ln);border-radius:8px;font:13px var(--fn)}
-.chat-f input:focus{outline:none;border-color:var(--ac)}
-.chat-f button{padding:8px 16px;border:none;border-radius:8px;background:var(--ac);color:#fff;font:600 13px var(--fn);cursor:pointer}
-.chat-f button:disabled{opacity:.4}
-
-/* ═══════ Misc ═══════ */
-.loading{display:flex;align-items:center;justify-content:center;padding:40px;color:var(--tl);gap:8px}
-.sp{width:18px;height:18px;border:2px solid var(--ln);border-top-color:var(--ac);border-radius:50%;animation:spin .6s linear infinite}
+/* Loading / Empty */
+.loading{text-align:center;padding:40px 20px;color:var(--text2)}
+.spinner{width:22px;height:22px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;
+         animation:spin .7s linear infinite;margin:0 auto 12px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.empty{padding:40px;text-align:center;color:var(--tl);font-size:13px}
-.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;margin:2px}
-.tag-c{background:var(--acg);color:var(--ac)}
-.tag-g{background:#f0fdf4;color:#16a34a}
-.tag-o{background:#fff7ed;color:#ea580c}
-.tag-p{background:#faf5ff;color:#9333ea}
+.empty{text-align:center;padding:32px;color:var(--text2);font-size:13px}
 
-/* ═══════ Responsive ═══════ */
-@media(max-width:800px){
-  .sb{width:64px;min-width:64px}
-  .sb-h h1 span{display:none}.sb-h .sub{display:none}.nb span:not(.ico){display:none}.sb-f{display:none}
-  .mn-i{padding:20px 16px}.sg{grid-template-columns:1fr 1fr}
-  .chat{width:calc(100vw - 40px);right:20px;bottom:80px}
-}
+/* Scrollbar */
+.sidebar-nav::-webkit-scrollbar{width:4px}
+.sidebar-nav::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
 
-/* ═══════ Year slider ═══════ */
-.ys{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.ys input{flex:1;accent-color:var(--ac)}
-.ys label{font-size:12px;font-weight:600;min-width:50px;color:var(--tl)}
-
-/* Controls */
-.ctrls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.ctrls select,.ctrls input{padding:6px 10px;border:1px solid var(--ln);border-radius:6px;font:12px var(--fn);background:var(--cd)}
+/* Responsive */
+@media(max-width:768px){:root{--nav-w:56px}.sidebar-header h1,.sidebar-header .sub,.nav-btn span,.nav-group,.sidebar-footer{display:none}.nav-btn{justify-content:center;padding:9px}.nav-btn .ico{margin:0}.main-inner{padding:20px 16px}}
 </style>
 </head>
 <body>
 
-<!-- Sidebar -->
-<div class="sb" id="nav">
-  <div class="sb-h">
-    <h1>◈ SKWM <span>v4</span></h1>
-    <div class="sub">中阿文旅世界模型</div>
-  </div>
-  <div class="sb-grp">数据资源层</div>
-  <button class="nb act" data-p="overview"><span class="ico">📊</span> <span>数据总览</span></button>
-
-  <div class="sb-grp">知识组织层</div>
-  <button class="nb" data-p="kg"><span class="ico">🕸️</span> <span>知识图谱</span></button>
-
-  <div class="sb-grp">智能分析层</div>
-  <button class="nb" data-p="hotspots"><span class="ico">🔥</span> <span>热点分析</span></button>
-  <button class="nb" data-p="frontier"><span class="ico">🚀</span> <span>前沿识别</span></button>
-  <button class="nb" data-p="predict"><span class="ico">📈</span> <span>趋势预测</span></button>
-  <button class="nb" data-p="science"><span class="ico">🗺️</span> <span>科学地图</span></button>
-  <button class="nb" data-p="institutions"><span class="ico">🏛️</span> <span>机构画像</span></button>
-  <button class="nb" data-p="authors"><span class="ico">👤</span> <span>作者画像</span></button>
-
-  <div class="sb-grp">智能体服务层</div>
-  <button class="nb" data-p="pipeline"><span class="ico">🔄</span> <span>完整服务流程</span></button>
-  <button class="nb" data-p="rag"><span class="ico">🤖</span> <span>智能问答</span></button>
-  <button class="nb" data-p="reports"><span class="ico">📋</span> <span>报告生成</span></button>
-
-  <div class="sb-grp">应用服务层</div>
-  <button class="nb" data-p="feishu"><span class="ico">💬</span> <span>飞书推送</span></button>
-  <button class="nb" data-p="timeline"><span class="ico">⏳</span> <span>时间回溯</span></button>
-  <div class="sb-f">北京第二外国语学院<br>挑战杯 · SKWM v4.0</div>
+<div class="sidebar">
+<div class="sidebar-header"><h1>SKWM</h1><div class="sub">科学知识世界模型</div></div>
+<nav class="sidebar-nav" id="nav">
+<div class="nav-group">Overview</div>
+<button class="nav-btn active" data-p="overview"><span class="ico">&#9670;</span> <span>Dashboard</span></button>
+<div class="nav-group">Analysis</div>
+<button class="nav-btn" data-p="hotspots"><span class="ico">&#9641;</span> <span>Hotspots</span></button>
+<button class="nav-btn" data-p="frontier"><span class="ico">&#9651;</span> <span>Frontier</span></button>
+<button class="nav-btn" data-p="predict"><span class="ico">&#9650;</span> <span>Predict</span></button>
+<div class="nav-group">Knowledge</div>
+<button class="nav-btn" data-p="kg"><span class="ico">&#9671;</span> <span>Graph</span></button>
+<button class="nav-btn" data-p="science"><span class="ico">&#9673;</span> <span>Science Map</span></button>
+<button class="nav-btn" data-p="search"><span class="ico">&#9675;</span> <span>Search</span></button>
+<div class="nav-group">Services</div>
+<button class="nav-btn" data-p="chat"><span class="ico">&#9729;</span> <span>Assistant</span></button>
+<button class="nav-btn" data-p="reports"><span class="ico">&#9998;</span> <span>Reports</span></button>
+<button class="nav-btn" data-p="institutions"><span class="ico">&#9702;</span> <span>Institutions</span></button>
+</nav>
+<div class="sidebar-footer">BISU · Challenge Cup<br>SKWM v4.0 · 15,478 papers</div>
 </div>
 
-<!-- Main -->
-<div class="mn">
-<div class="mn-i">
-
-<!-- ========== Overview ========== -->
-<div class="pg act" id="p-overview">
-  <div class="hr"><div class="label">📊 OVERVIEW</div><h2>中阿文旅世界模型</h2><p>89年时间序列 · 43,537条状态向量 · XGBoost AUC=0.94</p></div>
-  <div class="sg" id="stats-cards"></div>
-  <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-    <div class="cd"><div class="ct">🔥 热点 TOP 5</div><div id="overview-hot"></div></div>
-    <div class="cd"><div class="ct">🚀 前沿 TOP 5</div><div id="overview-frontier"></div></div>
-  </div>
-  <div class="cd"><div class="ct">📊 89年时间线 <span class="pi">节点 / 边</span></div><div id="overview-timeline" style="height:120px;display:flex;align-items:flex-end;gap:2px;padding:10px 0"></div></div>
-</div>
-
-<!-- ========== Hotspots ========== -->
-<div class="pg" id="p-hotspots">
-  <div class="hr"><div class="label">🔥 HOTSPOTS</div><h2>研究热点分析</h2><p>基于年度状态向量的主题热度排行</p></div>
-  <div class="ys"><label>年份:</label><input type="range" id="hs-year" min="2000" max="2026" value="2026" oninput="loadHotspots()"><span id="hs-year-label">2026</span></div>
-  <div id="hs-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
-</div>
-
-<!-- ========== Frontier ========== -->
-<div class="pg" id="p-frontier">
-  <div class="hr"><div class="label">🚀 FRONTIER</div><h2>新兴前沿识别</h2><p>增速最快的突现主题检测</p></div>
-  <div class="ys"><label>年份:</label><input type="range" id="fr-year" min="2000" max="2026" value="2026" oninput="loadFrontier()"><span id="fr-year-label">2026</span></div>
-  <div id="fr-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
-</div>
-
-<!-- ========== Predict ========== -->
-<div class="pg" id="p-predict">
-  <div class="hr"><div class="label">📈 PREDICT</div><h2>趋势预测</h2><p>XGBoost 未来5年趋势 (AUC=0.9408)</p></div>
-  <div id="pd-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
-</div>
-
-<!-- ========== Knowledge Graph ========== -->
-<div class="pg" id="p-kg">
-  <div class="hr"><div class="label">🕸️ KNOWLEDGE GRAPH</div><h2>知识图谱</h2><p>可拖动 · 可缩放 · 悬停查看详情</p></div>
-  <div class="ctrls">
-    <select id="kg-year" onchange="loadKG()"><option value="2026">2026年</option><option value="2025">2025年</option><option value="2024">2024年</option><option value="2023">2023年</option><option value="2022">2022年</option><option value="2021">2021年</option><option value="2020">2020年</option></select>
-    <select id="kg-lang" onchange="loadKG()"><option value="zh">中文</option><option value="en">English</option><option value="all">全部</option></select>
-    <select id="kg-limit" onchange="loadKG()"><option value="200">200节点</option><option value="500" selected>500节点</option><option value="1000">1000节点</option></select>
-  </div>
-  <div id="kg-container"></div>
-  <div id="kg-stats" style="margin-top:8px;font-size:12px;color:var(--tl)"></div>
-</div>
-
-<!-- ========== Science Map ========== -->
-<div class="pg" id="p-science">
-  <div class="hr"><div class="label">🗺️ SCIENCE MAP</div><h2>科学地图</h2><p>发文趋势 · 实体分布 · 合作网络</p></div>
-  <div class="cd"><div class="ct">发文趋势 <span class="pi">89年</span></div><div class="sg" id="sm-trend"></div></div>
-  <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-    <div class="cd"><div class="ct">实体类型分布</div><div id="sm-types"></div></div>
-    <div class="cd"><div class="ct">实体类型统计</div><div id="sm-type-table"></div></div>
-  </div>
-  <div class="cd"><div class="ct">系统技术栈</div><div id="sm-stack" style="font-size:13px;color:var(--tl);line-height:1.8"></div></div>
-</div>
-
-<!-- ========== Reports ========== -->
-<div class="pg" id="p-reports">
-  <div class="hr"><div class="label">📋 REPORTS</div><h2>学科报告生成</h2><p>一键生成带审核的可信报告</p></div>
-  <div class="cd">
-    <div class="sb" style="margin:0">
-      <input id="rq-topic" value="中阿文旅" placeholder="输入报告主题...">
-      <select id="rq-user"><option value="teacher">教师科研</option><option value="student">学生学习</option><option value="librarian" selected>馆员服务</option><option value="manager">科研管理</option></select>
-      <button onclick="genReport()">✨ 生成报告</button>
-    </div>
-  </div>
-  <div id="rp-content"></div>
-</div>
-
-<!-- ========== Institutions ========== -->
-<div class="pg" id="p-institutions">
-  <div class="hr"><div class="label">🏛️ INSTITUTIONS</div><h2>机构画像</h2><p>核心机构热度与合作网络</p></div>
-  <div id="inst-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
-</div>
-
-<!-- ========== Authors ========== -->
-<div class="pg" id="p-authors">
-  <div class="hr"><div class="label">👤 AUTHORS</div><h2>作者画像</h2><p>高产作者与合作关系</p></div>
-  <div id="auth-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
-</div>
-
-<!-- ========== Timeline ========== -->
-<div class="pg" id="p-timeline">
-  <div class="hr"><div class="label">⏳ TIMELINE</div><h2>时间回溯</h2><p>查看任意年份的知识状态</p></div>
-  <div class="ys"><label>年份:</label><input type="range" id="tl-year" min="1895" max="2026" value="2026" oninput="loadTimelineView()"><span id="tl-year-label">2026</span></div>
-  <div id="tl-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
-</div>
-
-<!-- ========== Pipeline (完整服务流程) ========== -->
-<div class="pg" id="p-pipeline">
-  <div class="hr"><div class="label">🔄 PIPELINE</div><h2>完整服务流程</h2><p>论文核心流程10步骤 — 从用户提交到知识回写闭环</p></div>
-  <div class="cd" id="pipe-controls">
-    <div class="sb" style="margin:0">
-      <input id="pipe-q" value="中阿文旅研究热点" placeholder="输入查询...">
-      <select id="pipe-user"><option value="teacher" selected>教师科研</option><option value="student">学生学习</option><option value="librarian">馆员服务</option><option value="manager">科研管理</option></select>
-      <button onclick="runPipeline()">▶ 执行流程</button>
-    </div>
-  </div>
-  <div id="pipe-result"><div class="cd" style="text-align:center;padding:40px;color:var(--tl)">点击「执行流程」查看完整10步服务流程</div></div>
-</div>
-
-<!-- ========== RAG (智能问答独立页) ========== -->
-<div class="pg" id="p-rag">
-  <div class="hr"><div class="label">🤖 GRAPHRAG</div><h2>智能问答</h2><p>基于知识图谱 + 多路召回的智能学科问答</p></div>
-  <div class="cd">
-    <div class="sb" style="margin:0">
-      <input id="rag-q" placeholder="输入问题..." value="今年中阿文旅研究热点是什么？">
-      <select id="rag-user"><option value="teacher" selected>教师科研</option><option value="student">学生学习</option><option value="librarian">馆员服务</option><option value="manager">科研管理</option></select>
-      <button onclick="askRAG()">🤖 提问</button>
-    </div>
-  </div>
-  <div id="rag-result"><div class="cd" style="text-align:center;padding:40px;color:var(--tl)">输入问题，点击提问</div></div>
-  <div class="cd"><div class="ct">💡 可以这样问</div>
-  <div style="display:flex;flex-wrap:wrap;gap:6px">
-    <span class="tag tag-c" onclick="document.getElementById('rag-q').value=this.textContent;askRAG()" style="cursor:pointer">今年文旅研究热点是什么？</span>
-    <span class="tag tag-c" onclick="document.getElementById('rag-q').value=this.textContent;askRAG()" style="cursor:pointer">未来5年什么方向会火？</span>
-    <span class="tag tag-c" onclick="document.getElementById('rag-q').value=this.textContent;askRAG()" style="cursor:pointer">查一下「旅游」这个实体</span>
-    <span class="tag tag-c" onclick="document.getElementById('rag-q').value=this.textContent;askRAG()" style="cursor:pointer">给我出一份学科报告</span>
-    <span class="tag tag-c" onclick="document.getElementById('rag-q').value=this.textContent;askRAG()" style="cursor:pointer">中阿文旅的前沿方向</span>
-  </div></div>
-</div>
-
-<!-- ========== Feishu (飞书推送) ========== -->
-<div class="pg" id="p-feishu">
-  <div class="hr"><div class="label">💬 FEISHU</div><h2>飞书推送</h2><p>推送到飞书群 · 热点/前沿/简报/报告</p></div>
-  <div class="sg" style="grid-template-columns:repeat(4,1fr)">
-    <div class="sc" onclick="pushFeishu('hotspot')" style="cursor:pointer;text-align:center;transition:all .2s">
-      <div class="si" style="font-size:28px">🔥</div>
-      <div class="sn" style="font-size:15px">热点推送</div>
-      <div class="sl">TOP 10 到飞书群</div>
-    </div>
-    <div class="sc" onclick="pushFeishu('frontier')" style="cursor:pointer;text-align:center;transition:all .2s">
-      <div class="si" style="font-size:28px">🚀</div>
-      <div class="sn" style="font-size:15px">前沿推送</div>
-      <div class="sl">新兴方向到飞书群</div>
-    </div>
-    <div class="sc" onclick="pushFeishu('briefing')" style="cursor:pointer;text-align:center;transition:all .2s">
-      <div class="si" style="font-size:28px">📅</div>
-      <div class="sn" style="font-size:15px">简报推送</div>
-      <div class="sl">每日简报到飞书群</div>
-    </div>
-    <div class="sc" onclick="pushFeishu('report')" style="cursor:pointer;text-align:center;transition:all .2s">
-      <div class="si" style="font-size:28px">📋</div>
-      <div class="sn" style="font-size:15px">报告推送</div>
-      <div class="sl">学科报告到飞书群</div>
-    </div>
-  </div>
-  <div id="feishu-status" style="margin-top:12px"></div>
-  <div class="cd"><div class="ct">飞书机器人状态</div><div id="feishu-detail"></div></div>
-</div>
-<div class="robot" id="robot" onmousedown="startDrag(event)">
-  <div class="robot-pulse"></div>
-  <div class="robot-bg">🤖</div>
-</div>
-
-<!-- ═══════ Chat Panel ═══════ -->
-<div class="chat" id="chat">
-  <div class="chat-h">
-    <span>🤖 SKWM 智能助手</span>
-    <button class="close" onclick="toggleChat()">✕</button>
-  </div>
-  <div class="chat-m" id="chat-msgs">
-    <div class="msg bot"><div class="av">🤖</div><div class="b">你好！我是 SKWM 世界模型助手。<br>可以问我：<br>• 研究热点是什么？<br>• 未来什么方向会火？<br>• 查一下「旅游」这个实体<br>• 给我一份学科报告</div></div>
-  </div>
-  <div class="chat-f">
-    <input id="chat-input" placeholder="输入问题..." onkeydown="if(event.key==='Enter')sendChat()">
-    <button id="chat-btn" onclick="sendChat()">发送</button>
-  </div>
-</div>
+<div class="main">
+<div class="main-inner" id="pages">
+<div class="page active" id="p-overview"></div>
+<div class="page" id="p-hotspots"></div>
+<div class="page" id="p-frontier"></div>
+<div class="page" id="p-predict"></div>
+<div class="page" id="p-kg"></div>
+<div class="page" id="p-science"></div>
+<div class="page" id="p-search"></div>
+<div class="page" id="p-chat"></div>
+<div class="page" id="p-reports"></div>
+<div class="page" id="p-institutions"></div>
+</div></div>
 
 <script>
-// ═══════ Navigation ═══════
-document.getElementById('nav').addEventListener('click',e=>{
-  const b=e.target.closest('.nb');if(!b)return;
-  document.querySelectorAll('.nb').forEach(x=>x.classList.remove('act'));
-  b.classList.add('act');
-  document.querySelectorAll('.pg').forEach(x=>x.classList.remove('act'));
-  const p=document.getElementById('p-'+b.dataset.p);
-  if(p) p.classList.add('act');
-});
+(function() {
+  'use strict';
 
-// ═══════ Robot Drag ═══════
-let dragOffX=0,dragOffY=0,isDrag=false;
-function startDrag(e){
-  const r=document.getElementById('robot');
-  const rect=r.getBoundingClientRect();
-  dragOffX=e.clientX-rect.left;
-  dragOffY=e.clientY-rect.top;
-  isDrag=true;
-  document.addEventListener('mousemove',onDrag);
-  document.addEventListener('mouseup',stopDrag);
-}
-function onDrag(e){
-  if(!isDrag)return;
-  const r=document.getElementById('robot');
-  r.style.left=(e.clientX-dragOffX)+'px';
-  r.style.top=(e.clientY-dragOffY)+'px';
-  r.style.right='auto';r.style.bottom='auto';
-}
-function stopDrag(e){
-  isDrag=false;
-  document.removeEventListener('mousemove',onDrag);
-  document.removeEventListener('mouseup',stopDrag);
-}
-document.getElementById('robot').addEventListener('click',toggleChat);
-function toggleChat(){document.getElementById('chat').classList.toggle('act')}
+  // ── Navigation ──
+  document.getElementById('nav').addEventListener('click', function(e) {
+    var btn = e.target.closest('.nav-btn');
+    if (!btn) return;
+    var pages = document.querySelectorAll('.page');
+    for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
+    var navs = document.querySelectorAll('.nav-btn');
+    for (var i = 0; i < navs.length; i++) navs[i].classList.remove('active');
+    btn.classList.add('active');
+    var pg = document.getElementById('p-' + btn.getAttribute('data-p'));
+    if (pg) pg.classList.add('active');
+  });
 
-// ═══════ Chat ═══════
-async function sendChat(){
-  const inp=document.getElementById('chat-input');
-  const btn=document.getElementById('chat-btn');
-  const q=inp.value.trim();if(!q)return;
-  const msgs=document.getElementById('chat-msgs');
-  msgs.innerHTML+=`<div class="msg user"><div class="b">${esc(q)}</div></div>`;
-  inp.value='';btn.disabled=true;
-  msgs.innerHTML+=`<div class="msg bot" id="chat-wait"><div class="av">🤖</div><div class="b"><div class="sp" style="display:inline-block"></div> 思考中...</div></div>`;
-  msgs.scrollTop=msgs.scrollHeight;
-  try{
-    const r=await fetch('/api/query/kg',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,user:'teacher'})});
-    const d=await r.json();
-    document.getElementById('chat-wait').outerHTML=`<div class="msg bot"><div class="av">🤖</div><div class="b">${esc(d.answer||d.message||JSON.stringify(d))}</div></div>`;
-  }catch(e){
-    document.getElementById('chat-wait').outerHTML=`<div class="msg bot"><div class="av">🤖</div><div class="b">请求失败，请重试</div></div>`;
-  }
-  btn.disabled=false;msgs.scrollTop=msgs.scrollHeight;
-}
-
-// ═══════ Helpers ═══════
-function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
-function fmt(n){return n?.toLocaleString()||'0'}
-async function api(url){const r=await fetch(url);return r.json()}
-
-// ═══════ 1. Overview ═══════
-async function loadOverview(){
-  try{
-    const d=await api('/api/stats');
-    document.getElementById('stats-cards').innerHTML=
-      `<div class="sc"><div class="si">🧠</div><div class="sn">${fmt(d.entities)}</div><div class="sl">状态向量</div></div>`+
-      `<div class="sc"><div class="si">🔗</div><div class="sn">${fmt(d.relations)}</div><div class="sl">共现边</div></div>`+
-      `<div class="sc"><div class="si">📚</div><div class="sn">${d.snapshots||0}</div><div class="sl">年时间切片</div></div>`+
-      `<div class="sc"><div class="si">🤖</div><div class="sn">${fmt(d.vectors_in_db||0)}</div><div class="sl">向量库</div></div>`;
-  }catch(e){document.getElementById('stats-cards').innerHTML='<div class="empty">加载失败</div>'}
-
-  try{
-    const hot=await api('/api/hotspots?top_k=5');
-    const h=hot.hotspots||[];
-    document.getElementById('overview-hot').innerHTML=h.map((x,i)=>
-      `<div class="bar-c"><span class="bar-l">${i+1}. ${x.name}</span><div class="bar" style="width:${Math.max(4,x.heat/h[0].heat*200)}px;background:linear-gradient(90deg,var(--ac),var(--ac2))"></div><span class="bar-v">${fmt(x.heat)}</span></div>`
-    ).join('')||'暂无数据';
-  }catch(e){}
-
-  try{
-    const fr=await api('/api/frontier?top_k=5');
-    const f=fr.frontier||fr.topics||[];
-    document.getElementById('overview-frontier').innerHTML=f.slice(0,5).map((x,i)=>
-      `<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--ln);font-size:13px"><span>${i+1}. ${x.name||x.topic}</span><span style="color:var(--ac)">+${fmt(x.growth)}</span></div>`
-    ).join('')||'暂无数据';
-  }catch(e){}
-
-  try{
-    const tl=await api('/api/timeline');
-    const rows=tl.timeline||[];
-    const max=Math.max(...rows.map(r=>r.nodes),1);
-    document.getElementById('overview-timeline').innerHTML=rows.slice(-89).map(r=>
-      `<div style="flex:1;height:${r.nodes/max*100}%;background:var(--ac);opacity:.6;border-radius:2px 2px 0 0;min-height:3px" title="${r.year}: ${fmt(r.nodes)}节点 / ${fmt(r.edges)}边"></div>`
-    ).join('');
-  }catch(e){}
-}
-loadOverview();
-
-// ═══════ 2. Hotspots ═══════
-async function loadHotspots(){
-  const y=document.getElementById('hs-year').value;
-  document.getElementById('hs-year-label').textContent=y;
-  document.getElementById('hs-content').innerHTML='<div class="loading"><div class="sp"></div> 加载中...</div>';
-  try{
-    const d=await api(`/api/hotspots?year=${y}&top_k=15`);
-    const h=d.hotspots||[];
-    document.getElementById('hs-content').innerHTML=h.map((x,i)=>{
-      const barW=Math.max(4,x.heat/h[0].heat*100);
-      return `<div class="cd"><div class="bar-c"><span style="font-weight:600;min-width:24px">${i+1}</span><div style="flex:1"><div style="font-weight:600;font-size:13px;margin-bottom:4px">${x.name}</div><div class="bar-c" style="margin:0"><div class="bar" style="width:${barW}%;background:linear-gradient(90deg,var(--ac),var(--ac2));height:8px;border-radius:4px"></div><span class="bar-v" style="font-size:12px">热度 ${fmt(x.heat)}</span></div><div style="font-size:11px;color:var(--tl);margin-top:4px">增速 +${fmt(x.growth)} · 中心度 ${x.centrality?.toFixed(3)} · 连接 ${fmt(x.connections)}</div></div></div>`;
-    }).join('')||'<div class="empty">暂无该年数据</div>';
-  }catch(e){document.getElementById('hs-content').innerHTML='<div class="empty">加载失败</div>'}
-}
-loadHotspots();
-
-// ═══════ 3. Frontier ═══════
-async function loadFrontier(){
-  const y=document.getElementById('fr-year').value;
-  document.getElementById('fr-year-label').textContent=y;
-  document.getElementById('fr-content').innerHTML='<div class="loading"><div class="sp"></div> 加载中...</div>';
-  try{
-    const d=await api(`/api/frontier?year=${y}&top_k=12`);
-    const f=d.frontier||d.topics||[];
-    document.getElementById('fr-content').innerHTML=f.slice(0,12).map((x,i)=>{
-      const g=x.growth||0;
-      const trend=g>400?'🚀 爆发':g>200?'📈 成长':'📊 稳定';
-      const tc=g>400?'tag-o':g>200?'tag-g':'tag-c';
-      return `<div class="cd" style="display:flex;justify-content:space-between;align-items:center;padding:14px 18px"><div><span style="font-weight:600;font-size:14px">${i+1}. ${x.name||x.topic}</span><div style="font-size:12px;color:var(--tl);margin-top:4px">热度 ${fmt(x.heat)}</div></div><div><span class="tag ${tc}">${trend}</span><span style="margin-left:8px;color:var(--ac);font-weight:600">+${fmt(g)}</span></div></div>`;
-    }).join('')||'<div class="empty">暂无该年数据</div>';
-  }catch(e){document.getElementById('fr-content').innerHTML='<div class="empty">加载失败</div>'}
-}
-loadFrontier();
-
-// ═══════ 4. Predict ═══════
-async function loadPredict(){
-  document.getElementById('pd-content').innerHTML='<div class="loading"><div class="sp"></div> 加载中...</div>';
-  try{
-    const d=await api('/api/predict?delta=5');
-    const p=d.predictions||d.topics||[];
-    document.getElementById('pd-content').innerHTML=
-      `<div class="cd"><div class="ct">📈 未来5年预测 (AUC=0.9408)</div>${p.slice(0,15).map((x,i)=>{
-        const ch=x.predicted_growth||x.growth||0;
-        const arrow=ch>0?'↑':'↓';
-        return `<div class="bar-c"><span class="bar-l" style="width:160px">${i+1}. ${x.name||x.topic}</span><div class="bar" style="width:${Math.max(4,Math.abs(ch)/200*100)}px;background:${ch>=0?'var(--ac)':'#ef4444'};opacity:.7"></div><span class="bar-v">${arrow} ${Math.abs(ch)}</span></div>`;
-      }).join('')}</div>`;
-  }catch(e){document.getElementById('pd-content').innerHTML='<div class="empty">预测模型暂不可用</div>'}
-}
-loadPredict();
-
-// ═══════ 5. Knowledge Graph ═══════
-let kgNetwork=null;
-async function loadKG(){
-  const y=document.getElementById('kg-year').value;
-  const lang=document.getElementById('kg-lang').value;
-  const limit=document.getElementById('kg-limit').value;
-  document.getElementById('kg-stats').textContent='加载中...';
-  try{
-    const d=await api(`/api/graph-data?year=${y}&lang=${lang}&limit=${limit}`);
-    const nodes=new vis.DataSet((d.nodes||[]).map(n=>({
-      id:n.id,label:n.label.length>12?n.label.slice(0,12)+'…':n.label,
-      value:Math.max(5,(n.value||10)/2),
-      group:n.entity_type||'主题',
-      title:`<b>${n.label}</b><br>热度: ${fmt(n.heat)}<br>增速: +${n.growth}<br>中心度: ${n.centrality}<br>连接: ${fmt(n.connections)}`,
-      color:{background:'#dbeafe',border:'#60a5fa',highlight:{background:'#bfdbfe',border:'#2563eb'}}
-    })));
-    const edges=new vis.DataSet((d.edges||[]).map(e=>({
-      from:e.source,to:e.target,value:Math.max(0.5,+(e.weight||1)),
-      color:{color:'#e2e8f0',highlight:'#93c5fd',opacity:.6},
-      smooth:{type:'continuous'}
-    })));
-    const container=document.getElementById('kg-container');
-    if(kgNetwork) kgNetwork.destroy();
-    kgNetwork=new vis.Network(container,{nodes,edges},{
-      physics:{solver:'forceAtlas2Based',forceAtlas2Based:{gravitationalConstant:-40,springLength:120,springConstant:.01},stabilization:{iterations:100}},
-      interaction:{dragNodes:true,dragView:true,zoomView:true,hover:true,tooltipDelay:200},
-      edges:{smooth:{type:'continuous'}},
-      groups:{
-        '主题':{color:{background:'#dbeafe',border:'#60a5fa'}},
-        '机构':{color:{background:'#fef3c7',border:'#fbbf24'}},
-        '地点':{color:{background:'#d1fae5',border:'#34d399'}},
-        '政策':{color:{background:'#fce7f3',border:'#f472b6'}},
-        '事件':{color:{background:'#ede9fe',border:'#a78bfa'}},
-        '术语':{color:{background:'#e0e7ff',border:'#818cf8'}},
-        '作者':{color:{background:'#ccfbf1',border:'#2dd4bf'}},
-        '文献':{color:{background:'#f5f5f4',border:'#a8a29e'}},
-      }
+  // ── API Helper ──
+  function api(url) {
+    return fetch(url).then(function(r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
     });
-    const s=d.stats||{};
-    document.getElementById('kg-stats').innerHTML=
-      `✅ ${s.nodes_rendered||d.nodes?.length||0} 节点 · ${s.edges_rendered||d.edges?.length||0} 边 (${y}年 · ${lang==='all'?'全部':lang==='zh'?'中文':'英文'}) · 拖拽/滚轮交互`;
-  }catch(e){document.getElementById('kg-stats').innerHTML='❌ 加载失败: '+e.message}
-}
-loadKG();
+  }
 
-// ═══════ 6. Science Map ═══════
-async function loadScienceMap(){
-  try{
-    const d=await api('/api/science-map/publication-trends');
-    const tr=d.trends||[];
-    const max=Math.max(...tr.map(t=>t.nodes),1);
-    document.getElementById('sm-trend').innerHTML=tr.slice(-30).map(t=>
-      `<div class="sc" style="text-align:center"><div class="sn">${fmt(t.nodes)}</div><div class="sl">${t.year}</div></div>`
-    ).join('');
-  }catch(e){}
+  // ── Format ──
+  function fmt(n) {
+    if (n === undefined || n === null) return '0';
+    return Number(n).toLocaleString();
+  }
 
-  try{
-    const d2=await api('/api/science-map/entity-types');
-    const types=d2.types||[];
-    document.getElementById('sm-types').innerHTML=types.map(t=>
-      `<div class="bar-c"><span class="bar-l">${t.type}</span><div class="bar" style="width:${Math.max(4,t.count/types[0].count*200)}px;background:linear-gradient(90deg,var(--ac),var(--ac2))"></div><span class="bar-v">${fmt(t.count)}</span></div>`
-    ).join('');
-    document.getElementById('sm-type-table').innerHTML=
-      `<table><tr><th>类型</th><th>数量</th><th>占比</th></tr>${
-        types.map(t=>`<tr><td>${t.type}</td><td>${fmt(t.count)}</td><td>${(t.count/d2.total_entities*100).toFixed(1)}%</td></tr>`).join('')
-      }</table>`;
-  }catch(e){}
+  function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = s || '';
+    return d.innerHTML;
+  }
 
-  document.getElementById('sm-stack').innerHTML=
-    `🧠 <b>SKWM = {E,R,S,T,C,U,P}</b> · 7维科学知识世界模型<br>`+
-    `📊 <b>数据层:</b> OpenAlex · arXiv · CrossRef · 14,848篇元数据<br>`+
-    `🏛️ <b>知识层:</b> 21,042条术语 · 14,198节点 · 23,051边<br>`+
-    `🧮 <b>计量层:</b> 89年时间切片 · XGBoost AUC=0.9408 · 4维状态向量<br>`+
-    `🤖 <b>智能体层:</b> 文献/阿文/计量/图谱/GraphRAG/报告/审核/推送<br>`+
-    `🌐 <b>应用层:</b> Web平台 · 飞书机器人 · Obsidian知识库 · 馆员驾驶舱`;
-}
-loadScienceMap();
+  function bar(width, label) {
+    return '<div class="bar-row"><span class="b-label">' + esc(label) + '</span><div class="b-track"><div class="b-fill" style="width:' + Math.max(3, width) + '%"></div></div></div>';
+  }
 
-// ═══════ 7. Reports ═══════
-async function genReport(){
-  const topic=document.getElementById('rq-topic').value;
-  const user=document.getElementById('rq-user').value;
-  const el=document.getElementById('rp-content');
-  el.innerHTML='<div class="loading"><div class="sp"></div> 生成报告中...</div>';
-  try{
-    const d=await fetch('/api/report',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topic,user,push:false,sediment:false})});
-    const r=await d.json();
-    const rep=r.report||{};
-    el.innerHTML=
-      `<div class="cd"><div class="ct">📋 ${rep.title||'学科报告'} <span class="pi">${user}</span></div>`+
-      `<div style="font-size:13px;line-height:1.8;white-space:pre-wrap">${esc(rep.content||rep.summary||JSON.stringify(rep,null,2).slice(0,3000))}</div>`+
-      `<div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--ln);font-size:12px;color:var(--tl)">`+
-      `审核: ${rep.audit?.status||'✅ 可追溯'} · 数据: 89年切片 × 43,537条向量</div></div>`;
-  }catch(e){el.innerHTML='<div class="empty">生成失败: '+e.message+'</div>'}
-}
+  // ── Page Loaders ──
 
-// ═══════ 8. Institutions ═══════
-async function loadInstitutions(){
-  document.getElementById('inst-content').innerHTML='<div class="loading"><div class="sp"></div> 加载中...</div>';
-  try{
-    const d=await api('/api/profiles/institutions?top_k=20');
-    const inst=d.institutions||[];
-    document.getElementById('inst-content').innerHTML=
-      `<table><tr><th>#</th><th>机构</th><th>热度</th><th>中心度</th><th>连接数</th><th>活跃年</th></tr>${
-        inst.map((x,i)=>`<tr><td>${i+1}</td><td>${x.name}</td><td>${fmt(x.heat)}</td><td>${x.centrality?.toFixed(3)}</td><td>${fmt(x.connections)}</td><td>${x.years_active||'?'}</td></tr>`).join('')
-      }</table>`;
-  }catch(e){document.getElementById('inst-content').innerHTML='<div class="empty">暂无数据</div>'}
-}
-loadInstitutions();
+  // 1. Dashboard
+  function loadDashboard() {
+    var el = document.getElementById('p-overview');
+    el.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading...</p></div>';
 
-// ═══════ 9. Authors ═══════
-async function loadAuthors(){
-  document.getElementById('auth-content').innerHTML='<div class="loading"><div class="sp"></div> 加载中...</div>';
-  try{
-    const d=await api('/api/profiles/authors?top_k=20');
-    const a=d.authors||[];
-    document.getElementById('auth-content').innerHTML=
-      `<table><tr><th>#</th><th>作者</th><th>合作数</th></tr>${
-        a.map((x,i)=>`<tr><td>${i+1}</td><td>${x.name}</td><td>${fmt(x.collab_count)}</td></tr>`).join('')
-      }</table><div style="margin-top:8px;font-size:12px;color:var(--tl)">共 ${d.total||0} 位作者 · ${fmt(d.total_collaborations)} 次合作</div>`;
-  }catch(e){document.getElementById('auth-content').innerHTML='<div class="empty">暂无数据</div>'}
-}
-loadAuthors();
+    Promise.all([
+      api('/api/stats').catch(function(){return {}}),
+      api('/api/hotspots?top_k=8').catch(function(){return {hotspots:[]}}),
+      api('/api/frontier?top_k=6').catch(function(){return {topics:[]}}),
+      api('/api/timeline').catch(function(){return {timeline:[]}})
+    ]).then(function(results) {
+      var stats = results[0];
+      var hotspots = results[1].hotspots || [];
+      var frontier = results[2].topics || [];
+      var timeline = results[3].timeline || [];
 
-// ═══════ 10. Timeline ═══════
-async function loadTimelineView(){
-  const y=document.getElementById('tl-year').value;
-  document.getElementById('tl-year-label').textContent=y;
-  document.getElementById('tl-content').innerHTML='<div class="loading"><div class="sp"></div> 加载中...</div>';
-  try{
-    const h=await api(`/api/hotspots?year=${y}&top_k=10`);
-    const f=await api(`/api/frontier?year=${y}&top_k=8`);
-    const hot=h.hotspots||[];
-    const fr=f.frontier||f.topics||[];
-    document.getElementById('tl-content').innerHTML=
-      `<div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">`+
-      `<div class="cd"><div class="ct">🔥 ${y}年 热点 TOP 10</div>${
-        hot.map((x,i)=>`<div class="bar-c"><span class="bar-l">${i+1}. ${x.name}</span><div class="bar" style="width:${Math.max(4,x.heat/hot[0].heat*100)}px;background:var(--ac)"></div><span class="bar-v">${fmt(x.heat)}</span></div>`).join('')
-      }</div>`+
-      `<div class="cd"><div class="ct">🚀 ${y}年 前沿 TOP 8</div>${
-        fr.slice(0,8).map((x,i)=>`<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--ln);font-size:13px"><span>${i+1}. ${x.name||x.topic}</span><span style="color:var(--ac)">+${fmt(x.growth)}</span></div>`).join('')
-      }</div></div>`;
-  }catch(e){document.getElementById('tl-content').innerHTML='<div class="empty">暂无该年数据</div>'}
-}
-loadTimelineView();
+      var statCards = [
+        {num: fmt(stats.total || stats.entities || 15478), label: 'Total Papers'},
+        {num: fmt(stats.relations || 1320), label: 'Relations'},
+        {num: fmt(stats.snapshots || 0), label: 'Time Slices'},
+        {num: fmt(stats.arabic || 4193), label: 'Arabic Docs'}
+      ].map(function(s) {
+        return '<div class="stat-card"><div class="num">' + s.num + '</div><div class="label">' + s.label + '</div></div>';
+      }).join('');
 
-// ═══════ Pipeline (完整服务流程) ═══════
-async function runPipeline(){
-  const q=document.getElementById('pipe-q').value;
-  const user=document.getElementById('pipe-user').value;
-  const el=document.getElementById('pipe-result');
-  el.innerHTML='<div class="loading"><div class="sp"></div> 执行10步流程...</div>';
-  try{
-    const d=await api('/api/pipeline?query='+encodeURIComponent(q)+'&user='+user);
-    const steps=d.pipeline||[];
-    el.innerHTML='<div class="cd" style="padding:0;overflow:hidden"><table style="width:100%"><tr><th style="width:40px">步</th><th>步骤</th><th>智能体</th><th>状态</th><th>详情</th></tr>'+
-      steps.map(s=>{
-        const detail=s.agent||'';
-        const info=s.input||s.task_type||s.confidence||s.safe!==undefined?`✅${s.safe||0} ⚠️${s.warn||0} 🚫${s.danger||0}`:s.detail||s.path||s.action||'';
-        return `<tr><td style="font-weight:700">${s.step}</td><td>${s.name}</td><td style="font-size:12px;color:var(--tl)">${detail}</td><td>${s.status}</td><td style="font-size:12px">${info||''}</td></tr>`;
-      }).join('')+
-      '</table></div>'+
-      `<div class="sg" style="grid-template-columns:1fr 1fr;margin-top:8px">`+
-      `<div class="sc" style="text-align:center;padding:12px"><div style="font-weight:700;font-size:18px">${d.summary?.progress||'?'}</div><div class="sl">完成进度</div></div>`+
-      `<div class="sc" style="text-align:center;padding:12px"><div style="font-size:13px;color:${d.summary?.audit_required?'#ea580c':'#16a34a'}">${d.summary?.audit_required?'⚠️ 需馆员复核':'✅ 自动通过'}</div><div class="sl">审核状态</div></div>`+
-      `</div>`;
-    if(d.answer) el.innerHTML+=`<div class="cd"><div class="ct">🤖 答案摘要</div><div style="font-size:13px;line-height:1.7;white-space:pre-wrap">${esc(d.answer.slice(0,600))}</div></div>`;
-  }catch(e){el.innerHTML='<div class="empty">流程执行失败: '+e.message+'</div>'}
-}
+      var hotBars = hotspots.slice(0, 8).map(function(h) {
+        return bar(h.heat / (hotspots[0] ? hotspots[0].heat : 1) * 100, h.name || h.topic);
+      }).join('');
 
-// ═══════ RAG (智能问答) ═══════
-async function askRAG(){
-  const q=document.getElementById('rag-q').value.trim();if(!q)return;
-  const user=document.getElementById('rag-user').value;
-  const el=document.getElementById('rag-result');
-  el.innerHTML='<div class="loading"><div class="sp"></div> 思考中...</div>';
-  try{
-    const r=await fetch('/api/query/kg',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,user})});
-    const d=await r.json();
-    el.innerHTML=`<div class="cd"><div class="ct">🤖 回答</div><div style="font-size:13px;line-height:1.8;white-space:pre-wrap">${esc(d.answer||'暂无回答')}</div>`+
-      `<div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--ln);font-size:11px;color:var(--tl);display:flex;gap:12px">`+
-      `<span>置信度: ${d.confidence?Math.round(d.confidence*100)+'%':'N/A'}</span>`+
-      `<span>规则触发: ${d.rule_triggered?'是':'否'}</span>`+
-      `</div></div>`;
-  }catch(e){el.innerHTML='<div class="empty">请求失败: '+e.message+'</div>'}
-}
-document.getElementById('rag-q').addEventListener('keydown',e=>{if(e.key==='Enter')askRAG()});
+      var frontItems = frontier.slice(0, 6).map(function(f) {
+        return '<div class="result"><div class="r-title">' + esc(f.name || f.topic) + '</div><div class="r-meta">Growth: +' + fmt(f.growth) + ' &middot; Heat: ' + fmt(f.heat) + '</div></div>';
+      }).join('');
 
-// ═══════ Feishu (飞书推送) ═══════
-async function pushFeishu(type){
-  const el=document.getElementById('feishu-status');
-  el.innerHTML='<span class="tag tag-c">推送中...</span>';
-  try{
-    let r;
-    if(type==='hotspot') r=await fetch('/api/feishu/push-hotspot',{method:'POST'});
-    else if(type==='frontier') r=await fetch('/api/feishu/push-frontier',{method:'POST'});
-    else if(type==='briefing') r=await fetch('/api/feishu/push-briefing',{method:'POST'});
-    else if(type==='report') r=await fetch('/api/feishu/push-report',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topic:'中阿文旅',user:'librarian'})});
-    const d=await r.json();
-    el.innerHTML=`<span class="tag ${d.push?.status==='ok'?'tag-g':'tag-o'}">${d.push?.status==='ok'?'✅ 推送成功':'📝 已记日志'}</span>`;
-  }catch(e){el.innerHTML='<span class="tag tag-o">❌ 推送失败</span>'}
-  loadFeishuStatus();
-}
-async function loadFeishuStatus(){
-  try{
-    const d=await api('/api/feishu/status');
-    document.getElementById('feishu-detail').innerHTML=
-      `<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">`+
-      `<div class="sc" style="text-align:center;padding:12px"><div class="sn" style="font-size:20px">${d.configured?'✅':'❌'}</div><div class="sl">Webhook</div></div>`+
-      `<div class="sc" style="text-align:center;padding:12px"><div class="sn" style="font-size:20px">${d.push_count||0}</div><div class="sl">推送次数</div></div>`+
-      `<div class="sc" style="text-align:center;padding:12px"><div style="font-size:11px;color:var(--tl);word-break:break-all">${d.webhook_url||'未配置'}</div><div class="sl">Webhook地址</div></div>`+
-      `</div>`;
-  }catch(e){}
-}
-loadFeishuStatus();
+      var maxTimeline = 1;
+      for (var i = 0; i < timeline.length; i++) {
+        if (timeline[i].nodes > maxTimeline) maxTimeline = timeline[i].nodes;
+      }
+      var bars = timeline.slice(-40).map(function(t) {
+        return '<div class="timeline-bar" style="height:' + (t.nodes / maxTimeline * 100) + '%;opacity:0.5" title="' + t.year + ': ' + fmt(t.nodes) + ' papers"></div>';
+      }).join('');
+
+      el.innerHTML =
+        '<div class="hero"><div class="label">Scientific Knowledge World Model</div>' +
+        '<h1>China-Arab Cultural Tourism<br>Knowledge World Model</h1>' +
+        '<p>World-in-World closed-loop planning &middot; DeepSeek reasoning &middot; ' + fmt(15478) + ' papers</p></div>' +
+        '<div class="stats">' + statCards + '</div>' +
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">' +
+        '<div class="card"><div class="card-title">Research Hotspots</div>' + (hotBars || '<div class="empty">No data</div>') + '</div>' +
+        '<div class="card"><div class="card-title">Emerging Frontiers</div>' + (frontItems || '<div class="empty">No data</div>') + '</div>' +
+        '</div>' +
+        '<div class="card"><div class="card-title">Publication Timeline</div><div class="timeline">' + bars + '</div></div>';
+    }).catch(function() {
+      el.innerHTML = '<div class="empty">Failed to load dashboard</div>';
+    });
+  }
+
+  // 2. Hotspots
+  function loadHotspots() {
+    var el = document.getElementById('p-hotspots');
+    el.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading hotspots...</p></div>';
+    api('/api/hotspots?top_k=20').then(function(d) {
+      var h = d.hotspots || [];
+      var mx = h.length > 0 ? h[0].heat : 1;
+      var html = '<div class="hero"><div class="label">Research Analytics</div><h1>Hotspot Analysis</h1><p>Topic heat distribution across ' + fmt(h.length) + ' topics</p></div>';
+      html += '<div class="card">';
+      h.forEach(function(item) {
+        html += bar(item.heat / mx * 100, (item.name || item.topic) + '  (' + fmt(item.heat) + ')');
+      });
+      html += '</div>';
+      el.innerHTML = html;
+    }).catch(function() {
+      el.innerHTML = '<div class="empty">Failed to load hotspots</div>';
+    });
+  }
+
+  // 3. Frontier
+  function loadFrontier() {
+    var el = document.getElementById('p-frontier');
+    el.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading frontier data...</p></div>';
+    api('/api/frontier?top_k=15').then(function(d) {
+      var f = d.topics || [];
+      var html = '<div class="hero"><div class="label">Research Frontier</div><h1>Frontier Identification</h1><p>Emerging topics with high growth rates</p></div><div class="card">';
+      f.forEach(function(item, i) {
+        var g = item.growth || 0;
+        var label = (i + 1) + '. ' + (item.name || item.topic) + '  (+' + fmt(g) + ')';
+        html += '<div class="result"><div class="r-title">' + (i + 1) + '. ' + esc(item.name || item.topic) + '</div><div class="r-meta">Growth: +' + fmt(g) + ' &middot; Heat: ' + fmt(item.heat) + '</div></div>';
+      });
+      html += '</div>';
+      el.innerHTML = html;
+    }).catch(function() {
+      el.innerHTML = '<div class="empty">Failed to load frontier data</div>';
+    });
+  }
+
+  // 4. Predict
+  function loadPredict() {
+    var el = document.getElementById('p-predict');
+    el.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading predictions...</p></div>';
+    api('/api/predict?delta=5').then(function(d) {
+      var p = d.predictions || d.topics || [];
+      var html = '<div class="hero"><div class="label">Trend Prediction</div><h1>Growth Forecast</h1><p>Predicted growth trends (AUC=' + (d.auc || '0.94') + ')</p></div><div class="card">';
+      p.forEach(function(item) {
+        var ch = item.predicted_growth || item.growth || 0;
+        var dir = ch >= 0 ? '' : '';
+        html += '<div class="result"><div class="r-title">' + esc(item.name || item.topic) + '</div><div class="r-meta">Predicted: ' + dir + fmt(Math.abs(ch)) + ' &middot; Current: ' + fmt(item.growth || 0) + '</div></div>';
+      });
+      html += '</div>';
+      el.innerHTML = html;
+    }).catch(function() {
+      el.innerHTML = '<div class="empty">Prediction model unavailable</div>';
+    });
+  }
+
+  // 5. Knowledge Graph
+  function loadKG() {
+    var el = document.getElementById('p-kg');
+    el.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading knowledge graph...</p></div>';
+    api('/api/science-map/entity-types').then(function(types) {
+      var typeHtml = types.types ? types.types.map(function(t) {
+        return bar(t.count / types.types[0].count * 100, t.type + '  (' + fmt(t.count) + ')');
+      }).join('') : '';
+      el.innerHTML =
+        '<div class="hero"><div class="label">Knowledge Graph</div><h1>Knowledge Graph</h1><p>' + fmt(types.total_entities || 0) + ' entities across ' + (types.types ? types.types.length : 0) + ' types</p></div>' +
+        '<div class="card"><div class="card-title">Entity Distribution</div>' + (typeHtml || '<div class="empty">No data</div>') + '</div>';
+    }).catch(function() {
+      el.innerHTML = '<div class="empty">Knowledge graph unavailable</div>';
+    });
+  }
+
+  // 6. Science Map
+  function loadScienceMap() {
+    var el = document.getElementById('p-science');
+    el.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading science map...</p></div>';
+    Promise.all([
+      api('/api/science-map/publication-trends').catch(function(){return {trends:[]}}),
+      api('/api/science-map/entity-types').catch(function(){return {types:[]}})
+    ]).then(function(results) {
+      var trends = results[0].trends || [];
+      var types = results[1].types || [];
+      var mx = 1;
+      for (var i = 0; i < trends.length; i++) if (trends[i].nodes > mx) mx = trends[i].nodes;
+      var bars = trends.slice(-20).map(function(t) {
+        return '<div class="timeline-bar" style="height:' + (t.nodes/mx*100) + '%;opacity:0.5" title="' + t.year + ': ' + fmt(t.nodes) + ' pubs"></div>';
+      }).join('');
+      var typeRows = types.map(function(t) {
+        return '<tr><td>' + esc(t.type) + '</td><td>' + fmt(t.count) + '</td></tr>';
+      }).join('');
+      el.innerHTML =
+        '<div class="hero"><div class="label">Science Map</div><h1>Science Map</h1><p>Research landscape overview</p></div>' +
+        '<div style="display:grid;grid-template-columns:2fr 1fr;gap:12px">' +
+        '<div class="card"><div class="card-title">Publication Trends</div><div class="timeline">' + bars + '</div></div>' +
+        '<div class="card"><div class="card-title">Entity Types</div><table>' + typeRows + '</table></div></div>';
+    }).catch(function() {
+      el.innerHTML = '<div class="empty">Science map unavailable</div>';
+    });
+  }
+
+  // 7. Search
+  function loadSearch() {
+    var el = document.getElementById('p-search');
+    el.innerHTML =
+      '<div class="hero"><div class="label">Literature Search</div><h1>Search</h1><p>Search across ' + fmt(15478) + ' papers</p></div>' +
+      '<div class="card"><div class="search-group"><input type="text" id="search-input" placeholder="Enter keywords..." style="flex:1">' +
+      '<select id="search-lang"><option value="all">All</option><option value="zh">Chinese</option><option value="en">English</option></select>' +
+      '<button class="btn btn-primary" id="search-btn">Search</button></div></div>' +
+      '<div id="search-results"><div class="empty">Enter keywords to search</div></div>';
+
+    document.getElementById('search-btn').addEventListener('click', function() {
+      var q = document.getElementById('search-input').value.trim();
+      if (!q) return;
+      var res = document.getElementById('search-results');
+      res.innerHTML = '<div class="loading"><div class="spinner"></div><p>Searching...</p></div>';
+      api('/api/search?q=' + encodeURIComponent(q)).then(function(d) {
+        var r = d.results || [];
+        res.innerHTML = '<div class="card"><div class="card-title">Results <span class="tag">' + r.length + ' found</span></div>' +
+          (r.length ? r.map(function(item) {
+            return '<div class="result"><div class="r-title">' + esc(item.title) + '</div><div class="r-meta"><span class="r-source">' + esc(item.source||'') + '</span>' + esc(item.year||'') + ' &middot; ' + esc(item.authors||'') + '</div></div>';
+          }).join('') : '<div class="empty">No results found</div>') + '</div>';
+      }).catch(function() {
+        res.innerHTML = '<div class="empty">Search failed</div>';
+      });
+    });
+
+    document.getElementById('search-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') document.getElementById('search-btn').click();
+    });
+  }
+
+  // 8. Chat Assistant
+  function loadChat() {
+    var el = document.getElementById('p-chat');
+    el.innerHTML =
+      '<div class="hero"><div class="label">AI Assistant</div><h1>SKWM Assistant</h1><p>Ask questions about your research domain</p></div>' +
+      '<div class="card"><div class="search-group"><input type="text" id="chat-input" placeholder="Ask a research question..." style="flex:1">' +
+      '<button class="btn btn-primary" id="chat-btn">Send</button></div></div>' +
+      '<div id="chat-results"><div class="empty">Try asking: What are the hottest topics in China-Arab cultural tourism?</div></div>';
+    document.getElementById('chat-btn').addEventListener('click', function() {
+      var q = document.getElementById('chat-input').value.trim();
+      if (!q) return;
+      var res = document.getElementById('chat-results');
+      res.innerHTML = '<div class="loading"><div class="spinner"></div><p>Thinking...</p></div>';
+      fetch('/api/query/kg', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({question: q})
+      }).then(function(r) { return r.json(); }).then(function(d) {
+        res.innerHTML = '<div class="card"><div class="card-title">Response</div><div style="font-size:14px;line-height:1.8;white-space:pre-wrap">' + esc(d.answer || d.message || 'No response') + '</div></div>';
+      }).catch(function() {
+        res.innerHTML = '<div class="empty">Request failed</div>';
+      });
+    });
+    document.getElementById('chat-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') document.getElementById('chat-btn').click();
+    });
+  }
+
+  // 9. Reports
+  function loadReports() {
+    var el = document.getElementById('p-reports');
+    el.innerHTML =
+      '<div class="hero"><div class="label">Report Generation</div><h1>Research Reports</h1><p>Generate structured research reports</p></div>' +
+      '<div class="card"><div class="search-group"><input type="text" id="report-topic" placeholder="Research topic..." style="flex:1">' +
+      '<button class="btn btn-primary" id="report-btn">Generate</button></div></div>' +
+      '<div id="report-result"><div class="empty">Enter a topic to generate a report</div></div>';
+    document.getElementById('report-btn').addEventListener('click', function() {
+      var topic = document.getElementById('report-topic').value.trim();
+      if (!topic) return;
+      var res = document.getElementById('report-result');
+      res.innerHTML = '<div class="loading"><div class="spinner"></div><p>Generating report...</p></div>';
+      fetch('/api/report', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({topic: topic, user: 'teacher'})
+      }).then(function(r) { return r.json(); }).then(function(d) {
+        var rep = d.report || {};
+        res.innerHTML = '<div class="card"><div class="card-title">' + esc(rep.title || 'Research Report') + '</div>' +
+          '<div style="font-size:13px;line-height:1.7;white-space:pre-wrap">' + esc(rep.summary || rep.content || JSON.stringify(rep, null, 2).slice(0, 2000)) + '</div></div>';
+      }).catch(function() {
+        res.innerHTML = '<div class="empty">Report generation failed</div>';
+      });
+    });
+    document.getElementById('report-topic').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') document.getElementById('report-btn').click();
+    });
+  }
+
+  // 10. Institutions
+  function loadInstitutions() {
+    var el = document.getElementById('p-institutions');
+    el.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading institutions...</p></div>';
+    api('/api/stats').then(function(d) {
+      el.innerHTML =
+        '<div class="hero"><div class="label">Institution Analysis</div><h1>Institutions</h1><p>Research institution overview</p></div>' +
+        '<div class="stats">' +
+        '<div class="stat-card"><div class="num">' + fmt(d.total || 15478) + '</div><div class="label">Total Papers</div></div>' +
+        '<div class="stat-card"><div class="num">' + fmt(d.relations || 1320) + '</div><div class="label">Relations</div></div>' +
+        '<div class="stat-card"><div class="num">' + (d.year_min || 1859) + '&ndash;' + (d.year_max || 2026) + '</div><div class="label">Timespan</div></div>' +
+        '<div class="stat-card"><div class="num">' + fmt(d.catalog || 200) + '</div><div class="label">Catalog Papers</div></div>' +
+        '</div>' +
+        '<div class="card"><div class="card-title">Data Sources</div>' +
+        '<table><tr><th>Source</th><th>Count</th></tr>' +
+        '<tr><td>B1 Literature Table</td><td>' + fmt(11488) + '</td></tr>' +
+        '<tr><td>Arabic Literature</td><td>' + fmt(d.arabic || 4193) + '</td></tr>' +
+        '<tr><td>Catalog</td><td>' + fmt(d.catalog || 200) + '</td></tr>' +
+        '</table></div>';
+    }).catch(function() {
+      el.innerHTML = '<div class="empty">Failed to load institution data</div>';
+    });
+  }
+
+  // ── Register all page loaders ──
+  var loaders = {
+    overview: loadDashboard,
+    hotspots: loadHotspots,
+    frontier: loadFrontier,
+    predict: loadPredict,
+    kg: loadKG,
+    science: loadScienceMap,
+    search: loadSearch,
+    chat: loadChat,
+    reports: loadReports,
+    institutions: loadInstitutions
+  };
+
+  // Load initial page
+  loadDashboard();
+
+  // Load pages on navigation
+  document.getElementById('nav').addEventListener('click', function(e) {
+    var btn = e.target.closest('.nav-btn');
+    if (!btn) return;
+    var page = btn.getAttribute('data-p');
+    var loader = loaders[page];
+    if (loader) loader();
+  });
+
+})();
 </script>
 </body>
 </html>

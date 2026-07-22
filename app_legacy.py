@@ -612,6 +612,12 @@ class H(BaseHTTPRequestHandler):
         
         elif pa=='/api/overview': json_ok(s)
         
+        elif pa=='/api/search':
+            q=params.get('q',[''])[0]
+            r=eng.search(q,15)
+            json_ok({"results":[{"title":p.get('title',''),"year":p.get('year',''),
+                     "authors":p.get('authors','')[:50],"source":p.get('source','')} for p in r],"total":len(r)})
+        
         elif pa.startswith('/api/'):
             json_err(f"未知端点: {pa}")
         
