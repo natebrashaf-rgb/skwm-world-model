@@ -1,6 +1,7 @@
-fastapi>=0.104.0
-uvicorn>=0.24.0
-numpy>=1.24.0
-xgboost>=2.0.0
-requests>=2.31.0
-python-multipart>=0.0.6
+# SKWM 后端 API 依赖
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.0
+requests>=2.31
+numpy>=1.24
+xgboost>=2.0

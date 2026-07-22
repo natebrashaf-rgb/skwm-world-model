@@ -27,9 +27,15 @@ import numpy as np
 BASE_DIR = Path(__file__).parent
 DATASETS_DIR = BASE_DIR / "datasets"
 # 部署模式下数据文件在 world_model/ 子目录，先找本地，再找绝对路径
-REAL_DATA_DIR = BASE_DIR / "world_model"
-if not REAL_DATA_DIR.exists():
-    REAL_DATA_DIR = Path(r"E:\大挑\02_deliverables\world_model")
+# 数据目录：优先使用 Railway 的 SKWM_DATA_DIR 环境变量
+_DATA_DIR_ENV = os.environ.get("SKWM_DATA_DIR", "")
+if _DATA_DIR_ENV:
+    REAL_DATA_DIR = Path(_DATA_DIR_ENV)
+else:
+    REAL_DATA_DIR = BASE_DIR / "world_model"
+    if not REAL_DATA_DIR.exists():
+        # 回退到 deploy/data/
+        REAL_DATA_DIR = Path(__file__).parent.parent.parent / "data"
 DATASETS_DIR.mkdir(exist_ok=True)
 
 
