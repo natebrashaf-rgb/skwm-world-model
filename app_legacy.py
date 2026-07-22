@@ -160,12 +160,12 @@ class DS:
     def analyze(self,q,ctx,sm):
         st=[]
         r1=self.ask([{"role":"system","content":"你是中阿文旅研究专家。请深度拆解用户研究问题，分析其学术价值和研究空白。"},{"role":"user","content":f"问题: {q}\n\n分析价值、空白和方向（120字内）"}],0.4,350)
-        if r1: st.append(("🎯 问题拆解",r1))
+        if r1: st.append(("问题拆解",r1))
         if sm:
             r2=self.ask([{"role":"system","content":"你是学术情报分析师，从检索结果中提炼趋势和洞察。"},{"role":"user","content":f"查询: {q}\n结果: {sm}\n\n分析趋势、核心发现和盲区（120字内）"}],0.3,400)
-            if r2: st.append(("📊 趋势洞察",r2))
+            if r2: st.append(("趋势洞察",r2))
         r3=self.ask([{"role":"system","content":"给出3条简洁有力的下一步研究建议。"},{"role":"user","content":f"查询: {q}\n\n3条建议，每行一条。"}],0.5,300)
-        if r3: st.append(("💡 行动建议",r3))
+        if r3: st.append(("行动建议",r3))
         return st
 ds=DS()
 
@@ -659,7 +659,7 @@ class H(BaseHTTPRequestHandler):
                     # 从步骤中提取回答内容
                     steps_text = []
                     for step_title, step_content in deepseek_result:
-                        steps_text.append(f"【{step_title}】\n{step_content}")
+                        steps_text.append(f"[ {step_title} ]\n{step_content}")
                     answer = "\n\n".join(steps_text)
                     json_ok({"answer":answer,"thinking":thinking,"papers":len(ctx_papers)})
                 else:
