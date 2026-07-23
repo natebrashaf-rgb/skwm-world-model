@@ -616,11 +616,11 @@ class H(BaseHTTPRequestHandler):
                     "entity_type":et,"heat":heat,"growth":random.randint(-30,200),
                     "centrality":round(random.uniform(0.1,0.9),4),"connections":random.randint(5,min(300,n))})
             edges=[]
-            tn=min(200,n)
+            tn=min(60,n)
             for i in range(tn):
                 for j in range(i+1,tn):
-                    if random.random()<0.1:
-                        edges.append({"source":f"e{i}","target":f"e{j}","weight":random.randint(1,15)})
+                    if random.random()<0.05 and abs(i-j)<10:
+                        edges.append({"source":f"e{i}","target":f"e{j}","weight":random.randint(1,5)})
             json_ok({"nodes":nodes,"edges":edges,"stats":{"nodes_rendered":len(nodes),
                 "edges_rendered":len(edges),"total_nodes":len(all_ents),"total_edges":len(edges)*2}})
         

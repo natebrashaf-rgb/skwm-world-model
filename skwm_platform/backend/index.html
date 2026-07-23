@@ -134,6 +134,7 @@ td{padding:7px 10px;border-bottom:1px solid var(--ln)}tr:last-child td{border-bo
   </div>
   <div id="kg-container"></div>
   <div id="kg-stats"></div>
+  <div id="kg-detail" style="margin-top:8px"></div>
 </div>
 
 <div class="pg" id="p-science">
@@ -310,6 +311,7 @@ function loadPredict(){
 
 // 5. Knowledge Graph
 var kgNet=null;
+var kgDetail=null;
 function loadKG(){
   var y=document.getElementById('kg-year').value;
   var lang=document.getElementById('kg-lang').value;
@@ -323,35 +325,52 @@ function loadKG(){
     var nodes=new vis.DataSet(nd.map(function(n){
       var et=n.entity_type||'主题';et=et in cols?et:'主题';
       return {id:n.id,label:(n.label||n.id||'').length>10?(n.label||n.id||'').slice(0,10)+'…':(n.label||n.id||''),
-        value:Math.max(8,(n.value||n.heat||20)/15),group:et,
-        title:'<b>'+(n.label||n.id||'')+'</b><br>热度: '+fmt(n.heat)+'<br>连接: '+fmt(n.connections)+'<br>类型: '+et,
+        value:Math.max(8,(n.value||n.heat||20)/20),group:et,
+        title:'<b>'+(n.label||n.id||'')+'</b>',
         color:{background:cols[et],border:bds[et],highlight:{background:'#fff',border:bds[et]}},
         borderWidth:1.5,font:{size:10,color:'#374151'}};
     }));
     var edges=new vis.DataSet(ed.map(function(e){
-      return {from:e.source||e.from,to:e.target||e.to,value:Math.max(.5,+(e.weight||1)),
-        color:{color:'#d1d5db',highlight:'#60a5fa',opacity:.5},
-        smooth:{type:'continuous'},width:Math.max(.5,+(e.weight||1)/5)};
+      return {from:e.source||e.from,to:e.target||e.to,value:1,
+        color:{color:'#e5e7eb',highlight:'#60a5fa',opacity:.3},
+        smooth:{type:'continuous'},width:0.8};
     }));
     var c=document.getElementById('kg-container');
     if(kgNet)kgNet.destroy();
     kgNet=new vis.Network(c,{nodes:nodes,edges:edges},{
-      physics:{solver:'forceAtlas2Based',forceAtlas2Based:{gravitationalConstant:-60,springLength:150,springConstant:.008,damping:.4},
-        stabilization:{iterations:80,updateInterval:20}},
-      interaction:{dragNodes:true,dragView:true,zoomView:true,hover:true,tooltipDelay:100,navigationButtons:true,keyboard:true},
+      physics:{solver:'forceAtlas2Based',forceAtlas2Based:{gravitationalConstant:-80,springLength:180,springConstant:.005,damping:.5},
+        stabilization:{iterations:100,updateInterval:30}},
+      interaction:{dragNodes:true,dragView:true,zoomView:true,hover:true,tooltipDelay:50,navigationButtons:true,keyboard:true},
       edges:{smooth:{type:'continuous'}},
       groups:{
-        '主题':{color:{background:'#dbeafe',border:'#60a5fa'},shape:'dot',size:15},
-        '机构':{color:{background:'#fef3c7',border:'#fbbf24'},shape:'square',size:12},
-        '地点':{color:{background:'#d1fae5',border:'#34d399'},shape:'triangle',size:10},
-        '政策':{color:{background:'#fce7f3',border:'#f472b6'},shape:'star',size:12},
-        '术语':{color:{background:'#e0e7ff',border:'#818cf8'},shape:'diamond',size:10},
-        'event':{color:{background:'#ede9fe',border:'#a78bfa'},shape:'hexagon',size:10},
+        '主题':{color:{background:'#dbeafe',border:'#60a5fa'},shape:'dot',size:12},
+        '机构':{color:{background:'#fef3c7',border:'#fbbf24'},shape:'square',size:10},
+        '地点':{color:{background:'#d1fae5',border:'#34d399'},shape:'triangle',size:8},
+        '政策':{color:{background:'#fce7f3',border:'#f472b6'},shape:'star',size:10},
+        '术语':{color:{background:'#e0e7ff',border:'#818cf8'},shape:'diamond',size:8},
       },
-      manipulation:{enabled:false},
     });
-    st.innerHTML='✅ '+(ss.nodes_rendered||nd.length)+' 节点 · '+(ss.edges_rendered||ed.length)+' 边 · 拖拽/缩放/悬停';
-    // 可选：fit to view after stabilization
+    // 点击节点显示详情面板
+    kgNet.on('click',function(params){
+      if(params.nodes.length){
+        var id=params.nodes[0];
+        var n=kgNet.body.data.nodes.get(id);
+        if(n){
+          var info=n.title.replace(/<[^>]+>/g,'');
+          var extra='';
+          // 从原始数据找更多信息
+          var raw=nd.find(function(x){return x.id===id;});
+          if(raw){
+            extra='热度: '+fmt(raw.heat)+' | 增长: '+(raw.growth||0)+' | 中心度: '+(raw.centrality||0)+' | 连接: '+fmt(raw.connections)+' | 类型: '+(raw.entity_type||'');
+          }
+          document.getElementById('kg-detail').innerHTML=
+            '<div class="cd"><div class="ct">🔍 '+(n.label||id)+'</div>'+
+            '<div style="font-size:13px;line-height:1.8">'+extra+'</div>'+
+            '<div style="margin-top:8px;font-size:11px;color:var(--tl)">点击其他节点查看详情 · 拖拽移动位置</div></div>';
+        }
+      }
+    });
+    st.innerHTML='✅ '+(ss.nodes_rendered||nd.length)+' 节点 · '+(ss.edges_rendered||ed.length)+' 边';
     kgNet.once('stabilizationIterationsDone',function(){kgNet.fit({animation:true});});
   }).catch(function(){st.innerHTML='❌ 加载失败';});
 }
