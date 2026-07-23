@@ -726,6 +726,21 @@ class H(BaseHTTPRequestHandler):
                 if not kw: json_err("缺少 keyword 参数")
                 else: json_ok(get_trend(kw))
         
+        elif pa.startswith('/api/graph-v4'):
+            """知识图谱v4 — 社区聚类+按需展开"""
+            from skwm_graph_api_v4 import get_graph
+            level = params.get('level', ['cluster'])[0]
+            year = params.get('year', ['2026'])[0]
+            types = params.get('types', [''])[0]
+            top_n = int(params.get('top_n', ['50'])[0])
+            focus = params.get('focus', [''])[0]
+            hops = int(params.get('hops', ['1'])[0])
+            cid = params.get('community_id', [None])[0]
+            q = params.get('q', [''])[0]
+            json_ok(get_graph(level=level, year=year, types=types,
+                             top_n=top_n, focus=focus, hops=hops,
+                             community_id=int(cid) if cid else None, q=q))
+        
         elif pa=='/api/graph-data':
             y=params.get('year',['2026'])[0]
             lang=params.get('lang',['all'])[0]
