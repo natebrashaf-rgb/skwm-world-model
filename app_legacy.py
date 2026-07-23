@@ -891,9 +891,8 @@ class H(BaseHTTPRequestHandler):
             has_secret = bool(_os.environ.get("FEISHU_APP_SECRET"))
             token_ok = False
             if has_id and has_secret:
-                from skwm_platform.backend.feishu_ws_bot import FeishuWSBot
-                ws_bot = FeishuWSBot()
-                token = ws_bot._get_tenant_token()
+                from skwm_platform.backend.feishu_webhook import _get_tenant_token
+                token = _get_tenant_token()
                 token_ok = bool(token)
             json_ok({
                 "feishu_app_id_configured": has_id,
