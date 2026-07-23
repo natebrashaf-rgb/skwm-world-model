@@ -706,6 +706,31 @@ class H(BaseHTTPRequestHandler):
                     seen.add(n['id']); unique.append(n)
             json_ok({"query":q,"results":unique[:20],"count":len(unique)})
         
+        elif pa=='/api/hotspot' or pa=='/api/overview' or pa=='/api/frontier' or pa=='/api/timeline' or pa=='/api/trend':
+            """真实数据API（基于state_vectors）"""
+            import sys as _sys
+            _sys.path.insert(0, str(Path(__file__).parent))
+            from skwm_real_api import get_hotspots, get_frontier, get_timeline, get_overview, get_trend
+            
+            if pa=='/api/overview':
+                json_ok(get_overview())
+            elif pa=='/api/hotspot':
+                year = params.get('year', ['2026'])[0]
+                top_k = int(params.get('top_k', ['20'])[0])
+                json_ok(get_hotspots(year, top_k))
+            elif pa=='/api/frontier':
+                year = params.get('year', ['2026'])[0]
+                top_k = int(params.get('top_k', ['20'])[0])
+                json_ok(get_frontier(year, top_k))
+            elif pa=='/api/timeline':
+                start = params.get('start', [None])[0]
+                end = params.get('end', [None])[0]
+                json_ok(get_timeline(int(start) if start else None, int(end) if end else None))
+            elif pa=='/api/trend':
+                kw = params.get('keyword', [''])[0]
+                if not kw: json_err("缺少 keyword 参数")
+                else: json_ok(get_trend(kw))
+        
         elif pa=='/api/graph-data':
             y=params.get('year',['2026'])[0]
             lang=params.get('lang',['all'])[0]
@@ -781,7 +806,14 @@ class H(BaseHTTPRequestHandler):
             json_err(f"未知端点: {pa}")
         
         else:
-            self.send_response(404);self.send_header('Content-Type','text/plain');self.end_headers();self.wfile.write(b'404')
+            # SPA catch-all: 非API/非静态文件路径 → 返回 index.html
+            INDEX_PATH = Path(__file__).parent / "skwm_platform" / "frontend_new" / "dist" / "index.html"
+            if INDEX_PATH.exists():
+                html = open(INDEX_PATH, encoding='utf-8').read()
+                self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.end_headers()
+                self.wfile.write(html.encode())
+            else:
+                self.send_response(404);self.send_header('Content-Type','text/plain');self.end_headers();self.wfile.write(b'404')
     
     def do_POST(self):
         p=urlparse(self.path);pa=p.path
