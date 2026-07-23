@@ -1009,6 +1009,16 @@ class H(BaseHTTPRequestHandler):
             try: json_ok(g.ask(q))
             except Exception as e: json_ok({"error":str(e),"answer":f"处理失败: {e}","sources":[],"overall_confidence":0,"has_sufficient_evidence":False,"review_status":"pending","qa_id":""})
         
+        elif pa=='/api/qa':
+            """问答系统（检索+生成）"""
+            from skwm_qa_api import ask
+            body=json.loads(self.rfile.read(int(self.headers.get('Content-Length',0))))
+            q=body.get('question','')
+            lang=body.get('lang','zh')
+            history=body.get('history',[])
+            if not q: json_ok({"answer":"请输入问题","sources":[],"confidence":0,"has_evidence":False})
+            else: json_ok(ask(q, lang, history))
+        
         elif pa=='/api/graphrag/stats':
             from skwm_graphrag_evidence import GraphRAGAPI
             json_ok(GraphRAGAPI().stats())
