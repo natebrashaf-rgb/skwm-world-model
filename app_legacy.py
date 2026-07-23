@@ -5,7 +5,7 @@
 多层UI · 精致图标 · 丰富的视觉层次
 """
 
-import os, re, json, sys, socket, random, urllib.request, ssl
+import os, re, json, sys, socket, urllib.request, ssl
 from pathlib import Path
 from collections import Counter
 from http.server import HTTPServer, BaseHTTPRequestHandler
@@ -38,6 +38,8 @@ class Engine:
         self.all=unique
         # 预加载真实世界模型数据
         self._sv_data = self._load_state_vectors()
+        # 预计算图谱数据
+        self._graph_cache = {}
         print(f'  ✅ 目录:{len(self.catalog)} + 阿语:{len(self.arabic)} + 主表:{len(self.b1)} = 总计:{len(self.all)} 篇')
         if self.kg_stats: print(f'  🕸️ 知识图谱: {self.kg_stats.get("nodes",0)}节点/{self.kg_stats.get("edges",0)}边')
     def _load_kg_stats(self):
@@ -586,43 +588,26 @@ class H(BaseHTTPRequestHandler):
             lang=params.get('lang',['all'])[0]
             limit=int(params.get('limit',['2000'])[0])
             limit = min(max(limit, 100), 2200)
-            # 使用真实世界模型数据
+            # 使用预加载的真实数据
             sv = eng._sv_data.get(str(y), {}) if hasattr(eng, '_sv_data') else {}
-            if sv:
-                items = list(sv.items())
-                # 按热度排序
-                items.sort(key=lambda x: -x[1][0])
-                selected = items[:limit]
-                nodes=[]
-                id_map={}
-                for i,(name,vec) in enumerate(selected):
-                    heat,growth,centrality,conn = vec[:4] if len(vec)>=4 else (vec[0],0,0,0)
-                    et = eng._classify(name)
-                    nid = f"e{i}"
-                    id_map[name] = nid
-                    nodes.append({"id":nid,"label":name,"value":max(8,heat//15),
-                        "entity_type":et,"heat":heat,"growth":growth,
-                        "centrality":centrality,"connections":conn})
-                # 分类连线：同类实体之间连边，热度相近的连边
-                edges=[]
-                by_type = {}
-                for n in nodes:
-                    t = n["entity_type"]
-                    if t not in by_type: by_type[t] = []
-                    by_type[t].append(n)
-                for t, ns in by_type.items():
-                    top = ns[:min(80, len(ns))]
-                    for i in range(len(top)):
-                        for j in range(i+1, len(top)):
-                            heat_diff = abs(top[i]["heat"] - top[j]["heat"])
-                            if heat_diff < 500 or (heat_diff < 1000 and random.random()<0.3):
-                                edges.append({"source":top[i]["id"],"target":top[j]["id"],
-                                    "weight":max(1, 10 - heat_diff//100)})
-                json_ok({"nodes":nodes,"edges":edges[:min(len(edges), 5000)],
-                         "stats":{"nodes_rendered":len(nodes),"edges_rendered":min(len(edges),5000),
-                                  "total_nodes":len(items),"total_edges":len(items)*2}})
-            else:
-                json_err("无状态向量数据")
+            if not sv:
+                json_err("无数据"); return
+            items = sorted(sv.items(), key=lambda x: -x[1][0])[:limit]
+            nodes=[]
+            for i,(name,vec) in enumerate(items):
+                h,g,cx,cn = vec[:4]
+                et = eng._classify(name)
+                nodes.append({"id":f"e{i}","label":name,"value":max(5,h//20),
+                    "entity_type":et,"heat":h,"growth":g,"centrality":cx,"connections":cn})
+            # 简单边：只连同类且热度相近的（前100个）
+            top = nodes[:100]
+            edges=[]
+            for i in range(len(top)):
+                for j in range(i+1,len(top)):
+                    if top[i]["entity_type"]==top[j]["entity_type"] and abs(top[i]["heat"]-top[j]["heat"])<800:
+                        edges.append({"source":top[i]["id"],"target":top[j]["id"],"weight":2})
+            json_ok({"nodes":nodes,"edges":edges[:2000],
+                "stats":{"nodes_rendered":len(nodes),"edges_rendered":min(len(edges),2000)}})
         
         elif pa=='/api/science-map/publication-trends':
             years=Counter()
