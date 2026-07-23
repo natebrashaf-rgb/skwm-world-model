@@ -978,7 +978,19 @@ class H(BaseHTTPRequestHandler):
         if '/api' in str(a[0]): print(f"  📡 {a[0]}")
 
 if __name__=="__main__":
-    s=eng.stats();print(f"\n{'='*50}\n  🌍 SKWM 旗舰版\n{'='*50}\n  📚 {s['total']} 篇\n  🧠 {'✅' if DEEPSEEK_KEY else '⚠️'} DeepSeek\n  🌐 http://localhost:{PORT}\n{'='*50}\n")
+    s=eng.stats()
+    # ── 飞书长连接机器人（后台线程） ──
+    if os.environ.get("FEISHU_APP_ID") and os.environ.get("FEISHU_APP_SECRET"):
+        import threading
+        from skwm_platform.backend.feishu_ws_bot import FeishuWSBot
+        _feishu_bot = FeishuWSBot()
+        _ws_thread = threading.Thread(target=_feishu_bot.start, daemon=True)
+        _ws_thread.start()
+        print(f"  🤖 飞书长连接机器人已启动")
+    else:
+        print(f"  ⚠️ FEISHU_APP_ID/SECRET 未配置 — 飞书机器人未启动")
+    
+    print(f"\n{'='*50}\n  🌍 SKWM 旗舰版\n{'='*50}\n  📚 {s['total']} 篇\n  🧠 {'✅' if DEEPSEEK_KEY else '⚠️'} DeepSeek\n  🌐 http://localhost:{PORT}\n{'='*50}\n")
     server=HTTPServer(('0.0.0.0',PORT),H)
     try: server.serve_forever()
     except KeyboardInterrupt: print("已停止");server.server_close()
