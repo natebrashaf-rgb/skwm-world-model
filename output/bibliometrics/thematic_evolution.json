@@ -1,0 +1,967 @@
+{
+  "timeline": [
+    {
+      "period": "1855-1859",
+      "hotspots": [
+        {
+          "keyword": "Selection",
+          "freq": 1
+        },
+        {
+          "keyword": "Means Of",
+          "freq": 1
+        },
+        {
+          "keyword": "Natural",
+          "freq": 1
+        },
+        {
+          "keyword": "Means",
+          "freq": 1
+        },
+        {
+          "keyword": "Mean",
+          "freq": 1
+        },
+        {
+          "keyword": "Origin",
+          "freq": 1
+        },
+        {
+          "keyword": "Life",
+          "freq": 1
+        },
+        {
+          "keyword": "保存",
+          "freq": 1
+        },
+        {
+          "keyword": "Of Natural",
+          "freq": 1
+        },
+        {
+          "keyword": "of natural",
+          "freq": 1
+        }
+      ],
+      "total_keywords": 10,
+      "unique_keywords": 10
+    },
+    {
+      "period": "1895-1899",
+      "hotspots": [
+        {
+          "keyword": "朝圣者",
+          "freq": 1
+        },
+        {
+          "keyword": "Image",
+          "freq": 1
+        },
+        {
+          "keyword": "麦加",
+          "freq": 1
+        }
+      ],
+      "total_keywords": 3,
+      "unique_keywords": 3
+    },
+    {
+      "period": "1900-1904",
+      "hotspots": [
+        {
+          "keyword": "朝圣者",
+          "freq": 1
+        },
+        {
+          "keyword": "Image",
+          "freq": 1
+        },
+        {
+          "keyword": "麦加",
+          "freq": 1
+        }
+      ],
+      "total_keywords": 3,
+      "unique_keywords": 3
+    },
+    {
+      "period": "1910-1914",
+      "hotspots": [
+        {
+          "keyword": "arab_tourism",
+          "freq": 3
+        },
+        {
+          "keyword": "Change",
+          "freq": 1
+        },
+        {
+          "keyword": "交流",
+          "freq": 1
+        }
+      ],
+      "total_keywords": 5,
+      "unique_keywords": 3
+    },
+    {
+      "period": "1925-1929",
+      "hotspots": [
+        {
+          "keyword": "朝圣者",
+          "freq": 1
+        },
+        {
+          "keyword": "Image",
+          "freq": 1
+        },
+        {
+          "keyword": "麦加",
+          "freq": 1
+        }
+      ],
+      "total_keywords": 3,
+      "unique_keywords": 3
+    },
+    {
+      "period": "1930-1934",
+      "hotspots": [
+        {
+          "keyword": "朝圣者",
+          "freq": 2
+        },
+        {
+          "keyword": "Image",
+          "freq": 2
+        },
+        {
+          "keyword": "麦加",
+          "freq": 2
+        }
+      ],
+      "total_keywords": 6,
+      "unique_keywords": 3
+    },
+    {
+      "period": "1935-1939",
+      "hotspots": [
+        {
+          "keyword": "麦加",
+          "freq": 2
+        },
+        {
+          "keyword": "Image",
+          "freq": 2
+        },
+        {
+          "keyword": "朝圣者",
+          "freq": 2
+        },
+        {
+          "keyword": "社会",
+          "freq": 1
+        },
+        {
+          "keyword": "Of An",
+          "freq": 1
+        },
+        {
+          "keyword": "Life",
+          "freq": 1
+        },
+        {
+          "keyword": "Coastal",
+          "freq": 1
+        },
+        {
+          "keyword": "Formation",
+          "freq": 1
+        },
+        {
+          "keyword": "Post",
+          "freq": 1
+        },
+        {
+          "keyword": "East",
+          "freq": 1
+        }
+      ],
+      "total_keywords": 19,
+      "unique_keywords": 16
+    },
+    {
+      "period": "1945-1949",
+      "hotspots": [
+        {
+          "keyword": "Student",
+          "freq": 1
+        },
+        {
+          "keyword": "Change",
+          "freq": 1
+        },
+        {
+          "keyword": "交流",
+          "freq": 1
+        }
+      ],
+      "total_keywords": 3,
+      "unique_keywords": 3
+    },
+    {
+      "period": "1950-1954",
+      "hotspots": [
+        {
+          "keyword": "交流",
+          "freq": 6
+        },
+        {
+          "keyword": "Change",
+          "freq": 6
+        },
+        {
+          "keyword": "Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Arrangements",
+          "freq": 5
+        },
+        {
+          "keyword": "report on",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report On",
+          "freq": 5
+        },
+        {
+          "keyword": "Report On",
+          "freq": 5
+        },
+        {
+          "keyword": "Restrictions",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual",
+          "freq": 5
+        }
+      ],
+      "total_keywords": 60,
+      "unique_keywords": 18
+    },
+    {
+      "period": "1955-1959",
+      "hotspots": [
+        {
+          "keyword": "Report",
+          "freq": 6
+        },
+        {
+          "keyword": "交流",
+          "freq": 6
+        },
+        {
+          "keyword": "Change",
+          "freq": 6
+        },
+        {
+          "keyword": "Arrangements",
+          "freq": 5
+        },
+        {
+          "keyword": "report on",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report On",
+          "freq": 5
+        },
+        {
+          "keyword": "Report On",
+          "freq": 5
+        },
+        {
+          "keyword": "Restrictions",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual",
+          "freq": 5
+        }
+      ],
+      "total_keywords": 68,
+      "unique_keywords": 25
+    },
+    {
+      "period": "1960-1964",
+      "hotspots": [
+        {
+          "keyword": "交流",
+          "freq": 6
+        },
+        {
+          "keyword": "Change",
+          "freq": 6
+        },
+        {
+          "keyword": "Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Arrangements",
+          "freq": 5
+        },
+        {
+          "keyword": "report on",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report On",
+          "freq": 5
+        },
+        {
+          "keyword": "Report On",
+          "freq": 5
+        },
+        {
+          "keyword": "Restrictions",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual",
+          "freq": 5
+        }
+      ],
+      "total_keywords": 83,
+      "unique_keywords": 39
+    },
+    {
+      "period": "1965-1969",
+      "hotspots": [
+        {
+          "keyword": "社会",
+          "freq": 8
+        },
+        {
+          "keyword": "阿拉伯",
+          "freq": 8
+        },
+        {
+          "keyword": "交流",
+          "freq": 7
+        },
+        {
+          "keyword": "Change",
+          "freq": 7
+        },
+        {
+          "keyword": "Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Arrangements",
+          "freq": 5
+        },
+        {
+          "keyword": "report on",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report On",
+          "freq": 5
+        },
+        {
+          "keyword": "Report On",
+          "freq": 5
+        }
+      ],
+      "total_keywords": 125,
+      "unique_keywords": 64
+    },
+    {
+      "period": "1970-1974",
+      "hotspots": [
+        {
+          "keyword": "Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Arrangements",
+          "freq": 5
+        },
+        {
+          "keyword": "report on",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report On",
+          "freq": 5
+        },
+        {
+          "keyword": "Report On",
+          "freq": 5
+        },
+        {
+          "keyword": "交流",
+          "freq": 5
+        },
+        {
+          "keyword": "Restrictions",
+          "freq": 5
+        },
+        {
+          "keyword": "Change",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual",
+          "freq": 5
+        }
+      ],
+      "total_keywords": 102,
+      "unique_keywords": 57
+    },
+    {
+      "period": "1975-1979",
+      "hotspots": [
+        {
+          "keyword": "Change",
+          "freq": 8
+        },
+        {
+          "keyword": "交流",
+          "freq": 8
+        },
+        {
+          "keyword": "Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Arrangements",
+          "freq": 5
+        },
+        {
+          "keyword": "report on",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report On",
+          "freq": 5
+        },
+        {
+          "keyword": "Report On",
+          "freq": 5
+        },
+        {
+          "keyword": "Restrictions",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual",
+          "freq": 5
+        }
+      ],
+      "total_keywords": 177,
+      "unique_keywords": 104
+    },
+    {
+      "period": "1980-1984",
+      "hotspots": [
+        {
+          "keyword": "Tour",
+          "freq": 10
+        },
+        {
+          "keyword": "旅游",
+          "freq": 9
+        },
+        {
+          "keyword": "交流",
+          "freq": 7
+        },
+        {
+          "keyword": "Change",
+          "freq": 6
+        },
+        {
+          "keyword": "Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Arrangements",
+          "freq": 5
+        },
+        {
+          "keyword": "report on",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report",
+          "freq": 5
+        },
+        {
+          "keyword": "Annual Report On",
+          "freq": 5
+        },
+        {
+          "keyword": "Report On",
+          "freq": 5
+        }
+      ],
+      "total_keywords": 188,
+      "unique_keywords": 102
+    },
+    {
+      "period": "1985-1989",
+      "hotspots": [
+        {
+          "keyword": "Tour",
+          "freq": 18
+        },
+        {
+          "keyword": "旅游",
+          "freq": 17
+        },
+        {
+          "keyword": "Monitor",
+          "freq": 10
+        },
+        {
+          "keyword": "阿拉伯",
+          "freq": 7
+        },
+        {
+          "keyword": "文化",
+          "freq": 5
+        },
+        {
+          "keyword": "Change",
+          "freq": 4
+        },
+        {
+          "keyword": "交流",
+          "freq": 4
+        },
+        {
+          "keyword": "管理",
+          "freq": 4
+        },
+        {
+          "keyword": "Market",
+          "freq": 3
+        },
+        {
+          "keyword": "World",
+          "freq": 3
+        }
+      ],
+      "total_keywords": 248,
+      "unique_keywords": 161
+    },
+    {
+      "period": "1990-1994",
+      "hotspots": [
+        {
+          "keyword": "Tour",
+          "freq": 12
+        },
+        {
+          "keyword": "旅游",
+          "freq": 10
+        },
+        {
+          "keyword": "Work",
+          "freq": 7
+        },
+        {
+          "keyword": "文化",
+          "freq": 7
+        },
+        {
+          "keyword": "Nation",
+          "freq": 6
+        },
+        {
+          "keyword": "发展",
+          "freq": 6
+        },
+        {
+          "keyword": "East",
+          "freq": 6
+        },
+        {
+          "keyword": "国家",
+          "freq": 5
+        },
+        {
+          "keyword": "国际",
+          "freq": 5
+        },
+        {
+          "keyword": "经济",
+          "freq": 5
+        }
+      ],
+      "total_keywords": 464,
+      "unique_keywords": 286
+    },
+    {
+      "period": "1995-1999",
+      "hotspots": [
+        {
+          "keyword": "Tour",
+          "freq": 29
+        },
+        {
+          "keyword": "旅游",
+          "freq": 28
+        },
+        {
+          "keyword": "Language",
+          "freq": 9
+        },
+        {
+          "keyword": "文化",
+          "freq": 9
+        },
+        {
+          "keyword": "Nation",
+          "freq": 8
+        },
+        {
+          "keyword": "Rate",
+          "freq": 7
+        },
+        {
+          "keyword": "Change",
+          "freq": 7
+        },
+        {
+          "keyword": "对话",
+          "freq": 7
+        },
+        {
+          "keyword": "City",
+          "freq": 6
+        },
+        {
+          "keyword": "国家",
+          "freq": 6
+        }
+      ],
+      "total_keywords": 707,
+      "unique_keywords": 412
+    },
+    {
+      "period": "2000-2004",
+      "hotspots": [
+        {
+          "keyword": "Tour",
+          "freq": 80
+        },
+        {
+          "keyword": "旅游",
+          "freq": 79
+        },
+        {
+          "keyword": "文化",
+          "freq": 43
+        },
+        {
+          "keyword": "遗产",
+          "freq": 36
+        },
+        {
+          "keyword": "发展",
+          "freq": 28
+        },
+        {
+          "keyword": "Nation",
+          "freq": 24
+        },
+        {
+          "keyword": "阿拉伯",
+          "freq": 23
+        },
+        {
+          "keyword": "全球",
+          "freq": 17
+        },
+        {
+          "keyword": "East",
+          "freq": 16
+        },
+        {
+          "keyword": "Version",
+          "freq": 14
+        }
+      ],
+      "total_keywords": 2168,
+      "unique_keywords": 871
+    },
+    {
+      "period": "2005-2009",
+      "hotspots": [
+        {
+          "keyword": "Tour",
+          "freq": 134
+        },
+        {
+          "keyword": "旅游",
+          "freq": 121
+        },
+        {
+          "keyword": "文化",
+          "freq": 76
+        },
+        {
+          "keyword": "遗产",
+          "freq": 57
+        },
+        {
+          "keyword": "阿拉伯",
+          "freq": 50
+        },
+        {
+          "keyword": "Nation",
+          "freq": 43
+        },
+        {
+          "keyword": "World",
+          "freq": 36
+        },
+        {
+          "keyword": "City",
+          "freq": 28
+        },
+        {
+          "keyword": "Chapter",
+          "freq": 28
+        },
+        {
+          "keyword": "全球",
+          "freq": 24
+        }
+      ],
+      "total_keywords": 4160,
+      "unique_keywords": 1263
+    },
+    {
+      "period": "2010-2014",
+      "hotspots": [
+        {
+          "keyword": "Tour",
+          "freq": 253
+        },
+        {
+          "keyword": "旅游",
+          "freq": 247
+        },
+        {
+          "keyword": "文化",
+          "freq": 159
+        },
+        {
+          "keyword": "Nation",
+          "freq": 120
+        },
+        {
+          "keyword": "阿拉伯",
+          "freq": 89
+        },
+        {
+          "keyword": "遗产",
+          "freq": 89
+        },
+        {
+          "keyword": "Rate",
+          "freq": 58
+        },
+        {
+          "keyword": "发展",
+          "freq": 58
+        },
+        {
+          "keyword": "Image",
+          "freq": 57
+        },
+        {
+          "keyword": "City",
+          "freq": 56
+        }
+      ],
+      "total_keywords": 7857,
+      "unique_keywords": 1691
+    },
+    {
+      "period": "2015-2019",
+      "hotspots": [
+        {
+          "keyword": "旅游",
+          "freq": 451
+        },
+        {
+          "keyword": "Tour",
+          "freq": 447
+        },
+        {
+          "keyword": "文化",
+          "freq": 262
+        },
+        {
+          "keyword": "遗产",
+          "freq": 227
+        },
+        {
+          "keyword": "Nation",
+          "freq": 213
+        },
+        {
+          "keyword": "阿拉伯",
+          "freq": 141
+        },
+        {
+          "keyword": "发展",
+          "freq": 118
+        },
+        {
+          "keyword": "World",
+          "freq": 109
+        },
+        {
+          "keyword": "View",
+          "freq": 106
+        },
+        {
+          "keyword": "City",
+          "freq": 103
+        }
+      ],
+      "total_keywords": 16042,
+      "unique_keywords": 2246
+    },
+    {
+      "period": "2020-2024",
+      "hotspots": [
+        {
+          "keyword": "旅游",
+          "freq": 784
+        },
+        {
+          "keyword": "Tour",
+          "freq": 717
+        },
+        {
+          "keyword": "文化",
+          "freq": 441
+        },
+        {
+          "keyword": "Nation",
+          "freq": 347
+        },
+        {
+          "keyword": "遗产",
+          "freq": 322
+        },
+        {
+          "keyword": "艺术",
+          "freq": 182
+        },
+        {
+          "keyword": "阿拉伯",
+          "freq": 176
+        },
+        {
+          "keyword": "View",
+          "freq": 170
+        },
+        {
+          "keyword": "Rate",
+          "freq": 168
+        },
+        {
+          "keyword": "目的地",
+          "freq": 165
+        }
+      ],
+      "total_keywords": 24553,
+      "unique_keywords": 2539
+    },
+    {
+      "period": "2025-2029",
+      "hotspots": [
+        {
+          "keyword": "旅游",
+          "freq": 371
+        },
+        {
+          "keyword": "Tour",
+          "freq": 333
+        },
+        {
+          "keyword": "文化",
+          "freq": 253
+        },
+        {
+          "keyword": "Gene",
+          "freq": 196
+        },
+        {
+          "keyword": "遗产",
+          "freq": 169
+        },
+        {
+          "keyword": "Nation",
+          "freq": 164
+        },
+        {
+          "keyword": "跨界交叉",
+          "freq": 160
+        },
+        {
+          "keyword": "Rate",
+          "freq": 127
+        },
+        {
+          "keyword": "阿拉伯文化",
+          "freq": 102
+        },
+        {
+          "keyword": "Generative Ai",
+          "freq": 98
+        }
+      ],
+      "total_keywords": 11587,
+      "unique_keywords": 1901
+    }
+  ],
+  "stats": {
+    "slices": 24
+  }
+}

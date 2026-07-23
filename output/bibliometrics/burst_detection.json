@@ -1,0 +1,218 @@
+{
+  "bursts": [
+    {
+      "keyword": "Image",
+      "burst_year": 1912,
+      "intensity": 66.67,
+      "frequency": 351,
+      "window_freq": 2
+    },
+    {
+      "keyword": "麦加",
+      "burst_year": 1912,
+      "intensity": 66.67,
+      "frequency": 35,
+      "window_freq": 2
+    },
+    {
+      "keyword": "朝圣者",
+      "burst_year": 1912,
+      "intensity": 66.67,
+      "frequency": 92,
+      "window_freq": 2
+    },
+    {
+      "keyword": "arab_tourism",
+      "burst_year": 1913,
+      "intensity": 60.0,
+      "frequency": 7,
+      "window_freq": 3
+    },
+    {
+      "keyword": "Report",
+      "burst_year": 1952,
+      "intensity": 50.0,
+      "frequency": 114,
+      "window_freq": 3
+    },
+    {
+      "keyword": "阿拉伯",
+      "burst_year": 1971,
+      "intensity": 50.0,
+      "frequency": 574,
+      "window_freq": 10
+    },
+    {
+      "keyword": "report on",
+      "burst_year": 1952,
+      "intensity": 50.0,
+      "frequency": 39,
+      "window_freq": 3
+    },
+    {
+      "keyword": "Report On",
+      "burst_year": 1952,
+      "intensity": 50.0,
+      "frequency": 39,
+      "window_freq": 3
+    },
+    {
+      "keyword": "Annual",
+      "burst_year": 1952,
+      "intensity": 50.0,
+      "frequency": 41,
+      "window_freq": 3
+    },
+    {
+      "keyword": "Annual Report",
+      "burst_year": 1952,
+      "intensity": 50.0,
+      "frequency": 36,
+      "window_freq": 3
+    },
+    {
+      "keyword": "Arrangements",
+      "burst_year": 1952,
+      "intensity": 50.0,
+      "frequency": 35,
+      "window_freq": 3
+    },
+    {
+      "keyword": "Annual Report On",
+      "burst_year": 1952,
+      "intensity": 50.0,
+      "frequency": 35,
+      "window_freq": 3
+    },
+    {
+      "keyword": "Restrictions",
+      "burst_year": 1952,
+      "intensity": 50.0,
+      "frequency": 35,
+      "window_freq": 3
+    },
+    {
+      "keyword": "理论",
+      "burst_year": 1964,
+      "intensity": 40.0,
+      "frequency": 67,
+      "window_freq": 2
+    },
+    {
+      "keyword": "Student",
+      "burst_year": 1951,
+      "intensity": 40.0,
+      "frequency": 56,
+      "window_freq": 2
+    },
+    {
+      "keyword": "发展",
+      "burst_year": 1963,
+      "intensity": 28.57,
+      "frequency": 467,
+      "window_freq": 2
+    },
+    {
+      "keyword": "Monitor",
+      "burst_year": 1986,
+      "intensity": 27.59,
+      "frequency": 35,
+      "window_freq": 8
+    },
+    {
+      "keyword": "Tour",
+      "burst_year": 1973,
+      "intensity": 20.0,
+      "frequency": 2039,
+      "window_freq": 2
+    },
+    {
+      "keyword": "游客",
+      "burst_year": 1973,
+      "intensity": 20.0,
+      "frequency": 165,
+      "window_freq": 2
+    },
+    {
+      "keyword": "国家",
+      "burst_year": 1979,
+      "intensity": 18.75,
+      "frequency": 246,
+      "window_freq": 3
+    },
+    {
+      "keyword": "Loss",
+      "burst_year": 1983,
+      "intensity": 15.79,
+      "frequency": 20,
+      "window_freq": 3
+    },
+    {
+      "keyword": "Glossary",
+      "burst_year": 1983,
+      "intensity": 15.79,
+      "frequency": 9,
+      "window_freq": 3
+    },
+    {
+      "keyword": "旅游",
+      "burst_year": 1977,
+      "intensity": 14.29,
+      "frequency": 2121,
+      "window_freq": 2
+    },
+    {
+      "keyword": "非斯",
+      "burst_year": 1982,
+      "intensity": 14.29,
+      "frequency": 79,
+      "window_freq": 2
+    },
+    {
+      "keyword": "社会",
+      "burst_year": 1969,
+      "intensity": 13.85,
+      "frequency": 308,
+      "window_freq": 8
+    },
+    {
+      "keyword": "Europe",
+      "burst_year": 1979,
+      "intensity": 12.5,
+      "frequency": 65,
+      "window_freq": 2
+    },
+    {
+      "keyword": "国际",
+      "burst_year": 1978,
+      "intensity": 12.5,
+      "frequency": 101,
+      "window_freq": 2
+    },
+    {
+      "keyword": "Comparative",
+      "burst_year": 1979,
+      "intensity": 12.5,
+      "frequency": 77,
+      "window_freq": 2
+    },
+    {
+      "keyword": "Capacity",
+      "burst_year": 1978,
+      "intensity": 12.5,
+      "frequency": 43,
+      "window_freq": 2
+    },
+    {
+      "keyword": "Carrying",
+      "burst_year": 1978,
+      "intensity": 12.5,
+      "frequency": 60,
+      "window_freq": 2
+    }
+  ],
+  "stats": {
+    "total_keywords": 2987,
+    "bursts_found": 30
+  }
+}

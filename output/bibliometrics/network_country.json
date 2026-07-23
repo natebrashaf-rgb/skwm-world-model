@@ -1,0 +1,88 @@
+{
+  "type": "country",
+  "nodes": [
+    {
+      "id": "中国",
+      "label": "中国",
+      "papers": 2,
+      "type": "country",
+      "is_china": true,
+      "is_arab": false,
+      "group": "china"
+    },
+    {
+      "id": "伊朗",
+      "label": "伊朗",
+      "papers": 17,
+      "type": "country",
+      "is_china": false,
+      "is_arab": false,
+      "group": "other"
+    },
+    {
+      "id": "法国",
+      "label": "法国",
+      "papers": 13,
+      "type": "country",
+      "is_china": false,
+      "is_arab": false,
+      "group": "other"
+    },
+    {
+      "id": "约旦",
+      "label": "约旦",
+      "papers": 4,
+      "type": "country",
+      "is_china": false,
+      "is_arab": true,
+      "group": "arab"
+    },
+    {
+      "id": "美国",
+      "label": "美国",
+      "papers": 52,
+      "type": "country",
+      "is_china": false,
+      "is_arab": false,
+      "group": "other"
+    },
+    {
+      "id": "英国",
+      "label": "英国",
+      "papers": 153,
+      "type": "country",
+      "is_china": false,
+      "is_arab": false,
+      "group": "other"
+    },
+    {
+      "id": "阿曼",
+      "label": "阿曼",
+      "papers": 21,
+      "type": "country",
+      "is_china": false,
+      "is_arab": true,
+      "group": "arab"
+    }
+  ],
+  "edges": [
+    {
+      "source": "约旦",
+      "target": "英国",
+      "weight": 1,
+      "is_china_arab": false
+    },
+    {
+      "source": "美国",
+      "target": "英国",
+      "weight": 1,
+      "is_china_arab": false
+    }
+  ],
+  "stats": {
+    "nodes": 7,
+    "edges": 2,
+    "china_arab_edges": 0,
+    "density": 0.095238
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "networks": {
+    "coword": {
+      "nodes": 2339,
+      "edges": 36096,
+      "communities": 26,
+      "density": 0.013201
+    },
+    "coauthor": {
+      "nodes": 200,
+      "edges": 294,
+      "density": 0.014774
+    },
+    "country": {
+      "nodes": 7,
+      "edges": 2,
+      "china_arab_edges": 0,
+      "density": 0.095238
+    },
+    "citation": {
+      "nodes": 50,
+      "edges": 70,
+      "top_cited": [
+        [
+          "The PRISMA 2020 stat",
+          96863
+        ],
+        [
+          "Inline Hardware KV-C",
+          76379
+        ],
+        [
+          "NIH Image to ImageJ:",
+          65473
+        ],
+        [
+          "Preferred Reporting ",
+          64309
+        ],
+        [
+          "XGBoost",
+          49232
+        ]
+      ]
+    }
+  },
+  "burst": {
+    "total_keywords": 2987,
+    "bursts_found": 30
+  },
+  "evolution": {
+    "slices": 24
+  }
+}

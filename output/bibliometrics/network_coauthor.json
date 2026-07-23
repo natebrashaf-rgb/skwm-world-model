@@ -1,0 +1,3082 @@
+{
+  "type": "coauthor",
+  "nodes": [
+    {
+      "id": "Abbas",
+      "label": "Abbas",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2021-2024"
+    },
+    {
+      "id": "Adolf Acquaye",
+      "label": "Adolf Acquaye",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2015-2016"
+    },
+    {
+      "id": "Ahmad",
+      "label": "Ahmad",
+      "papers": 10,
+      "degree": 1,
+      "type": "author",
+      "year_range": "2017-2026"
+    },
+    {
+      "id": "Ahmed I. Osman",
+      "label": "Ahmed I. Osman",
+      "papers": 7,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2020-2024"
+    },
+    {
+      "id": "Ahmed M. Elgarahy",
+      "label": "Ahmed M. Elgarahy",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2020-2023"
+    },
+    {
+      "id": "Alessandro Liberati",
+      "label": "Alessandro Liberati",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2009-2009"
+    },
+    {
+      "id": "Alfonso J. Cruz‐Jentoft",
+      "label": "Alfonso J. Cruz‐Jentoft",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2010-2019"
+    },
+    {
+      "id": "Almuhrzi",
+      "label": "Almuhrzi",
+      "papers": 5,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2017-2017"
+    },
+    {
+      "id": "Alriyami",
+      "label": "Alriyami",
+      "papers": 4,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2017-2017"
+    },
+    {
+      "id": "Amandeep Dhir",
+      "label": "Amandeep Dhir",
+      "papers": 3,
+      "degree": 0,
+      "type": "author",
+      "year_range": "2020-2021"
+    },
+    {
+      "id": "Amanuel Alemu Abajobir",
+      "label": "Amanuel Alemu Abajobir",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2017-2017"
+    },
+    {
+      "id": "Anderson da Costa Armstrong",
+      "label": "Anderson da Costa Armstrong",
+      "papers": 1,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2015"
+    },
+    {
+      "id": "Andras",
+      "label": "Andras",
+      "papers": 1,
+      "degree": 4,
+      "type": "author",
+      "year_range": "1994-1994"
+    },
+    {
+      "id": "Andrea Genovese",
+      "label": "Andrea Genovese",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2015-2016"
+    },
+    {
+      "id": "Andrew Lewis",
+      "label": "Andrew Lewis",
+      "papers": 1,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2014"
+    },
+    {
+      "id": "Asta Gindulytė",
+      "label": "Asta Gindulytė",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2018-2022"
+    },
+    {
+      "id": "Aziz",
+      "label": "Aziz",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2001-2022"
+    },
+    {
+      "id": "Banerjee",
+      "label": "Banerjee",
+      "papers": 8,
+      "degree": 1,
+      "type": "author",
+      "year_range": "2023-2026"
+    },
+    {
+      "id": "Bao",
+      "label": "Bao",
+      "papers": 4,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2019-2023"
+    },
+    {
+      "id": "Bart Los",
+      "label": "Bart Los",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2014"
+    },
+    {
+      "id": "Bencardino",
+      "label": "Bencardino",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "0-0"
+    },
+    {
+      "id": "Billé",
+      "label": "Billé",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2022-2025"
+    },
+    {
+      "id": "Bjorn",
+      "label": "Bjorn",
+      "papers": 1,
+      "degree": 2,
+      "type": "author",
+      "year_range": "1994-1994"
+    },
+    {
+      "id": "Björn Hettne",
+      "label": "Björn Hettne",
+      "papers": 1,
+      "degree": 2,
+      "type": "author",
+      "year_range": "1994-1994"
+    },
+    {
+      "id": "Brown",
+      "label": "Brown",
+      "papers": 9,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2001-2025"
+    },
+    {
+      "id": "Chao",
+      "label": "Chao",
+      "papers": 6,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2019-2025"
+    },
+    {
+      "id": "Chao Wang",
+      "label": "Chao Wang",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2018-2021"
+    },
+    {
+      "id": "Chaoyang",
+      "label": "Chaoyang",
+      "papers": 10,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2020-2020"
+    },
+    {
+      "id": "Chen",
+      "label": "Chen",
+      "papers": 95,
+      "degree": 16,
+      "type": "author",
+      "year_range": "2001-2026"
+    },
+    {
+      "id": "Choi",
+      "label": "Choi",
+      "papers": 11,
+      "degree": 1,
+      "type": "author",
+      "year_range": "2012-2025"
+    },
+    {
+      "id": "Christian M. Ringle",
+      "label": "Christian M. Ringle",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2021"
+    },
+    {
+      "id": "Claudio Sassanelli",
+      "label": "Claudio Sassanelli",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2022-2024"
+    },
+    {
+      "id": "Cresta",
+      "label": "Cresta",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "0-0"
+    },
+    {
+      "id": "Cripps",
+      "label": "Cripps",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2023-2023"
+    },
+    {
+      "id": "Cristiana Abbafati",
+      "label": "Cristiana Abbafati",
+      "papers": 8,
+      "degree": 6,
+      "type": "author",
+      "year_range": "2017-2024"
+    },
+    {
+      "id": "Cynthia D. Mulrow",
+      "label": "Cynthia D. Mulrow",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2007-2009"
+    },
+    {
+      "id": "Daniel Cer",
+      "label": "Daniel Cer",
+      "papers": 4,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2013-2022"
+    },
+    {
+      "id": "Daniel Leung",
+      "label": "Daniel Leung",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2022-2023"
+    },
+    {
+      "id": "Daron Acemoğlu",
+      "label": "Daron Acemoğlu",
+      "papers": 5,
+      "degree": 0,
+      "type": "author",
+      "year_range": "2000-2019"
+    },
+    {
+      "id": "David Autor",
+      "label": "David Autor",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2013-2016"
+    },
+    {
+      "id": "David Dorn",
+      "label": "David Dorn",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2013-2016"
+    },
+    {
+      "id": "David Moher",
+      "label": "David Moher",
+      "papers": 7,
+      "degree": 1,
+      "type": "author",
+      "year_range": "2009-2021"
+    },
+    {
+      "id": "Degu Abate",
+      "label": "Degu Abate",
+      "papers": 2,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2018-2018"
+    },
+    {
+      "id": "Demir",
+      "label": "Demir",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2025-2026"
+    },
+    {
+      "id": "Deng",
+      "label": "Deng",
+      "papers": 8,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2023-2026"
+    },
+    {
+      "id": "Dimitrios Buhalis",
+      "label": "Dimitrios Buhalis",
+      "papers": 13,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2008-2023"
+    },
+    {
+      "id": "Dimitrios Galanis",
+      "label": "Dimitrios Galanis",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2016"
+    },
+    {
+      "id": "Dorte Herzke",
+      "label": "Dorte Herzke",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2020-2024"
+    },
+    {
+      "id": "Douglas G. Altman",
+      "label": "Douglas G. Altman",
+      "papers": 4,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2007-2013"
+    },
+    {
+      "id": "Duda",
+      "label": "Duda",
+      "papers": 4,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2021-2022"
+    },
+    {
+      "id": "El Khatib",
+      "label": "El Khatib",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2024"
+    },
+    {
+      "id": "Elvira Ismagilova",
+      "label": "Elvira Ismagilova",
+      "papers": 4,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2019-2020"
+    },
+    {
+      "id": "Emma Slade",
+      "label": "Emma Slade",
+      "papers": 4,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2019-2023"
+    },
+    {
+      "id": "Eneko Agirre",
+      "label": "Eneko Agirre",
+      "papers": 4,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2009-2018"
+    },
+    {
+      "id": "Esposito",
+      "label": "Esposito",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "0-0"
+    },
+    {
+      "id": "Fan",
+      "label": "Fan",
+      "papers": 10,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2010-2026"
+    },
+    {
+      "id": "Federica Acerbi",
+      "label": "Federica Acerbi",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2022-2024"
+    },
+    {
+      "id": "Gaaitzen J. de Vries",
+      "label": "Gaaitzen J. de Vries",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2014"
+    },
+    {
+      "id": "Gamage",
+      "label": "Gamage",
+      "papers": 3,
+      "degree": 0,
+      "type": "author",
+      "year_range": "2020-2025"
+    },
+    {
+      "id": "Gordon Hanson",
+      "label": "Gordon Hanson",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2008-2016"
+    },
+    {
+      "id": "Gretta Goldenman",
+      "label": "Gretta Goldenman",
+      "papers": 3,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2020-2024"
+    },
+    {
+      "id": "Han",
+      "label": "Han",
+      "papers": 24,
+      "degree": 6,
+      "type": "author",
+      "year_range": "2009-2026"
+    },
+    {
+      "id": "Haris Papageorgiou",
+      "label": "Haris Papageorgiou",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2016"
+    },
+    {
+      "id": "Hess",
+      "label": "Hess",
+      "papers": 7,
+      "degree": 0,
+      "type": "author",
+      "year_range": "2017-2018"
+    },
+    {
+      "id": "Hettne",
+      "label": "Hettne",
+      "papers": 1,
+      "degree": 2,
+      "type": "author",
+      "year_range": "1994-1994"
+    },
+    {
+      "id": "Huang",
+      "label": "Huang",
+      "papers": 47,
+      "degree": 8,
+      "type": "author",
+      "year_range": "2009-2026"
+    },
+    {
+      "id": "Ian T. Cousins",
+      "label": "Ian T. Cousins",
+      "papers": 3,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2020-2024"
+    },
+    {
+      "id": "Ibrahim",
+      "label": "Ibrahim",
+      "papers": 7,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2012-2023"
+    },
+    {
+      "id": "Inotai",
+      "label": "Inotai",
+      "papers": 1,
+      "degree": 4,
+      "type": "author",
+      "year_range": "1994-1994"
+    },
+    {
+      "id": "Ion Androutsopoulos",
+      "label": "Ion Androutsopoulos",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2016"
+    },
+    {
+      "id": "Isabelle Boutron",
+      "label": "Isabelle Boutron",
+      "papers": 4,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2014-2021"
+    },
+    {
+      "id": "Jaedong",
+      "label": "Jaedong",
+      "papers": 6,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2023-2023"
+    },
+    {
+      "id": "Jamie C. DeWitt",
+      "label": "Jamie C. DeWitt",
+      "papers": 3,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2020-2024"
+    },
+    {
+      "id": "Jennifer Tetzlaff",
+      "label": "Jennifer Tetzlaff",
+      "papers": 3,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2009-2013"
+    },
+    {
+      "id": "Jia He",
+      "label": "Jia He",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2018-2022"
+    },
+    {
+      "id": "Jianmin",
+      "label": "Jianmin",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2020-2020"
+    },
+    {
+      "id": "Jie Chen",
+      "label": "Jie Chen",
+      "papers": 4,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2022"
+    },
+    {
+      "id": "Jin",
+      "label": "Jin",
+      "papers": 10,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2017-2026"
+    },
+    {
+      "id": "Jizhe",
+      "label": "Jizhe",
+      "papers": 10,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2020-2020"
+    },
+    {
+      "id": "Joanne E. McKenzie",
+      "label": "Joanne E. McKenzie",
+      "papers": 3,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2020-2021"
+    },
+    {
+      "id": "Jonathan Afilalo",
+      "label": "Jonathan Afilalo",
+      "papers": 1,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2015"
+    },
+    {
+      "id": "Jongryul",
+      "label": "Jongryul",
+      "papers": 6,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2023-2023"
+    },
+    {
+      "id": "Journal",
+      "label": "Journal",
+      "papers": 23,
+      "degree": 0,
+      "type": "author",
+      "year_range": "2018-2018"
+    },
+    {
+      "id": "Juliane Glüge",
+      "label": "Juliane Glüge",
+      "papers": 3,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2020-2024"
+    },
+    {
+      "id": "Jörg Henseler",
+      "label": "Jörg Henseler",
+      "papers": 4,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2019"
+    },
+    {
+      "id": "Jürgen M. Bauer",
+      "label": "Jürgen M. Bauer",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2010-2018"
+    },
+    {
+      "id": "Jürgen Rudolph",
+      "label": "Jürgen Rudolph",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2020-2023"
+    },
+    {
+      "id": "Kaja Abbas",
+      "label": "Kaja Abbas",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2017-2020"
+    },
+    {
+      "id": "Kalkidan Hassen Abate",
+      "label": "Kalkidan Hassen Abate",
+      "papers": 5,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2017-2024"
+    },
+    {
+      "id": "Kamal",
+      "label": "Kamal",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2021-2021"
+    },
+    {
+      "id": "Kang",
+      "label": "Kang",
+      "papers": 14,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2008-2026"
+    },
+    {
+      "id": "Khan",
+      "label": "Khan",
+      "papers": 15,
+      "degree": 1,
+      "type": "author",
+      "year_range": "2001-2026"
+    },
+    {
+      "id": "Kim",
+      "label": "Kim",
+      "papers": 58,
+      "degree": 8,
+      "type": "author",
+      "year_range": "2009-2026"
+    },
+    {
+      "id": "Korstanje",
+      "label": "Korstanje",
+      "papers": 15,
+      "degree": 1,
+      "type": "author",
+      "year_range": "2020-2023"
+    },
+    {
+      "id": "Kostopoulou",
+      "label": "Kostopoulou",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2022-2022"
+    },
+    {
+      "id": "Kumar",
+      "label": "Kumar",
+      "papers": 29,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2009-2026"
+    },
+    {
+      "id": "Lankton",
+      "label": "Lankton",
+      "papers": 4,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2022-2025"
+    },
+    {
+      "id": "Law",
+      "label": "Law",
+      "papers": 7,
+      "degree": 2,
+      "type": "author",
+      "year_range": "1998-2026"
+    },
+    {
+      "id": "Lee",
+      "label": "Lee",
+      "papers": 55,
+      "degree": 7,
+      "type": "author",
+      "year_range": "1993-2026"
+    },
+    {
+      "id": "Lifeng",
+      "label": "Lifeng",
+      "papers": 10,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2020-2020"
+    },
+    {
+      "id": "Lin",
+      "label": "Lin",
+      "papers": 35,
+      "degree": 3,
+      "type": "author",
+      "year_range": "1984-2026"
+    },
+    {
+      "id": "Liu",
+      "label": "Liu",
+      "papers": 71,
+      "degree": 13,
+      "type": "author",
+      "year_range": "2005-2026"
+    },
+    {
+      "id": "Lucas Veiga Ãvila",
+      "label": "Lucas Veiga Ãvila",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2017-2017"
+    },
+    {
+      "id": "Luciana Brandli",
+      "label": "Luciana Brandli",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2017-2017"
+    },
+    {
+      "id": "Luigi P. Badano",
+      "label": "Luigi P. Badano",
+      "papers": 1,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2015"
+    },
+    {
+      "id": "Luke",
+      "label": "Luke",
+      "papers": 7,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2012-2022"
+    },
+    {
+      "id": "Madhusanka Liyanage",
+      "label": "Madhusanka Liyanage",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2018-2021"
+    },
+    {
+      "id": "Mahmoud Hefny",
+      "label": "Mahmoud Hefny",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2020-2021"
+    },
+    {
+      "id": "Marcel P. Timmer",
+      "label": "Marcel P. Timmer",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2015"
+    },
+    {
+      "id": "Marco Taisch",
+      "label": "Marco Taisch",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2022-2024"
+    },
+    {
+      "id": "Maria Pontiki",
+      "label": "Maria Pontiki",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2016"
+    },
+    {
+      "id": "Marko Sarstedt",
+      "label": "Marko Sarstedt",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2021"
+    },
+    {
+      "id": "Matthew J. Page",
+      "label": "Matthew J. Page",
+      "papers": 5,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2019-2022"
+    },
+    {
+      "id": "Mehendale",
+      "label": "Mehendale",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2022-2025"
+    },
+    {
+      "id": "Mehrad",
+      "label": "Mehrad",
+      "papers": 1,
+      "degree": 1,
+      "type": "author",
+      "year_range": "2023-2023"
+    },
+    {
+      "id": "Michael D. Williams",
+      "label": "Michael D. Williams",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2015-2017"
+    },
+    {
+      "id": "Michael S. Lin",
+      "label": "Michael S. Lin",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2022-2023"
+    },
+    {
+      "id": "Mika Ylianttila",
+      "label": "Mika Ylianttila",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2018-2021"
+    },
+    {
+      "id": "Milinčić",
+      "label": "Milinčić",
+      "papers": 1,
+      "degree": 0,
+      "type": "author",
+      "year_range": "0-0"
+    },
+    {
+      "id": "Ming K. Lim",
+      "label": "Ming K. Lim",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2018-2021"
+    },
+    {
+      "id": "Ming‐Lang Tseng",
+      "label": "Ming‐Lang Tseng",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2018-2021"
+    },
+    {
+      "id": "Mona Diab",
+      "label": "Mona Diab",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2016-2017"
+    },
+    {
+      "id": "Musinguzi",
+      "label": "Musinguzi",
+      "papers": 4,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2024"
+    },
+    {
+      "id": "Nguyen",
+      "label": "Nguyen",
+      "papers": 9,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2018-2024"
+    },
+    {
+      "id": "Noura Farra",
+      "label": "Noura Farra",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2017-2019"
+    },
+    {
+      "id": "Nripendra P. Rana",
+      "label": "Nripendra P. Rana",
+      "papers": 6,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2019"
+    },
+    {
+      "id": "O’Toole",
+      "label": "O’Toole",
+      "papers": 3,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2019-2019"
+    },
+    {
+      "id": "Pan",
+      "label": "Pan",
+      "papers": 13,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2012-2024"
+    },
+    {
+      "id": "Pandya",
+      "label": "Pandya",
+      "papers": 1,
+      "degree": 0,
+      "type": "author",
+      "year_range": "0-0"
+    },
+    {
+      "id": "Park",
+      "label": "Park",
+      "papers": 25,
+      "degree": 5,
+      "type": "author",
+      "year_range": "2009-2026"
+    },
+    {
+      "id": "Patrick M. Bossuyt",
+      "label": "Patrick M. Bossuyt",
+      "papers": 4,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2003-2021"
+    },
+    {
+      "id": "Pawani Porambage",
+      "label": "Pawani Porambage",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2018-2021"
+    },
+    {
+      "id": "Peter C Gøtzsche",
+      "label": "Peter C Gøtzsche",
+      "papers": 5,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2007-2013"
+    },
+    {
+      "id": "Pham",
+      "label": "Pham",
+      "papers": 4,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2021-2024"
+    },
+    {
+      "id": "Praet",
+      "label": "Praet",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2021-2025"
+    },
+    {
+      "id": "Preslav Nakov",
+      "label": "Preslav Nakov",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2017-2019"
+    },
+    {
+      "id": "Qiu",
+      "label": "Qiu",
+      "papers": 4,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2021-2023"
+    },
+    {
+      "id": "Ritonga",
+      "label": "Ritonga",
+      "papers": 1,
+      "degree": 2,
+      "type": "author",
+      "year_range": "0-0"
+    },
+    {
+      "id": "Roberto M. Lang",
+      "label": "Roberto M. Lang",
+      "papers": 1,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2015"
+    },
+    {
+      "id": "Romão",
+      "label": "Romão",
+      "papers": 9,
+      "degree": 0,
+      "type": "author",
+      "year_range": "2016-2023"
+    },
+    {
+      "id": "S.C. Lenny Koh",
+      "label": "S.C. Lenny Koh",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2015-2016"
+    },
+    {
+      "id": "Samson Tan",
+      "label": "Samson Tan",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2023-2023"
+    },
+    {
+      "id": "Sara Rosenthal",
+      "label": "Sara Rosenthal",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2017-2019"
+    },
+    {
+      "id": "Schmude",
+      "label": "Schmude",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2022-2022"
+    },
+    {
+      "id": "Scott",
+      "label": "Scott",
+      "papers": 16,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2010-2023"
+    },
+    {
+      "id": "Semmens",
+      "label": "Semmens",
+      "papers": 3,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2019-2019"
+    },
+    {
+      "id": "Senatore",
+      "label": "Senatore",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "0-0"
+    },
+    {
+      "id": "Seyed Mohammad Mirjalili",
+      "label": "Seyed Mohammad Mirjalili",
+      "papers": 1,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2014"
+    },
+    {
+      "id": "Seyedali Mirjalili",
+      "label": "Seyedali Mirjalili",
+      "papers": 1,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2014"
+    },
+    {
+      "id": "Shannon Tan",
+      "label": "Shannon Tan",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2023-2023"
+    },
+    {
+      "id": "Shaoshi",
+      "label": "Shaoshi",
+      "papers": 10,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2020-2020"
+    },
+    {
+      "id": "Sharma",
+      "label": "Sharma",
+      "papers": 26,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2019-2026"
+    },
+    {
+      "id": "Shen",
+      "label": "Shen",
+      "papers": 16,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2020-2025"
+    },
+    {
+      "id": "Shi",
+      "label": "Shi",
+      "papers": 15,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2016-2026"
+    },
+    {
+      "id": "Singh",
+      "label": "Singh",
+      "papers": 38,
+      "degree": 1,
+      "type": "author",
+      "year_range": "2005-2026"
+    },
+    {
+      "id": "Smith",
+      "label": "Smith",
+      "papers": 34,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2006-2026"
+    },
+    {
+      "id": "Sofianou",
+      "label": "Sofianou",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2022-2022"
+    },
+    {
+      "id": "Solomón Mequanente Abay",
+      "label": "Solomón Mequanente Abay",
+      "papers": 3,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2018-2018"
+    },
+    {
+      "id": "Song",
+      "label": "Song",
+      "papers": 14,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2011-2026"
+    },
+    {
+      "id": "Spalatin",
+      "label": "Spalatin",
+      "papers": 6,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2023-2023"
+    },
+    {
+      "id": "Stephen S Lim",
+      "label": "Stephen S Lim",
+      "papers": 4,
+      "degree": 1,
+      "type": "author",
+      "year_range": "2012-2020"
+    },
+    {
+      "id": "Sun",
+      "label": "Sun",
+      "papers": 19,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2012-2026"
+    },
+    {
+      "id": "Sunghwan Kim",
+      "label": "Sunghwan Kim",
+      "papers": 3,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2022"
+    },
+    {
+      "id": "Suresh Manandhar",
+      "label": "Suresh Manandhar",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2016"
+    },
+    {
+      "id": "Svietlichna",
+      "label": "Svietlichna",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2025-2026"
+    },
+    {
+      "id": "Séraphin",
+      "label": "Séraphin",
+      "papers": 5,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2020-2023"
+    },
+    {
+      "id": "Tammy Hoffmann",
+      "label": "Tammy Hoffmann",
+      "papers": 4,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2014-2021"
+    },
+    {
+      "id": "Tang",
+      "label": "Tang",
+      "papers": 18,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2018-2026"
+    },
+    {
+      "id": "Tao",
+      "label": "Tao",
+      "papers": 15,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2005-2026"
+    },
+    {
+      "id": "Tatrai",
+      "label": "Tatrai",
+      "papers": 3,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2019-2019"
+    },
+    {
+      "id": "Theo Vos",
+      "label": "Theo Vos",
+      "papers": 4,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2012-2020"
+    },
+    {
+      "id": "Tiejun Cheng",
+      "label": "Tiejun Cheng",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2018-2022"
+    },
+    {
+      "id": "Timothy Jung",
+      "label": "Timothy Jung",
+      "papers": 6,
+      "degree": 0,
+      "type": "author",
+      "year_range": "2015-2018"
+    },
+    {
+      "id": "Trono",
+      "label": "Trono",
+      "papers": 4,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2020-2022"
+    },
+    {
+      "id": "Tsiokanos",
+      "label": "Tsiokanos",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2022-2022"
+    },
+    {
+      "id": "Tucker",
+      "label": "Tucker",
+      "papers": 17,
+      "degree": 0,
+      "type": "author",
+      "year_range": "2017-2019"
+    },
+    {
+      "id": "Tukamushaba",
+      "label": "Tukamushaba",
+      "papers": 3,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2024"
+    },
+    {
+      "id": "Tusha",
+      "label": "Tusha",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2025-2026"
+    },
+    {
+      "id": "Valanzano",
+      "label": "Valanzano",
+      "papers": 2,
+      "degree": 4,
+      "type": "author",
+      "year_range": "0-0"
+    },
+    {
+      "id": "Victor Mor‐Avi",
+      "label": "Victor Mor‐Avi",
+      "papers": 1,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2015"
+    },
+    {
+      "id": "Walter Leal Filho",
+      "label": "Walter Leal Filho",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2017-2017"
+    },
+    {
+      "id": "Wang",
+      "label": "Wang",
+      "papers": 98,
+      "degree": 17,
+      "type": "author",
+      "year_range": "1999-2026"
+    },
+    {
+      "id": "Weaver",
+      "label": "Weaver",
+      "papers": 4,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2014-2021"
+    },
+    {
+      "id": "Wei",
+      "label": "Wei",
+      "papers": 14,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2017-2025"
+    },
+    {
+      "id": "Wijesinghe",
+      "label": "Wijesinghe",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2025-2026"
+    },
+    {
+      "id": "Xiaotao",
+      "label": "Xiaotao",
+      "papers": 10,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2020-2020"
+    },
+    {
+      "id": "Xie",
+      "label": "Xie",
+      "papers": 14,
+      "degree": 1,
+      "type": "author",
+      "year_range": "2006-2026"
+    },
+    {
+      "id": "Yan",
+      "label": "Yan",
+      "papers": 17,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2010-2026"
+    },
+    {
+      "id": "Yang",
+      "label": "Yang",
+      "papers": 49,
+      "degree": 12,
+      "type": "author",
+      "year_range": "2007-2026"
+    },
+    {
+      "id": "Yogesh K. Dwivedi",
+      "label": "Yogesh K. Dwivedi",
+      "papers": 13,
+      "degree": 4,
+      "type": "author",
+      "year_range": "2015-2023"
+    },
+    {
+      "id": "Yves Boirie",
+      "label": "Yves Boirie",
+      "papers": 2,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2010-2018"
+    },
+    {
+      "id": "Yıldırgan",
+      "label": "Yıldırgan",
+      "papers": 1,
+      "degree": 0,
+      "type": "author",
+      "year_range": "2026-2026"
+    },
+    {
+      "id": "Zeng",
+      "label": "Zeng",
+      "papers": 14,
+      "degree": 1,
+      "type": "author",
+      "year_range": "2013-2026"
+    },
+    {
+      "id": "Zhang",
+      "label": "Zhang",
+      "papers": 114,
+      "degree": 17,
+      "type": "author",
+      "year_range": "2009-2026"
+    },
+    {
+      "id": "Zhao",
+      "label": "Zhao",
+      "papers": 21,
+      "degree": 2,
+      "type": "author",
+      "year_range": "2009-2026"
+    },
+    {
+      "id": "Zheng",
+      "label": "Zheng",
+      "papers": 18,
+      "degree": 5,
+      "type": "author",
+      "year_range": "2017-2026"
+    },
+    {
+      "id": "Zhou",
+      "label": "Zhou",
+      "papers": 26,
+      "degree": 7,
+      "type": "author",
+      "year_range": "2012-2026"
+    },
+    {
+      "id": "Zhu",
+      "label": "Zhu",
+      "papers": 29,
+      "degree": 5,
+      "type": "author",
+      "year_range": "2012-2026"
+    },
+    {
+      "id": "Zou",
+      "label": "Zou",
+      "papers": 5,
+      "degree": 3,
+      "type": "author",
+      "year_range": "2019-2025"
+    },
+    {
+      "id": "Özdemir",
+      "label": "Özdemir",
+      "papers": 2,
+      "degree": 0,
+      "type": "author",
+      "year_range": "2025-2025"
+    }
+  ],
+  "edges": [
+    {
+      "source": "Christian M. Ringle",
+      "target": "Jörg Henseler",
+      "weight": 2
+    },
+    {
+      "source": "Jörg Henseler",
+      "target": "Marko Sarstedt",
+      "weight": 2
+    },
+    {
+      "source": "Christian M. Ringle",
+      "target": "Marko Sarstedt",
+      "weight": 3
+    },
+    {
+      "source": "Alessandro Liberati",
+      "target": "Douglas G. Altman",
+      "weight": 2
+    },
+    {
+      "source": "Alessandro Liberati",
+      "target": "Jennifer Tetzlaff",
+      "weight": 2
+    },
+    {
+      "source": "Douglas G. Altman",
+      "target": "Jennifer Tetzlaff",
+      "weight": 3
+    },
+    {
+      "source": "Cynthia D. Mulrow",
+      "target": "Douglas G. Altman",
+      "weight": 2
+    },
+    {
+      "source": "Douglas G. Altman",
+      "target": "Peter C Gøtzsche",
+      "weight": 3
+    },
+    {
+      "source": "Jennifer Tetzlaff",
+      "target": "Peter C Gøtzsche",
+      "weight": 2
+    },
+    {
+      "source": "Cynthia D. Mulrow",
+      "target": "Peter C Gøtzsche",
+      "weight": 2
+    },
+    {
+      "source": "Stephen S Lim",
+      "target": "Theo Vos",
+      "weight": 2
+    },
+    {
+      "source": "Cristiana Abbafati",
+      "target": "Theo Vos",
+      "weight": 2
+    },
+    {
+      "source": "Kaja Abbas",
+      "target": "Theo Vos",
+      "weight": 2
+    },
+    {
+      "source": "Cristiana Abbafati",
+      "target": "Kaja Abbas",
+      "weight": 3
+    },
+    {
+      "source": "Seyed Mohammad Mirjalili",
+      "target": "Seyedali Mirjalili",
+      "weight": 2
+    },
+    {
+      "source": "Andrew Lewis",
+      "target": "Seyedali Mirjalili",
+      "weight": 2
+    },
+    {
+      "source": "Andrew Lewis",
+      "target": "Seyed Mohammad Mirjalili",
+      "weight": 4
+    },
+    {
+      "source": "Luigi P. Badano",
+      "target": "Roberto M. Lang",
+      "weight": 2
+    },
+    {
+      "source": "Roberto M. Lang",
+      "target": "Victor Mor‐Avi",
+      "weight": 2
+    },
+    {
+      "source": "Jonathan Afilalo",
+      "target": "Roberto M. Lang",
+      "weight": 2
+    },
+    {
+      "source": "Anderson da Costa Armstrong",
+      "target": "Roberto M. Lang",
+      "weight": 2
+    },
+    {
+      "source": "Luigi P. Badano",
+      "target": "Victor Mor‐Avi",
+      "weight": 2
+    },
+    {
+      "source": "Jonathan Afilalo",
+      "target": "Luigi P. Badano",
+      "weight": 2
+    },
+    {
+      "source": "Anderson da Costa Armstrong",
+      "target": "Luigi P. Badano",
+      "weight": 2
+    },
+    {
+      "source": "Jonathan Afilalo",
+      "target": "Victor Mor‐Avi",
+      "weight": 2
+    },
+    {
+      "source": "Anderson da Costa Armstrong",
+      "target": "Victor Mor‐Avi",
+      "weight": 2
+    },
+    {
+      "source": "Anderson da Costa Armstrong",
+      "target": "Jonathan Afilalo",
+      "weight": 2
+    },
+    {
+      "source": "Alfonso J. Cruz‐Jentoft",
+      "target": "Jürgen M. Bauer",
+      "weight": 2
+    },
+    {
+      "source": "Alfonso J. Cruz‐Jentoft",
+      "target": "Yves Boirie",
+      "weight": 2
+    },
+    {
+      "source": "Jürgen M. Bauer",
+      "target": "Yves Boirie",
+      "weight": 2
+    },
+    {
+      "source": "Degu Abate",
+      "target": "Kalkidan Hassen Abate",
+      "weight": 2
+    },
+    {
+      "source": "Degu Abate",
+      "target": "Solomón Mequanente Abay",
+      "weight": 2
+    },
+    {
+      "source": "Cristiana Abbafati",
+      "target": "Degu Abate",
+      "weight": 2
+    },
+    {
+      "source": "Kalkidan Hassen Abate",
+      "target": "Solomón Mequanente Abay",
+      "weight": 2
+    },
+    {
+      "source": "Cristiana Abbafati",
+      "target": "Kalkidan Hassen Abate",
+      "weight": 4
+    },
+    {
+      "source": "Cristiana Abbafati",
+      "target": "Solomón Mequanente Abay",
+      "weight": 3
+    },
+    {
+      "source": "Matthew J. Page",
+      "target": "Patrick M. Bossuyt",
+      "weight": 3
+    },
+    {
+      "source": "Isabelle Boutron",
+      "target": "Matthew J. Page",
+      "weight": 3
+    },
+    {
+      "source": "Matthew J. Page",
+      "target": "Tammy Hoffmann",
+      "weight": 3
+    },
+    {
+      "source": "Isabelle Boutron",
+      "target": "Patrick M. Bossuyt",
+      "weight": 3
+    },
+    {
+      "source": "Patrick M. Bossuyt",
+      "target": "Tammy Hoffmann",
+      "weight": 3
+    },
+    {
+      "source": "Isabelle Boutron",
+      "target": "Tammy Hoffmann",
+      "weight": 4
+    },
+    {
+      "source": "David Moher",
+      "target": "Peter C Gøtzsche",
+      "weight": 2
+    },
+    {
+      "source": "Amanuel Alemu Abajobir",
+      "target": "Kalkidan Hassen Abate",
+      "weight": 2
+    },
+    {
+      "source": "Amanuel Alemu Abajobir",
+      "target": "Cristiana Abbafati",
+      "weight": 2
+    },
+    {
+      "source": "Jie Chen",
+      "target": "Sunghwan Kim",
+      "weight": 3
+    },
+    {
+      "source": "Emma Slade",
+      "target": "Yogesh K. Dwivedi",
+      "weight": 4
+    },
+    {
+      "source": "Sunghwan Kim",
+      "target": "Tiejun Cheng",
+      "weight": 2
+    },
+    {
+      "source": "Asta Gindulytė",
+      "target": "Sunghwan Kim",
+      "weight": 2
+    },
+    {
+      "source": "Jia He",
+      "target": "Sunghwan Kim",
+      "weight": 2
+    },
+    {
+      "source": "Jie Chen",
+      "target": "Tiejun Cheng",
+      "weight": 2
+    },
+    {
+      "source": "Asta Gindulytė",
+      "target": "Jie Chen",
+      "weight": 2
+    },
+    {
+      "source": "Jia He",
+      "target": "Jie Chen",
+      "weight": 2
+    },
+    {
+      "source": "Asta Gindulytė",
+      "target": "Tiejun Cheng",
+      "weight": 2
+    },
+    {
+      "source": "Jia He",
+      "target": "Tiejun Cheng",
+      "weight": 2
+    },
+    {
+      "source": "Asta Gindulytė",
+      "target": "Jia He",
+      "weight": 2
+    },
+    {
+      "source": "Nripendra P. Rana",
+      "target": "Yogesh K. Dwivedi",
+      "weight": 5
+    },
+    {
+      "source": "Michael D. Williams",
+      "target": "Nripendra P. Rana",
+      "weight": 2
+    },
+    {
+      "source": "Michael D. Williams",
+      "target": "Yogesh K. Dwivedi",
+      "weight": 2
+    },
+    {
+      "source": "Ahmed I. Osman",
+      "target": "Mahmoud Hefny",
+      "weight": 2
+    },
+    {
+      "source": "Ahmed I. Osman",
+      "target": "Ahmed M. Elgarahy",
+      "weight": 3
+    },
+    {
+      "source": "Ahmed M. Elgarahy",
+      "target": "Mahmoud Hefny",
+      "weight": 2
+    },
+    {
+      "source": "Madhusanka Liyanage",
+      "target": "Pawani Porambage",
+      "weight": 2
+    },
+    {
+      "source": "Mika Ylianttila",
+      "target": "Pawani Porambage",
+      "weight": 2
+    },
+    {
+      "source": "Madhusanka Liyanage",
+      "target": "Mika Ylianttila",
+      "weight": 2
+    },
+    {
+      "source": "Jürgen Rudolph",
+      "target": "Samson Tan",
+      "weight": 2
+    },
+    {
+      "source": "Jürgen Rudolph",
+      "target": "Shannon Tan",
+      "weight": 2
+    },
+    {
+      "source": "Samson Tan",
+      "target": "Shannon Tan",
+      "weight": 2
+    },
+    {
+      "source": "Liu",
+      "target": "Wang",
+      "weight": 13
+    },
+    {
+      "source": "Liu",
+      "target": "Tao",
+      "weight": 2
+    },
+    {
+      "source": "Tao",
+      "target": "Wang",
+      "weight": 2
+    },
+    {
+      "source": "Joanne E. McKenzie",
+      "target": "Matthew J. Page",
+      "weight": 2
+    },
+    {
+      "source": "Joanne E. McKenzie",
+      "target": "Patrick M. Bossuyt",
+      "weight": 2
+    },
+    {
+      "source": "Isabelle Boutron",
+      "target": "Joanne E. McKenzie",
+      "weight": 2
+    },
+    {
+      "source": "Joanne E. McKenzie",
+      "target": "Tammy Hoffmann",
+      "weight": 2
+    },
+    {
+      "source": "Bart Los",
+      "target": "Marcel P. Timmer",
+      "weight": 2
+    },
+    {
+      "source": "Gaaitzen J. de Vries",
+      "target": "Marcel P. Timmer",
+      "weight": 2
+    },
+    {
+      "source": "Bart Los",
+      "target": "Gaaitzen J. de Vries",
+      "weight": 2
+    },
+    {
+      "source": "Elvira Ismagilova",
+      "target": "Yogesh K. Dwivedi",
+      "weight": 4
+    },
+    {
+      "source": "Chao Wang",
+      "target": "Ming K. Lim",
+      "weight": 2
+    },
+    {
+      "source": "Ming K. Lim",
+      "target": "Ming‐Lang Tseng",
+      "weight": 2
+    },
+    {
+      "source": "Chao Wang",
+      "target": "Ming‐Lang Tseng",
+      "weight": 2
+    },
+    {
+      "source": "Lucas Veiga Ãvila",
+      "target": "Walter Leal Filho",
+      "weight": 2
+    },
+    {
+      "source": "Lucas Veiga Ãvila",
+      "target": "Luciana Brandli",
+      "weight": 2
+    },
+    {
+      "source": "Luciana Brandli",
+      "target": "Walter Leal Filho",
+      "weight": 2
+    },
+    {
+      "source": "Björn Hettne",
+      "target": "Inotai",
+      "weight": 2
+    },
+    {
+      "source": "Andras",
+      "target": "Björn Hettne",
+      "weight": 2
+    },
+    {
+      "source": "Andras",
+      "target": "Inotai",
+      "weight": 4
+    },
+    {
+      "source": "Hettne",
+      "target": "Inotai",
+      "weight": 2
+    },
+    {
+      "source": "Bjorn",
+      "target": "Inotai",
+      "weight": 2
+    },
+    {
+      "source": "Andras",
+      "target": "Hettne",
+      "weight": 2
+    },
+    {
+      "source": "Andras",
+      "target": "Bjorn",
+      "weight": 2
+    },
+    {
+      "source": "Daniel Leung",
+      "target": "Dimitrios Buhalis",
+      "weight": 2
+    },
+    {
+      "source": "Dimitrios Buhalis",
+      "target": "Michael S. Lin",
+      "weight": 2
+    },
+    {
+      "source": "Daniel Leung",
+      "target": "Michael S. Lin",
+      "weight": 2
+    },
+    {
+      "source": "Elvira Ismagilova",
+      "target": "Emma Slade",
+      "weight": 2
+    },
+    {
+      "source": "Elvira Ismagilova",
+      "target": "Nripendra P. Rana",
+      "weight": 2
+    },
+    {
+      "source": "Emma Slade",
+      "target": "Nripendra P. Rana",
+      "weight": 2
+    },
+    {
+      "source": "Dimitrios Galanis",
+      "target": "Maria Pontiki",
+      "weight": 2
+    },
+    {
+      "source": "Haris Papageorgiou",
+      "target": "Maria Pontiki",
+      "weight": 2
+    },
+    {
+      "source": "Ion Androutsopoulos",
+      "target": "Maria Pontiki",
+      "weight": 2
+    },
+    {
+      "source": "Maria Pontiki",
+      "target": "Suresh Manandhar",
+      "weight": 2
+    },
+    {
+      "source": "Dimitrios Galanis",
+      "target": "Haris Papageorgiou",
+      "weight": 2
+    },
+    {
+      "source": "Dimitrios Galanis",
+      "target": "Ion Androutsopoulos",
+      "weight": 2
+    },
+    {
+      "source": "Dimitrios Galanis",
+      "target": "Suresh Manandhar",
+      "weight": 2
+    },
+    {
+      "source": "Haris Papageorgiou",
+      "target": "Ion Androutsopoulos",
+      "weight": 2
+    },
+    {
+      "source": "Haris Papageorgiou",
+      "target": "Suresh Manandhar",
+      "weight": 2
+    },
+    {
+      "source": "Ion Androutsopoulos",
+      "target": "Suresh Manandhar",
+      "weight": 2
+    },
+    {
+      "source": "Noura Farra",
+      "target": "Sara Rosenthal",
+      "weight": 2
+    },
+    {
+      "source": "Preslav Nakov",
+      "target": "Sara Rosenthal",
+      "weight": 2
+    },
+    {
+      "source": "Noura Farra",
+      "target": "Preslav Nakov",
+      "weight": 2
+    },
+    {
+      "source": "Daniel Cer",
+      "target": "Mona Diab",
+      "weight": 2
+    },
+    {
+      "source": "Daniel Cer",
+      "target": "Eneko Agirre",
+      "weight": 2
+    },
+    {
+      "source": "Eneko Agirre",
+      "target": "Mona Diab",
+      "weight": 2
+    },
+    {
+      "source": "Ian T. Cousins",
+      "target": "Juliane Glüge",
+      "weight": 3
+    },
+    {
+      "source": "Jamie C. DeWitt",
+      "target": "Juliane Glüge",
+      "weight": 3
+    },
+    {
+      "source": "Gretta Goldenman",
+      "target": "Juliane Glüge",
+      "weight": 3
+    },
+    {
+      "source": "Ian T. Cousins",
+      "target": "Jamie C. DeWitt",
+      "weight": 3
+    },
+    {
+      "source": "Gretta Goldenman",
+      "target": "Ian T. Cousins",
+      "weight": 3
+    },
+    {
+      "source": "Gretta Goldenman",
+      "target": "Jamie C. DeWitt",
+      "weight": 3
+    },
+    {
+      "source": "Adolf Acquaye",
+      "target": "Andrea Genovese",
+      "weight": 2
+    },
+    {
+      "source": "Andrea Genovese",
+      "target": "S.C. Lenny Koh",
+      "weight": 2
+    },
+    {
+      "source": "Adolf Acquaye",
+      "target": "S.C. Lenny Koh",
+      "weight": 2
+    },
+    {
+      "source": "Dorte Herzke",
+      "target": "Ian T. Cousins",
+      "weight": 2
+    },
+    {
+      "source": "Dorte Herzke",
+      "target": "Jamie C. DeWitt",
+      "weight": 2
+    },
+    {
+      "source": "Dorte Herzke",
+      "target": "Juliane Glüge",
+      "weight": 2
+    },
+    {
+      "source": "Dorte Herzke",
+      "target": "Gretta Goldenman",
+      "weight": 2
+    },
+    {
+      "source": "Claudio Sassanelli",
+      "target": "Federica Acerbi",
+      "weight": 2
+    },
+    {
+      "source": "Federica Acerbi",
+      "target": "Marco Taisch",
+      "weight": 2
+    },
+    {
+      "source": "Claudio Sassanelli",
+      "target": "Marco Taisch",
+      "weight": 2
+    },
+    {
+      "source": "David Autor",
+      "target": "David Dorn",
+      "weight": 2
+    },
+    {
+      "source": "David Autor",
+      "target": "Gordon Hanson",
+      "weight": 2
+    },
+    {
+      "source": "David Dorn",
+      "target": "Gordon Hanson",
+      "weight": 2
+    },
+    {
+      "source": "Wang",
+      "target": "Wang",
+      "weight": 6
+    },
+    {
+      "source": "Zhang",
+      "target": "Zhang",
+      "weight": 5
+    },
+    {
+      "source": "Wang",
+      "target": "Zhang",
+      "weight": 11
+    },
+    {
+      "source": "Deng",
+      "target": "Zhang",
+      "weight": 3
+    },
+    {
+      "source": "Wang",
+      "target": "Zhou",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Zhou",
+      "weight": 3
+    },
+    {
+      "source": "Chen",
+      "target": "Wang",
+      "weight": 8
+    },
+    {
+      "source": "Liu",
+      "target": "Zhou",
+      "weight": 5
+    },
+    {
+      "source": "Xie",
+      "target": "Zhang",
+      "weight": 2
+    },
+    {
+      "source": "Liu",
+      "target": "Zhang",
+      "weight": 8
+    },
+    {
+      "source": "Demir",
+      "target": "Demir",
+      "weight": 2
+    },
+    {
+      "source": "Lifeng",
+      "target": "Shaoshi",
+      "weight": 10
+    },
+    {
+      "source": "Jizhe",
+      "target": "Shaoshi",
+      "weight": 10
+    },
+    {
+      "source": "Shaoshi",
+      "target": "Xiaotao",
+      "weight": 10
+    },
+    {
+      "source": "Chaoyang",
+      "target": "Shaoshi",
+      "weight": 10
+    },
+    {
+      "source": "Jizhe",
+      "target": "Lifeng",
+      "weight": 10
+    },
+    {
+      "source": "Lifeng",
+      "target": "Xiaotao",
+      "weight": 10
+    },
+    {
+      "source": "Chaoyang",
+      "target": "Lifeng",
+      "weight": 10
+    },
+    {
+      "source": "Jizhe",
+      "target": "Xiaotao",
+      "weight": 10
+    },
+    {
+      "source": "Chaoyang",
+      "target": "Jizhe",
+      "weight": 10
+    },
+    {
+      "source": "Chaoyang",
+      "target": "Xiaotao",
+      "weight": 10
+    },
+    {
+      "source": "Jianmin",
+      "target": "Shen",
+      "weight": 3
+    },
+    {
+      "source": "Chao",
+      "target": "Jianmin",
+      "weight": 3
+    },
+    {
+      "source": "Chao",
+      "target": "Shen",
+      "weight": 3
+    },
+    {
+      "source": "Kostopoulou",
+      "target": "Sofianou",
+      "weight": 2
+    },
+    {
+      "source": "Kostopoulou",
+      "target": "Tsiokanos",
+      "weight": 2
+    },
+    {
+      "source": "Sofianou",
+      "target": "Tsiokanos",
+      "weight": 2
+    },
+    {
+      "source": "Billé",
+      "target": "Mehendale",
+      "weight": 3
+    },
+    {
+      "source": "Billé",
+      "target": "Lankton",
+      "weight": 3
+    },
+    {
+      "source": "Lankton",
+      "target": "Mehendale",
+      "weight": 3
+    },
+    {
+      "source": "Liu",
+      "target": "Shen",
+      "weight": 2
+    },
+    {
+      "source": "Han",
+      "target": "Liu",
+      "weight": 2
+    },
+    {
+      "source": "Ritonga",
+      "target": "Ritonga",
+      "weight": 3
+    },
+    {
+      "source": "Huang",
+      "target": "Qiu",
+      "weight": 2
+    },
+    {
+      "source": "Jongryul",
+      "target": "Kim",
+      "weight": 6
+    },
+    {
+      "source": "Jaedong",
+      "target": "Kim",
+      "weight": 6
+    },
+    {
+      "source": "Kim",
+      "target": "Spalatin",
+      "weight": 6
+    },
+    {
+      "source": "Jaedong",
+      "target": "Jongryul",
+      "weight": 6
+    },
+    {
+      "source": "Jongryul",
+      "target": "Spalatin",
+      "weight": 6
+    },
+    {
+      "source": "Jaedong",
+      "target": "Spalatin",
+      "weight": 6
+    },
+    {
+      "source": "Musinguzi",
+      "target": "Tukamushaba",
+      "weight": 5
+    },
+    {
+      "source": "El Khatib",
+      "target": "Musinguzi",
+      "weight": 5
+    },
+    {
+      "source": "El Khatib",
+      "target": "Tukamushaba",
+      "weight": 5
+    },
+    {
+      "source": "Huang",
+      "target": "Zhang",
+      "weight": 4
+    },
+    {
+      "source": "Liu",
+      "target": "Shi",
+      "weight": 3
+    },
+    {
+      "source": "Liu",
+      "target": "Wei",
+      "weight": 2
+    },
+    {
+      "source": "Kang",
+      "target": "Kim",
+      "weight": 4
+    },
+    {
+      "source": "Kim",
+      "target": "Kim",
+      "weight": 14
+    },
+    {
+      "source": "Almuhrzi",
+      "target": "Scott",
+      "weight": 4
+    },
+    {
+      "source": "Almuhrzi",
+      "target": "Alriyami",
+      "weight": 4
+    },
+    {
+      "source": "Alriyami",
+      "target": "Scott",
+      "weight": 4
+    },
+    {
+      "source": "Abbas",
+      "target": "Ibrahim",
+      "weight": 2
+    },
+    {
+      "source": "Ibrahim",
+      "target": "Kamal",
+      "weight": 2
+    },
+    {
+      "source": "Abbas",
+      "target": "Kamal",
+      "weight": 2
+    },
+    {
+      "source": "Aziz",
+      "target": "Aziz",
+      "weight": 2
+    },
+    {
+      "source": "Fan",
+      "target": "Wang",
+      "weight": 4
+    },
+    {
+      "source": "Zhang",
+      "target": "Zhao",
+      "weight": 8
+    },
+    {
+      "source": "Korstanje",
+      "target": "Séraphin",
+      "weight": 3
+    },
+    {
+      "source": "Svietlichna",
+      "target": "Tusha",
+      "weight": 2
+    },
+    {
+      "source": "Tusha",
+      "target": "Wijesinghe",
+      "weight": 2
+    },
+    {
+      "source": "Svietlichna",
+      "target": "Wijesinghe",
+      "weight": 2
+    },
+    {
+      "source": "Cripps",
+      "target": "Séraphin",
+      "weight": 2
+    },
+    {
+      "source": "Smith",
+      "target": "Séraphin",
+      "weight": 2
+    },
+    {
+      "source": "Cripps",
+      "target": "Smith",
+      "weight": 2
+    },
+    {
+      "source": "Schmude",
+      "target": "Trono",
+      "weight": 2
+    },
+    {
+      "source": "Duda",
+      "target": "Trono",
+      "weight": 2
+    },
+    {
+      "source": "Duda",
+      "target": "Schmude",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Pan",
+      "weight": 2
+    },
+    {
+      "source": "Han",
+      "target": "Praet",
+      "weight": 2
+    },
+    {
+      "source": "Han",
+      "target": "Wang",
+      "weight": 3
+    },
+    {
+      "source": "Praet",
+      "target": "Wang",
+      "weight": 2
+    },
+    {
+      "source": "Bao",
+      "target": "Jin",
+      "weight": 2
+    },
+    {
+      "source": "Bao",
+      "target": "Weaver",
+      "weight": 2
+    },
+    {
+      "source": "Jin",
+      "target": "Weaver",
+      "weight": 2
+    },
+    {
+      "source": "Zeng",
+      "target": "Zhang",
+      "weight": 4
+    },
+    {
+      "source": "Fan",
+      "target": "Yang",
+      "weight": 2
+    },
+    {
+      "source": "Wang",
+      "target": "Yan",
+      "weight": 2
+    },
+    {
+      "source": "Han",
+      "target": "Jin",
+      "weight": 2
+    },
+    {
+      "source": "Han",
+      "target": "Zhu",
+      "weight": 2
+    },
+    {
+      "source": "Lin",
+      "target": "Wang",
+      "weight": 2
+    },
+    {
+      "source": "Law",
+      "target": "Zhang",
+      "weight": 2
+    },
+    {
+      "source": "Liu",
+      "target": "Tang",
+      "weight": 4
+    },
+    {
+      "source": "Lee",
+      "target": "Lee",
+      "weight": 3
+    },
+    {
+      "source": "Kim",
+      "target": "Park",
+      "weight": 9
+    },
+    {
+      "source": "Ahmad",
+      "target": "Khan",
+      "weight": 2
+    },
+    {
+      "source": "Kim",
+      "target": "Lee",
+      "weight": 12
+    },
+    {
+      "source": "Chen",
+      "target": "Sun",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Zhu",
+      "weight": 5
+    },
+    {
+      "source": "Qiu",
+      "target": "Wang",
+      "weight": 2
+    },
+    {
+      "source": "Wang",
+      "target": "Zhao",
+      "weight": 3
+    },
+    {
+      "source": "Yang",
+      "target": "Zhu",
+      "weight": 2
+    },
+    {
+      "source": "Huang",
+      "target": "Yang",
+      "weight": 3
+    },
+    {
+      "source": "Huang",
+      "target": "Liu",
+      "weight": 3
+    },
+    {
+      "source": "Huang",
+      "target": "Zhou",
+      "weight": 2
+    },
+    {
+      "source": "Wei",
+      "target": "Zhou",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Zheng",
+      "weight": 3
+    },
+    {
+      "source": "Zheng",
+      "target": "Zhu",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Yang",
+      "weight": 2
+    },
+    {
+      "source": "Lin",
+      "target": "Zhang",
+      "weight": 4
+    },
+    {
+      "source": "Yang",
+      "target": "Zhou",
+      "weight": 4
+    },
+    {
+      "source": "Han",
+      "target": "Park",
+      "weight": 2
+    },
+    {
+      "source": "Sharma",
+      "target": "Singh",
+      "weight": 6
+    },
+    {
+      "source": "Wei",
+      "target": "Yang",
+      "weight": 2
+    },
+    {
+      "source": "Wang",
+      "target": "Yang",
+      "weight": 2
+    },
+    {
+      "source": "Park",
+      "target": "Park",
+      "weight": 3
+    },
+    {
+      "source": "Lin",
+      "target": "Yang",
+      "weight": 3
+    },
+    {
+      "source": "Mehrad",
+      "target": "Sharma",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Law",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Zhang",
+      "weight": 8
+    },
+    {
+      "source": "Kumar",
+      "target": "Kumar",
+      "weight": 2
+    },
+    {
+      "source": "Liu",
+      "target": "Yang",
+      "weight": 3
+    },
+    {
+      "source": "Deng",
+      "target": "Wang",
+      "weight": 2
+    },
+    {
+      "source": "Tang",
+      "target": "Zhang",
+      "weight": 4
+    },
+    {
+      "source": "Shi",
+      "target": "Zhang",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Song",
+      "weight": 2
+    },
+    {
+      "source": "Pan",
+      "target": "Song",
+      "weight": 2
+    },
+    {
+      "source": "Song",
+      "target": "Zheng",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Huang",
+      "weight": 2
+    },
+    {
+      "source": "Sun",
+      "target": "Yan",
+      "weight": 2
+    },
+    {
+      "source": "Kang",
+      "target": "Lee",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Chen",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Liu",
+      "weight": 3
+    },
+    {
+      "source": "Lee",
+      "target": "Park",
+      "weight": 3
+    },
+    {
+      "source": "Bencardino",
+      "target": "Cresta",
+      "weight": 2
+    },
+    {
+      "source": "Bencardino",
+      "target": "Esposito",
+      "weight": 2
+    },
+    {
+      "source": "Bencardino",
+      "target": "Senatore",
+      "weight": 2
+    },
+    {
+      "source": "Bencardino",
+      "target": "Valanzano",
+      "weight": 2
+    },
+    {
+      "source": "Cresta",
+      "target": "Esposito",
+      "weight": 2
+    },
+    {
+      "source": "Cresta",
+      "target": "Senatore",
+      "weight": 2
+    },
+    {
+      "source": "Cresta",
+      "target": "Valanzano",
+      "weight": 2
+    },
+    {
+      "source": "Esposito",
+      "target": "Senatore",
+      "weight": 2
+    },
+    {
+      "source": "Esposito",
+      "target": "Valanzano",
+      "weight": 2
+    },
+    {
+      "source": "Senatore",
+      "target": "Valanzano",
+      "weight": 2
+    },
+    {
+      "source": "Sharma",
+      "target": "Sharma",
+      "weight": 3
+    },
+    {
+      "source": "Liu",
+      "target": "Zou",
+      "weight": 2
+    },
+    {
+      "source": "Lee",
+      "target": "Zhang",
+      "weight": 2
+    },
+    {
+      "source": "Huang",
+      "target": "Zheng",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Zou",
+      "weight": 2
+    },
+    {
+      "source": "Zheng",
+      "target": "Zou",
+      "weight": 2
+    },
+    {
+      "source": "Tao",
+      "target": "Zhang",
+      "weight": 3
+    },
+    {
+      "source": "Sun",
+      "target": "Zhu",
+      "weight": 2
+    },
+    {
+      "source": "Chen",
+      "target": "Tang",
+      "weight": 2
+    },
+    {
+      "source": "Pham",
+      "target": "Pham",
+      "weight": 2
+    },
+    {
+      "source": "Nguyen",
+      "target": "Pham",
+      "weight": 4
+    },
+    {
+      "source": "Zhang",
+      "target": "Zhou",
+      "weight": 3
+    },
+    {
+      "source": "Huang",
+      "target": "Wang",
+      "weight": 3
+    },
+    {
+      "source": "Banerjee",
+      "target": "Kumar",
+      "weight": 2
+    },
+    {
+      "source": "Nguyen",
+      "target": "Nguyen",
+      "weight": 2
+    },
+    {
+      "source": "Choi",
+      "target": "Lee",
+      "weight": 2
+    },
+    {
+      "source": "Yang",
+      "target": "Yang",
+      "weight": 3
+    },
+    {
+      "source": "Kang",
+      "target": "Yang",
+      "weight": 3
+    },
+    {
+      "source": "Luke",
+      "target": "O’Toole",
+      "weight": 3
+    },
+    {
+      "source": "O’Toole",
+      "target": "Semmens",
+      "weight": 3
+    },
+    {
+      "source": "Brown",
+      "target": "O’Toole",
+      "weight": 3
+    },
+    {
+      "source": "O’Toole",
+      "target": "Tatrai",
+      "weight": 3
+    },
+    {
+      "source": "Luke",
+      "target": "Semmens",
+      "weight": 3
+    },
+    {
+      "source": "Brown",
+      "target": "Luke",
+      "weight": 3
+    },
+    {
+      "source": "Luke",
+      "target": "Tatrai",
+      "weight": 3
+    },
+    {
+      "source": "Brown",
+      "target": "Semmens",
+      "weight": 3
+    },
+    {
+      "source": "Semmens",
+      "target": "Tatrai",
+      "weight": 3
+    },
+    {
+      "source": "Brown",
+      "target": "Tatrai",
+      "weight": 3
+    }
+  ],
+  "stats": {
+    "nodes": 200,
+    "edges": 294,
+    "density": 0.014774
+  }
+}

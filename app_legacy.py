@@ -855,6 +855,34 @@ class H(BaseHTTPRequestHandler):
             from skwm_platform.backend.feishu_bot import FeishuBotV2
             json_ok(FeishuBotV2().get_subscriptions())
         
+        elif pa.startswith('/api/bibliometrics/'):
+            """科学计量数据端点"""
+            import json as _json
+            bm_dir = Path(__file__).parent / "output" / "bibliometrics"
+            name = pa.replace('/api/bibliometrics/', '')
+            path_map = {
+                'coword': 'network_coword.json',
+                'coauthor': 'network_coauthor.json',
+                'country': 'network_country.json',
+                'citation': 'network_citation.json',
+                'burst': 'burst_detection.json',
+                'evolution': 'thematic_evolution.json',
+                'summary': 'summary.json',
+                'report': 'bibliometrics_report.md',
+            }
+            fname = path_map.get(name)
+            if not fname:
+                json_err(f"未知端点: {name}"); return
+            fpath = bm_dir / fname
+            if not fpath.exists():
+                json_err(f"请先运行 skwm_bibliometrics.py"); return
+            if fname.endswith('.md'):
+                self.send_response(200); self.send_header('Content-Type','text/markdown; charset=utf-8'); self.end_headers()
+                self.wfile.write(fpath.read_bytes())
+            else:
+                data = _json.loads(fpath.read_text(encoding='utf-8'))
+                json_ok(data)
+        
         elif pa=='/api/graphrag/ask':
             """GraphRAG 问答 + 证据溯源"""
             from skwm_graphrag_evidence import GraphRAGAPI

@@ -1,0 +1,683 @@
+{
+  "type": "citation",
+  "nodes": [
+    {
+      "id": "year_2007",
+      "label": "2007",
+      "papers": 127,
+      "type": "year"
+    },
+    {
+      "id": "year_2008",
+      "label": "2008",
+      "papers": 145,
+      "type": "year"
+    },
+    {
+      "id": "year_2009",
+      "label": "2009",
+      "papers": 203,
+      "type": "year"
+    },
+    {
+      "id": "year_2010",
+      "label": "2010",
+      "papers": 199,
+      "type": "year"
+    },
+    {
+      "id": "year_2011",
+      "label": "2011",
+      "papers": 203,
+      "type": "year"
+    },
+    {
+      "id": "year_2012",
+      "label": "2012",
+      "papers": 261,
+      "type": "year"
+    },
+    {
+      "id": "year_2013",
+      "label": "2013",
+      "papers": 282,
+      "type": "year"
+    },
+    {
+      "id": "year_2014",
+      "label": "2014",
+      "papers": 301,
+      "type": "year"
+    },
+    {
+      "id": "year_2015",
+      "label": "2015",
+      "papers": 314,
+      "type": "year"
+    },
+    {
+      "id": "year_2016",
+      "label": "2016",
+      "papers": 402,
+      "type": "year"
+    },
+    {
+      "id": "year_2017",
+      "label": "2017",
+      "papers": 593,
+      "type": "year"
+    },
+    {
+      "id": "year_2018",
+      "label": "2018",
+      "papers": 559,
+      "type": "year"
+    },
+    {
+      "id": "year_2019",
+      "label": "2019",
+      "papers": 591,
+      "type": "year"
+    },
+    {
+      "id": "year_2020",
+      "label": "2020",
+      "papers": 738,
+      "type": "year"
+    },
+    {
+      "id": "year_2021",
+      "label": "2021",
+      "papers": 596,
+      "type": "year"
+    },
+    {
+      "id": "year_2022",
+      "label": "2022",
+      "papers": 693,
+      "type": "year"
+    },
+    {
+      "id": "year_2023",
+      "label": "2023",
+      "papers": 788,
+      "type": "year"
+    },
+    {
+      "id": "year_2024",
+      "label": "2024",
+      "papers": 724,
+      "type": "year"
+    },
+    {
+      "id": "year_2025",
+      "label": "2025",
+      "papers": 1030,
+      "type": "year"
+    },
+    {
+      "id": "year_2026",
+      "label": "2026",
+      "papers": 708,
+      "type": "year"
+    },
+    {
+      "id": "The PRISMA 2020 statement: an updated gu",
+      "label": "The PRISMA 2020 statement: an ",
+      "citations": 96863,
+      "type": "paper"
+    },
+    {
+      "id": "Inline Hardware KV-Cache Compression for",
+      "label": "Inline Hardware KV-Cache Compr",
+      "citations": 76379,
+      "type": "paper"
+    },
+    {
+      "id": "NIH Image to ImageJ: 25 years of image a",
+      "label": "NIH Image to ImageJ: 25 years ",
+      "citations": 65473,
+      "type": "paper"
+    },
+    {
+      "id": "Preferred Reporting Items for Systematic",
+      "label": "Preferred Reporting Items for ",
+      "citations": 64309,
+      "type": "paper"
+    },
+    {
+      "id": "XGBoost",
+      "label": "XGBoost",
+      "citations": 49232,
+      "type": "paper"
+    },
+    {
+      "id": "AI-Assisted Pipeline for Dynamic Generat",
+      "label": "AI-Assisted Pipeline for Dynam",
+      "citations": 45722,
+      "type": "paper"
+    },
+    {
+      "id": "limma powers differential expression ana",
+      "label": "limma powers differential expr",
+      "citations": 43325,
+      "type": "paper"
+    },
+    {
+      "id": "KEGG: Kyoto Encyclopedia of Genes and Ge",
+      "label": "KEGG: Kyoto Encyclopedia of Ge",
+      "citations": 39412,
+      "type": "paper"
+    },
+    {
+      "id": "The CLUSTAL_X windows interface: flexibl",
+      "label": "The CLUSTAL_X windows interfac",
+      "citations": 39226,
+      "type": "paper"
+    },
+    {
+      "id": "SciPy 1.0: fundamental algorithms for sc",
+      "label": "SciPy 1.0: fundamental algorit",
+      "citations": 38325,
+      "type": "paper"
+    },
+    {
+      "id": "Cutadapt removes adapter sequences from ",
+      "label": "Cutadapt removes adapter seque",
+      "citations": 36067,
+      "type": "paper"
+    },
+    {
+      "id": "Scoping studies: towards a methodologica",
+      "label": "Scoping studies: towards a met",
+      "citations": 35938,
+      "type": "paper"
+    },
+    {
+      "id": "The Cochrane Collaboration's tool for as",
+      "label": "The Cochrane Collaboration's t",
+      "citations": 34339,
+      "type": "paper"
+    },
+    {
+      "id": "A new criterion for assessing discrimina",
+      "label": "A new criterion for assessing ",
+      "citations": 34264,
+      "type": "paper"
+    },
+    {
+      "id": "Asymptotic and resampling strategies for",
+      "label": "Asymptotic and resampling stra",
+      "citations": 32889,
+      "type": "paper"
+    },
+    {
+      "id": "Standards and guidelines for the interpr",
+      "label": "Standards and guidelines for t",
+      "citations": 32433,
+      "type": "paper"
+    },
+    {
+      "id": "RoB 2: a revised tool for assessing risk",
+      "label": "RoB 2: a revised tool for asse",
+      "citations": 31197,
+      "type": "paper"
+    },
+    {
+      "id": "Features and development of <i>Coot</i>",
+      "label": "Features and development of <i",
+      "citations": 29697,
+      "type": "paper"
+    },
+    {
+      "id": "Greedy function approximation: A gradien",
+      "label": "Greedy function approximation:",
+      "citations": 29213,
+      "type": "paper"
+    },
+    {
+      "id": "QUANTUM ESPRESSO: a modular and open-sou",
+      "label": "QUANTUM ESPRESSO: a modular an",
+      "citations": 28915,
+      "type": "paper"
+    },
+    {
+      "id": "The PRISMA Statement for Reporting Syste",
+      "label": "The PRISMA Statement for Repor",
+      "citations": 27928,
+      "type": "paper"
+    },
+    {
+      "id": "GROMACS: High performance molecular simu",
+      "label": "GROMACS: High performance mole",
+      "citations": 27070,
+      "type": "paper"
+    },
+    {
+      "id": "Rayyan—a web and mobile app for systemat",
+      "label": "Rayyan—a web and mobile app fo",
+      "citations": 24984,
+      "type": "paper"
+    },
+    {
+      "id": "Initial sequencing and analysis of the h",
+      "label": "Initial sequencing and analysi",
+      "citations": 24600,
+      "type": "paper"
+    },
+    {
+      "id": "<i>PHENIX</i>: a comprehensive Python-ba",
+      "label": "<i>PHENIX</i>: a comprehensive",
+      "citations": 24586,
+      "type": "paper"
+    },
+    {
+      "id": "Summary for Policymakers",
+      "label": "Summary for Policymakers",
+      "citations": 24034,
+      "type": "paper"
+    },
+    {
+      "id": "Two new Later Stone Age sites from the F",
+      "label": "Two new Later Stone Age sites ",
+      "citations": 23845,
+      "type": "paper"
+    },
+    {
+      "id": "Distribution of the Estimators for Autor",
+      "label": "Distribution of the Estimators",
+      "citations": 23023,
+      "type": "paper"
+    },
+    {
+      "id": "phyloseq: An R Package for Reproducible ",
+      "label": "phyloseq: An R Package for Rep",
+      "citations": 22688,
+      "type": "paper"
+    },
+    {
+      "id": "Array programming with NumPy",
+      "label": "Array programming with NumPy",
+      "citations": 22589,
+      "type": "paper"
+    }
+  ],
+  "edges": [
+    {
+      "source": "year_2007",
+      "target": "year_2008",
+      "weight": 127
+    },
+    {
+      "source": "year_2007",
+      "target": "year_2009",
+      "weight": 127
+    },
+    {
+      "source": "year_2007",
+      "target": "year_2010",
+      "weight": 127
+    },
+    {
+      "source": "year_2007",
+      "target": "year_2011",
+      "weight": 127
+    },
+    {
+      "source": "year_2008",
+      "target": "year_2009",
+      "weight": 145
+    },
+    {
+      "source": "year_2008",
+      "target": "year_2010",
+      "weight": 145
+    },
+    {
+      "source": "year_2008",
+      "target": "year_2011",
+      "weight": 145
+    },
+    {
+      "source": "year_2008",
+      "target": "year_2012",
+      "weight": 145
+    },
+    {
+      "source": "year_2009",
+      "target": "year_2010",
+      "weight": 203
+    },
+    {
+      "source": "year_2009",
+      "target": "year_2011",
+      "weight": 203
+    },
+    {
+      "source": "year_2009",
+      "target": "year_2012",
+      "weight": 203
+    },
+    {
+      "source": "year_2009",
+      "target": "year_2013",
+      "weight": 203
+    },
+    {
+      "source": "year_2010",
+      "target": "year_2011",
+      "weight": 199
+    },
+    {
+      "source": "year_2010",
+      "target": "year_2012",
+      "weight": 199
+    },
+    {
+      "source": "year_2010",
+      "target": "year_2013",
+      "weight": 199
+    },
+    {
+      "source": "year_2010",
+      "target": "year_2014",
+      "weight": 199
+    },
+    {
+      "source": "year_2011",
+      "target": "year_2012",
+      "weight": 203
+    },
+    {
+      "source": "year_2011",
+      "target": "year_2013",
+      "weight": 203
+    },
+    {
+      "source": "year_2011",
+      "target": "year_2014",
+      "weight": 203
+    },
+    {
+      "source": "year_2011",
+      "target": "year_2015",
+      "weight": 203
+    },
+    {
+      "source": "year_2012",
+      "target": "year_2013",
+      "weight": 261
+    },
+    {
+      "source": "year_2012",
+      "target": "year_2014",
+      "weight": 261
+    },
+    {
+      "source": "year_2012",
+      "target": "year_2015",
+      "weight": 261
+    },
+    {
+      "source": "year_2012",
+      "target": "year_2016",
+      "weight": 261
+    },
+    {
+      "source": "year_2013",
+      "target": "year_2014",
+      "weight": 282
+    },
+    {
+      "source": "year_2013",
+      "target": "year_2015",
+      "weight": 282
+    },
+    {
+      "source": "year_2013",
+      "target": "year_2016",
+      "weight": 282
+    },
+    {
+      "source": "year_2013",
+      "target": "year_2017",
+      "weight": 282
+    },
+    {
+      "source": "year_2014",
+      "target": "year_2015",
+      "weight": 301
+    },
+    {
+      "source": "year_2014",
+      "target": "year_2016",
+      "weight": 301
+    },
+    {
+      "source": "year_2014",
+      "target": "year_2017",
+      "weight": 301
+    },
+    {
+      "source": "year_2014",
+      "target": "year_2018",
+      "weight": 301
+    },
+    {
+      "source": "year_2015",
+      "target": "year_2016",
+      "weight": 314
+    },
+    {
+      "source": "year_2015",
+      "target": "year_2017",
+      "weight": 314
+    },
+    {
+      "source": "year_2015",
+      "target": "year_2018",
+      "weight": 314
+    },
+    {
+      "source": "year_2015",
+      "target": "year_2019",
+      "weight": 314
+    },
+    {
+      "source": "year_2016",
+      "target": "year_2017",
+      "weight": 402
+    },
+    {
+      "source": "year_2016",
+      "target": "year_2018",
+      "weight": 402
+    },
+    {
+      "source": "year_2016",
+      "target": "year_2019",
+      "weight": 402
+    },
+    {
+      "source": "year_2016",
+      "target": "year_2020",
+      "weight": 402
+    },
+    {
+      "source": "year_2017",
+      "target": "year_2018",
+      "weight": 593
+    },
+    {
+      "source": "year_2017",
+      "target": "year_2019",
+      "weight": 593
+    },
+    {
+      "source": "year_2017",
+      "target": "year_2020",
+      "weight": 593
+    },
+    {
+      "source": "year_2017",
+      "target": "year_2021",
+      "weight": 593
+    },
+    {
+      "source": "year_2018",
+      "target": "year_2019",
+      "weight": 559
+    },
+    {
+      "source": "year_2018",
+      "target": "year_2020",
+      "weight": 559
+    },
+    {
+      "source": "year_2018",
+      "target": "year_2021",
+      "weight": 559
+    },
+    {
+      "source": "year_2018",
+      "target": "year_2022",
+      "weight": 559
+    },
+    {
+      "source": "year_2019",
+      "target": "year_2020",
+      "weight": 591
+    },
+    {
+      "source": "year_2019",
+      "target": "year_2021",
+      "weight": 591
+    },
+    {
+      "source": "year_2019",
+      "target": "year_2022",
+      "weight": 591
+    },
+    {
+      "source": "year_2019",
+      "target": "year_2023",
+      "weight": 591
+    },
+    {
+      "source": "year_2020",
+      "target": "year_2021",
+      "weight": 738
+    },
+    {
+      "source": "year_2020",
+      "target": "year_2022",
+      "weight": 738
+    },
+    {
+      "source": "year_2020",
+      "target": "year_2023",
+      "weight": 738
+    },
+    {
+      "source": "year_2020",
+      "target": "year_2024",
+      "weight": 738
+    },
+    {
+      "source": "year_2021",
+      "target": "year_2022",
+      "weight": 596
+    },
+    {
+      "source": "year_2021",
+      "target": "year_2023",
+      "weight": 596
+    },
+    {
+      "source": "year_2021",
+      "target": "year_2024",
+      "weight": 596
+    },
+    {
+      "source": "year_2021",
+      "target": "year_2025",
+      "weight": 596
+    },
+    {
+      "source": "year_2022",
+      "target": "year_2023",
+      "weight": 693
+    },
+    {
+      "source": "year_2022",
+      "target": "year_2024",
+      "weight": 693
+    },
+    {
+      "source": "year_2022",
+      "target": "year_2025",
+      "weight": 693
+    },
+    {
+      "source": "year_2022",
+      "target": "year_2026",
+      "weight": 693
+    },
+    {
+      "source": "year_2023",
+      "target": "year_2024",
+      "weight": 788
+    },
+    {
+      "source": "year_2023",
+      "target": "year_2025",
+      "weight": 788
+    },
+    {
+      "source": "year_2023",
+      "target": "year_2026",
+      "weight": 788
+    },
+    {
+      "source": "year_2024",
+      "target": "year_2025",
+      "weight": 724
+    },
+    {
+      "source": "year_2024",
+      "target": "year_2026",
+      "weight": 724
+    },
+    {
+      "source": "year_2025",
+      "target": "year_2026",
+      "weight": 1030
+    }
+  ],
+  "stats": {
+    "nodes": 50,
+    "edges": 70,
+    "top_cited": [
+      [
+        "The PRISMA 2020 stat",
+        96863
+      ],
+      [
+        "Inline Hardware KV-C",
+        76379
+      ],
+      [
+        "NIH Image to ImageJ:",
+        65473
+      ],
+      [
+        "Preferred Reporting ",
+        64309
+      ],
+      [
+        "XGBoost",
+        49232
+      ]
+    ]
+  }
+}
