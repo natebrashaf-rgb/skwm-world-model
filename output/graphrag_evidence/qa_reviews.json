@@ -204,5 +204,21 @@
     "review_comment": "",
     "edited_answer": "",
     "rejected_reason": ""
+  },
+  "98defbc107be": {
+    "qa_id": "98defbc107be",
+    "question": "你好",
+    "answer": "**证据不足**：关于「你好」，知识图谱和文献库中未找到充分证据。请尝试其他关键词，或联系馆员补充相关资源。",
+    "sources": [],
+    "overall_confidence": 0.0,
+    "has_sufficient_evidence": false,
+    "model": "deepseek",
+    "created_at": 1784822699.1445956,
+    "review_status": "pending",
+    "reviewed_by": "",
+    "reviewed_at": 0.0,
+    "review_comment": "",
+    "edited_answer": "",
+    "rejected_reason": ""
   }
 }
