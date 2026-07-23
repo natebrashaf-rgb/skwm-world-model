@@ -820,12 +820,16 @@ class H(BaseHTTPRequestHandler):
         
         # ── 飞书 URL 验证（最优先，不依赖任何import） ──
         if pa=='/api/feishu/webhook':
-            body_len = int(self.headers.get('Content-Length', 0))
-            body_str = self.rfile.read(body_len).decode('utf-8')
+            import sys as _sys
             try:
+                body_len = int(self.headers.get('Content-Length', 0))
+                body_str = self.rfile.read(body_len).decode('utf-8')
                 body = json.loads(body_str)
-            except:
-                json_err("bad json"); return
+            except Exception as e:
+                # 日志写文件，确保能看到
+                _sys.stderr.write(f"[FEISHU_PARSE_ERROR] {e}\n")
+                _sys.stderr.flush()
+                json_err(f"bad json: {e}"); return
             # URL验证：原样返回challenge
             if body.get('type') == 'url_verification':
                 self.send_response(200)
