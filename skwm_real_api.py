@@ -21,7 +21,7 @@ STOPWORDS = {
     'behavior','case','cell','change','clinical','coefficient','cohort','comparison',
     'correlation','data','database','dataset','development','distribution','effect',
     'estimate','evaluation','evidence','experiment','expression','factor','findings',
-    'framework','function','gene','genetic','genome','generated','generative',
+    'framework','function','gene','genetic','genome','generated','generative','gen',
     'group','health','human','identification','impact','index','indicator','individual',
     'innovation','institution','instrument','integration','intervention','level',
     'management','measure','measurement','mechanism','method','methodology','model',
@@ -38,21 +38,41 @@ STOPWORDS = {
     'target','technique','technology','test','therapy','threshold','tissue','titer',
     'tool','total','treatment','trend','trial','type','unit','use','validity','value',
     'variable','variation','version','ai in','in ai','on ai','of ai','and ai',
-    'based','using','via','across','within','among','between',
-    # 中文通用词
+    'based','using','via','across','within','among','between','nation',
+    # 中文通用学术词
     '研究','分析','方法','技术','系统','数据','模型','问题','影响','发展',
     '应用','评估','比较','测量','报告','结果','过程','管理','策略','机制',
     '关系','水平','能力','质量','状态','作用','因素','依据','条件','趋势',
     '结构','特征','指标','模式','途径','效应','手段','阶段','类型','范围',
     '中心','基础','理论','方法学','相关性','显著性','差异性','搜索','通用',
-    # 年份/数字类
-    'x2019','x2020','x2021','x2022','x2023','x2024','x2025','x2026',
-    # 单字母
-    'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+    # 文旅领域噪声（非文旅核心词）
+    'search','access','change','effect','care','state','time','world','work',
+    'china','chinese','international','global','local','regional','national',
+    # AI/技术类通用词（非文旅特有）
+    'artificial intelligence','deep learning','machine learning','nlp',
+    'computer','software','hardware','algorithm','classification','clustering',
+    'regression','forecasting','prediction','optimization','simulation',
     # 2字母英语高频噪声
     'in','on','at','to','of','by','an','as','be','do','go','if','is','it','me',
     'my','no','or','so','up','us','we','ai','dr','mr','vs','et','al',
 }
+
+# ── 中英同义词映射（合并同概念的不同语言表达） ──
+SYNONYM_MAP = {
+    'tour': '旅游',
+    'tourism': '旅游',
+    'culture': '文化',
+    'heritage': '遗产',
+    'digital': '数字',
+    'arab': '阿拉伯',
+    'arabic': '阿拉伯',
+}
+
+# 需要完全删除的词（不进榜单）
+DELETE_WORDS = {'nation','search','generative ai','generated','generative',
+    'ai in','in ai','china','chinese','gen','generated content','content',
+    'graph','saudi','saudi arabia','text','media','view','user generated',
+    'social media','big data','user', 'use', 'based on', 'approach'}
 # 中文停用词（领域无关）
 CN_STOP = set(c for c in STOPWORDS if any('\u4e00' <= ch <= '\u9fff' for ch in c))
 
@@ -133,8 +153,26 @@ def get_hotspots(year: str = "2026", top_k: int = 20, exclude_stopwords: bool = 
     for name, vec in sv.items():
         if exclude_stopwords and _is_stopword(name):
             continue
-        items.append((name, vec[0], vec[1], vec[2], vec[3]))
+        # 同义词合并：映射到中文名，或标记删除
+        mapped = SYNONYM_MAP.get(name.lower().strip())
+        if name.lower().strip() in DELETE_WORDS:
+            continue
+        effective_name = mapped or name
+        items.append((effective_name, vec[0], vec[1], vec[2], vec[3]))
     
+    # 合并相同名称的条目
+    merged = {}
+    for name, heat, growth, centrality, conn in items:
+        if name in merged:
+            m = merged[name]
+            m[1] = max(m[1], heat)  # 热度取最大值
+            m[2] = max(m[2], growth)  # 增长取最大值
+            m[3] = max(m[3], centrality)
+            m[4] += conn
+        else:
+            merged[name] = [name, heat, growth, centrality, conn]
+    
+    items = list(merged.values())
     items.sort(key=lambda x: -x[1])
     top = items[:top_k]
     
@@ -187,12 +225,29 @@ def get_frontier(year: str = "2026", top_k: int = 20, exclude_stopwords: bool = 
     for name, vec in sv.items():
         if exclude_stopwords and _is_stopword(name):
             continue
+        # 同义词合并：映射到中文名，或标记删除
+        mapped = SYNONYM_MAP.get(name.lower().strip())
+        if name.lower().strip() in DELETE_WORDS:
+            continue
+        effective_name = mapped or name
         growth = vec[1]
         heat = vec[0]
         peak = heat_peaks.get(name, heat)
         if abs(growth) > peak:
             violations.append({"name": name, "growth": growth, "peak": peak})
-        items.append((name, growth, heat, peak))
+        items.append((effective_name, growth, heat, peak))
+    
+    # 合并相同名称
+    merged = {}
+    for name, growth, heat, peak in items:
+        if name in merged:
+            m = merged[name]
+            m[1] = max(m[1], growth)  # 增长取最大值
+            m[2] = max(m[2], heat)
+            m[3] = max(m[3], peak)
+        else:
+            merged[name] = [name, growth, heat, peak]
+    items = list(merged.values())
     
     items.sort(key=lambda x: -abs(x[1]))
     top = items[:top_k]
@@ -273,7 +328,7 @@ def get_overview() -> dict:
     total_relations = sum(
         sum(v[3] for v in _SV[str(y)].values() if isinstance(v, (list, tuple)) and len(v) >= 4)
         for y in years
-    )
+    ) // 2  # 无向边双计，除以2得实际边数
     
     sy = _SV.get('2026', {})
     n_2026 = len(sy) if isinstance(sy, dict) else 0

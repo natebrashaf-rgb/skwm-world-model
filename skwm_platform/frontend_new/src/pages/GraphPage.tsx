@@ -68,7 +68,16 @@ export default function GraphPage() {
     const svg = select(svgRef.current)
     svg.selectAll('*').remove()
     const w = dim.w, h = dim.h
+    const g = svg.append('g')
 
+    // Add zoom behavior
+    svg.call(zoom<any, unknown>()
+      .scaleExtent([0.1, 4])
+      .on('zoom', (event) => {
+        g.attr('transform', event.transform)
+      })
+    )
+    
     let nodes = data.nodes || []
     let edges = data.edges || []
 
@@ -97,17 +106,17 @@ export default function GraphPage() {
     simRef.current = sim
 
     // Edges with labels
-    const linkGrp = svg.append('g')
+    const linkGrp = g.append('g')
     const linkEls = linkGrp.selectAll('line').data(simLinks).join('line')
       .attr('stroke', '#d1d5db').attr('stroke-width', 0.8).attr('stroke-opacity', 0.4)
 
-    const labelGrp = svg.append('g')
+    const labelGrp = g.append('g')
     const labelEls = labelGrp.selectAll('text').data(simLinks).join('text')
       .text(d => REL_CN[d.relation] || d.relation || '')
       .attr('font-size', 8).attr('fill', '#9ca3af').attr('text-anchor', 'middle')
 
     // Nodes
-    const nodeGrp = svg.append('g')
+    const nodeGrp = g.append('g')
     const nodeEls = nodeGrp.selectAll('g').data(simNodes).join('g')
       .call(drag<any, any>()
         .on('start', (e, d) => { if (!e.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y })
