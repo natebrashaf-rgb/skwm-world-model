@@ -158,15 +158,18 @@ class Engine:
         return {}
     
     def _classify(self, name):
-        """基于名称的实体类型分类"""
-        if any(kw in name for kw in ["大学","学院","研究所","中心","图书馆","博物馆","馆","学院"]):
-            return "机构"
-        if any(kw in name for kw in ["中国","沙特","阿联酋","埃及","北京","上海","迪拜","阿拉伯","利亚","斯坦"]):
-            return "地点"
-        if any(kw in name for kw in ["一带一路","合作论坛","战略","倡议","政策"]):
-            return "政策"
+        """基于名称的实体类型分类（更精准）"""
+        # 英文 → 术语
         if name.isascii() and not any('\u4e00'<=c<='\u9fff' for c in name):
             return "术语"
+        # 机构：含大学/学院/研究所/图书馆/博物馆
+        if any(kw in name for kw in ["大学","学院","研究所","图书馆","博物馆"]):
+            return "机构"
+        # 地点：含常见地名关键词
+        if any(name.startswith(kw) or name.endswith(kw) for kw in ["中国","沙特","阿联酋","埃及","北京","上海","迪拜"]):
+            return "地点"
+        if any(kw in name for kw in ["一带一路","合作论坛","战略","倡议"]):
+            return "政策"
         return "主题"
 
 eng = Engine()
@@ -599,15 +602,23 @@ class H(BaseHTTPRequestHandler):
                 et = eng._classify(name)
                 nodes.append({"id":f"e{i}","label":name,"value":max(5,h//20),
                     "entity_type":et,"heat":h,"growth":g,"centrality":cx,"connections":cn})
-            # 简单边：只连同类且热度相近的（前100个）
-            top = nodes[:100]
+            # 分类连线：同类实体紧密相连
             edges=[]
-            for i in range(len(top)):
-                for j in range(i+1,len(top)):
-                    if top[i]["entity_type"]==top[j]["entity_type"] and abs(top[i]["heat"]-top[j]["heat"])<800:
-                        edges.append({"source":top[i]["id"],"target":top[j]["id"],"weight":2})
-            json_ok({"nodes":nodes,"edges":edges[:2000],
-                "stats":{"nodes_rendered":len(nodes),"edges_rendered":min(len(edges),2000)}})
+            by_type = {}
+            for n in nodes:
+                t = n["entity_type"]
+                if t not in by_type: by_type[t] = []
+                by_type[t].append(n)
+            for t, ns in by_type.items():
+                # 每类内部全连接（密度高、聚成一团）
+                for i in range(min(len(ns), 200)):
+                    for j in range(i+1, min(len(ns), 200)):
+                        heat_gap = abs(ns[i]["heat"] - ns[j]["heat"])
+                        if heat_gap < 600:
+                            w = max(1, 8 - heat_gap//100)
+                            edges.append({"source":ns[i]["id"],"target":ns[j]["id"],"weight":w})
+            json_ok({"nodes":nodes,"edges":edges[:5000],
+                "stats":{"nodes_rendered":len(nodes),"edges_rendered":min(len(edges),5000)}})
         
         elif pa=='/api/science-map/publication-trends':
             years=Counter()
