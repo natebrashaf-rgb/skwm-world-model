@@ -509,9 +509,9 @@ class H(BaseHTTPRequestHandler):
         p=urlparse(self.path);pa=p.path;params=parse_qs(p.query)
         
         # 加载同事的 index.html
-        INDEX_PATH = Path(__file__).parent / "skwm_platform" / "backend" / "index.html"
-        
-        if pa=='/':
+        if pa=='/' or pa=='':
+            # 服务于前端的 SPA (React build)
+            INDEX_PATH = Path(__file__).parent / "skwm_platform" / "frontend_new" / "dist" / "index.html"
             if INDEX_PATH.exists():
                 html = open(INDEX_PATH, encoding='utf-8').read()
                 self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.end_headers()
@@ -524,11 +524,23 @@ class H(BaseHTTPRequestHandler):
                 h+=f'<div id="p-analytics" class="pg">{pg_analytics()}</div>'
                 h+=f'<div id="p-frontier" class="pg">{pg_frontier()}</div>'
                 h+=f'<div id="p-arabic" class="pg">{pg_arabic()}</div>'
+                h+=f'<div id="p-more" class="pg">{pg_more()}</div>'
                 h+=f'<div id="p-about" class="pg">{pg_about()}</div>'
                 h+=TAIL
-                self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.end_headers();self.wfile.write(h.encode())
+                self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.end_headers()
+                self.wfile.write(h.encode())
             return
         
+        # 为 React 构建产物提供静态文件服务
+        if pa.startswith('/assets/'):
+            asset_path = Path(__file__).parent / "skwm_platform" / "frontend_new" / "dist" / pa.lstrip('/')
+            if asset_path.exists():
+                ext = asset_path.suffix.lower()
+                mime = {'js':'application/javascript','css':'text/css','svg':'image/svg+xml','png':'image/png','json':'application/json','woff2':'font/woff2'}
+                ct = mime.get(ext.lstrip('.'), 'application/octet-stream')
+                self.send_response(200);self.send_header('Content-Type',ct);self.end_headers()
+                self.wfile.write(open(asset_path,'rb').read())
+                return
         # ── 同事前端需要的 JSON API ──
         def json_ok(data):
             self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers()
