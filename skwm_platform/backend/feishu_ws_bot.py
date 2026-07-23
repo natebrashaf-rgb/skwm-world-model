@@ -96,6 +96,7 @@ class FeishuWSBot:
             text = content.get("text", "") if isinstance(content, dict) else str(content)
 
             # 群聊模式：检查@机器人
+            is_mentioned = False
             if chat_type == "group":
                 # 取出所有 mention 的 open_id
                 mentions = message.mentions or []

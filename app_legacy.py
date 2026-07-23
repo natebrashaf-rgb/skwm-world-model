@@ -886,6 +886,25 @@ class H(BaseHTTPRequestHandler):
             from skwm_platform.backend.feishu_bot import FeishuBotV2
             json_ok(FeishuBotV2().push_test())
         
+        elif pa=='/api/feishu/status':
+            """飞书机器人诊断"""
+            import os as _os
+            has_id = bool(_os.environ.get("FEISHU_APP_ID"))
+            has_secret = bool(_os.environ.get("FEISHU_APP_SECRET"))
+            token_ok = False
+            if has_id and has_secret:
+                from skwm_platform.backend.feishu_ws_bot import FeishuWSBot
+                ws_bot = FeishuWSBot()
+                token = ws_bot._get_tenant_token()
+                token_ok = bool(token)
+            json_ok({
+                "feishu_app_id_configured": has_id,
+                "feishu_app_secret_configured": has_secret,
+                "ws_bot_token_ok": token_ok,
+                "old_webhook_configured": bool(_os.environ.get("FEISHU_WEBHOOK_URL")),
+                "note": "如果token_ok=true但机器人不回复，检查飞书后台：权限(im:message/group_at_msg/send_as_bot)、事件订阅(im.message.receive_v1)、已发布上线、已加入群"
+            })
+        
         elif pa=='/api/feishu/push-weekly':
             """推送周报"""
             from skwm_platform.backend.feishu_bot import FeishuBotV2
