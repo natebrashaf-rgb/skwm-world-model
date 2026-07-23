@@ -36,6 +36,8 @@ class Engine:
             if key not in seen:
                 seen.add(key); unique.append(p)
         self.all=unique
+        # 预加载真实世界模型数据
+        self._sv_data = self._load_state_vectors()
         print(f'  ✅ 目录:{len(self.catalog)} + 阿语:{len(self.arabic)} + 主表:{len(self.b1)} = 总计:{len(self.all)} 篇')
         if self.kg_stats: print(f'  🕸️ 知识图谱: {self.kg_stats.get("nodes",0)}节点/{self.kg_stats.get("edges",0)}边')
     def _load_kg_stats(self):
@@ -143,16 +145,15 @@ class Engine:
         return a.most_common(int(n))
     
     # ── 真实世界模型数据 ──
-    _sv_cache = None
-    def _get_state_vectors(self, year="2026"):
-        if self._sv_cache is None:
-            p = DATA_DIR / "state_vectors.json"
-            if p.exists():
-                try: self._sv_cache = json.loads(open(p,encoding='utf-8').read())
-                except: self._sv_cache = {}
-            else:
-                self._sv_cache = {}
-        return self._sv_cache.get(str(year), {})
+    def _load_state_vectors(self):
+        p = DATA_DIR / "state_vectors.json"
+        if p.exists():
+            try:
+                with open(p, encoding='utf-8') as f:
+                    return json.load(f)
+            except:
+                return {}
+        return {}
     
     def _classify(self, name):
         """基于名称的实体类型分类"""
@@ -586,7 +587,7 @@ class H(BaseHTTPRequestHandler):
             limit=int(params.get('limit',['2000'])[0])
             limit = min(max(limit, 100), 2200)
             # 使用真实世界模型数据
-            sv = eng._get_state_vectors(y)
+            sv = eng._sv_data.get(str(y), {}) if hasattr(eng, '_sv_data') else {}
             if sv:
                 items = list(sv.items())
                 # 按热度排序
