@@ -22,6 +22,7 @@ const groups: NavGroup[] = [
   { label: '系统', items: [
     { label: '时间回溯', path: '/timeline', icon: Clock },
     { label: '数据概览', path: '/data', icon: Database },
+    { label: '馆员工作台', path: '/dashboard', icon: FileText },
   ]},
 ]
 

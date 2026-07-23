@@ -1,0 +1,5955 @@
+{
+  "entities": [
+    {
+      "id": "policy_policy",
+      "name_zh": "政策",
+      "name_en": "Policy",
+      "domain": "政策法规",
+      "freq": 197,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_silk_road",
+      "name_zh": "丝绸之路",
+      "name_en": "Silk Road",
+      "domain": "中阿关系",
+      "freq": 176,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_belt_and_road",
+      "name_zh": "一带一路",
+      "name_en": "Belt And Road",
+      "domain": "中阿关系",
+      "freq": 71,
+      "type": "policy",
+      "year": 2013
+    },
+    {
+      "id": "policy_maritime_silk_road",
+      "name_zh": "丝绸之路",
+      "name_en": "Maritime Silk Road",
+      "domain": "中阿关系",
+      "freq": 57,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_the_belt_and_road",
+      "name_zh": "一带一路",
+      "name_en": "The Belt And Road",
+      "domain": "中阿关系",
+      "freq": 56,
+      "type": "policy",
+      "year": 2013
+    },
+    {
+      "id": "policy_belt_and_road_initia",
+      "name_zh": "一带一路",
+      "name_en": "Belt And Road Initiative",
+      "domain": "中阿关系",
+      "freq": 50,
+      "type": "policy",
+      "year": 2013
+    },
+    {
+      "id": "policy_the_belt_and_road_in",
+      "name_zh": "一带一路",
+      "name_en": "The Belt And Road Initiative",
+      "domain": "中阿关系",
+      "freq": 44,
+      "type": "policy",
+      "year": 2013
+    },
+    {
+      "id": "policy_the_silk_road",
+      "name_zh": "丝绸之路",
+      "name_en": "The Silk Road",
+      "domain": "中阿关系",
+      "freq": 44,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_the_maritime_silk_ro",
+      "name_zh": "丝绸之路",
+      "name_en": "The Maritime Silk Road",
+      "domain": "中阿关系",
+      "freq": 33,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_in",
+      "name_zh": "政策",
+      "name_en": "Policy In",
+      "domain": "政策法规",
+      "freq": 22,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_of_the_belt_and_road",
+      "name_zh": "一带一路",
+      "name_en": "Of The Belt And Road",
+      "domain": "中阿关系",
+      "freq": 18,
+      "type": "policy",
+      "year": 2013
+    },
+    {
+      "id": "policy_silk_road_and",
+      "name_zh": "丝绸之路",
+      "name_en": "Silk Road And",
+      "domain": "中阿关系",
+      "freq": 18,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_policy",
+      "name_zh": "政策",
+      "name_en": "Cultural Policy",
+      "domain": "政策法规",
+      "freq": 17,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_tourist_perception",
+      "name_zh": "游客",
+      "name_en": "Tourist Perception",
+      "domain": "旅游",
+      "freq": 17,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_new_silk_road",
+      "name_zh": "丝绸之路",
+      "name_en": "New Silk Road",
+      "domain": "中阿关系",
+      "freq": 13,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_the_new_silk_road",
+      "name_zh": "丝绸之路",
+      "name_en": "The New Silk Road",
+      "domain": "中阿关系",
+      "freq": 13,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_foreign_policy",
+      "name_zh": "政策",
+      "name_en": "Foreign Policy",
+      "domain": "政策法规",
+      "freq": 12,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_silk_roads",
+      "name_zh": "丝绸之路",
+      "name_en": "Silk Roads",
+      "domain": "中阿关系",
+      "freq": 12,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_under_the_belt_and_r",
+      "name_zh": "一带一路",
+      "name_en": "Under The Belt And Road",
+      "domain": "中阿关系",
+      "freq": 10,
+      "type": "policy",
+      "year": 2013
+    },
+    {
+      "id": "policy_maritime_silk_road_a",
+      "name_zh": "丝绸之路",
+      "name_en": "Maritime Silk Road And",
+      "domain": "中阿关系",
+      "freq": 9,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_on_the_maritime_silk",
+      "name_zh": "丝绸之路",
+      "name_en": "On The Maritime Silk Road",
+      "domain": "中阿关系",
+      "freq": 9,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_of_the_maritime_silk",
+      "name_zh": "丝绸之路",
+      "name_en": "Of The Maritime Silk Road",
+      "domain": "中阿关系",
+      "freq": 9,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_silk_road_initiative",
+      "name_zh": "丝绸之路",
+      "name_en": "Silk Road Initiative",
+      "domain": "中阿关系",
+      "freq": 9,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_of_the_silk_road",
+      "name_zh": "丝绸之路",
+      "name_en": "Of The Silk Road",
+      "domain": "中阿关系",
+      "freq": 9,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_development_policy",
+      "name_zh": "政策",
+      "name_en": "Development Policy",
+      "domain": "政策法规",
+      "freq": 8,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_silk_road_tourism",
+      "name_zh": "旅游",
+      "name_en": "Silk Road Tourism",
+      "domain": "旅游",
+      "freq": 8,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_public_policy",
+      "name_zh": "政策",
+      "name_en": "Public Policy",
+      "domain": "政策法规",
+      "freq": 8,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_in_the",
+      "name_zh": "政策",
+      "name_en": "Policy In The",
+      "domain": "政策法规",
+      "freq": 8,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_great_silk_road",
+      "name_zh": "丝绸之路",
+      "name_en": "Great Silk Road",
+      "domain": "中阿关系",
+      "freq": 8,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_maritime_silk_road_i",
+      "name_zh": "丝绸之路",
+      "name_en": "Maritime Silk Road Initiative",
+      "domain": "中阿关系",
+      "freq": 8,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_of_belt_and_road",
+      "name_zh": "一带一路",
+      "name_en": "Of Belt And Road",
+      "domain": "中阿关系",
+      "freq": 7,
+      "type": "policy",
+      "year": 2013
+    },
+    {
+      "id": "policy_一带一路",
+      "name_zh": "",
+      "name_en": "一带一路",
+      "domain": "中阿关系",
+      "freq": 7,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_implications",
+      "name_zh": "政策",
+      "name_en": "Policy Implications",
+      "domain": "政策法规",
+      "freq": 7,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_on",
+      "name_zh": "政策",
+      "name_en": "Policy On",
+      "domain": "政策法规",
+      "freq": 7,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_issues",
+      "name_zh": "政策",
+      "name_en": "Policy Issues",
+      "domain": "政策法规",
+      "freq": 7,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_the_great_silk_road",
+      "name_zh": "丝绸之路",
+      "name_en": "The Great Silk Road",
+      "domain": "中阿关系",
+      "freq": 7,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_policy",
+      "name_zh": "可持续政策",
+      "name_en": "Sustainable Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_policy",
+      "name_zh": "数字政策",
+      "name_en": "Digital Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_policy",
+      "name_zh": "智慧政策",
+      "name_en": "Smart Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_policy",
+      "name_zh": "遗产政策",
+      "name_en": "Heritage Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_policy",
+      "name_zh": "绿色政策",
+      "name_en": "Green Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_policy",
+      "name_zh": "全球政策",
+      "name_en": "Global Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_policy",
+      "name_zh": "地方政策",
+      "name_en": "Local Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_policy",
+      "name_zh": "国际政策",
+      "name_en": "International Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_polic",
+      "name_zh": "跨文化政策",
+      "name_en": "Cross Cultural Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_policy",
+      "name_zh": "多语政策",
+      "name_en": "Multilingual Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_policy",
+      "name_zh": "跨文化政策",
+      "name_en": "Intercultural Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_policy",
+      "name_zh": "传统政策",
+      "name_en": "Traditional Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_policy",
+      "name_zh": "原真政策",
+      "name_en": "Authentic Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_policy",
+      "name_zh": "创意政策",
+      "name_en": "Creative Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_policy",
+      "name_zh": "负责任政策",
+      "name_en": "Responsible Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_policy",
+      "name_zh": "伦理政策",
+      "name_en": "Ethical Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_policy",
+      "name_zh": "包容政策",
+      "name_en": "Inclusive Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_policy",
+      "name_zh": "无障碍政策",
+      "name_en": "Accessible Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_poli",
+      "name_zh": "社区政策",
+      "name_en": "Community Based Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_evidence_based_polic",
+      "name_zh": "循证政策",
+      "name_en": "Evidence Based Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_knowledge_based_poli",
+      "name_zh": "基于知识政策",
+      "name_en": "Knowledge Based Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ai_powered_policy",
+      "name_zh": "AI驱动政策",
+      "name_en": "Ai Powered Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_data_driven_policy",
+      "name_zh": "数据驱动政策",
+      "name_en": "Data Driven Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_user_centered_policy",
+      "name_zh": "以用户为中心政策",
+      "name_en": "User Centered Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_human_centered_polic",
+      "name_zh": "以人为本政策",
+      "name_en": "Human Centered Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cloud_based_policy",
+      "name_zh": "基于云政策",
+      "name_en": "Cloud Based Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_mobile_policy",
+      "name_zh": "移动政策",
+      "name_en": "Mobile Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_online_policy",
+      "name_zh": "在线政策",
+      "name_en": "Online Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_social_media_policy",
+      "name_zh": "社交媒体政策",
+      "name_en": "Social Media Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_open_access_policy",
+      "name_zh": "开放获取政策",
+      "name_en": "Open Access Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_open_source_policy",
+      "name_zh": "开源政策",
+      "name_en": "Open Source Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_big_policy",
+      "name_zh": "大政策",
+      "name_en": "Big Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_small_policy",
+      "name_zh": "小政策",
+      "name_en": "Small Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_deep_policy",
+      "name_zh": "深度政策",
+      "name_en": "Deep Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_wide_policy",
+      "name_zh": "广泛政策",
+      "name_en": "Wide Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_large_scale_policy",
+      "name_zh": "大规模政策",
+      "name_en": "Large Scale Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_small_scale_policy",
+      "name_zh": "小规模政策",
+      "name_en": "Small Scale Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_real_time_policy",
+      "name_zh": "实时政策",
+      "name_en": "Real Time Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_long_term_policy",
+      "name_zh": "长期政策",
+      "name_en": "Long Term Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_short_term_policy",
+      "name_zh": "短期政策",
+      "name_en": "Short Term Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_first_policy",
+      "name_zh": "第一政策",
+      "name_en": "First Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_second_policy",
+      "name_zh": "第二政策",
+      "name_en": "Second Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_third_policy",
+      "name_zh": "第三政策",
+      "name_en": "Third Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_new_policy",
+      "name_zh": "新政策",
+      "name_en": "New Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_emerging_policy",
+      "name_zh": "新兴政策",
+      "name_en": "Emerging Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_future_policy",
+      "name_zh": "未来政策",
+      "name_en": "Future Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_contemporary_policy",
+      "name_zh": "当代政策",
+      "name_en": "Contemporary Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_modern_policy",
+      "name_zh": "现代政策",
+      "name_en": "Modern Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ancient_policy",
+      "name_zh": "古代政策",
+      "name_en": "Ancient Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_historic_policy",
+      "name_zh": "历史政策",
+      "name_en": "Historic Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_early_policy",
+      "name_zh": "早期政策",
+      "name_en": "Early Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_late_policy",
+      "name_zh": "晚期政策",
+      "name_en": "Late Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_post_policy",
+      "name_zh": "后政策",
+      "name_en": "Post Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_pre_policy",
+      "name_zh": "前政策",
+      "name_en": "Pre Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_policy",
+      "name_zh": "交叉政策",
+      "name_en": "Cross Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inter_policy",
+      "name_zh": "跨政策",
+      "name_en": "Inter Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multi_policy",
+      "name_zh": "多政策",
+      "name_en": "Multi Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_trans_policy",
+      "name_zh": "超政策",
+      "name_en": "Trans Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_socio_policy",
+      "name_zh": "社会政策",
+      "name_en": "Socio Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_socio_economic_polic",
+      "name_zh": "社会经济政策",
+      "name_en": "Socio Economic Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_socio_cultural_polic",
+      "name_zh": "社会文化政策",
+      "name_en": "Socio Cultural Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_techno_policy",
+      "name_zh": "技术政策",
+      "name_en": "Techno Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_bio_policy",
+      "name_zh": "生物政策",
+      "name_en": "Bio Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_geo_policy",
+      "name_zh": "地理政策",
+      "name_en": "Geo Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_psycho_policy",
+      "name_zh": "心理政策",
+      "name_en": "Psycho Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_anthropo_policy",
+      "name_zh": "人类政策",
+      "name_en": "Anthropo Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_culture_policy",
+      "name_zh": "文化政策",
+      "name_en": "Culture Policy",
+      "domain": "文化",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_destination_policy",
+      "name_zh": "目的地政策",
+      "name_en": "Destination Policy",
+      "domain": "旅游",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_travel_policy",
+      "name_zh": "旅行政策",
+      "name_en": "Travel Policy",
+      "domain": "旅游",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_tour_policy",
+      "name_zh": "旅行政策",
+      "name_en": "Tour Policy",
+      "domain": "旅游",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_visit_policy",
+      "name_zh": "访问政策",
+      "name_en": "Visit Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_museum_policy",
+      "name_zh": "博物馆政策",
+      "name_en": "Museum Policy",
+      "domain": "文化艺术",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_exhibition_policy",
+      "name_zh": "展览政策",
+      "name_en": "Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_festival_policy",
+      "name_zh": "节庆政策",
+      "name_en": "Festival Policy",
+      "domain": "文化艺术",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_event_policy",
+      "name_zh": "活动政策",
+      "name_en": "Event Policy",
+      "domain": "文化艺术",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_site_policy",
+      "name_zh": "遗址政策",
+      "name_en": "Site Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_landscape_policy",
+      "name_zh": "景观政策",
+      "name_en": "Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_city_policy",
+      "name_zh": "城市政策",
+      "name_en": "City Policy",
+      "domain": "地理",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_region_policy",
+      "name_zh": "区域政策",
+      "name_en": "Region Policy",
+      "domain": "地理",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_policy",
+      "name_zh": "社区政策",
+      "name_en": "Community Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_economy_policy",
+      "name_zh": "经济政策",
+      "name_en": "Economy Policy",
+      "domain": "经济贸易",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_industry_policy",
+      "name_zh": "产业政策",
+      "name_en": "Industry Policy",
+      "domain": "经济贸易",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sector_policy",
+      "name_zh": "部门政策",
+      "name_en": "Sector Policy",
+      "domain": "经济贸易",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_market_policy",
+      "name_zh": "市场政策",
+      "name_en": "Market Policy",
+      "domain": "经济贸易",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_service_policy",
+      "name_zh": "服务政策",
+      "name_en": "Service Policy",
+      "domain": "旅游",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_product_policy",
+      "name_zh": "产品政策",
+      "name_en": "Product Policy",
+      "domain": "旅游",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_resource_policy",
+      "name_zh": "资源政策",
+      "name_en": "Resource Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_infrastructure_polic",
+      "name_zh": "基础设施政策",
+      "name_en": "Infrastructure Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_facility_policy",
+      "name_zh": "设施政策",
+      "name_en": "Facility Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_attraction_policy",
+      "name_zh": "吸引物政策",
+      "name_en": "Attraction Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_experience_policy",
+      "name_zh": "体验政策",
+      "name_en": "Experience Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_activity_policy",
+      "name_zh": "活动政策",
+      "name_en": "Activity Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_network_policy",
+      "name_zh": "网络政策",
+      "name_en": "Network Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_system_policy",
+      "name_zh": "系统政策",
+      "name_en": "System Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_platform_policy",
+      "name_zh": "平台政策",
+      "name_en": "Platform Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_technology_policy",
+      "name_zh": "技术政策",
+      "name_en": "Technology Policy",
+      "domain": "数字技术",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_innovation_policy",
+      "name_zh": "创新政策",
+      "name_en": "Innovation Policy",
+      "domain": "数字技术",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_knowledge_policy",
+      "name_zh": "知识政策",
+      "name_en": "Knowledge Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_information_policy",
+      "name_zh": "信息政策",
+      "name_en": "Information Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_data_policy",
+      "name_zh": "数据政策",
+      "name_en": "Data Policy",
+      "domain": "数字技术",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_research_policy",
+      "name_zh": "研究政策",
+      "name_en": "Research Policy",
+      "domain": "研究方法",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_study_policy",
+      "name_zh": "研究政策",
+      "name_en": "Study Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_survey_policy",
+      "name_zh": "调查政策",
+      "name_en": "Survey Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_report_policy",
+      "name_zh": "报告政策",
+      "name_en": "Report Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_analysis_policy",
+      "name_zh": "分析政策",
+      "name_en": "Analysis Policy",
+      "domain": "研究方法",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_assessment_policy",
+      "name_zh": "评估政策",
+      "name_en": "Assessment Policy",
+      "domain": "研究方法",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_evaluation_policy",
+      "name_zh": "评价政策",
+      "name_en": "Evaluation Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_review_policy",
+      "name_zh": "评述政策",
+      "name_en": "Review Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_framework_policy",
+      "name_zh": "框架政策",
+      "name_en": "Framework Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_model_policy",
+      "name_zh": "模型政策",
+      "name_en": "Model Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_method_policy",
+      "name_zh": "方法政策",
+      "name_en": "Method Policy",
+      "domain": "研究方法",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_approach_policy",
+      "name_zh": "方法政策",
+      "name_en": "Approach Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_tool_policy",
+      "name_zh": "工具政策",
+      "name_en": "Tool Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_technique_policy",
+      "name_zh": "技术政策",
+      "name_en": "Technique Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_practice_policy",
+      "name_zh": "实践政策",
+      "name_en": "Practice Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_strategy_policy",
+      "name_zh": "策略政策",
+      "name_en": "Strategy Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_management",
+      "name_zh": "政策管理",
+      "name_en": "Policy Management",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_planning",
+      "name_zh": "政策规划",
+      "name_en": "Policy Planning",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_development",
+      "name_zh": "政策发展",
+      "name_en": "Policy Development",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_policy",
+      "name_zh": "政策政策",
+      "name_en": "Policy Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_strategy",
+      "name_zh": "政策战略",
+      "name_en": "Policy Strategy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_assessment",
+      "name_zh": "政策评估",
+      "name_en": "Policy Assessment",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_evaluation",
+      "name_zh": "政策评价",
+      "name_en": "Policy Evaluation",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_measurement",
+      "name_zh": "政策测量",
+      "name_en": "Policy Measurement",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_analysis",
+      "name_zh": "政策分析",
+      "name_en": "Policy Analysis",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_modeling",
+      "name_zh": "政策建模",
+      "name_en": "Policy Modeling",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_simulation",
+      "name_zh": "政策模拟",
+      "name_en": "Policy Simulation",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_prediction",
+      "name_zh": "政策预测",
+      "name_en": "Policy Prediction",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_forecasting",
+      "name_zh": "政策预报",
+      "name_en": "Policy Forecasting",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_optimization",
+      "name_zh": "政策优化",
+      "name_en": "Policy Optimization",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_classificatio",
+      "name_zh": "政策分类",
+      "name_en": "Policy Classification",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_clustering",
+      "name_zh": "政策聚类",
+      "name_en": "Policy Clustering",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_detection",
+      "name_zh": "政策检测",
+      "name_en": "Policy Detection",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_recognition",
+      "name_zh": "政策识别",
+      "name_en": "Policy Recognition",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_tracking",
+      "name_zh": "政策跟踪",
+      "name_en": "Policy Tracking",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_monitoring",
+      "name_zh": "政策监测",
+      "name_en": "Policy Monitoring",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_mapping",
+      "name_zh": "政策制图",
+      "name_en": "Policy Mapping",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_visualization",
+      "name_zh": "政策可视化",
+      "name_en": "Policy Visualization",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_interpretatio",
+      "name_zh": "政策阐释",
+      "name_en": "Policy Interpretation",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_representatio",
+      "name_zh": "政策表示",
+      "name_en": "Policy Representation",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_extraction",
+      "name_zh": "政策提取",
+      "name_en": "Policy Extraction",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_retrieval",
+      "name_zh": "政策检索",
+      "name_en": "Policy Retrieval",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_mining",
+      "name_zh": "政策挖掘",
+      "name_en": "Policy Mining",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_collection",
+      "name_zh": "政策收集",
+      "name_en": "Policy Collection",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_integration",
+      "name_zh": "政策整合",
+      "name_en": "Policy Integration",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_fusion",
+      "name_zh": "政策融合",
+      "name_en": "Policy Fusion",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_alignment",
+      "name_zh": "政策对齐",
+      "name_en": "Policy Alignment",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_matching",
+      "name_zh": "政策匹配",
+      "name_en": "Policy Matching",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_linking",
+      "name_zh": "政策链接",
+      "name_en": "Policy Linking",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_annotation",
+      "name_zh": "政策标注",
+      "name_en": "Policy Annotation",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_tagging",
+      "name_zh": "政策标记",
+      "name_en": "Policy Tagging",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_indexing",
+      "name_zh": "政策索引",
+      "name_en": "Policy Indexing",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_cataloging",
+      "name_zh": "政策编目",
+      "name_en": "Policy Cataloging",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_preservation",
+      "name_zh": "政策保护",
+      "name_en": "Policy Preservation",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_conservation",
+      "name_zh": "政策保存",
+      "name_en": "Policy Conservation",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_restoration",
+      "name_zh": "政策修复",
+      "name_en": "Policy Restoration",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_reconstructio",
+      "name_zh": "政策重建",
+      "name_en": "Policy Reconstruction",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_digitization",
+      "name_zh": "政策数字化",
+      "name_en": "Policy Digitization",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_transformatio",
+      "name_zh": "政策转型",
+      "name_en": "Policy Transformation",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_innovation",
+      "name_zh": "政策创新",
+      "name_en": "Policy Innovation",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_adoption",
+      "name_zh": "政策采纳",
+      "name_en": "Policy Adoption",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_diffusion",
+      "name_zh": "政策扩散",
+      "name_en": "Policy Diffusion",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_transfer",
+      "name_zh": "政策转移",
+      "name_en": "Policy Transfer",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_sharing",
+      "name_zh": "政策共享",
+      "name_en": "Policy Sharing",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_exchange",
+      "name_zh": "政策交流",
+      "name_en": "Policy Exchange",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_collaboration",
+      "name_zh": "政策协作",
+      "name_en": "Policy Collaboration",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_cooperation",
+      "name_zh": "政策合作",
+      "name_en": "Policy Cooperation",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_coordination",
+      "name_zh": "政策协调",
+      "name_en": "Policy Coordination",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_communication",
+      "name_zh": "政策传播",
+      "name_en": "Policy Communication",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_engagement",
+      "name_zh": "政策参与",
+      "name_en": "Policy Engagement",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_participation",
+      "name_zh": "政策参与",
+      "name_en": "Policy Participation",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_empowerment",
+      "name_zh": "政策赋权",
+      "name_en": "Policy Empowerment",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_education",
+      "name_zh": "政策教育",
+      "name_en": "Policy Education",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_training",
+      "name_zh": "政策培训",
+      "name_en": "Policy Training",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_capacity_buil",
+      "name_zh": "政策能力建设",
+      "name_en": "Policy Capacity Building",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_awareness",
+      "name_zh": "政策意识",
+      "name_en": "Policy Awareness",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_promotion",
+      "name_zh": "政策推广",
+      "name_en": "Policy Promotion",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_marketing",
+      "name_zh": "政策营销",
+      "name_en": "Policy Marketing",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_policy_branding",
+      "name_zh": "政策品牌",
+      "name_en": "Policy Branding",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_law_policy",
+      "name_zh": "法律政策",
+      "name_en": "Law Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_regulation_policy",
+      "name_zh": "法规政策",
+      "name_en": "Regulation Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_standard_policy",
+      "name_zh": "标准政策",
+      "name_en": "Standard Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_indicator_policy",
+      "name_zh": "指标政策",
+      "name_en": "Indicator Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_index_policy",
+      "name_zh": "指数政策",
+      "name_en": "Index Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_metric_policy",
+      "name_zh": "度量政策",
+      "name_en": "Metric Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_dimension_policy",
+      "name_zh": "维度政策",
+      "name_en": "Dimension Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_factor_policy",
+      "name_zh": "因素政策",
+      "name_en": "Factor Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_variable_policy",
+      "name_zh": "变量政策",
+      "name_en": "Variable Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_parameter_policy",
+      "name_zh": "参数政策",
+      "name_en": "Parameter Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_criterion_policy",
+      "name_zh": "标准政策",
+      "name_en": "Criterion Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_principle_policy",
+      "name_zh": "原则政策",
+      "name_en": "Principle Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_concept_policy",
+      "name_zh": "概念政策",
+      "name_en": "Concept Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_theory_policy",
+      "name_zh": "理论政策",
+      "name_en": "Theory Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_paradigm_policy",
+      "name_zh": "范式政策",
+      "name_en": "Paradigm Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_perspective_policy",
+      "name_zh": "视角政策",
+      "name_en": "Perspective Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_methodology_policy",
+      "name_zh": "方法论政策",
+      "name_en": "Methodology Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_typology_policy",
+      "name_zh": "类型学政策",
+      "name_en": "Typology Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_taxonomy_policy",
+      "name_zh": "分类法政策",
+      "name_en": "Taxonomy Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ontology_policy",
+      "name_zh": "本体政策",
+      "name_en": "Ontology Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_morphology_policy",
+      "name_zh": "形态学政策",
+      "name_en": "Morphology Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_genealogy_policy",
+      "name_zh": "谱系学政策",
+      "name_en": "Genealogy Policy",
+      "domain": "政策法规",
+      "freq": 2,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_heritage_pr",
+      "name_zh": "文化遗产保护",
+      "name_en": "Cultural Heritage Protection",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_tourism_",
+      "name_zh": "可持续旅游政策",
+      "name_en": "Sustainable Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_heritage",
+      "name_zh": "可持续遗产政策",
+      "name_en": "Sustainable Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_culture_",
+      "name_zh": "可持续文化政策",
+      "name_en": "Sustainable Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_destinat",
+      "name_zh": "可持续目的地政策",
+      "name_en": "Sustainable Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_travel_p",
+      "name_zh": "可持续旅行政策",
+      "name_en": "Sustainable Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_tour_pol",
+      "name_zh": "可持续旅行政策",
+      "name_en": "Sustainable Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_visit_po",
+      "name_zh": "可持续访问政策",
+      "name_en": "Sustainable Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_museum_p",
+      "name_zh": "可持续博物馆政策",
+      "name_en": "Sustainable Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_exhibiti",
+      "name_zh": "可持续展览政策",
+      "name_en": "Sustainable Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_festival",
+      "name_zh": "可持续节庆政策",
+      "name_en": "Sustainable Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_event_po",
+      "name_zh": "可持续活动政策",
+      "name_en": "Sustainable Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_site_pol",
+      "name_zh": "可持续遗址政策",
+      "name_en": "Sustainable Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_landscap",
+      "name_zh": "可持续景观政策",
+      "name_en": "Sustainable Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_city_pol",
+      "name_zh": "可持续城市政策",
+      "name_en": "Sustainable City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_region_p",
+      "name_zh": "可持续区域政策",
+      "name_en": "Sustainable Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_communit",
+      "name_zh": "可持续社区政策",
+      "name_en": "Sustainable Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_economy_",
+      "name_zh": "可持续经济政策",
+      "name_en": "Sustainable Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_industry",
+      "name_zh": "可持续产业政策",
+      "name_en": "Sustainable Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_sector_p",
+      "name_zh": "可持续部门政策",
+      "name_en": "Sustainable Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_sustainable_market_p",
+      "name_zh": "可持续市场政策",
+      "name_en": "Sustainable Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_tourism_poli",
+      "name_zh": "数字旅游政策",
+      "name_en": "Digital Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_heritage_pol",
+      "name_zh": "数字遗产政策",
+      "name_en": "Digital Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_culture_poli",
+      "name_zh": "数字文化政策",
+      "name_en": "Digital Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_destination_",
+      "name_zh": "数字目的地政策",
+      "name_en": "Digital Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_travel_polic",
+      "name_zh": "数字旅行政策",
+      "name_en": "Digital Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_tour_policy",
+      "name_zh": "数字旅行政策",
+      "name_en": "Digital Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_visit_policy",
+      "name_zh": "数字访问政策",
+      "name_en": "Digital Visit Policy",
+      "domain": "数字技术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_museum_polic",
+      "name_zh": "数字博物馆政策",
+      "name_en": "Digital Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_exhibition_p",
+      "name_zh": "数字展览政策",
+      "name_en": "Digital Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_festival_pol",
+      "name_zh": "数字节庆政策",
+      "name_en": "Digital Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_event_policy",
+      "name_zh": "数字活动政策",
+      "name_en": "Digital Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_site_policy",
+      "name_zh": "数字遗址政策",
+      "name_en": "Digital Site Policy",
+      "domain": "数字技术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_landscape_po",
+      "name_zh": "数字景观政策",
+      "name_en": "Digital Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_city_policy",
+      "name_zh": "数字城市政策",
+      "name_en": "Digital City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_region_polic",
+      "name_zh": "数字区域政策",
+      "name_en": "Digital Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_community_po",
+      "name_zh": "数字社区政策",
+      "name_en": "Digital Community Policy",
+      "domain": "数字技术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_economy_poli",
+      "name_zh": "数字经济政策",
+      "name_en": "Digital Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_industry_pol",
+      "name_zh": "数字产业政策",
+      "name_en": "Digital Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_sector_polic",
+      "name_zh": "数字部门政策",
+      "name_en": "Digital Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_digital_market_polic",
+      "name_zh": "数字市场政策",
+      "name_en": "Digital Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_tourism_policy",
+      "name_zh": "智慧旅游政策",
+      "name_en": "Smart Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_heritage_polic",
+      "name_zh": "智慧遗产政策",
+      "name_en": "Smart Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_culture_policy",
+      "name_zh": "智慧文化政策",
+      "name_en": "Smart Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_destination_po",
+      "name_zh": "智慧目的地政策",
+      "name_en": "Smart Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_travel_policy",
+      "name_zh": "智慧旅行政策",
+      "name_en": "Smart Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_tour_policy",
+      "name_zh": "智慧旅行政策",
+      "name_en": "Smart Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_visit_policy",
+      "name_zh": "智慧访问政策",
+      "name_en": "Smart Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_museum_policy",
+      "name_zh": "智慧博物馆政策",
+      "name_en": "Smart Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_exhibition_pol",
+      "name_zh": "智慧展览政策",
+      "name_en": "Smart Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_festival_polic",
+      "name_zh": "智慧节庆政策",
+      "name_en": "Smart Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_event_policy",
+      "name_zh": "智慧活动政策",
+      "name_en": "Smart Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_site_policy",
+      "name_zh": "智慧遗址政策",
+      "name_en": "Smart Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_landscape_poli",
+      "name_zh": "智慧景观政策",
+      "name_en": "Smart Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_city_policy",
+      "name_zh": "智慧城市政策",
+      "name_en": "Smart City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_region_policy",
+      "name_zh": "智慧区域政策",
+      "name_en": "Smart Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_community_poli",
+      "name_zh": "智慧社区政策",
+      "name_en": "Smart Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_economy_policy",
+      "name_zh": "智慧经济政策",
+      "name_en": "Smart Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_industry_polic",
+      "name_zh": "智慧产业政策",
+      "name_en": "Smart Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_sector_policy",
+      "name_zh": "智慧部门政策",
+      "name_en": "Smart Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_smart_market_policy",
+      "name_zh": "智慧市场政策",
+      "name_en": "Smart Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_tourism_pol",
+      "name_zh": "文化旅游政策",
+      "name_en": "Cultural Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_heritage_po",
+      "name_zh": "文化遗产政策",
+      "name_en": "Cultural Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_culture_pol",
+      "name_zh": "文化文化政策",
+      "name_en": "Cultural Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_destination",
+      "name_zh": "文化目的地政策",
+      "name_en": "Cultural Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_travel_poli",
+      "name_zh": "文化旅行政策",
+      "name_en": "Cultural Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_tour_policy",
+      "name_zh": "文化旅行政策",
+      "name_en": "Cultural Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_visit_polic",
+      "name_zh": "文化访问政策",
+      "name_en": "Cultural Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_museum_poli",
+      "name_zh": "文化博物馆政策",
+      "name_en": "Cultural Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_exhibition_",
+      "name_zh": "文化展览政策",
+      "name_en": "Cultural Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_festival_po",
+      "name_zh": "文化节庆政策",
+      "name_en": "Cultural Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_event_polic",
+      "name_zh": "文化活动政策",
+      "name_en": "Cultural Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_site_policy",
+      "name_zh": "文化遗址政策",
+      "name_en": "Cultural Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_landscape_p",
+      "name_zh": "文化景观政策",
+      "name_en": "Cultural Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_city_policy",
+      "name_zh": "文化城市政策",
+      "name_en": "Cultural City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_region_poli",
+      "name_zh": "文化区域政策",
+      "name_en": "Cultural Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_community_p",
+      "name_zh": "文化社区政策",
+      "name_en": "Cultural Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_economy_pol",
+      "name_zh": "文化经济政策",
+      "name_en": "Cultural Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_industry_po",
+      "name_zh": "文化产业政策",
+      "name_en": "Cultural Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_sector_poli",
+      "name_zh": "文化部门政策",
+      "name_en": "Cultural Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cultural_market_poli",
+      "name_zh": "文化市场政策",
+      "name_en": "Cultural Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_tourism_pol",
+      "name_zh": "遗产旅游政策",
+      "name_en": "Heritage Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_heritage_po",
+      "name_zh": "遗产遗产政策",
+      "name_en": "Heritage Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_culture_pol",
+      "name_zh": "遗产文化政策",
+      "name_en": "Heritage Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_destination",
+      "name_zh": "遗产目的地政策",
+      "name_en": "Heritage Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_travel_poli",
+      "name_zh": "遗产旅行政策",
+      "name_en": "Heritage Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_tour_policy",
+      "name_zh": "遗产旅行政策",
+      "name_en": "Heritage Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_visit_polic",
+      "name_zh": "遗产访问政策",
+      "name_en": "Heritage Visit Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_museum_poli",
+      "name_zh": "遗产博物馆政策",
+      "name_en": "Heritage Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_exhibition_",
+      "name_zh": "遗产展览政策",
+      "name_en": "Heritage Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_festival_po",
+      "name_zh": "遗产节庆政策",
+      "name_en": "Heritage Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_event_polic",
+      "name_zh": "遗产活动政策",
+      "name_en": "Heritage Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_site_policy",
+      "name_zh": "遗产遗址政策",
+      "name_en": "Heritage Site Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_landscape_p",
+      "name_zh": "遗产景观政策",
+      "name_en": "Heritage Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_city_policy",
+      "name_zh": "遗产城市政策",
+      "name_en": "Heritage City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_region_poli",
+      "name_zh": "遗产区域政策",
+      "name_en": "Heritage Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_community_p",
+      "name_zh": "遗产社区政策",
+      "name_en": "Heritage Community Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_economy_pol",
+      "name_zh": "遗产经济政策",
+      "name_en": "Heritage Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_industry_po",
+      "name_zh": "遗产产业政策",
+      "name_en": "Heritage Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_sector_poli",
+      "name_zh": "遗产部门政策",
+      "name_en": "Heritage Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_heritage_market_poli",
+      "name_zh": "遗产市场政策",
+      "name_en": "Heritage Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_tourism_policy",
+      "name_zh": "绿色旅游政策",
+      "name_en": "Green Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_heritage_polic",
+      "name_zh": "绿色遗产政策",
+      "name_en": "Green Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_culture_policy",
+      "name_zh": "绿色文化政策",
+      "name_en": "Green Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_destination_po",
+      "name_zh": "绿色目的地政策",
+      "name_en": "Green Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_travel_policy",
+      "name_zh": "绿色旅行政策",
+      "name_en": "Green Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_tour_policy",
+      "name_zh": "绿色旅行政策",
+      "name_en": "Green Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_visit_policy",
+      "name_zh": "绿色访问政策",
+      "name_en": "Green Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_museum_policy",
+      "name_zh": "绿色博物馆政策",
+      "name_en": "Green Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_exhibition_pol",
+      "name_zh": "绿色展览政策",
+      "name_en": "Green Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_festival_polic",
+      "name_zh": "绿色节庆政策",
+      "name_en": "Green Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_event_policy",
+      "name_zh": "绿色活动政策",
+      "name_en": "Green Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_site_policy",
+      "name_zh": "绿色遗址政策",
+      "name_en": "Green Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_landscape_poli",
+      "name_zh": "绿色景观政策",
+      "name_en": "Green Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_city_policy",
+      "name_zh": "绿色城市政策",
+      "name_en": "Green City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_region_policy",
+      "name_zh": "绿色区域政策",
+      "name_en": "Green Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_community_poli",
+      "name_zh": "绿色社区政策",
+      "name_en": "Green Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_economy_policy",
+      "name_zh": "绿色经济政策",
+      "name_en": "Green Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_industry_polic",
+      "name_zh": "绿色产业政策",
+      "name_en": "Green Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_sector_policy",
+      "name_zh": "绿色部门政策",
+      "name_en": "Green Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_green_market_policy",
+      "name_zh": "绿色市场政策",
+      "name_en": "Green Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_tourism_polic",
+      "name_zh": "全球旅游政策",
+      "name_en": "Global Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_heritage_poli",
+      "name_zh": "全球遗产政策",
+      "name_en": "Global Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_culture_polic",
+      "name_zh": "全球文化政策",
+      "name_en": "Global Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_destination_p",
+      "name_zh": "全球目的地政策",
+      "name_en": "Global Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_travel_policy",
+      "name_zh": "全球旅行政策",
+      "name_en": "Global Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_tour_policy",
+      "name_zh": "全球旅行政策",
+      "name_en": "Global Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_visit_policy",
+      "name_zh": "全球访问政策",
+      "name_en": "Global Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_museum_policy",
+      "name_zh": "全球博物馆政策",
+      "name_en": "Global Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_exhibition_po",
+      "name_zh": "全球展览政策",
+      "name_en": "Global Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_festival_poli",
+      "name_zh": "全球节庆政策",
+      "name_en": "Global Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_event_policy",
+      "name_zh": "全球活动政策",
+      "name_en": "Global Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_site_policy",
+      "name_zh": "全球遗址政策",
+      "name_en": "Global Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_landscape_pol",
+      "name_zh": "全球景观政策",
+      "name_en": "Global Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_city_policy",
+      "name_zh": "全球城市政策",
+      "name_en": "Global City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_region_policy",
+      "name_zh": "全球区域政策",
+      "name_en": "Global Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_community_pol",
+      "name_zh": "全球社区政策",
+      "name_en": "Global Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_economy_polic",
+      "name_zh": "全球经济政策",
+      "name_en": "Global Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_industry_poli",
+      "name_zh": "全球产业政策",
+      "name_en": "Global Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_sector_policy",
+      "name_zh": "全球部门政策",
+      "name_en": "Global Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_global_market_policy",
+      "name_zh": "全球市场政策",
+      "name_en": "Global Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_tourism_policy",
+      "name_zh": "地方旅游政策",
+      "name_en": "Local Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_heritage_polic",
+      "name_zh": "地方遗产政策",
+      "name_en": "Local Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_culture_policy",
+      "name_zh": "地方文化政策",
+      "name_en": "Local Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_destination_po",
+      "name_zh": "地方目的地政策",
+      "name_en": "Local Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_travel_policy",
+      "name_zh": "地方旅行政策",
+      "name_en": "Local Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_tour_policy",
+      "name_zh": "地方旅行政策",
+      "name_en": "Local Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_visit_policy",
+      "name_zh": "地方访问政策",
+      "name_en": "Local Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_museum_policy",
+      "name_zh": "地方博物馆政策",
+      "name_en": "Local Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_exhibition_pol",
+      "name_zh": "地方展览政策",
+      "name_en": "Local Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_festival_polic",
+      "name_zh": "地方节庆政策",
+      "name_en": "Local Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_event_policy",
+      "name_zh": "地方活动政策",
+      "name_en": "Local Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_site_policy",
+      "name_zh": "地方遗址政策",
+      "name_en": "Local Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_landscape_poli",
+      "name_zh": "地方景观政策",
+      "name_en": "Local Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_city_policy",
+      "name_zh": "地方城市政策",
+      "name_en": "Local City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_region_policy",
+      "name_zh": "地方区域政策",
+      "name_en": "Local Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_community_poli",
+      "name_zh": "地方社区政策",
+      "name_en": "Local Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_economy_policy",
+      "name_zh": "地方经济政策",
+      "name_en": "Local Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_industry_polic",
+      "name_zh": "地方产业政策",
+      "name_en": "Local Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_sector_policy",
+      "name_zh": "地方部门政策",
+      "name_en": "Local Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_local_market_policy",
+      "name_zh": "地方市场政策",
+      "name_en": "Local Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_touris",
+      "name_zh": "国际旅游政策",
+      "name_en": "International Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_herita",
+      "name_zh": "国际遗产政策",
+      "name_en": "International Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_cultur",
+      "name_zh": "国际文化政策",
+      "name_en": "International Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_destin",
+      "name_zh": "国际目的地政策",
+      "name_en": "International Destination Poli",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_travel",
+      "name_zh": "国际旅行政策",
+      "name_en": "International Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_tour_p",
+      "name_zh": "国际旅行政策",
+      "name_en": "International Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_visit_",
+      "name_zh": "国际访问政策",
+      "name_en": "International Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_museum",
+      "name_zh": "国际博物馆政策",
+      "name_en": "International Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_exhibi",
+      "name_zh": "国际展览政策",
+      "name_en": "International Exhibition Polic",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_festiv",
+      "name_zh": "国际节庆政策",
+      "name_en": "International Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_event_",
+      "name_zh": "国际活动政策",
+      "name_en": "International Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_site_p",
+      "name_zh": "国际遗址政策",
+      "name_en": "International Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_landsc",
+      "name_zh": "国际景观政策",
+      "name_en": "International Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_city_p",
+      "name_zh": "国际城市政策",
+      "name_en": "International City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_region",
+      "name_zh": "国际区域政策",
+      "name_en": "International Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_commun",
+      "name_zh": "国际社区政策",
+      "name_en": "International Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_econom",
+      "name_zh": "国际经济政策",
+      "name_en": "International Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_indust",
+      "name_zh": "国际产业政策",
+      "name_en": "International Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_sector",
+      "name_zh": "国际部门政策",
+      "name_en": "International Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_international_market",
+      "name_zh": "国际市场政策",
+      "name_en": "International Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_touri",
+      "name_zh": "跨文化旅游政策",
+      "name_en": "Cross Cultural Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_herit",
+      "name_zh": "跨文化遗产政策",
+      "name_en": "Cross Cultural Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_cultu",
+      "name_zh": "跨文化文化政策",
+      "name_en": "Cross Cultural Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_desti",
+      "name_zh": "跨文化目的地政策",
+      "name_en": "Cross Cultural Destination Pol",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_trave",
+      "name_zh": "跨文化旅行政策",
+      "name_en": "Cross Cultural Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_tour_",
+      "name_zh": "跨文化旅行政策",
+      "name_en": "Cross Cultural Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_visit",
+      "name_zh": "跨文化访问政策",
+      "name_en": "Cross Cultural Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_museu",
+      "name_zh": "跨文化博物馆政策",
+      "name_en": "Cross Cultural Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_exhib",
+      "name_zh": "跨文化展览政策",
+      "name_en": "Cross Cultural Exhibition Poli",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_festi",
+      "name_zh": "跨文化节庆政策",
+      "name_en": "Cross Cultural Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_event",
+      "name_zh": "跨文化活动政策",
+      "name_en": "Cross Cultural Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_site_",
+      "name_zh": "跨文化遗址政策",
+      "name_en": "Cross Cultural Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_lands",
+      "name_zh": "跨文化景观政策",
+      "name_en": "Cross Cultural Landscape Polic",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_city_",
+      "name_zh": "跨文化城市政策",
+      "name_en": "Cross Cultural City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_regio",
+      "name_zh": "跨文化区域政策",
+      "name_en": "Cross Cultural Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_commu",
+      "name_zh": "跨文化社区政策",
+      "name_en": "Cross Cultural Community Polic",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_econo",
+      "name_zh": "跨文化经济政策",
+      "name_en": "Cross Cultural Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_indus",
+      "name_zh": "跨文化产业政策",
+      "name_en": "Cross Cultural Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_secto",
+      "name_zh": "跨文化部门政策",
+      "name_en": "Cross Cultural Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_cross_cultural_marke",
+      "name_zh": "跨文化市场政策",
+      "name_en": "Cross Cultural Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_tourism",
+      "name_zh": "多语旅游政策",
+      "name_en": "Multilingual Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_heritag",
+      "name_zh": "多语遗产政策",
+      "name_en": "Multilingual Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_culture",
+      "name_zh": "多语文化政策",
+      "name_en": "Multilingual Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_destina",
+      "name_zh": "多语目的地政策",
+      "name_en": "Multilingual Destination Polic",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_travel_",
+      "name_zh": "多语旅行政策",
+      "name_en": "Multilingual Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_tour_po",
+      "name_zh": "多语旅行政策",
+      "name_en": "Multilingual Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_visit_p",
+      "name_zh": "多语访问政策",
+      "name_en": "Multilingual Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_museum_",
+      "name_zh": "多语博物馆政策",
+      "name_en": "Multilingual Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_exhibit",
+      "name_zh": "多语展览政策",
+      "name_en": "Multilingual Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_festiva",
+      "name_zh": "多语节庆政策",
+      "name_en": "Multilingual Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_event_p",
+      "name_zh": "多语活动政策",
+      "name_en": "Multilingual Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_site_po",
+      "name_zh": "多语遗址政策",
+      "name_en": "Multilingual Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_landsca",
+      "name_zh": "多语景观政策",
+      "name_en": "Multilingual Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_city_po",
+      "name_zh": "多语城市政策",
+      "name_en": "Multilingual City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_region_",
+      "name_zh": "多语区域政策",
+      "name_en": "Multilingual Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_communi",
+      "name_zh": "多语社区政策",
+      "name_en": "Multilingual Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_economy",
+      "name_zh": "多语经济政策",
+      "name_en": "Multilingual Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_industr",
+      "name_zh": "多语产业政策",
+      "name_en": "Multilingual Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_sector_",
+      "name_zh": "多语部门政策",
+      "name_en": "Multilingual Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_multilingual_market_",
+      "name_zh": "多语市场政策",
+      "name_en": "Multilingual Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_touris",
+      "name_zh": "跨文化旅游政策",
+      "name_en": "Intercultural Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_herita",
+      "name_zh": "跨文化遗产政策",
+      "name_en": "Intercultural Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_cultur",
+      "name_zh": "跨文化文化政策",
+      "name_en": "Intercultural Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_destin",
+      "name_zh": "跨文化目的地政策",
+      "name_en": "Intercultural Destination Poli",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_travel",
+      "name_zh": "跨文化旅行政策",
+      "name_en": "Intercultural Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_tour_p",
+      "name_zh": "跨文化旅行政策",
+      "name_en": "Intercultural Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_visit_",
+      "name_zh": "跨文化访问政策",
+      "name_en": "Intercultural Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_museum",
+      "name_zh": "跨文化博物馆政策",
+      "name_en": "Intercultural Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_exhibi",
+      "name_zh": "跨文化展览政策",
+      "name_en": "Intercultural Exhibition Polic",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_festiv",
+      "name_zh": "跨文化节庆政策",
+      "name_en": "Intercultural Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_event_",
+      "name_zh": "跨文化活动政策",
+      "name_en": "Intercultural Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_site_p",
+      "name_zh": "跨文化遗址政策",
+      "name_en": "Intercultural Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_landsc",
+      "name_zh": "跨文化景观政策",
+      "name_en": "Intercultural Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_city_p",
+      "name_zh": "跨文化城市政策",
+      "name_en": "Intercultural City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_region",
+      "name_zh": "跨文化区域政策",
+      "name_en": "Intercultural Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_commun",
+      "name_zh": "跨文化社区政策",
+      "name_en": "Intercultural Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_econom",
+      "name_zh": "跨文化经济政策",
+      "name_en": "Intercultural Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_indust",
+      "name_zh": "跨文化产业政策",
+      "name_en": "Intercultural Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_sector",
+      "name_zh": "跨文化部门政策",
+      "name_en": "Intercultural Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_intercultural_market",
+      "name_zh": "跨文化市场政策",
+      "name_en": "Intercultural Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_tourism_",
+      "name_zh": "传统旅游政策",
+      "name_en": "Traditional Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_heritage",
+      "name_zh": "传统遗产政策",
+      "name_en": "Traditional Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_culture_",
+      "name_zh": "传统文化政策",
+      "name_en": "Traditional Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_destinat",
+      "name_zh": "传统目的地政策",
+      "name_en": "Traditional Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_travel_p",
+      "name_zh": "传统旅行政策",
+      "name_en": "Traditional Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_tour_pol",
+      "name_zh": "传统旅行政策",
+      "name_en": "Traditional Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_visit_po",
+      "name_zh": "传统访问政策",
+      "name_en": "Traditional Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_museum_p",
+      "name_zh": "传统博物馆政策",
+      "name_en": "Traditional Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_exhibiti",
+      "name_zh": "传统展览政策",
+      "name_en": "Traditional Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_festival",
+      "name_zh": "传统节庆政策",
+      "name_en": "Traditional Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_event_po",
+      "name_zh": "传统活动政策",
+      "name_en": "Traditional Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_site_pol",
+      "name_zh": "传统遗址政策",
+      "name_en": "Traditional Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_landscap",
+      "name_zh": "传统景观政策",
+      "name_en": "Traditional Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_city_pol",
+      "name_zh": "传统城市政策",
+      "name_en": "Traditional City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_region_p",
+      "name_zh": "传统区域政策",
+      "name_en": "Traditional Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_communit",
+      "name_zh": "传统社区政策",
+      "name_en": "Traditional Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_economy_",
+      "name_zh": "传统经济政策",
+      "name_en": "Traditional Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_industry",
+      "name_zh": "传统产业政策",
+      "name_en": "Traditional Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_sector_p",
+      "name_zh": "传统部门政策",
+      "name_en": "Traditional Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_traditional_market_p",
+      "name_zh": "传统市场政策",
+      "name_en": "Traditional Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_tourism_po",
+      "name_zh": "原真旅游政策",
+      "name_en": "Authentic Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_heritage_p",
+      "name_zh": "原真遗产政策",
+      "name_en": "Authentic Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_culture_po",
+      "name_zh": "原真文化政策",
+      "name_en": "Authentic Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_destinatio",
+      "name_zh": "原真目的地政策",
+      "name_en": "Authentic Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_travel_pol",
+      "name_zh": "原真旅行政策",
+      "name_en": "Authentic Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_tour_polic",
+      "name_zh": "原真旅行政策",
+      "name_en": "Authentic Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_visit_poli",
+      "name_zh": "原真访问政策",
+      "name_en": "Authentic Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_museum_pol",
+      "name_zh": "原真博物馆政策",
+      "name_en": "Authentic Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_exhibition",
+      "name_zh": "原真展览政策",
+      "name_en": "Authentic Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_festival_p",
+      "name_zh": "原真节庆政策",
+      "name_en": "Authentic Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_event_poli",
+      "name_zh": "原真活动政策",
+      "name_en": "Authentic Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_site_polic",
+      "name_zh": "原真遗址政策",
+      "name_en": "Authentic Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_landscape_",
+      "name_zh": "原真景观政策",
+      "name_en": "Authentic Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_city_polic",
+      "name_zh": "原真城市政策",
+      "name_en": "Authentic City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_region_pol",
+      "name_zh": "原真区域政策",
+      "name_en": "Authentic Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_community_",
+      "name_zh": "原真社区政策",
+      "name_en": "Authentic Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_economy_po",
+      "name_zh": "原真经济政策",
+      "name_en": "Authentic Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_industry_p",
+      "name_zh": "原真产业政策",
+      "name_en": "Authentic Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_sector_pol",
+      "name_zh": "原真部门政策",
+      "name_en": "Authentic Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_authentic_market_pol",
+      "name_zh": "原真市场政策",
+      "name_en": "Authentic Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_tourism_pol",
+      "name_zh": "创意旅游政策",
+      "name_en": "Creative Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_heritage_po",
+      "name_zh": "创意遗产政策",
+      "name_en": "Creative Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_culture_pol",
+      "name_zh": "创意文化政策",
+      "name_en": "Creative Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_destination",
+      "name_zh": "创意目的地政策",
+      "name_en": "Creative Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_travel_poli",
+      "name_zh": "创意旅行政策",
+      "name_en": "Creative Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_tour_policy",
+      "name_zh": "创意旅行政策",
+      "name_en": "Creative Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_visit_polic",
+      "name_zh": "创意访问政策",
+      "name_en": "Creative Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_museum_poli",
+      "name_zh": "创意博物馆政策",
+      "name_en": "Creative Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_exhibition_",
+      "name_zh": "创意展览政策",
+      "name_en": "Creative Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_festival_po",
+      "name_zh": "创意节庆政策",
+      "name_en": "Creative Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_event_polic",
+      "name_zh": "创意活动政策",
+      "name_en": "Creative Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_site_policy",
+      "name_zh": "创意遗址政策",
+      "name_en": "Creative Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_landscape_p",
+      "name_zh": "创意景观政策",
+      "name_en": "Creative Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_city_policy",
+      "name_zh": "创意城市政策",
+      "name_en": "Creative City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_region_poli",
+      "name_zh": "创意区域政策",
+      "name_en": "Creative Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_community_p",
+      "name_zh": "创意社区政策",
+      "name_en": "Creative Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_economy_pol",
+      "name_zh": "创意经济政策",
+      "name_en": "Creative Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_industry_po",
+      "name_zh": "创意产业政策",
+      "name_en": "Creative Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_sector_poli",
+      "name_zh": "创意部门政策",
+      "name_en": "Creative Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_creative_market_poli",
+      "name_zh": "创意市场政策",
+      "name_en": "Creative Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_tourism_",
+      "name_zh": "负责任旅游政策",
+      "name_en": "Responsible Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_heritage",
+      "name_zh": "负责任遗产政策",
+      "name_en": "Responsible Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_culture_",
+      "name_zh": "负责任文化政策",
+      "name_en": "Responsible Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_destinat",
+      "name_zh": "负责任目的地政策",
+      "name_en": "Responsible Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_travel_p",
+      "name_zh": "负责任旅行政策",
+      "name_en": "Responsible Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_tour_pol",
+      "name_zh": "负责任旅行政策",
+      "name_en": "Responsible Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_visit_po",
+      "name_zh": "负责任访问政策",
+      "name_en": "Responsible Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_museum_p",
+      "name_zh": "负责任博物馆政策",
+      "name_en": "Responsible Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_exhibiti",
+      "name_zh": "负责任展览政策",
+      "name_en": "Responsible Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_festival",
+      "name_zh": "负责任节庆政策",
+      "name_en": "Responsible Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_event_po",
+      "name_zh": "负责任活动政策",
+      "name_en": "Responsible Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_site_pol",
+      "name_zh": "负责任遗址政策",
+      "name_en": "Responsible Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_landscap",
+      "name_zh": "负责任景观政策",
+      "name_en": "Responsible Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_city_pol",
+      "name_zh": "负责任城市政策",
+      "name_en": "Responsible City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_region_p",
+      "name_zh": "负责任区域政策",
+      "name_en": "Responsible Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_communit",
+      "name_zh": "负责任社区政策",
+      "name_en": "Responsible Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_economy_",
+      "name_zh": "负责任经济政策",
+      "name_en": "Responsible Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_industry",
+      "name_zh": "负责任产业政策",
+      "name_en": "Responsible Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_sector_p",
+      "name_zh": "负责任部门政策",
+      "name_en": "Responsible Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_responsible_market_p",
+      "name_zh": "负责任市场政策",
+      "name_en": "Responsible Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_tourism_poli",
+      "name_zh": "伦理旅游政策",
+      "name_en": "Ethical Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_heritage_pol",
+      "name_zh": "伦理遗产政策",
+      "name_en": "Ethical Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_culture_poli",
+      "name_zh": "伦理文化政策",
+      "name_en": "Ethical Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_destination_",
+      "name_zh": "伦理目的地政策",
+      "name_en": "Ethical Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_travel_polic",
+      "name_zh": "伦理旅行政策",
+      "name_en": "Ethical Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_tour_policy",
+      "name_zh": "伦理旅行政策",
+      "name_en": "Ethical Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_visit_policy",
+      "name_zh": "伦理访问政策",
+      "name_en": "Ethical Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_museum_polic",
+      "name_zh": "伦理博物馆政策",
+      "name_en": "Ethical Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_exhibition_p",
+      "name_zh": "伦理展览政策",
+      "name_en": "Ethical Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_festival_pol",
+      "name_zh": "伦理节庆政策",
+      "name_en": "Ethical Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_event_policy",
+      "name_zh": "伦理活动政策",
+      "name_en": "Ethical Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_site_policy",
+      "name_zh": "伦理遗址政策",
+      "name_en": "Ethical Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_landscape_po",
+      "name_zh": "伦理景观政策",
+      "name_en": "Ethical Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_city_policy",
+      "name_zh": "伦理城市政策",
+      "name_en": "Ethical City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_region_polic",
+      "name_zh": "伦理区域政策",
+      "name_en": "Ethical Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_community_po",
+      "name_zh": "伦理社区政策",
+      "name_en": "Ethical Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_economy_poli",
+      "name_zh": "伦理经济政策",
+      "name_en": "Ethical Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_industry_pol",
+      "name_zh": "伦理产业政策",
+      "name_en": "Ethical Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_sector_polic",
+      "name_zh": "伦理部门政策",
+      "name_en": "Ethical Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_ethical_market_polic",
+      "name_zh": "伦理市场政策",
+      "name_en": "Ethical Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_tourism_po",
+      "name_zh": "包容旅游政策",
+      "name_en": "Inclusive Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_heritage_p",
+      "name_zh": "包容遗产政策",
+      "name_en": "Inclusive Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_culture_po",
+      "name_zh": "包容文化政策",
+      "name_en": "Inclusive Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_destinatio",
+      "name_zh": "包容目的地政策",
+      "name_en": "Inclusive Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_travel_pol",
+      "name_zh": "包容旅行政策",
+      "name_en": "Inclusive Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_tour_polic",
+      "name_zh": "包容旅行政策",
+      "name_en": "Inclusive Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_visit_poli",
+      "name_zh": "包容访问政策",
+      "name_en": "Inclusive Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_museum_pol",
+      "name_zh": "包容博物馆政策",
+      "name_en": "Inclusive Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_exhibition",
+      "name_zh": "包容展览政策",
+      "name_en": "Inclusive Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_festival_p",
+      "name_zh": "包容节庆政策",
+      "name_en": "Inclusive Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_event_poli",
+      "name_zh": "包容活动政策",
+      "name_en": "Inclusive Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_site_polic",
+      "name_zh": "包容遗址政策",
+      "name_en": "Inclusive Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_landscape_",
+      "name_zh": "包容景观政策",
+      "name_en": "Inclusive Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_city_polic",
+      "name_zh": "包容城市政策",
+      "name_en": "Inclusive City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_region_pol",
+      "name_zh": "包容区域政策",
+      "name_en": "Inclusive Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_community_",
+      "name_zh": "包容社区政策",
+      "name_en": "Inclusive Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_economy_po",
+      "name_zh": "包容经济政策",
+      "name_en": "Inclusive Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_industry_p",
+      "name_zh": "包容产业政策",
+      "name_en": "Inclusive Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_sector_pol",
+      "name_zh": "包容部门政策",
+      "name_en": "Inclusive Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_inclusive_market_pol",
+      "name_zh": "包容市场政策",
+      "name_en": "Inclusive Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_tourism_p",
+      "name_zh": "无障碍旅游政策",
+      "name_en": "Accessible Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_heritage_",
+      "name_zh": "无障碍遗产政策",
+      "name_en": "Accessible Heritage Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_culture_p",
+      "name_zh": "无障碍文化政策",
+      "name_en": "Accessible Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_destinati",
+      "name_zh": "无障碍目的地政策",
+      "name_en": "Accessible Destination Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_travel_po",
+      "name_zh": "无障碍旅行政策",
+      "name_en": "Accessible Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_tour_poli",
+      "name_zh": "无障碍旅行政策",
+      "name_en": "Accessible Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_visit_pol",
+      "name_zh": "无障碍访问政策",
+      "name_en": "Accessible Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_museum_po",
+      "name_zh": "无障碍博物馆政策",
+      "name_en": "Accessible Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_exhibitio",
+      "name_zh": "无障碍展览政策",
+      "name_en": "Accessible Exhibition Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_festival_",
+      "name_zh": "无障碍节庆政策",
+      "name_en": "Accessible Festival Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_event_pol",
+      "name_zh": "无障碍活动政策",
+      "name_en": "Accessible Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_site_poli",
+      "name_zh": "无障碍遗址政策",
+      "name_en": "Accessible Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_landscape",
+      "name_zh": "无障碍景观政策",
+      "name_en": "Accessible Landscape Policy",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_city_poli",
+      "name_zh": "无障碍城市政策",
+      "name_en": "Accessible City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_region_po",
+      "name_zh": "无障碍区域政策",
+      "name_en": "Accessible Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_community",
+      "name_zh": "无障碍社区政策",
+      "name_en": "Accessible Community Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_economy_p",
+      "name_zh": "无障碍经济政策",
+      "name_en": "Accessible Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_industry_",
+      "name_zh": "无障碍产业政策",
+      "name_en": "Accessible Industry Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_sector_po",
+      "name_zh": "无障碍部门政策",
+      "name_en": "Accessible Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_accessible_market_po",
+      "name_zh": "无障碍市场政策",
+      "name_en": "Accessible Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_tour",
+      "name_zh": "社区旅游政策",
+      "name_en": "Community Based Tourism Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_heri",
+      "name_zh": "社区遗产政策",
+      "name_en": "Community Based Heritage Polic",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_cult",
+      "name_zh": "社区文化政策",
+      "name_en": "Community Based Culture Policy",
+      "domain": "文化",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_dest",
+      "name_zh": "社区目的地政策",
+      "name_en": "Community Based Destination Po",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_trav",
+      "name_zh": "社区旅行政策",
+      "name_en": "Community Based Travel Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_tour",
+      "name_zh": "社区旅行政策",
+      "name_en": "Community Based Tour Policy",
+      "domain": "旅游",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_visi",
+      "name_zh": "社区访问政策",
+      "name_en": "Community Based Visit Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_muse",
+      "name_zh": "社区博物馆政策",
+      "name_en": "Community Based Museum Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_exhi",
+      "name_zh": "社区展览政策",
+      "name_en": "Community Based Exhibition Pol",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_fest",
+      "name_zh": "社区节庆政策",
+      "name_en": "Community Based Festival Polic",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_even",
+      "name_zh": "社区活动政策",
+      "name_en": "Community Based Event Policy",
+      "domain": "文化艺术",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_site",
+      "name_zh": "社区遗址政策",
+      "name_en": "Community Based Site Policy",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_land",
+      "name_zh": "社区景观政策",
+      "name_en": "Community Based Landscape Poli",
+      "domain": "文化遗产",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_city",
+      "name_zh": "社区城市政策",
+      "name_en": "Community Based City Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_regi",
+      "name_zh": "社区区域政策",
+      "name_en": "Community Based Region Policy",
+      "domain": "地理",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_comm",
+      "name_zh": "社区社区政策",
+      "name_en": "Community Based Community Poli",
+      "domain": "政策法规",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_econ",
+      "name_zh": "社区经济政策",
+      "name_en": "Community Based Economy Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_indu",
+      "name_zh": "社区产业政策",
+      "name_en": "Community Based Industry Polic",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_sect",
+      "name_zh": "社区部门政策",
+      "name_en": "Community Based Sector Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    },
+    {
+      "id": "policy_community_based_mark",
+      "name_zh": "社区市场政策",
+      "name_en": "Community Based Market Policy",
+      "domain": "经济贸易",
+      "freq": 1,
+      "type": "policy",
+      "year": 2010
+    }
+  ],
+  "timeline": [
+    {
+      "policy": "Silk Road",
+      "first_year": 1997,
+      "last_year": 2026,
+      "occurrences": 181,
+      "related_hotspots": [
+        {
+          "keyword": "tourism",
+          "heat": 2954,
+          "year": 2026
+        },
+        {
+          "keyword": "tourism",
+          "heat": 1915,
+          "year": 2026
+        },
+        {
+          "keyword": "tourism",
+          "heat": 3268,
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "policy": "RCEP",
+      "first_year": 1998,
+      "last_year": 2026,
+      "occurrences": 142,
+      "related_hotspots": [
+        {
+          "keyword": "tourism",
+          "heat": 8598,
+          "year": 2026
+        },
+        {
+          "keyword": "tourism",
+          "heat": 4035,
+          "year": 2026
+        },
+        {
+          "keyword": "tourism",
+          "heat": 2443,
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "policy": "Belt and Road",
+      "first_year": 2016,
+      "last_year": 2026,
+      "occurrences": 69,
+      "related_hotspots": [
+        {
+          "keyword": "tourism",
+          "heat": 3526,
+          "year": 2026
+        },
+        {
+          "keyword": "tourism",
+          "heat": 665,
+          "year": 2026
+        },
+        {
+          "keyword": "tourism",
+          "heat": 5610,
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "policy": "一带一路",
+      "first_year": 2019,
+      "last_year": 2026,
+      "occurrences": 7,
+      "related_hotspots": [
+        {
+          "keyword": "tourism",
+          "heat": 5485,
+          "year": 2026
+        },
+        {
+          "keyword": "tourism",
+          "heat": 7835,
+          "year": 2026
+        },
+        {
+          "keyword": "tourism",
+          "heat": 898,
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "policy": "高质量发展",
+      "first_year": 2025,
+      "last_year": 2025,
+      "occurrences": 5,
+      "related_hotspots": [
+        {
+          "keyword": "tourism",
+          "heat": 758,
+          "year": 2025
+        }
+      ]
+    },
+    {
+      "policy": "乡村振兴",
+      "first_year": 2019,
+      "last_year": 2026,
+      "occurrences": 3,
+      "related_hotspots": [
+        {
+          "keyword": "tourism",
+          "heat": 5760,
+          "year": 2026
+        },
+        {
+          "keyword": "tourism",
+          "heat": 1147,
+          "year": 2026
+        },
+        {
+          "keyword": "tourism",
+          "heat": 8853,
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "policy": "FTA",
+      "first_year": 2004,
+      "last_year": 2014,
+      "occurrences": 2,
+      "related_hotspots": [
+        {
+          "keyword": "tourism",
+          "heat": 6406,
+          "year": 2014
+        },
+        {
+          "keyword": "tourism",
+          "heat": 3557,
+          "year": 2014
+        }
+      ]
+    },
+    {
+      "policy": "丝绸之路",
+      "first_year": 2013,
+      "last_year": 2013,
+      "occurrences": 2,
+      "related_hotspots": [
+        {
+          "keyword": "tourism",
+          "heat": 3966,
+          "year": 2013
+        }
+      ]
+    },
+    {
+      "policy": "文化遗产保护",
+      "first_year": 2025,
+      "last_year": 2026,
+      "occurrences": 2,
+      "related_hotspots": [
+        {
+          "keyword": "tourism",
+          "heat": 7360,
+          "year": 2026
+        },
+        {
+          "keyword": "tourism",
+          "heat": 5229,
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "policy": "十四五",
+      "first_year": 2023,
+      "last_year": 2023,
+      "occurrences": 1,
+      "related_hotspots": [
+        {
+          "keyword": "tourism",
+          "heat": 2112,
+          "year": 2023
+        }
+      ]
+    },
+    {
+      "policy": "数字中国",
+      "first_year": 2020,
+      "last_year": 2020,
+      "occurrences": 1,
+      "related_hotspots": [
+        {
+          "keyword": "tourism",
+          "heat": 8540,
+          "year": 2020
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "policies": 638,
+    "associations": 11
+  }
+}

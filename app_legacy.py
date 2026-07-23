@@ -883,6 +883,23 @@ class H(BaseHTTPRequestHandler):
                 data = _json.loads(fpath.read_text(encoding='utf-8'))
                 json_ok(data)
         
+        elif pa.startswith('/api/policy/'):
+            """政策+推荐+驾驶舱端点"""
+            import json as _json
+            pr_dir = Path(__file__).parent / "output" / "policy_recommend"
+            name = pa.replace('/api/policy/', '')
+            pm = {'entities':'policy_entities.json','timeline':'policy_entities.json',
+                  'recommendations':'recommendations.json','kpi':'dashboard_kpi.json'}
+            fname = pm.get(name)
+            if not fname: json_err(f"未知端点"); return
+            fpath = pr_dir / fname
+            if not fpath.exists(): json_err(f"请先运行 skwm_policy_recommend.py"); return
+            data = _json.loads(fpath.read_text(encoding='utf-8'))
+            if name == 'timeline':
+                json_ok(data.get('timeline', []))
+            else:
+                json_ok(data)
+        
         elif pa=='/api/graphrag/ask':
             """GraphRAG 问答 + 证据溯源"""
             from skwm_graphrag_evidence import GraphRAGAPI

@@ -1,0 +1,54 @@
+{
+  "kpi": {
+    "文献总量": {
+      "value": "11,601",
+      "unit": "篇",
+      "icon": "file-text",
+      "trend": "up"
+    },
+    "时间跨度": {
+      "value": "1859-2026",
+      "unit": "",
+      "icon": "clock",
+      "trend": "stable"
+    },
+    "近5年文献": {
+      "value": "5,277",
+      "unit": "篇",
+      "icon": "trending-up",
+      "trend": "up"
+    },
+    "总被引": {
+      "value": "6,264,354",
+      "unit": "次",
+      "icon": "quote",
+      "trend": "up"
+    },
+    "实体数量": {
+      "value": "2,194",
+      "unit": "个",
+      "icon": "database",
+      "trend": "stable"
+    },
+    "三语术语": {
+      "value": "8,872",
+      "unit": "个",
+      "icon": "globe",
+      "trend": "up"
+    },
+    "年增长率": {
+      "value": "-31.3%",
+      "unit": "",
+      "icon": "activity",
+      "trend": "down"
+    }
+  },
+  "review_queue": {
+    "pending": 4,
+    "approved_today": 5,
+    "rejected_today": 5
+  },
+  "stats": {
+    "kpi_count": 7
+  }
+}

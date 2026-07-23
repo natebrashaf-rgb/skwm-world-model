@@ -11,6 +11,7 @@ import ReportPage from './pages/ReportPage'
 import ModelPage from './pages/ModelPage'
 import TimelinePage from './pages/TimelinePage'
 import DataPage from './pages/DataPage'
+import LibrarianDashboard from './pages/LibrarianDashboard'
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/model" element={<ModelPage />} />
         <Route path="/timeline" element={<TimelinePage />} />
         <Route path="/data" element={<DataPage />} />
+        <Route path="/dashboard" element={<LibrarianDashboard />} />
       </Routes>
     </AppLayout>
   )

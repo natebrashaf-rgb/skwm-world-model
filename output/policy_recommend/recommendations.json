@@ -1,0 +1,299 @@
+{
+  "roles": {
+    "teacher": {
+      "label": "教师",
+      "description": "深度研究追踪，含方法论与数据溯源",
+      "depth": "deep",
+      "kpi": [
+        "前沿趋势",
+        "国际合作",
+        "基金选题"
+      ]
+    },
+    "student": {
+      "label": "学生",
+      "description": "学习路径引导，含概念解释与推荐阅读",
+      "depth": "introductory",
+      "kpi": [
+        "课程关联",
+        "基础知识",
+        "论文选题"
+      ]
+    },
+    "librarian": {
+      "label": "馆员",
+      "description": "学科服务管理，含审核状态与推送管理",
+      "depth": "operational",
+      "kpi": [
+        "待审问答",
+        "推送统计",
+        "知识覆盖"
+      ]
+    }
+  },
+  "recommendations": {
+    "teacher": {
+      "config": {
+        "label": "教师",
+        "description": "深度研究追踪，含方法论与数据溯源",
+        "depth": "deep",
+        "kpi": [
+          "前沿趋势",
+          "国际合作",
+          "基金选题"
+        ]
+      },
+      "items": [
+        {
+          "type": "frontier",
+          "title": "突现方向: change",
+          "score": 80,
+          "action": "查看详情→"
+        },
+        {
+          "type": "frontier",
+          "title": "突现方向: 交流",
+          "score": 80,
+          "action": "查看详情→"
+        },
+        {
+          "type": "frontier",
+          "title": "突现方向: student",
+          "score": 67,
+          "action": "查看详情→"
+        },
+        {
+          "type": "frontier",
+          "title": "突现方向: report",
+          "score": 65,
+          "action": "查看详情→"
+        },
+        {
+          "type": "frontier",
+          "title": "突现方向: 文化",
+          "score": 63,
+          "action": "查看详情→"
+        }
+      ],
+      "hotspots": [
+        {
+          "keyword": "change",
+          "heat": 80,
+          "trend": "up"
+        },
+        {
+          "keyword": "交流",
+          "heat": 80,
+          "trend": "up"
+        },
+        {
+          "keyword": "student",
+          "heat": 67,
+          "trend": "up"
+        },
+        {
+          "keyword": "report",
+          "heat": 65,
+          "trend": "up"
+        },
+        {
+          "keyword": "文化",
+          "heat": 63,
+          "trend": "up"
+        }
+      ]
+    },
+    "student": {
+      "config": {
+        "label": "学生",
+        "description": "学习路径引导，含概念解释与推荐阅读",
+        "depth": "introductory",
+        "kpi": [
+          "课程关联",
+          "基础知识",
+          "论文选题"
+        ]
+      },
+      "items": [
+        {
+          "type": "concept",
+          "title": "概念解析: change",
+          "score": 80,
+          "action": "学习→"
+        },
+        {
+          "type": "concept",
+          "title": "概念解析: 交流",
+          "score": 80,
+          "action": "学习→"
+        },
+        {
+          "type": "concept",
+          "title": "概念解析: student",
+          "score": 67,
+          "action": "学习→"
+        },
+        {
+          "type": "concept",
+          "title": "概念解析: report",
+          "score": 65,
+          "action": "学习→"
+        },
+        {
+          "type": "concept",
+          "title": "概念解析: 文化",
+          "score": 63,
+          "action": "学习→"
+        }
+      ],
+      "hotspots": [
+        {
+          "keyword": "change",
+          "heat": 80,
+          "trend": "up"
+        },
+        {
+          "keyword": "交流",
+          "heat": 80,
+          "trend": "up"
+        },
+        {
+          "keyword": "student",
+          "heat": 67,
+          "trend": "up"
+        },
+        {
+          "keyword": "report",
+          "heat": 65,
+          "trend": "up"
+        },
+        {
+          "keyword": "文化",
+          "heat": 63,
+          "trend": "up"
+        }
+      ]
+    },
+    "librarian": {
+      "config": {
+        "label": "馆员",
+        "description": "学科服务管理，含审核状态与推送管理",
+        "depth": "operational",
+        "kpi": [
+          "待审问答",
+          "推送统计",
+          "知识覆盖"
+        ]
+      },
+      "items": [
+        {
+          "type": "review",
+          "title": "待审核问答: change",
+          "score": 80,
+          "action": "审核→"
+        },
+        {
+          "type": "review",
+          "title": "待审核问答: 交流",
+          "score": 80,
+          "action": "审核→"
+        },
+        {
+          "type": "review",
+          "title": "待审核问答: student",
+          "score": 67,
+          "action": "审核→"
+        },
+        {
+          "type": "push",
+          "title": "周报待推送",
+          "score": 5,
+          "action": "推送→"
+        }
+      ],
+      "hotspots": [
+        {
+          "keyword": "change",
+          "heat": 80,
+          "trend": "up"
+        },
+        {
+          "keyword": "交流",
+          "heat": 80,
+          "trend": "up"
+        },
+        {
+          "keyword": "student",
+          "heat": 67,
+          "trend": "up"
+        },
+        {
+          "keyword": "report",
+          "heat": 65,
+          "trend": "up"
+        },
+        {
+          "keyword": "文化",
+          "heat": 63,
+          "trend": "up"
+        }
+      ]
+    }
+  },
+  "hotspots": [
+    {
+      "keyword": "change",
+      "heat": 80,
+      "trend": "up"
+    },
+    {
+      "keyword": "交流",
+      "heat": 80,
+      "trend": "up"
+    },
+    {
+      "keyword": "student",
+      "heat": 67,
+      "trend": "up"
+    },
+    {
+      "keyword": "report",
+      "heat": 65,
+      "trend": "up"
+    },
+    {
+      "keyword": "文化",
+      "heat": 63,
+      "trend": "up"
+    },
+    {
+      "keyword": "阿拉伯",
+      "heat": 58,
+      "trend": "up"
+    },
+    {
+      "keyword": "tour",
+      "heat": 56,
+      "trend": "stable"
+    },
+    {
+      "keyword": "annual",
+      "heat": 55,
+      "trend": "stable"
+    },
+    {
+      "keyword": "world",
+      "heat": 55,
+      "trend": "up"
+    },
+    {
+      "keyword": "cross-cultural",
+      "heat": 55,
+      "trend": "stable"
+    }
+  ],
+  "stats": {
+    "roles": 3,
+    "hotspots": 20
+  }
+}
