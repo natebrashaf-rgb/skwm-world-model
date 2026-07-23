@@ -331,113 +331,136 @@ class DataLayer:
     
     def _generate_demo_data(self):
         """无真实数据时生成大规模演示数据集（2000+实体，Railway部署用）"""
-        import random
+        import random, itertools
         random.seed(42)
         
-        # 2000+ 实体，分9种类型
-        topics_base = ["旅游","文化","遗产","数字文旅","一带一路","中阿合作","人工智能",
-                  "可持续发展","博物馆","非遗","智慧旅游","元宇宙","大模型","跨文化传播",
-                  "目的地管理","酒店管理","会展经济","文旅融合","乡村振兴","红色旅游",
-                  "生态旅游","研学旅行","康养旅游","夜间经济","文旅消费","数字文化",
-                  "文创产品","文旅IP","文旅投资","文旅规划","文旅营销","文旅品牌",
-                  "文旅科技","文旅金融","文旅地产","文旅教育","文旅研究","文旅政策",
-                  "阿拉伯语","伊斯兰文化","阿拉伯文学","阿拉伯历史","阿拉伯艺术",
-                  "丝绸之路","中阿贸易","中阿投资","中阿金融","中阿教育","中阿科技",
-                  "中阿能源","中阿农业","中阿医药","中阿军事","中阿外交","中阿传媒",
-                  "跨语言检索","神经机器翻译","多语NLP","知识蒸馏","对比学习",
-                  "多模态学习","图神经网络","知识表示学习","关系抽取","事件抽取",
-                  "实体链接","语义角色标注","篇章分析","情感分析","文本生成",
-                  "自动摘要","零样本学习","小样本学习","迁移学习","主动学习",
-                  "联邦学习","强化学习","元学习","自监督学习","半监督学习",
-                  "知识图谱补全","图谱推理","图谱问答","图谱可视化","图谱存储",
-                  "图谱查询","图谱构建","图谱融合","图谱评估","图谱应用",
-                  "科学计量学","文献计量学","信息计量学","网络计量学","替代计量学",
-                  "引文分析","共被引分析","耦合分析","共词分析","聚类分析",
-                  "社会网络分析","多维尺度分析","知识图谱分析","前沿识别","研究前沿",
-                  "新兴趋势","研究热点","学科交叉","学科演化","学科评估",
-                  "高校图书馆","公共图书馆","数字图书馆","智慧图书馆","移动图书馆",
-                  "学科服务","情报服务","参考咨询","科技查新","信息素养",
-                  "开放获取","开放数据","开放科学","预印本","学术社交网络",
-                  "学术评价","科研评价","人才评价","期刊评价","机构评价",
-                  "数据治理","数据管理","数据共享","数据安全","数据隐私",
-                  "大语言模型","ChatGPT","GPT-4","BERT","RoBERTa","T5","BART",
-                  "LLaMA","Falcon","Mistral","DeepSeek","Qwen","Baichuan",
-                  "多语言模型","跨语言模型","语言模型评测","模型压缩","模型量化",
-                  "模型蒸馏","模型微调","指令微调","RLHF","DPO","对齐研究",
-                  "文本分类","序列标注","阅读理解","文本匹配","语义相似度",
-                  "信息检索","语义搜索","混合检索","多轮对话","任务型对话",
-                  "开放域对话","对话系统","问答系统","检索增强","生成增强",
-                  "Tool学习","FunctionCalling","Agent系统","多Agent协作","Agent框架"]
+        # 通过组合生成 2000+ 实体
+        prefixes = ["数字","智能","智慧","融合","协同","共享","绿色","可持续",
+                   "文化","旅游","遗产","非遗","生态","乡村","城市","全球",
+                   "区域","国际","跨境","多语","跨文化","中阿","阿拉伯","伊斯兰",
+                   "现代","传统","创新","创意","新兴","前沿"]
+        bases = ["旅游","文旅","文化","遗产","教育","科技","经济","贸易",
+                "金融","能源","农业","医药","传媒","艺术","文学","历史",
+                "语言","翻译","传播","交流","合作","治理","管理","服务",
+                "研究","分析","评估","规划","发展","建设","保护","传承",
+                "创新","创业","投资","消费","营销","品牌","IP","数字化",
+                "智能化","网络化","平台化","生态化","全球化","区域化",
+                "多模态","多语言","跨领域","跨学科","知识图谱","大模型",
+                "人工智能","机器学习","深度学习","数据科学","信息科学",
+                "图书馆","博物馆","档案馆","美术馆","剧院","遗址","景区"]
+        suffixes = ["研究","分析","评估","规划","管理","服务","系统","平台",
+                   "模式","路径","策略","机制","体系","框架","模型","方法",
+                   "技术","应用","实践","案例","报告","方案","政策","法规",
+                   "标准","规范","指南","指标","指数","数据","信息","知识"]
         
-        # 添加机构实体
-        institutions = ["北京外国语大学","上海外国语大学","北京语言大学","中国传媒大学",
-                       "北京大学","清华大学","中国人民大学","北京师范大学",
-                       "复旦大学","上海交通大学","南京大学","浙江大学",
-                       "武汉大学","华中科技大学","中山大学","厦门大学",
-                       "四川大学","山东大学","吉林大学","兰州大学",
-                       "南开大学","天津大学","同济大学","华东师范大学",
-                       "西安外国语大学","广东外语外贸大学","大连外国语大学",
-                       "天津外国语大学","四川外国语大学","北京第二外国语学院",
-                       "中国国家图书馆","上海图书馆","中国科学院文献情报中心",
-                       "中国科学技术信息研究所","中国社科院图书馆"]
+        # 组合生成: prefix+base, base+suffix, prefix+base+suffix
+        entities_set = set()
+        for p in prefixes:
+            for b in bases:
+                entities_set.add(f"{p}{b}")
+        for b in bases:
+            for s in suffixes:
+                entities_set.add(f"{b}{s}")
+        for p in prefixes[:15]:
+            for b in bases[:30]:
+                for s in suffixes[:10]:
+                    if random.random() < 0.3:
+                        entities_set.add(f"{p}{b}{s}")
         
-        # 地点实体
-        places = ["中国","阿拉伯","沙特","阿联酋","卡塔尔","阿曼","巴林","科威特",
-                 "埃及","摩洛哥","阿尔及利亚","突尼斯","苏丹","约旦","黎巴嫩",
-                 "叙利亚","伊拉克","也门","巴勒斯坦","迪拜","阿布扎比","利雅得",
-                 "吉达","麦加","麦地那","多哈","马斯喀特","开罗","拉巴特","阿尔及尔"]
+        # 添加机构
+        institutions = ["北京大学","清华大学","复旦大学","上海交大","南京大学",
+                       "浙江大学","武汉大学","中山大学","北京外国语大学",
+                       "上海外国语大学","北京语言大学","中国传媒大学",
+                       "西安外国语大学","广外","大连外国语大学",
+                       "北京第二外国语学院","四川外国语大学","天津外国语大学",
+                       "中国国家图书馆","上海图书馆","中国社科院",
+                       "中国科学院","中国工程院","中国科学技术信息研究所"]
+        entities_set.update([f"机构_{n}" for n in institutions])
+        entities_set.update([f"机构_{n}图书馆" for n in ["北大","清华","复旦","南大","浙大","武大","中大","北师大"]])
         
-        # 政策实体
-        policies = ["一带一路","中阿合作论坛","中阿战略伙伴关系","中阿全面合作",
-                   "中阿人文交流","中阿教育合作","中阿科技合作","中阿能源合作",
-                   "中阿经贸合作","中阿文化年","阿拉伯国家联盟","中国-海合会",
-                   "中阿翻译项目","中阿典籍互译","中阿旅游合作"]
+        # 添加地点
+        places = ["中国","沙特","阿联酋","卡塔尔","阿曼","巴林","科威特",
+                 "埃及","摩洛哥","阿尔及利亚","突尼斯","苏丹","约旦",
+                 "叙利亚","伊拉克","也门","巴勒斯坦","迪拜","利雅得",
+                 "吉达","麦加","多哈","开罗","拉巴特","阿尔及尔",
+                 "北京","上海","广州","深圳","杭州","成都","西安",
+                 "南京","武汉","重庆","天津","苏州","厦门","青岛"]
+        entities_set.update([f"地点_{n}" for n in places])
         
-        all_entities = topics_base + ["机构_"+n for n in institutions] + ["地点_"+n for n in places] + ["政策_"+n for n in policies]
+        # 添加政策
+        policies = ["一带一路","中阿合作论坛","中阿战略伙伴","中阿全面合作",
+                   "中阿人文交流","中阿教育合作","中阿科技合作",
+                   "中阿能源合作","中阿经贸合作","阿拉伯国家联盟",
+                   "中国-海合会","中阿旅游合作","中阿翻译项目"]
+        entities_set.update([f"政策_{n}" for n in policies])
         
-        # 随机选取 2000+ 实体，每类保留代表性名称
+        # 添加英文术语
+        en_terms = ["tourism","culture","heritage","digital","intelligent","smart",
+                   "sustainable","development","innovation","education",
+                   "technology","economy","trade","finance","energy",
+                   "agriculture","medicine","media","art","literature",
+                   "history","language","translation","communication",
+                   "cooperation","governance","management","research",
+                   "analysis","evaluation","planning","service","system",
+                   "platform","model","method","technology","application",
+                   "knowledge graph","large language model","artificial intelligence",
+                   "machine learning","deep learning","data science",
+                   "library","museum","archive","cultural heritage",
+                   "intangible heritage","digital humanities","NLP",
+                   "information retrieval","knowledge representation",
+                   "semantic web","ontology","graph neural network",
+                   "recommendation system","sentiment analysis",
+                   "text mining","data mining","big data","cloud computing",
+                   "blockchain","metaverse","AR","VR","digital twin",
+                   "China","Arab","Saudi Arabia","UAE","Qatar","Egypt",
+                   "Morocco","Algeria","Tunisia","Jordan","Lebanon",
+                   "Syria","Iraq","Yemen","Palestine","Dubai","Riyadh",
+                   "Jeddah","Mecca","Doha","Cairo","Rabat","Algiers"]
+        entities_set.update(en_terms)
+        
+        # 最终列表
+        all_entities = sorted(entities_set)
         random.shuffle(all_entities)
-        selected_entities = all_entities[:2200]
+        selected = all_entities[:2500]
         
         years = list(range(2000, 2027))
         for y in years:
-            n_ents = min(len(selected_entities), 200 + (y - 2000) * 80)
-            yearly = selected_entities[:n_ents]
+            # 每年递增实体数: 2006年约500, 2026年达2500
+            ratio = (y - 2000) / 26.0
+            n_ents = max(100, min(len(selected), int(100 + ratio * 2400)))
+            yearly = selected[:n_ents]
             
-            # 生成随机的边（基于热度共现）
-            edges = []
             heat_map = {}
-            for i, ent in enumerate(yearly):
-                heat = random.randint(50, 5000) + int((y - 2000) * 15)
-                growth = random.randint(-50, 300)
+            for ent in yearly:
+                heat = int(random.uniform(50, 3000) * (1 + ratio * 0.8))
+                growth = random.randint(-80, 400)
                 centrality = round(random.uniform(0.01, 0.95), 4)
-                connections = random.randint(5, 800)
+                connections = random.randint(5, min(800, n_ents // 2))
                 heat_map[ent] = (heat, growth, centrality, connections)
             
-            # 按热度排序取前 N 个实体
+            # 边: 热点实体之间连接多
             sorted_ents = sorted(heat_map.keys(), key=lambda e: -heat_map[e][0])
-            
-            # 生成边：热度较高的实体之间连接更多
-            top_n = min(300, len(sorted_ents))
+            top_n = min(350, len(sorted_ents))
+            edges = []
             for i in range(top_n):
                 for j in range(i+1, top_n):
-                    if random.random() < 0.15:
-                        w = random.randint(1, 20)
+                    if random.random() < 0.12:
+                        w = random.randint(1, 25)
                         edges.append({"u": sorted_ents[i], "v": sorted_ents[j], "w": w})
             
             self.snapshots[str(y)] = {
                 "nodes": yearly,
-                "edges": edges[:min(len(edges), 50000)],
+                "edges": edges[:min(len(edges), 80000)],
                 "n_nodes": len(yearly),
-                "n_edges": min(len(edges), 50000),
+                "n_edges": min(len(edges), 80000),
             }
             self.state_vectors[str(y)] = heat_map
         
         self.year_range = [2000, 2026]
         self.n_snapshots = len(years)
         self.n_state_vectors = sum(len(v) for v in self.state_vectors.values())
-        self.paper_count = 8000
-        self.author_count = 2000
+        self.paper_count = 10000
+        self.author_count = 2500
     
     def get_entities(self, year: int) -> Dict:
         """E: 获取某年的知识实体及其状态"""
