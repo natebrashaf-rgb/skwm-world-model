@@ -10,7 +10,7 @@ export default function ModelPage() {
     <div>
       <Breadcrumb items={['SKWM MODEL']} />
       <h1 className="text-2xl font-bold text-gray-900 mb-1">科学知识世界模型</h1>
-      <p className="text-sm text-gray-400 mb-6">SKWM = {E, R, S, T, C, U, P}</p>
+      <p className="text-sm text-gray-400 mb-6">SKWM = (E, R, S, T, C, U, P)</p>
 
       <div className="flex gap-2 mb-4">
         <button onClick={() => setView('grid')} className={`px-3 py-1.5 text-xs rounded-lg ${view==='grid'?'bg-primary text-white':'bg-white border border-gray-200 text-gray-600'}`}>集合视图</button>

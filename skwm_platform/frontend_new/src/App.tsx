@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { AppLayout } from './components/AppLayout'
+import { ErrorBoundary } from './components/ErrorBoundary'
 import OverviewPage from './pages/OverviewPage'
 import GraphPage from './pages/GraphPage'
 import HotspotPage from './pages/HotspotPage'
@@ -16,7 +17,8 @@ import LibrarianDashboard from './pages/LibrarianDashboard'
 export default function App() {
   return (
     <AppLayout>
-      <Routes>
+      <ErrorBoundary>
+        <Routes>
         <Route path="/" element={<Navigate to="/overview" replace />} />
         <Route path="/overview" element={<OverviewPage />} />
         <Route path="/graph" element={<GraphPage />} />
@@ -31,6 +33,7 @@ export default function App() {
         <Route path="/data" element={<DataPage />} />
         <Route path="/dashboard" element={<LibrarianDashboard />} />
       </Routes>
+      </ErrorBoundary>
     </AppLayout>
   )
 }
