@@ -817,6 +817,12 @@ class H(BaseHTTPRequestHandler):
     
     def do_POST(self):
         p=urlparse(self.path);pa=p.path
+        def json_ok(data):
+            self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers()
+            self.wfile.write(json.dumps(data).encode())
+        def json_err(msg):
+            self.send_response(400);self.send_header('Content-Type','application/json');self.end_headers()
+            self.wfile.write(json.dumps({"error":msg}).encode())
         
         # ── 飞书 URL 验证（最优先，不依赖任何import） ──
         if pa=='/api/feishu/webhook':
