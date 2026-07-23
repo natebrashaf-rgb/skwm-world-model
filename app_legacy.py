@@ -514,7 +514,11 @@ class H(BaseHTTPRequestHandler):
             INDEX_PATH = Path(__file__).parent / "skwm_platform" / "frontend_new" / "dist" / "index.html"
             if INDEX_PATH.exists():
                 html = open(INDEX_PATH, encoding='utf-8').read()
-                self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.end_headers()
+                self.send_response(200)
+                self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
+                self.send_header('Pragma', 'no-cache')
+                self.send_header('Expires', '0')
+                self.send_header('Content-Type','text/html; charset=utf-8');self.end_headers()
                 self.wfile.write(html.encode())
             else:
                 # 回退到内置页面
@@ -810,7 +814,11 @@ class H(BaseHTTPRequestHandler):
             INDEX_PATH = Path(__file__).parent / "skwm_platform" / "frontend_new" / "dist" / "index.html"
             if INDEX_PATH.exists():
                 html = open(INDEX_PATH, encoding='utf-8').read()
-                self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.end_headers()
+                self.send_response(200)
+                self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
+                self.send_header('Pragma', 'no-cache')
+                self.send_header('Expires', '0')
+                self.send_header('Content-Type','text/html; charset=utf-8');self.end_headers()
                 self.wfile.write(html.encode())
             else:
                 self.send_response(404);self.send_header('Content-Type','text/plain');self.end_headers();self.wfile.write(b'404')
