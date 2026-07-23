@@ -3,441 +3,412 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SKWM · 科学知识世界模型</title>
+<title>SKWM · 中阿文旅世界模型</title>
+<script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+<script src="https://unpkg.com/vis-data@7.1.9/standalone/umd/vis-data.min.js"></script>
 <style>
-:root {
-  --bg: #f5f5f7;
-  --surface: #ffffff;
-  --border: #e5e5e7;
-  --text: #1d1d1f;
-  --text2: #86868b;
-  --accent: #0071e3;
-  --accent2: #147ce5;
-  --accent-soft: #e8f0fe;
-  --shadow: 0 2px 12px rgba(0,0,0,.04);
-  --radius: 10px;
-  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --mono: "SF Mono", "Fira Code", monospace;
-  --nav-w: 220px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%}
-body{font-family:var(--font);background:var(--bg);color:var(--text);display:flex;overflow:hidden;-webkit-font-smoothing:antialiased}
-
-/* ├─ 侧边栏 ── */
-.sidebar{width:var(--nav-w);min-width:var(--nav-w);background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;height:100vh;z-index:10}
-.sidebar-top{padding:20px 20px 14px;border-bottom:1px solid var(--border)}
-.sidebar-top h1{font-size:18px;font-weight:700;letter-spacing:-.5px;color:var(--text)}
-.sidebar-top .sub{font-size:11px;color:var(--text2);margin-top:2px}
-.sidebar-nav{flex:1;overflow-y:auto;padding:6px}
-.nav-grp{font-size:10px;font-weight:600;color:var(--text2);padding:12px 12px 4px;letter-spacing:.08em;text-transform:uppercase}
-.nav-item{display:flex;align-items:center;gap:8px;padding:9px 12px;margin:1px 4px;border-radius:6px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:all .1s;border:none;background:none;width:calc(100% - 8px);text-align:left}
-.nav-item:hover{background:var(--accent-soft);color:var(--accent)}
-.nav-item.active{background:var(--accent);color:#fff}
-.nav-item .ico{font-size:12px;width:18px;text-align:center;flex-shrink:0;opacity:.7}
-.nav-item.active .ico{opacity:1}
-.sidebar-btm{padding:12px 20px;border-top:1px solid var(--border);font-size:10px;color:var(--text2);line-height:1.6}
-
-/* ├─ 主区域 ── */
-.main{flex:1;overflow-y:auto}
-.main-in{max-width:1120px;margin:0 auto;padding:32px 36px;min-height:100vh}
-.page{display:none;animation:fade .25s ease}
-.page.active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-
-/* ├─ 顶部 ── */
-.top{margin-bottom:24px}
-.top .label{font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:5px}
-.top h1{font-size:24px;font-weight:700;letter-spacing:-.4px;color:var(--text)}
-.top p{color:var(--text2);font-size:14px;margin-top:3px}
-
-/* ├─ 统计卡片 ── */
-.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:20px}
-.sc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
-.sc .num{font-size:24px;font-weight:700;letter-spacing:-.4px;color:var(--text);line-height:1.2}
-.sc .lab{font-size:11px;color:var(--text2);margin-top:3px}
-
-/* ├─ 卡片 ── */
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:12px}
-.card-h{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
-.card-h .tag{font-weight:400;font-size:11px;color:var(--text2);background:var(--bg);padding:2px 8px;border-radius:4px}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-@media(max-width:800px){.grid-2{grid-template-columns:1fr}}
-
-/* ├─ 输入框 ── */
-.in-group{display:flex;gap:10px;margin-bottom:12px}
-.in-group input{flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font:14px var(--font);transition:all .2s;background:var(--bg)}
-.in-group input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 2px var(--accent-soft)}
-.in-group select{padding:10px;border:1px solid var(--border);border-radius:8px;font:13px var(--font);background:var(--surface);min-width:90px}
-.btn{display:inline-flex;align-items:center;gap:5px;padding:10px 18px;border:none;border-radius:8px;font:500 14px var(--font);cursor:pointer;transition:all .12s;white-space:nowrap}
-.btn-p{background:var(--accent);color:#fff}
-.btn-p:hover{background:var(--accent2)}
-.btn-p:disabled{background:#ccc;cursor:not-allowed}
-
-/* ├─ 结果条目 ── */
-.result{padding:10px 14px;margin:5px 0;border-radius:8px;background:var(--bg);border-left:3px solid var(--accent)}
-.result .rt{font-weight:600;font-size:13px;color:var(--text)}
-.result .rm{font-size:11px;color:var(--text2);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap}
-.result .rb{padding:1px 5px;border-radius:3px;font-size:10px;font-weight:500;background:var(--accent-soft);color:var(--accent)}
-
-/* ├─ 条状图 ── */
-.bar-r{display:flex;align-items:center;gap:8px;padding:5px 0}
-.bar-r .bl{font-size:13px;min-width:70px;color:var(--text)}
-.bar-r .bt{flex:1;height:7px;background:var(--bg);border-radius:4px;overflow:hidden}
-.bar-r .bf{height:100%;background:var(--accent);border-radius:4px;transition:width .6s ease;min-width:3px}
-.bar-r .bv{font-size:11px;color:var(--text2);min-width:30px;text-align:right}
-
-/* ├─ 时间线 ── */
-.tl{display:flex;align-items:flex-end;gap:2px;height:70px;padding:6px 0}
-.tl-bar{flex:1;background:var(--accent);border-radius:2px 2px 0 0;opacity:.5;min-height:3px;transition:opacity .15s}
-.tl-bar:hover{opacity:1}
-
-/* ├─ 表格 ── */
+:root{--bg:#f8f7f4;--cd:#fff;--ln:#e8e5e0;--tx:#1a1a1a;--tl:#8a7e70;--ac:#2563eb;--ac2:#3b82f6;--acg:#f0f4ff;--sd:0 1px 3px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.03);--rd:10px;--fn:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;--sbw:220px;}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%}body{font-family:var(--fn);background:var(--bg);color:var(--tx);display:flex;overflow:hidden}
+.sb{width:var(--sbw);min-width:var(--sbw);background:var(--cd);border-right:1px solid var(--ln);display:flex;flex-direction:column;height:100vh}
+.sb-h{padding:20px 18px 14px;border-bottom:1px solid var(--ln)}
+.sb-h h1{font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px}
+.sb-h h1 span{background:var(--ac);color:#fff;font-size:9px;padding:2px 7px;border-radius:6px}
+.sb-h .sub{font-size:11px;color:var(--tl);margin-top:4px}
+.sb-n{flex:1;overflow-y:auto;padding:6px 0}
+.sb-grp{font-size:10px;font-weight:700;color:var(--tl);padding:12px 18px 3px;letter-spacing:.1em;text-transform:uppercase;opacity:.5}
+.nb{display:flex;align-items:center;gap:10px;padding:9px 18px;margin:1px 8px;border-radius:8px;font-size:13px;font-weight:500;color:var(--tx);cursor:pointer;border:none;background:none;width:calc(100% - 16px);text-align:left;transition:all .12s}
+.nb:hover{background:var(--acg);color:var(--ac)}.nb.act{background:var(--acg);color:var(--ac);font-weight:600}
+.nb .ico{font-size:15px;width:20px;text-align:center;flex-shrink:0}
+.sb-f{padding:10px 18px;border-top:1px solid var(--ln);font-size:10px;color:var(--tl);line-height:1.5}
+.mn{flex:1;overflow-y:auto}.mn-i{max-width:1100px;margin:0 auto;padding:28px 32px;min-height:100vh}
+.pg{display:none;animation:fade .3s ease}.pg.act{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.hr{margin-bottom:24px}.hr .label{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ac);text-transform:uppercase;margin-bottom:4px}
+.hr h2{font-size:22px;font-weight:700;letter-spacing:-.4px}.hr p{color:var(--tl);font-size:14px;margin-top:3px}
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:12px;margin-bottom:20px}
+.sc{background:var(--cd);border:1px solid var(--ln);border-radius:var(--rd);padding:14px;box-shadow:var(--sd)}
+.sc .sn{font-size:24px;font-weight:800;letter-spacing:-.5px;line-height:1}.sc .sl{font-size:11px;color:var(--tl);margin-top:4px}.sc .si{font-size:18px;margin-bottom:4px}
+.cd{background:var(--cd);border:1px solid var(--ln);border-radius:var(--rd);padding:18px;box-shadow:var(--sd);margin-bottom:12px}
+.ct{font-size:13px;font-weight:700;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--ln);display:flex;justify-content:space-between;align-items:center}
+.ct .pi{font-size:10px;color:var(--tl);background:var(--bg);padding:2px 8px;border-radius:12px}
 table{width:100%;border-collapse:collapse;font-size:13px}
-th{padding:7px 10px;text-align:left;font-weight:600;color:var(--text2);font-size:11px;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--border)}
-td{padding:7px 10px;border-bottom:1px solid var(--border);font-size:13px}
-tr:last-child td{border-bottom:none}
-
-/* ├─ 对话气泡 ── */
-.msg{margin:8px 0;display:flex;gap:10px}
-.msg-user{flex-direction:row-reverse}
-.msg .av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
-.msg-user .av{background:var(--accent);color:#fff}
-.msg-bot .av{background:var(--bg);color:var(--text2);border:1px solid var(--border)}
-.msg .bubble{padding:10px 14px;border-radius:10px;font-size:13px;line-height:1.7;max-width:80%;white-space:pre-wrap}
-.msg-user .bubble{background:var(--accent);color:#fff;border-radius:10px 10px 2px 10px}
-.msg-bot .bubble{background:var(--bg);border:1px solid var(--border);border-radius:10px 10px 10px 2px}
-.chat-box{height:400px;overflow-y:auto;padding:12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);margin-bottom:10px}
-
-/* ├─ 加载/空态 ── */
-.loading{text-align:center;padding:36px 20px;color:var(--text2)}
-.sp{width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 10px}
+th{padding:7px 10px;text-align:left;font-weight:600;color:var(--tl);font-size:11px;border-bottom:2px solid var(--ln)}
+td{padding:7px 10px;border-bottom:1px solid var(--ln)}tr:last-child td{border-bottom:none}tr:hover td{background:var(--acg)}
+.bar-c{display:flex;align-items:center;gap:8px;margin:3px 0}
+.bar-l{width:110px;font-size:12px;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:0}
+.bar{height:20px;border-radius:4px;min-width:4px;transition:width .5s ease;flex-shrink:0}
+.bar-v{font-size:11px;color:var(--tl);margin-left:6px;white-space:nowrap}
+.sbx{display:flex;gap:8px;margin-bottom:12px}.sbx input{flex:1;padding:9px 12px;border:2px solid var(--ln);border-radius:8px;font:14px var(--fn);background:var(--bg)}
+.sbx input:focus{border-color:var(--ac);outline:none}
+.sbx button{padding:9px 18px;border:none;border-radius:8px;background:var(--ac);color:#fff;font:600 13px var(--fn);cursor:pointer}
+.sbx button:hover{opacity:.85}.sbx button:disabled{opacity:.4}
+.sbx select{padding:9px 10px;border:2px solid var(--ln);border-radius:8px;font:13px var(--fn);background:var(--cd)}
+#kg-container{width:100%;height:550px;border:1px solid var(--ln);border-radius:var(--rd);background:var(--cd);overflow:hidden}
+.ys{display:flex;align-items:center;gap:10px;margin-bottom:12px}.ys input{flex:1;accent-color:var(--ac)}.ys label{font-size:12px;font-weight:600;min-width:40px;color:var(--tl)}
+.ctrls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.ctrls select{padding:5px 8px;border:1px solid var(--ln);border-radius:6px;font:12px var(--fn);background:var(--cd)}
+.loading{display:flex;align-items:center;justify-content:center;padding:36px;color:var(--tl);gap:8px}
+.sp{width:16px;height:16px;border:2px solid var(--ln);border-top-color:var(--ac);border-radius:50%;animation:spin .6s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.empty{text-align:center;padding:28px;color:var(--text2);font-size:13px}
-
-/* ├─ 推理面板 ── */
-.think{padding:12px 16px;margin:8px 0;border-radius:8px;background:var(--bg);border-left:3px solid var(--accent)}
-.think .th{font-size:10px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-.think .tb{font-size:13px;line-height:1.6;color:var(--text)}
-
-/* ├─ 滚动条 ── */
-.sidebar-nav::-webkit-scrollbar{width:3px}
-.sidebar-nav::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-
-@media(max-width:768px){
-  :root{--nav-w:48px}
-  .sidebar-top h1,.sidebar-top .sub,.nav-item span,.nav-grp,.sidebar-btm{display:none}
-  .nav-item{justify-content:center;padding:8px}
-  .main-in{padding:20px 16px}
-}
+.empty{padding:36px;text-align:center;color:var(--tl);font-size:13px}
+.tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;margin:2px;cursor:pointer}
+.tag-c{background:var(--acg);color:var(--ac)}.tag-g{background:#f0fdf4;color:#16a34a}.tag-o{background:#fff7ed;color:#ea580c}
+.robot{position:fixed;bottom:24px;right:24px;z-index:1000;cursor:grab;user-select:none}
+.robot:active{cursor:grabbing}
+.robot-bg{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2));box-shadow:0 4px 14px rgba(37,99,235,.3);display:flex;align-items:center;justify-content:center;font-size:22px;transition:transform .2s}
+.robot:hover .robot-bg{transform:scale(1.06)}
+.chat-panel{position:fixed;bottom:88px;right:24px;width:340px;max-height:480px;background:var(--cd);border:1px solid var(--ln);border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.08);display:none;flex-direction:column;z-index:999;overflow:hidden}
+.chat-panel.open{display:flex}
+.chat-h{padding:12px 14px;border-bottom:1px solid var(--ln);display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+.chat-h .close{margin-left:auto;border:none;background:none;font-size:16px;cursor:pointer;padding:2px 6px;border-radius:4px;color:var(--tl)}
+.chat-m{flex:1;overflow-y:auto;padding:10px 14px;min-height:180px;max-height:300px}
+.msg{margin-bottom:8px;display:flex;gap:8px}
+.msg.bot .av{width:26px;height:26px;border-radius:50%;background:var(--acg);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.msg.bot .b{background:var(--bg);padding:7px 10px;border-radius:8px 8px 8px 2px;font-size:13px;line-height:1.5}
+.msg.user{flex-direction:row-reverse}.msg.user .b{background:var(--ac);color:#fff;padding:7px 10px;border-radius:8px 8px 2px 8px;font-size:13px}
+.chat-f{display:flex;gap:8px;padding:8px 10px;border-top:1px solid var(--ln)}
+.chat-f input{flex:1;padding:7px 10px;border:1px solid var(--ln);border-radius:6px;font:13px var(--fn)}
+.chat-f input:focus{outline:none;border-color:var(--ac)}
+.chat-f button{padding:7px 14px;border:none;border-radius:6px;background:var(--ac);color:#fff;font:600 13px var(--fn);cursor:pointer}
+@media(max-width:800px){.sb{width:56px;min-width:56px}.sb-h h1 span,.sb-h .sub,.nb span:not(.ico),.sb-f,.sb-grp{display:none}.mn-i{padding:16px 12px}.sg{grid-template-columns:1fr 1fr}.chat-panel{width:calc(100vw - 32px);right:16px;bottom:76px}}
 </style>
 </head>
 <body>
 
-<div class="sidebar">
-<div class="sidebar-top"><h1>SKWM</h1><div class="sub">科学知识世界模型</div></div>
-<nav class="sidebar-nav" id="nav">
-<div class="nav-grp">总览</div>
-<button class="nav-item active" data-p="dashboard"><span class="ico">&#9670;</span><span>仪表盘</span></button>
-<div class="nav-grp">智能分析</div>
-<button class="nav-item" data-p="chat"><span class="ico">&#9729;</span><span>智能助手</span></button>
-<button class="nav-item" data-p="hotspots"><span class="ico">&#9641;</span><span>热点分析</span></button>
-<button class="nav-item" data-p="frontier"><span class="ico">&#9651;</span><span>研究前沿</span></button>
-<button class="nav-item" data-p="search"><span class="ico">&#9675;</span><span>文献检索</span></button>
-<div class="nav-grp">知识体系</div>
-<button class="nav-item" data-p="kg"><span class="ico">&#9671;</span><span>知识图谱</span></button>
-<button class="nav-item" data-p="predict"><span class="ico">&#9650;</span><span>趋势预测</span></button>
-<div class="nav-grp">服务</div>
-<button class="nav-item" data-p="reports"><span class="ico">&#9998;</span><span>报告生成</span></button>
-<button class="nav-item" data-p="institutions"><span class="ico">&#9702;</span><span>数据概览</span></button>
-</nav>
-<div class="sidebar-btm">北京第二外国语学院<br>挑战杯 · SKWM v4.0</div>
+<div class="sb">
+  <div class="sb-h"><h1>◈ SKWM <span>v4</span></h1><div class="sub">中阿文旅世界模型</div></div>
+  <div class="sb-n" id="nav">
+    <div class="sb-grp">数据资源层</div>
+    <button class="nb act" data-p="overview"><span class="ico">📊</span><span>数据总览</span></button>
+    <div class="sb-grp">知识组织层</div>
+    <button class="nb" data-p="kg"><span class="ico">🕸️</span><span>知识图谱</span></button>
+    <div class="sb-grp">智能分析层</div>
+    <button class="nb" data-p="hotspots"><span class="ico">🔥</span><span>热点分析</span></button>
+    <button class="nb" data-p="frontier"><span class="ico">🚀</span><span>前沿识别</span></button>
+    <button class="nb" data-p="predict"><span class="ico">📈</span><span>趋势预测</span></button>
+    <button class="nb" data-p="science"><span class="ico">🗺️</span><span>科学地图</span></button>
+    <div class="sb-grp">智能体服务层</div>
+    <button class="nb" data-p="rag"><span class="ico">🤖</span><span>智能问答</span></button>
+    <button class="nb" data-p="reports"><span class="ico">📋</span><span>报告生成</span></button>
+    <div class="sb-grp">系统</div>
+    <button class="nb" data-p="timeline"><span class="ico">⏳</span><span>时间回溯</span></button>
+    <button class="nb" data-p="institutions"><span class="ico">📊</span><span>数据概览</span></button>
+  </div>
+  <div class="sb-f">北京第二外国语学院<br>挑战杯 · SKWM v4.0</div>
 </div>
 
-<div class="main">
-<div class="main-in" id="pages">
-<div class="page active" id="p-dashboard"></div>
-<div class="page" id="p-chat"></div>
-<div class="page" id="p-hotspots"></div>
-<div class="page" id="p-frontier"></div>
-<div class="page" id="p-search"></div>
-<div class="page" id="p-kg"></div>
-<div class="page" id="p-predict"></div>
-<div class="page" id="p-reports"></div>
-<div class="page" id="p-institutions"></div>
+<div class="mn"><div class="mn-i">
+
+<div class="pg act" id="p-overview">
+  <div class="hr"><div class="label">📊 OVERVIEW</div><h2>中阿文旅世界模型</h2><p>89年时间序列 · 43,537条状态向量 · XGBoost AUC=0.94</p></div>
+  <div class="sg" id="stats-cards"></div>
+  <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div class="cd"><div class="ct">🔥 热点 TOP 5</div><div id="overview-hot"></div></div>
+    <div class="cd"><div class="ct">🚀 前沿 TOP 5</div><div id="overview-frontier"></div></div>
+  </div>
+  <div class="cd"><div class="ct">📊 89年时间线 <span class="pi">节点</span></div><div id="overview-timeline" style="height:100px;display:flex;align-items:flex-end;gap:2px;padding:8px 0"></div></div>
+</div>
+
+<div class="pg" id="p-hotspots">
+  <div class="hr"><div class="label">🔥 HOTSPOTS</div><h2>研究热点分析</h2><p>基于年度状态向量的主题热度排行</p></div>
+  <div class="ys"><label>年份:</label><input type="range" id="hs-year" min="2000" max="2026" value="2026" oninput="loadHotspots()"><span id="hs-year-label">2026</span></div>
+  <div id="hs-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
+</div>
+
+<div class="pg" id="p-frontier">
+  <div class="hr"><div class="label">🚀 FRONTIER</div><h2>新兴前沿识别</h2><p>增速最快的突现主题检测</p></div>
+  <div class="ys"><label>年份:</label><input type="range" id="fr-year" min="2000" max="2026" value="2026" oninput="loadFrontier()"><span id="fr-year-label">2026</span></div>
+  <div id="fr-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
+</div>
+
+<div class="pg" id="p-predict">
+  <div class="hr"><div class="label">📈 PREDICT</div><h2>趋势预测</h2><p>XGBoost 未来5年趋势 (AUC=0.9408)</p></div>
+  <div id="pd-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
+</div>
+
+<div class="pg" id="p-kg">
+  <div class="hr"><div class="label">🕸️ KNOWLEDGE GRAPH</div><h2>知识图谱</h2><p>可拖动 · 可缩放 · 悬停查看详情 · 力导向布局</p></div>
+  <div class="ctrls">
+    <select id="kg-year" onchange="loadKG()"><option value="2026">2026</option><option value="2025">2025</option></select>
+    <select id="kg-lang" onchange="loadKG()"><option value="zh">中文</option><option value="en">English</option><option value="all">全部</option></select>
+    <select id="kg-limit" onchange="loadKG()"><option value="100">100</option><option value="200" selected>200</option></select>
+  </div>
+  <div id="kg-container"></div>
+  <div id="kg-stats"></div>
+</div>
+
+<div class="pg" id="p-science">
+  <div class="hr"><div class="label">🗺️ SCIENCE MAP</div><h2>科学地图</h2><p>发文趋势 · 实体分布</p></div>
+  <div class="cd"><div class="ct">发文趋势 <span class="pi">年度</span></div><div class="sg" id="sm-trend"></div></div>
+  <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div class="cd"><div class="ct">实体类型分布</div><div id="sm-types"></div></div>
+    <div class="cd"><div class="ct">实体类型统计</div><div id="sm-type-table"></div></div>
+  </div>
+</div>
+
+<div class="pg" id="p-rag">
+  <div class="hr"><div class="label">🤖 GRAPHRAG</div><h2>智能问答</h2><p>基于知识图谱 + 多路召回的智能学科问答</p></div>
+  <div class="cd">
+    <div class="sbx" style="margin:0">
+      <input id="rag-q" placeholder="输入问题..." value="今年中阿文旅研究热点是什么？">
+      <select id="rag-user"><option value="teacher" selected>教师</option><option value="student">学生</option><option value="librarian">馆员</option></select>
+      <button onclick="askRAG()">🤖 提问</button>
+    </div>
+  </div>
+  <div id="rag-result"><div class="cd" style="text-align:center;padding:36px;color:var(--tl)">输入问题，点击提问</div></div>
+  <div class="cd"><div class="ct">💡 示例问题</div><div style="display:flex;flex-wrap:wrap;gap:6px">
+    <span class="tag tag-c" onclick="setQ(this)">今年文旅研究热点是什么？</span>
+    <span class="tag tag-c" onclick="setQ(this)">未来5年什么方向会火？</span>
+    <span class="tag tag-c" onclick="setQ(this)">查一下旅游这个实体</span>
+  </div></div>
+</div>
+
+<div class="pg" id="p-reports">
+  <div class="hr"><div class="label">📋 REPORTS</div><h2>学科报告生成</h2><p>一键生成结构化研究报告</p></div>
+  <div class="cd">
+    <div class="sbx" style="margin:0">
+      <input id="rq-topic" value="中阿文旅" placeholder="输入报告主题...">
+      <select id="rq-user"><option value="teacher">教师</option><option value="student">学生</option><option value="librarian" selected>馆员</option></select>
+      <button onclick="genReport()">✨ 生成报告</button>
+    </div>
+  </div>
+  <div id="rp-content"></div>
+</div>
+
+<div class="pg" id="p-timeline">
+  <div class="hr"><div class="label">⏳ TIMELINE</div><h2>时间回溯</h2><p>查看任意年份的知识状态</p></div>
+  <div class="ys"><label>年份:</label><input type="range" id="tl-year" min="2000" max="2026" value="2026" oninput="loadTimelineView()"><span id="tl-year-label">2026</span></div>
+  <div id="tl-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
+</div>
+
+<div class="pg" id="p-institutions">
+  <div class="hr"><div class="label">📊 DATA OVERVIEW</div><h2>数据概览</h2><p>知识库完整数据统计</p></div>
+  <div id="inst-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
+</div>
+
 </div></div>
+
+<div class="robot" id="robot" onmousedown="startDrag(event)"><div class="robot-bg">🤖</div></div>
+
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-h"><span>🤖 SKWM 助手</span><button class="close" onclick="toggleChat()">✕</button></div>
+  <div class="chat-m" id="chat-msgs">
+    <div class="msg bot"><div class="av">🤖</div><div class="b">你好！可以问我：<br>• 研究热点是什么？<br>• 未来什么方向会火？<br>• 查一下某实体</div></div>
+  </div>
+  <div class="chat-f">
+    <input id="chat-input" placeholder="输入问题..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button onclick="sendChat()">发送</button>
+  </div>
+</div>
 
 <script>
 (function(){
-  'use strict';
+'use strict';
+var N=document.getElementById('nav');
+N.addEventListener('click',function(e){
+  var b=e.target.closest('.nb');if(!b)return;
+  N.querySelectorAll('.nb').forEach(function(x){x.classList.remove('act')});
+  b.classList.add('act');
+  document.querySelectorAll('.pg').forEach(function(x){x.classList.remove('act')});
+  var pg=document.getElementById('p-'+b.getAttribute('data-p'));
+  if(pg)pg.classList.add('act');
+});
+function api(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})}
+function esc(s){var d=document.createElement('div');d.textContent=s||'';return d.innerHTML}
+function fmt(n){return n===undefined||n===null?'0':Number(n).toLocaleString()}
 
-  var NAV = document.getElementById('nav');
-  var PAGES = document.getElementById('pages');
+// Robot Drag
+var ox=0,oy=0,dr=false;
+function startDrag(e){
+  var r=document.getElementById('robot');var rect=r.getBoundingClientRect();
+  ox=e.clientX-rect.left;oy=e.clientY-rect.top;dr=true;
+  document.addEventListener('mousemove',onDrag);document.addEventListener('mouseup',stopDrag);
+}
+function onDrag(e){if(!dr)return;var r=document.getElementById('robot');r.style.left=(e.clientX-ox)+'px';r.style.top=(e.clientY-oy)+'px';r.style.right='auto';r.style.bottom='auto';}
+function stopDrag(){dr=false;document.removeEventListener('mousemove',onDrag);document.removeEventListener('mouseup',stopDrag);}
+document.getElementById('robot').addEventListener('click',function(){document.getElementById('chat-panel').classList.toggle('open');});
 
-  // 导航切换
-  NAV.addEventListener('click', function(e) {
-    var btn = e.target.closest('.nav-item');
-    if (!btn) return;
-    var allNav = NAV.querySelectorAll('.nav-item');
-    for (var i = 0; i < allNav.length; i++) allNav[i].classList.remove('active');
-    btn.classList.add('active');
-    var allPg = PAGES.querySelectorAll('.page');
-    for (var i = 0; i < allPg.length; i++) allPg[i].classList.remove('active');
-    var pg = document.getElementById('p-' + btn.getAttribute('data-p'));
-    if (pg) pg.classList.add('active');
-    // 加载页面
-    var loader = LOADERS[btn.getAttribute('data-p')];
-    if (loader && !pg._loaded) { pg._loaded = true; loader(); }
-  });
+// Chat
+function sendChat(){
+  var q=document.getElementById('chat-input').value.trim();if(!q)return;
+  var m=document.getElementById('chat-msgs');
+  m.innerHTML+='<div class="msg user"><div class="b">'+esc(q)+'</div></div>';
+  document.getElementById('chat-input').value='';
+  m.innerHTML+='<div class="msg bot" id="cw"><div class="av">🤖</div><div class="b"><div class="sp" style="display:inline-block"></div> 思考中...</div></div>';
+  m.scrollTop=m.scrollHeight;
+  fetch('/api/query/kg',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,user:'teacher'})})
+  .then(function(r){return r.json()}).then(function(d){
+    var w=document.getElementById('cw');if(w)w.outerHTML='<div class="msg bot"><div class="av">🤖</div><div class="b">'+esc(d.answer||'暂无回答')+'</div></div>';
+  }).catch(function(){var w=document.getElementById('cw');if(w)w.outerHTML='<div class="msg bot"><div class="av">🤖</div><div class="b">请求失败</div></div>';});
+  m.scrollTop=m.scrollHeight;
+}
 
-  // 工具函数
-  function api(url) { return fetch(url).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}); }
-  function fmt(n) { return (n===undefined||n===null)?'0':Number(n).toLocaleString(); }
-  function esc(s) { var d=document.createElement('div');d.textContent=s||'';return d.innerHTML; }
+// 1. Overview
+(function(){
+api('/api/stats').then(function(d){
+  document.getElementById('stats-cards').innerHTML=
+    '<div class="sc"><div class="si">🧠</div><div class="sn">'+fmt(d.entities||0)+'</div><div class="sl">状态向量</div></div>'+
+    '<div class="sc"><div class="si">🔗</div><div class="sn">'+fmt(d.relations||0)+'</div><div class="sl">知识关系</div></div>'+
+    '<div class="sc"><div class="si">📚</div><div class="sn">'+(d.snapshots||0)+'</div><div class="sl">年切片</div></div>'+
+    '<div class="sc"><div class="si">📄</div><div class="sn">'+fmt(d.total||0)+'</div><div class="sl">文献总数</div></div>';
+}).catch(function(){});
+api('/api/hotspots?top_k=5').then(function(d){
+  var h=d.hotspots||[];var el=document.getElementById('overview-hot');
+  if(!h.length){el.innerHTML='<div class="empty">暂无</div>';return;}
+  el.innerHTML=h.map(function(x,i){return '<div class="bar-c"><span class="bar-l">'+(i+1)+'.'+(x.name||'')+'</span><div class="bar" style="width:'+Math.max(4,x.heat/(h[0].heat||1)*200)+'px;background:linear-gradient(90deg,var(--ac),var(--ac2))"></div><span class="bar-v">'+fmt(x.heat)+'</span></div>';}).join('');
+}).catch(function(){});
+api('/api/frontier?top_k=5').then(function(d){
+  var f=d.topics||[];var el=document.getElementById('overview-frontier');
+  if(!f.length){el.innerHTML='<div class="empty">暂无</div>';return;}
+  el.innerHTML=f.slice(0,5).map(function(x,i){return '<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--ln);font-size:13px"><span>'+(i+1)+'.'+(x.name||'')+'</span><span style="color:var(--ac)">+'+fmt(x.growth)+'</span></div>';}).join('');
+}).catch(function(){});
+api('/api/timeline').then(function(d){
+  var r=d.timeline||[];var mx=1;r.forEach(function(t){if(t.nodes>mx)mx=t.nodes;});
+  document.getElementById('overview-timeline').innerHTML=r.slice(-89).map(function(t){return '<div style="flex:1;height:'+(t.nodes/mx*100)+'%;background:var(--ac);opacity:.6;border-radius:2px 2px 0 0;min-height:3px" title="'+t.year+': '+fmt(t.nodes)+'"></div>';}).join('');
+}).catch(function(){});
+})();
 
-  // 页面加载器
-  var LOADERS = {};
+// 2. Hotspots
+function loadHotspots(){
+  var y=document.getElementById('hs-year').value;
+  document.getElementById('hs-year-label').textContent=y;
+  var el=document.getElementById('hs-content');el.innerHTML='<div class="loading"><div class="sp"></div> 加载中...</div>';
+  api('/api/hotspots?top_k=15').then(function(d){
+    var h=d.hotspots||[];
+    if(!h.length){el.innerHTML='<div class="empty">暂无</div>';return;}
+    el.innerHTML=h.map(function(x,i){
+      var bw=Math.max(4,x.heat/(h[0].heat||1)*100);
+      return '<div class="cd"><div class="bar-c"><span style="font-weight:600;min-width:20px">'+(i+1)+'</span><div style="flex:1"><div style="font-weight:600;font-size:13px;margin-bottom:3px">'+(x.name||'')+'</div><div class="bar-c" style="margin:0"><div class="bar" style="width:'+bw+'%;background:linear-gradient(90deg,var(--ac),var(--ac2));height:7px;border-radius:4px"></div><span class="bar-v" style="font-size:12px">'+fmt(x.heat)+'</span></div><div style="font-size:11px;color:var(--tl);margin-top:3px">增速+'+fmt(x.growth)+' · 中心度'+(x.centrality||'')+' · 连接'+fmt(x.connections)+'</div></div></div>';
+    }).join('');
+  }).catch(function(){el.innerHTML='<div class="empty">加载失败</div>';});
+}
 
-  // ═══════════════ 1. 仪表盘 ═══════════════
-  LOADERS.dashboard = function() {
-    var el = document.getElementById('p-dashboard');
-    el.innerHTML = '<div class="loading"><div class="sp"></div><p>加载中...</p></div>';
-    Promise.all([
-      api('/api/stats').catch(function(){return{}}),
-      api('/api/hotspots?top_k=8').catch(function(){return{hotspots:[]}}),
-      api('/api/frontier?top_k=6').catch(function(){return{topics:[]}}),
-      api('/api/timeline').catch(function(){return{timeline:[]}})
-    ]).then(function(d){
-      var stats = d[0], hs = d[1].hotspots||[], fr = d[2].topics||[], tl = d[3].timeline||[];
-      var sc = [
-        {n:fmt(stats.total||15478),l:'文献总量'},
-        {n:fmt(stats.relations||1320),l:'知识关系'},
-        {n:fmt(stats.snapshots||0),l:'时间切片'},
-        {n:fmt(stats.arabic||4193),l:'阿语文献'}
-      ].map(function(s){return'<div class="sc"><div class="num">'+s.n+'</div><div class="lab">'+s.l+'</div></div>'}).join('');
-      var hb = hs.slice(0,8).map(function(h){
-        var mx = hs[0]?hs[0].heat:1;
-        return '<div class="bar-r"><span class="bl">'+(h.name||h.topic)+'</span><div class="bt"><div class="bf" style="width:'+(h.heat/mx*100)+'%"></div></div><span class="bv">'+fmt(h.heat)+'</span></div>';
-      }).join('');
-      var fb = fr.slice(0,6).map(function(f){
-        return '<div class="result"><div class="rt">'+(f.name||f.topic)+'</div><div class="rm">增长率 +'+fmt(f.growth)+' · 热度 '+fmt(f.heat)+'</div></div>';
-      }).join('');
-      var mxTl = 1; tl.forEach(function(t){if(t.nodes>mxTl)mxTl=t.nodes;});
-      var tlb = tl.slice(-40).map(function(t){
-        return '<div class="tl-bar" style="height:'+(t.nodes/mxTl*100)+'%" title="'+t.year+': '+fmt(t.nodes)+'篇"></div>';
-      }).join('');
+// 3. Frontier
+function loadFrontier(){
+  var y=document.getElementById('fr-year').value;
+  document.getElementById('fr-year-label').textContent=y;
+  var el=document.getElementById('fr-content');el.innerHTML='<div class="loading"><div class="sp"></div> 加载中...</div>';
+  api('/api/frontier?top_k=12').then(function(d){
+    var f=d.topics||[];
+    if(!f.length){el.innerHTML='<div class="empty">暂无</div>';return;}
+    el.innerHTML=f.slice(0,12).map(function(x,i){
+      var g=x.growth||0;var tc=g>400?'tag-o':g>200?'tag-g':'tag-c';
+      return '<div class="cd" style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px"><div><span style="font-weight:600;font-size:14px">'+(i+1)+'.'+(x.name||'')+'</span></div><div><span class="tag '+tc+'">'+(g>400?'🚀爆发':g>200?'📈成长':'📊稳定')+'</span><span style="margin-left:8px;color:var(--ac);font-weight:600">+'+fmt(g)+'</span></div></div>';
+    }).join('');
+  }).catch(function(){el.innerHTML='<div class="empty">加载失败</div>';});
+}
 
-      el.innerHTML =
-        '<div class="top"><div class="label">Scientific Knowledge World Model</div>'+
-        '<h1>中阿文旅科学知识世界模型</h1>'+
-        '<p>基于 World-in-World 闭循环算法 · DeepSeek 深度推理 · 覆盖15478篇学术文献</p></div>'+
-        '<div class="stats">'+sc+'</div>'+
-        '<div class="grid-2">'+
-        '<div class="card"><div class="card-h">主题热度分布</div>'+(hb||'<div class="empty">暂无数据</div>')+'</div>'+
-        '<div class="card"><div class="card-h">新兴前沿方向</div>'+(fb||'<div class="empty">暂无数据</div>')+'</div></div>'+
-        '<div class="card"><div class="card-h">发文趋势 <span class="tag">1859-2026</span></div><div class="tl">'+tlb+'</div></div>';
-    }).catch(function(){el.innerHTML='<div class="empty">加载失败</div>';});
-  };
+// 4. Predict
+function loadPredict(){
+  var el=document.getElementById('pd-content');el.innerHTML='<div class="loading"><div class="sp"></div> 加载中...</div>';
+  api('/api/predict?delta=5').then(function(d){
+    var p=d.predictions||[];
+    if(!p.length){el.innerHTML='<div class="empty">暂无数据</div>';return;}
+    el.innerHTML='<div class="cd"><div class="ct">📈 未来5年预测 <span class="pi">AUC='+(d.auc||'0.94')+'</span></div>'+
+      p.slice(0,15).map(function(x,i){var ch=x.predicted_growth||x.growth||0;return '<div class="bar-c"><span class="bar-l" style="width:150px">'+(i+1)+'.'+(x.name||'')+'</span><div class="bar" style="width:'+Math.max(4,Math.abs(ch)/200*100)+'px;background:'+(ch>=0?'var(--ac)':'#ef4444')+';opacity:.7"></div><span class="bar-v">'+(ch>=0?'↑':'↓')+' '+Math.abs(ch)+'</span></div>';}).join('')+'</div>';
+  }).catch(function(){el.innerHTML='<div class="empty">暂不可用</div>';});
+}
 
-  // ═══════════════ 2. 智能助手 ═══════════════
-  LOADERS.chat = function() {
-    var el = document.getElementById('p-chat');
-    el.innerHTML =
-      '<div class="top"><div class="label">AI Assistant</div><h1>世界模型智能助手</h1><p>基于 DeepSeek 深度推理 · 可进行文献发现、热点分析、趋势研判、研究建议</p></div>'+
-      '<div class="card" style="padding:16px">'+
-      '<div class="chat-box" id="chat-box">'+
-      '<div class="msg msg-bot"><div class="av">S</div><div class="bubble">你好！我是中阿文旅世界模型智能助手。我可以帮你：\n\n- 分析研究热点和趋势\n- 检索相关文献\n- 推荐研究方向\n- 生成研究报告\n- 解答研究问题\n\n请问有什么可以帮你的？</div></div></div>'+
-      '<div class="in-group"><input type="text" id="chat-in" placeholder="输入你的研究问题...">'+
-      '<button class="btn btn-p" id="chat-btn">发送</button></div></div>';
+// 5. Knowledge Graph
+var kgNet=null;
+function loadKG(){
+  var y=document.getElementById('kg-year').value;
+  var lang=document.getElementById('kg-lang').value;
+  var limit=document.getElementById('kg-limit').value;
+  var st=document.getElementById('kg-stats');st.textContent='加载中...';
+  api('/api/graph-data?year='+y+'&lang='+lang+'&limit='+limit).then(function(d){
+    var nd=d.nodes||[];var ed=d.edges||[];var ss=d.stats||{};
+    if(!nd.length){st.textContent='无节点';return;}
+    var cols={'主题':'#dbeafe','机构':'#fef3c7','地点':'#d1fae5','政策':'#fce7f3','事件':'#ede9fe','术语':'#e0e7ff','作者':'#ccfbf1','文献':'#f5f5f4'};
+    var bds={'主题':'#60a5fa','机构':'#fbbf24','地点':'#34d399','政策':'#f472b6','事件':'#a78bfa','术语':'#818cf8','作者':'#2dd4bf','文献':'#a8a29e'};
+    var nodes=new vis.DataSet(nd.map(function(n){
+      var et=n.entity_type||'主题';
+      return {id:n.id,label:((n.label||n.id||'').length>12?(n.label||n.id||'').slice(0,12)+'…':(n.label||n.id||'')),
+        value:Math.max(5,(n.value||10)/2),group:et,
+        title:'<b>'+(n.label||n.id||'')+'</b><br>热度: '+fmt(n.heat)+'<br>连接: '+fmt(n.connections),
+        color:{background:cols[et]||'#dbeafe',border:bds[et]||'#60a5fa'}};
+    }));
+    var edges=new vis.DataSet(ed.map(function(e){
+      return {from:e.source||e.from,to:e.target||e.to,value:Math.max(.5,+(e.weight||1)),color:{color:'#e2e8f0',highlight:'#93c5fd',opacity:.6}};
+    }));
+    var c=document.getElementById('kg-container');
+    if(kgNet)kgNet.destroy();
+    kgNet=new vis.Network(c,{nodes:nodes,edges:edges},{
+      physics:{solver:'forceAtlas2Based',forceAtlas2Based:{gravitationalConstant:-50,springLength:120,springConstant:.01},stabilization:{iterations:100}},
+      interaction:{dragNodes:true,dragView:true,zoomView:true,hover:true,tooltipDelay:200},
+      edges:{smooth:{type:'continuous'}},
+    });
+    st.innerHTML='✅ '+(ss.nodes_rendered||nd.length)+' 节点 · '+(ss.edges_rendered||ed.length)+' 边 ('+y+'年) · 拖拽/滚轮交互';
+  }).catch(function(){st.innerHTML='❌ 加载失败';});
+}
 
-    var input = document.getElementById('chat-in');
-    var btn = document.getElementById('chat-btn');
-    var box = document.getElementById('chat-box');
+// 6. Science Map
+(function(){
+api('/api/science-map/publication-trends').then(function(d){
+  var tr=d.trends||[];var mx=1;tr.forEach(function(t){if(t.nodes>mx)mx=t.nodes;});
+  document.getElementById('sm-trend').innerHTML=tr.slice(-30).map(function(t){return '<div class="sc" style="text-align:center"><div class="sn">'+fmt(t.nodes)+'</div><div class="sl">'+t.year+'</div></div>';}).join('');
+}).catch(function(){});
+api('/api/science-map/entity-types').then(function(d){
+  var ty=d.types||[];
+  if(!ty.length){document.getElementById('sm-types').innerHTML='<div class="empty">暂无</div>';return;}
+  document.getElementById('sm-types').innerHTML=ty.map(function(t){return '<div class="bar-c"><span class="bar-l">'+t.type+'</span><div class="bar" style="width:'+Math.max(4,t.count/ty[0].count*200)+'px;background:linear-gradient(90deg,var(--ac),var(--ac2))"></div><span class="bar-v">'+fmt(t.count)+'</span></div>';}).join('');
+  document.getElementById('sm-type-table').innerHTML='<table><tr><th>类型</th><th>数量</th><th>占比</th></tr>'+ty.map(function(t){return '<tr><td>'+t.type+'</td><td>'+fmt(t.count)+'</td><td>'+(d.total_entities?(t.count/d.total_entities*100).toFixed(1):'?')+'%</td></tr>';}).join('')+'</table>';
+}).catch(function(){});
+})();
 
-    function sendMsg() {
-      var q = input.value.trim();
-      if (!q) return;
-      input.value = '';
-      box.innerHTML += '<div class="msg msg-user"><div class="av">U</div><div class="bubble">' + esc(q) + '</div></div>';
-      box.scrollTop = box.scrollHeight;
-      box.innerHTML += '<div class="msg msg-bot" id="thinking"><div class="av">S</div><div class="bubble"><div class="sp" style="display:inline-block;width:14px;height:14px;margin:0 6px 0 0;vertical-align:middle"></div> DeepSeek 正在推理...</div></div>';
-      box.scrollTop = box.scrollHeight;
-      btn.disabled = true;
+// 7. RAG
+function askRAG(){
+  var q=document.getElementById('rag-q').value.trim();if(!q)return;
+  var u=document.getElementById('rag-user').value;
+  var el=document.getElementById('rag-result');el.innerHTML='<div class="loading"><div class="sp"></div> 思考中...</div>';
+  fetch('/api/query/kg',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,user:u})})
+  .then(function(r){return r.json()}).then(function(d){el.innerHTML='<div class="cd"><div class="ct">🤖 回答</div><div style="font-size:13px;line-height:1.8;white-space:pre-wrap">'+esc(d.answer||'暂无回答')+'</div></div>';})
+  .catch(function(){el.innerHTML='<div class="empty">请求失败</div>';});
+}
+function setQ(el){document.getElementById('rag-q').value=el.textContent;askRAG();}
 
-      // 调用 DeepSeek 推理 API
-      fetch('/api/ask', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({question: q})
-      }).then(function(r) { return r.json(); }).then(function(d) {
-        var think = document.getElementById('thinking');
-        if (!think) return;
-        var html = '<div class="msg msg-bot"><div class="av">S</div><div class="bubble">';
-        if (d.thinking) {
-          html += '<div class="think"><div class="th">推理过程</div><div class="tb">' + esc(d.thinking) + '</div></div>';
-        }
-        html += esc(d.answer || d.message || '抱歉，我暂时无法回答这个问题。') + '</div></div>';
-        think.outerHTML = html;
-        box.scrollTop = box.scrollHeight;
-      }).catch(function() {
-        var think = document.getElementById('thinking');
-        if (think) think.outerHTML = '<div class="msg msg-bot"><div class="av">S</div><div class="bubble">请求失败，请重试</div></div>';
-      }).finally(function() { btn.disabled = false; });
-    }
+// 8. Reports
+function genReport(){
+  var t=document.getElementById('rq-topic').value;
+  var u=document.getElementById('rq-user').value;
+  var el=document.getElementById('rp-content');el.innerHTML='<div class="loading"><div class="sp"></div> 生成中...</div>';
+  fetch('/api/report',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topic:t,user:u,push:false,sediment:false})})
+  .then(function(r){return r.json()}).then(function(d){
+    var rp=d.report||{};el.innerHTML='<div class="cd"><div class="ct">📋 '+(rp.title||'报告')+'</div><div style="font-size:13px;line-height:1.8;white-space:pre-wrap">'+esc(rp.summary||rp.content||'')+'</div></div>';
+  }).catch(function(){el.innerHTML='<div class="empty">生成失败</div>';});
+}
 
-    btn.addEventListener('click', sendMsg);
-    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') sendMsg(); });
-  };
+// 9. Timeline
+function loadTimelineView(){
+  var y=document.getElementById('tl-year').value;
+  document.getElementById('tl-year-label').textContent=y;
+  var el=document.getElementById('tl-content');el.innerHTML='<div class="loading"><div class="sp"></div> 加载中...</div>';
+  Promise.all([api('/api/hotspots?top_k=10'),api('/api/frontier?top_k=8')]).then(function(r){
+    var hot=r[0].hotspots||[];var fr=r[1].topics||[];
+    el.innerHTML='<div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">'+
+      '<div class="cd"><div class="ct">🔥 '+y+'年 热点 TOP 10</div>'+(hot.length?hot.map(function(x,i){return '<div class="bar-c"><span class="bar-l">'+(i+1)+'.'+(x.name||'')+'</span><div class="bar" style="width:'+Math.max(4,x.heat/(hot[0].heat||1)*100)+'px;background:var(--ac)"></div><span class="bar-v">'+fmt(x.heat)+'</span></div>';}).join(''):'<div class="empty">暂无</div>')+'</div>'+
+      '<div class="cd"><div class="ct">🚀 '+y+'年 前沿 TOP 8</div>'+(fr.length?fr.slice(0,8).map(function(x,i){return '<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--ln);font-size:13px"><span>'+(i+1)+'.'+(x.name||'')+'</span><span style="color:var(--ac)">+'+fmt(x.growth)+'</span></div>';}).join(''):'<div class="empty">暂无</div>')+'</div></div>';
+  }).catch(function(){el.innerHTML='<div class="empty">加载失败</div>';});
+}
 
-  // ═══════════════ 3. 热点分析 ═══════════════
-  LOADERS.hotspots = function() {
-    var el = document.getElementById('p-hotspots');
-    el.innerHTML = '<div class="loading"><div class="sp"></div><p>加载热点数据...</p></div>';
-    api('/api/hotspots?top_k=20').then(function(d){
-      var hs = d.hotspots||[]; var mx = hs.length?hs[0].heat:1;
-      var html = '<div class="top"><div class="label">Research Analytics</div><h1>热点分析</h1><p>基于关键词共现的热点主题分布</p></div>'+
-        '<div class="card">';
-      hs.forEach(function(h){
-        html += '<div class="bar-r"><span class="bl">'+(h.name||h.topic)+'</span><div class="bt"><div class="bf" style="width:'+(h.heat/mx*100)+'%"></div></div><span class="bv">'+fmt(h.heat)+'</span></div>';
-      });
-      html += '</div>';
-      el.innerHTML = html;
-    }).catch(function(){el.innerHTML='<div class="empty">加载失败</div>';});
-  };
+// 10. Data Overview (via /api/stats)
+(function(){
+Promise.all([api('/api/stats'),api('/api/feishu/status').catch(function(){return{}})]).then(function(r){
+  var d=r[0];var fs=r[1]||{};
+  document.getElementById('inst-content').innerHTML=
+    '<div class="sg" style="grid-template-columns:repeat(5,1fr)">'+
+    '<div class="sc" style="text-align:center"><div class="sn">'+fmt(d.entities||0)+'</div><div class="sl">状态向量</div></div>'+
+    '<div class="sc" style="text-align:center"><div class="sn">'+fmt(d.relations||0)+'</div><div class="sl">知识关系</div></div>'+
+    '<div class="sc" style="text-align:center"><div class="sn">'+(d.snapshots||0)+'</div><div class="sl">年切片</div></div>'+
+    '<div class="sc" style="text-align:center"><div class="sn">'+fmt(d.total||0)+'</div><div class="sl">文献总数</div></div>'+
+    '<div class="sc" style="text-align:center"><div class="sn">'+(fs.configured?'✅':'❌')+'</div><div class="sl">飞书</div></div></div>'+
+    '<div class="cd"><div class="ct">📊 系统数据</div><table><tr><th>指标</th><th>数值</th></tr>'+
+    '<tr><td>知识实体</td><td>'+fmt(d.entities||0)+' 条</td></tr>'+
+    '<tr><td>知识关系</td><td>'+fmt(d.relations||0)+' 条</td></tr>'+
+    '<tr><td>时间跨度</td><td>'+(d.snapshots||0)+' 年</td></tr></table></div>';
+}).catch(function(){});
+})();
 
-  // ═══════════════ 4. 研究前沿 ═══════════════
-  LOADERS.frontier = function() {
-    var el = document.getElementById('p-frontier');
-    el.innerHTML = '<div class="loading"><div class="sp"></div><p>加载前沿数据...</p></div>';
-    api('/api/frontier?top_k=15').then(function(d){
-      var f = d.topics||[];
-      var html = '<div class="top"><div class="label">Research Frontier</div><h1>研究前沿</h1><p>近三年高增长新兴方向</p></div><div class="card">';
-      f.forEach(function(item,i){
-        var g = item.growth||0; var hot = item.heat||0;
-        html += '<div class="result"><div class="rt">'+(i+1)+'. '+(item.name||item.topic)+'</div><div class="rm">增长率 +'+fmt(g)+' · 热度 '+fmt(hot)+'</div></div>';
-      });
-      html += '</div>';
-      el.innerHTML = html;
-    }).catch(function(){el.innerHTML='<div class="empty">加载失败</div>';});
-  };
-
-  // ═══════════════ 5. 文献检索 ═══════════════
-  LOADERS.search = function() {
-    var el = document.getElementById('p-search');
-    el.innerHTML =
-      '<div class="top"><div class="label">Literature Search</div><h1>文献检索</h1><p>在 15478 篇文献中智能检索</p></div>'+
-      '<div class="card" style="padding:16px">'+
-      '<div class="in-group"><input type="text" id="s-q" placeholder="输入关键词，如：文化遗产、Arabic NLP、digital heritage...">'+
-      '<button class="btn btn-p" id="s-btn">检索</button></div></div>'+
-      '<div id="s-r"><div class="empty">输入关键词开始检索</div></div>';
-
-    function doSearch() {
-      var q = document.getElementById('s-q').value.trim();
-      if (!q) return;
-      var r = document.getElementById('s-r');
-      r.innerHTML = '<div class="loading"><div class="sp"></div><p>检索中...</p></div>';
-      api('/api/search?q='+encodeURIComponent(q)).then(function(d){
-        var items = d.results||[];
-        r.innerHTML = '<div class="card"><div class="card-h">检索结果 <span class="tag">'+items.length+' 条</span></div>'+
-          (items.length?items.map(function(item){
-            return '<div class="result"><div class="rt">'+esc(item.title||'')+'</div><div class="rm"><span class="rb">'+
-              esc(item.source||'')+'</span>'+esc(item.year||'')+' · '+esc(item.authors||'')+'</div></div>';
-          }).join(''):'<div class="empty">未找到相关文献</div>')+'</div>';
-      }).catch(function(){r.innerHTML='<div class="empty">检索失败</div>';});
-    }
-
-    document.getElementById('s-btn').addEventListener('click', doSearch);
-    document.getElementById('s-q').addEventListener('keydown', function(e){if(e.key==='Enter')doSearch();});
-  };
-
-  // ═══════════════ 6. 知识图谱 ═══════════════
-  LOADERS.kg = function() {
-    var el = document.getElementById('p-kg');
-    el.innerHTML = '<div class="loading"><div class="sp"></div><p>加载知识图谱...</p></div>';
-    api('/api/science-map/entity-types').then(function(d){
-      var types = d.types||[]; var mx = types.length?types[0].count:1;
-      var html = '<div class="top"><div class="label">Knowledge Graph</div><h1>知识图谱</h1><p>共计 '+fmt(d.total_entities||0)+' 个实体，覆盖 '+types.length+' 种类型</p></div>'+
-        '<div class="card"><div class="card-h">实体类型分布</div>';
-      types.forEach(function(t){
-        html += '<div class="bar-r"><span class="bl">'+esc(t.type)+'</span><div class="bt"><div class="bf" style="width:'+(t.count/mx*100)+'%"></div></div><span class="bv">'+fmt(t.count)+'</span></div>';
-      });
-      html += '</div>';
-      el.innerHTML = html;
-    }).catch(function(){el.innerHTML='<div class="empty">知识图谱数据不可用</div>';});
-  };
-
-  // ═══════════════ 7. 趋势预测 ═══════════════
-  LOADERS.predict = function() {
-    var el = document.getElementById('p-predict');
-    el.innerHTML = '<div class="loading"><div class="sp"></div><p>加载预测数据...</p></div>';
-    api('/api/predict?delta=5').then(function(d){
-      var p = d.predictions||d.topics||[];
-      var html = '<div class="top"><div class="label">Trend Prediction</div><h1>趋势预测</h1><p>基于 XGBoost 的未来增长预测 (AUC='+(d.auc||'0.94')+')</p></div><div class="card">';
-      p.forEach(function(item){
-        var ch = item.predicted_growth||item.growth||0;
-        html += '<div class="result"><div class="rt">'+(item.name||item.topic)+'</div><div class="rm">预测增长 +'+fmt(ch)+' · 当前热度 '+fmt(item.heat||item.growth||0)+'</div></div>';
-      });
-      html += '</div>';
-      el.innerHTML = html;
-    }).catch(function(){el.innerHTML='<div class="empty">预测模型不可用</div>';});
-  };
-
-  // ═══════════════ 8. 报告生成 ═══════════════
-  LOADERS.reports = function() {
-    var el = document.getElementById('p-reports');
-    el.innerHTML =
-      '<div class="top"><div class="label">Report Generation</div><h1>报告生成</h1><p>基于知识库生成结构化研究报告</p></div>'+
-      '<div class="card" style="padding:16px">'+
-      '<div class="in-group"><input type="text" id="r-t" placeholder="输入研究主题...">'+
-      '<button class="btn btn-p" id="r-btn">生成报告</button></div></div>'+
-      '<div id="r-r"><div class="empty">输入主题生成报告</div></div>';
-
-    function genReport() {
-      var topic = document.getElementById('r-t').value.trim();
-      if (!topic) return;
-      var res = document.getElementById('r-r');
-      res.innerHTML = '<div class="loading"><div class="sp"></div><p>生成报告中...</p></div>';
-      fetch('/api/report',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topic:topic,user:'teacher'})})
-      .then(function(r){return r.json();}).then(function(d){
-        var rep = d.report||{};
-        res.innerHTML = '<div class="card"><div class="card-h">'+(rep.title||'研究报告')+'</div>'+
-          '<div style="font-size:13px;line-height:1.7;white-space:pre-wrap">'+esc(rep.summary||rep.content||JSON.stringify(rep,null,2).slice(0,2000))+'</div></div>';
-      }).catch(function(){res.innerHTML='<div class="empty">生成失败</div>';});
-    }
-
-    document.getElementById('r-btn').addEventListener('click', genReport);
-    document.getElementById('r-t').addEventListener('keydown', function(e){if(e.key==='Enter')genReport();});
-  };
-
-  // ═══════════════ 9. 数据概览 ═══════════════
-  LOADERS.institutions = function() {
-    var el = document.getElementById('p-institutions');
-    el.innerHTML = '<div class="loading"><div class="sp"></div><p>加载中...</p></div>';
-    api('/api/stats').then(function(d){
-      el.innerHTML =
-        '<div class="top"><div class="label">Data Overview</div><h1>数据概览</h1><p>知识库完整数据统计</p></div>'+
-        '<div class="stats">'+
-        '<div class="sc"><div class="num">'+fmt(d.total||15478)+'</div><div class="lab">文献总数</div></div>'+
-        '<div class="sc"><div class="num">'+fmt(d.relations||1320)+'</div><div class="lab">关系边数</div></div>'+
-        '<div class="sc"><div class="num">'+(d.year_min||1859)+'~'+(d.year_max||2026)+'</div><div class="lab">时间跨度</div></div>'+
-        '<div class="sc"><div class="num">'+fmt(d.arabic||4193)+'</div><div class="lab">阿语文献</div></div>'+
-        '<div class="sc"><div class="num">'+fmt(d.catalog||200)+'</div><div class="lab">文献目录</div></div>'+
-        '</div>'+
-        '<div class="card"><div class="card-h">数据来源分布</div>'+
-        '<table><tr><th>数据源</th><th>数量</th></tr>'+
-        '<tr><td>B1 文献主表 (从 datiao 导入)</td><td>'+fmt(11488)+'</td></tr>'+
-        '<tr><td>阿拉伯语文献元数据</td><td>'+fmt(d.arabic||4193)+'</td></tr>'+
-        '<tr><td>文献目录</td><td>'+fmt(d.catalog||200)+'</td></tr>'+
-        '<tr><td>知识图谱节点</td><td>3,467</td></tr>'+
-        '<tr><td>知识图谱边</td><td>1,320</td></tr>'+
-        '<tr><td>核心术语</td><td>1,200+</td></tr>'+
-        '</table></div>';
-    }).catch(function(){el.innerHTML='<div class="empty">加载失败</div>';});
-  };
-
-  // 初始加载
-  LOADERS.dashboard();
-
+loadHotspots();loadFrontier();loadPredict();loadTimelineView();loadKG();
 })();
 </script>
 </body>
