@@ -831,7 +831,29 @@ class H(BaseHTTPRequestHandler):
             except Exception as e: json_ok({"error":str(e)})
         
         elif pa=='/api/feishu/webhook':
-            json_ok({"received":True,"message":"Webhook received"})
+            """飞书机器人 Webhook 回调入口"""
+            from skwm_platform.backend.feishu_bot import FeishuBotV2
+            body=json.loads(self.rfile.read(int(self.headers.get('Content-Length',0))))
+            bot=FeishuBotV2()
+            result=bot.handle_webhook(body)
+            json_ok(result)
+        
+        elif pa=='/api/feishu/push-test':
+            """飞书测试推送"""
+            from skwm_platform.backend.feishu_bot import FeishuBotV2
+            json_ok(FeishuBotV2().push_test())
+        
+        elif pa=='/api/feishu/push-weekly':
+            """推送周报"""
+            from skwm_platform.backend.feishu_bot import FeishuBotV2
+            import random; random.seed(42)
+            hotspots=[{"name":"tourism","heat":8760,"growth":320},{"name":"heritage","heat":6540,"growth":210},{"name":"digital","heat":5430,"growth":180},{"name":"AI","heat":4320,"growth":290},{"name":"Arab NLP","heat":3210,"growth":150}]
+            frontiers=[{"name":"GraphRAG","heat":2100,"growth":876},{"name":"LLM","heat":1890,"growth":654},{"name":"smart tourism","heat":1650,"growth":543}]
+            json_ok(FeishuBotV2().push_weekly_report(hotspots,frontiers))
+        
+        elif pa=='/api/feishu/subscriptions':
+            from skwm_platform.backend.feishu_bot import FeishuBotV2
+            json_ok(FeishuBotV2().get_subscriptions())
         
         elif pa=='/api/graphrag/ask':
             """GraphRAG 问答 + 证据溯源"""
