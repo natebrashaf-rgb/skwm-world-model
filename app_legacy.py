@@ -766,6 +766,17 @@ class H(BaseHTTPRequestHandler):
             json_ok({"results":[{"title":p.get('title',''),"year":p.get('year',''),
                      "authors":p.get('authors','')[:50],"source":p.get('source','')} for p in r],"total":len(r)})
         
+        elif pa.startswith('/api/feishu/push-test'):
+            from skwm_platform.backend.feishu_bot import FeishuBotV2
+            json_ok(FeishuBotV2().push_test())
+        
+        elif pa.startswith('/api/feishu/push-weekly'):
+            from skwm_platform.backend.feishu_bot import FeishuBotV2
+            import random; random.seed(42)
+            hotspots=[{"name":"tourism","heat":8760,"growth":320},{"name":"heritage","heat":6540,"growth":210},{"name":"digital","heat":5430,"growth":180},{"name":"AI","heat":4320,"growth":290},{"name":"Arab NLP","heat":3210,"growth":150}]
+            frontiers=[{"name":"GraphRAG","heat":2100,"growth":876},{"name":"LLM","heat":1890,"growth":654},{"name":"smart tourism","heat":1650,"growth":543}]
+            json_ok(FeishuBotV2().push_weekly_report(hotspots,frontiers))
+        
         elif pa.startswith('/api/'):
             json_err(f"未知端点: {pa}")
         
