@@ -817,11 +817,34 @@ class H(BaseHTTPRequestHandler):
     
     def do_POST(self):
         p=urlparse(self.path);pa=p.path
-        def json_ok(data):
-            self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers()
-            self.wfile.write(json.dumps(data).encode())
         
-        if pa=='/api/query/kg':
+        # ── 飞书 URL 验证（最优先，不依赖任何import） ──
+        if pa=='/api/feishu/webhook':
+            body_len = int(self.headers.get('Content-Length', 0))
+            body_str = self.rfile.read(body_len).decode('utf-8')
+            try:
+                body = json.loads(body_str)
+            except:
+                json_err("bad json"); return
+            # URL验证：原样返回challenge
+            if body.get('type') == 'url_verification':
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(json.dumps({"challenge": body.get('challenge', '')}).encode())
+                return
+            # 正常事件处理
+            try:
+                from skwm_platform.backend.feishu_webhook import handle_webhook
+                json_ok(handle_webhook(body))
+            except Exception as e:
+                import logging
+                logging.getLogger("skwm").error(f"飞书异常: {e}")
+                json_ok({"msg":"ok"})
+            return
+        
+        # ── GraphRAG 问答 ──
+        if pa=='/api/graphrag/ask':
             try:
                 body=json.loads(self.rfile.read(int(self.headers.get('Content-Length',0))))
                 q=body.get('question','') or body.get('query','')
@@ -872,12 +895,6 @@ class H(BaseHTTPRequestHandler):
                 report={"title":f"中阿文旅研究报告 · {topic}","summary":summary,"content":f"## {topic} 研究分析\n\n基于{len(eng.all)}篇文献数据库，找到{len(r)}篇相关文献。\n\n### 核心发现\n{summary}\n\n### 数据来源\n- B1文献主表: {s['total']-s['catalog']-s['arabic']}篇\n- 阿语文献: {s['arabic']}篇\n- 文献目录: {s['catalog']}篇","audit":{"status":"✅ 可追溯","sources":len(r)}}
                 json_ok({"report":report})
             except Exception as e: json_ok({"error":str(e)})
-        
-        elif pa=='/api/feishu/webhook':
-            """飞书机器人 Webhook 回调入口"""
-            from skwm_platform.backend.feishu_webhook import handle_webhook
-            body=json.loads(self.rfile.read(int(self.headers.get('Content-Length',0))))
-            json_ok(handle_webhook(body))
         
         elif pa=='/api/feishu/push-test':
             """飞书测试推送"""
