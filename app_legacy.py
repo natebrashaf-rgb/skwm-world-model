@@ -833,6 +833,35 @@ class H(BaseHTTPRequestHandler):
         elif pa=='/api/feishu/webhook':
             json_ok({"received":True,"message":"Webhook received"})
         
+        elif pa=='/api/graphrag/ask':
+            """GraphRAG 问答 + 证据溯源"""
+            from skwm_graphrag_evidence import GraphRAGAPI
+            g=GraphRAGAPI()
+            body=json.loads(self.rfile.read(int(self.headers.get('Content-Length',0))))
+            q=body.get('question','') or body.get('query','')
+            try: json_ok(g.ask(q))
+            except Exception as e: json_ok({"error":str(e),"answer":f"处理失败: {e}","sources":[],"overall_confidence":0,"has_sufficient_evidence":False,"review_status":"pending","qa_id":""})
+        
+        elif pa=='/api/graphrag/stats':
+            from skwm_graphrag_evidence import GraphRAGAPI
+            json_ok(GraphRAGAPI().stats())
+        
+        elif pa=='/api/graphrag/pending':
+            from skwm_graphrag_evidence import GraphRAGAPI
+            json_ok({"qa_list":GraphRAGAPI().list_pending()})
+        
+        elif pa=='/api/graphrag/approve':
+            from skwm_graphrag_evidence import GraphRAGAPI
+            g=GraphRAGAPI()
+            body=json.loads(self.rfile.read(int(self.headers.get('Content-Length',0))))
+            json_ok(g.approve(body.get('qa_id',''),body.get('reviewer','system'),body.get('comment',''),body.get('edited_answer','')))
+        
+        elif pa=='/api/graphrag/reject':
+            from skwm_graphrag_evidence import GraphRAGAPI
+            g=GraphRAGAPI()
+            body=json.loads(self.rfile.read(int(self.headers.get('Content-Length',0))))
+            json_ok(g.reject(body.get('qa_id',''),body.get('reviewer','system'),body.get('reason','')))
+        
         else:
             self.send_response(404);self.send_header('Content-Type','text/plain');self.end_headers();self.wfile.write(b'404')
     def log_message(self,fmt,*a):
