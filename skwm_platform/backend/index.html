@@ -130,7 +130,7 @@ td{padding:7px 10px;border-bottom:1px solid var(--ln)}tr:last-child td{border-bo
   <div class="ctrls">
     <select id="kg-year" onchange="loadKG()"><option value="2026">2026</option><option value="2025">2025</option></select>
     <select id="kg-lang" onchange="loadKG()"><option value="zh">中文</option><option value="en">English</option><option value="all">全部</option></select>
-    <select id="kg-limit" onchange="loadKG()"><option value="100">100</option><option value="200" selected>200</option></select>
+    <select id="kg-limit" onchange="loadKG()"><option value="200">200</option><option value="500" selected>500</option><option value="1000">1000</option><option value="2000">2000</option></select>
   </div>
   <div id="kg-container"></div>
   <div id="kg-stats"></div>
@@ -318,26 +318,41 @@ function loadKG(){
   api('/api/graph-data?year='+y+'&lang='+lang+'&limit='+limit).then(function(d){
     var nd=d.nodes||[];var ed=d.edges||[];var ss=d.stats||{};
     if(!nd.length){st.textContent='无节点';return;}
-    var cols={'主题':'#dbeafe','机构':'#fef3c7','地点':'#d1fae5','政策':'#fce7f3','事件':'#ede9fe','术语':'#e0e7ff','作者':'#ccfbf1','文献':'#f5f5f4'};
-    var bds={'主题':'#60a5fa','机构':'#fbbf24','地点':'#34d399','政策':'#f472b6','事件':'#a78bfa','术语':'#818cf8','作者':'#2dd4bf','文献':'#a8a29e'};
+    var cols={'主题':'#dbeafe','机构':'#fef3c7','地点':'#d1fae5','政策':'#fce7f3','事件':'#ede9fe','术语':'#e0e7ff','作者':'#ccfbf1','文献':'#f5f5f4','文旅':'#ffedd5'};
+    var bds={'主题':'#60a5fa','机构':'#fbbf24','地点':'#34d399','政策':'#f472b6','事件':'#a78bfa','术语':'#818cf8','作者':'#2dd4bf','文献':'#a8a29e','文旅':'#fb923c'};
     var nodes=new vis.DataSet(nd.map(function(n){
-      var et=n.entity_type||'主题';
-      return {id:n.id,label:((n.label||n.id||'').length>12?(n.label||n.id||'').slice(0,12)+'…':(n.label||n.id||'')),
-        value:Math.max(5,(n.value||10)/2),group:et,
-        title:'<b>'+(n.label||n.id||'')+'</b><br>热度: '+fmt(n.heat)+'<br>连接: '+fmt(n.connections),
-        color:{background:cols[et]||'#dbeafe',border:bds[et]||'#60a5fa'}};
+      var et=n.entity_type||'主题';et=et in cols?et:'主题';
+      return {id:n.id,label:(n.label||n.id||'').length>10?(n.label||n.id||'').slice(0,10)+'…':(n.label||n.id||''),
+        value:Math.max(8,(n.value||n.heat||20)/15),group:et,
+        title:'<b>'+(n.label||n.id||'')+'</b><br>热度: '+fmt(n.heat)+'<br>连接: '+fmt(n.connections)+'<br>类型: '+et,
+        color:{background:cols[et],border:bds[et],highlight:{background:'#fff',border:bds[et]}},
+        borderWidth:1.5,font:{size:10,color:'#374151'}};
     }));
     var edges=new vis.DataSet(ed.map(function(e){
-      return {from:e.source||e.from,to:e.target||e.to,value:Math.max(.5,+(e.weight||1)),color:{color:'#e2e8f0',highlight:'#93c5fd',opacity:.6}};
+      return {from:e.source||e.from,to:e.target||e.to,value:Math.max(.5,+(e.weight||1)),
+        color:{color:'#d1d5db',highlight:'#60a5fa',opacity:.5},
+        smooth:{type:'continuous'},width:Math.max(.5,+(e.weight||1)/5)};
     }));
     var c=document.getElementById('kg-container');
     if(kgNet)kgNet.destroy();
     kgNet=new vis.Network(c,{nodes:nodes,edges:edges},{
-      physics:{solver:'forceAtlas2Based',forceAtlas2Based:{gravitationalConstant:-50,springLength:120,springConstant:.01},stabilization:{iterations:100}},
-      interaction:{dragNodes:true,dragView:true,zoomView:true,hover:true,tooltipDelay:200},
+      physics:{solver:'forceAtlas2Based',forceAtlas2Based:{gravitationalConstant:-60,springLength:150,springConstant:.008,damping:.4},
+        stabilization:{iterations:80,updateInterval:20}},
+      interaction:{dragNodes:true,dragView:true,zoomView:true,hover:true,tooltipDelay:100,navigationButtons:true,keyboard:true},
       edges:{smooth:{type:'continuous'}},
+      groups:{
+        '主题':{color:{background:'#dbeafe',border:'#60a5fa'},shape:'dot',size:15},
+        '机构':{color:{background:'#fef3c7',border:'#fbbf24'},shape:'square',size:12},
+        '地点':{color:{background:'#d1fae5',border:'#34d399'},shape:'triangle',size:10},
+        '政策':{color:{background:'#fce7f3',border:'#f472b6'},shape:'star',size:12},
+        '术语':{color:{background:'#e0e7ff',border:'#818cf8'},shape:'diamond',size:10},
+        'event':{color:{background:'#ede9fe',border:'#a78bfa'},shape:'hexagon',size:10},
+      },
+      manipulation:{enabled:false},
     });
-    st.innerHTML='✅ '+(ss.nodes_rendered||nd.length)+' 节点 · '+(ss.edges_rendered||ed.length)+' 边 ('+y+'年) · 拖拽/滚轮交互';
+    st.innerHTML='✅ '+(ss.nodes_rendered||nd.length)+' 节点 · '+(ss.edges_rendered||ed.length)+' 边 · 拖拽/缩放/悬停';
+    // 可选：fit to view after stabilization
+    kgNet.once('stabilizationIterationsDone',function(){kgNet.fit({animation:true});});
   }).catch(function(){st.innerHTML='❌ 加载失败';});
 }
 
