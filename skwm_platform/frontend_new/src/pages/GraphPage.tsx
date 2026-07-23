@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import * as d3 from 'd3-force'
+import { forceSimulation, forceLink, forceManyBody, forceCenter, forceCollide } from 'd3-force'
+import { select } from 'd3-selection'
+import { drag } from 'd3-drag'
+import { zoom } from 'd3-zoom'
 import { Breadcrumb } from '../components/Breadcrumb'
 import { Search, Route, ZoomIn, ZoomOut, RotateCcw } from 'lucide-react'
 
@@ -62,7 +65,7 @@ export default function GraphPage() {
   // Render graph
   useEffect(() => {
     if (!svgRef.current || !data) return
-    const svg = d3.select(svgRef.current)
+    const svg = select(svgRef.current)
     svg.selectAll('*').remove()
     const w = dim.w, h = dim.h
 
@@ -86,11 +89,11 @@ export default function GraphPage() {
     }))
     const nodeMap = new Map(simNodes.map((n: any) => [n.id, n]))
 
-    const sim = d3.forceSimulation(simNodes)
-      .force('link', d3.forceLink(simLinks).id((d: any) => d.id).distance(100))
-      .force('charge', d3.forceManyBody().strength(-250))
-      .force('center', d3.forceCenter(w/2, h/2))
-      .force('collision', d3.forceCollide(30))
+    const sim = forceSimulation(simNodes)
+      .force('link', forceLink(simLinks).id((d: any) => d.id).distance(100))
+      .force('charge', forceManyBody().strength(-250))
+      .force('center', forceCenter(w/2, h/2))
+      .force('collision', forceCollide(30))
     simRef.current = sim
 
     // Edges with labels
@@ -106,7 +109,7 @@ export default function GraphPage() {
     // Nodes
     const nodeGrp = svg.append('g')
     const nodeEls = nodeGrp.selectAll('g').data(simNodes).join('g')
-      .call(d3.drag<any, any>()
+      .call(drag<any, any>()
         .on('start', (e, d) => { if (!e.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y })
         .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y })
         .on('end', (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null })
