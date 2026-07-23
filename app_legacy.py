@@ -5,7 +5,7 @@
 多层UI · 精致图标 · 丰富的视觉层次
 """
 
-import os, re, json, sys, socket, urllib.request, ssl
+import os, re, json, sys, socket, random, urllib.request, ssl
 from pathlib import Path
 from collections import Counter
 from http.server import HTTPServer, BaseHTTPRequestHandler
@@ -141,6 +141,30 @@ class Engine:
                 name=name.strip()
                 if len(name)>4 and name[0].isupper(): a[name]+=1
         return a.most_common(int(n))
+    
+    # ── 真实世界模型数据 ──
+    _sv_cache = None
+    def _get_state_vectors(self, year="2026"):
+        if self._sv_cache is None:
+            p = DATA_DIR / "state_vectors.json"
+            if p.exists():
+                try: self._sv_cache = json.loads(open(p,encoding='utf-8').read())
+                except: self._sv_cache = {}
+            else:
+                self._sv_cache = {}
+        return self._sv_cache.get(str(year), {})
+    
+    def _classify(self, name):
+        """基于名称的实体类型分类"""
+        if any(kw in name for kw in ["大学","学院","研究所","中心","图书馆","博物馆","馆","学院"]):
+            return "机构"
+        if any(kw in name for kw in ["中国","沙特","阿联酋","埃及","北京","上海","迪拜","阿拉伯","利亚","斯坦"]):
+            return "地点"
+        if any(kw in name for kw in ["一带一路","合作论坛","战略","倡议","政策"]):
+            return "政策"
+        if name.isascii() and not any('\u4e00'<=c<='\u9fff' for c in name):
+            return "术语"
+        return "主题"
 
 eng = Engine()
 
@@ -557,72 +581,47 @@ class H(BaseHTTPRequestHandler):
             json_ok({"timeline":timeline})
         
         elif pa=='/api/graph-data':
-            y=params.get('year',['2024'])[0]
+            y=params.get('year',['2026'])[0]
             lang=params.get('lang',['all'])[0]
-            limit=int(params.get('limit',['200'])[0])
-            limit = min(max(limit, 100), 2500)
-            import random; random.seed(42+int(y))
-            # 组合生成2000+实体
-            prefixes=["数字","智能","智慧","融合","协同","绿色","可持续",
-                "文化","旅游","遗产","生态","乡村","全球","区域","国际","跨境",
-                "多语","跨文化","中阿","阿拉伯","伊斯兰","现代","传统","创新","前沿"]
-            bases=["旅游","文旅","文化","遗产","教育","科技","经济","贸易",
-                "语言","翻译","传播","交流","合作","治理","管理","服务",
-                "研究","分析","评估","规划","发展","建设","保护","传承",
-                "知识图谱","大模型","人工智能","机器学习","数据科学",
-                "图书馆","博物馆","档案馆","遗址","景区"]
-            suffixes=["研究","分析","评估","规划","管理","服务","系统","平台",
-                "模式","路径","策略","机制","体系","框架","模型","方法",
-                "技术","应用","实践","案例","数据","信息","知识"]
-            entities=set()
-            for p in prefixes:
-                for b in bases: entities.add(f"{p}{b}")
-            for b in bases:
-                for s in suffixes: entities.add(f"{b}{s}")
-            for p in prefixes[:10]:
-                for b in bases[:20]:
-                    for s in suffixes[:8]:
-                        if random.random()<0.3: entities.add(f"{p}{b}{s}")
-            # 机构
-            for n in ["北京大学","清华大学","复旦","上海交大","南京大学","浙大",
-                "武汉大学","中山大学","北京外国语大学","上海外国语大学",
-                "北京语言大学","中国传媒大学","北京第二外国语学院",
-                "中国国家图书馆","上海图书馆","中国科学院"]:
-                entities.add(f"机构_{n}")
-            # 地点
-            for n in ["中国","沙特","阿联酋","卡塔尔","埃及","摩洛哥","约旦",
-                "迪拜","利雅得","多哈","开罗","北京","上海"]:
-                entities.add(f"地点_{n}")
-            # 政策
-            for n in ["一带一路","中阿合作论坛","中阿战略伙伴","中阿人文交流"]:
-                entities.add(f"政策_{n}")
-            # 英文
-            for n in ["tourism","culture","heritage","digital","AI","NLP",
-                "education","knowledge","library","museum","China","Arab","Dubai"]:
-                entities.add(n)
-            all_ents = sorted(entities)[:2500]
-            random.shuffle(all_ents)
-            n = min(limit, len(all_ents))
-            selected = all_ents[:n]
-            nodes=[]
-            for i,ent in enumerate(selected):
-                heat=random.randint(50,3000)
-                if ent.startswith("机构_"): et="机构"
-                elif ent.startswith("地点_"): et="地点"
-                elif ent.startswith("政策_"): et="政策"
-                elif any(c.isascii() and c.isalpha() for c in ent) and not any('\u4e00'<=c<='\u9fff' for c in ent): et="术语"
-                else: et="主题"
-                nodes.append({"id":f"e{i}","label":ent,"value":max(5,heat//20),
-                    "entity_type":et,"heat":heat,"growth":random.randint(-30,200),
-                    "centrality":round(random.uniform(0.1,0.9),4),"connections":random.randint(5,min(300,n))})
-            edges=[]
-            tn=min(60,n)
-            for i in range(tn):
-                for j in range(i+1,tn):
-                    if random.random()<0.05 and abs(i-j)<10:
-                        edges.append({"source":f"e{i}","target":f"e{j}","weight":random.randint(1,5)})
-            json_ok({"nodes":nodes,"edges":edges,"stats":{"nodes_rendered":len(nodes),
-                "edges_rendered":len(edges),"total_nodes":len(all_ents),"total_edges":len(edges)*2}})
+            limit=int(params.get('limit',['2000'])[0])
+            limit = min(max(limit, 100), 2200)
+            # 使用真实世界模型数据
+            sv = eng._get_state_vectors(y)
+            if sv:
+                items = list(sv.items())
+                # 按热度排序
+                items.sort(key=lambda x: -x[1][0])
+                selected = items[:limit]
+                nodes=[]
+                id_map={}
+                for i,(name,vec) in enumerate(selected):
+                    heat,growth,centrality,conn = vec[:4] if len(vec)>=4 else (vec[0],0,0,0)
+                    et = eng._classify(name)
+                    nid = f"e{i}"
+                    id_map[name] = nid
+                    nodes.append({"id":nid,"label":name,"value":max(8,heat//15),
+                        "entity_type":et,"heat":heat,"growth":growth,
+                        "centrality":centrality,"connections":conn})
+                # 分类连线：同类实体之间连边，热度相近的连边
+                edges=[]
+                by_type = {}
+                for n in nodes:
+                    t = n["entity_type"]
+                    if t not in by_type: by_type[t] = []
+                    by_type[t].append(n)
+                for t, ns in by_type.items():
+                    top = ns[:min(80, len(ns))]
+                    for i in range(len(top)):
+                        for j in range(i+1, len(top)):
+                            heat_diff = abs(top[i]["heat"] - top[j]["heat"])
+                            if heat_diff < 500 or (heat_diff < 1000 and random.random()<0.3):
+                                edges.append({"source":top[i]["id"],"target":top[j]["id"],
+                                    "weight":max(1, 10 - heat_diff//100)})
+                json_ok({"nodes":nodes,"edges":edges[:min(len(edges), 5000)],
+                         "stats":{"nodes_rendered":len(nodes),"edges_rendered":min(len(edges),5000),
+                                  "total_nodes":len(items),"total_edges":len(items)*2}})
+            else:
+                json_err("无状态向量数据")
         
         elif pa=='/api/science-map/publication-trends':
             years=Counter()
