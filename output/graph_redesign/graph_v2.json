@@ -1,0 +1,1914 @@
+{
+  "nodes": [
+    {
+      "id": "t0",
+      "type": "Topic",
+      "label_zh": "遗产",
+      "label_en": "Heritage",
+      "label_ar": "تراث",
+      "domain": "文化遗产",
+      "heat": 1489,
+      "degree": 53,
+      "community_id": 0
+    },
+    {
+      "id": "t1",
+      "type": "Topic",
+      "label_zh": "目的地",
+      "label_en": "Destination",
+      "label_ar": "وجهة",
+      "domain": "旅游",
+      "heat": 657,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t2",
+      "type": "Topic",
+      "label_zh": "遗产",
+      "label_en": "Cultural Heritage",
+      "label_ar": "تراث",
+      "domain": "文化遗产",
+      "heat": 634,
+      "degree": 53,
+      "community_id": 0
+    },
+    {
+      "id": "t3",
+      "type": "Topic",
+      "label_zh": "发展",
+      "label_en": "Development",
+      "label_ar": "تطوير",
+      "domain": "通用",
+      "heat": 506,
+      "degree": 95,
+      "community_id": 2
+    },
+    {
+      "id": "t4",
+      "type": "Topic",
+      "label_zh": "数字",
+      "label_en": "Digital",
+      "label_ar": "رقمي",
+      "domain": "数字技术",
+      "heat": 442,
+      "degree": 70,
+      "community_id": 3
+    },
+    {
+      "id": "t5",
+      "type": "Topic",
+      "label_zh": "",
+      "label_en": "Ai",
+      "label_ar": "",
+      "domain": "数字技术",
+      "heat": 411,
+      "degree": 70,
+      "community_id": 3
+    },
+    {
+      "id": "t6",
+      "type": "Topic",
+      "label_zh": "阿拉伯",
+      "label_en": "Arab",
+      "label_ar": "عربي",
+      "domain": "阿拉伯文化",
+      "heat": 408,
+      "degree": 44,
+      "community_id": 4
+    },
+    {
+      "id": "t7",
+      "type": "Topic",
+      "label_zh": "中国",
+      "label_en": "China",
+      "label_ar": "الصين",
+      "domain": "中阿关系",
+      "heat": 325,
+      "degree": 34,
+      "community_id": 5
+    },
+    {
+      "id": "t8",
+      "type": "Topic",
+      "label_zh": "游客",
+      "label_en": "Tourist",
+      "label_ar": "سائح",
+      "domain": "旅游",
+      "heat": 305,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t9",
+      "type": "Topic",
+      "label_zh": "",
+      "label_en": "Road",
+      "label_ar": "",
+      "domain": "中阿关系",
+      "heat": 297,
+      "degree": 34,
+      "community_id": 5
+    },
+    {
+      "id": "t10",
+      "type": "Topic",
+      "label_zh": "学习",
+      "label_en": "Learning",
+      "label_ar": "تعلم",
+      "domain": "数字技术",
+      "heat": 285,
+      "degree": 70,
+      "community_id": 3
+    },
+    {
+      "id": "t11",
+      "type": "Topic",
+      "label_zh": "可持续",
+      "label_en": "Sustainable",
+      "label_ar": "",
+      "domain": "数字技术",
+      "heat": 254,
+      "degree": 70,
+      "community_id": 3
+    },
+    {
+      "id": "t12",
+      "type": "Topic",
+      "label_zh": "艺术",
+      "label_en": "Smart",
+      "label_ar": "فن",
+      "domain": "文化艺术",
+      "heat": 251,
+      "degree": 28,
+      "community_id": 6
+    },
+    {
+      "id": "t13",
+      "type": "Topic",
+      "label_zh": "交流",
+      "label_en": "Exchange",
+      "label_ar": "تبادل",
+      "domain": "通用",
+      "heat": 236,
+      "degree": 95,
+      "community_id": 2
+    },
+    {
+      "id": "t14",
+      "type": "Topic",
+      "label_zh": "旅游",
+      "label_en": "Tourism In",
+      "label_ar": "سياحة",
+      "domain": "旅游",
+      "heat": 234,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t15",
+      "type": "Topic",
+      "label_zh": "",
+      "label_en": "Marketing",
+      "label_ar": "سوق",
+      "domain": "经济贸易",
+      "heat": 225,
+      "degree": 13,
+      "community_id": 7
+    },
+    {
+      "id": "t16",
+      "type": "Topic",
+      "label_zh": "阿拉伯",
+      "label_en": "Arabic",
+      "label_ar": "عربي",
+      "domain": "阿拉伯文化",
+      "heat": 223,
+      "degree": 44,
+      "community_id": 4
+    },
+    {
+      "id": "t17",
+      "type": "Topic",
+      "label_zh": "旅游",
+      "label_en": "In Tourism",
+      "label_ar": "سياحة",
+      "domain": "旅游",
+      "heat": 220,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t18",
+      "type": "Topic",
+      "label_zh": "旅游",
+      "label_en": "Of Tourism",
+      "label_ar": "سياحة",
+      "domain": "旅游",
+      "heat": 206,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t19",
+      "type": "Topic",
+      "label_zh": "目的地",
+      "label_en": "Destination Image",
+      "label_ar": "وجهة",
+      "domain": "旅游",
+      "heat": 202,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t20",
+      "type": "Topic",
+      "label_zh": "对话",
+      "label_en": "Dialogue",
+      "label_ar": "حوار",
+      "domain": "通用",
+      "heat": 199,
+      "degree": 95,
+      "community_id": 2
+    },
+    {
+      "id": "t21",
+      "type": "Topic",
+      "label_zh": "",
+      "label_en": "Silk",
+      "label_ar": "",
+      "domain": "中阿关系",
+      "heat": 198,
+      "degree": 34,
+      "community_id": 5
+    },
+    {
+      "id": "t22",
+      "type": "Topic",
+      "label_zh": "政策",
+      "label_en": "Policy",
+      "label_ar": "سياسة",
+      "domain": "政策法规",
+      "heat": 197,
+      "degree": 7,
+      "community_id": 8
+    },
+    {
+      "id": "t23",
+      "type": "Topic",
+      "label_zh": "遗产",
+      "label_en": "World Heritage",
+      "label_ar": "تراث",
+      "domain": "文化遗产",
+      "heat": 189,
+      "degree": 53,
+      "community_id": 0
+    },
+    {
+      "id": "t24",
+      "type": "Topic",
+      "label_zh": "社交媒体",
+      "label_en": "Social Media",
+      "label_ar": "إعلام",
+      "domain": "通用",
+      "heat": 188,
+      "degree": 95,
+      "community_id": 2
+    },
+    {
+      "id": "t25",
+      "type": "Topic",
+      "label_zh": "教育",
+      "label_en": "Education",
+      "label_ar": "تعليم",
+      "domain": "教育",
+      "heat": 181,
+      "degree": 8,
+      "community_id": 9
+    },
+    {
+      "id": "t26",
+      "type": "Topic",
+      "label_zh": "旅游",
+      "label_en": "Heritage Tourism",
+      "label_ar": "سياحة",
+      "domain": "旅游",
+      "heat": 176,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t27",
+      "type": "Topic",
+      "label_zh": "丝绸之路",
+      "label_en": "Silk Road",
+      "label_ar": "طريق الحرير",
+      "domain": "中阿关系",
+      "heat": 176,
+      "degree": 34,
+      "community_id": 5
+    },
+    {
+      "id": "t28",
+      "type": "Topic",
+      "label_zh": "旅行",
+      "label_en": "Travel",
+      "label_ar": "سفر",
+      "domain": "旅游",
+      "heat": 176,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t29",
+      "type": "Topic",
+      "label_zh": "",
+      "label_en": "Generative Ai",
+      "label_ar": "",
+      "domain": "数字技术",
+      "heat": 171,
+      "degree": 70,
+      "community_id": 3
+    },
+    {
+      "id": "t30",
+      "type": "Topic",
+      "label_zh": "",
+      "label_en": "Virtual",
+      "label_ar": "",
+      "domain": "数字技术",
+      "heat": 164,
+      "degree": 70,
+      "community_id": 3
+    },
+    {
+      "id": "t31",
+      "type": "Topic",
+      "label_zh": "旅游",
+      "label_en": "Tourism Development",
+      "label_ar": "سياحة",
+      "domain": "旅游",
+      "heat": 153,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t32",
+      "type": "Topic",
+      "label_zh": "旅游",
+      "label_en": "Smart Tourism",
+      "label_ar": "سياحة",
+      "domain": "旅游",
+      "heat": 147,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t33",
+      "type": "Topic",
+      "label_zh": "遗产",
+      "label_en": "Intangible Cultural Heritage",
+      "label_ar": "تراث",
+      "domain": "文化遗产",
+      "heat": 133,
+      "degree": 53,
+      "community_id": 0
+    },
+    {
+      "id": "t34",
+      "type": "Topic",
+      "label_zh": "文化",
+      "label_en": "Culture",
+      "label_ar": "ثقافة",
+      "domain": "文化艺术",
+      "heat": 129,
+      "degree": 28,
+      "community_id": 6
+    },
+    {
+      "id": "t35",
+      "type": "Topic",
+      "label_zh": "可持续发展",
+      "label_en": "Sustainability",
+      "label_ar": "استدامة",
+      "domain": "数字技术",
+      "heat": 126,
+      "degree": 70,
+      "community_id": 3
+    },
+    {
+      "id": "t36",
+      "type": "Topic",
+      "label_zh": "技术",
+      "label_en": "Technology",
+      "label_ar": "تكنولوجيا",
+      "domain": "通用",
+      "heat": 124,
+      "degree": 95,
+      "community_id": 2
+    },
+    {
+      "id": "t37",
+      "type": "Topic",
+      "label_zh": "旅游",
+      "label_en": "Cultural Tourism",
+      "label_ar": "سياحة",
+      "domain": "旅游",
+      "heat": 122,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t39",
+      "type": "Topic",
+      "label_zh": "非斯",
+      "label_en": "Festival",
+      "label_ar": "فاس",
+      "domain": "通用",
+      "heat": 117,
+      "degree": 95,
+      "community_id": 2
+    },
+    {
+      "id": "t42",
+      "type": "Topic",
+      "label_zh": "旅游",
+      "label_en": "Tourism Destination",
+      "label_ar": "سياحة",
+      "domain": "旅游",
+      "heat": 114,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t44",
+      "type": "Topic",
+      "label_zh": "文学",
+      "label_en": "Literature",
+      "label_ar": "أدب",
+      "domain": "通用",
+      "heat": 107,
+      "degree": 95,
+      "community_id": 2
+    },
+    {
+      "id": "t45",
+      "type": "Topic",
+      "label_zh": "治理",
+      "label_en": "Governance",
+      "label_ar": "",
+      "domain": "政策法规",
+      "heat": 105,
+      "degree": 7,
+      "community_id": 8
+    },
+    {
+      "id": "t46",
+      "type": "Topic",
+      "label_zh": "旅游",
+      "label_en": "Sustainable Tourism",
+      "label_ar": "سياحة",
+      "domain": "旅游",
+      "heat": 102,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t47",
+      "type": "Topic",
+      "label_zh": "发展",
+      "label_en": "Development Of",
+      "label_ar": "تطوير",
+      "domain": "通用",
+      "heat": 101,
+      "degree": 95,
+      "community_id": 2
+    },
+    {
+      "id": "t48",
+      "type": "Topic",
+      "label_zh": "游客",
+      "label_en": "Tourists",
+      "label_ar": "سائح",
+      "domain": "旅游",
+      "heat": 100,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t49",
+      "type": "Topic",
+      "label_zh": "经济",
+      "label_en": "Economy",
+      "label_ar": "اقتصاد",
+      "domain": "经济贸易",
+      "heat": 99,
+      "degree": 13,
+      "community_id": 7
+    },
+    {
+      "id": "t62",
+      "type": "Topic",
+      "label_zh": "目的地",
+      "label_en": "Destinations",
+      "label_ar": "وجهة",
+      "domain": "旅游",
+      "heat": 85,
+      "degree": 133,
+      "community_id": 1
+    },
+    {
+      "id": "t69",
+      "type": "Topic",
+      "label_zh": "环境",
+      "label_en": "Environmental",
+      "label_ar": "بيئة",
+      "domain": "可持续发展",
+      "heat": 77,
+      "degree": 4,
+      "community_id": 10
+    },
+    {
+      "id": "t117",
+      "type": "Topic",
+      "label_zh": "",
+      "label_en": "Climate",
+      "label_ar": "",
+      "domain": "可持续发展",
+      "heat": 51,
+      "degree": 4,
+      "community_id": 10
+    },
+    {
+      "id": "t153",
+      "type": "Topic",
+      "label_zh": "教育",
+      "label_en": "Educational",
+      "label_ar": "تعليم",
+      "domain": "教育",
+      "heat": 39,
+      "degree": 8,
+      "community_id": 9
+    }
+  ],
+  "edges": [
+    {
+      "source": "t0",
+      "target": "t2",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t0",
+      "target": "t23",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t0",
+      "target": "t33",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t2",
+      "target": "t23",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t2",
+      "target": "t33",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t23",
+      "target": "t33",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t8",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t14",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t17",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t18",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t19",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t26",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t28",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t31",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t32",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t37",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t42",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t46",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t1",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t14",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t17",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t18",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t19",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t26",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t28",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t31",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t32",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t37",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t42",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t46",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t8",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t14",
+      "target": "t17",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t14",
+      "target": "t18",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t14",
+      "target": "t19",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t14",
+      "target": "t26",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t14",
+      "target": "t28",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t14",
+      "target": "t31",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t14",
+      "target": "t32",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t14",
+      "target": "t37",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t14",
+      "target": "t42",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t14",
+      "target": "t46",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t14",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t14",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t17",
+      "target": "t18",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t17",
+      "target": "t19",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t17",
+      "target": "t26",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t17",
+      "target": "t28",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t17",
+      "target": "t31",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t17",
+      "target": "t32",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t17",
+      "target": "t37",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t17",
+      "target": "t42",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t17",
+      "target": "t46",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t17",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t17",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t18",
+      "target": "t19",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t18",
+      "target": "t26",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t18",
+      "target": "t28",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t18",
+      "target": "t31",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t18",
+      "target": "t32",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t18",
+      "target": "t37",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t18",
+      "target": "t42",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t18",
+      "target": "t46",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t18",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t18",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t19",
+      "target": "t26",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t19",
+      "target": "t28",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t19",
+      "target": "t31",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t19",
+      "target": "t32",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t19",
+      "target": "t37",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t19",
+      "target": "t42",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t19",
+      "target": "t46",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t19",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t19",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t26",
+      "target": "t28",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t26",
+      "target": "t31",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t26",
+      "target": "t32",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t26",
+      "target": "t37",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t26",
+      "target": "t42",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t26",
+      "target": "t46",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t26",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t26",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t28",
+      "target": "t31",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t28",
+      "target": "t32",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t28",
+      "target": "t37",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t28",
+      "target": "t42",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t28",
+      "target": "t46",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t28",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t28",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t31",
+      "target": "t32",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t31",
+      "target": "t37",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t31",
+      "target": "t42",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t31",
+      "target": "t46",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t31",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t31",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t32",
+      "target": "t37",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t32",
+      "target": "t42",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t32",
+      "target": "t46",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t32",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t32",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t37",
+      "target": "t42",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t37",
+      "target": "t46",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t37",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t37",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t42",
+      "target": "t46",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t42",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t42",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t46",
+      "target": "t48",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t46",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t48",
+      "target": "t62",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t3",
+      "target": "t13",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t3",
+      "target": "t20",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t3",
+      "target": "t24",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t3",
+      "target": "t36",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t3",
+      "target": "t39",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t3",
+      "target": "t44",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t3",
+      "target": "t47",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t13",
+      "target": "t20",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t13",
+      "target": "t24",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t13",
+      "target": "t36",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t13",
+      "target": "t39",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t13",
+      "target": "t44",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t13",
+      "target": "t47",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t20",
+      "target": "t24",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t20",
+      "target": "t36",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t20",
+      "target": "t39",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t20",
+      "target": "t44",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t20",
+      "target": "t47",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t24",
+      "target": "t36",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t24",
+      "target": "t39",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t24",
+      "target": "t44",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t24",
+      "target": "t47",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t36",
+      "target": "t39",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t36",
+      "target": "t44",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t36",
+      "target": "t47",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t39",
+      "target": "t44",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t39",
+      "target": "t47",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t44",
+      "target": "t47",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t4",
+      "target": "t5",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t4",
+      "target": "t10",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t4",
+      "target": "t11",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t4",
+      "target": "t29",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t4",
+      "target": "t30",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t4",
+      "target": "t35",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t5",
+      "target": "t10",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t5",
+      "target": "t11",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t5",
+      "target": "t29",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t5",
+      "target": "t30",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t5",
+      "target": "t35",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t10",
+      "target": "t11",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t10",
+      "target": "t29",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t10",
+      "target": "t30",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t10",
+      "target": "t35",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t11",
+      "target": "t29",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t11",
+      "target": "t30",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t11",
+      "target": "t35",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t29",
+      "target": "t30",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t29",
+      "target": "t35",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t30",
+      "target": "t35",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t6",
+      "target": "t16",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t7",
+      "target": "t9",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t7",
+      "target": "t21",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t7",
+      "target": "t27",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t9",
+      "target": "t21",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t9",
+      "target": "t27",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t21",
+      "target": "t27",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t12",
+      "target": "t34",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t15",
+      "target": "t49",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t22",
+      "target": "t45",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t25",
+      "target": "t153",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    },
+    {
+      "source": "t69",
+      "target": "t117",
+      "relation": "co_occurs",
+      "label": "共现",
+      "weight": 1
+    }
+  ],
+  "communities": {
+    "0": {
+      "id": 0,
+      "size": 4,
+      "top_types": {
+        "Topic": 4
+      },
+      "representatives": [
+        "Heritage",
+        "Cultural Heritage",
+        "World Heritage",
+        "Intangible Cultural Heritage"
+      ],
+      "summary": "社区0: Heritage, Cultural Heritage, World Heritage 等 4 个实体"
+    },
+    "1": {
+      "id": 1,
+      "size": 15,
+      "top_types": {
+        "Topic": 15
+      },
+      "representatives": [
+        "Destination",
+        "Tourist",
+        "Tourism In",
+        "In Tourism",
+        "Of Tourism"
+      ],
+      "summary": "社区1: Destination, Tourist, Tourism In 等 15 个实体"
+    },
+    "2": {
+      "id": 2,
+      "size": 8,
+      "top_types": {
+        "Topic": 8
+      },
+      "representatives": [
+        "Development",
+        "Exchange",
+        "Dialogue",
+        "Social Media",
+        "Technology"
+      ],
+      "summary": "社区2: Development, Exchange, Dialogue 等 8 个实体"
+    },
+    "3": {
+      "id": 3,
+      "size": 7,
+      "top_types": {
+        "Topic": 7
+      },
+      "representatives": [
+        "Digital",
+        "Ai",
+        "Learning",
+        "Sustainable",
+        "Generative Ai"
+      ],
+      "summary": "社区3: Digital, Ai, Learning 等 7 个实体"
+    },
+    "4": {
+      "id": 4,
+      "size": 2,
+      "top_types": {
+        "Topic": 2
+      },
+      "representatives": [
+        "Arab",
+        "Arabic"
+      ],
+      "summary": "社区4: Arab, Arabic 等 2 个实体"
+    },
+    "5": {
+      "id": 5,
+      "size": 4,
+      "top_types": {
+        "Topic": 4
+      },
+      "representatives": [
+        "China",
+        "Road",
+        "Silk",
+        "Silk Road"
+      ],
+      "summary": "社区5: China, Road, Silk 等 4 个实体"
+    },
+    "6": {
+      "id": 6,
+      "size": 2,
+      "top_types": {
+        "Topic": 2
+      },
+      "representatives": [
+        "Smart",
+        "Culture"
+      ],
+      "summary": "社区6: Smart, Culture 等 2 个实体"
+    },
+    "7": {
+      "id": 7,
+      "size": 2,
+      "top_types": {
+        "Topic": 2
+      },
+      "representatives": [
+        "Marketing",
+        "Economy"
+      ],
+      "summary": "社区7: Marketing, Economy 等 2 个实体"
+    },
+    "8": {
+      "id": 8,
+      "size": 2,
+      "top_types": {
+        "Topic": 2
+      },
+      "representatives": [
+        "Policy",
+        "Governance"
+      ],
+      "summary": "社区8: Policy, Governance 等 2 个实体"
+    },
+    "9": {
+      "id": 9,
+      "size": 2,
+      "top_types": {
+        "Topic": 2
+      },
+      "representatives": [
+        "Education",
+        "Educational"
+      ],
+      "summary": "社区9: Education, Educational 等 2 个实体"
+    },
+    "10": {
+      "id": 10,
+      "size": 2,
+      "top_types": {
+        "Topic": 2
+      },
+      "representatives": [
+        "Environmental",
+        "Climate"
+      ],
+      "summary": "社区10: Environmental, Climate 等 2 个实体"
+    }
+  },
+  "stats": {
+    "total_nodes": 500,
+    "total_edges": 19543,
+    "core_nodes": 50,
+    "core_edges": 172,
+    "communities": 11
+  }
+}

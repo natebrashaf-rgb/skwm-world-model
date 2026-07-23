@@ -598,6 +598,114 @@ class H(BaseHTTPRequestHandler):
             timeline=[{"year":str(y),"nodes":c,"edges":c*3} for y,c in sorted(years.items())]
             json_ok({"timeline":timeline})
         
+        elif pa=='/api/graph-v2':
+            """返回规范化的核心子图（去重+社区+三语）"""
+            v2_path = Path(__file__).parent / "output" / "graph_redesign" / "graph_v2.json"
+            if v2_path.exists():
+                v2 = json.loads(open(v2_path, encoding='utf-8').read())
+                json_ok(v2)
+            else:
+                json_err("请先运行 skwm_graph_v2_pipeline.py")
+        
+        elif pa=='/api/graph-ego':
+            """返回指定节点的1-hop邻域"""
+            nid = params.get('id', [''])[0]
+            hops = int(params.get('hops', ['1'])[0])
+            if not nid:
+                json_err("缺少 id 参数"); return
+            v2_path = Path(__file__).parent / "output" / "graph_redesign" / "graph_v2.json"
+            if not v2_path.exists():
+                json_err("图数据不存在"); return
+            v2 = json.loads(open(v2_path, encoding='utf-8').read())
+            all_nodes = {n['id']: n for n in v2.get('nodes', [])}
+            all_edges = v2.get('edges', [])
+            if nid not in all_nodes:
+                json_err(f"节点 {nid} 不存在"); return
+            # BFS 获取邻域
+            adj = {}
+            for e in all_edges:
+                for s in [e['source'], e['target']]:
+                    if s not in adj: adj[s] = set()
+                adj[e['source']].add(e['target'])
+                adj[e['target']].add(e['source'])
+            visited = {nid}
+            frontier = {nid}
+            for _ in range(hops):
+                next_f = set()
+                for f in frontier:
+                    for nb in adj.get(f, set()):
+                        if nb not in visited and nb in all_nodes:
+                            next_f.add(nb); visited.add(nb)
+                frontier = next_f
+                if not frontier: break
+            ego_nodes = [all_nodes[n] for n in visited]
+            ego_edges = [e for e in all_edges if e['source'] in visited and e['target'] in visited]
+            json_ok({"nodes":ego_nodes,"edges":ego_edges,"stats":{"node_count":len(ego_nodes),"edge_count":len(ego_edges),"center":nid}})
+        
+        elif pa=='/api/graph-path':
+            """最短路径"""
+            src = params.get('source', [''])[0]
+            tgt = params.get('target', [''])[0]
+            if not src or not tgt:
+                json_err("缺少 source/target"); return
+            v2_path = Path(__file__).parent / "output" / "graph_redesign" / "graph_v2.json"
+            if not v2_path.exists():
+                json_err("图数据不存在"); return
+            v2 = json.loads(open(v2_path, encoding='utf-8').read())
+            adj = {}
+            for e in v2.get('edges', []):
+                if e['source'] not in adj: adj[e['source']] = set()
+                if e['target'] not in adj: adj[e['target']] = set()
+                adj[e['source']].add(e['target']); adj[e['target']].add(e['source'])
+            # BFS
+            if src not in adj or tgt not in adj:
+                json_err("起点或终点不在图中"); return
+            queue = [(src, [src])]; visited = {src}
+            path = None
+            while queue:
+                node, p = queue.pop(0)
+                if len(p) > 10: continue
+                for nb in adj.get(node, set()):
+                    if nb == tgt:
+                        path = p + [nb]; break
+                    if nb not in visited:
+                        visited.add(nb); queue.append((nb, p + [nb]))
+                if path: break
+            if path:
+                all_nodes = {n['id']: n for n in v2.get('nodes', [])}
+                path_nodes = [all_nodes[n] for n in path if n in all_nodes]
+                path_edges = []
+                for i in range(len(path)-1):
+                    for e in v2.get('edges', []):
+                        if (e['source']==path[i] and e['target']==path[i+1]) or (e['source']==path[i+1] and e['target']==path[i]):
+                            path_edges.append(e); break
+                json_ok({"path":path,"nodes":path_nodes,"edges":path_edges,"length":len(path)-1})
+            else:
+                json_err("未找到路径")
+        
+        elif pa=='/api/graph-search':
+            """搜索节点"""
+            q = params.get('q', [''])[0].strip().lower()
+            if not q:
+                json_err("缺少查询词"); return
+            v2_path = Path(__file__).parent / "output" / "graph_redesign" / "graph_v2.json"
+            if not v2_path.exists():
+                json_err("图数据不存在"); return
+            v2 = json.loads(open(v2_path, encoding='utf-8').read())
+            results = []
+            for n in v2.get('nodes', []):
+                for field in ['label_zh','label_en','label_ar','id']:
+                    if q in str(n.get(field,'')).lower():
+                        results.append(n)
+                        break
+            # 去重
+            seen = set()
+            unique = []
+            for n in results:
+                if n['id'] not in seen:
+                    seen.add(n['id']); unique.append(n)
+            json_ok({"query":q,"results":unique[:20],"count":len(unique)})
+        
         elif pa=='/api/graph-data':
             y=params.get('year',['2026'])[0]
             lang=params.get('lang',['all'])[0]
