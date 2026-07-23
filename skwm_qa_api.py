@@ -62,7 +62,8 @@ def _search_papers(q: str, top_k: int = 5) -> list:
     for p in _B1:
         title = p.get('title', '')
         kw = p.get('keywords', '')
-        if ql in title.lower() or ql in kw.lower():
+        kw_str = ' '.join(kw) if isinstance(kw, list) else (kw or '')
+        if ql in title.lower() or ql in kw_str.lower():
             results.append({
                 'title': title, 'year': p.get('year', ''),
                 'authors': (p.get('authors', '') or '')[:50],
