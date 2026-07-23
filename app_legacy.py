@@ -875,11 +875,9 @@ class H(BaseHTTPRequestHandler):
         
         elif pa=='/api/feishu/webhook':
             """飞书机器人 Webhook 回调入口"""
-            from skwm_platform.backend.feishu_bot import FeishuBotV2
+            from skwm_platform.backend.feishu_webhook import handle_webhook
             body=json.loads(self.rfile.read(int(self.headers.get('Content-Length',0))))
-            bot=FeishuBotV2()
-            result=bot.handle_webhook(body)
-            json_ok(result)
+            json_ok(handle_webhook(body))
         
         elif pa=='/api/feishu/push-test':
             """飞书测试推送"""
@@ -998,16 +996,11 @@ class H(BaseHTTPRequestHandler):
 
 if __name__=="__main__":
     s=eng.stats()
-    # ── 飞书长连接机器人（后台线程） ──
+    # ── 飞书 Webhook 模式（无需后台线程） ──
     if os.environ.get("FEISHU_APP_ID") and os.environ.get("FEISHU_APP_SECRET"):
-        import threading
-        from skwm_platform.backend.feishu_ws_bot import FeishuWSBot
-        _feishu_bot = FeishuWSBot()
-        _ws_thread = threading.Thread(target=_feishu_bot.start, daemon=True)
-        _ws_thread.start()
-        print(f"  🤖 飞书长连接机器人已启动")
+        print(f"  🤖 飞书Webhook就绪 (请配置回调URL: https://skwm-world-model-production.up.railway.app/api/feishu/webhook)")
     else:
-        print(f"  ⚠️ FEISHU_APP_ID/SECRET 未配置 — 飞书机器人未启动")
+        print(f"  ⚠️ FEISHU_APP_ID/SECRET 未配置 — 飞书机器人未启用")
     
     print(f"\n{'='*50}\n  🌍 SKWM 旗舰版\n{'='*50}\n  📚 {s['total']} 篇\n  🧠 {'✅' if DEEPSEEK_KEY else '⚠️'} DeepSeek\n  🌐 http://localhost:{PORT}\n{'='*50}\n")
     server=HTTPServer(('0.0.0.0',PORT),H)
