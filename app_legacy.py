@@ -576,15 +576,6 @@ class H(BaseHTTPRequestHandler):
             hotspots=[{"name":t,"heat":c,"growth":c*5,"centrality":round(c/mx,4),"connections":c*3} for t,c in tp.most_common(15)]
             json_ok({"hotspots":hotspots,"total":len(r)})
         
-        elif pa=='/api/frontier':
-            recent=[p for p in all_papers if str(p.get('year','')).isdigit() and int(p.get('year',0))>=2023]
-            tp=Counter()
-            for pp in recent:
-                for kw in ["tourism","heritage","culture","digital","arab","language","model","data","AI","education","travel","policy","health","network","knowledge","learning","system","translation","corpus","islamic","media","society"]:
-                    if kw in str(pp.get('title','')).lower(): tp[kw]+=1
-            frontier=[{"name":t,"heat":c,"growth":c*10} for t,c in tp.most_common(12)]
-            json_ok({"topics":frontier,"total_recent":len(recent)})
-        
         elif pa=='/api/predict':
             tp=Counter()
             for pp in all_papers:
