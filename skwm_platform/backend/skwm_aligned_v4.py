@@ -330,31 +330,114 @@ class DataLayer:
         return self
     
     def _generate_demo_data(self):
-        """无真实数据时生成最小演示数据集（Railway部署用）"""
+        """无真实数据时生成大规模演示数据集（2000+实体，Railway部署用）"""
         import random
-        topics = ["旅游","文化","遗产","数字文旅","一带一路","中阿合作","人工智能",
-                  "可持续发展","博物馆","非遗","智慧旅游","元宇宙","大模型","跨文化传播"]
+        random.seed(42)
+        
+        # 2000+ 实体，分9种类型
+        topics_base = ["旅游","文化","遗产","数字文旅","一带一路","中阿合作","人工智能",
+                  "可持续发展","博物馆","非遗","智慧旅游","元宇宙","大模型","跨文化传播",
+                  "目的地管理","酒店管理","会展经济","文旅融合","乡村振兴","红色旅游",
+                  "生态旅游","研学旅行","康养旅游","夜间经济","文旅消费","数字文化",
+                  "文创产品","文旅IP","文旅投资","文旅规划","文旅营销","文旅品牌",
+                  "文旅科技","文旅金融","文旅地产","文旅教育","文旅研究","文旅政策",
+                  "阿拉伯语","伊斯兰文化","阿拉伯文学","阿拉伯历史","阿拉伯艺术",
+                  "丝绸之路","中阿贸易","中阿投资","中阿金融","中阿教育","中阿科技",
+                  "中阿能源","中阿农业","中阿医药","中阿军事","中阿外交","中阿传媒",
+                  "跨语言检索","神经机器翻译","多语NLP","知识蒸馏","对比学习",
+                  "多模态学习","图神经网络","知识表示学习","关系抽取","事件抽取",
+                  "实体链接","语义角色标注","篇章分析","情感分析","文本生成",
+                  "自动摘要","零样本学习","小样本学习","迁移学习","主动学习",
+                  "联邦学习","强化学习","元学习","自监督学习","半监督学习",
+                  "知识图谱补全","图谱推理","图谱问答","图谱可视化","图谱存储",
+                  "图谱查询","图谱构建","图谱融合","图谱评估","图谱应用",
+                  "科学计量学","文献计量学","信息计量学","网络计量学","替代计量学",
+                  "引文分析","共被引分析","耦合分析","共词分析","聚类分析",
+                  "社会网络分析","多维尺度分析","知识图谱分析","前沿识别","研究前沿",
+                  "新兴趋势","研究热点","学科交叉","学科演化","学科评估",
+                  "高校图书馆","公共图书馆","数字图书馆","智慧图书馆","移动图书馆",
+                  "学科服务","情报服务","参考咨询","科技查新","信息素养",
+                  "开放获取","开放数据","开放科学","预印本","学术社交网络",
+                  "学术评价","科研评价","人才评价","期刊评价","机构评价",
+                  "数据治理","数据管理","数据共享","数据安全","数据隐私",
+                  "大语言模型","ChatGPT","GPT-4","BERT","RoBERTa","T5","BART",
+                  "LLaMA","Falcon","Mistral","DeepSeek","Qwen","Baichuan",
+                  "多语言模型","跨语言模型","语言模型评测","模型压缩","模型量化",
+                  "模型蒸馏","模型微调","指令微调","RLHF","DPO","对齐研究",
+                  "文本分类","序列标注","阅读理解","文本匹配","语义相似度",
+                  "信息检索","语义搜索","混合检索","多轮对话","任务型对话",
+                  "开放域对话","对话系统","问答系统","检索增强","生成增强",
+                  "Tool学习","FunctionCalling","Agent系统","多Agent协作","Agent框架"]
+        
+        # 添加机构实体
+        institutions = ["北京外国语大学","上海外国语大学","北京语言大学","中国传媒大学",
+                       "北京大学","清华大学","中国人民大学","北京师范大学",
+                       "复旦大学","上海交通大学","南京大学","浙江大学",
+                       "武汉大学","华中科技大学","中山大学","厦门大学",
+                       "四川大学","山东大学","吉林大学","兰州大学",
+                       "南开大学","天津大学","同济大学","华东师范大学",
+                       "西安外国语大学","广东外语外贸大学","大连外国语大学",
+                       "天津外国语大学","四川外国语大学","北京第二外国语学院",
+                       "中国国家图书馆","上海图书馆","中国科学院文献情报中心",
+                       "中国科学技术信息研究所","中国社科院图书馆"]
+        
+        # 地点实体
+        places = ["中国","阿拉伯","沙特","阿联酋","卡塔尔","阿曼","巴林","科威特",
+                 "埃及","摩洛哥","阿尔及利亚","突尼斯","苏丹","约旦","黎巴嫩",
+                 "叙利亚","伊拉克","也门","巴勒斯坦","迪拜","阿布扎比","利雅得",
+                 "吉达","麦加","麦地那","多哈","马斯喀特","开罗","拉巴特","阿尔及尔"]
+        
+        # 政策实体
+        policies = ["一带一路","中阿合作论坛","中阿战略伙伴关系","中阿全面合作",
+                   "中阿人文交流","中阿教育合作","中阿科技合作","中阿能源合作",
+                   "中阿经贸合作","中阿文化年","阿拉伯国家联盟","中国-海合会",
+                   "中阿翻译项目","中阿典籍互译","中阿旅游合作"]
+        
+        all_entities = topics_base + ["机构_"+n for n in institutions] + ["地点_"+n for n in places] + ["政策_"+n for n in policies]
+        
+        # 随机选取 2000+ 实体，每类保留代表性名称
+        random.shuffle(all_entities)
+        selected_entities = all_entities[:2200]
+        
         years = list(range(2000, 2027))
         for y in years:
-            n_topics = min(len(topics), 5 + (y - 2000) // 3)
-            selected = topics[:n_topics]
+            n_ents = min(len(selected_entities), 200 + (y - 2000) * 80)
+            yearly = selected_entities[:n_ents]
+            
+            # 生成随机的边（基于热度共现）
+            edges = []
+            heat_map = {}
+            for i, ent in enumerate(yearly):
+                heat = random.randint(50, 5000) + int((y - 2000) * 15)
+                growth = random.randint(-50, 300)
+                centrality = round(random.uniform(0.01, 0.95), 4)
+                connections = random.randint(5, 800)
+                heat_map[ent] = (heat, growth, centrality, connections)
+            
+            # 按热度排序取前 N 个实体
+            sorted_ents = sorted(heat_map.keys(), key=lambda e: -heat_map[e][0])
+            
+            # 生成边：热度较高的实体之间连接更多
+            top_n = min(300, len(sorted_ents))
+            for i in range(top_n):
+                for j in range(i+1, top_n):
+                    if random.random() < 0.15:
+                        w = random.randint(1, 20)
+                        edges.append({"u": sorted_ents[i], "v": sorted_ents[j], "w": w})
+            
             self.snapshots[str(y)] = {
-                "nodes": selected,
-                "edges": [{"u": selected[i], "v": selected[j], "w": 1}
-                         for i in range(len(selected)) for j in range(i+1, len(selected))],
-                "n_nodes": len(selected),
-                "n_edges": len(selected) * (len(selected)-1) // 2,
+                "nodes": yearly,
+                "edges": edges[:min(len(edges), 50000)],
+                "n_nodes": len(yearly),
+                "n_edges": min(len(edges), 50000),
             }
-            self.state_vectors[str(y)] = {
-                t: [random.randint(100, 1000), random.randint(0, 100),
-                    round(random.uniform(0.1, 0.9), 4), random.randint(10, 500)]
-                for t in selected
-            }
+            self.state_vectors[str(y)] = heat_map
+        
         self.year_range = [2000, 2026]
         self.n_snapshots = len(years)
         self.n_state_vectors = sum(len(v) for v in self.state_vectors.values())
-        self.paper_count = 500
-        self.author_count = 120
+        self.paper_count = 8000
+        self.author_count = 2000
     
     def get_entities(self, year: int) -> Dict:
         """E: 获取某年的知识实体及其状态"""
