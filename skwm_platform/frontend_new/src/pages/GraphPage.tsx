@@ -6,7 +6,8 @@ import { zoom } from 'd3-zoom'
 import { Breadcrumb } from '../components/Breadcrumb'
 import { Search, Route, ZoomIn, ZoomOut, RotateCcw } from 'lucide-react'
 
-const API = '/api/graph-v2'
+const API = '/api/graph-v4'
+const API_V2 = '/api/graph-v2'
 const EGO_API = '/api/graph-ego'
 const PATH_API = '/api/graph-path'
 const SEARCH_API = '/api/graph-search'
@@ -34,14 +35,18 @@ export default function GraphPage() {
   const [pathResult, setPathResult] = useState<any>(null)
   const [filterType, setFilterType] = useState<string>('all')
   const [communityMode, setCommunityMode] = useState(true)
+  const [viewMode, setViewMode] = useState<'cluster'|'node'>('cluster')
   const svgRef = useRef<SVGSVGElement>(null)
   const [dim, setDim] = useState({ w: 700, h: 500 })
   const simRef = useRef<any>(null)
 
-  // Load core subgraph
+  // Load communities (v4)
   useEffect(() => {
-    fetch(API).then(r => r.json()).then(d => {
-      if (d.nodes) setData(d)
+    fetch(`${API}?level=cluster&year=2026`).then(r => r.json()).then(d => {
+      if (d.communities) {
+        setData({...d, nodes: d.communities, edges: []})
+        setViewMode('cluster')
+      }
     })
   }, [])
 

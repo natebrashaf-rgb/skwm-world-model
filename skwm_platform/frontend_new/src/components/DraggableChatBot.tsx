@@ -14,12 +14,27 @@ export function DraggableChatBot() {
   const dragRef = useRef({ startX: 0, startY: 0, elX: 0, elY: 0, moved: false })
   const chatRef = useRef<HTMLDivElement>(null)
 
-  const onSend = useCallback((text: string) => {
+  const onSend = useCallback(async (text: string) => {
     if (!text.trim()) return
-    setMsgs(prev => [...prev, { role: 'user', content: text },
-      { role: 'assistant', content: `已收到您的问题：「${text}」。知识图谱检索到 5 篇相关文献，正在生成回答…（此为占位响应，待接入 GraphRAG 后端）`,
-        sources: [{ type: '文献', id: 'SKWM-2024-001', year: 2024, confidence: 0.92 }] }])
+    const userMsg = { role: 'user' as const, content: text }
+    const loadingMsg = { role: 'assistant' as const, content: '思考中…' }
+    setMsgs(prev => [...prev, userMsg, loadingMsg])
     setInput('')
+    try {
+      const r = await fetch('/api/qa', { method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({question: text, lang: 'zh'}) })
+      if (!r.ok) throw new Error(`${r.status}`)
+      const d = await r.json()
+      setMsgs(prev => prev.slice(0, -1).concat([{
+        role: 'assistant', content: d.answer || '暂无回复',
+        sources: d.sources || [],
+      }]))
+    } catch(e) {
+      setMsgs(prev => prev.slice(0, -1).concat([{
+        role: 'assistant', content: '请求失败，请稍后再试'
+      }]))
+    }
   }, [])
 
   const onPointerDown = useCallback((e: React.PointerEvent) => {

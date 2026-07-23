@@ -69,7 +69,7 @@ def _search_papers(q: str, top_k: int = 5) -> list:
                 'authors': (p.get('authors', '') or '')[:50],
                 'doi': p.get('doi', ''),
             })
-    results.sort(key=lambda x: -(x.get('year') or 0))
+    results.sort(key=lambda x: -int(x.get('year') or 0))
     return results[:top_k]
 
 
