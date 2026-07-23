@@ -1,1 +1,2 @@
 # 零依赖！只用 Python 标准库
+lark-oapi>=1.7.0
