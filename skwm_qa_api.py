@@ -15,6 +15,29 @@ DATA_DIR = BASE / "data"
 WM_DIR = Path(r"E:\大挑\02_deliverables\world_model")
 DEEPSEEK_KEY = os.environ.get("DEEPSEEK_KEY", "")
 
+# ── 检索后端切换 ──
+RETRIEVAL_BACKEND = os.environ.get("RETRIEVAL_BACKEND", "json")
+# "json" = 现有内存 JSON 线性扫描（旧路径）
+# "shadow" = 双查（JSON + Graph），记录差异但不切换
+# "graph" = 只走图检索（ChromaDB + NetworkX）
+
+# ── 图检索缓存 ──
+_G = None
+_NODE_INDEX = None
+
+def _load_graph():
+    """加载 NetworkX 图"""
+    global _G, _NODE_INDEX
+    if _G is not None:
+        return
+    gexf_path = DATA_DIR / "knowledge_graph.gexf"
+    idx_path = DATA_DIR / "graph_node_index.json"
+    if gexf_path.exists():
+        import networkx as nx
+        _G = nx.read_gexf(str(gexf_path))
+    if idx_path.exists():
+        _NODE_INDEX = json.loads(idx_path.read_text(encoding='utf-8'))
+
 # ── 缓存 ──
 _SV = None
 _B1 = None
@@ -73,14 +96,56 @@ def _search_papers(q: str, top_k: int = 5) -> list:
     return results[:top_k]
 
 
+def _graph_search_entities(q: str, top_k: int = 10) -> list:
+    """用 NetworkX 图检索替代内存线性扫描"""
+    _load_graph()
+    if _G is None or _NODE_INDEX is None:
+        return _search_entities(q, top_k)
+    ql = q.lower()
+    results = []
+    for name, info in _NODE_INDEX.items():
+        if ql in name.lower():
+            results.append({'name': name, 'heat': info.get('heat', 0), 'type': 'entity'})
+    results.sort(key=lambda x: -x['heat'])
+    return results[:top_k]
+
+
+def _graph_search_papers(q: str, top_k: int = 5) -> list:
+    """用 ChromaDB 向量检索替代标题子串匹配"""
+    try:
+        from skwm_platform.backend.vector_store import VectorStore
+        vs = VectorStore()
+        vs.load_skwm_data({'papers': _load_b1()})
+        hits = vs.search(q, top_k=top_k)
+        return [{'title': h.get('title',''), 'year': h.get('year',''),
+                 'authors': h.get('authors',''), 'doi': h.get('doi','')}
+                for h in hits]
+    except Exception:
+        return _search_papers(q, top_k)
+
+
 def ask(question: str, lang: str = "zh", history: list = None) -> dict:
     """
     问答主入口
     返回 { answer, sources, confidence, has_evidence }
     """
-    # 1. 检索
-    entities = _search_entities(question, 8)
-    papers = _search_papers(question, 5)
+    # 根据 RETRIEVAL_BACKEND 选择检索路径
+    if RETRIEVAL_BACKEND == "graph":
+        entities = _graph_search_entities(question, 8)
+        papers = _graph_search_papers(question, 5)
+    elif RETRIEVAL_BACKEND == "shadow":
+        old_entities = _search_entities(question, 8)
+        old_papers = _search_papers(question, 5)
+        new_entities = _graph_search_entities(question, 8)
+        new_papers = _graph_search_papers(question, 5)
+        # 记录差异
+        if set(e['name'] for e in old_entities) != set(e['name'] for e in new_entities):
+            import logging
+            logging.getLogger("skwm.qa").info(f"SHADOW diff [{question}]: entities={len(old_entities)}->{len(new_entities)}")
+        entities, papers = old_entities, old_papers  # 仍返回旧结果
+    else:
+        entities = _search_entities(question, 8)
+        papers = _search_papers(question, 5)
     
     has_evidence = bool(entities) or bool(papers)
     
