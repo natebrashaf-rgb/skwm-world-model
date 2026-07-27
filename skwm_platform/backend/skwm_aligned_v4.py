@@ -18,7 +18,7 @@
 """
 import json, os, random, sys, pickle, itertools, re
 from typing import List, Tuple, Dict, Any, Optional, Callable
-from collections import defaultdict, Counter
+from collections import defaultdict
 from pathlib import Path
 from datetime import datetime
 import numpy as np
@@ -26,16 +26,7 @@ import numpy as np
 # ─── 路径 ──────────────────────────────────────────────────────────
 BASE_DIR = Path(__file__).parent
 DATASETS_DIR = BASE_DIR / "datasets"
-# 部署模式下数据文件在 world_model/ 子目录，先找本地，再找绝对路径
-# 数据目录：优先使用 Railway 的 SKWM_DATA_DIR 环境变量
-_DATA_DIR_ENV = os.environ.get("SKWM_DATA_DIR", "")
-if _DATA_DIR_ENV:
-    REAL_DATA_DIR = Path(_DATA_DIR_ENV)
-else:
-    REAL_DATA_DIR = BASE_DIR / "world_model"
-    if not REAL_DATA_DIR.exists():
-        # 回退到 deploy/data/
-        REAL_DATA_DIR = Path(__file__).parent.parent.parent / "data"
+REAL_DATA_DIR = Path(r"D:\桌面\资料")
 DATASETS_DIR.mkdir(exist_ok=True)
 
 
@@ -175,16 +166,6 @@ class DataLayer:
         self.year_range = [1895, 2026]
         self.n_snapshots = 0
         self.n_state_vectors = 0
-        
-        # E+R+S 扩展数据
-        self.collab_edges = []   # R: 合作边 [{source, target, weight}]
-        self.citation_edges = [] # R: 引文边 [{source, target}]
-        self.paper_count = 10000 # E: 文献实体数（知识图谱v2.1）
-        self.author_count = 1137 # E: 作者实体数
-        self._entity_years = {}  # 实体出现在哪些年份（S:传播范围）
-        self._collab_intensity = {}  # 实体合作强度（S:合作强度）
-        self._institutions = {}  # 机构画像 {name: {heat, growth, ...})
-        self._authors = {}       # 作者画像 {name: collab_count}
     
     def load(self, verbose: bool = True):
         if verbose: print("📦 加载数据层 (策划案: 数据资源层+知识组织层)...")
@@ -229,238 +210,7 @@ class DataLayer:
             except Exception as e:
                 if verbose: print(f"  ⚠️ f(动力学): 加载失败 {e}")
         
-        # ─── 演示数据兜底（部署环境无真实数据时自动生成） ───
-        if not self.snapshots:
-            self._generate_demo_data()
-            if verbose:
-                print(f"  ℹ️ 使用演示数据（{self.n_snapshots}切片 × {self.n_state_vectors}状态向量）")
-        
-        if verbose: print(f"  ✅ E(文献实体): {self.paper_count:,}篇 | E(作者实体): {self.author_count:,}位")
-        
-        # ─── 合作关系 R ───
-        collab_paths = [
-            BASE_DIR / "data_files" / "B2_collaboration.csv",
-            REAL_DATA_DIR.parent / "B2_collaboration.csv",
-            Path(r"E:\大挑\02_deliverables\B2_collaboration.csv"),
-        ]
-        import csv
-        for cp in collab_paths:
-            if cp.exists():
-                try:
-                    with open(cp, 'r', encoding='utf-8') as f:
-                        reader = csv.DictReader(f)
-                        for row in reader:
-                            s, t = row.get("source",""), row.get("target","")
-                            w = row.get("weight", "1")
-                            if not w or w == "": w = "1"
-                            if s and t:
-                                self.collab_edges.append({"source":s,"target":t,"weight":float(w)})
-                    if verbose: print(f"  ✅ R(合作关系): {len(self.collab_edges)}条合作边")
-                except Exception as e:
-                    if verbose: print(f"  ⚠️ R(合作边): 加载失败 {e}")
-                break
-        
-        # ─── 传播范围 S —— 实体跨年分布 ───
-        for y_str in self.snapshots:
-            for name in self.snapshots[y_str].get("nodes", []):
-                if name not in self._entity_years:
-                    self._entity_years[name] = set()
-                self._entity_years[name].add(int(y_str))
-        
-        # ─── 合作强度 S —— 实体参与合作边次数 ───
-        for e in self.collab_edges:
-            for name in [e["source"], e["target"]]:
-                self._collab_intensity[name] = self._collab_intensity.get(name, 0) + 1
-        
-        if verbose:
-            n_prop = len([v for v in self._entity_years.values() if len(v) > 1])
-            n_collab = len(self._collab_intensity)
-            print(f"  ✅ S(语言分布): 中文/英文/混合实体已分类")
-            print(f"  ✅ S(传播范围): {n_prop}个实体跨多年出现")
-            print(f"  ✅ S(合作强度): {n_collab}个实体有合作关系")
-        
-        # ─── 引文网络 R —— 从 GEXF 加载 studies 关系 ───
-        gexf_paths = [
-            BASE_DIR / "data_files" / "knowledge_graph.gexf",
-            Path(r"E:\大挑\03_knowledge_graph\knowledge_graph.gexf"),
-        ]
-        import xml.etree.ElementTree as ET
-        for gp in gexf_paths:
-            if gp.exists():
-                try:
-                    tree = ET.parse(gp)
-                    root = tree.getroot()
-                    ns = {'g':'http://www.gexf.net/1.2draft'}
-                    for e in root.findall('.//g:edge', ns):
-                        rel_type = e.get('type', e.get('label', ''))
-                        if rel_type == 'studies':
-                            self.citation_edges.append({
-                                "source": e.get('source',''),
-                                "target": e.get('target',''),
-                            })
-                    if verbose: print(f"  ✅ R(引文网络): {len(self.citation_edges)}条 studies 边加载")
-                except Exception as e:
-                    if verbose: print(f"  ⚠️ R(引文): 加载失败 {e}")
-                break
-        
-        # ─── 机构画像 E —— 从状态向量提取机构类实体 ───
-        inst_kw = ['大学','学院','研究所','研究院','中心','实验室','图书馆',
-                   'university','college','institute','lab','center','school']
-        for y_str, entities in self.state_vectors.items():
-            if not isinstance(entities, dict):
-                continue
-            for name, vec in entities.items():
-                if any(kw in name.lower() for kw in inst_kw):
-                    if name not in self._institutions:
-                        self._institutions[name] = {"heat":0, "growth":0, "centrality":0, "connections":0, "years":set()}
-                    d,g,c,n = (vec[:4] if len(vec)>=4 else (0,0,0,0))
-                    if d > self._institutions[name]["heat"]:
-                        self._institutions[name].update({"heat":d,"growth":g,"centrality":c,"connections":int(n)})
-                    self._institutions[name]["years"].add(int(y_str))
-        if verbose: print(f"  ✅ E(机构画像): {len(self._institutions)}个机构实体")
-        
-        # ─── 作者画像 R —— 从合作边提取作者统计 ───
-        author_collab = Counter()
-        for e in self.collab_edges:
-            author_collab[e["source"]] += 1
-            author_collab[e["target"]] += 1
-        self._authors = {name: {"collab_count": count} for name, count in author_collab.most_common()}
-        if verbose: print(f"  ✅ R(作者画像): {len(self._authors)}位作者有合作记录")
-        
         return self
-    
-    def _generate_demo_data(self):
-        """无真实数据时生成大规模演示数据集（2000+实体，Railway部署用）"""
-        import random, itertools
-        random.seed(42)
-        
-        # 通过组合生成 2000+ 实体
-        prefixes = ["数字","智能","智慧","融合","协同","共享","绿色","可持续",
-                   "文化","旅游","遗产","非遗","生态","乡村","城市","全球",
-                   "区域","国际","跨境","多语","跨文化","中阿","阿拉伯","伊斯兰",
-                   "现代","传统","创新","创意","新兴","前沿"]
-        bases = ["旅游","文旅","文化","遗产","教育","科技","经济","贸易",
-                "金融","能源","农业","医药","传媒","艺术","文学","历史",
-                "语言","翻译","传播","交流","合作","治理","管理","服务",
-                "研究","分析","评估","规划","发展","建设","保护","传承",
-                "创新","创业","投资","消费","营销","品牌","IP","数字化",
-                "智能化","网络化","平台化","生态化","全球化","区域化",
-                "多模态","多语言","跨领域","跨学科","知识图谱","大模型",
-                "人工智能","机器学习","深度学习","数据科学","信息科学",
-                "图书馆","博物馆","档案馆","美术馆","剧院","遗址","景区"]
-        suffixes = ["研究","分析","评估","规划","管理","服务","系统","平台",
-                   "模式","路径","策略","机制","体系","框架","模型","方法",
-                   "技术","应用","实践","案例","报告","方案","政策","法规",
-                   "标准","规范","指南","指标","指数","数据","信息","知识"]
-        
-        # 组合生成: prefix+base, base+suffix, prefix+base+suffix
-        entities_set = set()
-        for p in prefixes:
-            for b in bases:
-                entities_set.add(f"{p}{b}")
-        for b in bases:
-            for s in suffixes:
-                entities_set.add(f"{b}{s}")
-        for p in prefixes[:15]:
-            for b in bases[:30]:
-                for s in suffixes[:10]:
-                    if random.random() < 0.3:
-                        entities_set.add(f"{p}{b}{s}")
-        
-        # 添加机构
-        institutions = ["北京大学","清华大学","复旦大学","上海交大","南京大学",
-                       "浙江大学","武汉大学","中山大学","北京外国语大学",
-                       "上海外国语大学","北京语言大学","中国传媒大学",
-                       "西安外国语大学","广外","大连外国语大学",
-                       "北京第二外国语学院","四川外国语大学","天津外国语大学",
-                       "中国国家图书馆","上海图书馆","中国社科院",
-                       "中国科学院","中国工程院","中国科学技术信息研究所"]
-        entities_set.update([f"机构_{n}" for n in institutions])
-        entities_set.update([f"机构_{n}图书馆" for n in ["北大","清华","复旦","南大","浙大","武大","中大","北师大"]])
-        
-        # 添加地点
-        places = ["中国","沙特","阿联酋","卡塔尔","阿曼","巴林","科威特",
-                 "埃及","摩洛哥","阿尔及利亚","突尼斯","苏丹","约旦",
-                 "叙利亚","伊拉克","也门","巴勒斯坦","迪拜","利雅得",
-                 "吉达","麦加","多哈","开罗","拉巴特","阿尔及尔",
-                 "北京","上海","广州","深圳","杭州","成都","西安",
-                 "南京","武汉","重庆","天津","苏州","厦门","青岛"]
-        entities_set.update([f"地点_{n}" for n in places])
-        
-        # 添加政策
-        policies = ["一带一路","中阿合作论坛","中阿战略伙伴","中阿全面合作",
-                   "中阿人文交流","中阿教育合作","中阿科技合作",
-                   "中阿能源合作","中阿经贸合作","阿拉伯国家联盟",
-                   "中国-海合会","中阿旅游合作","中阿翻译项目"]
-        entities_set.update([f"政策_{n}" for n in policies])
-        
-        # 添加英文术语
-        en_terms = ["tourism","culture","heritage","digital","intelligent","smart",
-                   "sustainable","development","innovation","education",
-                   "technology","economy","trade","finance","energy",
-                   "agriculture","medicine","media","art","literature",
-                   "history","language","translation","communication",
-                   "cooperation","governance","management","research",
-                   "analysis","evaluation","planning","service","system",
-                   "platform","model","method","technology","application",
-                   "knowledge graph","large language model","artificial intelligence",
-                   "machine learning","deep learning","data science",
-                   "library","museum","archive","cultural heritage",
-                   "intangible heritage","digital humanities","NLP",
-                   "information retrieval","knowledge representation",
-                   "semantic web","ontology","graph neural network",
-                   "recommendation system","sentiment analysis",
-                   "text mining","data mining","big data","cloud computing",
-                   "blockchain","metaverse","AR","VR","digital twin",
-                   "China","Arab","Saudi Arabia","UAE","Qatar","Egypt",
-                   "Morocco","Algeria","Tunisia","Jordan","Lebanon",
-                   "Syria","Iraq","Yemen","Palestine","Dubai","Riyadh",
-                   "Jeddah","Mecca","Doha","Cairo","Rabat","Algiers"]
-        entities_set.update(en_terms)
-        
-        # 最终列表
-        all_entities = sorted(entities_set)
-        random.shuffle(all_entities)
-        selected = all_entities[:2500]
-        
-        years = list(range(2000, 2027))
-        for y in years:
-            # 每年递增实体数: 2006年约500, 2026年达2500
-            ratio = (y - 2000) / 26.0
-            n_ents = max(100, min(len(selected), int(100 + ratio * 2400)))
-            yearly = selected[:n_ents]
-            
-            heat_map = {}
-            for ent in yearly:
-                heat = int(random.uniform(50, 3000) * (1 + ratio * 0.8))
-                growth = random.randint(-80, 400)
-                centrality = round(random.uniform(0.01, 0.95), 4)
-                connections = random.randint(5, min(800, n_ents // 2))
-                heat_map[ent] = (heat, growth, centrality, connections)
-            
-            # 边: 热点实体之间连接多
-            sorted_ents = sorted(heat_map.keys(), key=lambda e: -heat_map[e][0])
-            top_n = min(350, len(sorted_ents))
-            edges = []
-            for i in range(top_n):
-                for j in range(i+1, top_n):
-                    if random.random() < 0.12:
-                        w = random.randint(1, 25)
-                        edges.append({"u": sorted_ents[i], "v": sorted_ents[j], "w": w})
-            
-            self.snapshots[str(y)] = {
-                "nodes": yearly,
-                "edges": edges[:min(len(edges), 80000)],
-                "n_nodes": len(yearly),
-                "n_edges": min(len(edges), 80000),
-            }
-            self.state_vectors[str(y)] = heat_map
-        
-        self.year_range = [2000, 2026]
-        self.n_snapshots = len(years)
-        self.n_state_vectors = sum(len(v) for v in self.state_vectors.values())
-        self.paper_count = 10000
-        self.author_count = 2500
     
     def get_entities(self, year: int) -> Dict:
         """E: 获取某年的知识实体及其状态"""
@@ -470,36 +220,15 @@ class DataLayer:
         return {}
     
     def get_state(self, year: int) -> List[Dict]:
-        """S: 获取某年知识状态（热度排序，7维向量）"""
+        """S: 获取某年知识状态（热度排序）"""
         entities = self.get_entities(year)
         result = []
         for name, vec in entities.items():
-            if not isinstance(vec, (list, tuple)) or len(vec) < 4:
-                continue
-            d, g, c, n = vec[:4]
-            # 计算扩展3维
-            collab = self._collab_intensity.get(name, 0)
-            lang = self._detect_lang(name)
-            years_count = len(self._entity_years.get(name, {year}))
-            result.append({
-                "name": name,
-                "heat": d, "growth": g, "centrality": c, "connections": n,
-                # 7维: [热度,增速,中心度,连接数,合作强度,语言分布,传播范围]
-                "collab_intensity": collab,
-                "lang_diversity": lang,
-                "propagation": years_count,
-            })
+            d, g, c, n = vec
+            result.append({"name": name, "heat": d, "growth": g,
+                           "centrality": c, "connections": n})
         result.sort(key=lambda x: -x["heat"])
         return result
-    
-    def _detect_lang(self, name: str) -> str:
-        """S: 语言分布检测"""
-        has_zh = bool(re.search(r'[\u4e00-\u9fff\u3400-\u4dbf]', name))
-        has_ar = bool(re.search(r'[\u0600-\u06ff\u0750-\u077f]', name))
-        if has_zh and has_ar: return "中阿混合"
-        if has_zh: return "中文"
-        if has_ar: return "阿语"
-        return "英文/其他"
     
     def get_hot_topics(self, year: int, top_k: int = 10) -> List[Dict]:
         """S: 热点主题"""
@@ -545,141 +274,6 @@ class DataLayer:
             "influence": round(impact, 2),
             "level": "高影响桥接" if impact > 0.5 else "中等" if impact > 0.2 else "低",
             "counterfactual": f"移除'{bridge}'后，前沿连通性下降约{impact:.0%}",
-        }
-
-    # ─── 科学地图方法（策划案第73条: 科学地图部分） ─────────────
-
-    def get_publication_trends(self) -> Dict[str, int]:
-        """
-        获取出版趋势（年度发文量分布）
-        
-        从时间切片中统计每年的节点/边的总量变化趋势。
-        
-        Returns:
-            {year_str: count, ...}  # 按年份排序的出版趋势
-        """
-        if not self.snapshots:
-            return {}
-        trends = {}
-        years = sorted(self.snapshots.keys(), key=int)
-        for y in years:
-            snap = self.snapshots[y]
-            # 用节点数+边数作为"出版活动量"的代理指标
-            n_nodes = snap.get("n_nodes", 0) or 0
-            n_edges = snap.get("n_edges", 0) or 0
-            trends[y] = n_nodes + n_edges
-        return trends
-
-    def get_collaboration_network(self) -> Dict:
-        """
-        获取合作网络数据
-        
-        从最新时间切片中提取协作关系。若切片中有 'edges' 列表，
-        则按「合作」类型过滤；否则返回空结构。
-        
-        Returns:
-            {
-                "nodes": [{"id": str, "group": int}],
-                "edges": [{"source": str, "target": str, "weight": int}],
-                "total_nodes": int,
-                "total_edges": int,
-            }
-        """
-        if not self.snapshots:
-            return {"nodes": [], "edges": [], "total_nodes": 0, "total_edges": 0}
-
-        # 取最新一年切片
-        years = sorted(self.snapshots.keys(), key=int)
-        latest = years[-1]
-        snap = self.snapshots[latest]
-
-        nodes = []
-        edges = []
-        seen_nodes = set()
-
-        # 从 edges 列表提取合作边
-        raw_edges = snap.get("edges", [])
-        for e in raw_edges:
-            src = e.get("source", "") or e.get("from", "")
-            tgt = e.get("target", "") or e.get("to", "")
-            rel = e.get("relation", "") or e.get("type", "")
-            # 仅保留合作/共现关系
-            if "合作" in rel or "共现" in rel or "co" in rel.lower():
-                if src and tgt:
-                    edges.append({"source": src, "target": tgt, "weight": e.get("weight", 1)})
-                    if src not in seen_nodes:
-                        nodes.append({"id": src, "group": 1})
-                        seen_nodes.add(src)
-                    if tgt not in seen_nodes:
-                        nodes.append({"id": tgt, "group": 1})
-                        seen_nodes.add(tgt)
-            elif src and tgt and not rel:
-                # 无关系类型的边也保留作为共现边
-                edges.append({"source": src, "target": tgt, "weight": e.get("weight", 1)})
-                if src not in seen_nodes:
-                    nodes.append({"id": src, "group": 1})
-                    seen_nodes.add(src)
-                if tgt not in seen_nodes:
-                    nodes.append({"id": tgt, "group": 1})
-                    seen_nodes.add(tgt)
-
-        return {
-            "nodes": nodes,
-            "edges": edges[:500],  # 限制输出大小
-            "total_nodes": len(nodes),
-            "total_edges": len(edges),
-            "latest_year": latest,
-        }
-
-    def get_author_stats(self) -> Dict:
-        """
-        获取作者统计数据
-        
-        从所有时间切片中统计作者相关指标：
-        - 总作者数（去重）
-        - 高产作者（出现频次最高的前10）
-        - 合作密度（平均每个作者的合作伙伴数）
-        
-        Returns:
-            {
-                "total_authors": int,
-                "top_authors": [{"name": str, "count": int}],
-                "collaboration_density": float,
-            }
-        """
-        if not self.snapshots:
-            return {"total_authors": 0, "top_authors": [], "collaboration_density": 0.0}
-
-        author_count = defaultdict(int)
-        author_coauthors = defaultdict(set)
-
-        for year, snap in self.snapshots.items():
-            raw_edges = snap.get("edges", [])
-            for e in raw_edges:
-                src = e.get("source", "") or e.get("from", "")
-                tgt = e.get("target", "") or e.get("to", "")
-                # 将节点名视为作者（实际项目中可扩展为作者实体过滤）
-                if src:
-                    author_count[src] += 1
-                if tgt:
-                    author_count[tgt] += 1
-                if src and tgt:
-                    author_coauthors[src].add(tgt)
-                    author_coauthors[tgt].add(src)
-
-        # 高产作者排序
-        top_authors = sorted(author_count.items(), key=lambda x: -x[1])[:10]
-        top_authors_list = [{"name": name, "count": cnt} for name, cnt in top_authors]
-
-        # 合作密度：平均每个作者的合作伙伴数
-        total_authors = len(author_count)
-        total_co_links = sum(len(coauthors) for coauthors in author_coauthors.values())
-        density = total_co_links / total_authors if total_authors > 0 else 0.0
-
-        return {
-            "total_authors": total_authors,
-            "top_authors": top_authors_list,
-            "collaboration_density": round(density, 2),
         }
 
 
@@ -843,310 +437,10 @@ class ReportAgent:
             "sections": [
                 {"name": "热点主题", "data": hot[:7]},
                 {"name": "新兴前沿", "data": em[:7]},
+                {"name": "趋势预测", "data": fut[:5]},
                 {"name": "报告描述", "data": desc or "基于89年时间切片×43K状态向量×XGBoost生成"},
             ],
             "data_scale": f"{self.data.n_snapshots}年切片 × {self.data.n_state_vectors:,}条向量",
-        }
-
-
-# --- 3.5 阿文处理与术语对齐智能体（策划案第72条: 阿文处理与术语对齐智能体） ---
-
-class ArabicAgent:
-    """
-    阿文处理与术语对齐智能体
-    
-    策划案第72条: 阿文处理与术语对齐智能体
-    功能: 阿拉伯语文本检测、术语对齐查询（中-阿-英三语）、批量对齐、实体阿语名称查找
-    
-    数据来源: term_alignment.json (21,042条中阿英对齐术语)
-    """
-
-    TERM_ALIGNMENT_PATH = Path(__file__).parent / "data_files" / "term_alignment.json"
-    if not TERM_ALIGNMENT_PATH.exists():
-        TERM_ALIGNMENT_PATH = Path(r"E:\大挑\03_knowledge_graph\term_alignment.json")
-
-    def __init__(self):
-        self.terms = []           # 术语列表 [{en, cn, ar, domain, freq, source}]
-        self._index_by_en = {}    # en → term dict
-        self._index_by_cn = {}    # cn → list[term]
-        self._index_by_ar = {}    # ar → list[term]
-        self.loaded = False
-        self._load()
-
-    # ─── 加载 ──────────────────────────────────────────────────
-
-    def _load(self):
-        """加载术语对齐表，支持非标准JSON格式（含 _wm 水印头）"""
-        if not self.TERM_ALIGNMENT_PATH.exists():
-            print(f"  ⚠️ 术语对齐表未找到: {self.TERM_ALIGNMENT_PATH}")
-            return
-        try:
-            with open(self.TERM_ALIGNMENT_PATH, 'r', encoding='utf-8') as f:
-                raw = f.read()
-            # 去除开头的 _wm 水印行（非标准JSON）
-            # 格式: [\n  "_wm": "...",\n\n  {\n    ...\n  },\n  ...
-            # 找到第一个 { 之前的字符全部跳过
-            brace_idx = raw.find('{')
-            if brace_idx == -1:
-                raise ValueError("JSON中未找到有效的对象起始符")
-            # 拼装成标准JSON数组: [{...}, {...}, ...]
-            cleaned = '[' + raw[brace_idx:]
-            # 处理末尾多余的逗号或换行
-            cleaned = cleaned.rstrip().rstrip(',').rstrip()
-            if not cleaned.endswith(']'):
-                cleaned += ']'
-            data = json.loads(cleaned)
-            self.terms = data
-            self._build_index()
-            self.loaded = True
-            print(f"  ✅ 术语对齐表加载成功: {len(self.terms)}条 (中-阿-英三语)")
-        except Exception as e:
-            print(f"  ⚠️ 术语对齐表加载失败: {e}")
-
-    def _build_index(self):
-        """构建多语种倒排索引"""
-        for t in self.terms:
-            en = t.get("en", "").strip().lower()
-            cn = t.get("cn", "").strip()
-            ar = t.get("ar", "").strip()
-            if en:
-                self._index_by_en[en] = t
-            if cn:
-                self._index_by_cn.setdefault(cn, []).append(t)
-            if ar:
-                self._index_by_ar.setdefault(ar, []).append(t)
-
-    # ─── 检测 ──────────────────────────────────────────────────
-
-    def detect_arabic(self, text: str) -> Dict:
-        """
-        检测文本中是否包含阿拉伯语字符
-        
-        返回:
-        {
-            "has_arabic": bool,
-            "arabic_chars": int,       # 阿文字符数
-            "arabic_ratio": float,     # 阿文字符占比
-            "detected_terms": [str],   # 识别出的已知术语
-        }
-        """
-        # 阿拉伯语Unicode范围: U+0600–U+06FF, U+0750–U+077F, U+08A0–U+08FF, U+FB50–U+FDFF, U+FE70–U+FEFF
-        ar_pattern = re.compile(r'[\u0600-\u06ff\u0750-\u077f\u08a0-\u08ff\ufb50-\ufdff\ufe70-\ufeff]')
-        matches = ar_pattern.findall(text)
-        total_chars = len(text.strip())
-        ar_count = len(matches)
-        ratio = ar_count / total_chars if total_chars > 0 else 0.0
-
-        # 识别已知术语（遍历索引）
-        detected_terms = []
-        if self.loaded:
-            for ar_term in self._index_by_ar:
-                if ar_term in text:
-                    detected_terms.append(ar_term)
-
-        return {
-            "has_arabic": ar_count > 0,
-            "arabic_chars": ar_count,
-            "arabic_ratio": round(ratio, 4),
-            "detected_terms": detected_terms[:20],
-        }
-
-    # ─── 术语查询 ──────────────────────────────────────────────
-
-    def translate_term(self, term: str, source_lang: str = "auto",
-                       target_lang: str = "cn") -> Dict:
-        """
-        术语对齐查询（单条）
-        
-        Args:
-            term: 待查询的术语
-            source_lang: 源语言 (auto|en|cn|ar)
-            target_lang: 目标语言 (en|cn|ar)
-        
-        Returns:
-            {"found": bool, "input": term, "translation": str, ...}
-        """
-        if not self.loaded:
-            return {"found": False, "input": term, "error": "术语表未加载"}
-        
-        term_lower = term.strip().lower()
-        result = None
-
-        # 尝试各种匹配策略
-        if source_lang == "auto":
-            # 自动检测: 尝试 en → cn → ar 索引
-            for idx, lang in [(self._index_by_en, "en"),
-                              (self._index_by_cn, "cn"),
-                              (self._index_by_ar, "ar")]:
-                if lang == "en" and term_lower in idx:
-                    result = idx[term_lower]
-                    source_lang = "en"
-                    break
-                elif lang == "cn" and term in idx:
-                    result = idx[term][0]
-                    source_lang = "cn"
-                    break
-                elif lang == "ar" and term in idx:
-                    result = idx[term][0]
-                    source_lang = "ar"
-                    break
-        elif source_lang == "en" and term_lower in self._index_by_en:
-            result = self._index_by_en[term_lower]
-        elif source_lang == "cn" and term in self._index_by_cn:
-            candidates = self._index_by_cn.get(term, [])
-            if candidates:
-                result = candidates[0]
-        elif source_lang == "ar" and term in self._index_by_ar:
-            candidates = self._index_by_ar.get(term, [])
-            if candidates:
-                result = candidates[0]
-
-        if result is None:
-            # 子串模糊匹配
-            candidates = []
-            if source_lang == "auto" or source_lang == "en":
-                for k, v in self._index_by_en.items():
-                    if term_lower in k:
-                        candidates.append((v, "en", 0))
-            if source_lang == "auto" or source_lang == "cn":
-                for k, vals in self._index_by_cn.items():
-                    if term[:2] in k:
-                        candidates.append((vals[0], "cn", 0))
-            if source_lang == "auto" or source_lang == "ar":
-                for k, vals in self._index_by_ar.items():
-                    if term[:2] in k:
-                        candidates.append((vals[0], "ar", 0))
-            if candidates:
-                result = candidates[0][0]
-
-        if result is None:
-            return {"found": False, "input": term, "error": "未找到匹配术语"}
-
-        # 构建返回
-        translation = ""
-        if target_lang == "en":
-            translation = result.get("en", "")
-        elif target_lang == "cn":
-            translation = result.get("cn", "")
-        elif target_lang == "ar":
-            translation = result.get("ar", "")
-
-        return {
-            "found": True,
-            "input": term,
-            "source_lang": source_lang,
-            "target_lang": target_lang,
-            "translation": translation,
-            "en": result.get("en", ""),
-            "cn": result.get("cn", ""),
-            "ar": result.get("ar", ""),
-            "domain": result.get("domain", ""),
-            "freq": result.get("freq", 0),
-        }
-
-    # ─── 批量对齐 ──────────────────────────────────────────────
-
-    def align_terms(self, terms: List[str], source_lang: str = "auto",
-                    target_lang: str = "cn") -> Dict:
-        """
-        批量术语对齐
-        
-        Args:
-            terms: 术语列表
-            source_lang: 源语言
-            target_lang: 目标语言
-        
-        Returns:
-            {
-                "total": int,
-                "found": int,
-                "not_found": int,
-                "results": [单条结果],
-                "not_found_terms": [str],
-            }
-        """
-        results = []
-        not_found_terms = []
-        for term in terms:
-            r = self.translate_term(term, source_lang, target_lang)
-            if r["found"]:
-                results.append(r)
-            else:
-                not_found_terms.append(term)
-
-        return {
-            "total": len(terms),
-            "found": len(results),
-            "not_found": len(not_found_terms),
-            "results": results,
-            "not_found_terms": not_found_terms,
-        }
-
-    # ─── 实体阿语名称查找 ─────────────────────────────────────
-
-    def entity_arabic_names(self, entity_name: str) -> Dict:
-        """
-        查找实体的阿拉伯语名称
-        
-        先精确匹配，再模糊匹配cn/en字段中包含entity_name的条目，
-        返回所有匹配结果的阿语名称。
-        
-        Args:
-            entity_name: 实体名（中文或英文）
-        
-        Returns:
-            {
-                "entity": entity_name,
-                "arabic_names": [str],
-                "exact_match": bool,
-                "total_matches": int,
-            }
-        """
-        if not self.loaded:
-            return {"entity": entity_name, "arabic_names": [], "error": "术语表未加载"}
-        
-        exact = False
-        arabic_names = []
-
-        # 精确匹配英文
-        en_term = self._index_by_en.get(entity_name.strip().lower())
-        if en_term:
-            exact = True
-            arabic_names.append(en_term.get("ar", ""))
-
-        # 精确匹配中文
-        cn_matches = self._index_by_cn.get(entity_name.strip(), [])
-        if cn_matches:
-            exact = True
-            for m in cn_matches:
-                ar = m.get("ar", "")
-                if ar and ar not in arabic_names:
-                    arabic_names.append(ar)
-
-        # 模糊匹配（中文包含）
-        if not exact:
-            for cn_term, matches in self._index_by_cn.items():
-                if entity_name[:2] in cn_term or cn_term[:2] in entity_name:
-                    for m in matches:
-                        ar = m.get("ar", "")
-                        if ar and ar not in arabic_names:
-                            arabic_names.append(ar)
-                            if len(arabic_names) >= 10:
-                                break
-            # 模糊匹配（英文包含）
-            for en_term_key, m in self._index_by_en.items():
-                if entity_name[:3].lower() in en_term_key or en_term_key[:3] in entity_name.lower():
-                    ar = m.get("ar", "")
-                    if ar and ar not in arabic_names:
-                        arabic_names.append(ar)
-                        if len(arabic_names) >= 15:
-                            break
-
-        return {
-            "entity": entity_name,
-            "arabic_names": arabic_names[:20],
-            "exact_match": exact,
-            "total_matches": len(arabic_names),
         }
 
 
@@ -1159,26 +453,17 @@ class SKWMController:
     总控智能体 —— 对应策划案第70条「总控智能体」
     
     调度四类智能体、维护用户需求和语境变量、执行服务规则
-    
-    新增:
-    - ctx_engine: 语境引擎（可选），用于对热点结果重加权
-    - svc_rules: 服务规则引擎（可选），用于对热点结果应用推荐规则
     """
     
-    def __init__(self, data: DataLayer, ds: DeepSeekClient,
-                 ctx_engine: Optional[Any] = None,
-                 svc_rules: Optional[Any] = None):
+    def __init__(self, data: DataLayer, ds: DeepSeekClient):
         self.data = data
         self.ds = ds
-        self.ctx_engine = ctx_engine
-        self.svc_rules = svc_rules
         
         # 四类智能体（策划案第71-75条）
         self.literature = LiteratureAgent(data, ds)
         self.metrics = MetricsAgent(data, ds)
         self.kg = KGAgent(data, ds)
         self.report = ReportAgent(data, ds)
-        self.arabic = ArabicAgent()  # 策划案第72条: 阿文处理与术语对齐智能体
         
         # 当前状态
         self.current_year = max(data.year_range) if data.year_range else 2024
@@ -1218,22 +503,6 @@ class SKWMController:
         
         # 计量智能体: 热点分析 (S) + 前沿识别 (T)
         hot = self.metrics.hotspot_analysis(current_y, top_k)
-        
-        # ─── 语境引擎重加权（可选） ─────────────────────────
-        if self.ctx_engine is not None:
-            try:
-                hot = self.ctx_engine.reweight(hot)
-            except Exception as e:
-                print(f"  ⚠️ 语境引擎重加权失败: {e}")
-        
-        # ─── 服务规则推荐（可选） ───────────────────────────
-        svc_recommendations = []
-        if self.svc_rules is not None:
-            try:
-                svc_recommendations = self.svc_rules.recommend(hot)
-            except Exception as e:
-                print(f"  ⚠️ 服务规则推荐失败: {e}")
-        
         frontier = self.metrics.frontier_identification(current_y, top_k)
         
         # 图谱智能体: 知识全景 (E+R)
@@ -1258,13 +527,7 @@ class SKWMController:
                 "C": {"context": self.context, "available_dims": list(SKWM.CONTEXT_DIMS.keys())},
                 "U": {"user_type": self.user_type, "user_info": SKWM.USER_TYPES.get(self.user_type, {})},
                 "P": {"report": report["title"], "sections": [s["name"] for s in report["sections"]],
-                      "rules": ["推荐", "审核", "推送", "沉淀"],
-                      "audit": {
-                          "ctx_engine_used": self.ctx_engine is not None,
-                          "svc_rules_used": self.svc_rules is not None,
-                          "svc_recommendations": svc_recommendations[:5] if svc_recommendations else [],
-                          "recommendations_count": len(svc_recommendations),
-                      }},
+                      "rules": ["推荐", "审核", "推送", "沉淀"]},
             },
             "actions": self.history["actions"][-5:] if self.history["actions"] else [],
         }
@@ -1335,17 +598,17 @@ def validate_skwm_coverage(data: DataLayer, ds: DeepSeekClient):
     coverage = {
         "E": {
             "status": "✅",
-            "detail": f"知识实体: {data.n_state_vectors}条(年×节点) + 文献{data.paper_count:,}篇 + 作者{data.author_count:,}位 + 术语表21042条",
+            "detail": f"知识实体: {data.n_state_vectors}条(年×节点)",
             "proposal_ref": "策划案第56条: 包括文献/作者/机构/主题/地点/政策/项目/事件/术语",
         },
         "R": {
             "status": "✅",
-            "detail": f"知识关系: 共现边({sum(s.get('n_edges',0) for s in data.snapshots.values())}条，89年) + 合作边({len(data.collab_edges):,}条)",
+            "detail": f"知识关系: 共现边({sum(s.get('n_edges',0) for s in data.snapshots.values())}条，89年)",
             "proposal_ref": "策划案第57条: 包括引用/合作/共现/对应/影响/演化/隶属",
         },
         "S": {
             "status": "✅",
-            "detail": "知识状态: 7维向量[热度,增速,中心度,连接数,合作强度,语言分布,传播范围] × 43537条",
+            "detail": f"知识状态: 4维向量[热度,增速,中心度,连接数] × {data.n_state_vectors}条",
             "proposal_ref": "策划案第58条: 包括主题热度/合作强度/前沿程度/语言分布/传播范围",
         },
         "T": {
@@ -1354,8 +617,8 @@ def validate_skwm_coverage(data: DataLayer, ds: DeepSeekClient):
             "proposal_ref": "策划案第59条: 包括年度演化/阶段变化/突现主题",
         },
         "C": {
-            "status": "✅",
-            "detail": f"语境变量: 引擎已就绪，4维度({list(SKWM.CONTEXT_DIMS.keys())})通过context.json动态加权热点/前沿排序",
+            "status": "🟡",
+            "detail": f"语境变量: 框架已定义({list(SKWM.CONTEXT_DIMS.keys())})，需要对接飞书/政策API获取实时数据",
             "proposal_ref": "策划案第60条: 包括国家政策/区域合作/学校学科方向/国际形势",
         },
         "U": {
@@ -1364,8 +627,8 @@ def validate_skwm_coverage(data: DataLayer, ds: DeepSeekClient):
             "proposal_ref": "策划案第61条: 包括教师科研/学生学习/馆员服务/科研管理",
         },
         "P": {
-            "status": "✅",
-            "detail": "服务规则: 4规则全部实现(推荐/审核/推送/沉淀)，P.audit可追溯+P.sediment Obsidian归档+P.push飞书webhook",
+            "status": "🟡",
+            "detail": "服务规则: 框架已定义(推荐/审核/推送/沉淀)，需要对接飞书/Obsidian实现工程化",
             "proposal_ref": "策划案第62条: 包括推荐规则/审核规则/推送规则/沉淀规则",
         },
     }
@@ -1458,13 +721,13 @@ def main():
     print(f"""
     SKWM维度    覆盖  对应数据/实现
     ────────────────────────────────────────────────────
-    E(知识实体)  ✅   43K状态向量 + 10K文献 + 1.1K作者 + 21K术语
-    R(知识关系)  ✅   586K共现边 + 20K合作边
-    S(知识状态)  ✅   7维[热度/增速/中心度/连接数/合作强度/语言分布/传播范围]
-    T(时间序列)  ✅   89年切片 + XGBoost AUC=0.94
-    C(语境变量)  ✅   4维度离线加权引擎
-    U(用户需求)  ✅   4类用户差异化服务
-    P(服务规则)  ✅   4规则(推荐/审核/推送/沉淀)
+    E(知识实体)  ✅   43K状态向量(年×节点) + 文献检索
+    R(知识关系)  ✅   586K共现边(89年累积)
+    S(知识状态)  ✅   4维向量[热度/增速/中心度/连接数]
+    T(时间序列)  ✅   89年切片(S_1895~S_2026) + XGBoost预测
+    C(语境变量)  🟡   框架就绪，需对接实时政策数据
+    U(用户需求)  ✅   4类用户(教师/学生/馆员/管理)差异化服务
+    P(服务规则)  🟡   框架就绪，需对接飞书推送/Obsidian沉淀
 
     四类智能体（策划案第71-75条）:
     ✅ 文献智能体 — 检索/多跳推理/术语查询

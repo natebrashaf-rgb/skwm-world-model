@@ -80,14 +80,8 @@ class VectorStore:
         """从 SKWM 的 DataLayer 加载数据到向量库"""
         docs = []
         # 从状态向量提取热点实体
-        if not hasattr(data, 'state_vectors'):
-            return
         for year, entities in data.state_vectors.items():
-            if not isinstance(entities, dict):
-                continue
             for name, vec in list(entities.items())[:100]:
-                if not isinstance(vec, (list, tuple)) or len(vec) < 4:
-                    continue
                 docs.append({
                     "id": f"sv_{year}_{name}",
                     "text": f"{name} 在 {year} 年的知识热度为 {vec[0]}，增长 {vec[1]}，中心度 {vec[2]}，关联 {vec[3]} 个实体",
