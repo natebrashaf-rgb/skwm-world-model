@@ -82,7 +82,8 @@ print("🚀 服务启动完成\n")
 def health():
     return {"ok": True, "data_source": f"真实文献 {len(papers)} 篇",
             "year_range": [min(y for y in sv if y != '_wm'), max(y for y in sv if y != '_wm')] if sv else [1895, 2026],
-            "graph_ready": _GRAPH_READY, "world_model_ready": _WORLD_MODEL is not None}
+            "graph_ready": _GRAPH_READY, "world_model_ready": _WORLD_MODEL is not None,
+            "version": "v4-predict"}
 
 # ── 图检索问答（新增！我的贡献） ──
 @app.post("/api/qa")
