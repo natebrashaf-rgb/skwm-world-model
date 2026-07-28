@@ -42,17 +42,18 @@ if (DATA_DIR / "knowledge_graph.gexf").exists():
 
 # ── 世界模型（RSSM） ──
 _WORLD_MODEL = None
+_RSSM_MODEL = None  # 原始 PyTorch 模型，供 /api/predict 直接调用
 model_path = BASE / "model_rssm.pt"
 if model_path.exists():
     try:
         sys.path.insert(0, str(BASE / "skwm_platform" / "backend"))
         from skwm_world_model import SKWMWorldModelAdapter, WorldModel
-        # 先加载 RSSM 内核
         import torch
-        wm = WorldModel(input_dim=4, hidden_dim=64, action_dim=8)
-        wm.load_state_dict(torch.load(str(model_path), map_location='cpu'))
+        # 用 WorldModel.load() 正确加载（自动恢复 WMConfig + state_dict）
+        wm = WorldModel.load(str(model_path))
+        _RSSM_MODEL = wm
         _WORLD_MODEL = SKWMWorldModelAdapter(wm)
-        print("  ✅ 世界模型就绪（RSSM 已加载）")
+        print(f"  ✅ 世界模型就绪（RSSM 已加载, {sum(p.numel() for p in wm.parameters()):,} 参数）")
     except Exception as e:
         print(f"  ⚠️ 世界模型加载失败: {e}")
         import traceback; traceback.print_exc()
@@ -165,3 +166,85 @@ def settings():
 def graph_search(q: str = Query(...)):
     from skwm_qa_api import _graph_search_entities, _graph_search_papers
     return {"entities": _graph_search_entities(q, 10), "papers": _graph_search_papers(q, 5)}
+
+# ═══════════════════════════════════════
+# 🆕 RSSM 预测未来
+# ═══════════════════════════════════════
+
+@app.get("/api/predict")
+def predict(year: int = Query(2025), horizon: int = Query(5)):
+    """用 RSSM 世界模型预测未来 N 年知识状态
+
+    输入:
+      - year:    从哪年开始预测（默认 2025）
+      - horizon: 预测几年（默认 5）
+    返回:
+      - predictions: [{year, topic, heat, growth, centrality, connections}, ...]
+      - model_loaded: 世界模型是否就绪
+    """
+    if _RSSM_MODEL is None:
+        return {"error": "世界模型未加载", "model_loaded": False}
+
+    import torch
+    import numpy as np
+    from skwm_world_model import WMConfig
+
+    # 获取起始年的状态向量
+    yd = sv.get(str(year), {})
+    if not yd:
+        # 如果没有该年数据，用最近的一年
+        all_years = sorted(sv.keys())
+        for y in reversed(all_years):
+            if y != "_wm" and int(y) <= year:
+                yd = sv.get(str(y), {})
+                year = int(y)
+                break
+
+    if not yd:
+        return {"error": f"没有 {year} 年的数据", "model_loaded": True}
+
+    topics = list(yd.keys())
+    N = len(topics)
+
+    # 构造起始状态 [N, 4]：每个主题一条轨迹
+    x0_np = np.array([yd[t] for t in topics], dtype=np.float32)
+
+    # log 变换（训练时数据做了 log1p）
+    x0_np_log = x0_np.copy()
+    x0_np_log[:, 0] = np.log1p(x0_np[:, 0])   # 热度 log
+    x0_np_log[:, 2] = np.log1p(x0_np[:, 2])   # 中心度 log
+    x0_np_log[:, 3] = np.log1p(x0_np[:, 3])   # 连接数 log
+
+    x0 = torch.tensor(x0_np_log, dtype=torch.float32)
+
+    # 未来 horizon 年，无干预（动作全 0）
+    a_dim = _RSSM_MODEL.c.a_dim
+    a_future = torch.zeros(N, horizon, a_dim)
+
+    # 预测
+    pred = _RSSM_MODEL.imagine(x0, a_future)  # [N, horizon, 4]
+    pred_np = pred.cpu().numpy()
+
+    # 还原原始量级（expm1 逆 log1p）
+    predictions = []
+    for i, topic in enumerate(topics):
+        for h in range(horizon):
+            p = pred_np[i, h]
+            predictions.append({
+                "topic": topic,
+                "year": year + h + 1,
+                # 🔥 热度（论文数，逆 log）
+                "heat": float(max(0, np.expm1(p[0]))),
+                "growth": float(p[1]),
+                "centrality": float(max(0, np.expm1(p[2]))),
+                "connections": int(max(0, np.expm1(p[3]))),
+            })
+
+    return {
+        "start_year": year,
+        "horizon": horizon,
+        "total_topics": N,
+        "predictions": predictions,
+        "note": "RSSM 动态预测（无干预场景，训练 100 步，精度有待提升）",
+        "model_loaded": True,
+    }
