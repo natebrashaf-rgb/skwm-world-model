@@ -575,16 +575,7 @@ class H(BaseHTTPRequestHandler):
             mx=max(tp.values()) if tp else 1
             hotspots=[{"name":t,"heat":c,"growth":c*5,"centrality":round(c/mx,4),"connections":c*3} for t,c in tp.most_common(15)]
             json_ok({"hotspots":hotspots,"total":len(r)})
-        
-        elif pa=='/api/predict':
-            tp=Counter()
-            for pp in all_papers:
-                for kw in ["tourism","heritage","culture","digital","arab","language","model","data","AI","education","travel","policy","health","network","knowledge","learning","system","translation"]:
-                    if kw in str(pp.get('title','')).lower(): tp[kw]+=1
-            import random
-            predictions=[{"name":t,"growth":c//2,"predicted_growth":c//2+random.randint(0,c//4)} for t,c in tp.most_common(15)]
-            json_ok({"predictions":predictions,"auc":0.9408})
-        
+
         elif pa=='/api/timeline':
             years=Counter()
             for pp in all_papers:
