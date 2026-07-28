@@ -172,12 +172,13 @@ def graph_search(q: str = Query(...)):
 # ═══════════════════════════════════════
 
 @app.get("/api/predict")
-def predict(year: int = Query(2025), horizon: int = Query(5)):
+def predict(year: int = Query(2025), horizon: int = Query(5), top_k: int = Query(10)):
     """用 RSSM 世界模型预测未来 N 年知识状态
 
     输入:
       - year:    从哪年开始预测（默认 2025）
       - horizon: 预测几年（默认 5）
+      - top_k:   只预测热度前 N 的主题（默认 10，2194个全算太慢）
     返回:
       - predictions: [{year, topic, heat, growth, centrality, connections}, ...]
       - model_loaded: 世界模型是否就绪
@@ -192,7 +193,6 @@ def predict(year: int = Query(2025), horizon: int = Query(5)):
     # 获取起始年的状态向量
     yd = sv.get(str(year), {})
     if not yd:
-        # 如果没有该年数据，用最近的一年
         all_years = sorted(sv.keys())
         for y in reversed(all_years):
             if y != "_wm" and int(y) <= year:
@@ -203,17 +203,20 @@ def predict(year: int = Query(2025), horizon: int = Query(5)):
     if not yd:
         return {"error": f"没有 {year} 年的数据", "model_loaded": True}
 
-    topics = list(yd.keys())
+    # 按热度排序，只取 top_k 个主题
+    ranked = sorted(yd.items(), key=lambda x: -float(x[1][0]))
+    selected = ranked[:top_k]
+    topics = [t for t, _ in selected]
     N = len(topics)
 
-    # 构造起始状态 [N, 4]：每个主题一条轨迹
+    # 构造起始状态 [N, 4]
     x0_np = np.array([yd[t] for t in topics], dtype=np.float32)
 
     # log 变换（训练时数据做了 log1p）
     x0_np_log = x0_np.copy()
-    x0_np_log[:, 0] = np.log1p(x0_np[:, 0])   # 热度 log
-    x0_np_log[:, 2] = np.log1p(x0_np[:, 2])   # 中心度 log
-    x0_np_log[:, 3] = np.log1p(x0_np[:, 3])   # 连接数 log
+    x0_np_log[:, 0] = np.log1p(np.maximum(x0_np[:, 0], 0))   # 热度 log
+    x0_np_log[:, 2] = np.log1p(np.maximum(x0_np[:, 2], 0))   # 中心度 log
+    x0_np_log[:, 3] = np.log1p(np.maximum(x0_np[:, 3], 0))   # 连接数 log
 
     x0 = torch.tensor(x0_np_log, dtype=torch.float32)
 
@@ -233,17 +236,17 @@ def predict(year: int = Query(2025), horizon: int = Query(5)):
             predictions.append({
                 "topic": topic,
                 "year": year + h + 1,
-                # 🔥 热度（论文数，逆 log）
-                "heat": float(max(0, np.expm1(p[0]))),
+                "heat": float(max(0, np.expm1(max(p[0], -10)))),
                 "growth": float(p[1]),
-                "centrality": float(max(0, np.expm1(p[2]))),
-                "connections": int(max(0, np.expm1(p[3]))),
+                "centrality": float(max(0, np.expm1(max(p[2], -10)))),
+                "connections": int(max(0, np.expm1(max(p[3], -10)))),
             })
 
     return {
         "start_year": year,
         "horizon": horizon,
-        "total_topics": N,
+        "top_k": top_k,
+        "total_topics_in_data": len(yd),
         "predictions": predictions,
         "note": "RSSM 动态预测（无干预场景，训练 100 步，精度有待提升）",
         "model_loaded": True,
