@@ -1,6 +1,6 @@
-# 依赖（Railway 部署用）
-# start.sh 负责 pip install，这里留做记录
 fastapi>=0.100.0
 uvicorn>=0.20.0
 numpy>=1.24.0
 torch>=2.0.0
+networkx>=2.8
+chromadb>=0.4.0
