@@ -5,14 +5,31 @@ import json, re, os, sys
 from pathlib import Path
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 BASE = Path(__file__).parent.parent.parent
 DATA_DIR = BASE / "data"
+FRONTEND_DIR = BASE / "skwm_platform" / "frontend_new" / "dist"
 sys.path.insert(0, str(BASE))
 sys.path.insert(0, str(BASE / "skwm_platform" / "backend"))
 
 app = FastAPI(title="SKWM World Model Server")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+
+# 服务前端静态文件（Vite 构建产物）
+if FRONTEND_DIR.exists():
+    app.mount("/assets", StaticFiles(directory=str(FRONTEND_DIR / "assets")), name="assets")
+    @app.get("/")
+    async def index():
+        return FileResponse(str(FRONTEND_DIR / "index.html"))
+    # SPA catch-all: 所有非 /api 路由返回 index.html
+    @app.get("/{path:path}")
+    async def spa_fallback(path: str):
+        if path.startswith("api/"):
+            from fastapi.responses import JSONResponse
+            return JSONResponse({"error": "not found"}, status_code=404)
+        return FileResponse(str(FRONTEND_DIR / "index.html"))
 
 # ── 加载真实数据 ──
 print("📦 加载数据...")
@@ -69,17 +86,15 @@ try:
 except Exception as e:
     print(f"  ⚠️ 闭环控制器加载失败: {e}")
 
-print("🚀 服务启动完成\n")
+print("🚀 服务启动中...")
 
 # ═══════════════════ API 路由 ═══════════════════
 
+# 轻量级健康检查（不等数据加载完就响应）
 @app.get("/api/health")
 def health():
-    return {"ok": True, "data_source": f"真实文献 {len(papers)} 篇",
-            "year_range": [1895, 2026],
-            "graph_ready": _GRAPH_READY,
-            "world_model_ready": _WORLD_MODEL is not None,
-            "rssm_config": f"x{_WORLD_MODEL.wm.c.x_dim}x{_WORLD_MODEL.wm.c.deter}x{_WORLD_MODEL.wm.c.stoch}" if _WORLD_MODEL else "none"}
+    return {"ok": True, "status": "starting", "data_source": f"真实文献 {len(papers)} 篇",
+            "world_model_ready": _WORLD_MODEL is not None}
 
 @app.post("/api/qa")
 def qa(question: str = Query(...), lang: str = Query("zh")):

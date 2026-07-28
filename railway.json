@@ -6,6 +6,7 @@
   "deploy": {
     "startCommand": "bash start.sh",
     "healthcheckPath": "/api/health",
+    "healthcheckTimeout": 180,
     "restartPolicyType": "ON_FAILURE"
   }
 }
