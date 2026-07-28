@@ -22,7 +22,7 @@ if FRONTEND_DIR.exists():
     app.mount("/assets", StaticFiles(directory=str(FRONTEND_DIR / "assets")), name="assets")
 
 # ── 全局状态：懒加载 ──
-_data = {"papers": [], "sv": {}, "graph_ready": False, "wm_ready": False, "ctrl": None}
+_data = {"papers": [], "sv": {}, "graph_ready": False, "wm_ready": False, "ctrl": None, "loading_error": None}
 _loading_done = threading.Event()
 
 def _load_data():
@@ -64,7 +64,9 @@ def _load_data():
             _data["wm_ready"] = True
             print(f"  ✅ 世界模型就绪")
         except Exception as e:
+            _data["loading_error"] = f"世界模型失败: {e}"
             print(f"  ⚠️ 世界模型失败: {e}")
+            import traceback; traceback.print_exc()
 
     # 闭环控制器
     try:
@@ -88,17 +90,23 @@ threading.Thread(target=_load_data, daemon=True).start()
 
 @app.get("/api/health")
 def health():
-    """立即响应，不等数据加载完"""
     return {"ok": True, "status": "loading" if not _loading_done.is_set() else "ready",
             "papers": len(_data["papers"]), "loading_done": _loading_done.is_set(),
-            "graph_ready": _data["graph_ready"], "wm_ready": _data["wm_ready"]}
+            "graph_ready": _data["graph_ready"], "wm_ready": _data["wm_ready"],
+            "loading_error": _data.get("loading_error")}
 
+# QA: GET 用 Query，POST 用 JSON body
 @app.get("/api/qa")
-@app.post("/api/qa")
-def qa(question: str = Query(...), lang: str = Query("zh")):
+def qa_get(question: str = Query(...), lang: str = Query("zh")):
     _loading_done.wait(timeout=30)
     from skwm_qa_api import ask
     return ask(question, lang)
+
+@app.post("/api/qa")
+def qa_post(body: dict):
+    _loading_done.wait(timeout=30)
+    from skwm_qa_api import ask
+    return ask(body.get("question",""), body.get("lang","zh"))
 
 @app.get("/api/predict")
 def predict(topic: str = Query("旅游"), horizon: int = Query(5)):
