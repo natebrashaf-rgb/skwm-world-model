@@ -109,7 +109,16 @@ def qa_post(body: dict):
     return ask(body.get("question",""), body.get("lang","zh"))
 
 @app.get("/api/predict")
-def predict(topic: str = Query("旅游"), horizon: int = Query(5)):
+def predict(topic: str = Query("旅游"), horizon: int = Query(5), top_k: int = Query(10)):
+    """RSSM 世界模型预测未来
+
+    输入:
+      - topic:   起始主题（预测该主题及相关趋势，默认"旅游"）
+      - horizon: 预测几年（默认 5）
+      - top_k:   返回前 N 个热点（默认 10）
+    返回:
+      - predictions: [{topic, heat, growth}, ...]
+    """
     _loading_done.wait(timeout=30)
     if not _data.get("wm"):
         return {"error": "世界模型未加载"}
@@ -124,8 +133,14 @@ def predict(topic: str = Query("旅游"), horizon: int = Query(5)):
     o = KnowledgeState(vec=vec, year=latest - horizon)
     fut = _data["wm"].rollout(o, {"feature_shift": {topic: 0.3}}, horizon=horizon)
     result = [{"topic": t, "heat": round(float(fut.vec[t][0]), 1),
-               "growth": round(float(fut.vec[t][1]), 4)} for t in fut.hot_topics(10)]
-    return {"topic": topic, "horizon": horizon, "predictions": result}
+               "growth": round(float(fut.vec[t][1]), 4)} for t in fut.hot_topics(top_k)]
+    return {
+        "start_topic": topic,
+        "horizon": horizon,
+        "top_k": top_k,
+        "predictions": result,
+        "model_loaded": True
+    }
 
 @app.get("/api/hotspots")
 def hotspots(year: int = Query(2026), top_k: int = Query(10)):
