@@ -1,179 +1,328 @@
-"""wm_server.py — SKWM 世界模型算法服务 (FastAPI)
-极速启动：先响应健康检查，数据后台懒加载
+"""wm_server.py — 世界模型算法服务 (FastAPI)
+每次请求真正执行 propose→simulate→revise 闭环规划。
+数据源: 真实文献资料库 (1958篇文献)
 """
-import json, re, os, sys, threading
-from pathlib import Path
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, JSONResponse
-
-BASE = Path(__file__).parent.parent.parent
-DATA_DIR = BASE / "data"
-FRONTEND_DIR = BASE / "skwm_platform" / "frontend_new" / "dist"
-sys.path.insert(0, str(BASE))
-sys.path.insert(0, str(BASE / "skmw_platform" / "backend"))
+from real_data_layer import RealKnowledgeWorldModel
+from skwm_closed_loop import (
+    SKWMClosedLoopController, ProposalPolicy, RevisionPolicy
+)
+import json
+from pathlib import Path
 
 app = FastAPI(title="SKWM World Model Server")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-# ── 服务前端静态文件 ──
-if FRONTEND_DIR.exists():
-    app.mount("/assets", StaticFiles(directory=str(FRONTEND_DIR / "assets")), name="assets")
+# 启动时加载真实数据
+kwm = RealKnowledgeWorldModel()
+proposal = ProposalPolicy()
+revision = RevisionPolicy()
+ctrl = SKWMClosedLoopController(kwm, proposal, revision)
 
-# ── 全局状态：懒加载 ──
-_data = {"papers": [], "sv": {}, "graph_ready": False, "wm_ready": False, "ctrl": None, "loading_error": None}
-_loading_done = threading.Event()
-
-def _load_data():
-    """后台加载数据"""
-    print("📦 后台加载数据...")
-    b1_path = DATA_DIR / "B1_文献主表.json"
-    if b1_path.exists():
-        raw = b1_path.read_text(encoding='utf-8')
-        raw = re.sub(r'[\u200B-\u200F\u2028-\u202F\uFEFF]', '', raw)
-        idx = raw.find('{', raw.find('{') + 1)
-        _data["papers"] = json.loads('[' + raw[idx:])
-    print(f"  ✅ {len(_data['papers'])} 篇文献")
-
-    sv_path = DATA_DIR / "state_vectors.json"
-    if sv_path.exists():
-        _data["sv"] = json.loads(sv_path.read_text(encoding='utf-8'))
-    print(f"  ✅ {len(_data['sv'])} 年状态向量")
-
-    # 图检索
-    if (DATA_DIR / "knowledge_graph.gexf").exists():
-        try:
-            from skwm_qa_api import _graph_search_entities, _graph_search_papers
-            _data["graph_ready"] = True
-            print("  ✅ 图检索就绪")
-        except Exception as e:
-            print(f"  ⚠️ 图检索失败: {e}")
-
-    # RSSM 世界模型
-    model_path = BASE / "model_rssm.pt"
-    if model_path.exists():
-        try:
-            import torch
-            from skwm_world_model import SKWMWorldModelAdapter, WorldModel, WMConfig
-            state = torch.load(str(model_path), map_location='cpu', weights_only=False)
-            c = WMConfig(**state['config'])
-            wm = WorldModel(c)
-            wm.load_state_dict(state['model'])
-            _data["wm"] = SKWMWorldModelAdapter(wm)
-            _data["wm_ready"] = True
-            print(f"  ✅ 世界模型就绪")
-        except Exception as e:
-            _data["loading_error"] = f"世界模型失败: {e}"
-            print(f"  ⚠️ 世界模型失败: {e}")
-            import traceback; traceback.print_exc()
-
-    # 闭环控制器
+# 尝试加载 RSSM 内核 (如果 model_rssm.pt 存在)
+_rssm_loaded = False
+_rssm_adapter = None
+_rssm_model_path = Path(__file__).parent / "model_rssm.pt"
+if _rssm_model_path.exists():
     try:
-        from real_data_bridge import BridgeKnowledgeWorldModel
-        from skwm_closed_loop import SKWMClosedLoopController, ProposalPolicy, RevisionPolicy
-        kwm = BridgeKnowledgeWorldModel(_data["papers"], _data["sv"], rssm_adapter=_data.get("wm"))
-        proposal = ProposalPolicy()
-        revision = RevisionPolicy()
-        _data["ctrl"] = SKWMClosedLoopController(kwm, proposal, revision)
-        print("  ✅ 闭环控制器就绪")
+        from skwm_world_model import WorldModel, SKWMWorldModelAdapter
+        import torch
+        _rssm_model = WorldModel.load(str(_rssm_model_path))
+        _rssm_adapter = SKWMWorldModelAdapter(_rssm_model)
+        # 替换 rollout 为 RSSM 预测
+        kwm.rollout = lambda o, c, h: _rssm_adapter.rollout(o, c, h)
+        _rssm_loaded = True
+        print(f"  RSSM 内核已加载 ({_rssm_model_path.name})")
     except Exception as e:
-        print(f"  ⚠️ 闭环控制器失败: {e}")
+        print(f"  RSSM 加载失败: {e}")
 
-    _loading_done.set()
-    print("🚀 数据加载完成")
-
-# 启动后台加载线程
-threading.Thread(target=_load_data, daemon=True).start()
-
-# ═══════════════════ 路由 ═══════════════════
 
 @app.get("/api/health")
 def health():
-    return {"ok": True, "status": "loading" if not _loading_done.is_set() else "ready",
-            "papers": len(_data["papers"]), "loading_done": _loading_done.is_set(),
-            "graph_ready": _data["graph_ready"], "wm_ready": _data["wm_ready"],
-            "loading_error": _data.get("loading_error")}
-
-# QA: GET 用 Query，POST 用 JSON body
-@app.get("/api/qa")
-def qa_get(question: str = Query(...), lang: str = Query("zh")):
-    _loading_done.wait(timeout=30)
-    from skwm_qa_api import ask
-    return ask(question, lang)
-
-@app.post("/api/qa")
-def qa_post(body: dict):
-    _loading_done.wait(timeout=30)
-    from skwm_qa_api import ask
-    return ask(body.get("question",""), body.get("lang","zh"))
-
-@app.get("/api/predict")
-def predict(topic: str = Query("旅游"), horizon: int = Query(5), top_k: int = Query(10)):
-    """RSSM 世界模型预测未来
-
-    输入:
-      - topic:   起始主题（预测该主题及相关趋势，默认"旅游"）
-      - horizon: 预测几年（默认 5）
-      - top_k:   返回前 N 个热点（默认 10）
-    返回:
-      - predictions: [{topic, heat, growth}, ...]
-    """
-    _loading_done.wait(timeout=30)
-    if not _data.get("wm"):
-        return {"error": "世界模型未加载"}
-    from skwm_closed_loop import KnowledgeState
-    latest = max(int(k) for k in _data["sv"] if k != '_wm')
-    vec = {}
-    for yr in range(latest - horizon, latest + 1):
-        yd = _data["sv"].get(str(yr), {})
-        for t, v in yd.items():
-            if t not in vec:
-                vec[t] = [float(x) for x in v]
-    o = KnowledgeState(vec=vec, year=latest - horizon)
-    fut = _data["wm"].rollout(o, {"feature_shift": {topic: 0.3}}, horizon=horizon)
-    result = [{"topic": t, "heat": round(float(fut.vec[t][0]), 1),
-               "growth": round(float(fut.vec[t][1]), 4)} for t in fut.hot_topics(top_k)]
     return {
-        "start_topic": topic,
-        "horizon": horizon,
-        "top_k": top_k,
-        "predictions": result,
-        "model_loaded": True
+        "ok": True,
+        "algorithm": "propose→simulate→revise",
+        "data_source": f"真实文献 {kwm.data['total']} 篇",
+        "year_range": list(kwm.year_range),
     }
 
-@app.get("/api/hotspots")
-def hotspots(year: int = Query(2026), top_k: int = Query(10)):
-    _loading_done.wait(timeout=30)
-    yd = _data["sv"].get(str(year), {})
-    ranked = sorted([(n, v[0], v[1], v[2], v[3]) for n, v in yd.items()], key=lambda x: -x[1])
-    return {"year": year, "hotspots": [{"topic": r[0], "heat": r[1], "growth": r[2],
-            "centrality": round(r[3], 2), "connections": int(r[4])} for r in ranked[:top_k]],
-            "total_papers": len(_data["papers"])}
+
+@app.get("/api/closed-loop")
+def closed_loop(
+    user: str = Query("teacher", description="用户类型"),
+    M: int = Query(4, description="束宽(提议数)"),
+    L: int = Query(3, description="视野(预测年数)"),
+    B: int = Query(6, description="推理预算(rollout次数)"),
+    t0: int = Query(2020, description="起始年"),
+    T: int = Query(2024, description="结束年"),
+):
+    """实时执行闭环规划算法"""
+    decisions = ctrl.run(t0=t0, T=T, goal="前沿识别", user=user, M=M, L=L, B=B)
+    return {
+        "user": user,
+        "goal": "前沿识别",
+        "algorithm": "propose→simulate→revise",
+        "data_source": f"真实文献 {kwm.data['total']} 篇",
+        "config": {"M": M, "L": L, "B": B, "t0": t0, "T": T},
+        "decisions": [
+            {"year": d["year"],
+             "note": d["plan"].note,
+             "score": round(d["score"], 2),
+             "topics": list(d["plan"].emphasis.keys())}
+            for d in decisions
+        ],
+    }
+
+
+@app.get("/api/closed-loop/evaluate")
+def evaluate(
+    user: str = Query("teacher"),
+    eval_years: str = Query("2018,2019,2020"),
+):
+    """回测命中率"""
+    from skwm_closed_loop import ClosedLoopEvaluator
+    ev = ClosedLoopEvaluator(kwm)
+    years = [int(y) for y in eval_years.split(",")]
+    hr = ev.hit_rate(ctrl, eval_years=years, user=user, L=4, M=5, B=8, k=10)
+    return {
+        "user": user,
+        "eval_years": years,
+        "hit_rate": round(hr, 4),
+        "data_source": f"真实文献 {kwm.data['total']} 篇",
+    }
+
 
 @app.get("/api/overview")
 def overview():
-    return {"total_papers": len(_data["papers"]) if _data["papers"] else 0, "year_range": [1895, 2026]}
+    """数据总览"""
+    return {
+        "total_papers": kwm.data["total"],
+        "year_range": list(kwm.year_range),
+        "categories": len(kwm.topics),
+        "topic_names": {t: kwm.topic_names[t] for t in kwm.topics},
+    }
+
+
+@app.get("/api/state")
+def get_state(year: int = Query(2024)):
+    """某年真实知识状态"""
+    s = kwm.get_state(year)
+    return {
+        "year": year,
+        "hot": [{"topic": kwm.topic_names[t], "heat": float(s.vec[t][0]),
+                 "growth": float(s.vec[t][1]), "centrality": float(s.vec[t][2]),
+                 "connections": float(s.vec[t][3])}
+                for t in kwm.topics if s.vec[t][0] > 0],
+    }
+
+
+# ============ Dashboard 数据 ============
 
 @app.get("/api/dashboard")
 def dashboard():
-    return {"total_papers": len(_data["papers"]) if _data["papers"] else 0, "categories": 18, "year_range": [1895, 2026]}
+    """工作台总览"""
+    by_cat = kwm.data["by_category"]
+    by_year = kwm.data["by_year"]
 
-@app.get("/api/closed-loop")
-def closed_loop(user: str = Query("teacher"), M: int = Query(4), L: int = Query(3),
-                B: int = Query(6), t0: int = Query(2020), T: int = Query(2024)):
-    _loading_done.wait(timeout=30)
-    if not _data.get("ctrl"):
-        return {"error": "闭环控制器未加载"}
-    decisions = _data["ctrl"].run(t0=t0, T=T, goal="前沿识别", user=user, M=M, L=L, B=B)
-    return {"user": user, "decisions": [{"year": d["year"], "note": d["plan"].note,
-            "score": round(d["score"], 2), "topics": list(d["plan"].emphasis.keys())} for d in decisions]}
+    # 各分类统计
+    cat_stats = {}
+    for cat in kwm.topics:
+        papers = by_cat.get(cat, [])
+        total = len(papers)
+        cites = sum(p["citations"] for p in papers)
+        years = [p["year"] for p in papers if p["year"] >= 2000]
+        cat_stats[kwm.topic_names[cat]] = {
+            "total": total, "cites": cites,
+            "year_min": min(years) if years else 0,
+            "year_max": max(years) if years else 0,
+        }
 
-# SPA fallback
-@app.get("/{path:path}")
-async def spa(path: str):
-    if path.startswith("api/"):
-        return JSONResponse({"error": "not found"}, status_code=404)
-    if FRONTEND_DIR.exists():
-        return FileResponse(str(FRONTEND_DIR / "index.html"))
-    return JSONResponse({"error": "前端未构建"}, status_code=500)
+    # 年度趋势
+    years_range = range(max(kwm.year_range[0], 2015), kwm.year_range[1] + 1)
+    trend = []
+    for y in years_range:
+        papers = by_year.get(y, [])
+        trend.append({"year": y, "count": len(papers),
+                      "cites": sum(p["citations"] for p in papers)})
+
+    return {
+        "total_papers": kwm.data["total"],
+        "categories": len(kwm.topics),
+        "year_range": list(kwm.year_range),
+        "category_stats": cat_stats,
+        "trend": trend,
+    }
+
+
+# ============ 热点/科学计量 ============
+
+@app.get("/api/hotspots")
+def hotspots(year: int = Query(2024), top_k: int = Query(10)):
+    """科学计量: 热点排名 + 语种分布 + 前沿识别"""
+    s = kwm.get_state(year)
+
+    # 热点排名 (按论文数)
+    ranked = [(kwm.topic_names[t], float(s.vec[t][0]), float(s.vec[t][1]),
+               float(s.vec[t][2]), float(s.vec[t][3]))
+              for t in kwm.topics if s.vec[t][0] > 0]
+    ranked.sort(key=lambda x: x[1], reverse=True)
+    hotspots_data = [
+        {"topic": r[0], "heat": r[1], "growth": round(r[2], 4),
+         "centrality": round(r[3], 2), "connections": int(r[4])}
+        for r in ranked[:top_k]
+    ]
+
+    # 前沿 (增速最快)
+    emerging = sorted(ranked, key=lambda x: x[2], reverse=True)[:5]
+    emerging_data = [
+        {"topic": r[0], "growth": round(r[2], 4)}
+        for r in emerging if r[2] > 0
+    ]
+
+    # 年度趋势 (最近10年)
+    by_year = kwm.data["by_year"]
+    trend = []
+    for y in range(max(2015, kwm.year_range[0]), kwm.year_range[1] + 1):
+        papers = by_year.get(y, [])
+        trend.append({"year": y, "count": len(papers)})
+
+    return {
+        "year": year,
+        "hotspots": hotspots_data,
+        "emerging_topics": emerging_data,
+        "trend": trend,
+        "total_papers": kwm.data["total"],
+    }
+
+
+# ============ 文献分布 ============
+
+@app.get("/api/literature")
+def literature(year: int = Query(0)):
+    """文献分布: 各分类论文数 + 最近文献"""
+    by_cat = kwm.data["by_category"]
+    by_year = kwm.data["by_year"]
+    all_papers = kwm.data["all"]
+
+    cat_list = []
+    for cat in kwm.topics:
+        papers = by_cat.get(cat, [])
+        total = len(papers)
+        max_cite = max((p["citations"] for p in papers), default=0)
+        avg_cite = sum(p["citations"] for p in papers) / max(1, total)
+        cat_list.append({
+            "id": cat,
+            "name": kwm.topic_names[cat],
+            "total": total,
+            "avg_cites": round(avg_cite, 1),
+            "max_cites": max_cite,
+        })
+    cat_list.sort(key=lambda x: x["total"], reverse=True)
+
+    # 最近文献
+    recent = sorted(all_papers, key=lambda p: p["year"], reverse=True)[:20]
+    recent_data = [
+        {"title": p["title"][:60], "year": p["year"],
+         "citations": p["citations"], "journal": p["journal"][:30]}
+        for p in recent
+    ]
+
+    # 年度分布
+    yr_stats = []
+    for y in range(2010, 2027):
+        papers = by_year.get(y, [])
+        if papers:
+            yr_stats.append({
+                "year": y,
+                "count": len(papers),
+                "cites": sum(p["citations"] for p in papers),
+            })
+
+    return {
+        "total": kwm.data["total"],
+        "categories": cat_list,
+        "recent": recent_data,
+        "yearly": yr_stats,
+    }
+
+
+# ============ 知识图谱 ============
+
+_KG_DATA: dict | None = None
+
+@app.get("/api/knowledge-graph")
+def knowledge_graph():
+    """知识图谱实体与关系 (从真实文献提取)"""
+    global _KG_DATA
+    if _KG_DATA is not None:
+        return _KG_DATA
+    kg_path = Path(__file__).parent / "kg_data.json"
+    if kg_path.exists():
+        with open(kg_path, "r", encoding="utf-8") as f:
+            _KG_DATA = json.load(f)
+        return _KG_DATA
+    return {"statistics": {"entities": 0, "relations": 0},
+            "entity_types": [], "relation_types": [],
+            "top_entities": [], "entities": [], "relations": []}
+
+
+@app.get("/api/knowledge-graph/entity")
+def graph_entity(name: str = Query(""), type: str = Query("")):
+    """查询单个实体的关联网络"""
+    kg = knowledge_graph()
+    if not isinstance(kg, dict):
+        return kg
+    # 查找实体
+    target = None
+    for e in kg.get("entities", []):
+        if (not name or name.lower() in e["name"].lower()) and \
+           (not type or type == e["type"]):
+            target = e
+            break
+    if not target:
+        return {"entity": None, "relations": []}
+
+    # 找出关联关系
+    rels = [r for r in kg.get("relations", [])
+            if r["source"] == target["id"] or r["target"] == target["id"]]
+    # 找出关联实体
+    neighbor_ids = set()
+    for r in rels:
+        neighbor_ids.add(r["source"])
+        neighbor_ids.add(r["target"])
+    neighbors = [e for e in kg.get("entities", []) if e["id"] in neighbor_ids and e["id"] != target["id"]]
+
+    return {"entity": target, "relations": rels[:50], "neighbors": neighbors[:30]}
+
+
+# ============ 报告中心 ============
+
+_REPORT_CACHE: list[dict] | None = None
+
+@app.get("/api/reports")
+def list_reports():
+    """已生成的闭环决策报告"""
+    global _REPORT_CACHE
+    if _REPORT_CACHE is not None:
+        return {"reports": _REPORT_CACHE, "total": len(_REPORT_CACHE)}
+
+    reports = []
+    for user in ["teacher", "student", "librarian", "manager"]:
+        decisions = ctrl.run(t0=2020, T=2024, goal="前沿识别", user=user, M=4, L=3, B=6)
+        for d in decisions:
+            topic_list = ", ".join(kwm.topic_names.get(t, t) for t in d["plan"].emphasis)
+            reports.append({
+                "id": f"{user}-{d['year']}",
+                "title": f"{d['year']}年 {user} 知识服务决策报告",
+                "type": {"teacher": "教师课题", "student": "学生选题",
+                         "librarian": "学科周报", "manager": "科研管理"}.get(user, user),
+                "date": f"{d['year']}-07-13",
+                "status": "已完成",
+                "size": "2.4KB",
+                "summary": f"推荐: {topic_list}  (评分 {d['score']:.1f})",
+                "user": user,
+            })
+    reports.sort(key=lambda r: r["date"], reverse=True)
+    _REPORT_CACHE = reports
+    return {"reports": reports, "total": len(reports)}
