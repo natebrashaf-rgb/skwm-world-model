@@ -21,3 +21,8 @@ obsidian_vault/
 .DS_Store
 Thumbs.db
 .deepseek_key
+
+# Neo4j 凭证（绝不上传）
+.neo4j_aura_cred.json
+.neo4j_cred.json
+.neo4j_aura_conn.json
