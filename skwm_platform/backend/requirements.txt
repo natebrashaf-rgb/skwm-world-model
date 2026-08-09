@@ -7,3 +7,6 @@ numpy>=1.24
 xgboost>=2.0
 torch>=2.0
 transformers>=4.30
+
+# Neo4j 图数据库驱动
+neo4j>=5.0

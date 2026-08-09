@@ -1,0 +1,454 @@
+{
+  "timestamp": "20260809_183908",
+  "total_tests": 30,
+  "results": [
+    {
+      "id": 1,
+      "name": "数据层加载",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "snapshots": 27,
+        "state_vectors": 243,
+        "year_range": [
+          2000,
+          2026
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Neo4j连接",
+      "status": "PASS",
+      "time": 0.176,
+      "result": {
+        "success": true,
+        "nodes": 32206,
+        "edges": 105191
+      }
+    },
+    {
+      "id": 3,
+      "name": "热点分析",
+      "status": "PASS",
+      "time": 0.002,
+      "result": {
+        "success": true,
+        "year": 2026,
+        "top3": [
+          "文化",
+          "可持续发展",
+          "人工智能"
+        ],
+        "count": 10
+      }
+    },
+    {
+      "id": 4,
+      "name": "前沿识别",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "year": 2026,
+        "top3": [
+          "旅游",
+          "可持续发展",
+          "博物馆"
+        ],
+        "count": 10
+      }
+    },
+    {
+      "id": 5,
+      "name": "趋势预测",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "from_year": 2023,
+        "to_year": 2026,
+        "top3": [
+          "智慧旅游",
+          "数字文旅",
+          "文化"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": "反事实分析",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "bridge": "文化",
+        "influence": 144.61,
+        "level": "高影响桥接"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Neo4j搜索",
+      "status": "PASS",
+      "time": 0.075,
+      "result": {
+        "success": true,
+        "keyword": "文化",
+        "count": 10,
+        "sample": {
+          "labels": [
+            "Paper"
+          ],
+          "id": "10.36012/978-981-14-3865-3",
+          "name": null,
+          "heat": null,
+          "year": 2019
+        }
+      }
+    },
+    {
+      "id": 8,
+      "name": "Neo4j邻居",
+      "status": "ERROR",
+      "time": 0.248,
+      "error": "unhashable type: 'dict'"
+    },
+    {
+      "id": 9,
+      "name": "作者合作网络",
+      "status": "PASS",
+      "time": 0.205,
+      "result": {
+        "success": true,
+        "author": "Ahmedin Jemal",
+        "collaborators": 4
+      }
+    },
+    {
+      "id": 10,
+      "name": "共现关键词",
+      "status": "PASS",
+      "time": 0.206,
+      "result": {
+        "success": true,
+        "topic": "3D Cultural Heritage",
+        "cooccur_count": 4
+      }
+    },
+    {
+      "id": 11,
+      "name": "语境引擎",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "original_top": "文化",
+        "reweighted_top": "文化",
+        "changed": false
+      }
+    },
+    {
+      "id": 12,
+      "name": "服务规则",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "user": "teacher",
+        "recommendations": 3
+      }
+    },
+    {
+      "id": 13,
+      "name": "闭环决策",
+      "status": "PASS",
+      "time": 0.001,
+      "result": {
+        "success": true,
+        "year": 2024,
+        "score": 7517.668,
+        "plan_note": "强调新兴主题: ['智慧旅游', '遗产', '旅游']"
+      }
+    },
+    {
+      "id": 14,
+      "name": "跨年规划",
+      "status": "PASS",
+      "time": 0.001,
+      "result": {
+        "success": true,
+        "years": [
+          2020,
+          2021,
+          2022
+        ],
+        "avg_score": 7915.183
+      }
+    },
+    {
+      "id": 15,
+      "name": "闭环评测",
+      "status": "PASS",
+      "time": 0.004,
+      "result": {
+        "success": true,
+        "hit_rate": 0.5,
+        "eval_years": [
+          2018,
+          2019
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "name": "批量搜索",
+      "status": "PASS",
+      "time": 0.953,
+      "result": {
+        "success": true,
+        "keywords_tested": 10,
+        "total_results": 34,
+        "avg_per_keyword": 3.4
+      }
+    },
+    {
+      "id": 17,
+      "name": "热点概率",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "top_keyword": "文化",
+        "top_heat": 773,
+        "top_probability": 0.1371,
+        "entropy": 2.44
+      }
+    },
+    {
+      "id": 18,
+      "name": "增速相关性",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "sample_size": 13,
+        "correlation": 0.0659,
+        "interpretation": "弱相关"
+      }
+    },
+    {
+      "id": 19,
+      "name": "时间趋势",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "years": [
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "start_nodes": 12,
+        "end_nodes": 13,
+        "growth_rate": 0.0833
+      }
+    },
+    {
+      "id": 20,
+      "name": "实体类型分布",
+      "status": "PASS",
+      "time": 0.243,
+      "result": {
+        "success": true,
+        "types": 6,
+        "distribution": {
+          "Paper": 11602,
+          "Venue": 4224,
+          "Year": 91,
+          "Author": 15159,
+          "Topic": 1114,
+          "Domain": 16
+        }
+      }
+    },
+    {
+      "id": 21,
+      "name": "关系类型分布",
+      "status": "PASS",
+      "time": 0.162,
+      "result": {
+        "success": true,
+        "types": 7,
+        "distribution": {
+          "PUBLISHED_IN": 11602,
+          "PUBLISHED_IN_YEAR": 11602,
+          "HAS_TOPIC": 26501,
+          "BELONGS_TO_DOMAIN": 12268,
+          "AUTHORED": 20355,
+          "CO_OCCURS_WITH": 15400,
+          "SNAPSHOT": 7463
+        }
+      }
+    },
+    {
+      "id": 22,
+      "name": "LLM降级",
+      "status": "PASS",
+      "time": 0.023,
+      "result": {
+        "success": true,
+        "response": "规则降级响应（API不可用）"
+      }
+    },
+    {
+      "id": 23,
+      "name": "阿文智能体",
+      "status": "PASS",
+      "time": 0.054,
+      "result": {
+        "success": true,
+        "text": "السياحة الثقافية",
+        "arabic_ratio": 0.9375
+      }
+    },
+    {
+      "id": 24,
+      "name": "图谱可视化数据",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "year": 2026,
+        "nodes_count": 13,
+        "edges_count": 78
+      }
+    },
+    {
+      "id": 25,
+      "name": "报告生成",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "title": "中阿文旅学科服务报告 (2026)",
+        "sections": 3
+      }
+    },
+    {
+      "id": 26,
+      "name": "多跳推理",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "source": "旅游",
+        "related_count": 2,
+        "hops": 2
+      }
+    },
+    {
+      "id": 27,
+      "name": "机构画像",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "total_institutions": 70,
+        "top5": [
+          {
+            "name": "arXiv (Cornell University)",
+            "heat": 25
+          },
+          {
+            "name": "Cambridge University Press eBooks",
+            "heat": 7
+          },
+          {
+            "name": "Proceedings of the National Academy of S",
+            "heat": 6
+          },
+          {
+            "name": "Al-Academy",
+            "heat": 6
+          },
+          {
+            "name": "Journal of the Academy of Marketing Scie",
+            "heat": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "name": "作者画像",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "total_authors": 500,
+        "top5": [
+          {
+            "name": "Zhang",
+            "collabs": 100
+          },
+          {
+            "name": "Wang",
+            "collabs": 100
+          },
+          {
+            "name": "Chen",
+            "collabs": 97
+          },
+          {
+            "name": "Liu",
+            "collabs": 72
+          },
+          {
+            "name": "Kim",
+            "collabs": 69
+          }
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "name": "推理期缩放",
+      "status": "PASS",
+      "time": 0.001,
+      "result": {
+        "success": true,
+        "results": [
+          {
+            "M": 1,
+            "score": 12434.375
+          },
+          {
+            "M": 2,
+            "score": 12435.761
+          },
+          {
+            "M": 3,
+            "score": 12437.123
+          }
+        ],
+        "monotonic_increase": true
+      }
+    },
+    {
+      "id": 30,
+      "name": "完整流程",
+      "status": "PASS",
+      "time": 0.0,
+      "result": {
+        "success": true,
+        "query": "中阿文旅研究热点",
+        "user": "teacher",
+        "entities_found": 1
+      }
+    }
+  ]
+}
