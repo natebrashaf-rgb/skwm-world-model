@@ -136,14 +136,18 @@ class ProposalPolicy:
 # ============================================================
 
 class RevisionPolicy:
-    """按用户类型给 (计划, 模拟未来) 打分, 选期望收益最大的"""
+    """按服务对象打分，选期望收益最大的
 
-    # 四类用户关注点不同 (对应 SKWM.USER_TYPES)
+    收窄后的服务关系：
+      - 服务提供者：学科馆员
+      - 主要服务对象：中阿文旅相关教师和科研团队
+      - 主任务：新兴交叉主题识别
+    """
+
     WEIGHTS = {
-        "teacher":   dict(emergence=1.0, novelty=0.8, robustness=0.6),
-        "student":   dict(emergence=0.6, novelty=1.0, robustness=0.3),
-        "librarian": dict(emergence=0.5, novelty=0.4, robustness=1.0),
-        "manager":   dict(emergence=0.9, novelty=0.5, robustness=0.9),
+        "teacher":         dict(emergence=1.0, novelty=0.8, robustness=0.6, evidence=0.7),
+        "research_team":   dict(emergence=0.9, novelty=0.9, robustness=0.7, evidence=0.8),
+        "librarian":       dict(emergence=0.5, novelty=0.4, robustness=1.0, evidence=0.9),
     }
 
     def score(self, plan: Plan, fut: KnowledgeState, o: KnowledgeState, user: str) -> float:
@@ -214,11 +218,21 @@ class SKWMClosedLoopController:
     def run(self, t0: int, T: int, goal: str, user: str,
             M: int = 3, L: int = 5, B: int = 4) -> list[dict]:
         """跨年运行闭环决策
+
+        服务链：
+          教师/科研团队提出需求
+          → 馆员定义任务
+          → Neo4j 检索事实和关系
+          → 数据层形成年度知识状态
+          → RSSM 预测未来状态
+          → 服务层生成前沿报告
+          → 馆员审核与反馈
+
         Args:
             t0: 起始年
             T: 结束年
             goal: 服务目标 (如 "识别中阿文旅前沿")
-            user: 用户类型 (teacher / student / librarian / manager)
+            user: 服务对象 (teacher / research_team / librarian)
         Returns:
             [{year, plan, score}, ...]
         """

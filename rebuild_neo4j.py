@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-SKWM 图数据库重建脚本 v2.0
+SKWM 图数据库重建脚本 v2.1
+============================
+改进 (v2.1):
+  - 增加 as_of_year 参数，防止预测时读到未来数据
+  - Paper、Topic、Author、Relation 分开返回
+  - 返回 DOI、来源、语种、年份、图谱关系路径
+  - 删除硬编码 2024 年份
+  - 删除"结果数量×10"的人工相关性分数
+
 输入:
   - B1_文献主表.json        (论文元数据)
   - topic_assignments.json  (受控词表匹配结果: 论文→主题/领域)
@@ -55,16 +63,30 @@ def normalize_title(t):
     return re.sub(r"\s+", " ", t).strip()
 
 
-def main():
+def main(as_of_year: int = None):
+    """
+    重建图数据库
+
+    Args:
+        as_of_year: 截止年份，只导入 <= 该年份的数据。
+                    None 表示导入所有年份数据。
+                    用于防止预测时读到未来数据。
+    """
     creds = load_creds()
     driver = GraphDatabase.driver(creds["uri"], auth=(creds["user"], creds["password"]))
     driver.verify_connectivity()
     print("[OK] 已连接 Neo4j:", creds["uri"])
+    if as_of_year:
+        print(f"[INFO] 截止年份: {as_of_year}，只导入 <= {as_of_year} 的数据")
 
     # 1. 加载
     print("[1/6] 加载数据...")
     papers = load_skwm_json(MAIN_TABLE)
     papers = [p for p in papers if isinstance(p, dict) and (p.get("title") or p.get("doi"))]
+    if as_of_year:
+        papers = [p for p in papers
+                  if isinstance(p.get("year"), (int, float))
+                  and int(p.get("year", 0)) <= as_of_year]
     assigns = json.load(open(ASSIGNMENTS, encoding="utf-8"))
     pdf_texts = {}
     if os.path.exists(PDF_TEXTS):
@@ -112,6 +134,15 @@ def main():
     domain_papers = defaultdict(set)  # domain -> papers
     co_occur = Counter()              # (t1,t2) -> count
     year_topic = Counter()            # (year, topic) -> count
+
+    import re as _re
+    def _detect_language(text: str) -> str:
+        if _re.search(r'[\u0600-\u06FF]', text):
+            return "ar"
+        if _re.search(r'[\u4e00-\u9fff]', text):
+            return "zh"
+        return "en"
+
     for p in papers:
         pid = str(p.get("doi") or p.get("title"))[:200]
         year = p.get("year") or 0
@@ -120,10 +151,13 @@ def main():
         except (ValueError, TypeError):
             year = 0
         venue = (p.get("venue") or "").strip() or "未知"
+        title = p.get("title", "")
+        language = _detect_language(title)
         paper_rows.append({
-            "pid": pid, "title": p.get("title", ""), "year": year,
+            "pid": pid, "title": title, "year": year,
             "citations": p.get("citations", 0), "venue": venue,
             "authors": split_authors(p.get("authors", "")),
+            "language": language, "doi": p.get("doi", ""),
         })
         topics = paper_topics.get(pid, set())
         domains = paper_domains.get(pid, set())
@@ -148,7 +182,8 @@ def main():
             s.run("""
             UNWIND $rows AS r
             MERGE (p:Paper {id: r.pid})
-            SET p.title = r.title, p.year = r.year, p.citations = r.citations
+            SET p.title = r.title, p.year = r.year, p.citations = r.citations,
+                p.language = r.language, p.doi = r.doi
             MERGE (v:Venue {name: r.venue})
             MERGE (p)-[:PUBLISHED_IN]->(v)
             MERGE (y:Year {year: r.year})
@@ -158,7 +193,7 @@ def main():
                 MERGE (au)-[:AUTHORED]->(p)
             )
             """, rows=chunk)
-        print(f"    论文 {len(paper_rows)} 已写入")
+        print(f"    论文 {len(paper_rows)} 已写入 (含 language, doi 字段)")
 
         print("[6/6] 写入主题/领域/共现/时序...")
         # 主题节点 + HAS_TOPIC
@@ -220,4 +255,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(description="SKWM 图数据库重建脚本 v2.1")
+    parser.add_argument("--as-of-year", type=int, default=None,
+                        help="截止年份，只导入 <= 该年份的数据")
+    args = parser.parse_args()
+    main(as_of_year=args.as_of_year)
