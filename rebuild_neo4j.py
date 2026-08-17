@@ -74,10 +74,13 @@ def main():
     # 2. 建立 论文id → 主题/领域 映射（标题匹配结果为准）
     paper_topics = {}   # pid -> set(主题词)
     paper_domains = {}  # pid -> set(领域)
+    non_tourism = set() # pid -> 非文旅标记
     for pid, v in assigns.items():
         if v.get("matched"):
             paper_topics[pid] = set(v.get("terms", []))
             paper_domains[pid] = set(v.get("domains", []))
+        elif v.get("non_tourism"):
+            non_tourism.add(pid)
 
     # 3. PDF 文件名 → 主表论文 对应（模糊匹配），补充全文匹配结果
     print("[2/6] PDF 文件名 ↔ 主表 对应...")
@@ -120,10 +123,12 @@ def main():
         except (ValueError, TypeError):
             year = 0
         venue = (p.get("venue") or "").strip() or "未知"
+        is_tourism = pid not in non_tourism
         paper_rows.append({
             "pid": pid, "title": p.get("title", ""), "year": year,
             "citations": p.get("citations", 0), "venue": venue,
             "authors": split_authors(p.get("authors", "")),
+            "is_tourism": is_tourism,
         })
         topics = paper_topics.get(pid, set())
         domains = paper_domains.get(pid, set())
@@ -148,7 +153,8 @@ def main():
             s.run("""
             UNWIND $rows AS r
             MERGE (p:Paper {id: r.pid})
-            SET p.title = r.title, p.year = r.year, p.citations = r.citations
+            SET p.title = r.title, p.year = r.year, p.citations = r.citations,
+                p.is_tourism = r.is_tourism
             MERGE (v:Venue {name: r.venue})
             MERGE (p)-[:PUBLISHED_IN]->(v)
             MERGE (y:Year {year: r.year})
@@ -188,7 +194,19 @@ def main():
             for d in domains:
                 s.run("MATCH (p:Paper {id: $pid}) MATCH (d:Domain {name: $d}) MERGE (p)-[:BELONGS_TO_DOMAIN]->(d)",
                       pid=pid, d=d)
-        print(f"    HAS_TOPIC {len(link_rows)} | BELONGS_TO_DOMAIN {sum(len(v) for v in paper_domains.values())}")
+        # 非文旅文献 → Domain:非文旅（每篇都有归属，0孤立）
+        if non_tourism:
+            s.run("MERGE (d:Domain {name: '非文旅'})")
+            nt_rows = [{"pid": pid} for pid in sorted(non_tourism)]
+            for bi in range(0, len(nt_rows), 500):
+                chunk = nt_rows[bi:bi + 500]
+                s.run("""
+                UNWIND $rows AS r
+                MATCH (p:Paper {id: r.pid})
+                MATCH (d:Domain {name: '非文旅'})
+                MERGE (p)-[:BELONGS_TO_DOMAIN]->(d)
+                """, rows=chunk)
+        print(f"    HAS_TOPIC {len(link_rows)} | BELONGS_TO_DOMAIN {sum(len(v) for v in paper_domains.values()) + len(non_tourism)} | 非文旅 {len(non_tourism)}")
 
         # 共现边
         co_rows = [{"a": a, "b": b, "w": c} for (a, b), c in co_occur.items()]

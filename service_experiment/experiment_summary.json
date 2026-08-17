@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-08-18T00:54:12.859853",
+  "as_of_year": 2023,
+  "n_queries": 5,
+  "conditions": [
+    "S0",
+    "S1",
+    "S2"
+  ],
+  "description": {
+    "S0": "Neo4j静态检索 + 当前科学计量",
+    "S1": "S0 + 普通趋势/XGBoost预测",
+    "S2": "S0 + RSSM多步预测 + 不确定性"
+  }
+}

@@ -26,3 +26,17 @@ Thumbs.db
 .neo4j_aura_cred.json
 .neo4j_cred.json
 .neo4j_aura_conn.json
+
+# 中间产物（不推）
+data/B1_merged.json
+data/B1_has_pdf.bak.json
+data/B1_has_pdf.json
+data/arab_tourism_progress.json
+data/doaj_collected.csv
+data/pdf_crawled.csv
+data/pdf_crawled_v3.csv
+data/ekb_blocked_list.json
+data/merge_report.json
+data/noise_med_cleanup.json
+data/pdf_meta_v3.json
+data/*.bak*.json

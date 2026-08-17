@@ -1,0 +1,32 @@
+[
+  {
+    "编号": "SQ1",
+    "回答摘要": "{\"forecast\": [{\"name\": \"genomics\", \"predicted_growth\": 2.9228129386901855, \"confidence\": 0.5575744092464447, \"uncertainty\": 0.2424255907535553}, {\"name\": \"in the united states\", \"predicted_growth\": -4.3308258056640625, \"confidence\": 0.5996914088726044, \"uncertainty\": 0.20030859112739563}, {\"name\": \"opportunities and challenges\", \"predicted_growth\": -7.2666168212890625, \"confidence\": 0.5684302479028702, \"uncertainty\": 0.23156975209712982}, {\"name\": \"black\", \"predicted_growth\": -9.739343643188477, \"confidence\": 0.6407907038927079, \"uncertainty\": 0.15920929610729218}, {\"name\": \"guidelines for the\", \"predicted_growth\": -16.923083782196045, \"confidence\": 0.40543048381805424, \"uncertainty\": 0.3945695161819458}, {\"name\": \"multidisciplinary\", \"predicted_growth\": -17.175272464752197, \"confidence\": ",
+    "置信度": 0.536,
+    "证据": "基于历史数据的多步预测与不确定性估计"
+  },
+  {
+    "编号": "SQ2",
+    "回答摘要": "{\"prediction_note\": \"【本题无可用预测】当前模型对本题型未提供预测输出，以下仅呈现静态知识图谱证据，预测维度缺省。\", \"topics\": [{\"name\": \"旅游\", \"heat\": 4627}, {\"name\": \"tour\", \"heat\": 4051}, {\"name\": \"文化\", \"heat\": 2790}, {\"name\": \"nation\", \"heat\": 2492}, {\"name\": \"遗产\", \"heat\": 2003}], \"papers_count\": 9431, \"evidence\": \"基于历史热度排序\"}",
+    "置信度": 0.9,
+    "证据": "基于历史热度排序"
+  },
+  {
+    "编号": "SQ3",
+    "回答摘要": "{\"prediction_note\": \"【本题无可用预测】当前模型对本题型未提供预测输出，以下仅呈现静态知识图谱证据，预测维度缺省。\", \"total_papers\": 12154, \"arabic_papers\": 17, \"sparse_topics\": 58, \"evidence\": \"基于文献统计\"}",
+    "置信度": 0.9,
+    "证据": "基于文献统计"
+  },
+  {
+    "编号": "SQ4",
+    "回答摘要": "{\"forecast\": [{\"name\": \"genomics\", \"predicted_growth\": 2.345219135284424, \"confidence\": 0.6208384960889817, \"uncertainty\": 0.17916150391101837}, {\"name\": \"in the united states\", \"predicted_growth\": -3.766124725341797, \"confidence\": 0.672722789645195, \"uncertainty\": 0.127277210354805}, {\"name\": \"opportunities and challenges\", \"predicted_growth\": -8.461682319641113, \"confidence\": 0.3840786695480347, \"uncertainty\": 0.41592133045196533}, {\"name\": \"black\", \"predicted_growth\": -9.29137659072876, \"confidence\": 0.5143965065479279, \"uncertainty\": 0.28560349345207214}, {\"name\": \"in the united\", \"predicted_growth\": -16.23247528076172, \"confidence\": 0.5945476472377778, \"uncertainty\": 0.2054523527622223}, {\"name\": \"guidelines for the\", \"predicted_growth\": -16.401066303253174, \"confidence\": 0.4995922029",
+    "置信度": 0.536,
+    "证据": "基于历史数据的多步预测与不确定性估计"
+  },
+  {
+    "编号": "SQ5",
+    "回答摘要": "{\"hotspots\": [{\"name\": \"旅游\", \"heat\": 4627}, {\"name\": \"tour\", \"heat\": 4051}, {\"name\": \"文化\", \"heat\": 2790}, {\"name\": \"nation\", \"heat\": 2492}, {\"name\": \"遗产\", \"heat\": 2003}], \"emerging\": [{\"name\": \"旅游\", \"growth\": 385}, {\"name\": \"遗产\", \"growth\": 305}, {\"name\": \"rate\", \"growth\": 275}, {\"name\": \"文化\", \"growth\": 269}, {\"name\": \"gene\", \"growth\": 201}], \"sections\": [\"热点概览\", \"增速排名\", \"趋势趋势预测\", \"不确定性分析\", \"风险提示\"], \"evidence\": \"静态数据汇总\"}",
+    "置信度": 0.533,
+    "证据": "静态数据汇总"
+  }
+]

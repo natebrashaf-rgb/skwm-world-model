@@ -1,0 +1,13 @@
+qid,category,language,difficulty,question,expected_type,requires_prediction,evaluation_criteria
+Q1,前沿识别,zh,easy,中阿文旅领域近3年增速最快的交叉研究方向有哪些？,topic_ranking,false,准确性;前瞻性
+Q2,前沿识别,zh,hard,数字遗产与旅游交叉领域未来2年可能出现哪些新兴主题？,emerging_prediction,true,前瞻性;证据可追溯性
+Q3,证据追溯,zh,easy,文化遗产数字化方向的核心文献有哪些？请给出DOI和引用关系。,evidence_chain,false,证据可追溯性;完整性
+Q4,风险评估,zh,medium,阿拉伯语文旅文献的数据覆盖度如何？哪些子方向数据稀疏？,coverage_assessment,false,准确性;完整性
+Q5,趋势预测,zh,hard,基于历史数据预测2025-2026年中阿文旅领域Top-10热点主题。,forecast,true,前瞻性;准确性;置信度合理性
+Q6,作者发现,en,medium,在中阿文旅交叉领域哪些作者的研究呈现跨学科特征？,author_discovery,false,准确性;新颖性
+Q7,反事实,ar,hard,如果移除一带一路相关政策文献中阿文旅合作网络的连通性会如何变化？,counterfactual,true,证据可追溯性;可解释性
+Q8,服务推荐,zh,medium,一位研究阿拉伯数字人文的教师应该关注哪些新兴交叉方向和相关文献？,recommendation,true,服务可用性;证据可追溯性
+Q9,零结果测试,zh,zero,量子计算在撒哈拉沙漠考古中的应用前景如何？,zero_result,false,无证据推荐识别
+Q10,前沿识别,en,easy,What are the top emerging topics in Sino-Arab cultural tourism in the last 3 years?,topic_ranking,false,准确性;前瞻性
+Q11,趋势预测,ar,hard,توقع أهم 10 مواضيع ساخنة في السياحة الثقافية الصينية العربية لعام 2025,forecast,true,前瞻性;准确性
+Q12,证据追溯,en,medium,List the core papers on digital heritage preservation with DOI and citation paths.,evidence_chain,false,证据可追溯性;完整性

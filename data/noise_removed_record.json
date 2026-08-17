@@ -1,0 +1,2648 @@
+[
+ {
+  "doi": "10.3322/caac.20107",
+  "title": "Global cancer statistics",
+  "venue": "CA A Cancer Journal for Clinicians",
+  "year": 2011
+ },
+ {
+  "doi": "10.1038/gim.2015.30",
+  "title": "Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology",
+  "venue": "Genetics in Medicine",
+  "year": 2015
+ },
+ {
+  "doi": "10.1371/journal.pmed.1000100",
+  "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+  "venue": "PLoS Medicine",
+  "year": 2009
+ },
+ {
+  "doi": "10.1371/journal.pone.0061217",
+  "title": "phyloseq: An R Package for Reproducible Interactive Analysis and Graphics of Microbiome Census Data",
+  "venue": "PLoS ONE",
+  "year": 2013
+ },
+ {
+  "doi": "10.1093/bioinformatics/bts199",
+  "title": "Geneious Basic: An integrated and extendable desktop software platform for the organization and analysis of sequence data",
+  "venue": "Bioinformatics",
+  "year": 2012
+ },
+ {
+  "doi": "10.1016/s0140-6736(20)30925-9",
+  "title": "Global burden of 369 diseases and injuries in 204 countries and territories, 1990–2019: a systematic analysis for the Global Burden of Disease Study 2019",
+  "venue": "The Lancet",
+  "year": 2020
+ },
+ {
+  "doi": "10.1136/bmj.i4919",
+  "title": "ROBINS-I: a tool for assessing risk of bias in non-randomised studies of interventions",
+  "venue": "BMJ",
+  "year": 2016
+ },
+ {
+  "doi": "10.1016/j.echo.2014.10.003",
+  "title": "Recommendations for Cardiac Chamber Quantification by Echocardiography in Adults: An Update from the American Society of Echocardiography and the European Association of Cardiovascular Imaging",
+  "venue": "Journal of the American Society of Echoc",
+  "year": 2015
+ },
+ {
+  "doi": "10.1089/thy.2015.0020",
+  "title": "2015 American Thyroid Association Management Guidelines for Adult Patients with Thyroid Nodules and Differentiated Thyroid Cancer: The American Thyroid Association Guidelines Task Force on Thyroid Nodules and Differentiated Thyroid Cancer",
+  "venue": "Thyroid",
+  "year": 2015
+ },
+ {
+  "doi": "10.1373/clinchem.2008.112797",
+  "title": "The MIQE Guidelines: Minimum Information for Publication of Quantitative Real-Time PCR Experiments",
+  "venue": "Clinical Chemistry",
+  "year": 2009
+ },
+ {
+  "doi": "10.1164/rccm.201204-0596pp",
+  "title": "Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease",
+  "venue": "American Journal of Respiratory and Crit",
+  "year": 2012
+ },
+ {
+  "doi": "10.1021/ct700301q",
+  "title": "GROMACS 4:  Algorithms for Highly Efficient, Load-Balanced, and Scalable Molecular Simulation",
+  "venue": "Journal of Chemical Theory and Computati",
+  "year": 2008
+ },
+ {
+  "doi": "10.1016/s0140-6736(21)02724-0",
+  "title": "Global burden of bacterial antimicrobial resistance in 2019: a systematic analysis",
+  "venue": "The Lancet",
+  "year": 2022
+ },
+ {
+  "doi": "10.1093/nar/gkn923",
+  "title": "Bioinformatics enrichment tools: paths toward the comprehensive functional analysis of large gene lists",
+  "venue": "Nucleic Acids Research",
+  "year": 2008
+ },
+ {
+  "doi": "10.1016/s0140-6736(12)61728-0",
+  "title": "Global and regional mortality from 235 causes of death for 20 age groups in 1990 and 2010: a systematic analysis for the Global Burden of Disease Study 2010",
+  "venue": "The Lancet",
+  "year": 2012
+ },
+ {
+  "doi": "10.1093/ageing/afy169",
+  "title": "Sarcopenia: revised European consensus on definition and diagnosis",
+  "venue": "Age and Ageing",
+  "year": 2018
+ },
+ {
+  "doi": "10.1016/s0140-6736(18)32279-7",
+  "title": "Global, regional, and national incidence, prevalence, and years lived with disability for 354 diseases and injuries for 195 countries and territories, 1990–2017: a systematic analysis for the Global Burden of Disease Study 2017",
+  "venue": "The Lancet",
+  "year": 2018
+ },
+ {
+  "doi": "10.1093/eurheartj/eht151",
+  "title": "2013 ESH/ESC Guidelines for the management of arterial hypertension",
+  "venue": "European Heart Journal",
+  "year": 2013
+ },
+ {
+  "doi": "10.1136/bmj.g7647",
+  "title": "Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015: elaboration and explanation",
+  "venue": "BMJ",
+  "year": 2015
+ },
+ {
+  "doi": "10.1093/eurheartj/ehab368",
+  "title": "2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure",
+  "venue": "European Heart Journal",
+  "year": 2021
+ },
+ {
+  "doi": "10.1186/gb-2004-5-10-r80",
+  "title": "Bioconductor: open software development for computational biology and bioinformatics",
+  "venue": "Genome biology",
+  "year": 2004
+ },
+ {
+  "doi": "10.1016/s0140-6736(12)61766-8",
+  "title": "A comparative risk assessment of burden of disease and injury attributable to 67 risk factors and risk factor clusters in 21 regions, 1990–2010: a systematic analysis for the Global Burden of Disease Study 2010",
+  "venue": "The Lancet",
+  "year": 2012
+ },
+ {
+  "doi": "10.1093/ageing/afq034",
+  "title": "Sarcopenia: European consensus on definition and diagnosis",
+  "venue": "Age and Ageing",
+  "year": 2010
+ },
+ {
+  "doi": "10.1093/eurheartj/ehw128",
+  "title": "2016 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure",
+  "venue": "European Heart Journal",
+  "year": 2016
+ },
+ {
+  "doi": "10.1371/journal.pmed.0030442",
+  "title": "Projections of Global Mortality and Burden of Disease from 2002 to 2030",
+  "venue": "PLoS Medicine",
+  "year": 2006
+ },
+ {
+  "doi": "10.1155/2011/156869",
+  "title": "FieldTrip: Open Source Software for Advanced Analysis of MEG, EEG, and Invasive Electrophysiological Data",
+  "venue": "Computational Intelligence and Neuroscie",
+  "year": 2010
+ },
+ {
+  "doi": "10.1136/bmj.n160",
+  "title": "PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews",
+  "venue": "BMJ",
+  "year": 2021
+ },
+ {
+  "doi": "10.1093/eurheartj/ehy339",
+  "title": "2018 ESC/ESH Guidelines for the management of arterial hypertension",
+  "venue": "European Heart Journal",
+  "year": 2018
+ },
+ {
+  "doi": "10.1016/j.jalz.2018.02.018",
+  "title": "NIA‐AA Research Framework: Toward a biological definition of Alzheimer's disease",
+  "venue": "Alzheimer s & Dementia",
+  "year": 2018
+ },
+ {
+  "doi": "10.1016/s0140-6736(20)30752-2",
+  "title": "Global burden of 87 risk factors in 204 countries and territories, 1990–2019: a systematic analysis for the Global Burden of Disease Study 2019",
+  "venue": "The Lancet",
+  "year": 2020
+ },
+ {
+  "doi": "10.1245/s10434-010-0985-4",
+  "title": "The American Joint Committee on Cancer: the 7th Edition of the AJCC Cancer Staging Manual and the Future of TNM",
+  "venue": "Annals of Surgical Oncology",
+  "year": 2010
+ },
+ {
+  "doi": "10.1136/bmj.c869",
+  "title": "CONSORT 2010 Explanation and Elaboration: updated guidelines for reporting parallel group randomised trials",
+  "venue": "BMJ",
+  "year": 2010
+ },
+ {
+  "doi": "10.1093/eurheartj/ehz455",
+  "title": "2019 ESC/EAS Guidelines for the management of dyslipidaemias: <i>lipid modification to reduce cardiovascular risk</i>",
+  "venue": "European Heart Journal",
+  "year": 2019
+ },
+ {
+  "doi": "10.1016/j.mri.2012.05.001",
+  "title": "3D Slicer as an image computing platform for the Quantitative Imaging Network",
+  "venue": "Magnetic Resonance Imaging",
+  "year": 2012
+ },
+ {
+  "doi": "10.1093/nar/gkaa1074",
+  "title": "The STRING database in 2021: customizable protein–protein networks, and functional characterization of user-uploaded gene/measurement sets",
+  "venue": "Nucleic Acids Research",
+  "year": 2020
+ },
+ {
+  "doi": "10.1093/eurheartj/ehs092",
+  "title": "European Guidelines on cardiovascular disease prevention in clinical practice (version 2012): The Fifth Joint Task Force of the European Society of Cardiology and Other Societies on Cardiovascular Disease Prevention in Clinical Practice (constituted by representatives of nine societies and by invited experts) * Developed with the special contribution of the European Association for Cardiovascular Prevention &amp; Rehabilitation (EACPR)",
+  "venue": "European Heart Journal",
+  "year": 2012
+ },
+ {
+  "doi": "10.1371/journal.pmed.0040297",
+  "title": "Strengthening the Reporting of Observational Studies in Epidemiology (STROBE): Explanation and Elaboration",
+  "venue": "PLoS Medicine",
+  "year": 2007
+ },
+ {
+  "doi": "10.22331/q-2018-08-06-79",
+  "title": "Quantum Computing in the NISQ era and beyond",
+  "venue": "Quantum",
+  "year": 2018
+ },
+ {
+  "doi": "10.1093/eurheartj/ehv320",
+  "title": "2015 ESC Guidelines for the management of acute coronary syndromes in patients presenting without persistent ST-segment elevation",
+  "venue": "European Heart Journal",
+  "year": 2015
+ },
+ {
+  "doi": "10.1016/s0140-6736(20)30185-9",
+  "title": "A novel coronavirus outbreak of global health concern",
+  "venue": "The Lancet",
+  "year": 2020
+ },
+ {
+  "doi": "10.1016/s0140-6736(15)01024-7",
+  "title": "Breastfeeding in the 21st century: epidemiology, mechanisms, and lifelong effect",
+  "venue": "The Lancet",
+  "year": 2016
+ },
+ {
+  "doi": "10.1016/j.jqsrt.2017.06.038",
+  "title": "The HITRAN2016 molecular spectroscopic database",
+  "venue": "Journal of Quantitative Spectroscopy and",
+  "year": 2017
+ },
+ {
+  "doi": "10.1161/str.0b013e318284056a",
+  "title": "Guidelines for the Early Management of Patients With Acute Ischemic Stroke",
+  "venue": "Stroke",
+  "year": 2013
+ },
+ {
+  "doi": "10.1016/j.cell.2017.09.021",
+  "title": "Ferroptosis: A Regulated Cell Death Nexus Linking Metabolism, Redox Biology, and Disease",
+  "venue": "Cell",
+  "year": 2017
+ },
+ {
+  "doi": "10.1002/hep.29367",
+  "title": "The diagnosis and management of nonalcoholic fatty liver disease: Practice guidance from the American Association for the Study of Liver Diseases",
+  "venue": "Hepatology",
+  "year": 2017
+ },
+ {
+  "doi": "10.1161/cir.0000000000000041",
+  "title": "2014 AHA/ACC/HRS Guideline for the Management of Patients With Atrial Fibrillation",
+  "venue": "Circulation",
+  "year": 2014
+ },
+ {
+  "doi": "10.1176/appi.ajp.2010.09091379",
+  "title": "Research Domain Criteria (RDoC): Toward a New Classification Framework for Research on Mental Disorders",
+  "venue": "American Journal of Psychiatry",
+  "year": 2010
+ },
+ {
+  "doi": "10.1136/bmj.e7586",
+  "title": "SPIRIT 2013 explanation and elaboration: guidance for protocols of clinical trials",
+  "venue": "BMJ",
+  "year": 2013
+ },
+ {
+  "doi": "10.1093/nar/gkm882",
+  "title": "KEGG for linking genomes to life and the environment",
+  "venue": "Nucleic Acids Research",
+  "year": 2007
+ },
+ {
+  "doi": "10.1093/nar/gkaa1100",
+  "title": "UniProt: the universal protein knowledgebase in 2021",
+  "venue": "Nucleic Acids Research",
+  "year": 2020
+ },
+ {
+  "doi": "10.1093/nar/gkab1038",
+  "title": "The PRIDE database resources in 2022: a hub for mass spectrometry-based proteomics evidences",
+  "venue": "Nucleic Acids Research",
+  "year": 2021
+ },
+ {
+  "doi": "10.1093/eurheartj/ehab484",
+  "title": "2021 ESC Guidelines on cardiovascular disease prevention in clinical practice",
+  "venue": "European Heart Journal",
+  "year": 2021
+ },
+ {
+  "doi": "10.1152/physrev.00029.2006",
+  "title": "Nitric Oxide and Peroxynitrite in Health and Disease",
+  "venue": "Physiological Reviews",
+  "year": 2007
+ },
+ {
+  "doi": "10.1186/s12859-017-1934-z",
+  "title": "ImageJ2: ImageJ for the next generation of scientific image data",
+  "venue": "BMC Bioinformatics",
+  "year": 2017
+ },
+ {
+  "doi": "10.1016/s2215-0366(20)30168-1",
+  "title": "Multidisciplinary research priorities for the COVID-19 pandemic: a call for action for mental health science",
+  "venue": "The Lancet Psychiatry",
+  "year": 2020
+ },
+ {
+  "doi": "10.1186/s12864-019-6413-7",
+  "title": "The advantages of the Matthews correlation coefficient (MCC) over F1 score and accuracy in binary classification evaluation",
+  "venue": "BMC Genomics",
+  "year": 2020
+ },
+ {
+  "doi": "10.1093/eurheartj/ehy462",
+  "title": "Fourth universal definition of myocardial infarction (2018)",
+  "venue": "European Heart Journal",
+  "year": 2018
+ },
+ {
+  "doi": "10.1093/nar/gku989",
+  "title": "UniProt: a hub for protein information",
+  "venue": "Nucleic Acids Research",
+  "year": 2014
+ },
+ {
+  "doi": "10.1038/s41573-020-00114-z",
+  "title": "Natural products in drug discovery: advances and opportunities",
+  "venue": "Nature Reviews Drug Discovery",
+  "year": 2021
+ },
+ {
+  "doi": "10.1152/physrev.00018.2018",
+  "title": "The Microbiota-Gut-Brain Axis",
+  "venue": "Physiological Reviews",
+  "year": 2019
+ },
+ {
+  "doi": "10.1097/jto.0b013e318206a221",
+  "title": "International Association for the Study of Lung Cancer/American Thoracic Society/European Respiratory Society International Multidisciplinary Classification of Lung Adenocarcinoma",
+  "venue": "Journal of Thoracic Oncology",
+  "year": 2011
+ },
+ {
+  "doi": "10.1371/journal.pone.0118432",
+  "title": "The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets",
+  "venue": "PLoS ONE",
+  "year": 2015
+ },
+ {
+  "doi": "10.1111/j.1364-3703.2011.00783.x",
+  "title": "The Top 10 fungal pathogens in molecular plant pathology",
+  "venue": "Molecular Plant Pathology",
+  "year": 2012
+ },
+ {
+  "doi": "10.1016/s0140-6736(24)00757-8",
+  "title": "Global incidence, prevalence, years lived with disability (YLDs), disability-adjusted life-years (DALYs), and healthy life expectancy (HALE) for 371 diseases and injuries in 204 countries and territories and 811 subnational locations, 1990–2021: a systematic analysis for the Global Burden of Disease Study 2021",
+  "venue": "The Lancet",
+  "year": 2024
+ },
+ {
+  "doi": "10.5194/acp-9-5155-2009",
+  "title": "The formation, properties and impact of secondary organic aerosol: current and emerging issues",
+  "venue": "Atmospheric chemistry and physics",
+  "year": 2009
+ },
+ {
+  "doi": "10.2337/dc13-s011",
+  "title": "Standards of Medical Care in Diabetes—2013",
+  "venue": "Diabetes Care",
+  "year": 2012
+ },
+ {
+  "doi": "10.3389/fnins.2013.00267",
+  "title": "MEG and EEG data analysis with MNE-Python",
+  "venue": "Frontiers in Neuroscience",
+  "year": 2013
+ },
+ {
+  "doi": "10.1016/j.cell.2018.02.052",
+  "title": "An Integrated TCGA Pan-Cancer Clinical Data Resource to Drive High-Quality Survival Outcome Analytics",
+  "venue": "Cell",
+  "year": 2018
+ },
+ {
+  "doi": "10.1093/nar/gky379",
+  "title": "The Galaxy platform for accessible, reproducible and collaborative biomedical analyses: 2018 update",
+  "venue": "Nucleic Acids Research",
+  "year": 2018
+ },
+ {
+  "doi": "10.1111/jan.13031",
+  "title": "Systematic methodological review: developing a framework for a qualitative semi‐structured interview guide",
+  "venue": "Journal of Advanced Nursing",
+  "year": 2016
+ },
+ {
+  "doi": "10.3389/fphar.2013.00177",
+  "title": "The growing use of herbal medicines: issues relating to adverse reactions and challenges in monitoring safety",
+  "venue": "Frontiers in Pharmacology",
+  "year": 2014
+ },
+ {
+  "doi": "10.1093/eurheartj/ehac237",
+  "title": "2022 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension",
+  "venue": "European Heart Journal",
+  "year": 2022
+ },
+ {
+  "doi": "10.1016/s0140-6736(21)00218-x",
+  "title": "Parkinson's disease",
+  "venue": "The Lancet",
+  "year": 2021
+ },
+ {
+  "doi": "10.1093/nar/gkv1145",
+  "title": "2016 update of the PRIDE database and its related tools",
+  "venue": "Nucleic Acids Research",
+  "year": 2015
+ },
+ {
+  "doi": "10.1016/s0140-6736(18)31612-x",
+  "title": "The Lancet Commission on global mental health and sustainable development",
+  "venue": "The Lancet",
+  "year": 2018
+ },
+ {
+  "doi": "10.1002/wps.20375",
+  "title": "A network theory of mental disorders",
+  "venue": "World Psychiatry",
+  "year": 2017
+ },
+ {
+  "doi": "10.1093/nar/28.1.27",
+  "title": "KEGG: Kyoto Encyclopedia of Genes and Genomes",
+  "venue": "Nucleic Acids Research",
+  "year": 2000
+ },
+ {
+  "doi": "10.1016/s0140-6736(17)32154-2",
+  "title": "Global, regional, and national incidence, prevalence, and years lived with disability for 328 diseases and injuries for 195 countries, 1990–2016: a systematic analysis for the Global Burden of Disease Study 2016",
+  "venue": "The Lancet",
+  "year": 2017
+ },
+ {
+  "doi": "10.1186/1471-2105-14-128",
+  "title": "Enrichr: interactive and collaborative HTML5 gene list enrichment analysis tool",
+  "venue": "BMC Bioinformatics",
+  "year": 2013
+ },
+ {
+  "doi": "10.1186/s13059-019-1832-y",
+  "title": "OrthoFinder: phylogenetic orthology inference for comparative genomics",
+  "venue": "Genome biology",
+  "year": 2019
+ },
+ {
+  "doi": "10.1002/pro.3715",
+  "title": "Toward understanding the origin and evolution of cellular organisms",
+  "venue": "Protein Science",
+  "year": 2019
+ },
+ {
+  "doi": "10.1186/1471-2458-12-80",
+  "title": "Health literacy and public health: A systematic review and integration of definitions and models",
+  "venue": "BMC Public Health",
+  "year": 2012
+ },
+ {
+  "doi": "10.1021/jp071097f",
+  "title": "The MARTINI Force Field:  Coarse Grained Model for Biomolecular Simulations",
+  "venue": "The Journal of Physical Chemistry B",
+  "year": 2007
+ },
+ {
+  "doi": "10.1093/nar/gkv951",
+  "title": "PubChem Substance and Compound databases",
+  "venue": "Nucleic Acids Research",
+  "year": 2015
+ },
+ {
+  "doi": "10.1021/acs.jmedchem.5b00104",
+  "title": "pkCSM: Predicting Small-Molecule Pharmacokinetic and Toxicity Properties Using Graph-Based Signatures",
+  "venue": "Journal of Medicinal Chemistry",
+  "year": 2015
+ },
+ {
+  "doi": "10.1093/bioinformatics/btg405",
+  "title": "affy—analysis of <i>Affymetrix GeneChip</i> data at the probe level",
+  "venue": "Bioinformatics",
+  "year": 2004
+ },
+ {
+  "doi": "10.1016/s0140-6736(21)02143-7",
+  "title": "Global prevalence and burden of depressive and anxiety disorders in 204 countries and territories in 2020 due to the COVID-19 pandemic",
+  "venue": "The Lancet",
+  "year": 2021
+ },
+ {
+  "doi": "10.1093/nar/gkr988",
+  "title": "KEGG for integration and interpretation of large-scale molecular data sets",
+  "venue": "Nucleic Acids Research",
+  "year": 2011
+ },
+ {
+  "doi": "10.1093/nar/gkn176",
+  "title": "High-throughput functional annotation and data mining with the Blast2GO suite",
+  "venue": "Nucleic Acids Research",
+  "year": 2008
+ },
+ {
+  "doi": "10.1093/nar/gkv1507",
+  "title": "TCGAbiolinks: an R/Bioconductor package for integrative analysis of TCGA data",
+  "venue": "Nucleic Acids Research",
+  "year": 2015
+ },
+ {
+  "doi": "10.1093/nar/gks1094",
+  "title": "STRING v9.1: protein-protein interaction networks, with increased coverage and integration",
+  "venue": "Nucleic Acids Research",
+  "year": 2012
+ },
+ {
+  "doi": "10.1002/cpbi.3",
+  "title": "Comparative Protein Structure Modeling Using MODELLER",
+  "venue": "Current Protocols in Bioinformatics",
+  "year": 2016
+ },
+ {
+  "doi": "10.1186/s13059-016-1070-5",
+  "title": "Estimating the population abundance of tissue-infiltrating immune and stromal cell populations using gene expression",
+  "venue": "Genome biology",
+  "year": 2016
+ },
+ {
+  "doi": "10.1080/10635150490522304",
+  "title": "Model Selection and Model Averaging in Phylogenetics: Advantages of Akaike Information Criterion and Bayesian Approaches Over Likelihood Ratio Tests",
+  "venue": "Systematic Biology",
+  "year": 2004
+ },
+ {
+  "doi": "10.1186/s13059-015-0721-2",
+  "title": "OrthoFinder: solving fundamental biases in whole genome comparisons dramatically improves orthogroup inference accuracy",
+  "venue": "Genome biology",
+  "year": 2015
+ },
+ {
+  "doi": "10.1093/nar/gkaa1113",
+  "title": "The Gene Ontology resource: enriching a GOld mine",
+  "venue": "Nucleic Acids Research",
+  "year": 2020
+ },
+ {
+  "doi": "10.2967/jnumed.108.057307",
+  "title": "From RECIST to PERCIST: Evolving Considerations for PET Response Criteria in Solid Tumors",
+  "venue": "Journal of Nuclear Medicine",
+  "year": 2009
+ },
+ {
+  "doi": "10.1016/s0140-6736(21)01330-1",
+  "title": "Worldwide trends in hypertension prevalence and progress in treatment and control from 1990 to 2019: a pooled analysis of 1201 population-representative studies with 104 million participants",
+  "venue": "The Lancet",
+  "year": 2021
+ },
+ {
+  "doi": "10.1016/s0140-6736(17)32802-7",
+  "title": "Comparative Efficacy and Acceptability of 21 Antidepressant Drugs for the Acute Treatment of Adults With Major Depressive Disorder: A Systematic Review and Network Meta-Analysis",
+  "venue": "The Lancet",
+  "year": 2018
+ },
+ {
+  "doi": "10.1093/nar/gku1267",
+  "title": "PhosphoSitePlus, 2014: mutations, PTMs and recalibrations",
+  "venue": "Nucleic Acids Research",
+  "year": 2014
+ },
+ {
+  "doi": "10.1093/nar/gkz935",
+  "title": "CARD 2020: antibiotic resistome surveillance with the comprehensive antibiotic resistance database",
+  "venue": "Nucleic Acids Research",
+  "year": 2019
+ },
+ {
+  "doi": "10.1016/j.addr.2016.06.012",
+  "title": "Physical and mechanical properties of PLA, and their functions in widespread applications — A comprehensive review",
+  "venue": "Advanced Drug Delivery Reviews",
+  "year": 2016
+ },
+ {
+  "doi": "10.1093/nar/gkac956",
+  "title": "PubChem 2023 update",
+  "venue": "Nucleic Acids Research",
+  "year": 2022
+ },
+ {
+  "doi": "10.1093/nar/gkw955",
+  "title": "NOVOPlasty: <i>de novo</i> assembly of organelle genomes from whole genome data",
+  "venue": "Nucleic Acids Research",
+  "year": 2016
+ },
+ {
+  "doi": "10.1016/s0140-6736(15)60901-1",
+  "title": "Safeguarding human health in the Anthropocene epoch: report of The Rockefeller Foundation–Lancet Commission on planetary health",
+  "venue": "The Lancet",
+  "year": 2015
+ },
+ {
+  "doi": "10.1038/mp.2013.78",
+  "title": "The autism brain imaging data exchange: towards a large-scale evaluation of the intrinsic brain architecture in autism",
+  "venue": "Molecular Psychiatry",
+  "year": 2013
+ },
+ {
+  "doi": "10.1093/nar/gkx1098",
+  "title": "Ensembl 2018",
+  "venue": "Nucleic Acids Research",
+  "year": 2017
+ },
+ {
+  "doi": "10.1093/genetics/iyad031",
+  "title": "The Gene Ontology knowledgebase in 2023",
+  "venue": "Genetics",
+  "year": 2023
+ },
+ {
+  "doi": "10.1093/nar/gkab255",
+  "title": "ADMETlab 2.0: an integrated online platform for accurate and comprehensive predictions of ADMET properties",
+  "venue": "Nucleic Acids Research",
+  "year": 2021
+ },
+ {
+  "doi": "10.3389/fninf.2014.00014",
+  "title": "Machine learning for neuroimaging with scikit-learn",
+  "venue": "Frontiers in Neuroinformatics",
+  "year": 2014
+ },
+ {
+  "doi": "10.1016/s0140-6736(24)00933-4",
+  "title": "Global burden and strength of evidence for 88 risk factors in 204 countries and 811 subnational locations, 1990–2021: a systematic analysis for the Global Burden of Disease Study 2021",
+  "venue": "The Lancet",
+  "year": 2024
+ },
+ {
+  "doi": "10.1093/eurheartj/ehae176",
+  "title": "2024 ESC Guidelines for the management of atrial fibrillation developed in collaboration with the European Association for Cardio-Thoracic Surgery (EACTS)",
+  "venue": "European Heart Journal",
+  "year": 2024
+ },
+ {
+  "doi": "10.3389/fninf.2011.00013",
+  "title": "Nipype: A Flexible, Lightweight and Extensible Neuroimaging Data Processing Framework in Python",
+  "venue": "Frontiers in Neuroinformatics",
+  "year": 2011
+ },
+ {
+  "doi": "10.15252/msb.20188746",
+  "title": "Current best practices in single‐cell RNA‐seq analysis: a tutorial",
+  "venue": "Molecular Systems Biology",
+  "year": 2019
+ },
+ {
+  "doi": "10.1093/nar/29.12.2607",
+  "title": "GeneMarkS: a self-training method for prediction of gene starts in microbial genomes. Implications for finding sequence motifs in regulatory regions",
+  "venue": "Nucleic Acids Research",
+  "year": 2001
+ },
+ {
+  "doi": "10.1093/nar/gkv1248",
+  "title": "eggNOG 4.5: a hierarchical orthology framework with improved functional annotations for eukaryotic, prokaryotic and viral sequences",
+  "venue": "Nucleic Acids Research",
+  "year": 2015
+ },
+ {
+  "doi": "10.1038/s41580-020-0237-9",
+  "title": "Guidelines and definitions for research on epithelial–mesenchymal transition",
+  "venue": "Nature Reviews Molecular Cell Biology",
+  "year": 2020
+ },
+ {
+  "doi": "10.1523/jneurosci.18-10-03870.1998",
+  "title": "The Variable Discharge of Cortical Neurons: Implications for Connectivity, Computation, and Information Coding",
+  "venue": "Journal of Neuroscience",
+  "year": 1998
+ },
+ {
+  "doi": "10.3390/ijms20184331",
+  "title": "Molecular Docking: Shifting Paradigms in Drug Discovery",
+  "venue": "International Journal of Molecular Scien",
+  "year": 2019
+ },
+ {
+  "doi": "10.1371/journal.pmed.0020141",
+  "title": "A Systematic Review of the Prevalence of Schizophrenia",
+  "venue": "PLoS Medicine",
+  "year": 2005
+ },
+ {
+  "doi": "10.1093/bioinformatics/btl461",
+  "title": "Bio3d: an R package for the comparative analysis of protein structures",
+  "venue": "Bioinformatics",
+  "year": 2006
+ },
+ {
+  "doi": "10.1007/s00268-018-4844-y",
+  "title": "Guidelines for Perioperative Care in Elective Colorectal Surgery: Enhanced Recovery After Surgery (ERAS<sup>®</sup>) Society Recommendations: 2018",
+  "venue": "World Journal of Surgery",
+  "year": 2018
+ },
+ {
+  "doi": "10.1038/nrd3591",
+  "title": "Designing antimicrobial peptides: form follows function",
+  "venue": "Nature Reviews Drug Discovery",
+  "year": 2011
+ },
+ {
+  "doi": "10.1002/pro.3978",
+  "title": "The <scp>BioGRID</scp> database: A comprehensive biomedical resource of curated protein, genetic, and chemical interactions",
+  "venue": "Protein Science",
+  "year": 2020
+ },
+ {
+  "doi": "10.1371/journal.pone.0066212",
+  "title": "The Role of Gender in Scholarly Authorship",
+  "venue": "PLoS ONE",
+  "year": 2013
+ },
+ {
+  "doi": "10.3390/vaccines9010016",
+  "title": "Confidence and Receptivity for COVID-19 Vaccines: A Rapid Systematic Review",
+  "venue": "Vaccines",
+  "year": 2020
+ },
+ {
+  "doi": "10.1136/qshc.2009.038562",
+  "title": "Training and simulation for patient safety",
+  "venue": "BMJ Quality & Safety",
+  "year": 2010
+ },
+ {
+  "doi": "10.1371/journal.pone.0013636",
+  "title": "Self-Selected or Mandated, Open Access Increases Citation Impact for Higher Quality Research",
+  "venue": "PLoS ONE",
+  "year": 2010
+ },
+ {
+  "doi": "10.1186/1741-7015-8-24",
+  "title": "Transparent and accurate reporting increases reliability, utility, and impact of your research: reporting guidelines and the EQUATOR Network",
+  "venue": "BMC Medicine",
+  "year": 2010
+ },
+ {
+  "doi": "10.1093/nar/gkr320",
+  "title": "ChemMine tools: an online service for analyzing and clustering small molecules",
+  "venue": "Nucleic Acids Research",
+  "year": 2011
+ },
+ {
+  "doi": "10.1186/s12909-023-04698-z",
+  "title": "Revolutionizing healthcare: the role of artificial intelligence in clinical practice",
+  "venue": "BMC Medical Education",
+  "year": 2023
+ },
+ {
+  "doi": "10.1016/s1474-4422(22)00309-x",
+  "title": "Traumatic brain injury: progress and challenges in prevention, clinical care, and research",
+  "venue": "The Lancet Neurology",
+  "year": 2022
+ },
+ {
+  "doi": "10.1093/nar/gkad1004",
+  "title": "The ChEMBL Database in 2023: a drug discovery platform spanning multiple bioactivity data types and time periods",
+  "venue": "Nucleic Acids Research",
+  "year": 2023
+ },
+ {
+  "doi": "10.1186/1472-6947-12-67",
+  "title": "A Systematic Review of Healthcare Applications for Smartphones",
+  "venue": "BMC Medical Informatics and Decision Mak",
+  "year": 2012
+ },
+ {
+  "doi": "10.1093/sysbio/sys058",
+  "title": "A Total-Evidence Approach to Dating with Fossils, Applied to the Early Radiation of the Hymenoptera",
+  "venue": "Systematic Biology",
+  "year": 2012
+ },
+ {
+  "doi": "10.1007/s10311-020-01133-3",
+  "title": "Recent advances in carbon capture storage and utilisation technologies: a review",
+  "venue": "Environmental Chemistry Letters",
+  "year": 2020
+ },
+ {
+  "doi": "10.1016/s0140-6736(16)31650-6",
+  "title": "The history, geography, and sociology of slums and the health problems of people who live in slums",
+  "venue": "The Lancet",
+  "year": 2016
+ },
+ {
+  "doi": "10.1093/nar/gkl1031",
+  "title": "Database resources of the National Center for Biotechnology Information",
+  "venue": "Nucleic Acids Research",
+  "year": 2006
+ },
+ {
+  "doi": "10.1155/2011/130714",
+  "title": "EEGLAB, SIFT, NFT, BCILAB, and ERICA: New Tools for Advanced EEG Processing",
+  "venue": "Computational Intelligence and Neuroscie",
+  "year": 2011
+ },
+ {
+  "doi": "10.1002/wps.20617",
+  "title": "The “online brain”: how the Internet may be changing our cognition",
+  "venue": "World Psychiatry",
+  "year": 2019
+ },
+ {
+  "doi": "10.1124/pr.110.002725",
+  "title": "International Union of Basic and Clinical Pharmacology. LXXVI. Current Progress in the Mammalian TRP Ion Channel Family",
+  "venue": "Pharmacological Reviews",
+  "year": 2010
+ },
+ {
+  "doi": "10.1093/bioadv/vbaf019",
+  "title": "Boosting GPT models for genomics analysis: generating trusted genetic variant annotations and interpretations through RAG and Fine-tuning",
+  "venue": "Bioinformatics Advances",
+  "year": 2024
+ },
+ {
+  "doi": "10.1093/bioinformatics/btae194",
+  "title": "NetMe 2.0: a web-based platform for extracting and modeling knowledge from biomedical literature as a labeled graph",
+  "venue": "Bioinformatics",
+  "year": 2024
+ },
+ {
+  "doi": "10.1016/s0140-6736(20)30154-9",
+  "title": "A familial cluster of pneumonia associated with the 2019 novel coronavirus indicating person-to-person transmission: a study of a family cluster",
+  "venue": "The Lancet",
+  "year": 2020
+ },
+ {
+  "doi": "10.1093/ehjci/jev014",
+  "title": "Recommendations for Cardiac Chamber Quantification by Echocardiography in Adults: An Update from the American Society of Echocardiography and the European Association of Cardiovascular Imaging",
+  "venue": "European Heart Journal - Cardiovascular ",
+  "year": 2015
+ },
+ {
+  "doi": "10.1038/s41573-020-0090-8",
+  "title": "Engineering precision nanoparticles for drug delivery",
+  "venue": "Nature Reviews Drug Discovery",
+  "year": 2020
+ },
+ {
+  "doi": "10.1093/eurheartj/ehv317",
+  "title": "2015 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension",
+  "venue": "European Heart Journal",
+  "year": 2015
+ },
+ {
+  "doi": "10.1038/s41418-017-0012-4",
+  "title": "Molecular mechanisms of cell death: recommendations of the Nomenclature Committee on Cell Death 2018",
+  "venue": "Cell Death and Differentiation",
+  "year": 2018
+ },
+ {
+  "doi": "10.15252/emmm.201606210",
+  "title": "The amyloid hypothesis of Alzheimer's disease at 25 years",
+  "venue": "EMBO Molecular Medicine",
+  "year": 2016
+ },
+ {
+  "doi": "10.1016/j.ejca.2011.11.036",
+  "title": "Radiomics: Extracting more information from medical images using advanced feature analysis",
+  "venue": "European Journal of Cancer",
+  "year": 2012
+ },
+ {
+  "doi": "10.1136/bmj.n2061",
+  "title": "A new framework for developing and evaluating complex interventions: update of Medical Research Council guidance",
+  "venue": "BMJ",
+  "year": 2021
+ },
+ {
+  "doi": "10.1038/nrclinonc.2017.141",
+  "title": "Radiomics: the bridge between medical imaging and personalized medicine",
+  "venue": "Nature Reviews Clinical Oncology",
+  "year": 2017
+ },
+ {
+  "doi": "10.1093/eurheartj/ehab395",
+  "title": "2021 ESC/EACTS Guidelines for the management of valvular heart disease",
+  "venue": "European Heart Journal",
+  "year": 2021
+ },
+ {
+  "doi": "10.1016/j.clinph.2009.08.016",
+  "title": "Safety, ethical considerations, and application guidelines for the use of transcranial magnetic stimulation in clinical practice and research",
+  "venue": "Clinical Neurophysiology",
+  "year": 2009
+ },
+ {
+  "doi": "10.1161/cir.0b013e31828124ad",
+  "title": "Heart Disease and Stroke Statistics—2013 Update",
+  "venue": "Circulation",
+  "year": 2012
+ },
+ {
+  "doi": "10.3322/caac.20114",
+  "title": "Photodynamic therapy of cancer: An update",
+  "venue": "CA A Cancer Journal for Clinicians",
+  "year": 2011
+ },
+ {
+  "doi": "10.1093/eurheartj/ehz486",
+  "title": "2019 ESC Guidelines on diabetes, pre-diabetes, and cardiovascular diseases developed in collaboration with the EASD",
+  "venue": "European Heart Journal",
+  "year": 2019
+ },
+ {
+  "doi": "10.1093/cid/cir257",
+  "title": "Guidelines for the Prevention of Intravascular Catheter-related Infections",
+  "venue": "Clinical Infectious Diseases",
+  "year": 2011
+ },
+ {
+  "doi": "10.1038/s41577-020-0311-8",
+  "title": "The trinity of COVID-19: immunity, inflammation and intervention",
+  "venue": "Nature reviews. Immunology",
+  "year": 2020
+ },
+ {
+  "doi": "10.1093/nar/gkr777",
+  "title": "ChEMBL: a large-scale bioactivity database for drug discovery",
+  "venue": "Nucleic Acids Research",
+  "year": 2011
+ },
+ {
+  "doi": "10.1093/eurheartj/ehu281",
+  "title": "2014 ESC Guidelines on the diagnosis and treatment of aortic diseases",
+  "venue": "European Heart Journal",
+  "year": 2014
+ },
+ {
+  "doi": "10.1038/nrg.2016.49",
+  "title": "Coming of age: ten years of next-generation sequencing technologies",
+  "venue": "Nature Reviews Genetics",
+  "year": 2016
+ },
+ {
+  "doi": "10.1016/s0140-6736(23)01301-6",
+  "title": "Global, regional, and national burden of diabetes from 1990 to 2021, with projections of prevalence to 2050: a systematic analysis for the Global Burden of Disease Study 2021",
+  "venue": "The Lancet",
+  "year": 2023
+ },
+ {
+  "doi": "10.1093/cid/ciq146",
+  "title": "Clinical Practice Guidelines by the Infectious Diseases Society of America for the Treatment of Methicillin-Resistant Staphylococcus aureus Infections in Adults and Children",
+  "venue": "Clinical Infectious Diseases",
+  "year": 2011
+ },
+ {
+  "doi": "10.1183/09031936.00202013",
+  "title": "International ERS/ATS guidelines on definition, evaluation and treatment of severe asthma",
+  "venue": "European Respiratory Journal",
+  "year": 2013
+ },
+ {
+  "doi": "10.1161/str.0b013e3182299496",
+  "title": "Vascular Contributions to Cognitive Impairment and Dementia",
+  "venue": "Stroke",
+  "year": 2011
+ },
+ {
+  "doi": "10.1371/journal.pdig.0000198",
+  "title": "Performance of ChatGPT on USMLE: Potential for AI-assisted medical education using large language models",
+  "venue": "PLOS Digital Health",
+  "year": 2023
+ },
+ {
+  "doi": "10.1093/nar/gky1033",
+  "title": "PubChem 2019 update: improved access to chemical data",
+  "venue": "Nucleic Acids Research",
+  "year": 2018
+ },
+ {
+  "doi": "10.1186/s13024-019-0333-5",
+  "title": "The neuropathological diagnosis of Alzheimer’s disease",
+  "venue": "Molecular Neurodegeneration",
+  "year": 2019
+ },
+ {
+  "doi": "10.1161/cir.0b013e31823ba622",
+  "title": "2011 ACCF/AHA/SCAI Guideline for Percutaneous Coronary Intervention",
+  "venue": "Circulation",
+  "year": 2011
+ },
+ {
+  "doi": "10.1136/bmj.m1328",
+  "title": "Prediction models for diagnosis and prognosis of covid-19: systematic review and critical appraisal",
+  "venue": "BMJ",
+  "year": 2020
+ },
+ {
+  "doi": "10.1183/09031936.00138707",
+  "title": "Global strategy for asthma management and prevention: GINA executive summary",
+  "venue": "European Respiratory Journal",
+  "year": 2007
+ },
+ {
+  "doi": "10.1016/j.clnu.2016.07.015",
+  "title": "ESPEN guidelines on nutrition in cancer patients",
+  "venue": "Clinical Nutrition",
+  "year": 2016
+ },
+ {
+  "doi": "10.1093/eurheartj/ehac262",
+  "title": "2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death",
+  "venue": "European Heart Journal",
+  "year": 2022
+ },
+ {
+  "doi": "10.1093/ije/31.2.285",
+  "title": "A life course approach to chronic disease epidemiology: conceptual models, empirical challenges and interdisciplinary perspectives",
+  "venue": "International Journal of Epidemiology",
+  "year": 2002
+ },
+ {
+  "doi": "10.1161/circulationaha.106.183095",
+  "title": "Prevention of Infective Endocarditis",
+  "venue": "Circulation",
+  "year": 2007
+ },
+ {
+  "doi": "10.1371/journal.pbio.3000411",
+  "title": "Reporting animal research: Explanation and elaboration for the ARRIVE guidelines 2.0",
+  "venue": "PLoS Biology",
+  "year": 2020
+ },
+ {
+  "doi": "10.1161/str.0000000000000046",
+  "title": "Guidelines for the Primary Prevention of Stroke",
+  "venue": "Stroke",
+  "year": 2014
+ },
+ {
+  "doi": "10.1016/s1474-4422(17)30371-x",
+  "title": "Traumatic brain injury: integrated approaches to improve prevention, clinical care, and research",
+  "venue": "The Lancet Neurology",
+  "year": 2017
+ },
+ {
+  "doi": "10.1016/s1473-3099(04)01044-8",
+  "title": "PCR-based diagnostics for infectious diseases: uses, limitations, and future applications in acute-care settings",
+  "venue": "The Lancet Infectious Diseases",
+  "year": 2004
+ },
+ {
+  "doi": "10.1016/s0140-6736(03)13967-0",
+  "title": "Newly discovered coronavirus as the primary cause of severe acute respiratory syndrome",
+  "venue": "The Lancet",
+  "year": 2003
+ },
+ {
+  "doi": "10.1001/jamaneurol.2020.2065",
+  "title": "Neuropathogenesis and Neurologic Manifestations of the Coronaviruses in the Age of Coronavirus Disease 2019",
+  "venue": "JAMA Neurology",
+  "year": 2020
+ },
+ {
+  "doi": "10.1136/jech.57.11.857",
+  "title": "The impact of community psychological responses on outbreak control for severe acute respiratory syndrome in Hong Kong",
+  "venue": "Journal of Epidemiology & Community Heal",
+  "year": 2003
+ },
+ {
+  "doi": "10.3389/fimmu.2020.01451",
+  "title": "Quercetin and Vitamin C: An Experimental, Synergistic Therapy for the Prevention and Treatment of SARS-CoV-2 Related Disease (COVID-19)",
+  "venue": "Frontiers in Immunology",
+  "year": 2020
+ },
+ {
+  "doi": "10.1016/s0140-6736(03)15021-0",
+  "title": "Community-acquired pneumonia",
+  "venue": "The Lancet",
+  "year": 2003
+ },
+ {
+  "doi": "10.1007/s00705-017-3247-y",
+  "title": "Revisiting the taxonomy of the family Circoviridae: establishment of the genus Cyclovirus and removal of the genus Gyrovirus",
+  "venue": "Archives of Virology",
+  "year": 2017
+ },
+ {
+  "doi": "10.1016/j.mam.2016.11.012",
+  "title": "Leishmania infections: Molecular targets and diagnosis",
+  "venue": "Molecular Aspects of Medicine",
+  "year": 2017
+ },
+ {
+  "doi": "10.1523/jneurosci.11-10-03070.1991",
+  "title": "The neurotrophic effects of fibroblast growth factors on dopaminergic neurons in vitro are mediated by mesencephalic glia [published erratum appears in J Neurosci 1992 Mar;12(3):685]",
+  "venue": "Journal of Neuroscience",
+  "year": 1991
+ },
+ {
+  "doi": "10.1093/scan/nsn050",
+  "title": "Highly religious participants recruit areas of social cognition in personal prayer",
+  "venue": "Social Cognitive and Affective Neuroscie",
+  "year": 2009
+ },
+ {
+  "doi": "10.1186/s42483-020-00049-8",
+  "title": "From visual estimates to fully automated sensor-based measurements of plant disease severity: status and challenges for improving accuracy",
+  "venue": "Phytopathology Research",
+  "year": 2020
+ },
+ {
+  "doi": "10.1038/s41380-020-00864-7",
+  "title": "Advances in the field of intranasal oxytocin research: lessons learned and future directions for clinical research",
+  "venue": "Molecular Psychiatry",
+  "year": 2020
+ },
+ {
+  "doi": "10.1136/bmj.2.6193.757",
+  "title": "The concept of disease",
+  "venue": "BMJ",
+  "year": 1979
+ },
+ {
+  "doi": "10.1136/bmj.n71",
+  "title": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
+  "venue": "BMJ",
+  "year": 2021
+ },
+ {
+  "doi": "10.1093/nar/gkv007",
+  "title": "limma powers differential expression analyses for RNA-sequencing and microarray studies",
+  "venue": "Nucleic Acids Research",
+  "year": 2015
+ },
+ {
+  "doi": "10.1136/bmj.l4898",
+  "title": "RoB 2: a revised tool for assessing risk of bias in randomised trials",
+  "venue": "BMJ",
+  "year": 2019
+ },
+ {
+  "doi": "10.1093/nar/gky1131",
+  "title": "STRING v11: protein–protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets",
+  "venue": "Nucleic Acids Research",
+  "year": 2018
+ },
+ {
+  "doi": "10.1093/nar/gkg595",
+  "title": "Mfold web server for nucleic acid folding and hybridization prediction",
+  "venue": "Nucleic Acids Research",
+  "year": 2003
+ },
+ {
+  "doi": "10.1186/1471-2148-7-214",
+  "title": "BEAST: Bayesian evolutionary analysis by sampling trees",
+  "venue": "BMC Evolutionary Biology",
+  "year": 2007
+ },
+ {
+  "doi": "10.1186/1471-2164-9-75",
+  "title": "The RAST Server: Rapid Annotations using Subsystems Technology",
+  "venue": "BMC Genomics",
+  "year": 2008
+ },
+ {
+  "doi": "10.1136/bmj.g1687",
+  "title": "Better reporting of interventions: template for intervention description and replication (TIDieR) checklist and guide",
+  "venue": "BMJ",
+  "year": 2014
+ },
+ {
+  "doi": "10.1186/1471-2105-5-113",
+  "title": "MUSCLE: a multiple sequence alignment method with reduced time and space complexity",
+  "venue": "BMC Bioinformatics",
+  "year": 2004
+ },
+ {
+  "doi": "10.1186/s13059-016-0974-4",
+  "title": "The Ensembl Variant Effect Predictor",
+  "venue": "Genome biology",
+  "year": 2016
+ },
+ {
+  "doi": "10.1093/nar/30.1.325",
+  "title": "PlantCARE, a database of plant cis-acting regulatory elements and a portal to tools for in silico analysis of promoter sequences",
+  "venue": "Nucleic Acids Research",
+  "year": 2002
+ },
+ {
+  "doi": "10.1016/s0140-6736(16)31678-6",
+  "title": "Global, regional, and national incidence, prevalence, and years lived with disability for 310 diseases and injuries, 1990–2015: a systematic analysis for the Global Burden of Disease Study 2015",
+  "venue": "The Lancet",
+  "year": 2016
+ },
+ {
+  "doi": "10.1186/gb-2013-14-10-r115",
+  "title": "DNA methylation age of human tissues and cell types",
+  "venue": "Genome biology",
+  "year": 2013
+ },
+ {
+  "doi": "10.1186/1471-2105-4-2",
+  "title": "An automated method for finding molecular complexes in large protein interaction networks",
+  "venue": "BMC Bioinformatics",
+  "year": 2003
+ },
+ {
+  "doi": "10.2113/0530027",
+  "title": "The Composition of Zircon and Igneous and Metamorphic Petrogenesis",
+  "venue": "Reviews in Mineralogy and Geochemistry",
+  "year": 2003
+ },
+ {
+  "doi": "10.1186/1471-2105-4-41",
+  "title": "The COG database: an updated version includes eukaryotes",
+  "venue": "BMC Bioinformatics",
+  "year": 2003
+ },
+ {
+  "doi": "10.1093/nar/gkj109",
+  "title": "BioGRID: a general repository for interaction datasets",
+  "venue": "Nucleic Acids Research",
+  "year": 2005
+ },
+ {
+  "doi": "10.1038/ng1201-365",
+  "title": "Minimum information about a microarray experiment (MIAME)—toward standards for microarray data",
+  "venue": "Nature Genetics",
+  "year": 2001
+ },
+ {
+  "doi": "10.1186/s12913-017-2031-8",
+  "title": "Acceptability of healthcare interventions: an overview of reviews and development of a theoretical framework",
+  "venue": "BMC Health Services Research",
+  "year": 2017
+ },
+ {
+  "doi": "10.1136/bmj.l6890",
+  "title": "Synthesis without meta-analysis (SWiM) in systematic reviews: reporting guideline",
+  "venue": "BMJ",
+  "year": 2020
+ },
+ {
+  "doi": "10.1016/s2214-109x(18)30386-3",
+  "title": "High-quality health systems in the Sustainable Development Goals era: time for a revolution",
+  "venue": "The Lancet Global Health",
+  "year": 2018
+ },
+ {
+  "doi": "10.1093/cid/ciw353",
+  "title": "Management of Adults With Hospital-acquired and Ventilator-associated Pneumonia: 2016 Clinical Practice Guidelines by the Infectious Diseases Society of America and the American Thoracic Society",
+  "venue": "Clinical Infectious Diseases",
+  "year": 2016
+ },
+ {
+  "doi": "10.1186/1471-2458-9-88",
+  "title": "The incidence of co-morbidities related to obesity and overweight: A systematic review and meta-analysis",
+  "venue": "BMC Public Health",
+  "year": 2009
+ },
+ {
+  "doi": "10.3389/neuro.06.004.2008",
+  "title": "Representational similarity analysis – connecting the branches of systems neuroscience",
+  "venue": "Frontiers in Systems Neuroscience",
+  "year": 2008
+ },
+ {
+  "doi": "10.1186/1471-2105-10-48",
+  "title": "GOrilla: a tool for discovery and visualization of enriched GO terms in ranked gene lists",
+  "venue": "BMC Bioinformatics",
+  "year": 2009
+ },
+ {
+  "doi": "10.1186/1471-2288-3-25",
+  "title": "The development of QUADAS: a tool for the quality assessment of studies of diagnostic accuracy included in systematic reviews",
+  "venue": "BMC Medical Research Methodology",
+  "year": 2003
+ },
+ {
+  "doi": "10.1093/nar/gky1022",
+  "title": "The UNITE database for molecular identification of fungi: handling dark taxa and parallel taxonomic classifications",
+  "venue": "Nucleic Acids Research",
+  "year": 2018
+ },
+ {
+  "doi": "10.1186/1471-2318-8-24",
+  "title": "A standard procedure for creating a frailty index",
+  "venue": "BMC Geriatrics",
+  "year": 2008
+ },
+ {
+  "doi": "10.1186/s40168-018-0605-2",
+  "title": "Simple statistical identification and removal of contaminant sequences in marker-gene and metagenomics data",
+  "venue": "Microbiome",
+  "year": 2018
+ },
+ {
+  "doi": "10.1042/0264-6021:3570593",
+  "title": "Nitric oxide synthases: structure, function and inhibition",
+  "venue": "Biochemical Journal",
+  "year": 2001
+ },
+ {
+  "doi": "10.1093/ije/dyv098",
+  "title": "Data Resource Profile: Clinical Practice Research Datalink (CPRD)",
+  "venue": "International Journal of Epidemiology",
+  "year": 2015
+ },
+ {
+  "doi": "10.1093/nar/gkaa977",
+  "title": "The InterPro protein families and domains database: 20 years on",
+  "venue": "Nucleic Acids Research",
+  "year": 2020
+ },
+ {
+  "doi": "10.1016/s1474-4422(13)70278-3",
+  "title": "Neurobehavioural effects of developmental toxicity",
+  "venue": "The Lancet Neurology",
+  "year": 2014
+ },
+ {
+  "doi": "10.1093/nar/gkac1010",
+  "title": "The NHGRI-EBI GWAS Catalog: knowledgebase and deposition resource",
+  "venue": "Nucleic Acids Research",
+  "year": 2022
+ },
+ {
+  "doi": "10.1016/s2214-109x(20)30488-5",
+  "title": "The Lancet Global Health Commission on Global Eye Health: vision beyond 2020",
+  "venue": "The Lancet Global Health",
+  "year": 2021
+ },
+ {
+  "doi": "10.1007/s10311-020-01059-w",
+  "title": "Strategies for mitigation of climate change: a review",
+  "venue": "Environmental Chemistry Letters",
+  "year": 2020
+ },
+ {
+  "doi": "10.1136/bmj.h391",
+  "title": "The stepped wedge cluster randomised trial: rationale, design, analysis, and reporting",
+  "venue": "BMJ",
+  "year": 2015
+ },
+ {
+  "doi": "10.1371/journal.pone.0127502",
+  "title": "The Oligopoly of Academic Publishers in the Digital Era",
+  "venue": "PLoS ONE",
+  "year": 2015
+ },
+ {
+  "doi": "10.1111/gcb.13068",
+  "title": "Global change pressures on soils from land use and management",
+  "venue": "Global Change Biology",
+  "year": 2015
+ },
+ {
+  "doi": "10.1007/s10311-021-01322-8",
+  "title": "Hydrogen production, storage, utilisation and environmental impacts: a review",
+  "venue": "Environmental Chemistry Letters",
+  "year": 2021
+ },
+ {
+  "doi": "10.3389/fphar.2020.01021",
+  "title": "Turmeric and Its Major Compound Curcumin on Health: Bioactive Effects and Safety Profiles for Food, Pharmaceutical, Biotechnological and Medicinal Applications",
+  "venue": "Frontiers in Pharmacology",
+  "year": 2020
+ },
+ {
+  "doi": "10.1093/nar/gkaa1024",
+  "title": "WikiPathways: connecting communities",
+  "venue": "Nucleic Acids Research",
+  "year": 2020
+ },
+ {
+  "doi": "10.1007/s10311-022-01532-8",
+  "title": "Cost, environmental impact, and resilience of renewable energy under a changing climate: a review",
+  "venue": "Environmental Chemistry Letters",
+  "year": 2022
+ },
+ {
+  "doi": "10.1016/s0140-6736(17)30788-2",
+  "title": "Global kidney health 2017 and beyond: a roadmap for closing gaps in care, research, and policy",
+  "venue": "The Lancet",
+  "year": 2017
+ },
+ {
+  "doi": "10.1371/journal.pone.0064841",
+  "title": "Do Altmetrics Work? Twitter and Ten Other Social Web Services",
+  "venue": "PLoS ONE",
+  "year": 2013
+ },
+ {
+  "doi": "10.1371/journal.pone.0000308",
+  "title": "Sharing Detailed Research Data Is Associated with Increased Citation Rate",
+  "venue": "PLoS ONE",
+  "year": 2007
+ },
+ {
+  "doi": "10.1016/j.biocon.2016.09.004",
+  "title": "Contribution of citizen science towards international biodiversity monitoring",
+  "venue": "Biological Conservation",
+  "year": 2016
+ },
+ {
+  "doi": "10.1371/journal.pone.0147152",
+  "title": "What Is Citizen Science? – A Scientometric Meta-Analysis",
+  "venue": "PLoS ONE",
+  "year": 2016
+ },
+ {
+  "doi": "10.1038/s41380-023-01949-9",
+  "title": "Cognitive impairment in schizophrenia: aetiology, pathophysiology, and treatment",
+  "venue": "Molecular Psychiatry",
+  "year": 2023
+ },
+ {
+  "doi": "10.1371/journal.pone.0006022",
+  "title": "A Principal Component Analysis of 39 Scientific Impact Measures",
+  "venue": "PLoS ONE",
+  "year": 2009
+ },
+ {
+  "doi": "10.1186/s12915-017-0357-7",
+  "title": "Meta-evaluation of meta-analysis: ten appraisal questions for biologists",
+  "venue": "BMC Biology",
+  "year": 2017
+ },
+ {
+  "doi": "10.1371/journal.pbio.1002264",
+  "title": "Meta-research: Evaluation and Improvement of Research Methods and Practices",
+  "venue": "PLoS Biology",
+  "year": 2015
+ },
+ {
+  "doi": "10.1117/1.nph.8.1.012101",
+  "title": "Best practices for fNIRS publications",
+  "venue": "Neurophotonics",
+  "year": 2021
+ },
+ {
+  "doi": "10.1371/journal.pmed.1000097",
+  "title": "Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement",
+  "venue": "PLoS Medicine",
+  "year": 2009
+ },
+ {
+  "doi": "10.1093/nar/25.24.4876",
+  "title": "The CLUSTAL_X windows interface: flexible strategies for multiple sequence alignment aided by quality analysis tools",
+  "venue": "Nucleic Acids Research",
+  "year": 1997
+ },
+ {
+  "doi": "10.1136/bmj.d5928",
+  "title": "The Cochrane Collaboration's tool for assessing risk of bias in randomised trials",
+  "venue": "BMJ",
+  "year": 2011
+ },
+ {
+  "doi": "10.1093/sysbio/syq010",
+  "title": "New Algorithms and Methods to Estimate Maximum-Likelihood Phylogenies: Assessing the Performance of PhyML 3.0",
+  "venue": "Systematic Biology",
+  "year": 2010
+ },
+ {
+  "doi": "10.1093/bioinformatics/btr381",
+  "title": "UCHIME improves sensitivity and speed of chimera detection",
+  "venue": "Bioinformatics",
+  "year": 2011
+ },
+ {
+  "doi": "10.1186/1471-2105-12-77",
+  "title": "pROC: an open-source package for R and S+ to analyze and compare ROC curves",
+  "venue": "BMC Bioinformatics",
+  "year": 2011
+ },
+ {
+  "doi": "10.1093/nar/gky427",
+  "title": "SWISS-MODEL: homology modelling of protein structures and complexes",
+  "venue": "Nucleic Acids Research",
+  "year": 2018
+ },
+ {
+  "doi": "10.1002/1098-240x(200008)23:4<334::aid-nur9>3.0.co;2-g",
+  "title": "Whatever happened to qualitative description?",
+  "venue": "Research in Nursing & Health",
+  "year": 2000
+ },
+ {
+  "doi": "10.1016/j.neuroimage.2011.09.015",
+  "title": "FSL",
+  "venue": "NeuroImage",
+  "year": 2011
+ },
+ {
+  "doi": "10.1186/1471-2288-14-135",
+  "title": "Estimating the sample mean and standard deviation from the sample size, median, range and/or interquartile range",
+  "venue": "BMC Medical Research Methodology",
+  "year": 2014
+ },
+ {
+  "doi": "10.1093/molbev/msn083",
+  "title": "jModelTest: Phylogenetic Model Averaging",
+  "venue": "Molecular Biology and Evolution",
+  "year": 2008
+ },
+ {
+  "doi": "10.1093/eurheartj/ehaa612",
+  "title": "2020 ESC Guidelines for the diagnosis and management of atrial fibrillation developed in collaboration with the European Association for Cardio-Thoracic Surgery (EACTS)",
+  "venue": "European Heart Journal",
+  "year": 2020
+ },
+ {
+  "doi": "10.1093/bib/bbs017",
+  "title": "Integrative Genomics Viewer (IGV): high-performance genomics data visualization and exploration",
+  "venue": "Briefings in Bioinformatics",
+  "year": 2012
+ },
+ {
+  "doi": "10.1093/nar/gks808",
+  "title": "Evaluation of general 16S ribosomal RNA gene PCR primers for classical and next-generation sequencing-based diversity studies",
+  "venue": "Nucleic Acids Research",
+  "year": 2012
+ },
+ {
+  "doi": "10.1371/journal.pcbi.1005595",
+  "title": "Unicycler: Resolving bacterial genome assemblies from short and long sequencing reads",
+  "venue": "PLoS Computational Biology",
+  "year": 2017
+ },
+ {
+  "doi": "10.1093/genetics/122.1.19",
+  "title": "A system of shuttle vectors and yeast host strains designed for efficient manipulation of DNA in Saccharomyces cerevisiae.",
+  "venue": "Genetics",
+  "year": 1989
+ },
+ {
+  "doi": "10.1016/s0140-6736(18)32203-7",
+  "title": "Global, regional, and national age-sex-specific mortality for 282 causes of death in 195 countries and territories, 1980–2017: a systematic analysis for the Global Burden of Disease Study 2017",
+  "venue": "The Lancet",
+  "year": 2018
+ },
+ {
+  "doi": "10.1186/1471-2105-13-134",
+  "title": "Primer-BLAST: A tool to design target-specific primers for polymerase chain reaction",
+  "venue": "BMC Bioinformatics",
+  "year": 2012
+ },
+ {
+  "doi": "10.1371/journal.pmed.1001885",
+  "title": "The REporting of studies Conducted using Observational Routinely-collected health Data (RECORD) Statement",
+  "venue": "PLoS Medicine",
+  "year": 2015
+ },
+ {
+  "doi": "10.1016/s0140-6736(15)60160-x",
+  "title": "Global Surgery 2030: evidence and solutions for achieving health, welfare, and economic development",
+  "venue": "The Lancet",
+  "year": 2015
+ },
+ {
+  "doi": "10.1002/ijc.1440",
+  "title": "Estimating the world cancer burden: Globocan 2000",
+  "venue": "International Journal of Cancer",
+  "year": 2001
+ },
+ {
+  "doi": "10.1093/nar/gkw408",
+  "title": "ConSurf 2016: an improved methodology to estimate and visualize evolutionary conservation in macromolecules",
+  "venue": "Nucleic Acids Research",
+  "year": 2016
+ },
+ {
+  "doi": "10.1186/1471-2164-12-402",
+  "title": "BLAST Ring Image Generator (BRIG): simple prokaryote genome comparisons",
+  "venue": "BMC Genomics",
+  "year": 2011
+ },
+ {
+  "doi": "10.1128/jb.00542-10",
+  "title": "The Human Oral Microbiome",
+  "venue": "Journal of Bacteriology",
+  "year": 2010
+ },
+ {
+  "doi": "10.1111/j.1365-2702.2005.01121.x",
+  "title": "Pain: a review of three commonly used pain rating scales",
+  "venue": "Journal of Clinical Nursing",
+  "year": 2005
+ },
+ {
+  "doi": "10.1186/1472-6947-7-16",
+  "title": "Utilization of the PICO framework to improve searching PubMed for clinical questions",
+  "venue": "BMC Medical Informatics and Decision Mak",
+  "year": 2007
+ },
+ {
+  "doi": "10.1093/epirev/mxn002",
+  "title": "Suicide and Suicidal Behavior",
+  "venue": "Epidemiologic Reviews",
+  "year": 2008
+ },
+ {
+  "doi": "10.1371/journal.pone.0177459",
+  "title": "Singularity: Scientific containers for mobility of compute",
+  "venue": "PLoS ONE",
+  "year": 2017
+ },
+ {
+  "doi": "10.1371/journal.pbio.0020312",
+  "title": "Identification of Birds through DNA Barcodes",
+  "venue": "PLoS Biology",
+  "year": 2004
+ },
+ {
+  "doi": "10.1186/s12913-014-0579-0",
+  "title": "PICO, PICOS and SPIDER: a comparison study of specificity and sensitivity in three search tools for qualitative systematic reviews",
+  "venue": "BMC Health Services Research",
+  "year": 2014
+ },
+ {
+  "doi": "10.1212/wnl.0b013e3181cb3e25",
+  "title": "Alzheimer's Disease Neuroimaging Initiative (ADNI)",
+  "venue": "Neurology",
+  "year": 2009
+ },
+ {
+  "doi": "10.1038/s41588-022-01024-z",
+  "title": "New insights into the genetic etiology of Alzheimer’s disease and related dementias",
+  "venue": "Nature Genetics",
+  "year": 2022
+ },
+ {
+  "doi": "10.1161/cir.0000000000001193",
+  "title": "2023 ACC/AHA/ACCP/HRS Guideline for the Diagnosis and Management of Atrial Fibrillation: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines",
+  "venue": "Circulation",
+  "year": 2023
+ },
+ {
+  "doi": "10.1016/s0140-6736(11)60054-8",
+  "title": "The Brazilian health system: history, advances, and challenges",
+  "venue": "The Lancet",
+  "year": 2011
+ },
+ {
+  "doi": "10.1371/journal.pone.0163477",
+  "title": "Where Is Current Research on Blockchain Technology?—A Systematic Review",
+  "venue": "PLoS ONE",
+  "year": 2016
+ },
+ {
+  "doi": "10.1186/s40168-020-00875-0",
+  "title": "Microbiome definition re-visited: old concepts and new challenges",
+  "venue": "Microbiome",
+  "year": 2020
+ },
+ {
+  "doi": "10.1053/jhep.2003.50193",
+  "title": "Nonalcoholic Steatohepatitis: Summary of An Aasld Single Topic Conference",
+  "venue": "Hepatology",
+  "year": 2003
+ },
+ {
+  "doi": "10.1111/mec.14350",
+  "title": "Environmental <scp>DNA</scp> metabarcoding: Transforming how we survey animal and plant communities",
+  "venue": "Molecular Ecology",
+  "year": 2017
+ },
+ {
+  "doi": "10.4137/pmc.s14459",
+  "title": "Antibiotics and Bacterial Resistance in the 21st Century",
+  "venue": "Perspectives in Medicinal Chemistry",
+  "year": 2014
+ },
+ {
+  "doi": "10.1016/j.addr.2010.05.006",
+  "title": "Superparamagnetic iron oxide nanoparticles (SPIONs): Development, surface modification and applications in chemotherapy",
+  "venue": "Advanced Drug Delivery Reviews",
+  "year": 2010
+ },
+ {
+  "doi": "10.1093/nar/gkg584",
+  "title": "Scansite 2.0: proteome-wide prediction of cell signaling interactions using short sequence motifs",
+  "venue": "Nucleic Acids Research",
+  "year": 2003
+ },
+ {
+  "doi": "10.1016/s0140-6736(16)31390-3",
+  "title": "Nurturing care: promoting early childhood development",
+  "venue": "The Lancet",
+  "year": 2016
+ },
+ {
+  "doi": "10.1111/brv.12140",
+  "title": "The return of metabolism: biochemistry and physiology of the pentose phosphate pathway",
+  "venue": "Biological reviews/Biological reviews of",
+  "year": 2014
+ },
+ {
+  "doi": "10.1002/wps.20087",
+  "title": "The RDoC framework: facilitating transition from ICD/DSM to dimensional approaches that integrate neuroscience and psychopathology",
+  "venue": "World Psychiatry",
+  "year": 2014
+ },
+ {
+  "doi": "10.1136/bmjopen-2017-016242",
+  "title": "Telehealth and patient satisfaction: a systematic review and narrative analysis",
+  "venue": "BMJ Open",
+  "year": 2017
+ },
+ {
+  "doi": "10.1016/s2214-109x(20)30425-3",
+  "title": "Trends in prevalence of blindness and distance and near vision impairment over 30 years: an analysis for the Global Burden of Disease Study",
+  "venue": "The Lancet Global Health",
+  "year": 2020
+ },
+ {
+  "doi": "10.1016/s0140-6736(17)32366-8",
+  "title": "Global, regional, and national comparative risk assessment of 84 behavioural, environmental and occupational, and metabolic risks or clusters of risks, 1990–2016: a systematic analysis for the Global Burden of Disease Study 2016",
+  "venue": "The Lancet",
+  "year": 2017
+ },
+ {
+  "doi": "10.1007/s10311-023-01593-3",
+  "title": "Microplastic sources, formation, toxicity and remediation: a review",
+  "venue": "Environmental Chemistry Letters",
+  "year": 2023
+ },
+ {
+  "doi": "10.1016/s0140-6736(24)01822-1",
+  "title": "The 2024 report of the Lancet Countdown on health and climate change: facing record-breaking threats from delayed action",
+  "venue": "The Lancet",
+  "year": 2024
+ },
+ {
+  "doi": "10.1017/s0025315415001733",
+  "title": "Marine harmful algal blooms, human health and wellbeing: challenges and opportunities in the 21st century",
+  "venue": "Journal of the Marine Biological Associa",
+  "year": 2015
+ },
+ {
+  "doi": "10.1371/journal.pmed.1000412",
+  "title": "Some Lessons for the Future from the Global Malaria Eradication Programme (1955–1969)",
+  "venue": "PLoS Medicine",
+  "year": 2011
+ },
+ {
+  "doi": "10.1016/s0140-6736(19)30233-8",
+  "title": "The legal determinants of health: harnessing the power of law for global health and sustainable development",
+  "venue": "The Lancet",
+  "year": 2019
+ },
+ {
+  "doi": "10.1371/journal.pbio.1002483",
+  "title": "Border Security Fencing and Wildlife: The End of the Transboundary Paradigm in Eurasia?",
+  "venue": "PLoS Biology",
+  "year": 2016
+ },
+ {
+  "doi": "10.1371/journal.pone.0217847",
+  "title": "Nature’s contributions to people in mountains: A review",
+  "venue": "PLoS ONE",
+  "year": 2019
+ },
+ {
+  "doi": "10.1371/journal.pone.0014643",
+  "title": "HLA DNA Sequence Variation among Human Populations: Molecular Signatures of Demographic and Selective Events",
+  "venue": "PLoS ONE",
+  "year": 2011
+ },
+ {
+  "doi": "10.1136/bmjgh-2021-005380",
+  "title": "A systematic review on ethical challenges of ‘field’ research in low-income and middle-income countries: respect, justice and beneficence for research staff?",
+  "venue": "BMJ Global Health",
+  "year": 2021
+ },
+ {
+  "doi": "10.1016/j.biocon.2016.10.006",
+  "title": "Conservation social science: Understanding and integrating human dimensions to improve conservation",
+  "venue": "Biological Conservation",
+  "year": 2016
+ },
+ {
+  "doi": "10.1371/journal.pone.0038970",
+  "title": "Uncovering Ecosystem Service Bundles through Social Preferences",
+  "venue": "PLoS ONE",
+  "year": 2012
+ },
+ {
+  "doi": "10.1111/gcb.15513",
+  "title": "Getting the message right on nature‐based solutions to climate change",
+  "venue": "Global Change Biology",
+  "year": 2021
+ },
+ {
+  "doi": "10.1371/journal.pone.0245327",
+  "title": "Psychological impacts from COVID-19 among university students: Risk factors across seven states in the United States",
+  "venue": "PLoS ONE",
+  "year": 2021
+ },
+ {
+  "doi": "10.1111/brv.12290",
+  "title": "The ecology, distribution, conservation and management of large old trees",
+  "venue": "Biological reviews/Biological reviews of",
+  "year": 2016
+ },
+ {
+  "doi": "10.1136/bmj.j4008",
+  "title": "AMSTAR 2: a critical appraisal tool for systematic reviews that include randomised or non-randomised studies of healthcare interventions, or both",
+  "venue": "BMJ",
+  "year": 2017
+ },
+ {
+  "doi": "10.1111/j.1469-8749.2007.tb12610.x",
+  "title": "A report: the definition and classification of cerebral palsy April 2006",
+  "venue": "Developmental Medicine & Child Neurology",
+  "year": 2007
+ },
+ {
+  "doi": "10.1210/er.2009-0002",
+  "title": "Endocrine-Disrupting Chemicals: An Endocrine Society Scientific Statement",
+  "venue": "Endocrine Reviews",
+  "year": 2009
+ },
+ {
+  "doi": "10.1212/wnl.0000000000004058",
+  "title": "Diagnosis and management of dementia with Lewy bodies",
+  "venue": "Neurology",
+  "year": 2017
+ },
+ {
+  "doi": "10.1371/journal.pone.0011147",
+  "title": "progressiveMauve: Multiple Genome Alignment with Gene Gain, Loss and Rearrangement",
+  "venue": "PLoS ONE",
+  "year": 2010
+ },
+ {
+  "doi": "10.1136/bmj.i5239",
+  "title": "CONSORT 2010 statement: extension to randomised pilot and feasibility trials",
+  "venue": "BMJ",
+  "year": 2016
+ },
+ {
+  "doi": "10.3762/bjnano.9.98",
+  "title": "Review on nanoparticles and nanostructured materials: history, sources, toxicity and regulations",
+  "venue": "Beilstein Journal of Nanotechnology",
+  "year": 2018
+ },
+ {
+  "doi": "10.1097/hep.0000000000000520",
+  "title": "A multisociety Delphi consensus statement on new fatty liver disease nomenclature",
+  "venue": "Hepatology",
+  "year": 2023
+ },
+ {
+  "doi": "10.1083/jcb.200302047",
+  "title": "VEGF guides angiogenic sprouting utilizing endothelial tip cell filopodia",
+  "venue": "The Journal of Cell Biology",
+  "year": 2003
+ },
+ {
+  "doi": "10.1016/j.jclinepi.2021.02.003",
+  "title": "Updating guidance for reporting systematic reviews: development of the PRISMA 2020 statement",
+  "venue": "Journal of Clinical Epidemiology",
+  "year": 2021
+ },
+ {
+  "doi": "10.1016/s0166-2236(98)01260-0",
+  "title": "Language within our grasp",
+  "venue": "Trends in Neurosciences",
+  "year": 1998
+ },
+ {
+  "doi": "10.1016/j.clnu.2016.09.004",
+  "title": "ESPEN guidelines on definitions and terminology of clinical nutrition",
+  "venue": "Clinical Nutrition",
+  "year": 2016
+ },
+ {
+  "doi": "10.1210/er.2010-0013",
+  "title": "The Molecular Biology, Biochemistry, and Physiology of Human Steroidogenesis and Its Disorders",
+  "venue": "Endocrine Reviews",
+  "year": 2011
+ },
+ {
+  "doi": "10.1002/alz.13859",
+  "title": "Revised criteria for diagnosis and staging of Alzheimer's disease: Alzheimer's Association Workgroup",
+  "venue": "Alzheimer s & Dementia",
+  "year": 2024
+ },
+ {
+  "doi": "10.1093/nar/gkac920",
+  "title": "CARD 2023: expanded curation, support for machine learning, and resistome prediction at the Comprehensive Antibiotic Resistance Database",
+  "venue": "Nucleic Acids Research",
+  "year": 2022
+ },
+ {
+  "doi": "10.1101/gad.1047403",
+  "title": "Molecular imaging in living subjects: seeing fundamental biological processes in a new light",
+  "venue": "Genes & Development",
+  "year": 2003
+ },
+ {
+  "doi": "10.1093/nar/gkab902",
+  "title": "TYGS and LPSN: a database tandem for fast and reliable genome-based classification and nomenclature of prokaryotes",
+  "venue": "Nucleic Acids Research",
+  "year": 2021
+ },
+ {
+  "doi": "10.1093/nar/gki866",
+  "title": "The Subsystems Approach to Genome Annotation and its Use in the Project to Annotate 1000 Genomes",
+  "venue": "Nucleic Acids Research",
+  "year": 2005
+ },
+ {
+  "doi": "10.1534/g3.111.000240",
+  "title": "<i>Stacks</i>: Building and Genotyping Loci <i>De Novo</i> From Short-Read Sequences",
+  "venue": "G3 Genes Genomes Genetics",
+  "year": 2011
+ },
+ {
+  "doi": "10.1042/bj20040892",
+  "title": "Carbohydrate-binding modules: fine-tuning polysaccharide recognition",
+  "venue": "Biochemical Journal",
+  "year": 2004
+ },
+ {
+  "doi": "10.1016/j.neuron.2022.10.020",
+  "title": "Microglia states and nomenclature: A field at its crossroads",
+  "venue": "Neuron",
+  "year": 2022
+ },
+ {
+  "doi": "10.1093/nar/gkt1140",
+  "title": "Activities at the Universal Protein Resource (UniProt)",
+  "venue": "Nucleic Acids Research",
+  "year": 2013
+ },
+ {
+  "doi": "10.1093/nar/gkx1121",
+  "title": "The IUPHAR/BPS Guide to PHARMACOLOGY in 2018: updates and expansion to encompass the new guide to IMMUNOPHARMACOLOGY",
+  "venue": "Nucleic Acids Research",
+  "year": 2017
+ },
+ {
+  "doi": "10.1093/ageing/afac205",
+  "title": "World guidelines for falls prevention and management for older adults: a global initiative",
+  "venue": "Age and Ageing",
+  "year": 2022
+ },
+ {
+  "doi": "10.3389/fninf.2014.00008",
+  "title": "Dipy, a library for the analysis of diffusion MRI data",
+  "venue": "Frontiers in Neuroinformatics",
+  "year": 2014
+ },
+ {
+  "doi": "10.1093/arclin/14.2.167",
+  "title": "Normative Data Stratified by Age and Education for Two Measures of Verbal Fluency: FAS and Animal Naming",
+  "venue": "Archives of Clinical Neuropsychology",
+  "year": 1999
+ },
+ {
+  "doi": "10.1523/jneurosci.14-11-06336.1994",
+  "title": "The functional organization of human extrastriate cortex: a PET-rCBF study of selective attention to faces and locations",
+  "venue": "Journal of Neuroscience",
+  "year": 1994
+ },
+ {
+  "doi": "10.1523/jneurosci.16-16-05205.1996",
+  "title": "Differential Sensitivity of Human Visual Cortex to Faces, Letterstrings, and Textures: A Functional Magnetic Resonance Imaging Study",
+  "venue": "Journal of Neuroscience",
+  "year": 1996
+ },
+ {
+  "doi": "10.1136/bmj.m2980",
+  "title": "Drug treatments for covid-19: living systematic review and network meta-analysis",
+  "venue": "BMJ",
+  "year": 2020
+ },
+ {
+  "doi": "10.1016/j.pneurobio.2014.02.004",
+  "title": "What is normal in normal aging? Effects of aging, amyloid and Alzheimer's disease on the cerebral cortex and the hippocampus",
+  "venue": "Progress in Neurobiology",
+  "year": 2014
+ },
+ {
+  "doi": "10.1523/jneurosci.19-10-03962.1999",
+  "title": "Recollection and Familiarity in Recognition Memory: An Event-Related Functional Magnetic Resonance Imaging Study",
+  "venue": "Journal of Neuroscience",
+  "year": 1999
+ },
+ {
+  "doi": "10.1371/journal.pone.0158753",
+  "title": "CATALISE: A Multinational and Multidisciplinary Delphi Consensus Study. Identifying Language Impairments in Children",
+  "venue": "PLoS ONE",
+  "year": 2016
+ },
+ {
+  "doi": "10.1016/j.acn.2004.02.005",
+  "title": "Assessment practices of clinical neuropsychologists in the United States and Canada: A survey of INS, NAN, and APA Division 40 members",
+  "venue": "Archives of Clinical Neuropsychology",
+  "year": 2004
+ },
+ {
+  "doi": "10.1371/journal.pcbi.1005350",
+  "title": "Mindboggling morphometry of human brains",
+  "venue": "PLoS Computational Biology",
+  "year": 2017
+ },
+ {
+  "doi": "10.1016/j.neuroimage.2016.09.046",
+  "title": "BrainNetCNN: Convolutional neural networks for brain networks; towards predicting neurodevelopment",
+  "venue": "NeuroImage",
+  "year": 2016
+ },
+ {
+  "doi": "10.1210/clinem/dgad463",
+  "title": "Recommendations From the 2023 International Evidence-based Guideline for the Assessment and Management of Polycystic Ovary Syndrome",
+  "venue": "The Journal of Clinical Endocrinology & ",
+  "year": 2023
+ },
+ {
+  "doi": "10.1161/str.0b013e3181e7512b",
+  "title": "Comprehensive Overview of Nursing and Interdisciplinary Rehabilitation Care of the Stroke Patient",
+  "venue": "Stroke",
+  "year": 2010
+ },
+ {
+  "doi": "10.1523/jneurosci.2612-10.2010",
+  "title": "Growing Together and Growing Apart: Regional and Sex Differences in the Lifespan Developmental Trajectories of Functional Homotopy",
+  "venue": "Journal of Neuroscience",
+  "year": 2010
+ },
+ {
+  "doi": "10.1038/npp.2009.184",
+  "title": "Opposite Effects of Δ-9-Tetrahydrocannabinol and Cannabidiol on Human Brain Function and Psychopathology",
+  "venue": "Neuropsychopharmacology",
+  "year": 2009
+ },
+ {
+  "doi": "10.1016/s2215-0366(19)30291-3",
+  "title": "Cognitive function following a major depressive episode: a systematic review and meta-analysis",
+  "venue": "The Lancet Psychiatry",
+  "year": 2019
+ },
+ {
+  "doi": "10.1186/s12859-015-0564-6",
+  "title": "An overview of the BIOASQ large-scale biomedical semantic indexing and question answering competition",
+  "venue": "BMC Bioinformatics",
+  "year": 2015
+ },
+ {
+  "doi": "10.1523/jneurosci.20-16-06173.2000",
+  "title": "Prefrontal–Temporal Circuitry for Episodic Encoding and Subsequent Memory",
+  "venue": "Journal of Neuroscience",
+  "year": 2000
+ },
+ {
+  "doi": "10.3758/cabn.10.4.470",
+  "title": "Neural correlates of rumination in depression",
+  "venue": "Cognitive Affective & Behavioral Neurosc",
+  "year": 2010
+ },
+ {
+  "doi": "10.1016/j.neubiorev.2016.07.010",
+  "title": "Motor symptoms in Parkinson’s disease: A unified framework",
+  "venue": "Neuroscience & Biobehavioral Reviews",
+  "year": 2016
+ },
+ {
+  "doi": "10.1523/jneurosci.17-18-07079.1997",
+  "title": "Structural and Functional Analyses of Human Cerebral Cortex Using a Surface-Based Atlas",
+  "venue": "Journal of Neuroscience",
+  "year": 1997
+ },
+ {
+  "doi": "10.1136/jnnp.74.1.44",
+  "title": "fMRI studies of associative encoding in young and elderly controls and mild Alzheimer's disease",
+  "venue": "Journal of Neurology Neurosurgery & Psyc",
+  "year": 2002
+ },
+ {
+  "doi": "10.1016/j.neubiorev.2014.08.003",
+  "title": "Neuroimaging in social anxiety disorder—A meta-analytic review resulting in a new neurofunctional model",
+  "venue": "Neuroscience & Biobehavioral Reviews",
+  "year": 2014
+ },
+ {
+  "doi": "10.3389/fnhum.2014.00897",
+  "title": "Dynamic connectivity states estimated from resting fMRI Identify differences among Schizophrenia, bipolar disorder, and healthy control subjects",
+  "venue": "Frontiers in Human Neuroscience",
+  "year": 2014
+ },
+ {
+  "doi": "10.1016/s0140-6736(16)31679-8",
+  "title": "Global, regional, and national comparative risk assessment of 79 behavioural, environmental and occupational, and metabolic risks or clusters of risks, 1990–2015: a systematic analysis for the Global Burden of Disease Study 2015",
+  "venue": "The Lancet",
+  "year": 2016
+ },
+ {
+  "doi": "10.1093/bib/bbx044",
+  "title": "Deep learning for healthcare: review, opportunities and challenges",
+  "venue": "Briefings in Bioinformatics",
+  "year": 2017
+ },
+ {
+  "doi": "10.1186/s13059-016-0881-8",
+  "title": "A survey of best practices for RNA-seq data analysis",
+  "venue": "Genome biology",
+  "year": 2016
+ },
+ {
+  "doi": "10.1016/j.neucom.2019.10.118",
+  "title": "A comprehensive survey on support vector machine classification: Applications, challenges and trends",
+  "venue": "Neurocomputing",
+  "year": 2020
+ },
+ {
+  "doi": "10.1155/2016/3289801",
+  "title": "Deep Neural Networks Based Recognition of Plant Diseases by Leaf Image Classification",
+  "venue": "Computational Intelligence and Neuroscie",
+  "year": 2016
+ },
+ {
+  "doi": "10.1002/qua.24481",
+  "title": "Jaguar: A high‐performance quantum chemistry software program with strengths in life and materials sciences",
+  "venue": "International Journal of Quantum Chemist",
+  "year": 2013
+ },
+ {
+  "doi": "10.1093/cid/cis346",
+  "title": "2012 Infectious Diseases Society of America Clinical Practice Guideline for the Diagnosis and Treatment of Diabetic Foot Infectionsa",
+  "venue": "Clinical Infectious Diseases",
+  "year": 2012
+ },
+ {
+  "doi": "10.1093/nar/gkad976",
+  "title": "DrugBank 6.0: the DrugBank Knowledgebase for 2024",
+  "venue": "Nucleic Acids Research",
+  "year": 2023
+ },
+ {
+  "doi": "10.1001/jamainternmed.2015.0324",
+  "title": "Reducing Inappropriate Polypharmacy",
+  "venue": "JAMA Internal Medicine",
+  "year": 2015
+ },
+ {
+  "doi": "10.1186/s13059-020-1926-6",
+  "title": "Eleven grand challenges in single-cell data science",
+  "venue": "Genome biology",
+  "year": 2020
+ },
+ {
+  "doi": "10.1161/cir.0000000000001168",
+  "title": "2023 AHA/ACC/ACCP/ASPC/NLA/PCNA Guideline for the Management of Patients With Chronic Coronary Disease: A Report of the American Heart Association/American College of Cardiology Joint Committee on Clinical Practice Guidelines",
+  "venue": "Circulation",
+  "year": 2023
+ },
+ {
+  "doi": "10.1186/1471-2164-16-1",
+  "title": "Uncovering the novel characteristics of Asian honey bee, Apis cerana, by whole genome sequencing",
+  "venue": "BMC Genomics",
+  "year": 2015
+ },
+ {
+  "doi": "10.3390/biology12070997",
+  "title": "Next-Generation Sequencing Technology: Current Trends and Advancements",
+  "venue": "Biology",
+  "year": 2023
+ },
+ {
+  "doi": "10.2337/dc13-2042",
+  "title": "Nutrition Therapy Recommendations for the Management of Adults With Diabetes",
+  "venue": "Diabetes Care",
+  "year": 2013
+ },
+ {
+  "doi": "10.1016/s0140-6736(18)30994-2",
+  "title": "Measuring performance on the Healthcare Access and Quality Index for 195 countries and territories and selected subnational locations: a systematic analysis from the Global Burden of Disease Study 2016",
+  "venue": "The Lancet",
+  "year": 2018
+ },
+ {
+  "doi": "10.1093/nar/gkae410",
+  "title": "The Galaxy platform for accessible, reproducible, and collaborative data analyses: 2024 update",
+  "venue": "Nucleic Acids Research",
+  "year": 2024
+ },
+ {
+  "doi": "10.1016/s0140-6736(16)31467-2",
+  "title": "Measuring the health-related Sustainable Development Goals in 188 countries: a baseline analysis from the Global Burden of Disease Study 2015",
+  "venue": "The Lancet",
+  "year": 2016
+ },
+ {
+  "doi": "10.1002/wps.20624",
+  "title": "Nonsocial and social cognition in schizophrenia: current evidence and future directions",
+  "venue": "World Psychiatry",
+  "year": 2019
+ },
+ {
+  "doi": "10.1371/journal.pone.0194970",
+  "title": "Anthropogenic contamination of tap water, beer, and sea salt",
+  "venue": "PLoS ONE",
+  "year": 2018
+ },
+ {
+  "doi": "10.2147/nsa.s39406",
+  "title": "Nanotechnology in agri-food production: an overview",
+  "venue": "Nanotechnology Science and Applications",
+  "year": 2014
+ },
+ {
+  "doi": "10.1042/bj20021234",
+  "title": "Transglutaminases: Nature’s biological glues",
+  "venue": "Biochemical Journal",
+  "year": 2002
+ },
+ {
+  "doi": "10.3390/ddc3010011",
+  "title": "Plant-Derived Natural Products: A Source for Drug Discovery and Development",
+  "venue": "Drugs and Drug Candidates",
+  "year": 2024
+ },
+ {
+  "doi": "10.1111/pai.12563",
+  "title": "EAACI Molecular Allergology User's Guide",
+  "venue": "Pediatric Allergy and Immunology",
+  "year": 2016
+ },
+ {
+  "doi": "10.1186/s12934-020-01428-8",
+  "title": "Microbial lipases and their industrial applications: a comprehensive review",
+  "venue": "Microbial Cell Factories",
+  "year": 2020
+ },
+ {
+  "doi": "10.3390/ijms20235889",
+  "title": "Chitosan as a Wound Dressing Starting Material: Antimicrobial Properties and Mode of Action",
+  "venue": "International Journal of Molecular Scien",
+  "year": 2019
+ },
+ {
+  "doi": "10.1002/etc.2663",
+  "title": "Fate and effects of poly- and perfluoroalkyl substances in the aquatic environment: A review",
+  "venue": "Environmental Toxicology and Chemistry",
+  "year": 2014
+ },
+ {
+  "doi": "10.3390/md20060364",
+  "title": "Structures, Properties and Applications of Alginates",
+  "venue": "Marine Drugs",
+  "year": 2022
+ },
+ {
+  "doi": "10.1111/j.1364-3703.2007.00436.x",
+  "title": "<i>Aspergillus flavus</i> : the major producer of aflatoxin",
+  "venue": "Molecular Plant Pathology",
+  "year": 2007
+ },
+ {
+  "doi": "10.1016/s0140-6736(23)00013-2",
+  "title": "Defining and conceptualising the commercial determinants of health",
+  "venue": "The Lancet",
+  "year": 2023
+ },
+ {
+  "doi": "10.2147/nsa.s43773",
+  "title": "Innovations in nanotechnology for water treatment",
+  "venue": "Nanotechnology Science and Applications",
+  "year": 2015
+ },
+ {
+  "doi": "10.1021/acssuschemeng.1c05013",
+  "title": "Managing Plastic Waste─Sorting, Recycling, Disposal, and Product Redesign",
+  "venue": "ACS Sustainable Chemistry & Engineering",
+  "year": 2021
+ },
+ {
+  "doi": "10.1039/d2gc02588d",
+  "title": "Expanding plastics recycling technologies: chemical aspects, technology status and challenges",
+  "venue": "Green Chemistry",
+  "year": 2022
+ },
+ {
+  "doi": "10.1007/s10311-023-01604-3",
+  "title": "Artificial intelligence for waste management in smart cities: a review",
+  "venue": "Environmental Chemistry Letters",
+  "year": 2023
+ },
+ {
+  "doi": "10.5194/acp-15-10529-2015",
+  "title": "Evaluating the climate and air quality impacts of short-lived pollutants",
+  "venue": "Atmospheric chemistry and physics",
+  "year": 2015
+ },
+ {
+  "doi": "10.3390/ijms25021322",
+  "title": "A Review of Natural Polysaccharides: Sources, Characteristics, Properties, Food, and Pharmaceutical Applications",
+  "venue": "International Journal of Molecular Scien",
+  "year": 2024
+ },
+ {
+  "doi": "10.1002/jctb.6533",
+  "title": "Current state of chitin purification and chitosan production from insects",
+  "venue": "Journal of Chemical Technology & Biotech",
+  "year": 2020
+ },
+ {
+  "doi": "10.1002/macp.202100488",
+  "title": "The Frontier of Plastics Recycling: Rethinking Waste as a Resource for High‐Value Applications",
+  "venue": "Macromolecular Chemistry and Physics",
+  "year": 2022
+ },
+ {
+  "doi": "10.1186/s12889-018-5594-3",
+  "title": "Access to HIV care and treatment for migrants between Lesotho and South Africa: a mixed methods study",
+  "venue": "BMC Public Health",
+  "year": 2018
+ },
+ {
+  "doi": "10.1038/s41580-020-00315-9",
+  "title": "Gene regulation by long non-coding RNAs and its biological functions",
+  "venue": "Nature Reviews Molecular Cell Biology",
+  "year": 2020
+ },
+ {
+  "doi": "10.1155/2019/6730305",
+  "title": "Environmental Chemistry and Ecotoxicology of Hazardous Heavy Metals: Environmental Persistence, Toxicity, and Bioaccumulation",
+  "venue": "Journal of Chemistry",
+  "year": 2019
+ },
+ {
+  "doi": "10.1039/c5py00263j",
+  "title": "Lignocellulosic biomass: a sustainable platform for the production of bio-based chemicals and polymers",
+  "venue": "Polymer Chemistry",
+  "year": 2015
+ },
+ {
+  "doi": "10.1007/s12072-017-9799-9",
+  "title": "Asia–Pacific clinical practice guidelines on the management of hepatocellular carcinoma: a 2017 update",
+  "venue": "Hepatology International",
+  "year": 2017
+ },
+ {
+  "doi": "10.5194/acp-9-5131-2009",
+  "title": "Asian emissions in 2006 for the NASA INTEX-B mission",
+  "venue": "Atmospheric chemistry and physics",
+  "year": 2009
+ },
+ {
+  "doi": "10.1093/eurheartj/eht108",
+  "title": "ESC Guidelines on diabetes, pre-diabetes, and cardiovascular diseases developed in collaboration with the EASD",
+  "venue": "European Heart Journal",
+  "year": 2013
+ },
+ {
+  "doi": "10.3390/ijms22137202",
+  "title": "Silver Nanoparticles and Their Antibacterial Applications",
+  "venue": "International Journal of Molecular Scien",
+  "year": 2021
+ },
+ {
+  "doi": "10.1042/bse0590001",
+  "title": "Enzymes: principles and biotechnological applications",
+  "venue": "Essays in Biochemistry",
+  "year": 2015
+ },
+ {
+  "doi": "10.3389/fchem.2020.00392",
+  "title": "Nanocellulose: From Fundamentals to Advanced Applications",
+  "venue": "Frontiers in Chemistry",
+  "year": 2020
+ },
+ {
+  "doi": "10.1038/s41588-019-0371-5",
+  "title": "Gossypium barbadense and Gossypium hirsutum genomes provide insights into the origin and evolution of allotetraploid cotton",
+  "venue": "Nature Genetics",
+  "year": 2019
+ },
+ {
+  "doi": "10.1016/s2542-5196(20)30121-2",
+  "title": "The environmental footprint of health care: a global assessment",
+  "venue": "The Lancet Planetary Health",
+  "year": 2020
+ },
+ {
+  "doi": "10.1210/er.2018-00126",
+  "title": "Skeletal and Extraskeletal Actions of Vitamin D: Current Evidence and Outstanding Questions",
+  "venue": "Endocrine Reviews",
+  "year": 2018
+ },
+ {
+  "doi": "10.1029/2005gc001060",
+  "title": "MPI‐DING reference glasses for in situ microanalysis: New reference values for element concentrations and isotope ratios",
+  "venue": "Geochemistry Geophysics Geosystems",
+  "year": 2006
+ },
+ {
+  "doi": "10.3390/ijms17030401",
+  "title": "Biosurfactants: Multifunctional Biomolecules of the 21st Century",
+  "venue": "International Journal of Molecular Scien",
+  "year": 2016
+ },
+ {
+  "doi": "10.3389/fchem.2018.00407",
+  "title": "Synthetic Polymer Contamination in Bottled Water",
+  "venue": "Frontiers in Chemistry",
+  "year": 2018
+ },
+ {
+  "doi": "10.1007/s00018-013-1539-2",
+  "title": "Regulation of pyruvate metabolism and human disease",
+  "venue": "Cellular and Molecular Life Sciences",
+  "year": 2013
+ },
+ {
+  "doi": "10.1093/nar/gku1177",
+  "title": "The UCSC Genome Browser database: 2015 update",
+  "venue": "Nucleic Acids Research",
+  "year": 2014
+ },
+ {
+  "doi": "10.5402/2012/137289",
+  "title": "Oxidative Stress and Lipid Peroxidation Products in Cancer Progression and Therapy",
+  "venue": "ISRN Oncology",
+  "year": 2012
+ },
+ {
+  "doi": "10.3389/fimmu.2019.00549",
+  "title": "Infectious Disease Threats in the Twenty-First Century: Strengthening the Global Response",
+  "venue": "Frontiers in Immunology",
+  "year": 2019
+ },
+ {
+  "doi": "10.1210/er.2017-00211",
+  "title": "Metabolic Flexibility as an Adaptation to Energy Resources and Requirements in Health and Disease",
+  "venue": "Endocrine Reviews",
+  "year": 2018
+ },
+ {
+  "doi": "10.1021/acs.jmedchem.0c00830",
+  "title": "Thirty Years of HDAC Inhibitors: 2020 Insight and Hindsight",
+  "venue": "Journal of Medicinal Chemistry",
+  "year": 2020
+ },
+ {
+  "doi": "10.1093/nar/gky1105",
+  "title": "Expansion of the Human Phenotype Ontology (HPO) knowledge base and resources",
+  "venue": "Nucleic Acids Research",
+  "year": 2018
+ },
+ {
+  "doi": "10.1016/s0140-6736(24)00651-2",
+  "title": "The Lancet Commission on prostate cancer: planning for the surge in cases",
+  "venue": "The Lancet",
+  "year": 2024
+ },
+ {
+  "doi": "10.3390/ijms221910529",
+  "title": "Rhizosphere Bacteria in Plant Growth Promotion, Biocontrol, and Bioremediation of Contaminated Sites: A Comprehensive Review of Effects and Mechanisms",
+  "venue": "International Journal of Molecular Scien",
+  "year": 2021
+ },
+ {
+  "doi": "10.1164/rccm.201904-0717st",
+  "title": "The Occupational Burden of Nonmalignant Respiratory Diseases. An Official American Thoracic Society and European Respiratory Society Statement",
+  "venue": "American Journal of Respiratory and Crit",
+  "year": 2019
+ },
+ {
+  "doi": "10.7748/nop2003.04.15.2.31.c2252",
+  "title": "Research information exchange",
+  "venue": "Nursing Older People",
+  "year": 2003
+ },
+ {
+  "doi": "10.1371/journal.pone.0346731",
+  "title": "Exploring the effects of task complexity and translation anxiety on EFL learners’ translation performance: Evidence from a mixed-design study",
+  "venue": "PLOS One",
+  "year": null
+ },
+ {
+  "doi": "10.7748/nop2011.07.23.6.5.p5692",
+  "title": "Slipper exchange scheme offers a safer option for inpatients",
+  "venue": "Nursing Older People",
+  "year": 2011
+ },
+ {
+  "doi": "10.1038/s41380-024-02407-w",
+  "title": "Deficiency of FRMD5 results in neurodevelopmental dysfunction and autistic-like behavior in mice",
+  "venue": "Molecular Psychiatry",
+  "year": 2024
+ },
+ {
+  "doi": "10.7748/nop.13.1.29.s14",
+  "title": "Exchange network wales",
+  "venue": "Nursing Older People",
+  "year": 2001
+ },
+ {
+  "doi": "10.3390/ijms242216361",
+  "title": "Functional Characterization of Novel MC4R Variants Identified in Two Unrelated Patients with Morbid Obesity in Qatar",
+  "venue": "International Journal of Molecular Sciences",
+  "year": 2023
+ },
+ {
+  "doi": "10.1016/j.ijbiomac.2026.151479",
+  "title": "Microbial conversion of waste-derived short-chain fatty acids into poly(3-hydroxybutyrate-co-3-hydroxyvalerate) (PHBV): A review",
+  "venue": "International Journal of Biological Macromolecules",
+  "year": 2026
+ },
+ {
+  "doi": "10.1136/bmj.1.1791.948",
+  "title": "The Mecca Pilgrimage",
+  "venue": "BMJ",
+  "year": 1895
+ },
+ {
+  "doi": "10.1017/cbo9781139034548.015",
+  "title": "THE PILGRIMAGE TO MECCA",
+  "venue": "Hausaland",
+  "year": 2011
+ },
+ {
+  "doi": "10.1016/s0140-6736(00)90190-9",
+  "title": "THE MECCA PILGRIMAGE. 1929.",
+  "venue": "The Lancet",
+  "year": 1929
+ },
+ {
+  "doi": "10.1016/s0140-6736(01)09478-8",
+  "title": "THE PILGRIMAGE TO MECCA",
+  "venue": "The Lancet",
+  "year": 1935
+ },
+ {
+  "doi": "10.1136/bmj.1.3720.766",
+  "title": "THE 1931 PILGRIMAGE TO MECCA",
+  "venue": "BMJ",
+  "year": 1932
+ },
+ {
+  "doi": "10.1136/bmj.2.3650.1052",
+  "title": "THE 1930 PILGRIMAGE TO MECCA",
+  "venue": "BMJ",
+  "year": 1930
+ },
+ {
+  "doi": "10.1038/scientificamerican10251902-22415csupp",
+  "title": "The Pilgrimage to Mecca",
+  "venue": "Scientific American",
+  "year": 1902
+ },
+ {
+  "doi": "10.1097/01.xme.0000407820.80263.73",
+  "title": "Resilience, burnout, and role stress among military personnel",
+  "venue": "Middle East Current Psychiatry",
+  "year": 2012
+ },
+ {
+  "doi": "10.12788/cp.0371",
+  "title": "More on AI-generated content",
+  "venue": "Current Psychiatry",
+  "year": 2023
+ },
+ {
+  "doi": "10.1177/09697330261465739",
+  "title": "Authorship, moral responsibility, and generative AI in nursing",
+  "venue": "Nursing Ethics",
+  "year": 2026
+ },
+ {
+  "doi": "10.1002/9781394358212.ch8",
+  "title": "Ethics and Regulations in Generative AI for Vision Diagnostics",
+  "venue": "Generative Artificial Intelligence in Ophthalmology",
+  "year": 2026
+ },
+ {
+  "doi": "10.1109/embc58623.2025.11254053",
+  "title": "SL-MERK: Synthetic Lethality Mechanism Explainer based on GraphRAG and Knowledge Graph",
+  "venue": "2025 47th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)",
+  "year": 2025
+ },
+ {
+  "doi": "10.4000/books.cvz.7864",
+  "title": "The concept of gentile civilization in missionary discourse and its European reception",
+  "venue": "Missions d'évangélisation et circulation des savoirs",
+  "year": 2011
+ },
+ {
+  "doi": "10.5759/jscas.18.145",
+  "title": "VR・AR・Simulation",
+  "venue": "Journal of Japan Society of Computer Aided Surgery",
+  "year": 2016
+ },
+ {
+  "doi": "10.1148/radiol.07152025.podcast",
+  "title": "Highlights of Generative AI Content",
+  "venue": "Radiology",
+  "year": 2025
+ },
+ {
+  "doi": "10.1108/ijphm-09-2025-0183",
+  "title": "Exploring consumer responses to short-form video marketing in the medical aesthetics sector",
+  "venue": "International Journal of Pharmaceutical and Healthcare Marketing",
+  "year": null
+ },
+ {
+  "doi": "10.62311/nesx/97915",
+  "title": "Quantum AI for Optimizing Crowd and Queue Flow",
+  "venue": "Optimizing Queue and Crowd Management with Quantum AI",
+  "year": null
+ }
+]
