@@ -1,21 +1,41 @@
 """wm_server.py — 世界模型算法服务 (FastAPI)
 每次请求真正执行 propose→simulate→revise 闭环规划。
-数据源: 真实文献资料库 (1958篇文献)
+数据源: 真实文献资料库
 """
+import sys
+from pathlib import Path
+
+_REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
-from real_data_layer import RealKnowledgeWorldModel
 from skwm_closed_loop import (
     SKWMClosedLoopController, ProposalPolicy, RevisionPolicy
 )
+from skmw_platform.backend.real_data_bridge import BridgeKnowledgeWorldModel
 import json
-from pathlib import Path
+import re
 
 app = FastAPI(title="SKWM World Model Server")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-# 启动时加载真实数据
-kwm = RealKnowledgeWorldModel()
+_DATA_DIR = _REPO_ROOT / "data"
+
+def _load_papers():
+    p = _DATA_DIR / "B1_文献主表.json"
+    raw = p.read_text(encoding="utf-8")
+    clean = re.sub(r'^\[\s*"_wm"\s*:\s*"[^"]*"\s*,\s*', "[", raw)
+    return json.loads(clean)
+
+def _load_state_vectors():
+    p = _DATA_DIR / "state_vectors.json"
+    return json.loads(p.read_text(encoding="utf-8"))
+
+papers = _load_papers()
+state_vectors = _load_state_vectors()
+kwm = BridgeKnowledgeWorldModel(papers, state_vectors)
 proposal = ProposalPolicy()
 revision = RevisionPolicy()
 ctrl = SKWMClosedLoopController(kwm, proposal, revision)
@@ -26,7 +46,7 @@ _rssm_adapter = None
 _rssm_model_path = Path(__file__).parent / "model_rssm.pt"
 if _rssm_model_path.exists():
     try:
-        from skwm_world_model import WorldModel, SKWMWorldModelAdapter
+        from skmw_platform.backend.skwm_world_model import WorldModel, SKWMWorldModelAdapter
         import torch
         _rssm_model = WorldModel.load(str(_rssm_model_path))
         _rssm_adapter = SKWMWorldModelAdapter(_rssm_model)
@@ -249,7 +269,7 @@ def literature(year: int = Query(0)):
 
 # ============ 知识图谱 ============
 
-_KG_DATA: dict | None = None
+_KG_DATA = None
 
 @app.get("/api/knowledge-graph")
 def knowledge_graph():
@@ -298,7 +318,7 @@ def graph_entity(name: str = Query(""), type: str = Query("")):
 
 # ============ 报告中心 ============
 
-_REPORT_CACHE: list[dict] | None = None
+_REPORT_CACHE = None
 
 @app.get("/api/reports")
 def list_reports():
