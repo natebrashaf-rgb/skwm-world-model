@@ -61,7 +61,7 @@ class KnowledgeWorldModel:
 
     def __init__(self, data_layer=None, predictor=None):
         self.data = data_layer          # <-接现有 DataLayer(89年切片/状态向量)
-        self.predictor = predictor      # <-接现有 XGBoost(AUC=0.9408)
+        self.predictor = predictor      # <-接现有 XGBoost(AUC=未复现)
 
     def get_state(self, year: int) -> KnowledgeState:
         """获取某年知识状态"""

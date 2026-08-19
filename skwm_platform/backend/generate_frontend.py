@@ -201,7 +201,7 @@ border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.1);display:none;flex-direct
 
 <!-- ========== Predict ========== -->
 <div class="pg" id="p-predict">
-  <div class="hr"><div class="label">📈 PREDICT</div><h2>趋势预测</h2><p>XGBoost 未来5年趋势 (AUC=0.9408)</p></div>
+  <div class="hr"><div class="label">📈 PREDICT</div><h2>趋势预测</h2><p>XGBoost 未来5年趋势 (AUC=未复现)</p></div>
   <div id="pd-content"><div class="loading"><div class="sp"></div> 加载中...</div></div>
 </div>
 
@@ -424,7 +424,7 @@ async function loadPredict(){
     const d=await api('/api/predict?delta=5');
     const p=d.predictions||d.topics||[];
     document.getElementById('pd-content').innerHTML=
-      `<div class="cd"><div class="ct">📈 未来5年预测 (AUC=0.9408)</div>${p.slice(0,15).map((x,i)=>{
+      `<div class="cd"><div class="ct">📈 未来5年预测 (AUC=未复现)</div>${p.slice(0,15).map((x,i)=>{
         const ch=x.predicted_growth||x.growth||0;
         const arrow=ch>0?'↑':'↓';
         return `<div class="bar-c"><span class="bar-l" style="width:160px">${i+1}. ${x.name||x.topic}</span><div class="bar" style="width:${Math.max(4,Math.abs(ch)/200*100)}px;background:${ch>=0?'var(--ac)':'#ef4444'};opacity:.7"></div><span class="bar-v">${arrow} ${Math.abs(ch)}</span></div>`;
@@ -505,7 +505,7 @@ async function loadScienceMap(){
     `🧠 <b>SKWM = {E,R,S,T,C,U,P}</b> · 7维科学知识世界模型<br>`+
     `📊 <b>数据层:</b> OpenAlex · arXiv · CrossRef · 14,848篇元数据<br>`+
     `🏛️ <b>知识层:</b> 21,042条术语 · 14,198节点 · 23,051边<br>`+
-    `🧮 <b>计量层:</b> 89年时间切片 · XGBoost AUC=0.9408 · 4维状态向量<br>`+
+    `🧮 <b>计量层:</b> 89年时间切片 · XGBoost AUC=未复现 · 4维状态向量<br>`+
     `🤖 <b>智能体层:</b> 文献/阿文/计量/图谱/GraphRAG/报告/审核/推送<br>`+
     `🌐 <b>应用层:</b> Web平台 · 飞书机器人 · Obsidian知识库 · 馆员驾驶舱`;
 }
