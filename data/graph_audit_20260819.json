@@ -1,0 +1,74 @@
+{
+ "generated_at": "2026-08-19",
+ "generated_by": "rebuild_neo4j.py 重建后从 Neo4j 导出",
+ "node_total": 32205,
+ "node_by_label": {
+  "Venue": 4296,
+  "Author": 14448,
+  "Paper": 12177,
+  "Topic": 1173,
+  "Domain": 27,
+  "Year": 84
+ },
+ "rel_total": 113924,
+ "rel_by_type": {
+  "AUTHORED": 19545,
+  "PUBLISHED_IN": 12177,
+  "PUBLISHED_IN_YEAR": 11052,
+  "BELONGS_TO_DOMAIN": 17187,
+  "HAS_TOPIC": 29704,
+  "SNAPSHOT": 7517,
+  "CO_OCCURS_WITH": 16742
+ },
+ "isolated_nodes": 0,
+ "isolated_sample": [],
+ "paper_nodes": 12177,
+ "topic_nodes": 1173,
+ "snapshot_year_range_note": "见 SNAPSHOT 关系年份（另行核对）",
+ "snapshot_years": 64,
+ "snapshot_year_min": 1859,
+ "snapshot_year_max": 2026,
+ "snapshot_year0_count": 0,
+ "snapshot_year_sample": [
+  [
+   1859,
+   3
+  ],
+  [
+   1913,
+   1
+  ],
+  [
+   1937,
+   5
+  ],
+  [
+   1960,
+   1
+  ],
+  [
+   1961,
+   1
+  ],
+  [
+   2022,
+   511
+  ],
+  [
+   2023,
+   525
+  ],
+  [
+   2024,
+   526
+  ],
+  [
+   2025,
+   668
+  ],
+  [
+   2026,
+   494
+  ]
+ ]
+}

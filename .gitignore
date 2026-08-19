@@ -43,3 +43,10 @@ data/*.bak*.json
 
 # 数据备份文件
 *.bak_20260819
+
+
+# 实验证据留存(2026-08-19 本地跑脚本产物, 不入库; 详见 README 数据版本声明)
+skwm_更新包_20260819/run/
+skwm_更新包_20260819/experiments/run_patches/data/
+skwm_更新包_20260819/experiments/run_patches/output/
+skwm_更新包_20260819/experiments/output/dataset/

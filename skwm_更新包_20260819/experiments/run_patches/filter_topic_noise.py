@@ -50,7 +50,7 @@ challenges introduction findings objective objectives aim aims purpose
 conclusion outcomes approach approaches factor factors determinant
 determinants variable variables correlation association predictor
 predictors baseline cohort sample samples participant participants
-view views abbreviations methodology instruction land power
+view views abbreviations methodology instruction land power appendix whose references acknowledgements results
 """.split()
 
 # 3) 垃圾短语(带空格的主题名)
@@ -59,6 +59,7 @@ JUNK_PHRASES = [
     "united states", "opportunities and challenges", "guidelines for the",
     "an introduction", "as an", "of an", "in chinese", "a new",
     "the role of", "the impact of", "a study of", "a review of",
+    "introduction to",
 ]
 
 STOP = set(w.lower() for w in ACADEMIC_STOP + JUNK_TOPICS)

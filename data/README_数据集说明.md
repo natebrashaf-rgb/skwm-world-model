@@ -73,6 +73,13 @@
 - 13 篇已入主表（language=ar），全文在 pdf_texts_arabic_20260819.json
 - 阿语主题 98 个已入 state_vectors.json（详见 E:\大挑\产出\交接_20260819\阿语文献同步报告_20260819.md）
 
+### 5c. ar_mapped 阿语主题（2026-08-19 映射，独立文件）
+- 文件: data/state_vectors_ar_mapped_20260819.json（**不并入** state_vectors.json，与 ar_text 严格分开）
+- 来源: 962 篇英文阿拉伯旅游文献 → core_terms 阿语词表映射（词边界+词频≥2 过滤）
+- **ar_mapped 主题 96 个**（651 条主题-年度记录，涉及 918 篇）
+- 与 ar_text（98 个）**重叠 47 个**——论文口径：阿语撰写(ar_text) vs 阿拉伯题材英文文献(ar_mapped) 分开统计，勿混
+- 口径差: 元数据侧 965 DOI / 主表侧匹配 962 条（差 3 = 3 个书结构词条未入主表），统一用主表侧 962
+
 ### 6. temporal_snapshots.json — 逐年图快照
 - 条数: 89 年
 - 字段: nodes, edges, n_nodes, n_edges（每年知识图谱节点/边）

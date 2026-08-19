@@ -1,6 +1,8 @@
 # 🌍 中阿文旅世界模型 - 部署指南
 
 > ⚠️ **数据版本声明（2026-08-19）**：云端 Aura 版已弃用（停在 11,602），一切以本地/GitHub 最新版为准。
+>
+> 本地跑脚本的中间产物（run/、experiments/run_patches/、output/dataset/）为证据留存，已加入 .gitignore 不入库。
 
 ## 本地运行
 
