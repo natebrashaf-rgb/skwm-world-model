@@ -122,6 +122,9 @@ def main():
             year = int(year)
         except (ValueError, TypeError):
             year = 0
+        # 显式规则(2026-08-19审计): year<=0 或 year>2026 的文献保留 Paper 节点,
+        # 但不建 Year 节点/PUBLISHED_IN_YEAR/SNAPSHOT(消除 year=0 的588条脏快照)
+        year_valid = 0 < year <= 2026
         venue = (p.get("venue") or "").strip() or "未知"
         is_tourism = pid not in non_tourism
         paper_rows.append({
@@ -129,12 +132,14 @@ def main():
             "citations": p.get("citations", 0), "venue": venue,
             "authors": split_authors(p.get("authors", "")),
             "is_tourism": is_tourism,
+            "year_valid": year_valid,
         })
         topics = paper_topics.get(pid, set())
         domains = paper_domains.get(pid, set())
         for t in topics:
             topic_papers[t].add(pid)
-            year_topic[(year, t)] += 1
+            if year_valid:
+                year_topic[(year, t)] += 1
         for d in domains:
             domain_papers[d].add(pid)
         tlist = sorted(topics)
@@ -157,14 +162,23 @@ def main():
                 p.is_tourism = r.is_tourism
             MERGE (v:Venue {name: r.venue})
             MERGE (p)-[:PUBLISHED_IN]->(v)
-            MERGE (y:Year {year: r.year})
-            MERGE (p)-[:PUBLISHED_IN_YEAR]->(y)
             FOREACH (a IN r.authors |
                 MERGE (au:Author {name: a})
                 MERGE (au)-[:AUTHORED]->(p)
             )
             """, rows=chunk)
-        print(f"    论文 {len(paper_rows)} 已写入")
+        # Year 关系: 仅 year_valid (year<=0 或 >2026 不建, 消除 year=0 脏节点)
+        valid_rows = [r for r in paper_rows if r.get("year_valid")]
+        invalid_cnt = len(paper_rows) - len(valid_rows)
+        for bi in range(0, len(valid_rows), 500):
+            chunk = valid_rows[bi:bi + 500]
+            s.run("""
+            UNWIND $rows AS r
+            MATCH (p:Paper {id: r.pid})
+            MERGE (y:Year {year: r.year})
+            MERGE (p)-[:PUBLISHED_IN_YEAR]->(y)
+            """, rows=chunk)
+        print(f"    论文 {len(paper_rows)} 已写入 (Year关系跳过无效年份 {invalid_cnt} 篇)")
 
         print("[6/6] 写入主题/领域/共现/时序...")
         # 主题节点 + HAS_TOPIC

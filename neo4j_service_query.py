@@ -714,12 +714,12 @@ def main():
     print("\n[1] 热点 Top-10:")
     hs = sq.query_hotspots(10)
     for t in hs["topics"]:
-        print(f"  {t['name']:<20s} heat={t['heat']}  growth={t['growth']:+d}")
+        print(f"  {t['name']:<20s} heat={t['heat']}  growth={t['growth']:+.1f}")
 
     print("\n[2] 新兴方向 Top-10:")
     em = sq.query_emerging(10)
     for t in em["topics"]:
-        print(f"  {t['name']:<20s} growth={t['growth']:+d}  heat={t['heat']}")
+        print(f"  {t['name']:<20s} growth={t['growth']:+.1f}  heat={t['heat']}")
 
     print("\n[3] 数据覆盖:")
     cov = sq.query_coverage()
