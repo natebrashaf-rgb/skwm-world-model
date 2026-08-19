@@ -40,3 +40,6 @@ data/merge_report.json
 data/noise_med_cleanup.json
 data/pdf_meta_v3.json
 data/*.bak*.json
+
+# 数据备份文件
+*.bak_20260819
