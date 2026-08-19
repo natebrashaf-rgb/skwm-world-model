@@ -1,0 +1,1505 @@
+[
+ {
+  "task_id": "T1",
+  "freeze_year": 2016,
+  "question": "请识别2016年之后 1-3 年内可能兴起的中阿文旅交叉主题, 并给出依据 (证据链可追溯)。",
+  "cond_A": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "旅游",
+     "heat": 2102,
+     "growth": 347,
+     "centrality": 0.396,
+     "connections": 663
+    },
+    {
+     "topic": "tour",
+     "heat": 2010,
+     "growth": 338,
+     "centrality": 0.369,
+     "connections": 618
+    },
+    {
+     "topic": "文化",
+     "heat": 1275,
+     "growth": 225,
+     "centrality": 0.319,
+     "connections": 534
+    },
+    {
+     "topic": "world",
+     "heat": 466,
+     "growth": 199,
+     "centrality": 0.152,
+     "connections": 255
+    },
+    {
+     "topic": "遗产",
+     "heat": 784,
+     "growth": 188,
+     "centrality": 0.211,
+     "connections": 353
+    },
+    {
+     "topic": "nation",
+     "heat": 1024,
+     "growth": 183,
+     "centrality": 0.277,
+     "connections": 464
+    },
+    {
+     "topic": "阿拉伯",
+     "heat": 625,
+     "growth": 124,
+     "centrality": 0.171,
+     "connections": 286
+    },
+    {
+     "topic": "media",
+     "heat": 358,
+     "growth": 110,
+     "centrality": 0.12,
+     "connections": 201
+    },
+    {
+     "topic": "chinese outbound",
+     "heat": 164,
+     "growth": 107,
+     "centrality": 0.038,
+     "connections": 64
+    },
+    {
+     "topic": "社会",
+     "heat": 325,
+     "growth": 98,
+     "centrality": 0.125,
+     "connections": 210
+    }
+   ],
+   "summary": "[{\"topic\": \"旅游\", \"heat\": 2102, \"growth\": 347, \"centrality\": 0.396, \"connections\": 663}, {\"topic\": \"tour\", \"heat\": 2010, \"growth\": 338, \"centrality\": 0.369, \"connections\": 618}, {\"topic\": \"文化\", \"heat\": 1275, \"growth\": 225, \"centrality\": 0.319, \"connections\": 534}, {\"topic\": \"world\", \"heat\": 466, \"gro"
+  },
+  "cond_B": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "旅游",
+     "heat": 2102,
+     "growth": 347,
+     "centrality": 0.396,
+     "connections": 663,
+     "predicted_growth_3y": 330.7
+    },
+    {
+     "topic": "遗产",
+     "heat": 784,
+     "growth": 188,
+     "centrality": 0.211,
+     "connections": 353,
+     "predicted_growth_3y": 314.6
+    },
+    {
+     "topic": "tour",
+     "heat": 2010,
+     "growth": 338,
+     "centrality": 0.369,
+     "connections": 618,
+     "predicted_growth_3y": 256.8
+    },
+    {
+     "topic": "nation",
+     "heat": 1024,
+     "growth": 183,
+     "centrality": 0.277,
+     "connections": 464,
+     "predicted_growth_3y": 128.4
+    },
+    {
+     "topic": "world",
+     "heat": 466,
+     "growth": 199,
+     "centrality": 0.152,
+     "connections": 255,
+     "predicted_growth_3y": 117.2
+    },
+    {
+     "topic": "阿拉伯",
+     "heat": 625,
+     "growth": 124,
+     "centrality": 0.171,
+     "connections": 286,
+     "predicted_growth_3y": 108.4
+    },
+    {
+     "topic": "site",
+     "heat": 252,
+     "growth": 82,
+     "centrality": 0.091,
+     "connections": 153,
+     "predicted_growth_3y": 73.2
+    },
+    {
+     "topic": "outbound",
+     "heat": 231,
+     "growth": 83,
+     "centrality": 0.05,
+     "connections": 84,
+     "predicted_growth_3y": 69.4
+    },
+    {
+     "topic": "全球",
+     "heat": 256,
+     "growth": 55,
+     "centrality": 0.112,
+     "connections": 188,
+     "predicted_growth_3y": 57.1
+    },
+    {
+     "topic": "影响",
+     "heat": 194,
+     "growth": 59,
+     "centrality": 0.085,
+     "connections": 143,
+     "predicted_growth_3y": 49.0
+    }
+   ],
+   "summary": "[{\"topic\": \"旅游\", \"heat\": 2102, \"growth\": 347, \"centrality\": 0.396, \"connections\": 663, \"predicted_growth_3y\": 330.7}, {\"topic\": \"遗产\", \"heat\": 784, \"growth\": 188, \"centrality\": 0.211, \"connections\": 353, \"predicted_growth_3y\": 314.6}, {\"topic\": \"tour\", \"heat\": 2010, \"growth\": 338, \"centrality\": 0.369"
+  }
+ },
+ {
+  "task_id": "T2",
+  "freeze_year": 2017,
+  "question": "请识别2017年之后 1-3 年内可能兴起的中阿文旅交叉主题, 并给出依据 (证据链可追溯)。",
+  "cond_A": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "tour",
+     "heat": 2403,
+     "growth": 393,
+     "centrality": 0.39,
+     "connections": 702
+    },
+    {
+     "topic": "旅游",
+     "heat": 2478,
+     "growth": 376,
+     "centrality": 0.41,
+     "connections": 738
+    },
+    {
+     "topic": "遗产",
+     "heat": 1072,
+     "growth": 288,
+     "centrality": 0.251,
+     "connections": 451
+    },
+    {
+     "topic": "city",
+     "heat": 572,
+     "growth": 152,
+     "centrality": 0.153,
+     "connections": 275
+    },
+    {
+     "topic": "carrying",
+     "heat": 182,
+     "growth": 138,
+     "centrality": 0.044,
+     "connections": 79
+    },
+    {
+     "topic": "carrying capacity",
+     "heat": 182,
+     "growth": 138,
+     "centrality": 0.044,
+     "connections": 79
+    },
+    {
+     "topic": "发展",
+     "heat": 616,
+     "growth": 130,
+     "centrality": 0.17,
+     "connections": 306
+    },
+    {
+     "topic": "nation",
+     "heat": 1137,
+     "growth": 113,
+     "centrality": 0.27,
+     "connections": 485
+    },
+    {
+     "topic": "阿拉伯",
+     "heat": 735,
+     "growth": 110,
+     "centrality": 0.188,
+     "connections": 338
+    },
+    {
+     "topic": "media",
+     "heat": 453,
+     "growth": 95,
+     "centrality": 0.143,
+     "connections": 258
+    }
+   ],
+   "summary": "[{\"topic\": \"tour\", \"heat\": 2403, \"growth\": 393, \"centrality\": 0.39, \"connections\": 702}, {\"topic\": \"旅游\", \"heat\": 2478, \"growth\": 376, \"centrality\": 0.41, \"connections\": 738}, {\"topic\": \"遗产\", \"heat\": 1072, \"growth\": 288, \"centrality\": 0.251, \"connections\": 451}, {\"topic\": \"city\", \"heat\": 572, \"growth"
+  },
+  "cond_B": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "tour",
+     "heat": 2403,
+     "growth": 393,
+     "centrality": 0.39,
+     "connections": 702,
+     "predicted_growth_3y": 1075.8
+    },
+    {
+     "topic": "旅游",
+     "heat": 2478,
+     "growth": 376,
+     "centrality": 0.41,
+     "connections": 738,
+     "predicted_growth_3y": 1051.8
+    },
+    {
+     "topic": "遗产",
+     "heat": 1072,
+     "growth": 288,
+     "centrality": 0.251,
+     "connections": 451,
+     "predicted_growth_3y": 427.5
+    },
+    {
+     "topic": "发展",
+     "heat": 616,
+     "growth": 130,
+     "centrality": 0.17,
+     "connections": 306,
+     "predicted_growth_3y": 163.8
+    },
+    {
+     "topic": "city",
+     "heat": 572,
+     "growth": 152,
+     "centrality": 0.153,
+     "connections": 275,
+     "predicted_growth_3y": 158.4
+    },
+    {
+     "topic": "研究",
+     "heat": 405,
+     "growth": 71,
+     "centrality": 0.135,
+     "connections": 243,
+     "predicted_growth_3y": 144.2
+    },
+    {
+     "topic": "media",
+     "heat": 453,
+     "growth": 95,
+     "centrality": 0.143,
+     "connections": 258,
+     "predicted_growth_3y": 132.4
+    },
+    {
+     "topic": "社会",
+     "heat": 411,
+     "growth": 86,
+     "centrality": 0.14,
+     "connections": 252,
+     "predicted_growth_3y": 130.9
+    },
+    {
+     "topic": "work",
+     "heat": 389,
+     "growth": 60,
+     "centrality": 0.152,
+     "connections": 274,
+     "predicted_growth_3y": 88.6
+    },
+    {
+     "topic": "site",
+     "heat": 332,
+     "growth": 80,
+     "centrality": 0.101,
+     "connections": 181,
+     "predicted_growth_3y": 78.5
+    }
+   ],
+   "summary": "[{\"topic\": \"tour\", \"heat\": 2403, \"growth\": 393, \"centrality\": 0.39, \"connections\": 702, \"predicted_growth_3y\": 1075.8}, {\"topic\": \"旅游\", \"heat\": 2478, \"growth\": 376, \"centrality\": 0.41, \"connections\": 738, \"predicted_growth_3y\": 1051.8}, {\"topic\": \"遗产\", \"heat\": 1072, \"growth\": 288, \"centrality\": 0.25"
+  }
+ },
+ {
+  "task_id": "T3",
+  "freeze_year": 2018,
+  "question": "请识别2018年之后 1-3 年内可能兴起的中阿文旅交叉主题, 并给出依据 (证据链可追溯)。",
+  "cond_A": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "tour",
+     "heat": 2800,
+     "growth": 397,
+     "centrality": 0.415,
+     "connections": 775
+    },
+    {
+     "topic": "旅游",
+     "heat": 2828,
+     "growth": 350,
+     "centrality": 0.421,
+     "connections": 785
+    },
+    {
+     "topic": "文化",
+     "heat": 1504,
+     "growth": 182,
+     "centrality": 0.327,
+     "connections": 611
+    },
+    {
+     "topic": "nation",
+     "heat": 1295,
+     "growth": 158,
+     "centrality": 0.286,
+     "connections": 533
+    },
+    {
+     "topic": "site",
+     "heat": 455,
+     "growth": 123,
+     "centrality": 0.128,
+     "connections": 238
+    },
+    {
+     "topic": "middle east",
+     "heat": 184,
+     "growth": 112,
+     "centrality": 0.032,
+     "connections": 60
+    },
+    {
+     "topic": "in the middle east",
+     "heat": 156,
+     "growth": 108,
+     "centrality": 0.027,
+     "connections": 51
+    },
+    {
+     "topic": "目的地",
+     "heat": 588,
+     "growth": 104,
+     "centrality": 0.135,
+     "connections": 251
+    },
+    {
+     "topic": "遗产",
+     "heat": 1175,
+     "growth": 103,
+     "centrality": 0.258,
+     "connections": 481
+    },
+    {
+     "topic": "in the middle",
+     "heat": 173,
+     "growth": 96,
+     "centrality": 0.032,
+     "connections": 59
+    }
+   ],
+   "summary": "[{\"topic\": \"tour\", \"heat\": 2800, \"growth\": 397, \"centrality\": 0.415, \"connections\": 775}, {\"topic\": \"旅游\", \"heat\": 2828, \"growth\": 350, \"centrality\": 0.421, \"connections\": 785}, {\"topic\": \"文化\", \"heat\": 1504, \"growth\": 182, \"centrality\": 0.327, \"connections\": 611}, {\"topic\": \"nation\", \"heat\": 1295, \"g"
+  },
+  "cond_B": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "tour",
+     "heat": 2800,
+     "growth": 397,
+     "centrality": 0.415,
+     "connections": 775,
+     "predicted_growth_3y": 897.7
+    },
+    {
+     "topic": "文化",
+     "heat": 1504,
+     "growth": 182,
+     "centrality": 0.327,
+     "connections": 611,
+     "predicted_growth_3y": 465.1
+    },
+    {
+     "topic": "nation",
+     "heat": 1295,
+     "growth": 158,
+     "centrality": 0.286,
+     "connections": 533,
+     "predicted_growth_3y": 329.2
+    },
+    {
+     "topic": "旅游",
+     "heat": 2828,
+     "growth": 350,
+     "centrality": 0.421,
+     "connections": 785,
+     "predicted_growth_3y": 286.9
+    },
+    {
+     "topic": "研究",
+     "heat": 497,
+     "growth": 92,
+     "centrality": 0.155,
+     "connections": 290,
+     "predicted_growth_3y": 152.7
+    },
+    {
+     "topic": "east",
+     "heat": 347,
+     "growth": 89,
+     "centrality": 0.079,
+     "connections": 147,
+     "predicted_growth_3y": 126.9
+    },
+    {
+     "topic": "work",
+     "heat": 469,
+     "growth": 80,
+     "centrality": 0.172,
+     "connections": 321,
+     "predicted_growth_3y": 86.2
+    },
+    {
+     "topic": "formation",
+     "heat": 167,
+     "growth": 72,
+     "centrality": 0.065,
+     "connections": 121,
+     "predicted_growth_3y": 76.0
+    },
+    {
+     "topic": "艺术",
+     "heat": 415,
+     "growth": 78,
+     "centrality": 0.148,
+     "connections": 276,
+     "predicted_growth_3y": 72.3
+    },
+    {
+     "topic": "real",
+     "heat": 199,
+     "growth": 77,
+     "centrality": 0.063,
+     "connections": 117,
+     "predicted_growth_3y": 70.0
+    }
+   ],
+   "summary": "[{\"topic\": \"tour\", \"heat\": 2800, \"growth\": 397, \"centrality\": 0.415, \"connections\": 775, \"predicted_growth_3y\": 897.7}, {\"topic\": \"文化\", \"heat\": 1504, \"growth\": 182, \"centrality\": 0.327, \"connections\": 611, \"predicted_growth_3y\": 465.1}, {\"topic\": \"nation\", \"heat\": 1295, \"growth\": 158, \"centrality\": "
+  }
+ },
+ {
+  "task_id": "T4",
+  "freeze_year": 2019,
+  "question": "请识别2019年之后 1-3 年内可能兴起的中阿文旅交叉主题, 并给出依据 (证据链可追溯)。",
+  "cond_A": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "nation",
+     "heat": 1572,
+     "growth": 277,
+     "centrality": 0.306,
+     "connections": 592
+    },
+    {
+     "topic": "旅游",
+     "heat": 3031,
+     "growth": 203,
+     "centrality": 0.429,
+     "connections": 831
+    },
+    {
+     "topic": "文化",
+     "heat": 1704,
+     "growth": 200,
+     "centrality": 0.348,
+     "connections": 675
+    },
+    {
+     "topic": "遗产",
+     "heat": 1351,
+     "growth": 176,
+     "centrality": 0.272,
+     "connections": 527
+    },
+    {
+     "topic": "艺术",
+     "heat": 577,
+     "growth": 162,
+     "centrality": 0.187,
+     "connections": 363
+    },
+    {
+     "topic": "研究",
+     "heat": 638,
+     "growth": 141,
+     "centrality": 0.178,
+     "connections": 344
+    },
+    {
+     "topic": "发展",
+     "heat": 816,
+     "growth": 112,
+     "centrality": 0.204,
+     "connections": 395
+    },
+    {
+     "topic": "学习",
+     "heat": 289,
+     "growth": 107,
+     "centrality": 0.091,
+     "connections": 177
+    },
+    {
+     "topic": "影响",
+     "heat": 378,
+     "growth": 103,
+     "centrality": 0.118,
+     "connections": 229
+    },
+    {
+     "topic": "管理",
+     "heat": 346,
+     "growth": 100,
+     "centrality": 0.115,
+     "connections": 222
+    }
+   ],
+   "summary": "[{\"topic\": \"nation\", \"heat\": 1572, \"growth\": 277, \"centrality\": 0.306, \"connections\": 592}, {\"topic\": \"旅游\", \"heat\": 3031, \"growth\": 203, \"centrality\": 0.429, \"connections\": 831}, {\"topic\": \"文化\", \"heat\": 1704, \"growth\": 200, \"centrality\": 0.348, \"connections\": 675}, {\"topic\": \"遗产\", \"heat\": 1351, \"gro"
+  },
+  "cond_B": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "nation",
+     "heat": 1572,
+     "growth": 277,
+     "centrality": 0.306,
+     "connections": 592,
+     "predicted_growth_3y": 523.4
+    },
+    {
+     "topic": "遗产",
+     "heat": 1351,
+     "growth": 176,
+     "centrality": 0.272,
+     "connections": 527,
+     "predicted_growth_3y": 440.8
+    },
+    {
+     "topic": "文化",
+     "heat": 1704,
+     "growth": 200,
+     "centrality": 0.348,
+     "connections": 675,
+     "predicted_growth_3y": 339.3
+    },
+    {
+     "topic": "研究",
+     "heat": 638,
+     "growth": 141,
+     "centrality": 0.178,
+     "connections": 344,
+     "predicted_growth_3y": 222.4
+    },
+    {
+     "topic": "艺术",
+     "heat": 577,
+     "growth": 162,
+     "centrality": 0.187,
+     "connections": 363,
+     "predicted_growth_3y": 158.7
+    },
+    {
+     "topic": "image",
+     "heat": 542,
+     "growth": 72,
+     "centrality": 0.142,
+     "connections": 276,
+     "predicted_growth_3y": 144.2
+    },
+    {
+     "topic": "中国",
+     "heat": 397,
+     "growth": 89,
+     "centrality": 0.109,
+     "connections": 211,
+     "predicted_growth_3y": 100.1
+    },
+    {
+     "topic": "formation",
+     "heat": 244,
+     "growth": 77,
+     "centrality": 0.085,
+     "connections": 165,
+     "predicted_growth_3y": 87.1
+    },
+    {
+     "topic": "site",
+     "heat": 554,
+     "growth": 99,
+     "centrality": 0.131,
+     "connections": 253,
+     "predicted_growth_3y": 80.1
+    },
+    {
+     "topic": "diplomacy",
+     "heat": 250,
+     "growth": 93,
+     "centrality": 0.063,
+     "connections": 122,
+     "predicted_growth_3y": 78.4
+    }
+   ],
+   "summary": "[{\"topic\": \"nation\", \"heat\": 1572, \"growth\": 277, \"centrality\": 0.306, \"connections\": 592, \"predicted_growth_3y\": 523.4}, {\"topic\": \"遗产\", \"heat\": 1351, \"growth\": 176, \"centrality\": 0.272, \"connections\": 527, \"predicted_growth_3y\": 440.8}, {\"topic\": \"文化\", \"heat\": 1704, \"growth\": 200, \"centrality\": 0."
+  }
+ },
+ {
+  "task_id": "T5",
+  "freeze_year": 2020,
+  "question": "请识别2020年之后 1-3 年内可能兴起的中阿文旅交叉主题, 并给出依据 (证据链可追溯)。",
+  "cond_A": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "旅游",
+     "heat": 3486,
+     "growth": 455,
+     "centrality": 0.451,
+     "connections": 915
+    },
+    {
+     "topic": "tour",
+     "heat": 3300,
+     "growth": 407,
+     "centrality": 0.434,
+     "connections": 882
+    },
+    {
+     "topic": "文化",
+     "heat": 2014,
+     "growth": 310,
+     "centrality": 0.361,
+     "connections": 734
+    },
+    {
+     "topic": "nation",
+     "heat": 1855,
+     "growth": 283,
+     "centrality": 0.325,
+     "connections": 660
+    },
+    {
+     "topic": "遗产",
+     "heat": 1587,
+     "growth": 236,
+     "centrality": 0.286,
+     "connections": 580
+    },
+    {
+     "topic": "丝绸之路",
+     "heat": 434,
+     "growth": 187,
+     "centrality": 0.065,
+     "connections": 132
+    },
+    {
+     "topic": "silk",
+     "heat": 373,
+     "growth": 169,
+     "centrality": 0.058,
+     "connections": 118
+    },
+    {
+     "topic": "研究",
+     "heat": 799,
+     "growth": 161,
+     "centrality": 0.197,
+     "connections": 401
+    },
+    {
+     "topic": "time",
+     "heat": 391,
+     "growth": 155,
+     "centrality": 0.083,
+     "connections": 169
+    },
+    {
+     "topic": "中国",
+     "heat": 537,
+     "growth": 140,
+     "centrality": 0.127,
+     "connections": 258
+    }
+   ],
+   "summary": "[{\"topic\": \"旅游\", \"heat\": 3486, \"growth\": 455, \"centrality\": 0.451, \"connections\": 915}, {\"topic\": \"tour\", \"heat\": 3300, \"growth\": 407, \"centrality\": 0.434, \"connections\": 882}, {\"topic\": \"文化\", \"heat\": 2014, \"growth\": 310, \"centrality\": 0.361, \"connections\": 734}, {\"topic\": \"nation\", \"heat\": 1855, \"g"
+  },
+  "cond_B": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "tour",
+     "heat": 3300,
+     "growth": 407,
+     "centrality": 0.434,
+     "connections": 882,
+     "predicted_growth_3y": 1111.8
+    },
+    {
+     "topic": "旅游",
+     "heat": 3486,
+     "growth": 455,
+     "centrality": 0.451,
+     "connections": 915,
+     "predicted_growth_3y": 531.1
+    },
+    {
+     "topic": "遗产",
+     "heat": 1587,
+     "growth": 236,
+     "centrality": 0.286,
+     "connections": 580,
+     "predicted_growth_3y": 390.9
+    },
+    {
+     "topic": "文化",
+     "heat": 2014,
+     "growth": 310,
+     "centrality": 0.361,
+     "connections": 734,
+     "predicted_growth_3y": 308.8
+    },
+    {
+     "topic": "研究",
+     "heat": 799,
+     "growth": 161,
+     "centrality": 0.197,
+     "connections": 401,
+     "predicted_growth_3y": 205.6
+    },
+    {
+     "topic": "nation",
+     "heat": 1855,
+     "growth": 283,
+     "centrality": 0.325,
+     "connections": 660,
+     "predicted_growth_3y": 202.5
+    },
+    {
+     "topic": "中国",
+     "heat": 537,
+     "growth": 140,
+     "centrality": 0.127,
+     "connections": 258,
+     "predicted_growth_3y": 198.7
+    },
+    {
+     "topic": "image",
+     "heat": 667,
+     "growth": 125,
+     "centrality": 0.158,
+     "connections": 320,
+     "predicted_growth_3y": 193.8
+    },
+    {
+     "topic": "丝绸之路",
+     "heat": 434,
+     "growth": 187,
+     "centrality": 0.065,
+     "connections": 132,
+     "predicted_growth_3y": 164.3
+    },
+    {
+     "topic": "silk",
+     "heat": 373,
+     "growth": 169,
+     "centrality": 0.058,
+     "connections": 118,
+     "predicted_growth_3y": 154.6
+    }
+   ],
+   "summary": "[{\"topic\": \"tour\", \"heat\": 3300, \"growth\": 407, \"centrality\": 0.434, \"connections\": 882, \"predicted_growth_3y\": 1111.8}, {\"topic\": \"旅游\", \"heat\": 3486, \"growth\": 455, \"centrality\": 0.451, \"connections\": 915, \"predicted_growth_3y\": 531.1}, {\"topic\": \"遗产\", \"heat\": 1587, \"growth\": 236, \"centrality\": 0.2"
+  }
+ },
+ {
+  "task_id": "T6",
+  "freeze_year": 2021,
+  "question": "请识别2021年之后 1-3 年内可能兴起的中阿文旅交叉主题, 并给出依据 (证据链可追溯)。",
+  "cond_A": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "旅游",
+     "heat": 3831,
+     "growth": 345,
+     "centrality": 0.462,
+     "connections": 953
+    },
+    {
+     "topic": "tour",
+     "heat": 3581,
+     "growth": 281,
+     "centrality": 0.443,
+     "connections": 913
+    },
+    {
+     "topic": "文化",
+     "heat": 2264,
+     "growth": 250,
+     "centrality": 0.389,
+     "connections": 802
+    },
+    {
+     "topic": "nation",
+     "heat": 2000,
+     "growth": 145,
+     "centrality": 0.333,
+     "connections": 687
+    },
+    {
+     "topic": "数字",
+     "heat": 459,
+     "growth": 137,
+     "centrality": 0.133,
+     "connections": 275
+    },
+    {
+     "topic": "艺术",
+     "heat": 792,
+     "growth": 126,
+     "centrality": 0.212,
+     "connections": 437
+    },
+    {
+     "topic": "研究",
+     "heat": 918,
+     "growth": 119,
+     "centrality": 0.214,
+     "connections": 441
+    },
+    {
+     "topic": "city",
+     "heat": 789,
+     "growth": 95,
+     "centrality": 0.173,
+     "connections": 356
+    },
+    {
+     "topic": "image",
+     "heat": 761,
+     "growth": 94,
+     "centrality": 0.168,
+     "connections": 346
+    },
+    {
+     "topic": "遗产",
+     "heat": 1681,
+     "growth": 94,
+     "centrality": 0.299,
+     "connections": 617
+    }
+   ],
+   "summary": "[{\"topic\": \"旅游\", \"heat\": 3831, \"growth\": 345, \"centrality\": 0.462, \"connections\": 953}, {\"topic\": \"tour\", \"heat\": 3581, \"growth\": 281, \"centrality\": 0.443, \"connections\": 913}, {\"topic\": \"文化\", \"heat\": 2264, \"growth\": 250, \"centrality\": 0.389, \"connections\": 802}, {\"topic\": \"nation\", \"heat\": 2000, \"g"
+  },
+  "cond_B": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "艺术",
+     "heat": 792,
+     "growth": 126,
+     "centrality": 0.212,
+     "connections": 437,
+     "predicted_growth_3y": 231.0
+    },
+    {
+     "topic": "数字",
+     "heat": 459,
+     "growth": 137,
+     "centrality": 0.133,
+     "connections": 275,
+     "predicted_growth_3y": 144.0
+    },
+    {
+     "topic": "text",
+     "heat": 502,
+     "growth": 87,
+     "centrality": 0.137,
+     "connections": 283,
+     "predicted_growth_3y": 135.4
+    },
+    {
+     "topic": "marketing",
+     "heat": 280,
+     "growth": 78,
+     "centrality": 0.071,
+     "connections": 146,
+     "predicted_growth_3y": 105.2
+    },
+    {
+     "topic": "文化",
+     "heat": 2264,
+     "growth": 250,
+     "centrality": 0.389,
+     "connections": 802,
+     "predicted_growth_3y": 81.3
+    },
+    {
+     "topic": "经济",
+     "heat": 427,
+     "growth": 81,
+     "centrality": 0.121,
+     "connections": 250,
+     "predicted_growth_3y": 73.0
+    },
+    {
+     "topic": "religious",
+     "heat": 210,
+     "growth": 57,
+     "centrality": 0.056,
+     "connections": 115,
+     "predicted_growth_3y": 55.7
+    },
+    {
+     "topic": "world",
+     "heat": 667,
+     "growth": -119,
+     "centrality": 0.146,
+     "connections": 300,
+     "predicted_growth_3y": 49.5
+    },
+    {
+     "topic": "应用",
+     "heat": 456,
+     "growth": 85,
+     "centrality": 0.122,
+     "connections": 251,
+     "predicted_growth_3y": 46.4
+    },
+    {
+     "topic": "country",
+     "heat": 221,
+     "growth": 77,
+     "centrality": 0.065,
+     "connections": 133,
+     "predicted_growth_3y": 43.4
+    }
+   ],
+   "summary": "[{\"topic\": \"艺术\", \"heat\": 792, \"growth\": 126, \"centrality\": 0.212, \"connections\": 437, \"predicted_growth_3y\": 231.0}, {\"topic\": \"数字\", \"heat\": 459, \"growth\": 137, \"centrality\": 0.133, \"connections\": 275, \"predicted_growth_3y\": 144.0}, {\"topic\": \"text\", \"heat\": 502, \"growth\": 87, \"centrality\": 0.137, \""
+  }
+ },
+ {
+  "task_id": "T7",
+  "freeze_year": 2022,
+  "question": "请识别2022年之后 1-3 年内可能兴起的中阿文旅交叉主题, 并给出依据 (证据链可追溯)。",
+  "cond_A": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "旅游",
+     "heat": 4242,
+     "growth": 411,
+     "centrality": 0.484,
+     "connections": 1015
+    },
+    {
+     "topic": "nation",
+     "heat": 2316,
+     "growth": 316,
+     "centrality": 0.353,
+     "connections": 740
+    },
+    {
+     "topic": "tour",
+     "heat": 3857,
+     "growth": 276,
+     "centrality": 0.456,
+     "connections": 955
+    },
+    {
+     "topic": "文化",
+     "heat": 2521,
+     "growth": 257,
+     "centrality": 0.41,
+     "connections": 858
+    },
+    {
+     "topic": "艺术",
+     "heat": 1020,
+     "growth": 228,
+     "centrality": 0.233,
+     "connections": 488
+    },
+    {
+     "topic": "数字",
+     "heat": 626,
+     "growth": 167,
+     "centrality": 0.163,
+     "connections": 342
+    },
+    {
+     "topic": "目的地",
+     "heat": 1036,
+     "growth": 167,
+     "centrality": 0.175,
+     "connections": 367
+    },
+    {
+     "topic": "学习",
+     "heat": 573,
+     "growth": 130,
+     "centrality": 0.125,
+     "connections": 262
+    },
+    {
+     "topic": "recovery",
+     "heat": 275,
+     "growth": 116,
+     "centrality": 0.066,
+     "connections": 139
+    },
+    {
+     "topic": "road",
+     "heat": 560,
+     "growth": 114,
+     "centrality": 0.095,
+     "connections": 199
+    }
+   ],
+   "summary": "[{\"topic\": \"旅游\", \"heat\": 4242, \"growth\": 411, \"centrality\": 0.484, \"connections\": 1015}, {\"topic\": \"nation\", \"heat\": 2316, \"growth\": 316, \"centrality\": 0.353, \"connections\": 740}, {\"topic\": \"tour\", \"heat\": 3857, \"growth\": 276, \"centrality\": 0.456, \"connections\": 955}, {\"topic\": \"文化\", \"heat\": 2521, \""
+  },
+  "cond_B": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "旅游",
+     "heat": 4242,
+     "growth": 411,
+     "centrality": 0.484,
+     "connections": 1015,
+     "predicted_growth_3y": 1121.7
+    },
+    {
+     "topic": "nation",
+     "heat": 2316,
+     "growth": 316,
+     "centrality": 0.353,
+     "connections": 740,
+     "predicted_growth_3y": 722.3
+    },
+    {
+     "topic": "艺术",
+     "heat": 1020,
+     "growth": 228,
+     "centrality": 0.233,
+     "connections": 488,
+     "predicted_growth_3y": 307.8
+    },
+    {
+     "topic": "数字",
+     "heat": 626,
+     "growth": 167,
+     "centrality": 0.163,
+     "connections": 342,
+     "predicted_growth_3y": 226.7
+    },
+    {
+     "topic": "public",
+     "heat": 312,
+     "growth": 89,
+     "centrality": 0.1,
+     "connections": 209,
+     "predicted_growth_3y": 132.7
+    },
+    {
+     "topic": "学习",
+     "heat": 573,
+     "growth": 130,
+     "centrality": 0.125,
+     "connections": 262,
+     "predicted_growth_3y": 115.4
+    },
+    {
+     "topic": "挑战",
+     "heat": 650,
+     "growth": 86,
+     "centrality": 0.151,
+     "connections": 316,
+     "predicted_growth_3y": 106.8
+    },
+    {
+     "topic": "原真性",
+     "heat": 418,
+     "growth": 106,
+     "centrality": 0.083,
+     "connections": 174,
+     "predicted_growth_3y": 99.0
+    },
+    {
+     "topic": "视角",
+     "heat": 504,
+     "growth": 102,
+     "centrality": 0.125,
+     "connections": 261,
+     "predicted_growth_3y": 87.7
+    },
+    {
+     "topic": "road",
+     "heat": 560,
+     "growth": 114,
+     "centrality": 0.095,
+     "connections": 199,
+     "predicted_growth_3y": 85.3
+    }
+   ],
+   "summary": "[{\"topic\": \"旅游\", \"heat\": 4242, \"growth\": 411, \"centrality\": 0.484, \"connections\": 1015, \"predicted_growth_3y\": 1121.7}, {\"topic\": \"nation\", \"heat\": 2316, \"growth\": 316, \"centrality\": 0.353, \"connections\": 740, \"predicted_growth_3y\": 722.3}, {\"topic\": \"艺术\", \"heat\": 1020, \"growth\": 228, \"centrality\": "
+  }
+ },
+ {
+  "task_id": "T8",
+  "freeze_year": 2022,
+  "question": "请识别2022年之后可能兴起的中阿文旅交叉主题, 并标注每个主题的置信度与不确定性来源。",
+  "cond_A": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "旅游",
+     "heat": 4242,
+     "growth": 411,
+     "centrality": 0.484,
+     "connections": 1015
+    },
+    {
+     "topic": "nation",
+     "heat": 2316,
+     "growth": 316,
+     "centrality": 0.353,
+     "connections": 740
+    },
+    {
+     "topic": "tour",
+     "heat": 3857,
+     "growth": 276,
+     "centrality": 0.456,
+     "connections": 955
+    },
+    {
+     "topic": "文化",
+     "heat": 2521,
+     "growth": 257,
+     "centrality": 0.41,
+     "connections": 858
+    },
+    {
+     "topic": "艺术",
+     "heat": 1020,
+     "growth": 228,
+     "centrality": 0.233,
+     "connections": 488
+    },
+    {
+     "topic": "数字",
+     "heat": 626,
+     "growth": 167,
+     "centrality": 0.163,
+     "connections": 342
+    },
+    {
+     "topic": "目的地",
+     "heat": 1036,
+     "growth": 167,
+     "centrality": 0.175,
+     "connections": 367
+    },
+    {
+     "topic": "学习",
+     "heat": 573,
+     "growth": 130,
+     "centrality": 0.125,
+     "connections": 262
+    },
+    {
+     "topic": "recovery",
+     "heat": 275,
+     "growth": 116,
+     "centrality": 0.066,
+     "connections": 139
+    },
+    {
+     "topic": "road",
+     "heat": 560,
+     "growth": 114,
+     "centrality": 0.095,
+     "connections": 199
+    }
+   ],
+   "summary": "[{\"topic\": \"旅游\", \"heat\": 4242, \"growth\": 411, \"centrality\": 0.484, \"connections\": 1015}, {\"topic\": \"nation\", \"heat\": 2316, \"growth\": 316, \"centrality\": 0.353, \"connections\": 740}, {\"topic\": \"tour\", \"heat\": 3857, \"growth\": 276, \"centrality\": 0.456, \"connections\": 955}, {\"topic\": \"文化\", \"heat\": 2521, \""
+  },
+  "cond_B": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "旅游",
+     "heat": 4242,
+     "growth": 411,
+     "centrality": 0.484,
+     "connections": 1015,
+     "predicted_growth_3y": 1121.7
+    },
+    {
+     "topic": "nation",
+     "heat": 2316,
+     "growth": 316,
+     "centrality": 0.353,
+     "connections": 740,
+     "predicted_growth_3y": 722.3
+    },
+    {
+     "topic": "艺术",
+     "heat": 1020,
+     "growth": 228,
+     "centrality": 0.233,
+     "connections": 488,
+     "predicted_growth_3y": 307.8
+    },
+    {
+     "topic": "数字",
+     "heat": 626,
+     "growth": 167,
+     "centrality": 0.163,
+     "connections": 342,
+     "predicted_growth_3y": 226.7
+    },
+    {
+     "topic": "public",
+     "heat": 312,
+     "growth": 89,
+     "centrality": 0.1,
+     "connections": 209,
+     "predicted_growth_3y": 132.7
+    },
+    {
+     "topic": "学习",
+     "heat": 573,
+     "growth": 130,
+     "centrality": 0.125,
+     "connections": 262,
+     "predicted_growth_3y": 115.4
+    },
+    {
+     "topic": "挑战",
+     "heat": 650,
+     "growth": 86,
+     "centrality": 0.151,
+     "connections": 316,
+     "predicted_growth_3y": 106.8
+    },
+    {
+     "topic": "原真性",
+     "heat": 418,
+     "growth": 106,
+     "centrality": 0.083,
+     "connections": 174,
+     "predicted_growth_3y": 99.0
+    },
+    {
+     "topic": "视角",
+     "heat": 504,
+     "growth": 102,
+     "centrality": 0.125,
+     "connections": 261,
+     "predicted_growth_3y": 87.7
+    },
+    {
+     "topic": "road",
+     "heat": 560,
+     "growth": 114,
+     "centrality": 0.095,
+     "connections": 199,
+     "predicted_growth_3y": 85.3
+    }
+   ],
+   "summary": "[{\"topic\": \"旅游\", \"heat\": 4242, \"growth\": 411, \"centrality\": 0.484, \"connections\": 1015, \"predicted_growth_3y\": 1121.7}, {\"topic\": \"nation\", \"heat\": 2316, \"growth\": 316, \"centrality\": 0.353, \"connections\": 740, \"predicted_growth_3y\": 722.3}, {\"topic\": \"艺术\", \"heat\": 1020, \"growth\": 228, \"centrality\": "
+  }
+ },
+ {
+  "task_id": "T9",
+  "freeze_year": 2022,
+  "question": "请基于2022年及之前的数据, 给出中阿文旅领域 Top-10 新兴交叉方向预测, 并说明与既有热点区别。",
+  "cond_A": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "旅游",
+     "heat": 4242,
+     "growth": 411,
+     "centrality": 0.484,
+     "connections": 1015
+    },
+    {
+     "topic": "nation",
+     "heat": 2316,
+     "growth": 316,
+     "centrality": 0.353,
+     "connections": 740
+    },
+    {
+     "topic": "tour",
+     "heat": 3857,
+     "growth": 276,
+     "centrality": 0.456,
+     "connections": 955
+    },
+    {
+     "topic": "文化",
+     "heat": 2521,
+     "growth": 257,
+     "centrality": 0.41,
+     "connections": 858
+    },
+    {
+     "topic": "艺术",
+     "heat": 1020,
+     "growth": 228,
+     "centrality": 0.233,
+     "connections": 488
+    },
+    {
+     "topic": "数字",
+     "heat": 626,
+     "growth": 167,
+     "centrality": 0.163,
+     "connections": 342
+    },
+    {
+     "topic": "目的地",
+     "heat": 1036,
+     "growth": 167,
+     "centrality": 0.175,
+     "connections": 367
+    },
+    {
+     "topic": "学习",
+     "heat": 573,
+     "growth": 130,
+     "centrality": 0.125,
+     "connections": 262
+    },
+    {
+     "topic": "recovery",
+     "heat": 275,
+     "growth": 116,
+     "centrality": 0.066,
+     "connections": 139
+    },
+    {
+     "topic": "road",
+     "heat": 560,
+     "growth": 114,
+     "centrality": 0.095,
+     "connections": 199
+    }
+   ],
+   "summary": "[{\"topic\": \"旅游\", \"heat\": 4242, \"growth\": 411, \"centrality\": 0.484, \"connections\": 1015}, {\"topic\": \"nation\", \"heat\": 2316, \"growth\": 316, \"centrality\": 0.353, \"connections\": 740}, {\"topic\": \"tour\", \"heat\": 3857, \"growth\": 276, \"centrality\": 0.456, \"connections\": 955}, {\"topic\": \"文化\", \"heat\": 2521, \""
+  },
+  "cond_B": {
+   "title": "基于历史数据的前沿识别",
+   "topics": [
+    {
+     "topic": "旅游",
+     "heat": 4242,
+     "growth": 411,
+     "centrality": 0.484,
+     "connections": 1015,
+     "predicted_growth_3y": 1121.7
+    },
+    {
+     "topic": "nation",
+     "heat": 2316,
+     "growth": 316,
+     "centrality": 0.353,
+     "connections": 740,
+     "predicted_growth_3y": 722.3
+    },
+    {
+     "topic": "艺术",
+     "heat": 1020,
+     "growth": 228,
+     "centrality": 0.233,
+     "connections": 488,
+     "predicted_growth_3y": 307.8
+    },
+    {
+     "topic": "数字",
+     "heat": 626,
+     "growth": 167,
+     "centrality": 0.163,
+     "connections": 342,
+     "predicted_growth_3y": 226.7
+    },
+    {
+     "topic": "public",
+     "heat": 312,
+     "growth": 89,
+     "centrality": 0.1,
+     "connections": 209,
+     "predicted_growth_3y": 132.7
+    },
+    {
+     "topic": "学习",
+     "heat": 573,
+     "growth": 130,
+     "centrality": 0.125,
+     "connections": 262,
+     "predicted_growth_3y": 115.4
+    },
+    {
+     "topic": "挑战",
+     "heat": 650,
+     "growth": 86,
+     "centrality": 0.151,
+     "connections": 316,
+     "predicted_growth_3y": 106.8
+    },
+    {
+     "topic": "原真性",
+     "heat": 418,
+     "growth": 106,
+     "centrality": 0.083,
+     "connections": 174,
+     "predicted_growth_3y": 99.0
+    },
+    {
+     "topic": "视角",
+     "heat": 504,
+     "growth": 102,
+     "centrality": 0.125,
+     "connections": 261,
+     "predicted_growth_3y": 87.7
+    },
+    {
+     "topic": "road",
+     "heat": 560,
+     "growth": 114,
+     "centrality": 0.095,
+     "connections": 199,
+     "predicted_growth_3y": 85.3
+    }
+   ],
+   "summary": "[{\"topic\": \"旅游\", \"heat\": 4242, \"growth\": 411, \"centrality\": 0.484, \"connections\": 1015, \"predicted_growth_3y\": 1121.7}, {\"topic\": \"nation\", \"heat\": 2316, \"growth\": 316, \"centrality\": 0.353, \"connections\": 740, \"predicted_growth_3y\": 722.3}, {\"topic\": \"艺术\", \"heat\": 1020, \"growth\": 228, \"centrality\": "
+  }
+ }
+]
