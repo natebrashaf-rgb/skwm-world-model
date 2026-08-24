@@ -12,6 +12,8 @@ api.py —— 把 SKWMController 包成 HTTP 服务，供 Next.js 前端调用�
 依赖你已有的 skwm_aligned_v4.py（同目录），并叠加本升级包的
     skwm_context.py (C)  与  skwm_service.py (P)。
 """
+import json
+
 from fastapi import FastAPI, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -229,6 +231,15 @@ def list_reports():
                 pass
             items.append(meta)
     return {"reports": items, "total": len(items)}
+
+
+@app.get("/api/experiment/task-cd")
+def task_cd_experiment():
+    """Expose the verified Task C/D handover result to the online project."""
+    result_path = Path(__file__).resolve().parents[2] / "output" / "task_cd_handover_v3.json"
+    if not result_path.exists():
+        return {"available": False, "version": "v3", "error": "Task C/D result not generated"}
+    return {"available": True, **json.loads(result_path.read_text(encoding="utf-8"))}
 
 
 # ═══════════════════════════════════════════════════════════
