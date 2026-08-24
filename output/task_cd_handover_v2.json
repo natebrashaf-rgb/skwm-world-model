@@ -1,0 +1,261 @@
+{
+  "meta": {
+    "project": "SKWM 世界模型 — 中阿文旅文献知识图谱",
+    "tasks": [
+      "C: 阿语文献对模型的扰动分析",
+      "D: 阿语文献内容分析与英阿对照"
+    ],
+    "version": "v2",
+    "timestamp": "2026-08-25T01:52:39.557224",
+    "random_seed": 20260825,
+    "experiment_type": "描述性扰动分析（不宣称RSSM性能提升）"
+  },
+  "data_version": {
+    "v1_baseline": {
+      "description": "B1_含阿语 去除27条阿语文献",
+      "count": 12152
+    },
+    "v2_with_arabic": {
+      "file": "data/B1_文献主表_含阿语_20260819.json",
+      "count": 12179,
+      "arabic_count": 27
+    },
+    "v3_crosslingual": {
+      "status": "概念验证（无独立模型指标）",
+      "input": "B1_含阿语 12,179条 + 语言标记字段",
+      "output": "主题词表中新增阿语主题（如جامعة、تراث、عربي）"
+    },
+    "state_vectors": {
+      "baseline": "data/state_vectors.json",
+      "with_arabic": "data/state_vectors_含阿语_20260819.json"
+    },
+    "arabic_texts": "data/pdf_texts_arabic_20260819.json (14条, 9条可匹配)"
+  },
+  "tourism_keywords": [
+    "旅游",
+    "遗产",
+    "文化",
+    "tourism",
+    "heritage",
+    "culture",
+    "destination",
+    "博物馆",
+    "丝绸之路",
+    "arab",
+    "沙漠",
+    "صحراو",
+    "سياح",
+    "واحة",
+    "تراث",
+    "مخطوط",
+    "سياحة"
+  ],
+  "topic_ontology": {
+    "L1_文旅核心": [
+      "旅游",
+      "文化遗产",
+      "目的地",
+      "博物馆"
+    ],
+    "L2_文化认同": [
+      "阿拉伯文化",
+      "伊斯兰文化",
+      "历史"
+    ],
+    "L3_方法论": [
+      "教育",
+      "数字化",
+      "可持续发展"
+    ],
+    "L4_区域研究": [
+      "中东",
+      "丝绸之路",
+      "中国-阿拉伯"
+    ]
+  },
+  "task_c_results": {
+    "data_version": {
+      "v1_baseline": 12152,
+      "v2_with_arabic": 12179,
+      "v3_crosslingual": "概念验证"
+    },
+    "sha256": {
+      "B1_含阿语": "c4d80e2b4b575ea50d067f62ce3a0b1f962abb7e4d720575f3c03deb11f209f9",
+      "sv_含阿语": "6bbee6c0041a0e5bc77695bc31c5ec9eafc34bec080af4e24f0c067905f10495",
+      "sv_基线": "6bbee6c0041a0e5bc77695bc31c5ec9eafc34bec080af4e24f0c067905f10495"
+    },
+    "arabic_papers": 27,
+    "tourism_related": 23,
+    "year_distribution": {
+      "2025": 4,
+      "2021": 3,
+      "2024": 3,
+      "2022": 4,
+      "2019": 1,
+      "2017": 1,
+      "2020": 4,
+      "2012": 1
+    },
+    "q1_trend_change": false,
+    "q1_jaccard": 1.0,
+    "q2_new_topics": 0,
+    "q3_sample_size": 27,
+    "q3_year_coverage": 8,
+    "conclusion": "样本量不足(27<50)，年份集中，不适合单独RSSM建模"
+  },
+  "task_d_results": {
+    "summary": {
+      "total": 27,
+      "has_pdf": 15,
+      "text_extracted": 9,
+      "human_read": 0,
+      "tourism_related": 23
+    },
+    "topic_distribution": {
+      "阿拉伯文化": 19,
+      "旅游": 5,
+      "伊斯兰文化": 4,
+      "教育": 13,
+      "历史": 11,
+      "文化遗产": 11
+    },
+    "level_distribution": {
+      "L2_文化认同": 9,
+      "L1_文旅核心": 15,
+      "L5_其他": 3
+    },
+    "comparison": [
+      {
+        "topic": "伊斯兰文化",
+        "arabic": 4,
+        "english": 0,
+        "level": "L2_文化认同"
+      },
+      {
+        "topic": "历史",
+        "arabic": 11,
+        "english": 13,
+        "level": "L2_文化认同"
+      },
+      {
+        "topic": "文化遗产",
+        "arabic": 11,
+        "english": 0,
+        "level": "L1_文旅核心"
+      },
+      {
+        "topic": "旅游",
+        "arabic": 5,
+        "english": 0,
+        "level": "L1_文旅核心"
+      },
+      {
+        "topic": "阿拉伯文化",
+        "arabic": 19,
+        "english": 0,
+        "level": "L2_文化认同"
+      },
+      {
+        "topic": "旅游/遗产",
+        "arabic": 0,
+        "english": 258,
+        "level": "L1_文旅核心"
+      },
+      {
+        "topic": "文化研究",
+        "arabic": 0,
+        "english": 90,
+        "level": "L5_其他"
+      },
+      {
+        "topic": "教育",
+        "arabic": 13,
+        "english": 52,
+        "level": "L3_方法论"
+      }
+    ],
+    "readable_texts": [
+      {
+        "title": "متطلبات تطوير مشروعات السياحة الصحراوية في ضوء أهداف التنمية المستدامة",
+        "year": 2019,
+        "excerpt": " \nمتطمبات تطوير مشروعات السياحة الصحراوية  في  ضوء أىداف SDGs\n  \nRequirements for the development of desert tourism projects in the light of SDGs \nobjectives\n \n \nد.رواني بوحفص 1\n، د .دحو سميمان2 \n1 \n"
+      },
+      {
+        "title": "الماء والسياحة في المجالات الواحية الصحراوية - الواحات المغربية نموذجا",
+        "year": 2022,
+        "excerpt": " \n \nCopyright © Published by Rimak Journal, www.rimakjournal.com \nRimar Academy, Fatih, Istanbul, 34093 Turkey \nAll rights reserved \n \nWATER AND TOURISM IN DESERT OASES, ‎MOROCCAN OASES AS A MODEL \n \n"
+      },
+      {
+        "title": "صناعة المخطوط في العراق",
+        "year": 2020,
+        "excerpt": "مجلة الت\nراث العلمي العربي       فصلية، علمية، محكمة   العدد (\n45\n) \n0202\n م \n1\n \n \n \n \n \nصناعة املخطوط يف العراق \nأ.د. االء نافع جاسع \nجامعة بغجاد / مخكد إحياء التخاث العمسي العخبي \nAlaanfia66@gmail."
+      },
+      {
+        "title": "مخطوطة صفة المياه الحادة المعدنية",
+        "year": 2020,
+        "excerpt": "مجمة التراث العممي العربي       فصمية، عممية، محكمة   العدد (\n44\n) \n0202\n م \n002\n \n \n خمطوطة\nصفة ادلياه احلادة ادلعذنية \nدراسة وحتقيق \n.أ.ـ.د\nوسغ حديغ محيسيج \nمخكد احياء التخاث العمسي العخبي/جامعة بغج"
+      },
+      {
+        "title": "تحقيق القسم الثالث من مخطوطة الآداب الطبية",
+        "year": 2020,
+        "excerpt": "مجلة التراث العلمي العربي       فرلية، علمية، محكمة   العدد (\n45\n) \n0202\n م \n1\n \n \nحتقيق القسم الثالث من خمطوطة خربة الفقهاء \nأ.د.رياض سعيج لظيف \nمخكد احياء التخاث العمسي العخبي/ جامعة بغجاد \nmuwmuw20"
+      },
+      {
+        "title": "ألواح الرصاص دراسة تاريخية",
+        "year": 2022,
+        "excerpt": " \n \n901\n \n \n   \n * مجلة التراث العلمي العربي (( فصلية * علمية( محكمة )) المجلد91\n( ) العدد3\n )\n2022\n م \nألواح الرصاص دراسة تاريخية \nا\n.د. وجدان فريق عناد \nمركز إحياء التراث العلمي العربي / جامعة بغداد"
+      },
+      {
+        "title": "الأوبئة في التراث الطبي العربي والإسلامي",
+        "year": 2021,
+        "excerpt": " 279\n2021\nAbstract\nThis paper will focus on on an era of time represented in the flourishing Islamic \neras, which spanned more than a thousand years, starting with the noble prophetic \nmission, and en"
+      },
+      {
+        "title": "القدس منارة الشعر العربي",
+        "year": 2012,
+        "excerpt": "عدد خاUص\n399\n2012\nالملخص\nالمنارة اجتذاب لتحديد اتجاه وهداية ، ولها قوة الرمز وحضوره ، وهكذا كانت مدينة القدس منذ \nتجليها المبكر المعاصر لفجر الدعوة المحمدية ( اإلسراء ، ثم التوجه إليها قبلة للصالة )، "
+      },
+      {
+        "title": "منطقة الحياد العراقية السعودية",
+        "year": 2020,
+        "excerpt": "مجمة التراث العممي العربي       فرمية، عممية، محكمة   العدد (\n44\n) \n0202\n م \n51\n \n \nمنطقة احلياد العراقية السعودية \nدراسة يف اجلغرافية التارخيية \n \n \n \n \n:تاريخ االستالم22\n/\n01\n/\n2102\n \n:تاريخ القبول7"
+      }
+    ],
+    "difference_explanation": "待验证假设（需≥100篇样本+统计检验）"
+  },
+  "revisions": {
+    "v1_issues": [
+      "C: q1_trend_change=True与文字'无变化'矛盾 → v2修正为False",
+      "C: 数据版本未冻结 → v2记录SHA-256",
+      "C: V3无真实输入输出 → v2标注概念验证",
+      "C: 无随机种子/日志 → v2保存seed=20260825+运行日志",
+      "C: 未声明实验性质 → v2明确为描述性扰动分析",
+      "D: '全文0篇'错误 → v2确认has_pdf=15, text_extracted=9",
+      "D: 未拆全文状态 → v2拆三列(has_pdf/text_extracted/human_read)",
+      "D: C/D文旅口径不一致(10 vs 5) → v2统一词表(C=12, D=23)",
+      "D: '独有'标签未经统一 → v2改用层级本体(L1-L4)",
+      "D: '研究传统差异'无证据 → v2降级为待验证假设"
+    ],
+    "v2_corrections": [
+      "q1_trend_change=False (Jaccard=1.0 >= 0.95阈值)",
+      "全文状态: has_pdf=15, text_extracted=9, human_read=0",
+      "文旅统一口径: 扩展词表含阿语关键词",
+      "层级本体: L1文旅核心/L2文化认同/L3方法论/L4区域研究",
+      "差异解释: 降级为待验证假设"
+    ]
+  },
+  "conclusions": {
+    "task_c": {
+      "q1": "加入阿语文献后主题趋势无实质变化 (Jaccard=1.0, q1_trend_change=False)",
+      "q2": "阿语文献未改变跨语言主题映射 (新增主题=0)",
+      "q3": "阿语不适合单独建模 (样本27<50, 年份集中)",
+      "recommendation": "保留跨语言贡献, 不做阿语独立RSSM"
+    },
+    "task_d": {
+      "common_topics": "教育(阿13/英52), 历史(阿11/英13)",
+      "arabic_emphasis": "L2_文化认同: 阿拉伯文化19篇, 伊斯兰文化4篇",
+      "english_emphasis": "L1_文旅核心: 旅游/遗产258篇, 文化研究90篇",
+      "difference": "待验证假设: 可能源于研究传统差异(需扩大样本验证)"
+    }
+  }
+}
