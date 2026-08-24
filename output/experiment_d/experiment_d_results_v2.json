@@ -1,0 +1,803 @@
+{
+  "meta": {
+    "timestamp": "2026-08-25T01:24:41.840697",
+    "version": "v2"
+  },
+  "summary": {
+    "total_arabic_papers": 27,
+    "has_pdf": 15,
+    "text_extracted": 9,
+    "human_read": 0,
+    "tourism_related_unified": 23
+  },
+  "analyses": [
+    {
+      "doi": "10.34120/ajh.v28i109.2183",
+      "title": "أنت عربي! يا للصدفة. فأنا أحب الحمص. المزة ومشهيات التواصل الثقافي. “Oh, you’re ",
+      "year": null,
+      "keywords": [
+        "阿拉伯",
+        "鹰嘴豆泥",
+        "文化",
+        "对话"
+      ],
+      "topics": [
+        "阿拉伯文化"
+      ],
+      "topic_level": "L2_文化认同",
+      "tourism_related": true,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.37134/sibawayh.vol2.2.8.2021",
+      "title": "استعمال معمل اللغة للتدريس اللغة الأجنبية: اللغة العربية نموذجا\nUtilization of L",
+      "year": null,
+      "keywords": [
+        "阿拉伯",
+        "of language",
+        "second language",
+        "Language",
+        "Teaching",
+        "Second",
+        "Labor",
+        "Utilization Of"
+      ],
+      "topics": [
+        "阿拉伯文化"
+      ],
+      "topic_level": "L2_文化认同",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.63939/jsms.2025-vol8.n29.10-32",
+      "title": "السياحة الرياضية ودورها في تنمية وتطوير القطاع السياحي: دراسة حالة كأس العالم 20",
+      "year": 2025,
+      "keywords": [
+        "Sport",
+        "发展",
+        "Role",
+        "案例研究",
+        "Case Study Of The",
+        "role in",
+        "旅游",
+        "Sector"
+      ],
+      "topics": [
+        "旅游"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.21608/rmshreq.2021.412859",
+      "title": "论伊斯兰教法在华的深度本土化成果 ——中国伊斯兰习惯法 مآثر تأقلم الأحكام الفقهية مع الطابع الصيني (فقه الأ",
+      "year": 2021,
+      "keywords": [
+        "阿拉伯旅游"
+      ],
+      "topics": [
+        "旅游",
+        "阿拉伯文化",
+        "伊斯兰文化"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.21608/jsh.2024.360574",
+      "title": "الثقافة الإسلامية في الصين (التعليم المسجدي في الصين نموذجًا) Chinese Islamic Cu",
+      "year": 2024,
+      "keywords": [
+        "教育",
+        "Chinese",
+        "伊斯兰",
+        "Islam",
+        "案例研究",
+        "文化",
+        "中国",
+        "Islamic Culture"
+      ],
+      "topics": [
+        "伊斯兰文化",
+        "教育"
+      ],
+      "topic_level": "L2_文化认同",
+      "tourism_related": true,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.21608/jsh.2024.399015",
+      "title": "مفهوم السلام في الإسلام وأثره Concept and Impact of Peace in Islam 伊斯兰教和平观及其影响",
+      "year": 2024,
+      "keywords": [
+        "Islam",
+        "影响",
+        "Peace",
+        "概念"
+      ],
+      "topics": [
+        "伊斯兰文化"
+      ],
+      "topic_level": "L2_文化认同",
+      "tourism_related": false,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.1515/caas-2025-2003",
+      "title": "ترجمة أدب نسائياته ووظيفته في العالم العربي / The Translation and Reception of S",
+      "year": 2025,
+      "keywords": [
+        "阿拉伯",
+        "翻译",
+        "Shanghai",
+        "World",
+        "文学"
+      ],
+      "topics": [
+        "阿拉伯文化",
+        "数字化"
+      ],
+      "topic_level": "L2_文化认同",
+      "tourism_related": true,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.21608/jfhsc.2025.505974",
+      "title": "阿汉语否定工具使用错误的对比研究：以学习汉语的阿拉伯学生和学习阿拉伯语的中国学生为例 دراسة مقارنة لأخطاء استخدام أدوات الن",
+      "year": 2025,
+      "keywords": [
+        "阿拉伯旅游"
+      ],
+      "topics": [
+        "旅游",
+        "阿拉伯文化"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.34120/ajh.v31i.2397",
+      "title": "الاستغراب وأفق الحوار الحضاري. Occidentalism and the Horizons of Civilizational ",
+      "year": 2024,
+      "keywords": [
+        "文明",
+        "对话"
+      ],
+      "topics": [],
+      "topic_level": "L5_其他",
+      "tourism_related": false,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.21608/jfabsu.2023.97111.1115",
+      "title": "《由社会语言学角度浅谈微信的语言》 跨科学研究 莎蜜博士 贝尼苏韦夫大学语言学院中文系讲师 (مدخل إلى لغة الويتشات من زاوية عل",
+      "year": 2022,
+      "keywords": [
+        "跨界交叉"
+      ],
+      "topics": [],
+      "topic_level": "L5_其他",
+      "tourism_related": false,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.17977/um082v3i12023p44-58",
+      "title": "الخط العربي تاريخ و إبداع   (Arabic Calligraphy, History and Creativity)",
+      "year": null,
+      "keywords": [
+        "阿拉伯",
+        "Graph",
+        "Call",
+        "历史",
+        "书法",
+        "创意"
+      ],
+      "topics": [
+        "阿拉伯文化",
+        "历史"
+      ],
+      "topic_level": "L2_文化认同",
+      "tourism_related": true,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.3998/mpub.11373292.cmp.838",
+      "title": "The Color of Paradise, Rang-e Khodā,رنگ خدا Image 1",
+      "year": null,
+      "keywords": [
+        "Image"
+      ],
+      "topics": [],
+      "topic_level": "L5_其他",
+      "tourism_related": false,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.18860/ijazarabi.v5i1.13174",
+      "title": "Development Of Arabic Calligraphy Learning Material  Base On Self-Learning/ تطوي",
+      "year": null,
+      "keywords": [
+        "阿拉伯",
+        "发展",
+        "Graph",
+        "学习",
+        "Call",
+        "Material",
+        "书法"
+      ],
+      "topics": [
+        "阿拉伯文化"
+      ],
+      "topic_level": "L2_文化认同",
+      "tourism_related": true,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.70910/ijal1(1)4",
+      "title": "المعنى في الخط العربي Significance of Arabic Calligraphy",
+      "year": null,
+      "keywords": [
+        "阿拉伯",
+        "Graph",
+        "Call",
+        "significance of",
+        "Significance",
+        "Significance Of",
+        "书法"
+      ],
+      "topics": [
+        "阿拉伯文化"
+      ],
+      "topic_level": "L2_文化认同",
+      "tourism_related": true,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "10.58205/fber.v3i1.1462",
+      "title": "متطلبات تطوير مشروعات السياحة الصحراوية في ضوء أهداف التنمية المستدامة",
+      "year": 2019,
+      "keywords": [
+        "سياحة",
+        "تراث",
+        "تطوير",
+        "عربي",
+        "سائح",
+        "سوق",
+        "سياسة",
+        "ثقافة"
+      ],
+      "topics": [
+        "旅游",
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "数字化",
+        "可持续发展",
+        "历史"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": true,
+      "human_read": false,
+      "text_length": 38166,
+      "text_sample": " \nمتطمبات تطوير مشروعات السياحة الصحراوية  في  ضوء أىداف SDGs\n  \nRequirements for the development of desert tourism projects in the light of SDGs \nobjectives\n \n \nد.رواني بوحفص 1\n، د .دحو سميمان2 \n1 \n ،جامعة غرداية، الجزائرrouanib@yahoo.fr\n  \n2 \n ،جامعة غرداية، الجزائرdahou09@gmail.com\n \n \nاالستالـ :\n21\n/\n02\n/\n2019\n        \n             \n      \n               القبوؿ :\n04\n/\n03\n/\n2019                                     النشر :\n31\n/\n03\n/\n2019\n \nممخص: \n أماـ اعتماد الجزائر عمى النفط كمصدر وحيد لمحص"
+    },
+    {
+      "doi": "10.47832/2717-8293.16.26",
+      "title": "الماء والسياحة في المجالات الواحية الصحراوية - الواحات المغربية نموذجا",
+      "year": 2022,
+      "keywords": [
+        "سياحة",
+        "وجهة",
+        "تطوير",
+        "سوق",
+        "سياسة",
+        "ثقافة",
+        "حاج",
+        "اقتصاد"
+      ],
+      "topics": [
+        "旅游",
+        "教育"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": true,
+      "human_read": false,
+      "text_length": 19296,
+      "text_sample": " \n \nCopyright © Published by Rimak Journal, www.rimakjournal.com \nRimar Academy, Fatih, Istanbul, 34093 Turkey \nAll rights reserved \n \nWATER AND TOURISM IN DESERT OASES, ‎MOROCCAN OASES AS A MODEL \n \nAbderrahim ARBAOUI 1 \n \n Abstract: \nThe reality of Moroccan oases today has become disturbing, the \nsituation \nof \n‎many \nof \nthem \npredicts \naccelerating \nand \nmultidimensional consequences. The ‎irrational exploitation of \nnatural resources, especially water resources, which ‎are already \nexperien"
+    },
+    {
+      "doi": "",
+      "title": "الاستثمار المستدام في مباني التراث العمراني (دراسة تحليلية)",
+      "year": 2017,
+      "keywords": [
+        "تراث",
+        "عربي",
+        "تبادل",
+        "تعليم",
+        "ثقافة",
+        "حاج",
+        "اقتصاد",
+        "حضارة"
+      ],
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "",
+      "title": "الروابط بين الطبيعة والثقافة والنزاعات وتأثيرات التغير المناخي",
+      "year": 2025,
+      "keywords": [
+        "تراث",
+        "رقمي",
+        "عربي",
+        "تعلم",
+        "تبادل",
+        "تعليم",
+        "ثقافة",
+        "حاج"
+      ],
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "",
+      "title": "التطريز بالخيوط الذكية لبعض المطرزات السعودية",
+      "year": 2022,
+      "keywords": [
+        "تراث",
+        "عربي",
+        "رؤية",
+        "هوية",
+        "بحث",
+        "جامعة",
+        "كلية",
+        "عود"
+      ],
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "",
+      "title": "صناعة المخطوط في العراق",
+      "year": 2020,
+      "keywords": [
+        "عربي",
+        "ثقافة",
+        "حاج",
+        "فاس",
+        "أدب",
+        "تاريخ",
+        "بيئة",
+        "علم"
+      ],
+      "topics": [
+        "阿拉伯文化",
+        "教育",
+        "数字化",
+        "历史"
+      ],
+      "topic_level": "L2_文化认同",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": true,
+      "human_read": false,
+      "text_length": 59689,
+      "text_sample": "مجلة الت\nراث العلمي العربي       فصلية، علمية، محكمة   العدد (\n45\n) \n0202\n م \n1\n \n \n \n \n \nصناعة املخطوط يف العراق \nأ.د. االء نافع جاسع \nجامعة بغجاد / مخكد إحياء التخاث العمسي العخبي \nAlaanfia66@gmail.com \n املخلص \n يُعج التخاث العخبي واحجاً مغ كشػز الحزارات األندانية الذامخة ، فيػ تخاث عخيق\nمستج الجحور ، حيغ بدغ فجخ اإلسالـ عمى الجديخة العخبية ، ولسا \n ، ُإمتجت فتػحاتو\n ودخمت فيو ِ أمع حزارات قجيسة ، وعشجما إنخخشت ىحه ِ األمع بالحزارة العخبية\n األسالمية ، وأنتج ىحا التداوج أمة جسعت بيغ شتى الثقا"
+    },
+    {
+      "doi": "",
+      "title": "مخطوطة صفة المياه الحادة المعدنية",
+      "year": 2020,
+      "keywords": [
+        "تراث",
+        "عربي",
+        "سفر",
+        "ثقافة",
+        "فاس",
+        "تاريخ",
+        "بحث",
+        "جامعة"
+      ],
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "数字化",
+        "历史"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": true,
+      "human_read": false,
+      "text_length": 29789,
+      "text_sample": "مجمة التراث العممي العربي       فصمية، عممية، محكمة   العدد (\n44\n) \n0202\n م \n002\n \n \n خمطوطة\nصفة ادلياه احلادة ادلعذنية \nدراسة وحتقيق \n.أ.ـ.د\nوسغ حديغ محيسيج \nمخكد احياء التخاث العمسي العخبي/جامعة بغجاد \nWasanhussein4@gmail.com\n \nتاريخ ا :الستالم8\n/\n9\n/\n9109\n \n:تاريخ القبول7\n/\n0\n/\n9191\n \n:تاريخ النشر92\n/\n3\n/\n9191\n \nادللخص \n )تشاولت مخصػشة (صفة السياه الحادة السعجنية في مادتيا ما يتعمق بعمسي الكيسياء\n والريجلة، وىي ندخة ناسخ ال يُعخؼ مؤلفيا عمى الخغع مغ أف ناسخيا يذيخ إلى\n صشعة مؤلفيا مقترخاً عمى"
+    },
+    {
+      "doi": "",
+      "title": "تحقيق القسم الثالث من مخطوطة الآداب الطبية",
+      "year": 2020,
+      "keywords": [
+        "تراث",
+        "عربي",
+        "فاس",
+        "تاريخ",
+        "علم",
+        "بحث",
+        "دبي",
+        "مكة"
+      ],
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": true,
+      "human_read": false,
+      "text_length": 23031,
+      "text_sample": "مجلة التراث العلمي العربي       فرلية، علمية، محكمة   العدد (\n45\n) \n0202\n م \n1\n \n \nحتقيق القسم الثالث من خمطوطة خربة الفقهاء \nأ.د.رياض سعيج لظيف \nمخكد احياء التخاث العمسي العخبي/ جامعة بغجاد \nmuwmuw2007@yahoo.com \n :تاريخ االستالم92\n/\n01\n/\n9102\n \n :تاريخ القبول7/0/\n9102\n \n :تاريخ النشر/3/\n9191\n \nامللخص \nفي الحق يقة اف فكخة السخظؾطة الخئيدة ىي تشاكليا عمسا فخعيا مؽ عمؾـ الفقو االسالمي\n الؾاسع ،اال كىؾ عمؼ االلغاز الفقيي كىحه السخظؾطة في عشؾانيا كمؾضؾعيا تذج رجاؿ\n السعخفة الفقيية لسا ليا مؽ غسؾض ي"
+    },
+    {
+      "doi": "",
+      "title": "ألواح الرصاص دراسة تاريخية",
+      "year": 2022,
+      "keywords": [
+        "تراث",
+        "وجهة",
+        "عربي",
+        "تعلم",
+        "حوار",
+        "سفر",
+        "حاج",
+        "متحف"
+      ],
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": true,
+      "human_read": false,
+      "text_length": 31520,
+      "text_sample": " \n \n901\n \n \n   \n * مجلة التراث العلمي العربي (( فصلية * علمية( محكمة )) المجلد91\n( ) العدد3\n )\n2022\n م \nألواح الرصاص دراسة تاريخية \nا\n.د. وجدان فريق عناد \nمركز إحياء التراث العلمي العربي / جامعة بغداد \nWjdan_fareeq@yahoo.com\n \n : تــاريخ النشر03\n/\n9\n/\n2322\n \n \n : تاريخ االستالم22\n/\n11\n/\n2321\n   \n  \n :تاريخ القبول11\n/\n0\n/\n2322\n \nDOI: 10.54721/jrashc.19.3.803\n \n :الملخص \n    \n عند الحديث عن األندلس في المدة الزمنية التي أعقبت تسليم مدينة غرناطة نجد الكثير من\n القضايا التاريخية، التي تستحق التوقف ع"
+    },
+    {
+      "doi": "",
+      "title": "الأوبئة في التراث الطبي العربي والإسلامي",
+      "year": 2021,
+      "keywords": [
+        "تراث",
+        "تطوير",
+        "عربي",
+        "تعليم",
+        "سفر",
+        "ثقافة",
+        "حاج",
+        "فاس"
+      ],
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "伊斯兰文化",
+        "教育",
+        "历史"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": true,
+      "human_read": false,
+      "text_length": 36435,
+      "text_sample": " 279\n2021\nAbstract\nThis paper will focus on on an era of time represented in the flourishing Islamic \neras, which spanned more than a thousand years, starting with the noble prophetic \nmission, and ending with the Ottoman era, during that time science was flourishing, \nwhile other countries that were not fortunate to arrive The Arab-Islamic civilization \nwas living in the midst of ignorance and distance from every human civilization.\nSharia’s view of natural disasters and epidemics was that they"
+    },
+    {
+      "doi": "",
+      "title": "القدس منارة الشعر العربي",
+      "year": 2012,
+      "keywords": [
+        "تراث",
+        "وجهة",
+        "تطوير",
+        "عربي",
+        "سوق",
+        "تعليم",
+        "ثقافة",
+        "حاج"
+      ],
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": true,
+      "human_read": false,
+      "text_length": 80000,
+      "text_sample": "عدد خاUص\n399\n2012\nالملخص\nالمنارة اجتذاب لتحديد اتجاه وهداية ، ولها قوة الرمز وحضوره ، وهكذا كانت مدينة القدس منذ \nتجليها المبكر المعاصر لفجر الدعوة المحمدية ( اإلسراء ، ثم التوجه إليها قبلة للصالة )، وقد فتح المسلمون \nالقدس غير مرة ، وفقدوها غير مرة أيضاً ، فأضمرت – رمزياً – قضية الصراع اإلسالمي في سبيل العقيدة ، \nوالصراع العربي في سبيل القومية ، والنضال الفلسطيني من أجل فلسطين .\nاحتفى الشعر العربي بمدينة القدس بهذه المعاني الدينية والقومية والوطنية ، مواكبا المحن التي \n وإلى 1967/6/7 تعرضت لها "
+    },
+    {
+      "doi": "",
+      "title": "أهمية دراسة المصادر التاريخية",
+      "year": 2021,
+      "keywords": [
+        "تراث",
+        "حاج",
+        "مسلم",
+        "تاريخ",
+        "علم",
+        "دبي",
+        "مصر",
+        "مكة"
+      ],
+      "topics": [
+        "文化遗产",
+        "教育",
+        "历史"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_read": false,
+      "text_length": 0,
+      "text_sample": ""
+    },
+    {
+      "doi": "",
+      "title": "منطقة الحياد العراقية السعودية",
+      "year": 2020,
+      "keywords": [
+        "تراث",
+        "عربي",
+        "حاج",
+        "تاريخ",
+        "بيئة",
+        "تعاون",
+        "بحث",
+        "دبي"
+      ],
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "topic_level": "L1_文旅核心",
+      "tourism_related": true,
+      "has_pdf": true,
+      "text_extracted": true,
+      "human_read": false,
+      "text_length": 51930,
+      "text_sample": "مجمة التراث العممي العربي       فرمية، عممية، محكمة   العدد (\n44\n) \n0202\n م \n51\n \n \nمنطقة احلياد العراقية السعودية \nدراسة يف اجلغرافية التارخيية \n \n \n \n \n:تاريخ االستالم22\n/\n01\n/\n2102\n \n:تاريخ القبول7\n/\n0\n/\n2121\n \n:تاريخ النشر22\n/\n3\n/\n2121\n \nخص ل امل: \n( مشصقة الحيادNeutral Zone) ال تي كانت واقعة في جشػبي العخاق ىي عبارة عغ\n أراضي صحخاوية تدسى بالسرصمح الدياسي بالتخػم، كانت مػجػدة عمى الخخائط لسجة\n(\n66\n ،) عاما، الى ان تع االتفاق ما بيغ العخاق والدعػدية عمى تقديع أراضييا بالتداوي\nحيث أصبح القدع "
+    }
+  ],
+  "topic_distribution": {
+    "阿拉伯文化": 19,
+    "旅游": 5,
+    "伊斯兰文化": 4,
+    "教育": 13,
+    "数字化": 4,
+    "历史": 11,
+    "文化遗产": 11,
+    "可持续发展": 1
+  },
+  "level_distribution": {
+    "L2_文化认同": 9,
+    "L1_文旅核心": 15,
+    "L5_其他": 3
+  },
+  "comparison_table": [
+    {
+      "topic": "旅游/遗产",
+      "arabic_count": 0,
+      "english_count": 258,
+      "level": "L1_文旅核心"
+    },
+    {
+      "topic": "文化研究",
+      "arabic_count": 0,
+      "english_count": 90,
+      "level": "L5_其他"
+    },
+    {
+      "topic": "教育",
+      "arabic_count": 13,
+      "english_count": 52,
+      "level": "L3_方法论"
+    },
+    {
+      "topic": "历史",
+      "arabic_count": 11,
+      "english_count": 13,
+      "level": "L2_文化认同"
+    },
+    {
+      "topic": "阿拉伯文化",
+      "arabic_count": 19,
+      "english_count": 0,
+      "level": "L2_文化认同"
+    },
+    {
+      "topic": "文化遗产",
+      "arabic_count": 11,
+      "english_count": 0,
+      "level": "L1_文旅核心"
+    },
+    {
+      "topic": "旅游",
+      "arabic_count": 5,
+      "english_count": 0,
+      "level": "L1_文旅核心"
+    },
+    {
+      "topic": "伊斯兰文化",
+      "arabic_count": 4,
+      "english_count": 0,
+      "level": "L2_文化认同"
+    },
+    {
+      "topic": "数字化",
+      "arabic_count": 4,
+      "english_count": 0,
+      "level": "L3_方法论"
+    },
+    {
+      "topic": "可持续发展",
+      "arabic_count": 1,
+      "english_count": 0,
+      "level": "L3_方法论"
+    }
+  ],
+  "readable_texts": [
+    {
+      "doi": "10.58205/fber.v3i1.1462",
+      "title": "متطلبات تطوير مشروعات السياحة الصحراوية في ضوء أهداف التنمية المستدامة",
+      "excerpt": " \nمتطمبات تطوير مشروعات السياحة الصحراوية  في  ضوء أىداف SDGs\n  \nRequirements for the development of desert tourism projects in the light of SDGs \nobjectives\n \n \nد.رواني بوحفص 1\n، د .دحو سميمان2 \n1 \n ،جامعة غرداية، الجزائرrouanib@yahoo.fr\n  \n2 \n ،جامعة غرداية، الجزائرdahou09@gmail.com\n \n \nاالستالـ "
+    },
+    {
+      "doi": "10.47832/2717-8293.16.26",
+      "title": "الماء والسياحة في المجالات الواحية الصحراوية - الواحات المغربية نموذجا",
+      "excerpt": " \n \nCopyright © Published by Rimak Journal, www.rimakjournal.com \nRimar Academy, Fatih, Istanbul, 34093 Turkey \nAll rights reserved \n \nWATER AND TOURISM IN DESERT OASES, ‎MOROCCAN OASES AS A MODEL \n \nAbderrahim ARBAOUI 1 \n \n Abstract: \nThe reality of Moroccan oases today has become disturbing, the \n"
+    },
+    {
+      "doi": "",
+      "title": "صناعة المخطوط في العراق",
+      "excerpt": "مجلة الت\nراث العلمي العربي       فصلية، علمية، محكمة   العدد (\n45\n) \n0202\n م \n1\n \n \n \n \n \nصناعة املخطوط يف العراق \nأ.د. االء نافع جاسع \nجامعة بغجاد / مخكد إحياء التخاث العمسي العخبي \nAlaanfia66@gmail.com \n املخلص \n يُعج التخاث العخبي واحجاً مغ كشػز الحزارات األندانية الذامخة ، فيػ تخاث عخيق\nمستج الج"
+    },
+    {
+      "doi": "",
+      "title": "مخطوطة صفة المياه الحادة المعدنية",
+      "excerpt": "مجمة التراث العممي العربي       فصمية، عممية، محكمة   العدد (\n44\n) \n0202\n م \n002\n \n \n خمطوطة\nصفة ادلياه احلادة ادلعذنية \nدراسة وحتقيق \n.أ.ـ.د\nوسغ حديغ محيسيج \nمخكد احياء التخاث العمسي العخبي/جامعة بغجاد \nWasanhussein4@gmail.com\n \nتاريخ ا :الستالم8\n/\n9\n/\n9109\n \n:تاريخ القبول7\n/\n0\n/\n9191\n \n:تاريخ النش"
+    },
+    {
+      "doi": "",
+      "title": "تحقيق القسم الثالث من مخطوطة الآداب الطبية",
+      "excerpt": "مجلة التراث العلمي العربي       فرلية، علمية، محكمة   العدد (\n45\n) \n0202\n م \n1\n \n \nحتقيق القسم الثالث من خمطوطة خربة الفقهاء \nأ.د.رياض سعيج لظيف \nمخكد احياء التخاث العمسي العخبي/ جامعة بغجاد \nmuwmuw2007@yahoo.com \n :تاريخ االستالم92\n/\n01\n/\n9102\n \n :تاريخ القبول7/0/\n9102\n \n :تاريخ النشر/3/\n9191\n \nامل"
+    },
+    {
+      "doi": "",
+      "title": "ألواح الرصاص دراسة تاريخية",
+      "excerpt": " \n \n901\n \n \n   \n * مجلة التراث العلمي العربي (( فصلية * علمية( محكمة )) المجلد91\n( ) العدد3\n )\n2022\n م \nألواح الرصاص دراسة تاريخية \nا\n.د. وجدان فريق عناد \nمركز إحياء التراث العلمي العربي / جامعة بغداد \nWjdan_fareeq@yahoo.com\n \n : تــاريخ النشر03\n/\n9\n/\n2322\n \n \n : تاريخ االستالم22\n/\n11\n/\n2321\n   \n  \n"
+    },
+    {
+      "doi": "",
+      "title": "الأوبئة في التراث الطبي العربي والإسلامي",
+      "excerpt": " 279\n2021\nAbstract\nThis paper will focus on on an era of time represented in the flourishing Islamic \neras, which spanned more than a thousand years, starting with the noble prophetic \nmission, and ending with the Ottoman era, during that time science was flourishing, \nwhile other countries that wer"
+    },
+    {
+      "doi": "",
+      "title": "القدس منارة الشعر العربي",
+      "excerpt": "عدد خاUص\n399\n2012\nالملخص\nالمنارة اجتذاب لتحديد اتجاه وهداية ، ولها قوة الرمز وحضوره ، وهكذا كانت مدينة القدس منذ \nتجليها المبكر المعاصر لفجر الدعوة المحمدية ( اإلسراء ، ثم التوجه إليها قبلة للصالة )، وقد فتح المسلمون \nالقدس غير مرة ، وفقدوها غير مرة أيضاً ، فأضمرت – رمزياً – قضية الصراع اإلسالمي في "
+    },
+    {
+      "doi": "",
+      "title": "منطقة الحياد العراقية السعودية",
+      "excerpt": "مجمة التراث العممي العربي       فرمية، عممية، محكمة   العدد (\n44\n) \n0202\n م \n51\n \n \nمنطقة احلياد العراقية السعودية \nدراسة يف اجلغرافية التارخيية \n \n \n \n \n:تاريخ االستالم22\n/\n01\n/\n2102\n \n:تاريخ القبول7\n/\n0\n/\n2121\n \n:تاريخ النشر22\n/\n3\n/\n2121\n \nخص ل امل: \n( مشصقة الحيادNeutral Zone) ال تي كانت واقعة في"
+    }
+  ]
+}

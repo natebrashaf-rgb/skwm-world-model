@@ -1,0 +1,17 @@
+Task C 运行日志 v2
+时间: 2026-08-25T01:24:38.009932
+随机种子: 20260825
+实验性质: 描述性扰动分析
+
+数据版本:
+  B1_含阿语: c4d80e2b4b575ea50d067f62ce3a0b1f962abb7e4d720575f3c03deb11f209f9
+  state_vectors_含阿语: 6bbee6c0041a0e5bc77695bc31c5ec9eafc34bec080af4e24f0c067905f10495
+  state_vectors_基线: 6bbee6c0041a0e5bc77695bc31c5ec9eafc34bec080af4e24f0c067905f10495
+
+V1基线: 12152条
+V2含阿语: 12179条
+V3跨语言: 概念验证
+
+Q1 Jaccard=1.0000, trend_change=False
+Q2 新增主题=0
+Q3 样本量=27, 年份=8
