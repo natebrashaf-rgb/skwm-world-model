@@ -132,6 +132,7 @@ def main():
             "citations": p.get("citations", 0), "venue": venue,
             "authors": split_authors(p.get("authors", "")),
             "is_tourism": is_tourism,
+            "language": p.get("language", ""),
             "year_valid": year_valid,
         })
         topics = paper_topics.get(pid, set())
@@ -159,7 +160,7 @@ def main():
             UNWIND $rows AS r
             MERGE (p:Paper {id: r.pid})
             SET p.title = r.title, p.year = r.year, p.citations = r.citations,
-                p.is_tourism = r.is_tourism
+                p.is_tourism = r.is_tourism, p.language = r.language
             MERGE (v:Venue {name: r.venue})
             MERGE (p)-[:PUBLISHED_IN]->(v)
             FOREACH (a IN r.authors |
