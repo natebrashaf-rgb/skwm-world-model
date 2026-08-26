@@ -1,0 +1,26 @@
+===== 1. B1_文献主表.json 前 3 条记录的 keys =====
+[记录1] keys(12): ['_source', 'authors', 'citations', 'doi', 'has_pdf', 'is_oa', 'keywords', 'language', 'normalized_keywords', 'title', 'venue', 'year']
+[记录2] keys(13): ['_source', 'authors', 'citations', 'doi', 'has_pdf', 'is_oa', 'keywords', 'language', 'normalized_keywords', 'pdf_key', 'title', 'venue', 'year']
+[记录3] keys(13): ['_source', 'authors', 'citations', 'doi', 'has_pdf', 'is_oa', 'keywords', 'language', 'normalized_keywords', 'pdf_key', 'title', 'venue', 'year']
+[记录1] 完整内容: {"title": "XGBoost", "year": 2016, "citations": 49232, "authors": "Tianqi Chen, Carlos Guestrin", "venue": "", "doi": "10.1145/2939672.2939785", "is_oa": true, "_source": "01_科学知识世界模型_SKWM", "language": "en", "keywords": ["通用"], "normalized_keywords": ["通用"], "has_pdf": false}
+
+===== 2. CALL db.relationshipTypes() 全量关系名 =====
+关系名(7): ['AUTHORED', 'BELONGS_TO_DOMAIN', 'CO_OCCURS_WITH', 'HAS_TOPIC', 'PUBLISHED_IN', 'PUBLISHED_IN_YEAR', 'SNAPSHOT']
+
+===== 3. Author->Paper 关系名 =====
+查询: MATCH (a:Author)-[r]->(p:Paper) RETURN type(r) LIMIT 1 => [{'t': 'AUTHORED'}]
+查询(无向): MATCH (a:Author)-[r]-(p:Paper) RETURN type(r) LIMIT 3 => ['AUTHORED', 'AUTHORED', 'AUTHORED']
+
+===== 3b. Author 节点 2 个样本全部 keys =====
+  Author#1: keys=['name'] | 样本值={'name': 'Yeonjeong Park'}
+  Author#2: keys=['name'] | 样本值={'name': 'Robert K. Colwell'}
+
+===== 3c. Venue 节点 2 个样本全部 keys =====
+  Venue#1: keys=['name'] | 样本值={'name': 'Political Geography'}
+  Venue#2: keys=['name'] | 样本值={'name': 'Science Advances'}
+
+===== 4. CALL db.labels() 全量标签 =====
+标签(8): ['Author', 'Domain', 'Institution', 'Method', 'Paper', 'Topic', 'Venue', 'Year'] | 含 Venue: True
+
+===== 补充: Paper 节点 1 个样本全部 keys =====
+  Paper: keys=['citations', 'id', 'is_tourism', 'title', 'year'] | 样本值={'citations': '622', 'year': '2011', 'is_tourism': 'False', 'id': '10.1016/j.polgeo.2011.01.002', 'title': 'Interventions on rethinking ‘the border’'}
