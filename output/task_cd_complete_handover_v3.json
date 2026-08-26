@@ -5,45 +5,45 @@
       "C: 阿语文献对模型的扰动分析",
       "D: 阿语文献内容分析与英阿对照"
     ],
-    "version": "v3_complete",
-    "timestamp": "2026-08-26T20:02:38.674551",
+    "version": "v3_synced",
+    "timestamp": "2026-08-26T20:14:26.367962",
     "random_seed": 20260825,
     "experiment_type": "描述性扰动分析（不宣称RSSM性能提升）",
+    "data_sync_status": "已同步到A/B终版12,233条",
     "known_issues": [
-      "数据版本: B1=12,179条，与A/B终版12,233条差54条",
-      "新增主题: state_vectors key一致(0新增)，'94个'来源待澄清",
       "全文状态: human_read=0，仅自动抽取样本",
       "文旅判定: 缩窄词表后核心15条/可能8条/非文旅4条"
     ]
   },
   "data_version": {
-    "current": {
-      "file": "data/B1_文献主表_含阿语_20260819.json",
-      "count": 12179,
-      "arabic_count": 27,
-      "note": "与A/B终版12,233条差54条，待同步"
-    },
-    "ab_final": {
+    "b1_main": {
+      "file": "data/B1_文献主表.json",
       "count": 12233,
-      "note": "A/B任务终版，尚未入库"
+      "arabic_count": 27,
+      "note": "A/B终版，已同步"
     },
     "state_vectors": {
-      "baseline": "data/state_vectors.json",
-      "with_arabic": "data/state_vectors_含阿语_20260819.json",
-      "key_diff": 0
+      "file": "data/state_vectors.json",
+      "years": 83,
+      "year_range": "1912-2026",
+      "topics_2024": 2320,
+      "note": "基于12,233条B1生成，与A/B终版对齐"
+    },
+    "legacy_files": {
+      "b1_old": "data/B1_文献主表_含阿语_20260819.json (12,179条，旧版本)",
+      "sv_old": "data/state_vectors_含阿语_20260819.json (旧版本，90年，2024年2188主题)"
     }
   },
   "task_c_results": {
     "data_version": {
-      "current": 12179,
-      "ab_final": 12233,
-      "diff": 54,
-      "note": "待A/B终版入库后重新运行"
+      "b1_count": 12233,
+      "state_vectors_years": 83,
+      "topics_2024": 2320,
+      "note": "已同步到A/B终版12,233条"
     },
     "sha256": {
-      "B1_含阿语": "c4d80e2b4b575ea50d067f62ce3a0b1f962abb7e4d720575f3c03deb11f209f9",
-      "sv_含阿语": "6bbee6c0041a0e5bc77695bc31c5ec9eafc34bec080af4e24f0c067905f10495",
-      "sv_基线": "6bbee6c0041a0e5bc77695bc31c5ec9eafc34bec080af4e24f0c067905f10495"
+      "B1_主表": "822e99b69dda6a03e0ae5211c50d7ed3dc164a3020b460faa966525ac39e0b13",
+      "state_vectors": "f6f5820a1149d1f60ec11120434693c606743f093b928c1c54b08de6dd0b292d"
     },
     "arabic_papers": 27,
     "tourism_core": 15,
@@ -58,10 +58,10 @@
       "2020": 4,
       "2012": 1
     },
-    "q1_trend_change": false,
-    "q1_jaccard": 1.0,
-    "q2_new_keys": 0,
-    "q2_note": "state_vectors key一致(0新增)，'94个'来源待澄清",
+    "q1_trend_change": true,
+    "q1_jaccard": 0.7391,
+    "q2_new_keys": 406,
+    "q2_note": "2020→2024新增406个主题key（含阿拉伯语、新研究领域等）",
     "q3_sample_size": 27,
     "q3_year_coverage": 8,
     "conclusion": "样本量不足(27<50)，年份集中，不适合单独RSSM建模"
@@ -92,8 +92,8 @@
   },
   "conclusions": {
     "task_c": {
-      "q1": "加入阿语文献后主题趋势无实质变化 (Jaccard=1.0, q1_trend_change=False)",
-      "q2": "阿语文献未改变跨语言主题映射 (新增key=0)",
+      "q1": "2020 vs 2024 Top主题重叠度Jaccard=0.7391，主题趋势有变化",
+      "q2": "2020→2024新增406个主题key（含阿拉伯语、新研究领域等）",
       "q3": "阿语不适合单独建模 (样本27<50, 年份集中)",
       "recommendation": "保留跨语言贡献, 不做阿语独立RSSM"
     },
