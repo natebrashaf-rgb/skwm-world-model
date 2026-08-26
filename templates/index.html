@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿语文献人工验证工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            height: 100vh;
+        }
+        
+        /* 左侧文献列表 */
+        .sidebar {
+            width: 350px;
+            background: white;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .sidebar-header {
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .sidebar-header h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .progress-bar {
+            background: rgba(255,255,255,0.2);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        
+        .progress-fill {
+            background: #27ae60;
+            height: 100%;
+            transition: width 0.3s;
+        }
+        
+        .progress-text {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        
+        .paper-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        
+        .paper-item {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .paper-item:hover {
+            background: #f8f9fa;
+            border-color: #3498db;
+        }
+        
+        .paper-item.active {
+            background: #e3f2fd;
+            border-color: #3498db;
+        }
+        
+        .paper-item.verified {
+            border-left: 4px solid #27ae60;
+        }
+        
+        .paper-item .paper-title {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: #2c3e50;
+        }
+        
+        .paper-item .paper-meta {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+        
+        .paper-item .paper-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            margin-top: 4px;
+        }
+        
+        .badge-core { background: #e74c3c; color: white; }
+        .badge-maybe { background: #f39c12; color: white; }
+        .badge-none { background: #95a5a6; color: white; }
+        
+        /* 右侧主内容区 */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .content-header {
+            padding: 20px 30px;
+            background: white;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .content-header h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .paper-info {
+            background: white;
+            padding: 30px;
+            flex: 1;
+            overflow-y: auto;
+        }
+        
+        .info-section {
+            margin-bottom: 25px;
+        }
+        
+        .info-section h3 {
+            font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .info-section p {
+            line-height: 1.6;
+            color: #34495e;
+        }
+        
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .keyword-tag {
+            background: #ecf0f1;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #2c3e50;
+        }
+        
+        .full-text {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            max-height: 400px;
+            overflow-y: auto;
+            line-height: 1.8;
+            font-size: 14px;
+            color: #34495e;
+            white-space: pre-wrap;
+        }
+        
+        /* 验证表单 */
+        .verification-form {
+            background: white;
+            padding: 30px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .form-section {
+            margin-bottom: 20px;
+        }
+        
+        .form-section label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        
+        .btn-core { background: #e74c3c; color: white; }
+        .btn-core:hover { background: #c0392b; }
+        .btn-core.active { background: #c0392b; box-shadow: 0 0 0 3px rgba(231,76,60,0.3); }
+        
+        .btn-maybe { background: #f39c12; color: white; }
+        .btn-maybe:hover { background: #d68910; }
+        .btn-maybe.active { background: #d68910; box-shadow: 0 0 0 3px rgba(243,156,18,0.3); }
+        
+        .btn-none { background: #95a5a6; color: white; }
+        .btn-none:hover { background: #7f8c8d; }
+        .btn-none.active { background: #7f8c8d; box-shadow: 0 0 0 3px rgba(149,165,166,0.3); }
+        
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .checkbox-item label {
+            margin: 0;
+            cursor: pointer;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .btn-save {
+            background: #27ae60;
+            color: white;
+            flex: 1;
+        }
+        
+        .btn-save:hover { background: #229954; }
+        
+        .btn-nav {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+        }
+        
+        .btn-nav:hover { background: #2980b9; }
+        
+        .btn-nav:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+        
+        /* 空状态 */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #7f8c8d;
+        }
+        
+        .empty-state h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 左侧文献列表 -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>阿语文献列表</h2>
+            <div class="progress-text">
+                已验证: <span id="verifiedCount">0</span> / <span id="totalCount">{{ total }}</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+        </div>
+        <div class="paper-list" id="paperList">
+            <!-- 动态加载 -->
+        </div>
+    </div>
+    
+    <!-- 右侧主内容区 -->
+    <div class="main-content">
+        <div class="content-header">
+            <h1 id="paperTitle">请选择一篇文献</h1>
+        </div>
+        
+        <div class="paper-info" id="paperInfo">
+            <div class="empty-state">
+                <h2>开始验证</h2>
+                <p>从左侧列表选择一篇文献开始验证</p>
+            </div>
+        </div>
+        
+        <div class="verification-form" id="verificationForm" style="display: none;">
+            <div class="form-section">
+                <label>文旅分类 *</label>
+                <div class="button-group">
+                    <button class="btn btn-core" data-class="core">文旅核心</button>
+                    <button class="btn btn-maybe" data-class="maybe">文旅可能</button>
+                    <button class="btn btn-none" data-class="none">非文旅</button>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <label>额外标记</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="isArabicContent">
+                        <label for="isArabicContent">正文为阿拉伯语</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="isChinaArabRelated">
+                        <label for="isChinaArabRelated">与中阿相关</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <label>备注</label>
+                <textarea id="notes" placeholder="输入备注信息..."></textarea>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn btn-nav" id="prevBtn" onclick="navigatePaper(-1)">上一篇</button>
+                <button class="btn btn-save" onclick="saveVerification()">保存并继续</button>
+                <button class="btn btn-nav" id="nextBtn" onclick="navigatePaper(1)">下一篇</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let papers = [];
+        let currentIndex = -1;
+        let selectedClass = null;
+        
+        // 加载文献列表
+        async function loadPapers() {
+            const response = await fetch('/api/papers');
+            const data = await response.json();
+            papers = data.papers;
+            renderPaperList();
+            loadResults();
+        }
+        
+        // 渲染文献列表
+        function renderPaperList() {
+            const list = document.getElementById('paperList');
+            list.innerHTML = papers.map((p, i) => `
+                <div class="paper-item" data-index="${i}" onclick="selectPaper(${i})">
+                    <div class="paper-title">${p.title || '无标题'}</div>
+                    <div class="paper-meta">
+                        ${p.year || '未知年份'} | ${p.has_pdf ? '有PDF' : '无PDF'}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // 选择文献
+        async function selectPaper(index) {
+            currentIndex = index;
+            
+            // 更新列表高亮
+            document.querySelectorAll('.paper-item').forEach((el, i) => {
+                el.classList.toggle('active', i === index);
+            });
+            
+            // 加载文献详情
+            const response = await fetch(`/api/paper/${index}`);
+            const paper = await response.json();
+            
+            // 更新标题
+            document.getElementById('paperTitle').textContent = paper.title || '无标题';
+            
+            // 渲染详情
+            const info = document.getElementById('paperInfo');
+            info.innerHTML = `
+                <div class="info-section">
+                    <h3>基本信息</h3>
+                    <p><strong>DOI:</strong> ${paper.doi || '无'}</p>
+                    <p><strong>年份:</strong> ${paper.year || '未知'}</p>
+                    <p><strong>作者:</strong> ${paper.authors || '未知'}</p>
+                </div>
+                
+                <div class="info-section">
+                    <h3>关键词</h3>
+                    <div class="keywords">
+                        ${(paper.keywords || []).map(k => `<span class="keyword-tag">${k}</span>`).join('')}
+                    </div>
+                </div>
+                
+                ${paper.abstract ? `
+                <div class="info-section">
+                    <h3>摘要</h3>
+                    <p>${paper.abstract}</p>
+                </div>
+                ` : ''}
+                
+                ${paper.full_text ? `
+                <div class="info-section">
+                    <h3>全文预览</h3>
+                    <div class="full-text">${paper.full_text}</div>
+                </div>
+                ` : '<div class="info-section"><h3>全文预览</h3><p>暂无全文</p></div>'}
+            `;
+            
+            // 显示验证表单
+            document.getElementById('verificationForm').style.display = 'block';
+            
+            // 重置表单
+            resetForm();
+            
+            // 加载已有验证结果
+            loadExistingVerification(index);
+            
+            // 更新导航按钮
+            updateNavButtons();
+        }
+        
+        // 重置表单
+        function resetForm() {
+            selectedClass = null;
+            document.querySelectorAll('.btn-core, .btn-maybe, .btn-none').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('isArabicContent').checked = false;
+            document.getElementById('isChinaArabRelated').checked = false;
+            document.getElementById('notes').value = '';
+        }
+        
+        // 加载已有验证结果
+        async function loadExistingVerification(index) {
+            const response = await fetch('/api/results');
+            const data = await response.json();
+            const result = data.results[String(index)];
+            
+            if (result) {
+                // 填充表单
+                if (result.tourism_class) {
+                    selectedClass = result.tourism_class;
+                    document.querySelector(`[data-class="${result.tourism_class}"]`).classList.add('active');
+                }
+                document.getElementById('isArabicContent').checked = result.is_arabic_content || false;
+                document.getElementById('isChinaArabRelated').checked = result.is_china_arab_related || false;
+                document.getElementById('notes').value = result.notes || '';
+            }
+        }
+        
+        // 加载验证结果统计
+        async function loadResults() {
+            const response = await fetch('/api/results');
+            const data = await response.json();
+            
+            // 更新统计
+            document.getElementById('verifiedCount').textContent = data.stats.verified;
+            const progress = (data.stats.verified / papers.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            
+            // 标记已验证的文献
+            document.querySelectorAll('.paper-item').forEach((el, i) => {
+                if (data.results[String(i)]) {
+                    el.classList.add('verified');
+                    const result = data.results[String(i)];
+                    const badge = document.createElement('span');
+                    badge.className = `paper-badge badge-${result.tourism_class}`;
+                    badge.textContent = result.tourism_class === 'core' ? '核心' : 
+                                       result.tourism_class === 'maybe' ? '可能' : '非文旅';
+                    el.appendChild(badge);
+                }
+            });
+        }
+        
+        // 分类按钮点击
+        document.querySelectorAll('.btn-core, .btn-maybe, .btn-none').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.btn-core, .btn-maybe, .btn-none').forEach(b => {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
+                selectedClass = this.dataset.class;
+            });
+        });
+        
+        // 保存验证
+        async function saveVerification() {
+            if (!selectedClass) {
+                alert('请选择文旅分类');
+                return;
+            }
+            
+            const data = {
+                index: currentIndex,
+                tourism_class: selectedClass,
+                is_arabic_content: document.getElementById('isArabicContent').checked,
+                is_china_arab_related: document.getElementById('isChinaArabRelated').checked,
+                notes: document.getElementById('notes').value,
+            };
+            
+            const response = await fetch('/api/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+            
+            if (response.ok) {
+                alert('保存成功！');
+                // 重新加载结果
+                location.reload();
+            } else {
+                alert('保存失败');
+            }
+        }
+        
+        // 导航
+        function navigatePaper(delta) {
+            const newIndex = currentIndex + delta;
+            if (newIndex >= 0 && newIndex < papers.length) {
+                selectPaper(newIndex);
+            }
+        }
+        
+        // 更新导航按钮
+        function updateNavButtons() {
+            document.getElementById('prevBtn').disabled = currentIndex <= 0;
+            document.getElementById('nextBtn').disabled = currentIndex >= papers.length - 1;
+        }
+        
+        // 初始化
+        loadPapers();
+    </script>
+</body>
+</html>
