@@ -1,6 +1,6 @@
 ﻿topic,year,count
-Tourism,2025,285
 Tourism,2024,284
+Tourism,2025,284
 Tourism,2026,251
 Tourism,2022,231
 Tourism,2023,230
@@ -74,10 +74,10 @@ Arab,2017,31
 China,2025,31
 Heritage,2014,30
 Tourist,2024,30
-中国,2025,30
 Sustainable,2026,30
 Tourism,2011,29
 Arab,2020,29
+中国,2025,29
 跨文化,2025,29
 Smart,2026,29
 Tourism,2009,28
@@ -334,9 +334,7 @@ Silk,2024,12
 Silk Road,2024,12
 Tourism Destination,2024,12
 Tourism Industry,2024,12
-文化,2024,12
 Ai In,2025,12
-Arab,2025,12
 Big Data,2025,12
 Muslim,2025,12
 Of Ai,2025,12
@@ -378,6 +376,8 @@ Of Digital,2024,11
 Sustainability,2024,11
 Tourists,2024,11
 Virtual Reality,2024,11
+文化,2024,11
+Arab,2025,11
 Artificial,2025,11
 In Saudi Arabia,2025,11
 Metaverse,2025,11
@@ -705,7 +705,6 @@ Digital Transformation,2025,7
 In Generative Ai,2025,7
 Machine Learning,2025,7
 Tourism And Hospitality,2025,7
-Tourism Sector,2025,7
 经济,2025,7
 音乐,2025,7
 Ai In Tourism,2026,7
@@ -844,6 +843,7 @@ Participation,2025,6
 Strategy,2025,6
 Tourism Governance,2025,6
 Tourism Industry,2025,6
+Tourism Sector,2025,6
 乡村旅游,2025,6
 智慧旅游,2025,6
 游客,2025,6
@@ -893,6 +893,7 @@ Intangible Cultural Heritage,2012,5
 Of Cultural Heritage,2012,5
 Text Mining,2012,5
 Tourist,2012,5
+University,2012,5
 In Tourism,2013,5
 Of Destination,2013,5
 Tourism In,2013,5
@@ -976,7 +977,6 @@ Of Cultural Tourism,2021,5
 Road Initiative,2021,5
 Silk Road,2021,5
 Tourist Destination,2021,5
-中国,2021,5
 Arabia,2022,5
 Blockchain,2022,5
 Climate Change,2022,5
@@ -1021,7 +1021,6 @@ Of Smart Tourism,2024,5
 The Arab World,2024,5
 The Tourism Industry,2024,5
 Trade,2024,5
-伊斯兰,2024,5
 Ai-Driven,2025,5
 Archaeological,2025,5
 Augmented Reality,2025,5
@@ -1050,7 +1049,6 @@ Virtual Reality And,2025,5
 World Heritage,2025,5
 大学,2025,5
 数据,2025,5
-阿拉伯,2025,5
 非物质文化遗产,2025,5
 And Cultural Heritage,2026,5
 Arabic,2026,5
@@ -1114,7 +1112,6 @@ Participation,2012,4
 Unesco,2012,4
 United Arab,2012,4
 United Arab Emirates,2012,4
-University,2012,4
 Destination Image,2013,4
 Muslim,2013,4
 Of Cultural Tourism,2013,4
@@ -1199,16 +1196,15 @@ Market,2019,4
 Of World Heritage,2019,4
 Text Mining,2019,4
 The Belt And,2019,4
+Trade,2019,4
 Virtual,2019,4
 阿拉伯,2019,4
- ,2020,4
-"""",2020,4
-",",2020,4
 Artificial Intelligence In,2020,4
 Blockchain,2020,4
 Digital Twin,2020,4
 Educational,2020,4
 Hajj,2020,4
+Hajj And Umrah,2020,4
 Heritage In,2020,4
 Hospitality,2020,4
 In Saudi Arabia,2020,4
@@ -1219,31 +1215,14 @@ Of Tourist,2020,4
 On Tourism,2020,4
 Sustainability,2020,4
 Unesco,2020,4
+University,2020,4
 Virtual Reality,2020,4
-[,2020,4
-],2020,4
-ا,2020,4
-ب,2020,4
-ة,2020,4
-ت,2020,4
-ث,2020,4
-ج,2020,4
-ح,2020,4
-خ,2020,4
-د,2020,4
-ر,2020,4
-س,2020,4
-ع,2020,4
-ف,2020,4
-ق,2020,4
-ل,2020,4
-م,2020,4
-ي,2020,4
 And Road Initiative,2021,4
 And The Arab,2021,4
 Art,2021,4
 Between China And,2021,4
 Chain,2021,4
+China And The,2021,4
 Cultural Heritage In,2021,4
 Cultural Heritage Tourism,2021,4
 Digitalization,2021,4
@@ -1259,10 +1238,12 @@ Travel,2021,4
 Virtual,2021,4
 Visitors,2021,4
 World Heritage Site,2021,4
+中国,2021,4
 旅游,2021,4
 And Destination Image,2022,4
 Arab World,2022,4
 Artificial Intelligence In,2022,4
+Cairo,2022,4
 Community Participation,2022,4
 Conservation,2022,4
 Cultural Heritage Tourism,2022,4
@@ -1342,8 +1323,10 @@ Hospitality And Tourism,2024,4
 Hotel,2024,4
 In Cultural Tourism,2024,4
 In Education,2024,4
+In Higher Education,2024,4
 In The Arab,2024,4
 Islam,2024,4
+Islamic,2024,4
 Knowledge Graph And,2024,4
 Knowledge Graphs,2024,4
 Muslim,2024,4
@@ -1385,8 +1368,6 @@ Of Tourist,2025,4
 On Tourist,2025,4
 Short Video Marketing,2025,4
 Smart Tourism Destination,2025,4
-Sports Tourism,2025,4
-The Tourism Sector,2025,4
 Tourism In Saudi,2025,4
 Tourism Short,2025,4
 Tourism Short Video,2025,4
@@ -1398,6 +1379,7 @@ Video Marketing,2025,4
 Virtual Tourism,2025,4
 保护,2025,4
 技术,2025,4
+阿拉伯,2025,4
 And Generative Ai,2026,4
 And Road Initiative,2026,4
 Cultural And Tourism,2026,4
@@ -1667,9 +1649,6 @@ The Arab World,2018,3
 The One Belt,2018,3
 Virtual Reality,2018,3
 Visitor,2018,3
- ,2019,3
-"""",2019,3
-",",2019,3
 And Destination Image,2019,3
 Arabic,2019,3
 Artistic,2019,3
@@ -1698,12 +1677,9 @@ Sustainability,2019,3
 The Maritime Silk,2019,3
 Tour,2019,3
 Tourism Policy,2019,3
-Trade,2019,3
 Unesco World,2019,3
 Unesco World Heritage,2019,3
 Virtual Reality,2019,3
-[,2019,3
-],2019,3
 中国,2019,3
 Agriculture,2020,3
 And Augmented Reality,2020,3
@@ -1725,11 +1701,13 @@ Egyptian Museum,2020,3
 Halal Tourism,2020,3
 Heritage Of,2020,3
 Heritage Sites,2020,3
+In Agriculture,2020,3
 In Sustainable,2020,3
 In Sustainable Tourism,2020,3
 Interfaith,2020,3
 Interfaith Dialogue,2020,3
 Islamic,2020,3
+Of Arabic And English,2020,3
 Of China,2020,3
 Of Dark Tourism,2020,3
 Of The Belt,2020,3
@@ -1739,25 +1717,23 @@ Online Destination,2020,3
 Policy In,2020,3
 Religious Tourism,2020,3
 Rural Tourism,2020,3
+Shawl,2020,3
 The United Arab,2020,3
+To Mecca,2020,3
 Tourism Demand,2020,3
 Tourist Destination,2020,3
+Trade,2020,3
 United Arab,2020,3
 United Arab Emirates,2020,3
 Virtual Reality And,2020,3
-ش,2020,3
-ك,2020,3
 文化旅游,2020,3
- ,2021,3
-"""",2021,3
-",",2021,3
 Agriculture,2021,3
 Arab Emirates,2021,3
 Arab Spring,2021,3
 Artificial,2021,3
 Artificial Intelligence,2021,3
+Cairo,2021,3
 Carrying Capacity,2021,3
-China And The,2021,3
 Climate,2021,3
 Climate Change,2021,3
 Conservation,2021,3
@@ -1795,15 +1771,9 @@ United Arab,2021,3
 United Arab Emirates,2021,3
 User Generated Content,2021,3
 World Heritage Sites,2021,3
-[,2021,3
-],2021,3
- ,2022,3
-"""",2022,3
-",",2022,3
 Art,2022,3
 Authenticity In Tourism,2022,3
 Blockchain Technology,2022,3
-Cairo,2022,3
 Carrying Capacity,2022,3
 Chinese Outbound Tourism,2022,3
 Community Participation In,2022,3
@@ -1814,6 +1784,7 @@ Digital Twin,2022,3
 Environmental,2022,3
 Exhibition,2022,3
 For Cultural Heritage,2022,3
+Hajj And Umrah,2022,3
 Heritage Based On,2022,3
 Heritage Diplomacy,2022,3
 Heritage Tourism In,2022,3
@@ -1831,6 +1802,7 @@ Of Machine Learning,2022,3
 Of Muslim,2022,3
 Of Rural Tourism,2022,3
 On Tourists,2022,3
+Oud Perfume,2022,3
 Policy In,2022,3
 Preservation Of,2022,3
 Silk Road And,2022,3
@@ -1844,30 +1816,11 @@ Tourism Destinations,2022,3
 Tourism On,2022,3
 Tourism Sector,2022,3
 Tourist Destination,2022,3
+University,2022,3
 Virtual Reality And,2022,3
 Visitors,2022,3
 With Machine Learning,2022,3
 World Heritage Site,2022,3
-[,2022,3
-],2022,3
-ا,2022,3
-ب,2022,3
-ة,2022,3
-ت,2022,3
-ث,2022,3
-ج,2022,3
-ح,2022,3
-د,2022,3
-ر,2022,3
-ز,2022,3
-ط,2022,3
-ع,2022,3
-ك,2022,3
-ل,2022,3
-م,2022,3
-ه,2022,3
-و,2022,3
-ي,2022,3
 Ai-Generated Content,2023,3
 And Cultural Heritage,2023,3
 Archaeological,2023,3
@@ -1946,13 +1899,11 @@ Heritage Sites,2024,3
 Hospitality Industry,2024,3
 In Heritage,2024,3
 In Heritage Tourism,2024,3
-In Higher Education,2024,3
 In Hospitality,2024,3
 In Hospitality And,2024,3
 In Sustainable,2024,3
 In The Metaverse,2024,3
 In Tourist,2024,3
-Islamic,2024,3
 Market,2024,3
 Marketing Strategies,2024,3
 Medical Tourism,2024,3
@@ -1988,9 +1939,8 @@ Urban Tourism,2024,3
 User Generated Content,2024,3
 Virtual Tourism,2024,3
 With Generative Ai,2024,3
-中国,2024,3
+伊斯兰,2024,3
 保护,2024,3
-教育,2024,3
 跨文化,2024,3
 Ai Chatbot,2025,3
 Ai-Powered,2025,3
@@ -2016,7 +1966,6 @@ Hotels,2025,3
 In Cultural Heritage,2025,3
 In Digital,2025,3
 In Smart Tourism,2025,3
-In The Arab,2025,3
 Learning Models,2025,3
 Learning-Based,2025,3
 Marketing On,2025,3
@@ -2033,10 +1982,12 @@ Regulations,2025,3
 Religious Tourism,2025,3
 Road Cultural,2025,3
 Rural Tourism,2025,3
+Sports Tourism,2025,3
 Sustainability In,2025,3
 Sustainable Tourism In,2025,3
 The Maritime Silk,2025,3
 The Tourism Industry,2025,3
+The Tourism Sector,2025,3
 Tourism And Cultural,2025,3
 Tourism Demand,2025,3
 Tourism Destination Image,2025,3
@@ -2322,6 +2273,7 @@ Tourists,2011,2
 Unesco,2011,2
 World Heritage,2011,2
 And Cultural Tourism,2012,2
+And The Environment,2012,2
 Arab Gulf,2012,2
 Arabia,2012,2
 Arabic Version,2012,2
@@ -2343,6 +2295,7 @@ Of Digital,2012,2
 Of The Arab,2012,2
 On Tourism,2012,2
 Outbound Tourism,2012,2
+Palace,2012,2
 Participation In,2012,2
 Preservation,2012,2
 Saudi Arabia,2012,2
@@ -2526,9 +2479,6 @@ Tourist Perception,2016,2
 Tourist Satisfaction,2016,2
 Tourists In,2016,2
 World Heritage And,2016,2
- ,2017,2
-"""",2017,2
-",",2017,2
 Against,2017,2
 Agriculture,2017,2
 And Destination Loyalty,2017,2
@@ -2598,8 +2548,6 @@ Urban Tourism,2017,2
 Virtual Reality And,2017,2
 Visitor,2017,2
 World Heritage Sites,2017,2
-[,2017,2
-],2017,2
 中国,2017,2
 旅游,2017,2
 And Destination Loyalty,2018,2
@@ -2675,8 +2623,12 @@ University,2018,2
 Urban Heritage,2018,2
 User Generated Content,2018,2
 World Heritage Site,2018,2
+ ,2019,2
+"""",2019,2
+",",2019,2
 Agriculture,2019,2
 Algorithmic,2019,2
+And Community Participation,2019,2
 And Interfaith Dialogue,2019,2
 And The Arab,2019,2
 Arab Emirates,2019,2
@@ -2710,10 +2662,12 @@ Exhibitions,2019,2
 Exports By Destination,2019,2
 For Cultural Heritage,2019,2
 Governance Of,2019,2
+Hajj And Umrah,2019,2
 Heritage Community,2019,2
 Heritage In The,2019,2
 Hotels,2019,2
 Image And Destination,2019,2
+In Agriculture,2019,2
 In China,2019,2
 In Cultural Heritage,2019,2
 In Museum,2019,2
@@ -2735,7 +2689,9 @@ On Destination,2019,2
 On Tourism,2019,2
 Participation In,2019,2
 Partnership,2019,2
+Pilgrim,2019,2
 Post-Conflict Tourism,2019,2
+Regulation,2019,2
 Road Cultural,2019,2
 Road To,2019,2
 Road Tourism,2019,2
@@ -2760,6 +2716,8 @@ Unesco Global Geopark,2019,2
 United Arab,2019,2
 United Arab Emirates,2019,2
 Using Machine Learning,2019,2
+[,2019,2
+],2019,2
 a,2019,2
 b,2019,2
 d,2019,2
@@ -2777,6 +2735,8 @@ u,2019,2
 Ai In,2020,2
 And Dark Tourism,2020,2
 And Event Tourism,2020,2
+And Intangible Cultural Heritage,2020,2
+And The Environment,2020,2
 Arab Gulf,2020,2
 Arab Media,2020,2
 Arab Spring,2020,2
@@ -2784,6 +2744,7 @@ Arabic Language,2020,2
 Archaeological,2020,2
 Artifacts,2020,2
 Arts,2020,2
+Caravanserai,2020,2
 Chain,2020,2
 Chains,2020,2
 China And The,2020,2
@@ -2801,6 +2762,7 @@ Digital Photogrammetry,2020,2
 Digital Technologies,2020,2
 Event Tourism,2020,2
 Exhibition,2020,2
+Fez,2020,2
 Governance,2020,2
 Heritage And Tourism,2020,2
 Heritage Conservation In,2020,2
@@ -2840,9 +2802,12 @@ Part,2020,2
 Participation,2020,2
 Participation In,2020,2
 Participatory,2020,2
+Pilgrim,2020,2
 Pilgrimage In,2020,2
 Pilgrimage Tourism,2020,2
+Pills In Dubai,2020,2
 Policy In The,2020,2
+Pottery,2020,2
 Preservation,2020,2
 Smart Tourism,2020,2
 Strategy,2020,2
@@ -2865,25 +2830,21 @@ Tourism Sites,2020,2
 Tourism Supply,2020,2
 Tourist Attractions,2020,2
 Tourists In,2020,2
-Trade,2020,2
 Unesco World,2020,2
 Unesco World Heritage,2020,2
 Visitors,2020,2
 World Heritage And,2020,2
 World Heritage Sites,2020,2
-ئ,2020,2
-ط,2020,2
-ن,2020,2
 文化传播,2020,2
 经济,2020,2
 Ai In,2021,2
 And Big Data,2021,2
+And Intangible Cultural Heritage,2021,2
 And Tourism In,2021,2
 Arab Region,2021,2
 Arab World,2021,2
 Augmented Reality,2021,2
 Blockchain Technology,2021,2
-Cairo,2021,2
 Calligraphy,2021,2
 Cruise,2021,2
 Cultural Heritage And,2021,2
@@ -2896,6 +2857,7 @@ Destination Branding,2021,2
 Destination Choice,2021,2
 Economy In,2021,2
 English-Arabic,2021,2
+Hajj And Umrah,2021,2
 Heritage As,2021,2
 Heritage In Tourism,2021,2
 Heritage Of,2021,2
@@ -2909,6 +2871,7 @@ In Smart,2021,2
 In Smart Tourism,2021,2
 In The Arab,2021,2
 International Law,2021,2
+Islamic,2021,2
 Knowledge Graphs,2021,2
 Learning-Based,2021,2
 Machine Learning And,2021,2
@@ -2959,33 +2922,12 @@ Unesco World,2021,2
 Unesco World Heritage,2021,2
 Unwto,2021,2
 Urban Tourism,2021,2
-ا,2021,2
-ب,2021,2
-ة,2021,2
-ت,2021,2
-ث,2021,2
-ج,2021,2
-ح,2021,2
-خ,2021,2
-د,2021,2
-ر,2021,2
-س,2021,2
-ص,2021,2
-ط,2021,2
-ع,2021,2
-ف,2021,2
-ق,2021,2
-ك,2021,2
-ل,2021,2
-م,2021,2
-ن,2021,2
-ه,2021,2
-و,2021,2
-ي,2021,2
 3D Digital,2022,2
 Ai-Generated,2022,2
 Air,2022,2
+And Community Participation,2022,2
 And Cultural Heritage,2022,2
+And Deep Learning,2022,2
 And Tourism Industry,2022,2
 Arab Gulf,2022,2
 Arabic Version,2022,2
@@ -3001,6 +2943,7 @@ Cultural Heritage In,2022,2
 Cultural Heritage Knowledge,2022,2
 Cultural Heritage Sites,2022,2
 Culture And Tourism,2022,2
+Dates,2022,2
 Destination Brand Equity,2022,2
 Destination Branding,2022,2
 Destination Image And,2022,2
@@ -3010,11 +2953,14 @@ Digital Law,2022,2
 Digital Technologies,2022,2
 Economy In,2022,2
 Educational Tourism,2022,2
+Effect Of Destination,2022,2
+Eid,2022,2
 Environment,2022,2
 Governance In,2022,2
 Governance Of,2022,2
 Great Silk,2022,2
 Great Silk Road,2022,2
+Hadith,2022,2
 Heritage As,2022,2
 Heritage Conservation,2022,2
 Heritage Knowledge,2022,2
@@ -3024,6 +2970,7 @@ In Education,2022,2
 In Heritage,2022,2
 In Hospitality,2022,2
 In Hospitality And,2022,2
+In Museum,2022,2
 In Smart Tourism,2022,2
 Influencer Marketing,2022,2
 International Tourism,2022,2
@@ -3031,8 +2978,10 @@ Knowledge Graph And,2022,2
 Law Policy,2022,2
 Learning Methods,2022,2
 Marketing Strategies,2022,2
+Medina,2022,2
 Museum Diplomacy,2022,2
 Muslim Religious,2022,2
+Ney,2022,2
 Of Heritage,2022,2
 Of The Belt,2022,2
 On Blockchain,2022,2
@@ -3040,8 +2989,10 @@ On Digital,2022,2
 On Machine Learning,2022,2
 On Tourism And,2022,2
 Online Destination,2022,2
+Palace,2022,2
 Part,2022,2
 Participation In Heritage,2022,2
+Pilgrim,2022,2
 Pilgrimage,2022,2
 Red Tourism,2022,2
 Religious Tourism,2022,2
@@ -3050,6 +3001,7 @@ Road Tourism,2022,2
 Small Heritage,2022,2
 Smart Destination,2022,2
 Sports Tourism,2022,2
+Taiz,2022,2
 The Circular Economy,2022,2
 The Great Silk,2022,2
 The Preservation Of,2022,2
@@ -3065,16 +3017,9 @@ Tourism Village,2022,2
 Tourist Destinations,2022,2
 Tourist Satisfaction,2022,2
 Trade,2022,2
+Tyre,2022,2
 Urban Tourism,2022,2
 World Heritage Sites,2022,2
-أ,2022,2
-ؤ,2022,2
-س,2022,2
-ش,2022,2
-ص,2022,2
-ف,2022,2
-ق,2022,2
-ن,2022,2
 教育,2022,2
 文化,2022,2
 旅游,2022,2
@@ -3184,6 +3129,7 @@ As Tourism,2024,2
 Between China And,2024,2
 Carrying Capacity,2024,2
 Chain,2024,2
+China And The,2024,2
 China-Arab,2024,2
 Climate,2024,2
 Cultural Heritage And,2024,2
@@ -3275,6 +3221,8 @@ Training,2024,2
 Video Marketing,2024,2
 Visitor,2024,2
 World Tourism,2024,2
+中国,2024,2
+教育,2024,2
 文化交流,2024,2
 游客,2024,2
 社交媒体,2024,2
@@ -3328,6 +3276,7 @@ In Hospitality,2025,2
 In Museum,2025,2
 In Rural Tourism,2025,2
 In Sustainable,2025,2
+In The Arab,2025,2
 In The Metaverse,2025,2
 In Tourism And,2025,2
 In Tourism Destination,2025,2
@@ -3345,6 +3294,7 @@ Of Ai And,2025,2
 Of Ai-Generated Content,2025,2
 Of Arab,2025,2
 Of Arabic,2025,2
+Of Arabic And English,2025,2
 Of Artificial,2025,2
 Of Artificial Intelligence,2025,2
 Of Belt,2025,2
@@ -3354,7 +3304,6 @@ Of Culture,2025,2
 Of Destination Brand,2025,2
 Of Machine Learning,2025,2
 Of The Belt,2025,2
-Of The Tourism,2025,2
 Of Tourism And,2025,2
 Of Tourists,2025,2
 Of Travel,2025,2
@@ -3402,7 +3351,6 @@ Visitors,2025,2
 可持续发展,2025,2
 地方文化,2025,2
 城市旅游,2025,2
-学习,2025,2
 文化数字化,2025,2
 旅行,2025,2
 游客满意度,2025,2
@@ -4519,20 +4467,22 @@ t,2011,1
 u,2011,1
 v,2011,1
 中国,2011,1
- ,2012,1
-"""",2012,1
-",",2012,1
 Against,2012,1
+And Community Participation,2012,1
 And Heritage Tourism,2012,1
+And Intangible Cultural Heritage,2012,1
 And The Arab,2012,1
-And The Environment,2012,1
 Application Of Digital,2012,1
+Arab Culture,2012,1
 Arab Spring,2012,1
 Archaeological,2012,1
 Archaeological Heritage,2012,1
 Arts,2012,1
 As Tourism,2012,1
 Authenticity In Tourism,2012,1
+Bamascus,2012,1
+Cairo,2012,1
+Caravanserai,2012,1
 Chinese Tourists,2012,1
 Climate,2012,1
 Climate Change,2012,1
@@ -4547,6 +4497,7 @@ Cultural Tourism In,2012,1
 Culture,2012,1
 Cultures,2012,1
 Dark Tourism In,2012,1
+Dates,2012,1
 Destination Image And,2012,1
 Digital Museum,2012,1
 Digital Preservation,2012,1
@@ -4555,11 +4506,15 @@ Domain,2012,1
 Dubai,2012,1
 Education In,2012,1
 Educational,2012,1
+Effect Of Destination,2012,1
+Eid,2012,1
 Environment,2012,1
 Environmental,2012,1
 For Cultural Heritage,2012,1
 For Sustainable Tourism,2012,1
+Hadith,2012,1
 Hajj,2012,1
+Hajj And Umrah,2012,1
 Heritage Authenticity,2012,1
 Heritage Authenticity And,2012,1
 Heritage Diplomacy,2012,1
@@ -4572,8 +4527,10 @@ Heritage Tourism And,2012,1
 Heritage Tourism In,2012,1
 Higher Education,2012,1
 Hospitality,2012,1
+In Agriculture,2012,1
 In Destination,2012,1
 In Dubai,2012,1
+In Higher Education,2012,1
 In Saudi Arabia,2012,1
 In The Tourism,2012,1
 In Travel,2012,1
@@ -4584,15 +4541,22 @@ Interfaith Dialogue,2012,1
 International Tourism,2012,1
 Islamic,2012,1
 Jakarta,2012,1
+Kuwait,2012,1
+Language Education Students,2012,1
 Local Heritage,2012,1
 Mainland,2012,1
 Mainland Chinese,2012,1
 Market,2012,1
 Markets,2012,1
+Medina,2012,1
+Mosque,2012,1
 Mountain,2012,1
 Muslim Religious,2012,1
+Muslim-Friendly,2012,1
 Najaf,2012,1
+Ney,2012,1
 North Africa,2012,1
+Of Arabic And English,2012,1
 Of China,2012,1
 Of Hajj,2012,1
 Of Heritage,2012,1
@@ -4602,18 +4566,25 @@ Of The Digital,2012,1
 Of The Tourism,2012,1
 On China,2012,1
 On The Tourism,2012,1
+Oud Perfume,2012,1
 Outbound Tourism To,2012,1
 Outbound Travel,2012,1
-Palace,2012,1
+Pilgrim,2012,1
+Pills In Dubai,2012,1
 Post Tourism,2012,1
 Preservation Of,2012,1
 Preservation Of Cultural,2012,1
 Red Tourism,2012,1
 Religious Tourism,2012,1
+Riyadh,2012,1
 Smart Cities,2012,1
+Souq,2012,1
+Standard,2012,1
 Sustainable Destination,2012,1
 Sustainable Tourism In,2012,1
+Taiz,2012,1
 The Arab Spring,2012,1
+The Sustainable Development,2012,1
 The Tourism Industry,2012,1
 Tour,2012,1
 Tourism And The,2012,1
@@ -4628,39 +4599,11 @@ Tourist Perception,2012,1
 Tourist Satisfaction,2012,1
 Trade,2012,1
 Travel And Tourism,2012,1
+Tyre,2012,1
 User Generated Content,2012,1
 Wine Tourism,2012,1
 World Heritage,2012,1
 World Heritage Site,2012,1
-[,2012,1
-],2012,1
-أ,2012,1
-ؤ,2012,1
-ئ,2012,1
-ا,2012,1
-ب,2012,1
-ة,2012,1
-ت,2012,1
-ث,2012,1
-ج,2012,1
-ح,2012,1
-خ,2012,1
-د,2012,1
-ر,2012,1
-س,2012,1
-ص,2012,1
-ط,2012,1
-ع,2012,1
-ف,2012,1
-ق,2012,1
-ك,2012,1
-ل,2012,1
-م,2012,1
-ن,2012,1
-ه,2012,1
-و,2012,1
-ى,2012,1
-ي,2012,1
 中国,2012,1
 政策,2012,1
 旅游,2012,1
@@ -5251,10 +5194,14 @@ Wine Tourism,2016,1
 World Cultural Heritage,2016,1
 文化,2016,1
 文化研究,2016,1
+ ,2017,1
+"""",2017,1
+",",2017,1
 Airbnb,2017,1
 And Augmented Reality,2017,1
 And Dark Tourism,2017,1
 And Destination Image,2017,1
+And Intangible Cultural Heritage,2017,1
 And Smart Tourism,2017,1
 And Tourism In,2017,1
 Arabic Language Education,2017,1
@@ -5409,6 +5356,8 @@ Virtual Reconstruction Of,2017,1
 Volunteer Tourism,2017,1
 War Heritage,2017,1
 Word Of Mouth,2017,1
+[,2017,1
+],2017,1
 a,2017,1
 b,2017,1
 d,2017,1
@@ -5416,30 +5365,6 @@ i,2017,1
 r,2017,1
 s,2017,1
 u,2017,1
-ا,2017,1
-ب,2017,1
-ة,2017,1
-ت,2017,1
-ث,2017,1
-ج,2017,1
-ح,2017,1
-خ,2017,1
-د,2017,1
-ر,2017,1
-ز,2017,1
-س,2017,1
-ص,2017,1
-ض,2017,1
-ط,2017,1
-ع,2017,1
-ف,2017,1
-ق,2017,1
-ك,2017,1
-ل,2017,1
-م,2017,1
-ن,2017,1
-و,2017,1
-ي,2017,1
 伊斯兰,2017,1
 博物馆,2017,1
 历史文化,2017,1
@@ -5653,10 +5578,11 @@ u,2018,1
 y,2018,1
 3D Cultural Heritage,2019,1
 Abroad,2019,1
-And Community Participation,2019,1
 And Cultural Heritage,2019,1
 And Heritage Tourism,2019,1
+And Intangible Cultural Heritage,2019,1
 And Smart Tourism,2019,1
+And The Environment,2019,1
 And The Heritage,2019,1
 And Virtual Reality,2019,1
 Arab Countries,2019,1
@@ -5674,12 +5600,14 @@ Big Data Analytics,2019,1
 Big Data In,2019,1
 Calligraphy In,2019,1
 Carrying Capacity,2019,1
+Case Study,2019,1
 Chatbot,2019,1
 China And The,2019,1
 Chinese Outbound Tourism,2019,1
 Community Engagement,2019,1
 Community Participation In,2019,1
 Conservation In,2019,1
+Conservation Of Cultural,2019,1
 Country Of Destination,2019,1
 Cruise,2019,1
 Cruise Tourism,2019,1
@@ -5687,6 +5615,7 @@ Cultural Economy,2019,1
 Cultural Heritage Through,2019,1
 Cultural Tourism Policy,2019,1
 Culture Of,2019,1
+Dates,2019,1
 Destination Brand,2019,1
 Destination Brand Equity,2019,1
 Destination Country,2019,1
@@ -5697,6 +5626,7 @@ Digital Reconstruction,2019,1
 Economy Of,2019,1
 Ecotourism,2019,1
 Educational,2019,1
+Eid,2019,1
 Emerging Heritage,2019,1
 Emerging Market,2019,1
 Environment,2019,1
@@ -5704,7 +5634,7 @@ For Sustainable Tourism,2019,1
 Google Maps,2019,1
 Governance In,2019,1
 Guideline,2019,1
-Hajj And Umrah,2019,1
+Hadith,2019,1
 Heritage And The,2019,1
 Heritage Authenticity,2019,1
 Heritage Awareness,2019,1
@@ -5716,7 +5646,7 @@ Heritage Tourism In,2019,1
 Heritage Value,2019,1
 Higher Education,2019,1
 Historic City,2019,1
-In Agriculture,2019,1
+Hotels In,2019,1
 In Destination,2019,1
 In Digital,2019,1
 In Dubai,2019,1
@@ -5730,12 +5660,15 @@ In Tourism Destination,2019,1
 Industrial Heritage,2019,1
 Islamic World,2019,1
 Jakarta,2019,1
+Jeddah,2019,1
 Journey,2019,1
 Language Education,2019,1
+Language Education Students,2019,1
 Learning Methods,2019,1
 Learning-Based,2019,1
 Machine Learning-Based,2019,1
 Mainland,2019,1
+Mainland Chinese Outbound Tourism,2019,1
 Marketing Strategies,2019,1
 Markets,2019,1
 Mecca,2019,1
@@ -5746,9 +5679,11 @@ Mountain,2019,1
 Museums,2019,1
 Music,2019,1
 Muslim Religious,2019,1
+Ney,2019,1
 North Africa,2019,1
 Object Detection,2019,1
 Of Arabic,2019,1
+Of Arabic And English,2019,1
 Of Arabic Language,2019,1
 Of Artificial,2019,1
 Of Artificial Intelligence,2019,1
@@ -5770,6 +5705,7 @@ Of The Digital,2019,1
 Of Tourism And,2019,1
 Of Tourism Destination,2019,1
 Of Tourist,2019,1
+Of Tourists,2019,1
 Of Travel,2019,1
 Of Unesco,2019,1
 Of Virtual,2019,1
@@ -5777,27 +5713,37 @@ Of Virtual Reality,2019,1
 On Destination Image,2019,1
 On Digital,2019,1
 On The Tourism,2019,1
+Oud Perfume,2019,1
 Outbound Tourism,2019,1
+Palace,2019,1
 Part,2019,1
-Pilgrim,2019,1
 Pilgrimage To,2019,1
 Pilgrimage To Mecca,2019,1
 Pilgrimage Tourism,2019,1
 Policy Coordination,2019,1
+Policy Issues,2019,1
 Political Economy,2019,1
 Recommender,2019,1
 Recommender Systems,2019,1
-Regulation,2019,1
+Responsible Tourism,2019,1
+Riyadh,2019,1
 Sharm El Sheikh,2019,1
+Site Management,2019,1
 Smart Tourism And,2019,1
 Smart Tourism Destination,2019,1
+Souq,2019,1
 Speech Recognition,2019,1
 Sport Tourism,2019,1
+Strategy Of,2019,1
 Supply Chain,2019,1
+Sustainability In The,2019,1
 Sustainable Cultural,2019,1
 Taiwan,2019,1
+Taiz,2019,1
 Temple,2019,1
 The Arab Spring,2019,1
+The Political Economy,2019,1
+The Sustainable Development,2019,1
 The United Arab,2019,1
 To Mecca,2019,1
 Tourism And Cultural,2019,1
@@ -5819,8 +5765,10 @@ Tourism Strategy,2019,1
 Tourist Destination Image,2019,1
 Tourists In,2019,1
 Travel Intention,2019,1
+Tyre,2019,1
 Umrah Pilgrimage,2019,1
 Under The Belt,2019,1
+University,2019,1
 Urban Tourism,2019,1
 User Generated Content,2019,1
 Virtual Reality In,2019,1
@@ -5836,30 +5784,6 @@ p,2019,1
 v,2019,1
 x,2019,1
 y,2019,1
-ؤ,2019,1
-ئ,2019,1
-ا,2019,1
-ب,2019,1
-ة,2019,1
-ت,2019,1
-ث,2019,1
-ج,2019,1
-ح,2019,1
-خ,2019,1
-د,2019,1
-ر,2019,1
-س,2019,1
-ص,2019,1
-ط,2019,1
-ع,2019,1
-ف,2019,1
-ق,2019,1
-ك,2019,1
-ل,2019,1
-م,2019,1
-ن,2019,1
-و,2019,1
-ي,2019,1
 传统文化,2019,1
 倡议,2019,1
 创新发展,2019,1
@@ -5870,6 +5794,7 @@ y,2019,1
 文化活动,2019,1
 游客,2019,1
 跨区域,2019,1
+Agreement,2020,1
 Ai-Enabled,2020,1
 Air,2020,1
 Airbnb,2020,1
@@ -5901,6 +5826,7 @@ Cultural Heritage Tourism,2020,1
 Cultural Tourism In,2020,1
 Cultural Tourism Policy,2020,1
 Data Forecasting,2020,1
+Dates,2020,1
 Destination Awareness,2020,1
 Destination Country,2020,1
 Destination In,2020,1
@@ -5936,7 +5862,6 @@ Great Silk,2020,1
 Great Silk Road,2020,1
 Green Event,2020,1
 Gulf Cooperation Council,2020,1
-Hajj And Umrah,2020,1
 Heritage And Cultural,2020,1
 Heritage And Sustainable,2020,1
 Heritage At,2020,1
@@ -5951,7 +5876,6 @@ Heritage Preservation,2020,1
 Heritage Tourism Sites,2020,1
 Hospitality Industry,2020,1
 Image And Destination,2020,1
-In Agriculture,2020,1
 In Ai,2020,1
 In Arab,2020,1
 In Cultural Tourism,2020,1
@@ -5968,6 +5892,7 @@ Intangible Heritage,2020,1
 International Festival,2020,1
 Islamic Art,2020,1
 Jakarta,2020,1
+Jeddah,2020,1
 Knowledge Graph,2020,1
 Kuwait,2020,1
 Learning In,2020,1
@@ -6017,15 +5942,16 @@ One Belt,2020,1
 One Belt One,2020,1
 One Road,2020,1
 Open Source Technology,2020,1
+Oud Perfume,2020,1
 Outbound Tourism,2020,1
 Participation In Heritage,2020,1
 Partnership,2020,1
 Pilgrimage To,2020,1
 Pilgrimage To Mecca,2020,1
 Post-Conflict Tourism,2020,1
-Pottery,2020,1
 Preservation Of,2020,1
 Preservation Of Cultural,2020,1
+Rebab,2020,1
 Regulation,2020,1
 Research Innovation,2020,1
 Smart City,2020,1
@@ -6047,7 +5973,6 @@ The Great Silk,2020,1
 The One Belt,2020,1
 The Tourism Sector,2020,1
 To Destination,2020,1
-To Mecca,2020,1
 To Sustainable,2020,1
 To Tourism,2020,1
 Tour,2020,1
@@ -6072,17 +5997,16 @@ Tourist Satisfaction And,2020,1
 Travel And Tourism,2020,1
 Travel Motivation,2020,1
 Travel Planning,2020,1
+Travel To,2020,1
 Umrah,2020,1
 Umrah Pilgrimage,2020,1
-University,2020,1
 Unwto,2020,1
 Urban Heritage,2020,1
 Urban Tourism,2020,1
 Using Machine Learning,2020,1
 Visitor,2020,1
 War Heritage,2020,1
-أ,2020,1
-و,2020,1
+Wide Research,2020,1
 乡村旅游,2020,1
 伊斯兰,2020,1
 可持续,2020,1
@@ -6095,11 +6019,15 @@ War Heritage,2020,1
 红色旅游,2020,1
 经济发展,2020,1
 跨文化,2020,1
+ ,2021,1
+"""",2021,1
+",",2021,1
 3D Digital,2021,1
 Abroad,2021,1
 Accessible Tourism,2021,1
 Against,2021,1
 Air,2021,1
+Al Khobar,2021,1
 Along The Silk,2021,1
 And Augmented Reality,2021,1
 And Dark Tourism,2021,1
@@ -6123,6 +6051,7 @@ As Tourist,2021,1
 Big Data Analytics,2021,1
 Built Heritage,2021,1
 By Destination,2021,1
+Caravanserai,2021,1
 Chains,2021,1
 Community-Based Tourism,2021,1
 Conservation Of,2021,1
@@ -6134,6 +6063,7 @@ Cultural Tourism Destination,2021,1
 Cultures,2021,1
 Data Forecasting,2021,1
 Database,2021,1
+Dates,2021,1
 Destination Brand Equity,2021,1
 Destination Competitiveness,2021,1
 Destination In,2021,1
@@ -6154,15 +6084,16 @@ Economy Of,2021,1
 Educational,2021,1
 Educational Tourism,2021,1
 Egyptian Museum,2021,1
+Eid,2021,1
 Emerging Research,2021,1
 Environmental Sustainability,2021,1
 Exhibition,2021,1
 Exports By Destination,2021,1
 Festival Tourism,2021,1
+Fez,2021,1
 Gcc Countries,2021,1
 Green Innovation,2021,1
 Guides,2021,1
-Hajj And Umrah,2021,1
 Health Tourism,2021,1
 Heritage And Cultural,2021,1
 Heritage And Sustainable,2021,1
@@ -6204,9 +6135,11 @@ Intercultural Dialogue,2021,1
 Interfaith,2021,1
 Interfaith Dialogue,2021,1
 International Tourism,2021,1
-Islamic,2021,1
+Jeddah,2021,1
 Journey,2021,1
 Knowledge Graph,2021,1
+Kuwait,2021,1
+Language Education Students,2021,1
 Language Learning,2021,1
 Learning In,2021,1
 Machine Learning-Based,2021,1
@@ -6219,10 +6152,15 @@ Mass Tourism,2021,1
 Medical Tourism,2021,1
 Monuments,2021,1
 Mosque,2021,1
+Mosul,2021,1
 Museum Marketing,2021,1
 Museums,2021,1
+Muslim-Friendly,2021,1
+Najaf,2021,1
 Natural Heritage,2021,1
+Ney,2021,1
 Of Ai,2021,1
+Of Arabic And English,2021,1
 Of Arabic Calligraphy,2021,1
 Of Artificial,2021,1
 Of Artificial Intelligence,2021,1
@@ -6244,14 +6182,18 @@ Of World Heritage,2021,1
 On Blockchain,2021,1
 On Destination Image,2021,1
 On Machine Learning,2021,1
+Oud Perfume,2021,1
 Overtourism,2021,1
 Participatory,2021,1
 Partnership,2021,1
+Pilgrim,2021,1
+Pills In Dubai,2021,1
 Policy Planning,2021,1
 Pottery,2021,1
 Preservation,2021,1
 Religious Tourism,2021,1
 Research In Tourism,2021,1
+Sanaa,2021,1
 School,2021,1
 Short Video Marketing,2021,1
 Silk Road Initiative,2021,1
@@ -6274,6 +6216,7 @@ The Digital Age,2021,1
 The Maritime Silk,2021,1
 The Tourism Industry,2021,1
 To Cultural Heritage,2021,1
+To Mecca,2021,1
 Tourism And Cultural,2021,1
 Tourism And Hospitality,2021,1
 Tourism And The,2021,1
@@ -6297,6 +6240,7 @@ Travel And Tourism,2021,1
 Travel Intentions,2021,1
 Travellers,2021,1
 Umrah,2021,1
+University,2021,1
 Video Marketing,2021,1
 Virtual Reality,2021,1
 Virtual Reconstruction,2021,1
@@ -6304,6 +6248,8 @@ Virtual Reconstruction Of,2021,1
 Visitor,2021,1
 World Heritage Committee,2021,1
 World Tourism,2021,1
+[,2021,1
+],2021,1
 a,2021,1
 h,2021,1
 i,2021,1
@@ -6314,13 +6260,7 @@ r,2021,1
 s,2021,1
 t,2021,1
 u,2021,1
-ء,2021,1
-أ,2021,1
-ش,2021,1
-ض,2021,1
 一带一路,2021,1
-伊斯兰,2021,1
-伊斯兰教法,2021,1
 博物馆,2021,1
 展览,2021,1
 教育,2021,1
@@ -6328,14 +6268,17 @@ u,2021,1
 社交媒体,2021,1
 美食旅游,2021,1
 阿拉伯,2021,1
+Abha,2022,1
 Accessible Tourism,2022,1
 Ai Chatbot,2022,1
 Along The Silk,2022,1
-And Deep Learning,2022,1
 And Event Tourism,2022,1
 And Heritage Tourism,2022,1
+And Intangible Cultural Heritage,2022,1
+And Interfaith Dialogue,2022,1
 And Smart Tourism,2022,1
 And The Arab,2022,1
+And The Environment,2022,1
 And Tourism In,2022,1
 And Tourism Integration,2022,1
 And Virtual Reality,2022,1
@@ -6351,6 +6294,7 @@ Authentic Culture,2022,1
 Belt One,2022,1
 Belt One Road,2022,1
 Between China And,2022,1
+Bisht,2022,1
 Calligraphy,2022,1
 Chain,2022,1
 Chinese Outbound Tourists,2022,1
@@ -6386,6 +6330,7 @@ Digital Transformation,2022,1
 Digital Twin For,2022,1
 Education In,2022,1
 Egyptian Museum,2022,1
+Embroidery,2022,1
 English-Arabic,2022,1
 Event Linking,2022,1
 Event Tourism,2022,1
@@ -6398,7 +6343,6 @@ Global Tourism,2022,1
 Global Travel,2022,1
 Green Festival,2022,1
 Gulf States,2022,1
-Hajj And Umrah,2022,1
 Heritage And Cultural,2022,1
 Heritage And The,2022,1
 Heritage And Tourism,2022,1
@@ -6417,13 +6361,13 @@ Hotel,2022,1
 Hotels,2022,1
 Hotels In,2022,1
 Image And Destination,2022,1
+In Agriculture,2022,1
 In Arabic,2022,1
 In Dark Tourism,2022,1
 In Destination,2022,1
 In Digital,2022,1
 In Dubai,2022,1
 In Heritage Tourism,2022,1
-In Museum,2022,1
 In Rural Tourism,2022,1
 In Saudi Arabia,2022,1
 In Tourism In,2022,1
@@ -6432,17 +6376,20 @@ Intangible Heritage,2022,1
 Islamic,2022,1
 Knowledge Graph Construction,2022,1
 Language Education,2022,1
+Language Education Students,2022,1
 Learning Models,2022,1
 Literary Tourism,2022,1
 Local Destination,2022,1
 Machine Learning Models,2022,1
+Mainland Chinese Outbound Tourism,2022,1
+Maqluba,2022,1
 Marketing On,2022,1
 Markets,2022,1
 Mecca,2022,1
 Media Marketing,2022,1
 Medical Tourism,2022,1
-Medina,2022,1
 Monuments,2022,1
+Mosque,2022,1
 Mountain,2022,1
 Multilingual Event,2022,1
 Music Festival,2022,1
@@ -6450,6 +6397,7 @@ New Tourism,2022,1
 North Africa,2022,1
 Object Detection,2022,1
 Of Ai,2022,1
+Of Arabic And English,2022,1
 Of Artificial,2022,1
 Of Artificial Intelligence,2022,1
 Of Augmented Reality,2022,1
@@ -6482,21 +6430,28 @@ Online Heritage,2022,1
 Online Tourism,2022,1
 Outbound Tourists,2022,1
 Overtourism,2022,1
-Palace,2022,1
 Participatory,2022,1
 Pilgrimage Tourism,2022,1
 Pilgrims,2022,1
+Pills In Dubai,2022,1
 Policy Coordination,2022,1
+Policy Issues,2022,1
+Pottery,2022,1
+Qanun,2022,1
+Quran,2022,1
+Regulation,2022,1
 Research In Tourism,2022,1
 Road To,2022,1
 Roads,2022,1
 School,2022,1
+Shawl,2022,1
 Short Video Marketing,2022,1
 Silk Road Tourism,2022,1
 Small Tourism,2022,1
 Smart Data,2022,1
 Smart Tourism Destinations,2022,1
 Social Media Marketing,2022,1
+Souq,2022,1
 Strategy Of,2022,1
 Study Of Tourism,2022,1
 Supply Chain,2022,1
@@ -6509,6 +6464,8 @@ Thailand,2022,1
 The Arab Gulf,2022,1
 The Arab Region,2022,1
 The Digital Twin,2022,1
+The Political Economy,2022,1
+The Sustainable Development,2022,1
 The United Arab,2022,1
 To Mecca,2022,1
 To Sustainable,2022,1
@@ -6531,28 +6488,23 @@ Tourist Satisfaction And,2022,1
 Traditional Culture,2022,1
 Travel And Tourism,2022,1
 Travel Intentions,2022,1
+Travel To,2022,1
 Umrah,2022,1
 Under The Belt,2022,1
 Unesco Global,2022,1
 Unesco Global Geopark,2022,1
 United Arab,2022,1
 United Arab Emirates,2022,1
-University,2022,1
 User Generated Content,2022,1
 Video Marketing,2022,1
 Visitor,2022,1
 Wellness Tourism,2022,1
 World Cultural Heritage,2022,1
 World Heritage Committee,2022,1
-ئ,2022,1
-خ,2022,1
-ظ,2022,1
 中国,2022,1
 乡村旅游,2022,1
 保护,2022,1
-大学,2022,1
 建筑,2022,1
-微信,2022,1
 技术,2022,1
 文化交流,2022,1
 贸易,2022,1
@@ -6815,6 +6767,7 @@ Along The Silk,2024,1
 Ancient City,2024,1
 And Destination Loyalty,2024,1
 And Event Tourism,2024,1
+And Interfaith Dialogue,2024,1
 And Tourism In,2024,1
 And Tourism Industry,2024,1
 Arab Countries,2024,1
@@ -6832,7 +6785,6 @@ Arts,2024,1
 Belt One,2024,1
 Belt One Road,2024,1
 Calligraphy,2024,1
-China And The,2024,1
 Chinese Tourists,2024,1
 City Branding,2024,1
 Community Engagement,2024,1
@@ -6888,6 +6840,7 @@ Heritage Tourism In,2024,1
 Heritage Tourism Sites,2024,1
 Historic City,2024,1
 Hotels In,2024,1
+In Agriculture,2024,1
 In Ai,2024,1
 In Dark Tourism,2024,1
 In Destination,2024,1
@@ -6910,6 +6863,7 @@ Marketing Strategies For,2024,1
 Markets,2024,1
 Modern Tourism,2024,1
 Monuments,2024,1
+Mosque,2024,1
 Music,2024,1
 Muslim Religious,2024,1
 Natural Heritage,2024,1
@@ -7010,9 +6964,6 @@ World Heritage Site,2024,1
 穆斯林,2024,1
 红色旅游,2024,1
 阿拉伯,2024,1
- ,2025,1
-"""",2025,1
-",",2025,1
 Adventure Tourism,2025,1
 Against,2025,1
 Agriculture,2025,1
@@ -7040,6 +6991,8 @@ Authenticity In Tourism,2025,1
 Big Data Analytics,2025,1
 Booking,2025,1
 Calligraphy,2025,1
+Case Study,2025,1
+China And The,2025,1
 Chinese Outbound Tourists,2025,1
 Chinese Tourists,2025,1
 Circular Economy,2025,1
@@ -7111,6 +7064,7 @@ Heritage Sector,2025,1
 Historic Tourism,2025,1
 Hospitality And Tourism,2025,1
 Image And Destination,2025,1
+In Agriculture,2025,1
 In Arab,2025,1
 In Arabic,2025,1
 In Arabic Language,2025,1
@@ -7139,6 +7093,7 @@ Local Heritage,2025,1
 Local Tourism,2025,1
 Machine Learning For,2025,1
 Machine Translation,2025,1
+Mainland Chinese Outbound Tourism,2025,1
 Market Forecasting,2025,1
 Marketing Strategies For,2025,1
 Markets,2025,1
@@ -7159,6 +7114,7 @@ Of Muslim,2025,1
 Of Religious Tourism,2025,1
 Of Rural Tourism,2025,1
 Of Sustainable,2025,1
+Of The Tourism,2025,1
 Of Tourism In,2025,1
 Of Tourist Destination,2025,1
 Of World Heritage,2025,1
@@ -7184,6 +7140,7 @@ Research In Tourism,2025,1
 Research On Tourism,2025,1
 Responsible Data,2025,1
 Responsible Tourism,2025,1
+Riyadh,2025,1
 Road Tourism,2025,1
 Roads,2025,1
 Service Marketing,2025,1
@@ -7202,8 +7159,8 @@ Sustainability Of,2025,1
 Sustainable Destination,2025,1
 Sustainable Destination Planning,2025,1
 Taiwan,2025,1
-The Arab World,2025,1
 The Silk Road,2025,1
+The Sustainable Development,2025,1
 The United Arab,2025,1
 To Tourism,2025,1
 Tourism An,2025,1
@@ -7248,32 +7205,6 @@ Wine Tourism,2025,1
 With Generative Ai,2025,1
 World Tourism,2025,1
 World Tourism Organization,2025,1
-[,2025,1
-],2025,1
-أ,2025,1
-ئ,2025,1
-ا,2025,1
-ب,2025,1
-ة,2025,1
-ت,2025,1
-ث,2025,1
-ج,2025,1
-ح,2025,1
-د,2025,1
-ر,2025,1
-ز,2025,1
-ش,2025,1
-ص,2025,1
-ط,2025,1
-ع,2025,1
-ف,2025,1
-ق,2025,1
-ك,2025,1
-ل,2025,1
-م,2025,1
-ن,2025,1
-و,2025,1
-ي,2025,1
 书法,2025,1
 产业发展,2025,1
 产业数字化,2025,1
@@ -7282,6 +7213,7 @@ World Tourism Organization,2025,1
 城市管理,2025,1
 大城市,2025,1
 大数据,2025,1
+学习,2025,1
 市场,2025,1
 市场发展,2025,1
 技术管理,2025,1

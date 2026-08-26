@@ -3,9 +3,9 @@
   "file": "graph_snapshot_20260827.json",
   "generated_at": "2026-08-27",
   "generated_by": "build_snapshot_20260827.py（复刻 rebuild_neo4j.py 聚合口径；计数取 Neo4j 实测）",
-  "source": "本地 Neo4j 图库（2026-08-26 全量重建：B1主表12233含56篇补录+27条language=ar）",
+  "source": "本地 Neo4j 图库（2026-08-26 19:01 合并后重建：topic_assignments SHA 6bb109f6，B1主表12233含56篇补录+27条language=ar）",
   "purpose": "给 GitHub/Manus 读图用；仅聚合层",
-  "change_note": "相对 20260821_v2：同数据源重建产物，计数取重建后实测（Paper 12233/Topic 1174/关系 114473）",
+  "change_note": "相对上版：阿语碎片修复合并后重建（Topic 1174→1168、HAS_TOPIC 29841→29639、BEL_DOM 17270→17250、关系 114473→114845、非文旅 3524→3526）",
   "rules": [
    "不含全文 PDF/正文文本",
    "不含作者个人字段（Author 节点仅计数，不导明细）",
@@ -13,14 +13,14 @@
    "同一篇内重复主题词已去重（set），与 HAS_TOPIC 关系数一致"
   ],
   "counts_verify": {
-   "HAS_TOPIC_复刻": 29841,
-   "HAS_TOPIC_实测": 29841,
-   "year_topic_有效和": 25697,
-   "year_topic_无效年份边": 4144,
-   "Topic_复刻": 1174,
-   "Topic_实测": 1174,
-   "Domain_复刻": 27,
-   "Domain_实测": 27,
+   "HAS_TOPIC_复刻": 29639,
+   "HAS_TOPIC_实测": 29639,
+   "year_topic_有效和": 25503,
+   "year_topic_无效年份边": 4136,
+   "Topic_复刻": 1168,
+   "Topic_实测": 1168,
+   "Domain_复刻": 26,
+   "Domain_实测": 26,
    "Year_复刻": 84,
    "Year_实测": 84,
    "Paper_实测": 12233
@@ -31,20 +31,20 @@
   "Paper": 12233,
   "Venue": 4312,
   "Year": 84,
-  "Topic": 1174,
-  "Domain": 27
+  "Topic": 1168,
+  "Domain": 26
  },
- "node_total": 32442,
+ "node_total": 32435,
  "edge_counts": {
   "AUTHORED": 19709,
   "PUBLISHED_IN": 12233,
   "PUBLISHED_IN_YEAR": 11106,
-  "BELONGS_TO_DOMAIN": 17270,
-  "HAS_TOPIC": 29841,
-  "SNAPSHOT": 7535,
-  "CO_OCCURS_WITH": 16779
+  "BELONGS_TO_DOMAIN": 17250,
+  "HAS_TOPIC": 29639,
+  "SNAPSHOT": 7467,
+  "CO_OCCURS_WITH": 17441
  },
- "edge_total": 114473,
+ "edge_total": 114845,
  "isolated_nodes": 0,
  "nodes": {
   "Paper": [
@@ -49055,6 +49055,9 @@
     "name": "Al Ahsa"
    },
    {
+    "name": "Al Khobar"
+   },
+   {
     "name": "Alexandria University"
    },
    {
@@ -49101,6 +49104,9 @@
    },
    {
     "name": "And Heritage Tourism"
+   },
+   {
+    "name": "And Intangible Cultural Heritage"
    },
    {
     "name": "And Interfaith Dialogue"
@@ -49286,6 +49292,9 @@
     "name": "Bahrain"
    },
    {
+    "name": "Bamascus"
+   },
+   {
     "name": "Bedouin"
    },
    {
@@ -49314,6 +49323,9 @@
    },
    {
     "name": "Bio Economy"
+   },
+   {
+    "name": "Bisht"
    },
    {
     "name": "Blockchain"
@@ -49349,7 +49361,13 @@
     "name": "Calligraphy In"
    },
    {
+    "name": "Caravanserai"
+   },
+   {
     "name": "Carrying Capacity"
+   },
+   {
+    "name": "Case Study"
    },
    {
     "name": "Chain"
@@ -49610,6 +49628,9 @@
     "name": "Dataset"
    },
    {
+    "name": "Dates"
+   },
+   {
     "name": "Deep Learning"
    },
    {
@@ -49835,6 +49856,9 @@
     "name": "Educational Tourism"
    },
    {
+    "name": "Effect Of Destination"
+   },
+   {
     "name": "Egyptian Museum"
    },
    {
@@ -50040,6 +50064,9 @@
    },
    {
     "name": "Gulf States"
+   },
+   {
+    "name": "Hadith"
    },
    {
     "name": "Hajj"
@@ -50621,6 +50648,12 @@
     "name": "Mainland Chinese Outbound"
    },
    {
+    "name": "Mainland Chinese Outbound Tourism"
+   },
+   {
+    "name": "Maqluba"
+   },
+   {
     "name": "Maritime Silk"
    },
    {
@@ -50705,6 +50738,9 @@
     "name": "Mosque"
    },
    {
+    "name": "Mosul"
+   },
+   {
     "name": "Mountain"
    },
    {
@@ -50777,6 +50813,9 @@
     "name": "New Tourism"
    },
    {
+    "name": "Ney"
+   },
+   {
     "name": "Nft"
    },
    {
@@ -50805,6 +50844,9 @@
    },
    {
     "name": "Of Arabic And"
+   },
+   {
+    "name": "Of Arabic And English"
    },
    {
     "name": "Of Arabic Calligraphy"
@@ -51059,6 +51101,9 @@
     "name": "Open Source Technology"
    },
    {
+    "name": "Oud Perfume"
+   },
+   {
     "name": "Outbound Tourism"
    },
    {
@@ -51143,6 +51188,9 @@
     "name": "Policy In The"
    },
    {
+    "name": "Policy Issues"
+   },
+   {
     "name": "Policy On"
    },
    {
@@ -51182,10 +51230,19 @@
     "name": "Public Policy"
    },
    {
+    "name": "Qanun"
+   },
+   {
     "name": "Qualitative Research"
    },
    {
     "name": "Quantitative Research"
+   },
+   {
+    "name": "Quran"
+   },
+   {
+    "name": "Rebab"
    },
    {
     "name": "Recommender"
@@ -51269,6 +51326,9 @@
     "name": "Rural Tourism"
    },
    {
+    "name": "Sanaa"
+   },
+   {
     "name": "Saudi Arabia"
    },
    {
@@ -51285,6 +51345,9 @@
    },
    {
     "name": "Sharm El Sheikh"
+   },
+   {
+    "name": "Shawl"
    },
    {
     "name": "Short Video Marketing"
@@ -51309,6 +51372,9 @@
    },
    {
     "name": "Site Conservation"
+   },
+   {
+    "name": "Site Management"
    },
    {
     "name": "Slow Tourism"
@@ -51374,6 +51440,9 @@
     "name": "Social Media Tourism"
    },
    {
+    "name": "Souq"
+   },
+   {
     "name": "Spain"
    },
    {
@@ -51384,6 +51453,9 @@
    },
    {
     "name": "Sports Tourism"
+   },
+   {
+    "name": "Standard"
    },
    {
     "name": "Strategy"
@@ -51458,6 +51530,9 @@
     "name": "Taiwan"
    },
    {
+    "name": "Taiz"
+   },
+   {
     "name": "Temple"
    },
    {
@@ -51525,6 +51600,9 @@
    },
    {
     "name": "The Silk Road"
+   },
+   {
+    "name": "The Sustainable Development"
    },
    {
     "name": "The Tourism Industry"
@@ -51854,6 +51932,9 @@
     "name": "Tripoli Lebanon"
    },
    {
+    "name": "Tyre"
+   },
+   {
     "name": "Umrah"
    },
    {
@@ -51948,6 +52029,9 @@
    },
    {
     "name": "Wellness Tourism"
+   },
+   {
+    "name": "Wide Research"
    },
    {
     "name": "Wine Tourism"
@@ -52058,102 +52142,6 @@
     "name": "y"
    },
    {
-    "name": "ء"
-   },
-   {
-    "name": "أ"
-   },
-   {
-    "name": "ؤ"
-   },
-   {
-    "name": "ئ"
-   },
-   {
-    "name": "ا"
-   },
-   {
-    "name": "ب"
-   },
-   {
-    "name": "ة"
-   },
-   {
-    "name": "ت"
-   },
-   {
-    "name": "ث"
-   },
-   {
-    "name": "ج"
-   },
-   {
-    "name": "ح"
-   },
-   {
-    "name": "خ"
-   },
-   {
-    "name": "د"
-   },
-   {
-    "name": "ر"
-   },
-   {
-    "name": "ز"
-   },
-   {
-    "name": "س"
-   },
-   {
-    "name": "ش"
-   },
-   {
-    "name": "ص"
-   },
-   {
-    "name": "ض"
-   },
-   {
-    "name": "ط"
-   },
-   {
-    "name": "ظ"
-   },
-   {
-    "name": "ع"
-   },
-   {
-    "name": "ف"
-   },
-   {
-    "name": "ق"
-   },
-   {
-    "name": "ك"
-   },
-   {
-    "name": "ل"
-   },
-   {
-    "name": "م"
-   },
-   {
-    "name": "ن"
-   },
-   {
-    "name": "ه"
-   },
-   {
-    "name": "و"
-   },
-   {
-    "name": "ى"
-   },
-   {
-    "name": "ي"
-   },
-   {
     "name": "一带一路"
    },
    {
@@ -52179,9 +52167,6 @@
    },
    {
     "name": "伊斯兰"
-   },
-   {
-    "name": "伊斯兰教法"
    },
    {
     "name": "传统文化"
@@ -52269,9 +52254,6 @@
    },
    {
     "name": "建筑"
-   },
-   {
-    "name": "微信"
    },
    {
     "name": "战略"
@@ -52830,9 +52812,6 @@
     "name": "经济贸易"
    },
    {
-    "name": "语"
-   },
-   {
     "name": "阿"
    },
    {
@@ -52854,12 +52833,12 @@
  "topic_year_heat": [
   {
    "topic": "Tourism",
-   "year": 2025,
-   "count": 285
+   "year": 2024,
+   "count": 284
   },
   {
    "topic": "Tourism",
-   "year": 2024,
+   "year": 2025,
    "count": 284
   },
   {
@@ -53228,11 +53207,6 @@
    "count": 30
   },
   {
-   "topic": "中国",
-   "year": 2025,
-   "count": 30
-  },
-  {
    "topic": "Sustainable",
    "year": 2026,
    "count": 30
@@ -53245,6 +53219,11 @@
   {
    "topic": "Arab",
    "year": 2020,
+   "count": 29
+  },
+  {
+   "topic": "中国",
+   "year": 2025,
    "count": 29
   },
   {
@@ -54528,17 +54507,7 @@
    "count": 12
   },
   {
-   "topic": "文化",
-   "year": 2024,
-   "count": 12
-  },
-  {
    "topic": "Ai In",
-   "year": 2025,
-   "count": 12
-  },
-  {
-   "topic": "Arab",
    "year": 2025,
    "count": 12
   },
@@ -54745,6 +54714,16 @@
   {
    "topic": "Virtual Reality",
    "year": 2024,
+   "count": 11
+  },
+  {
+   "topic": "文化",
+   "year": 2024,
+   "count": 11
+  },
+  {
+   "topic": "Arab",
+   "year": 2025,
    "count": 11
   },
   {
@@ -56383,11 +56362,6 @@
    "count": 7
   },
   {
-   "topic": "Tourism Sector",
-   "year": 2025,
-   "count": 7
-  },
-  {
    "topic": "经济",
    "year": 2025,
    "count": 7
@@ -57078,6 +57052,11 @@
    "count": 6
   },
   {
+   "topic": "Tourism Sector",
+   "year": 2025,
+   "count": 6
+  },
+  {
    "topic": "乡村旅游",
    "year": 2025,
    "count": 6
@@ -57319,6 +57298,11 @@
   },
   {
    "topic": "Tourist",
+   "year": 2012,
+   "count": 5
+  },
+  {
+   "topic": "University",
    "year": 2012,
    "count": 5
   },
@@ -57738,11 +57722,6 @@
    "count": 5
   },
   {
-   "topic": "中国",
-   "year": 2021,
-   "count": 5
-  },
-  {
    "topic": "Arabia",
    "year": 2022,
    "count": 5
@@ -57963,11 +57942,6 @@
    "count": 5
   },
   {
-   "topic": "伊斯兰",
-   "year": 2024,
-   "count": 5
-  },
-  {
    "topic": "Ai-Driven",
    "year": 2025,
    "count": 5
@@ -58104,11 +58078,6 @@
   },
   {
    "topic": "数据",
-   "year": 2025,
-   "count": 5
-  },
-  {
-   "topic": "阿拉伯",
    "year": 2025,
    "count": 5
   },
@@ -58424,11 +58393,6 @@
   },
   {
    "topic": "United Arab Emirates",
-   "year": 2012,
-   "count": 4
-  },
-  {
-   "topic": "University",
    "year": 2012,
    "count": 4
   },
@@ -58853,6 +58817,11 @@
    "count": 4
   },
   {
+   "topic": "Trade",
+   "year": 2019,
+   "count": 4
+  },
+  {
    "topic": "Virtual",
    "year": 2019,
    "count": 4
@@ -58860,21 +58829,6 @@
   {
    "topic": "阿拉伯",
    "year": 2019,
-   "count": 4
-  },
-  {
-   "topic": " ",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "\"",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": ",",
-   "year": 2020,
    "count": 4
   },
   {
@@ -58899,6 +58853,11 @@
   },
   {
    "topic": "Hajj",
+   "year": 2020,
+   "count": 4
+  },
+  {
+   "topic": "Hajj And Umrah",
    "year": 2020,
    "count": 4
   },
@@ -58953,102 +58912,12 @@
    "count": 4
   },
   {
+   "topic": "University",
+   "year": 2020,
+   "count": 4
+  },
+  {
    "topic": "Virtual Reality",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "[",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "]",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ا",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ب",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ة",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ت",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ث",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ج",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ح",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "خ",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "د",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ر",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "س",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ع",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ف",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ق",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ل",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "م",
-   "year": 2020,
-   "count": 4
-  },
-  {
-   "topic": "ي",
    "year": 2020,
    "count": 4
   },
@@ -59074,6 +58943,11 @@
   },
   {
    "topic": "Chain",
+   "year": 2021,
+   "count": 4
+  },
+  {
+   "topic": "China And The",
    "year": 2021,
    "count": 4
   },
@@ -59153,6 +59027,11 @@
    "count": 4
   },
   {
+   "topic": "中国",
+   "year": 2021,
+   "count": 4
+  },
+  {
    "topic": "旅游",
    "year": 2021,
    "count": 4
@@ -59169,6 +59048,11 @@
   },
   {
    "topic": "Artificial Intelligence In",
+   "year": 2022,
+   "count": 4
+  },
+  {
+   "topic": "Cairo",
    "year": 2022,
    "count": 4
   },
@@ -59568,12 +59452,22 @@
    "count": 4
   },
   {
+   "topic": "In Higher Education",
+   "year": 2024,
+   "count": 4
+  },
+  {
    "topic": "In The Arab",
    "year": 2024,
    "count": 4
   },
   {
    "topic": "Islam",
+   "year": 2024,
+   "count": 4
+  },
+  {
+   "topic": "Islamic",
    "year": 2024,
    "count": 4
   },
@@ -59783,16 +59677,6 @@
    "count": 4
   },
   {
-   "topic": "Sports Tourism",
-   "year": 2025,
-   "count": 4
-  },
-  {
-   "topic": "The Tourism Sector",
-   "year": 2025,
-   "count": 4
-  },
-  {
    "topic": "Tourism In Saudi",
    "year": 2025,
    "count": 4
@@ -59844,6 +59728,11 @@
   },
   {
    "topic": "技术",
+   "year": 2025,
+   "count": 4
+  },
+  {
+   "topic": "阿拉伯",
    "year": 2025,
    "count": 4
   },
@@ -61193,21 +61082,6 @@
    "count": 3
   },
   {
-   "topic": " ",
-   "year": 2019,
-   "count": 3
-  },
-  {
-   "topic": "\"",
-   "year": 2019,
-   "count": 3
-  },
-  {
-   "topic": ",",
-   "year": 2019,
-   "count": 3
-  },
-  {
    "topic": "And Destination Image",
    "year": 2019,
    "count": 3
@@ -61348,11 +61222,6 @@
    "count": 3
   },
   {
-   "topic": "Trade",
-   "year": 2019,
-   "count": 3
-  },
-  {
    "topic": "Unesco World",
    "year": 2019,
    "count": 3
@@ -61364,16 +61233,6 @@
   },
   {
    "topic": "Virtual Reality",
-   "year": 2019,
-   "count": 3
-  },
-  {
-   "topic": "[",
-   "year": 2019,
-   "count": 3
-  },
-  {
-   "topic": "]",
    "year": 2019,
    "count": 3
   },
@@ -61483,6 +61342,11 @@
    "count": 3
   },
   {
+   "topic": "In Agriculture",
+   "year": 2020,
+   "count": 3
+  },
+  {
    "topic": "In Sustainable",
    "year": 2020,
    "count": 3
@@ -61504,6 +61368,11 @@
   },
   {
    "topic": "Islamic",
+   "year": 2020,
+   "count": 3
+  },
+  {
+   "topic": "Of Arabic And English",
    "year": 2020,
    "count": 3
   },
@@ -61553,7 +61422,17 @@
    "count": 3
   },
   {
+   "topic": "Shawl",
+   "year": 2020,
+   "count": 3
+  },
+  {
    "topic": "The United Arab",
+   "year": 2020,
+   "count": 3
+  },
+  {
+   "topic": "To Mecca",
    "year": 2020,
    "count": 3
   },
@@ -61564,6 +61443,11 @@
   },
   {
    "topic": "Tourist Destination",
+   "year": 2020,
+   "count": 3
+  },
+  {
+   "topic": "Trade",
    "year": 2020,
    "count": 3
   },
@@ -61583,33 +61467,8 @@
    "count": 3
   },
   {
-   "topic": "ش",
-   "year": 2020,
-   "count": 3
-  },
-  {
-   "topic": "ك",
-   "year": 2020,
-   "count": 3
-  },
-  {
    "topic": "文化旅游",
    "year": 2020,
-   "count": 3
-  },
-  {
-   "topic": " ",
-   "year": 2021,
-   "count": 3
-  },
-  {
-   "topic": "\"",
-   "year": 2021,
-   "count": 3
-  },
-  {
-   "topic": ",",
-   "year": 2021,
    "count": 3
   },
   {
@@ -61638,12 +61497,12 @@
    "count": 3
   },
   {
-   "topic": "Carrying Capacity",
+   "topic": "Cairo",
    "year": 2021,
    "count": 3
   },
   {
-   "topic": "China And The",
+   "topic": "Carrying Capacity",
    "year": 2021,
    "count": 3
   },
@@ -61833,31 +61692,6 @@
    "count": 3
   },
   {
-   "topic": "[",
-   "year": 2021,
-   "count": 3
-  },
-  {
-   "topic": "]",
-   "year": 2021,
-   "count": 3
-  },
-  {
-   "topic": " ",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "\"",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": ",",
-   "year": 2022,
-   "count": 3
-  },
-  {
    "topic": "Art",
    "year": 2022,
    "count": 3
@@ -61869,11 +61703,6 @@
   },
   {
    "topic": "Blockchain Technology",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "Cairo",
    "year": 2022,
    "count": 3
   },
@@ -61924,6 +61753,11 @@
   },
   {
    "topic": "For Cultural Heritage",
+   "year": 2022,
+   "count": 3
+  },
+  {
+   "topic": "Hajj And Umrah",
    "year": 2022,
    "count": 3
   },
@@ -62013,6 +61847,11 @@
    "count": 3
   },
   {
+   "topic": "Oud Perfume",
+   "year": 2022,
+   "count": 3
+  },
+  {
    "topic": "Policy In",
    "year": 2022,
    "count": 3
@@ -62078,6 +61917,11 @@
    "count": 3
   },
   {
+   "topic": "University",
+   "year": 2022,
+   "count": 3
+  },
+  {
    "topic": "Virtual Reality And",
    "year": 2022,
    "count": 3
@@ -62094,106 +61938,6 @@
   },
   {
    "topic": "World Heritage Site",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "[",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "]",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ا",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ب",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ة",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ت",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ث",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ج",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ح",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "د",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ر",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ز",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ط",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ع",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ك",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ل",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "م",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ه",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "و",
-   "year": 2022,
-   "count": 3
-  },
-  {
-   "topic": "ي",
    "year": 2022,
    "count": 3
   },
@@ -62588,11 +62332,6 @@
    "count": 3
   },
   {
-   "topic": "In Higher Education",
-   "year": 2024,
-   "count": 3
-  },
-  {
    "topic": "In Hospitality",
    "year": 2024,
    "count": 3
@@ -62614,11 +62353,6 @@
   },
   {
    "topic": "In Tourist",
-   "year": 2024,
-   "count": 3
-  },
-  {
-   "topic": "Islamic",
    "year": 2024,
    "count": 3
   },
@@ -62798,17 +62532,12 @@
    "count": 3
   },
   {
-   "topic": "中国",
+   "topic": "伊斯兰",
    "year": 2024,
    "count": 3
   },
   {
    "topic": "保护",
-   "year": 2024,
-   "count": 3
-  },
-  {
-   "topic": "教育",
    "year": 2024,
    "count": 3
   },
@@ -62938,11 +62667,6 @@
    "count": 3
   },
   {
-   "topic": "In The Arab",
-   "year": 2025,
-   "count": 3
-  },
-  {
    "topic": "Learning Models",
    "year": 2025,
    "count": 3
@@ -63023,6 +62747,11 @@
    "count": 3
   },
   {
+   "topic": "Sports Tourism",
+   "year": 2025,
+   "count": 3
+  },
+  {
    "topic": "Sustainability In",
    "year": 2025,
    "count": 3
@@ -63039,6 +62768,11 @@
   },
   {
    "topic": "The Tourism Industry",
+   "year": 2025,
+   "count": 3
+  },
+  {
+   "topic": "The Tourism Sector",
    "year": 2025,
    "count": 3
   },
@@ -64468,6 +64202,11 @@
    "count": 2
   },
   {
+   "topic": "And The Environment",
+   "year": 2012,
+   "count": 2
+  },
+  {
    "topic": "Arab Gulf",
    "year": 2012,
    "count": 2
@@ -64569,6 +64308,11 @@
   },
   {
    "topic": "Outbound Tourism",
+   "year": 2012,
+   "count": 2
+  },
+  {
+   "topic": "Palace",
    "year": 2012,
    "count": 2
   },
@@ -65488,21 +65232,6 @@
    "count": 2
   },
   {
-   "topic": " ",
-   "year": 2017,
-   "count": 2
-  },
-  {
-   "topic": "\"",
-   "year": 2017,
-   "count": 2
-  },
-  {
-   "topic": ",",
-   "year": 2017,
-   "count": 2
-  },
-  {
    "topic": "Against",
    "year": 2017,
    "count": 2
@@ -65844,16 +65573,6 @@
   },
   {
    "topic": "World Heritage Sites",
-   "year": 2017,
-   "count": 2
-  },
-  {
-   "topic": "[",
-   "year": 2017,
-   "count": 2
-  },
-  {
-   "topic": "]",
    "year": 2017,
    "count": 2
   },
@@ -66233,12 +65952,32 @@
    "count": 2
   },
   {
+   "topic": " ",
+   "year": 2019,
+   "count": 2
+  },
+  {
+   "topic": "\"",
+   "year": 2019,
+   "count": 2
+  },
+  {
+   "topic": ",",
+   "year": 2019,
+   "count": 2
+  },
+  {
    "topic": "Agriculture",
    "year": 2019,
    "count": 2
   },
   {
    "topic": "Algorithmic",
+   "year": 2019,
+   "count": 2
+  },
+  {
+   "topic": "And Community Participation",
    "year": 2019,
    "count": 2
   },
@@ -66408,6 +66147,11 @@
    "count": 2
   },
   {
+   "topic": "Hajj And Umrah",
+   "year": 2019,
+   "count": 2
+  },
+  {
    "topic": "Heritage Community",
    "year": 2019,
    "count": 2
@@ -66424,6 +66168,11 @@
   },
   {
    "topic": "Image And Destination",
+   "year": 2019,
+   "count": 2
+  },
+  {
+   "topic": "In Agriculture",
    "year": 2019,
    "count": 2
   },
@@ -66533,7 +66282,17 @@
    "count": 2
   },
   {
+   "topic": "Pilgrim",
+   "year": 2019,
+   "count": 2
+  },
+  {
    "topic": "Post-Conflict Tourism",
+   "year": 2019,
+   "count": 2
+  },
+  {
+   "topic": "Regulation",
    "year": 2019,
    "count": 2
   },
@@ -66658,6 +66417,16 @@
    "count": 2
   },
   {
+   "topic": "[",
+   "year": 2019,
+   "count": 2
+  },
+  {
+   "topic": "]",
+   "year": 2019,
+   "count": 2
+  },
+  {
    "topic": "a",
    "year": 2019,
    "count": 2
@@ -66743,6 +66512,16 @@
    "count": 2
   },
   {
+   "topic": "And Intangible Cultural Heritage",
+   "year": 2020,
+   "count": 2
+  },
+  {
+   "topic": "And The Environment",
+   "year": 2020,
+   "count": 2
+  },
+  {
    "topic": "Arab Gulf",
    "year": 2020,
    "count": 2
@@ -66774,6 +66553,11 @@
   },
   {
    "topic": "Arts",
+   "year": 2020,
+   "count": 2
+  },
+  {
+   "topic": "Caravanserai",
    "year": 2020,
    "count": 2
   },
@@ -66859,6 +66643,11 @@
   },
   {
    "topic": "Exhibition",
+   "year": 2020,
+   "count": 2
+  },
+  {
+   "topic": "Fez",
    "year": 2020,
    "count": 2
   },
@@ -67058,6 +66847,11 @@
    "count": 2
   },
   {
+   "topic": "Pilgrim",
+   "year": 2020,
+   "count": 2
+  },
+  {
    "topic": "Pilgrimage In",
    "year": 2020,
    "count": 2
@@ -67068,7 +66862,17 @@
    "count": 2
   },
   {
+   "topic": "Pills In Dubai",
+   "year": 2020,
+   "count": 2
+  },
+  {
    "topic": "Policy In The",
+   "year": 2020,
+   "count": 2
+  },
+  {
+   "topic": "Pottery",
    "year": 2020,
    "count": 2
   },
@@ -67183,11 +66987,6 @@
    "count": 2
   },
   {
-   "topic": "Trade",
-   "year": 2020,
-   "count": 2
-  },
-  {
    "topic": "Unesco World",
    "year": 2020,
    "count": 2
@@ -67213,21 +67012,6 @@
    "count": 2
   },
   {
-   "topic": "ئ",
-   "year": 2020,
-   "count": 2
-  },
-  {
-   "topic": "ط",
-   "year": 2020,
-   "count": 2
-  },
-  {
-   "topic": "ن",
-   "year": 2020,
-   "count": 2
-  },
-  {
    "topic": "文化传播",
    "year": 2020,
    "count": 2
@@ -67244,6 +67028,11 @@
   },
   {
    "topic": "And Big Data",
+   "year": 2021,
+   "count": 2
+  },
+  {
+   "topic": "And Intangible Cultural Heritage",
    "year": 2021,
    "count": 2
   },
@@ -67269,11 +67058,6 @@
   },
   {
    "topic": "Blockchain Technology",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "Cairo",
    "year": 2021,
    "count": 2
   },
@@ -67334,6 +67118,11 @@
   },
   {
    "topic": "English-Arabic",
+   "year": 2021,
+   "count": 2
+  },
+  {
+   "topic": "Hajj And Umrah",
    "year": 2021,
    "count": 2
   },
@@ -67399,6 +67188,11 @@
   },
   {
    "topic": "International Law",
+   "year": 2021,
+   "count": 2
+  },
+  {
+   "topic": "Islamic",
    "year": 2021,
    "count": 2
   },
@@ -67653,121 +67447,6 @@
    "count": 2
   },
   {
-   "topic": "ا",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ب",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ة",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ت",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ث",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ج",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ح",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "خ",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "د",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ر",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "س",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ص",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ط",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ع",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ف",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ق",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ك",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ل",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "م",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ن",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ه",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "و",
-   "year": 2021,
-   "count": 2
-  },
-  {
-   "topic": "ي",
-   "year": 2021,
-   "count": 2
-  },
-  {
    "topic": "3D Digital",
    "year": 2022,
    "count": 2
@@ -67783,7 +67462,17 @@
    "count": 2
   },
   {
+   "topic": "And Community Participation",
+   "year": 2022,
+   "count": 2
+  },
+  {
    "topic": "And Cultural Heritage",
+   "year": 2022,
+   "count": 2
+  },
+  {
+   "topic": "And Deep Learning",
    "year": 2022,
    "count": 2
   },
@@ -67863,6 +67552,11 @@
    "count": 2
   },
   {
+   "topic": "Dates",
+   "year": 2022,
+   "count": 2
+  },
+  {
    "topic": "Destination Brand Equity",
    "year": 2022,
    "count": 2
@@ -67908,6 +67602,16 @@
    "count": 2
   },
   {
+   "topic": "Effect Of Destination",
+   "year": 2022,
+   "count": 2
+  },
+  {
+   "topic": "Eid",
+   "year": 2022,
+   "count": 2
+  },
+  {
    "topic": "Environment",
    "year": 2022,
    "count": 2
@@ -67929,6 +67633,11 @@
   },
   {
    "topic": "Great Silk Road",
+   "year": 2022,
+   "count": 2
+  },
+  {
+   "topic": "Hadith",
    "year": 2022,
    "count": 2
   },
@@ -67978,6 +67687,11 @@
    "count": 2
   },
   {
+   "topic": "In Museum",
+   "year": 2022,
+   "count": 2
+  },
+  {
    "topic": "In Smart Tourism",
    "year": 2022,
    "count": 2
@@ -68013,12 +67727,22 @@
    "count": 2
   },
   {
+   "topic": "Medina",
+   "year": 2022,
+   "count": 2
+  },
+  {
    "topic": "Museum Diplomacy",
    "year": 2022,
    "count": 2
   },
   {
    "topic": "Muslim Religious",
+   "year": 2022,
+   "count": 2
+  },
+  {
+   "topic": "Ney",
    "year": 2022,
    "count": 2
   },
@@ -68058,12 +67782,22 @@
    "count": 2
   },
   {
+   "topic": "Palace",
+   "year": 2022,
+   "count": 2
+  },
+  {
    "topic": "Part",
    "year": 2022,
    "count": 2
   },
   {
    "topic": "Participation In Heritage",
+   "year": 2022,
+   "count": 2
+  },
+  {
+   "topic": "Pilgrim",
    "year": 2022,
    "count": 2
   },
@@ -68104,6 +67838,11 @@
   },
   {
    "topic": "Sports Tourism",
+   "year": 2022,
+   "count": 2
+  },
+  {
+   "topic": "Taiz",
    "year": 2022,
    "count": 2
   },
@@ -68183,52 +67922,17 @@
    "count": 2
   },
   {
+   "topic": "Tyre",
+   "year": 2022,
+   "count": 2
+  },
+  {
    "topic": "Urban Tourism",
    "year": 2022,
    "count": 2
   },
   {
    "topic": "World Heritage Sites",
-   "year": 2022,
-   "count": 2
-  },
-  {
-   "topic": "أ",
-   "year": 2022,
-   "count": 2
-  },
-  {
-   "topic": "ؤ",
-   "year": 2022,
-   "count": 2
-  },
-  {
-   "topic": "س",
-   "year": 2022,
-   "count": 2
-  },
-  {
-   "topic": "ش",
-   "year": 2022,
-   "count": 2
-  },
-  {
-   "topic": "ص",
-   "year": 2022,
-   "count": 2
-  },
-  {
-   "topic": "ف",
-   "year": 2022,
-   "count": 2
-  },
-  {
-   "topic": "ق",
-   "year": 2022,
-   "count": 2
-  },
-  {
-   "topic": "ن",
    "year": 2022,
    "count": 2
   },
@@ -68778,6 +68482,11 @@
    "count": 2
   },
   {
+   "topic": "China And The",
+   "year": 2024,
+   "count": 2
+  },
+  {
    "topic": "China-Arab",
    "year": 2024,
    "count": 2
@@ -69233,6 +68942,16 @@
    "count": 2
   },
   {
+   "topic": "中国",
+   "year": 2024,
+   "count": 2
+  },
+  {
+   "topic": "教育",
+   "year": 2024,
+   "count": 2
+  },
+  {
    "topic": "文化交流",
    "year": 2024,
    "count": 2
@@ -69498,6 +69217,11 @@
    "count": 2
   },
   {
+   "topic": "In The Arab",
+   "year": 2025,
+   "count": 2
+  },
+  {
    "topic": "In The Metaverse",
    "year": 2025,
    "count": 2
@@ -69583,6 +69307,11 @@
    "count": 2
   },
   {
+   "topic": "Of Arabic And English",
+   "year": 2025,
+   "count": 2
+  },
+  {
    "topic": "Of Artificial",
    "year": 2025,
    "count": 2
@@ -69624,11 +69353,6 @@
   },
   {
    "topic": "Of The Belt",
-   "year": 2025,
-   "count": 2
-  },
-  {
-   "topic": "Of The Tourism",
    "year": 2025,
    "count": 2
   },
@@ -69864,11 +69588,6 @@
   },
   {
    "topic": "城市旅游",
-   "year": 2025,
-   "count": 2
-  },
-  {
-   "topic": "学习",
    "year": 2025,
    "count": 2
   },
@@ -75453,22 +75172,12 @@
    "count": 1
   },
   {
-   "topic": " ",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "\"",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": ",",
-   "year": 2012,
-   "count": 1
-  },
-  {
    "topic": "Against",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "And Community Participation",
    "year": 2012,
    "count": 1
   },
@@ -75478,17 +75187,22 @@
    "count": 1
   },
   {
+   "topic": "And Intangible Cultural Heritage",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "And The Arab",
    "year": 2012,
    "count": 1
   },
   {
-   "topic": "And The Environment",
+   "topic": "Application Of Digital",
    "year": 2012,
    "count": 1
   },
   {
-   "topic": "Application Of Digital",
+   "topic": "Arab Culture",
    "year": 2012,
    "count": 1
   },
@@ -75519,6 +75233,21 @@
   },
   {
    "topic": "Authenticity In Tourism",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "Bamascus",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "Cairo",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "Caravanserai",
    "year": 2012,
    "count": 1
   },
@@ -75593,6 +75322,11 @@
    "count": 1
   },
   {
+   "topic": "Dates",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "Destination Image And",
    "year": 2012,
    "count": 1
@@ -75633,6 +75367,16 @@
    "count": 1
   },
   {
+   "topic": "Effect Of Destination",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "Eid",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "Environment",
    "year": 2012,
    "count": 1
@@ -75653,7 +75397,17 @@
    "count": 1
   },
   {
+   "topic": "Hadith",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "Hajj",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "Hajj And Umrah",
    "year": 2012,
    "count": 1
   },
@@ -75718,12 +75472,22 @@
    "count": 1
   },
   {
+   "topic": "In Agriculture",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "In Destination",
    "year": 2012,
    "count": 1
   },
   {
    "topic": "In Dubai",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "In Higher Education",
    "year": 2012,
    "count": 1
   },
@@ -75778,6 +75542,16 @@
    "count": 1
   },
   {
+   "topic": "Kuwait",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "Language Education Students",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "Local Heritage",
    "year": 2012,
    "count": 1
@@ -75803,6 +75577,16 @@
    "count": 1
   },
   {
+   "topic": "Medina",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "Mosque",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "Mountain",
    "year": 2012,
    "count": 1
@@ -75813,12 +75597,27 @@
    "count": 1
   },
   {
+   "topic": "Muslim-Friendly",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "Najaf",
    "year": 2012,
    "count": 1
   },
   {
+   "topic": "Ney",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "North Africa",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "Of Arabic And English",
    "year": 2012,
    "count": 1
   },
@@ -75868,6 +75667,11 @@
    "count": 1
   },
   {
+   "topic": "Oud Perfume",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "Outbound Tourism To",
    "year": 2012,
    "count": 1
@@ -75878,7 +75682,12 @@
    "count": 1
   },
   {
-   "topic": "Palace",
+   "topic": "Pilgrim",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "Pills In Dubai",
    "year": 2012,
    "count": 1
   },
@@ -75908,7 +75717,22 @@
    "count": 1
   },
   {
+   "topic": "Riyadh",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "Smart Cities",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "Souq",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "Standard",
    "year": 2012,
    "count": 1
   },
@@ -75923,7 +75747,17 @@
    "count": 1
   },
   {
+   "topic": "Taiz",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "The Arab Spring",
+   "year": 2012,
+   "count": 1
+  },
+  {
+   "topic": "The Sustainable Development",
    "year": 2012,
    "count": 1
   },
@@ -75998,6 +75832,11 @@
    "count": 1
   },
   {
+   "topic": "Tyre",
+   "year": 2012,
+   "count": 1
+  },
+  {
    "topic": "User Generated Content",
    "year": 2012,
    "count": 1
@@ -76014,151 +75853,6 @@
   },
   {
    "topic": "World Heritage Site",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "[",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "]",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "أ",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ؤ",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ئ",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ا",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ب",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ة",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ت",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ث",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ج",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ح",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "خ",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "د",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ر",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "س",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ص",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ط",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ع",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ف",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ق",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ك",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ل",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "م",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ن",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ه",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "و",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ى",
-   "year": 2012,
-   "count": 1
-  },
-  {
-   "topic": "ي",
    "year": 2012,
    "count": 1
   },
@@ -79113,6 +78807,21 @@
    "count": 1
   },
   {
+   "topic": " ",
+   "year": 2017,
+   "count": 1
+  },
+  {
+   "topic": "\"",
+   "year": 2017,
+   "count": 1
+  },
+  {
+   "topic": ",",
+   "year": 2017,
+   "count": 1
+  },
+  {
    "topic": "Airbnb",
    "year": 2017,
    "count": 1
@@ -79129,6 +78838,11 @@
   },
   {
    "topic": "And Destination Image",
+   "year": 2017,
+   "count": 1
+  },
+  {
+   "topic": "And Intangible Cultural Heritage",
    "year": 2017,
    "count": 1
   },
@@ -79903,6 +79617,16 @@
    "count": 1
   },
   {
+   "topic": "[",
+   "year": 2017,
+   "count": 1
+  },
+  {
+   "topic": "]",
+   "year": 2017,
+   "count": 1
+  },
+  {
    "topic": "a",
    "year": 2017,
    "count": 1
@@ -79934,126 +79658,6 @@
   },
   {
    "topic": "u",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ا",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ب",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ة",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ت",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ث",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ج",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ح",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "خ",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "د",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ر",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ز",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "س",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ص",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ض",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ط",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ع",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ف",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ق",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ك",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ل",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "م",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ن",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "و",
-   "year": 2017,
-   "count": 1
-  },
-  {
-   "topic": "ي",
    "year": 2017,
    "count": 1
   },
@@ -81123,11 +80727,6 @@
    "count": 1
   },
   {
-   "topic": "And Community Participation",
-   "year": 2019,
-   "count": 1
-  },
-  {
    "topic": "And Cultural Heritage",
    "year": 2019,
    "count": 1
@@ -81138,7 +80737,17 @@
    "count": 1
   },
   {
+   "topic": "And Intangible Cultural Heritage",
+   "year": 2019,
+   "count": 1
+  },
+  {
    "topic": "And Smart Tourism",
+   "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "And The Environment",
    "year": 2019,
    "count": 1
   },
@@ -81228,6 +80837,11 @@
    "count": 1
   },
   {
+   "topic": "Case Study",
+   "year": 2019,
+   "count": 1
+  },
+  {
    "topic": "Chatbot",
    "year": 2019,
    "count": 1
@@ -81254,6 +80868,11 @@
   },
   {
    "topic": "Conservation In",
+   "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "Conservation Of Cultural",
    "year": 2019,
    "count": 1
   },
@@ -81289,6 +80908,11 @@
   },
   {
    "topic": "Culture Of",
+   "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "Dates",
    "year": 2019,
    "count": 1
   },
@@ -81343,6 +80967,11 @@
    "count": 1
   },
   {
+   "topic": "Eid",
+   "year": 2019,
+   "count": 1
+  },
+  {
    "topic": "Emerging Heritage",
    "year": 2019,
    "count": 1
@@ -81378,7 +81007,7 @@
    "count": 1
   },
   {
-   "topic": "Hajj And Umrah",
+   "topic": "Hadith",
    "year": 2019,
    "count": 1
   },
@@ -81438,7 +81067,7 @@
    "count": 1
   },
   {
-   "topic": "In Agriculture",
+   "topic": "Hotels In",
    "year": 2019,
    "count": 1
   },
@@ -81508,12 +81137,22 @@
    "count": 1
   },
   {
+   "topic": "Jeddah",
+   "year": 2019,
+   "count": 1
+  },
+  {
    "topic": "Journey",
    "year": 2019,
    "count": 1
   },
   {
    "topic": "Language Education",
+   "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "Language Education Students",
    "year": 2019,
    "count": 1
   },
@@ -81534,6 +81173,11 @@
   },
   {
    "topic": "Mainland",
+   "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "Mainland Chinese Outbound Tourism",
    "year": 2019,
    "count": 1
   },
@@ -81588,6 +81232,11 @@
    "count": 1
   },
   {
+   "topic": "Ney",
+   "year": 2019,
+   "count": 1
+  },
+  {
    "topic": "North Africa",
    "year": 2019,
    "count": 1
@@ -81599,6 +81248,11 @@
   },
   {
    "topic": "Of Arabic",
+   "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "Of Arabic And English",
    "year": 2019,
    "count": 1
   },
@@ -81708,6 +81362,11 @@
    "count": 1
   },
   {
+   "topic": "Of Tourists",
+   "year": 2019,
+   "count": 1
+  },
+  {
    "topic": "Of Travel",
    "year": 2019,
    "count": 1
@@ -81743,17 +81402,22 @@
    "count": 1
   },
   {
+   "topic": "Oud Perfume",
+   "year": 2019,
+   "count": 1
+  },
+  {
    "topic": "Outbound Tourism",
    "year": 2019,
    "count": 1
   },
   {
-   "topic": "Part",
+   "topic": "Palace",
    "year": 2019,
    "count": 1
   },
   {
-   "topic": "Pilgrim",
+   "topic": "Part",
    "year": 2019,
    "count": 1
   },
@@ -81778,6 +81442,11 @@
    "count": 1
   },
   {
+   "topic": "Policy Issues",
+   "year": 2019,
+   "count": 1
+  },
+  {
    "topic": "Political Economy",
    "year": 2019,
    "count": 1
@@ -81793,12 +81462,22 @@
    "count": 1
   },
   {
-   "topic": "Regulation",
+   "topic": "Responsible Tourism",
+   "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "Riyadh",
    "year": 2019,
    "count": 1
   },
   {
    "topic": "Sharm El Sheikh",
+   "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "Site Management",
    "year": 2019,
    "count": 1
   },
@@ -81813,6 +81492,11 @@
    "count": 1
   },
   {
+   "topic": "Souq",
+   "year": 2019,
+   "count": 1
+  },
+  {
    "topic": "Speech Recognition",
    "year": 2019,
    "count": 1
@@ -81823,7 +81507,17 @@
    "count": 1
   },
   {
+   "topic": "Strategy Of",
+   "year": 2019,
+   "count": 1
+  },
+  {
    "topic": "Supply Chain",
+   "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "Sustainability In The",
    "year": 2019,
    "count": 1
   },
@@ -81838,12 +81532,27 @@
    "count": 1
   },
   {
+   "topic": "Taiz",
+   "year": 2019,
+   "count": 1
+  },
+  {
    "topic": "Temple",
    "year": 2019,
    "count": 1
   },
   {
    "topic": "The Arab Spring",
+   "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "The Political Economy",
+   "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "The Sustainable Development",
    "year": 2019,
    "count": 1
   },
@@ -81953,12 +81662,22 @@
    "count": 1
   },
   {
+   "topic": "Tyre",
+   "year": 2019,
+   "count": 1
+  },
+  {
    "topic": "Umrah Pilgrimage",
    "year": 2019,
    "count": 1
   },
   {
    "topic": "Under The Belt",
+   "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "University",
    "year": 2019,
    "count": 1
   },
@@ -82038,126 +81757,6 @@
    "count": 1
   },
   {
-   "topic": "ؤ",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ئ",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ا",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ب",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ة",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ت",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ث",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ج",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ح",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "خ",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "د",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ر",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "س",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ص",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ط",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ع",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ف",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ق",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ك",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ل",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "م",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ن",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "و",
-   "year": 2019,
-   "count": 1
-  },
-  {
-   "topic": "ي",
-   "year": 2019,
-   "count": 1
-  },
-  {
    "topic": "传统文化",
    "year": 2019,
    "count": 1
@@ -82205,6 +81804,11 @@
   {
    "topic": "跨区域",
    "year": 2019,
+   "count": 1
+  },
+  {
+   "topic": "Agreement",
+   "year": 2020,
    "count": 1
   },
   {
@@ -82359,6 +81963,11 @@
   },
   {
    "topic": "Data Forecasting",
+   "year": 2020,
+   "count": 1
+  },
+  {
+   "topic": "Dates",
    "year": 2020,
    "count": 1
   },
@@ -82538,11 +82147,6 @@
    "count": 1
   },
   {
-   "topic": "Hajj And Umrah",
-   "year": 2020,
-   "count": 1
-  },
-  {
    "topic": "Heritage And Cultural",
    "year": 2020,
    "count": 1
@@ -82609,11 +82213,6 @@
   },
   {
    "topic": "Image And Destination",
-   "year": 2020,
-   "count": 1
-  },
-  {
-   "topic": "In Agriculture",
    "year": 2020,
    "count": 1
   },
@@ -82694,6 +82293,11 @@
   },
   {
    "topic": "Jakarta",
+   "year": 2020,
+   "count": 1
+  },
+  {
+   "topic": "Jeddah",
    "year": 2020,
    "count": 1
   },
@@ -82943,6 +82547,11 @@
    "count": 1
   },
   {
+   "topic": "Oud Perfume",
+   "year": 2020,
+   "count": 1
+  },
+  {
    "topic": "Outbound Tourism",
    "year": 2020,
    "count": 1
@@ -82973,17 +82582,17 @@
    "count": 1
   },
   {
-   "topic": "Pottery",
-   "year": 2020,
-   "count": 1
-  },
-  {
    "topic": "Preservation Of",
    "year": 2020,
    "count": 1
   },
   {
    "topic": "Preservation Of Cultural",
+   "year": 2020,
+   "count": 1
+  },
+  {
+   "topic": "Rebab",
    "year": 2020,
    "count": 1
   },
@@ -83089,11 +82698,6 @@
   },
   {
    "topic": "To Destination",
-   "year": 2020,
-   "count": 1
-  },
-  {
-   "topic": "To Mecca",
    "year": 2020,
    "count": 1
   },
@@ -83218,17 +82822,17 @@
    "count": 1
   },
   {
+   "topic": "Travel To",
+   "year": 2020,
+   "count": 1
+  },
+  {
    "topic": "Umrah",
    "year": 2020,
    "count": 1
   },
   {
    "topic": "Umrah Pilgrimage",
-   "year": 2020,
-   "count": 1
-  },
-  {
-   "topic": "University",
    "year": 2020,
    "count": 1
   },
@@ -83263,12 +82867,7 @@
    "count": 1
   },
   {
-   "topic": "أ",
-   "year": 2020,
-   "count": 1
-  },
-  {
-   "topic": "و",
+   "topic": "Wide Research",
    "year": 2020,
    "count": 1
   },
@@ -83333,6 +82932,21 @@
    "count": 1
   },
   {
+   "topic": " ",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "\"",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": ",",
+   "year": 2021,
+   "count": 1
+  },
+  {
    "topic": "3D Digital",
    "year": 2021,
    "count": 1
@@ -83354,6 +82968,11 @@
   },
   {
    "topic": "Air",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "Al Khobar",
    "year": 2021,
    "count": 1
   },
@@ -83473,6 +83092,11 @@
    "count": 1
   },
   {
+   "topic": "Caravanserai",
+   "year": 2021,
+   "count": 1
+  },
+  {
    "topic": "Chains",
    "year": 2021,
    "count": 1
@@ -83524,6 +83148,11 @@
   },
   {
    "topic": "Database",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "Dates",
    "year": 2021,
    "count": 1
   },
@@ -83628,6 +83257,11 @@
    "count": 1
   },
   {
+   "topic": "Eid",
+   "year": 2021,
+   "count": 1
+  },
+  {
    "topic": "Emerging Research",
    "year": 2021,
    "count": 1
@@ -83653,6 +83287,11 @@
    "count": 1
   },
   {
+   "topic": "Fez",
+   "year": 2021,
+   "count": 1
+  },
+  {
    "topic": "Gcc Countries",
    "year": 2021,
    "count": 1
@@ -83664,11 +83303,6 @@
   },
   {
    "topic": "Guides",
-   "year": 2021,
-   "count": 1
-  },
-  {
-   "topic": "Hajj And Umrah",
    "year": 2021,
    "count": 1
   },
@@ -83878,7 +83512,7 @@
    "count": 1
   },
   {
-   "topic": "Islamic",
+   "topic": "Jeddah",
    "year": 2021,
    "count": 1
   },
@@ -83889,6 +83523,16 @@
   },
   {
    "topic": "Knowledge Graph",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "Kuwait",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "Language Education Students",
    "year": 2021,
    "count": 1
   },
@@ -83953,6 +83597,11 @@
    "count": 1
   },
   {
+   "topic": "Mosul",
+   "year": 2021,
+   "count": 1
+  },
+  {
    "topic": "Museum Marketing",
    "year": 2021,
    "count": 1
@@ -83963,12 +83612,32 @@
    "count": 1
   },
   {
+   "topic": "Muslim-Friendly",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "Najaf",
+   "year": 2021,
+   "count": 1
+  },
+  {
    "topic": "Natural Heritage",
    "year": 2021,
    "count": 1
   },
   {
+   "topic": "Ney",
+   "year": 2021,
+   "count": 1
+  },
+  {
    "topic": "Of Ai",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "Of Arabic And English",
    "year": 2021,
    "count": 1
   },
@@ -84078,6 +83747,11 @@
    "count": 1
   },
   {
+   "topic": "Oud Perfume",
+   "year": 2021,
+   "count": 1
+  },
+  {
    "topic": "Overtourism",
    "year": 2021,
    "count": 1
@@ -84089,6 +83763,16 @@
   },
   {
    "topic": "Partnership",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "Pilgrim",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "Pills In Dubai",
    "year": 2021,
    "count": 1
   },
@@ -84114,6 +83798,11 @@
   },
   {
    "topic": "Research In Tourism",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "Sanaa",
    "year": 2021,
    "count": 1
   },
@@ -84224,6 +83913,11 @@
   },
   {
    "topic": "To Cultural Heritage",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "To Mecca",
    "year": 2021,
    "count": 1
   },
@@ -84343,6 +84037,11 @@
    "count": 1
   },
   {
+   "topic": "University",
+   "year": 2021,
+   "count": 1
+  },
+  {
    "topic": "Video Marketing",
    "year": 2021,
    "count": 1
@@ -84374,6 +84073,16 @@
   },
   {
    "topic": "World Tourism",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "[",
+   "year": 2021,
+   "count": 1
+  },
+  {
+   "topic": "]",
    "year": 2021,
    "count": 1
   },
@@ -84428,37 +84137,7 @@
    "count": 1
   },
   {
-   "topic": "ء",
-   "year": 2021,
-   "count": 1
-  },
-  {
-   "topic": "أ",
-   "year": 2021,
-   "count": 1
-  },
-  {
-   "topic": "ش",
-   "year": 2021,
-   "count": 1
-  },
-  {
-   "topic": "ض",
-   "year": 2021,
-   "count": 1
-  },
-  {
    "topic": "一带一路",
-   "year": 2021,
-   "count": 1
-  },
-  {
-   "topic": "伊斯兰",
-   "year": 2021,
-   "count": 1
-  },
-  {
-   "topic": "伊斯兰教法",
    "year": 2021,
    "count": 1
   },
@@ -84498,6 +84177,11 @@
    "count": 1
   },
   {
+   "topic": "Abha",
+   "year": 2022,
+   "count": 1
+  },
+  {
    "topic": "Accessible Tourism",
    "year": 2022,
    "count": 1
@@ -84513,11 +84197,6 @@
    "count": 1
   },
   {
-   "topic": "And Deep Learning",
-   "year": 2022,
-   "count": 1
-  },
-  {
    "topic": "And Event Tourism",
    "year": 2022,
    "count": 1
@@ -84528,12 +84207,27 @@
    "count": 1
   },
   {
+   "topic": "And Intangible Cultural Heritage",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "And Interfaith Dialogue",
+   "year": 2022,
+   "count": 1
+  },
+  {
    "topic": "And Smart Tourism",
    "year": 2022,
    "count": 1
   },
   {
    "topic": "And The Arab",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "And The Environment",
    "year": 2022,
    "count": 1
   },
@@ -84609,6 +84303,11 @@
   },
   {
    "topic": "Between China And",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "Bisht",
    "year": 2022,
    "count": 1
   },
@@ -84788,6 +84487,11 @@
    "count": 1
   },
   {
+   "topic": "Embroidery",
+   "year": 2022,
+   "count": 1
+  },
+  {
    "topic": "English-Arabic",
    "year": 2022,
    "count": 1
@@ -84844,11 +84548,6 @@
   },
   {
    "topic": "Gulf States",
-   "year": 2022,
-   "count": 1
-  },
-  {
-   "topic": "Hajj And Umrah",
    "year": 2022,
    "count": 1
   },
@@ -84943,6 +84642,11 @@
    "count": 1
   },
   {
+   "topic": "In Agriculture",
+   "year": 2022,
+   "count": 1
+  },
+  {
    "topic": "In Arabic",
    "year": 2022,
    "count": 1
@@ -84969,11 +84673,6 @@
   },
   {
    "topic": "In Heritage Tourism",
-   "year": 2022,
-   "count": 1
-  },
-  {
-   "topic": "In Museum",
    "year": 2022,
    "count": 1
   },
@@ -85018,6 +84717,11 @@
    "count": 1
   },
   {
+   "topic": "Language Education Students",
+   "year": 2022,
+   "count": 1
+  },
+  {
    "topic": "Learning Models",
    "year": 2022,
    "count": 1
@@ -85034,6 +84738,16 @@
   },
   {
    "topic": "Machine Learning Models",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "Mainland Chinese Outbound Tourism",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "Maqluba",
    "year": 2022,
    "count": 1
   },
@@ -85063,12 +84777,12 @@
    "count": 1
   },
   {
-   "topic": "Medina",
+   "topic": "Monuments",
    "year": 2022,
    "count": 1
   },
   {
-   "topic": "Monuments",
+   "topic": "Mosque",
    "year": 2022,
    "count": 1
   },
@@ -85104,6 +84818,11 @@
   },
   {
    "topic": "Of Ai",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "Of Arabic And English",
    "year": 2022,
    "count": 1
   },
@@ -85268,11 +84987,6 @@
    "count": 1
   },
   {
-   "topic": "Palace",
-   "year": 2022,
-   "count": 1
-  },
-  {
    "topic": "Participatory",
    "year": 2022,
    "count": 1
@@ -85288,7 +85002,37 @@
    "count": 1
   },
   {
+   "topic": "Pills In Dubai",
+   "year": 2022,
+   "count": 1
+  },
+  {
    "topic": "Policy Coordination",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "Policy Issues",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "Pottery",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "Qanun",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "Quran",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "Regulation",
    "year": 2022,
    "count": 1
   },
@@ -85309,6 +85053,11 @@
   },
   {
    "topic": "School",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "Shawl",
    "year": 2022,
    "count": 1
   },
@@ -85339,6 +85088,11 @@
   },
   {
    "topic": "Social Media Marketing",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "Souq",
    "year": 2022,
    "count": 1
   },
@@ -85399,6 +85153,16 @@
   },
   {
    "topic": "The Digital Twin",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "The Political Economy",
+   "year": 2022,
+   "count": 1
+  },
+  {
+   "topic": "The Sustainable Development",
    "year": 2022,
    "count": 1
   },
@@ -85513,6 +85277,11 @@
    "count": 1
   },
   {
+   "topic": "Travel To",
+   "year": 2022,
+   "count": 1
+  },
+  {
    "topic": "Umrah",
    "year": 2022,
    "count": 1
@@ -85539,11 +85308,6 @@
   },
   {
    "topic": "United Arab Emirates",
-   "year": 2022,
-   "count": 1
-  },
-  {
-   "topic": "University",
    "year": 2022,
    "count": 1
   },
@@ -85578,21 +85342,6 @@
    "count": 1
   },
   {
-   "topic": "ئ",
-   "year": 2022,
-   "count": 1
-  },
-  {
-   "topic": "خ",
-   "year": 2022,
-   "count": 1
-  },
-  {
-   "topic": "ظ",
-   "year": 2022,
-   "count": 1
-  },
-  {
    "topic": "中国",
    "year": 2022,
    "count": 1
@@ -85608,17 +85357,7 @@
    "count": 1
   },
   {
-   "topic": "大学",
-   "year": 2022,
-   "count": 1
-  },
-  {
    "topic": "建筑",
-   "year": 2022,
-   "count": 1
-  },
-  {
-   "topic": "微信",
    "year": 2022,
    "count": 1
   },
@@ -86933,6 +86672,11 @@
    "count": 1
   },
   {
+   "topic": "And Interfaith Dialogue",
+   "year": 2024,
+   "count": 1
+  },
+  {
    "topic": "And Tourism In",
    "year": 2024,
    "count": 1
@@ -87014,11 +86758,6 @@
   },
   {
    "topic": "Calligraphy",
-   "year": 2024,
-   "count": 1
-  },
-  {
-   "topic": "China And The",
    "year": 2024,
    "count": 1
   },
@@ -87298,6 +87037,11 @@
    "count": 1
   },
   {
+   "topic": "In Agriculture",
+   "year": 2024,
+   "count": 1
+  },
+  {
    "topic": "In Ai",
    "year": 2024,
    "count": 1
@@ -87404,6 +87148,11 @@
   },
   {
    "topic": "Monuments",
+   "year": 2024,
+   "count": 1
+  },
+  {
+   "topic": "Mosque",
    "year": 2024,
    "count": 1
   },
@@ -87908,21 +87657,6 @@
    "count": 1
   },
   {
-   "topic": " ",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "\"",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": ",",
-   "year": 2025,
-   "count": 1
-  },
-  {
    "topic": "Adventure Tourism",
    "year": 2025,
    "count": 1
@@ -88054,6 +87788,16 @@
   },
   {
    "topic": "Calligraphy",
+   "year": 2025,
+   "count": 1
+  },
+  {
+   "topic": "Case Study",
+   "year": 2025,
+   "count": 1
+  },
+  {
+   "topic": "China And The",
    "year": 2025,
    "count": 1
   },
@@ -88413,6 +88157,11 @@
    "count": 1
   },
   {
+   "topic": "In Agriculture",
+   "year": 2025,
+   "count": 1
+  },
+  {
    "topic": "In Arab",
    "year": 2025,
    "count": 1
@@ -88553,6 +88302,11 @@
    "count": 1
   },
   {
+   "topic": "Mainland Chinese Outbound Tourism",
+   "year": 2025,
+   "count": 1
+  },
+  {
    "topic": "Market Forecasting",
    "year": 2025,
    "count": 1
@@ -88649,6 +88403,11 @@
   },
   {
    "topic": "Of Sustainable",
+   "year": 2025,
+   "count": 1
+  },
+  {
+   "topic": "Of The Tourism",
    "year": 2025,
    "count": 1
   },
@@ -88778,6 +88537,11 @@
    "count": 1
   },
   {
+   "topic": "Riyadh",
+   "year": 2025,
+   "count": 1
+  },
+  {
    "topic": "Road Tourism",
    "year": 2025,
    "count": 1
@@ -88868,12 +88632,12 @@
    "count": 1
   },
   {
-   "topic": "The Arab World",
+   "topic": "The Silk Road",
    "year": 2025,
    "count": 1
   },
   {
-   "topic": "The Silk Road",
+   "topic": "The Sustainable Development",
    "year": 2025,
    "count": 1
   },
@@ -89098,136 +88862,6 @@
    "count": 1
   },
   {
-   "topic": "[",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "]",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "أ",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ئ",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ا",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ب",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ة",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ت",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ث",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ج",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ح",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "د",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ر",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ز",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ش",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ص",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ط",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ع",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ف",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ق",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ك",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ل",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "م",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ن",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "و",
-   "year": 2025,
-   "count": 1
-  },
-  {
-   "topic": "ي",
-   "year": 2025,
-   "count": 1
-  },
-  {
    "topic": "书法",
    "year": 2025,
    "count": 1
@@ -89264,6 +88898,11 @@
   },
   {
    "topic": "大数据",
+   "year": 2025,
+   "count": 1
+  },
+  {
+   "topic": "学习",
    "year": 2025,
    "count": 1
   },

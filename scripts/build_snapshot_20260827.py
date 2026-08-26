@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""图库聚合层快照 20260827（8/26 全量重建后）
+"""图库聚合层快照 20260827（阿语碎片修复合并后重建，2026-08-26 19:01）
 用途：给 GitHub/Manus 读图。仅聚合层，不含全文PDF、不含作者个人字段。
 口径：与 rebuild_neo4j.py 完全一致（同一篇内主题词去重；year 仅 0<year<=2026 计入）。
-计数：直接取自 Neo4j 实测（8/26 重建后：Paper 12233/Topic 1174/关系 114473/孤立0）。
+计数：直接取自 Neo4j 实测（合并后重建：Paper 12233/Topic 1168/HAS_TOPIC 29639/关系 114845/孤立0）。
 """
 import json, os, csv
 from collections import Counter
@@ -86,9 +86,9 @@ snap = {
         "file": "graph_snapshot_20260827.json",
         "generated_at": "2026-08-27",
         "generated_by": "build_snapshot_20260827.py（复刻 rebuild_neo4j.py 聚合口径；计数取 Neo4j 实测）",
-        "source": "本地 Neo4j 图库（2026-08-26 全量重建：B1主表12233含56篇补录+27条language=ar）",
+        "source": "本地 Neo4j 图库（2026-08-26 19:01 合并后重建：topic_assignments SHA 6bb109f6，B1主表12233含56篇补录+27条language=ar）",
         "purpose": "给 GitHub/Manus 读图用；仅聚合层",
-        "change_note": "相对 20260821_v2：同数据源重建产物，计数取重建后实测（Paper 12233/Topic 1174/关系 114473）",
+        "change_note": "相对上版：阿语碎片修复合并后重建（Topic 1174→1168、HAS_TOPIC 29841→29639、BEL_DOM 17270→17250、关系 114473→114845、非文旅 3524→3526）",
         "rules": [
             "不含全文 PDF/正文文本",
             "不含作者个人字段（Author 节点仅计数，不导明细）",
