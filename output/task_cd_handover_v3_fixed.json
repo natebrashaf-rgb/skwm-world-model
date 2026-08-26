@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "project": "SKWM 世界模型 — 中阿文旅文献知识图谱",
+    "tasks": [
+      "C: 阿语文献对模型的扰动分析",
+      "D: 阿语文献内容分析与英阿对照"
+    ],
+    "version": "v3_fixed",
+    "timestamp": "2026-08-26T20:00:19.729414",
+    "random_seed": 20260825,
+    "experiment_type": "描述性扰动分析（不宣称RSSM性能提升）",
+    "known_issues": [
+      "数据版本: B1=12,179条，与A/B终版12,233条差54条",
+      "新增主题: state_vectors key一致(0新增)，'94个'来源待澄清",
+      "全文状态: human_read=0，仅自动抽取样本",
+      "文旅判定: 缩窄词表后核心15条/可能8条/非文旅4条"
+    ]
+  },
+  "data_version": {
+    "current": {
+      "file": "data/B1_文献主表_含阿语_20260819.json",
+      "count": 12179,
+      "arabic_count": 27,
+      "note": "与A/B终版12,233条差54条，待同步"
+    },
+    "ab_final": {
+      "count": 12233,
+      "note": "A/B任务终版，尚未入库"
+    },
+    "state_vectors": {
+      "baseline": "data/state_vectors.json",
+      "with_arabic": "data/state_vectors_含阿语_20260819.json",
+      "key_diff": 0
+    }
+  },
+  "task_c_results": {
+    "data_version": {
+      "current": 12179,
+      "ab_final": 12233,
+      "diff": 54,
+      "note": "待A/B终版入库后重新运行"
+    },
+    "sha256": {
+      "B1_含阿语": "c4d80e2b4b575ea50d067f62ce3a0b1f962abb7e4d720575f3c03deb11f209f9",
+      "sv_含阿语": "6bbee6c0041a0e5bc77695bc31c5ec9eafc34bec080af4e24f0c067905f10495",
+      "sv_基线": "6bbee6c0041a0e5bc77695bc31c5ec9eafc34bec080af4e24f0c067905f10495"
+    },
+    "arabic_papers": 27,
+    "tourism_core": 15,
+    "tourism_maybe": 8,
+    "year_distribution": {
+      "2025": 4,
+      "2021": 3,
+      "2024": 3,
+      "2022": 4,
+      "2019": 1,
+      "2017": 1,
+      "2020": 4,
+      "2012": 1
+    },
+    "q1_trend_change": false,
+    "q1_jaccard": 1.0,
+    "q2_new_keys": 0,
+    "q2_note": "state_vectors key一致(0新增)，'94个'来源待澄清",
+    "q3_sample_size": 27,
+    "q3_year_coverage": 8,
+    "conclusion": "样本量不足(27<50)，年份集中，不适合单独RSSM建模"
+  },
+  "task_d_results": {
+    "summary": {
+      "total": 27,
+      "has_pdf": 15,
+      "text_extracted": 9,
+      "human_read": 0,
+      "text_note": "9条自动抽取样本，未人工验证全文"
+    },
+    "tourism_classification": {
+      "core": 15,
+      "maybe": 8,
+      "none": 4
+    },
+    "level_distribution": {
+      "L1_文旅核心": 15,
+      "L2_文化认同": 9,
+      "L3_方法论": 3
+    },
+    "conclusion": {
+      "text_status": "9条自动抽取样本，待人工阅读全文",
+      "tourism_core": "15条文旅核心论文",
+      "difference": "待验证假设（需≥100篇样本）"
+    }
+  }
+}
