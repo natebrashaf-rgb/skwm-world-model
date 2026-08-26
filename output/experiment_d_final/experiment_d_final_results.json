@@ -1,0 +1,443 @@
+{
+  "meta": {
+    "timestamp": "2026-08-26T20:26:33.500457",
+    "task": "D最终版：人工全文验证 + 统一分类"
+  },
+  "summary": {
+    "total": 27,
+    "has_pdf": 15,
+    "text_extracted": 0,
+    "human_verified": 0,
+    "verification_note": "9条已提取文本，待人工验证"
+  },
+  "tourism_classification": {
+    "maybe": 8,
+    "core": 15,
+    "none": 4
+  },
+  "level_distribution": {
+    "L2_文化认同": 9,
+    "L1_文旅核心": 15,
+    "L5_其他": 3
+  },
+  "topic_distribution": {
+    "阿拉伯文化": 19,
+    "旅游": 5,
+    "伊斯兰文化": 3,
+    "教育": 13,
+    "历史": 11,
+    "文化遗产": 11
+  },
+  "verification_results": [
+    {
+      "doi": "10.34120/ajh.v28i109.2183",
+      "title": "أنت عربي! يا للصدفة. فأنا أحب الحمص. المزة ومشهيات التواصل الثقافي. “Oh, you’re ",
+      "year": null,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "maybe",
+      "topics": [
+        "阿拉伯文化"
+      ],
+      "level": "L2_文化认同",
+      "text_length": 0
+    },
+    {
+      "doi": "10.37134/sibawayh.vol2.2.8.2021",
+      "title": "استعمال معمل اللغة للتدريس اللغة الأجنبية: اللغة العربية نموذجا\nUtilization of L",
+      "year": null,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "maybe",
+      "topics": [
+        "阿拉伯文化"
+      ],
+      "level": "L2_文化认同",
+      "text_length": 0
+    },
+    {
+      "doi": "10.63939/jsms.2025-vol8.n29.10-32",
+      "title": "السياحة الرياضية ودورها في تنمية وتطوير القطاع السياحي: دراسة حالة كأس العالم 20",
+      "year": 2025,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "旅游"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "10.21608/rmshreq.2021.412859",
+      "title": "论伊斯兰教法在华的深度本土化成果 ——中国伊斯兰习惯法 مآثر تأقلم الأحكام الفقهية مع الطابع الصيني (فقه الأ",
+      "year": 2021,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "旅游",
+        "阿拉伯文化",
+        "伊斯兰文化"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "10.21608/jsh.2024.360574",
+      "title": "الثقافة الإسلامية في الصين (التعليم المسجدي في الصين نموذجًا) Chinese Islamic Cu",
+      "year": 2024,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "maybe",
+      "topics": [
+        "伊斯兰文化",
+        "教育"
+      ],
+      "level": "L2_文化认同",
+      "text_length": 0
+    },
+    {
+      "doi": "10.21608/jsh.2024.399015",
+      "title": "مفهوم السلام في الإسلام وأثره Concept and Impact of Peace in Islam 伊斯兰教和平观及其影响",
+      "year": 2024,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "none",
+      "topics": [
+        "伊斯兰文化"
+      ],
+      "level": "L2_文化认同",
+      "text_length": 0
+    },
+    {
+      "doi": "10.1515/caas-2025-2003",
+      "title": "ترجمة أدب نسائياته ووظيفته في العالم العربي / The Translation and Reception of S",
+      "year": 2025,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "maybe",
+      "topics": [
+        "阿拉伯文化"
+      ],
+      "level": "L2_文化认同",
+      "text_length": 0
+    },
+    {
+      "doi": "10.21608/jfhsc.2025.505974",
+      "title": "阿汉语否定工具使用错误的对比研究：以学习汉语的阿拉伯学生和学习阿拉伯语的中国学生为例 دراسة مقارنة لأخطاء استخدام أدوات الن",
+      "year": 2025,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "旅游",
+        "阿拉伯文化"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "10.34120/ajh.v31i.2397",
+      "title": "الاستغراب وأفق الحوار الحضاري. Occidentalism and the Horizons of Civilizational ",
+      "year": 2024,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "none",
+      "topics": [],
+      "level": "L5_其他",
+      "text_length": 0
+    },
+    {
+      "doi": "10.21608/jfabsu.2023.97111.1115",
+      "title": "《由社会语言学角度浅谈微信的语言》 跨科学研究 莎蜜博士 贝尼苏韦夫大学语言学院中文系讲师 (مدخل إلى لغة الويتشات من زاوية عل",
+      "year": 2022,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "none",
+      "topics": [],
+      "level": "L5_其他",
+      "text_length": 0
+    },
+    {
+      "doi": "10.17977/um082v3i12023p44-58",
+      "title": "الخط العربي تاريخ و إبداع   (Arabic Calligraphy, History and Creativity)",
+      "year": null,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "maybe",
+      "topics": [
+        "阿拉伯文化",
+        "历史"
+      ],
+      "level": "L2_文化认同",
+      "text_length": 0
+    },
+    {
+      "doi": "10.3998/mpub.11373292.cmp.838",
+      "title": "The Color of Paradise, Rang-e Khodā,رنگ خدا Image 1",
+      "year": null,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "none",
+      "topics": [],
+      "level": "L5_其他",
+      "text_length": 0
+    },
+    {
+      "doi": "10.18860/ijazarabi.v5i1.13174",
+      "title": "Development Of Arabic Calligraphy Learning Material  Base On Self-Learning/ تطوي",
+      "year": null,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "maybe",
+      "topics": [
+        "阿拉伯文化"
+      ],
+      "level": "L2_文化认同",
+      "text_length": 0
+    },
+    {
+      "doi": "10.70910/ijal1(1)4",
+      "title": "المعنى في الخط العربي Significance of Arabic Calligraphy",
+      "year": null,
+      "has_pdf": false,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "maybe",
+      "topics": [
+        "阿拉伯文化"
+      ],
+      "level": "L2_文化认同",
+      "text_length": 0
+    },
+    {
+      "doi": "10.58205/fber.v3i1.1462",
+      "title": "متطلبات تطوير مشروعات السياحة الصحراوية في ضوء أهداف التنمية المستدامة",
+      "year": 2019,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "旅游",
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "10.47832/2717-8293.16.26",
+      "title": "الماء والسياحة في المجالات الواحية الصحراوية - الواحات المغربية نموذجا",
+      "year": 2022,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "旅游",
+        "教育"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "",
+      "title": "الاستثمار المستدام في مباني التراث العمراني (دراسة تحليلية)",
+      "year": 2017,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "",
+      "title": "الروابط بين الطبيعة والثقافة والنزاعات وتأثيرات التغير المناخي",
+      "year": 2025,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "",
+      "title": "التطريز بالخيوط الذكية لبعض المطرزات السعودية",
+      "year": 2022,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "",
+      "title": "صناعة المخطوط في العراق",
+      "year": 2020,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "maybe",
+      "topics": [
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "level": "L2_文化认同",
+      "text_length": 0
+    },
+    {
+      "doi": "",
+      "title": "مخطوطة صفة المياه الحادة المعدنية",
+      "year": 2020,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "",
+      "title": "تحقيق القسم الثالث من مخطوطة الآداب الطبية",
+      "year": 2020,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "",
+      "title": "ألواح الرصاص دراسة تاريخية",
+      "year": 2022,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "",
+      "title": "الأوبئة في التراث الطبي العربي والإسلامي",
+      "year": 2021,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "",
+      "title": "القدس منارة الشعر العربي",
+      "year": 2012,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "",
+      "title": "أهمية دراسة المصادر التاريخية",
+      "year": 2021,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "文化遗产",
+        "教育",
+        "历史"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    },
+    {
+      "doi": "",
+      "title": "منطقة الحياد العراقية السعودية",
+      "year": 2020,
+      "has_pdf": true,
+      "text_extracted": false,
+      "human_verified": false,
+      "tourism_class": "core",
+      "topics": [
+        "文化遗产",
+        "阿拉伯文化",
+        "教育",
+        "历史"
+      ],
+      "level": "L1_文旅核心",
+      "text_length": 0
+    }
+  ]
+}
