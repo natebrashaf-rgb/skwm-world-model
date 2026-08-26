@@ -148787,90 +148787,171 @@
  "10.1080/1743873x.2014.914656": {
   "title": "Contemporary issues in cultural heritage tourism",
   "year": "2015",
-  "matched": "True",
-  "terms": "[\"contemporary\", \"issues\", \"cultural\", \"heritage\", \"tourism\"]",
-  "domains": "[\"阿拉伯文旅\"]",
-  "non_tourism": "False"
+  "matched": true,
+  "terms": [
+   "contemporary",
+   "issues",
+   "cultural",
+   "heritage",
+   "tourism"
+  ],
+  "domains": [
+   "阿拉伯文旅"
+  ],
+  "non_tourism": false
  },
  "10.1007/978-3-319-01669-6_539-1": {
   "title": "United Arab Emirates, tourism",
   "year": "2015",
-  "matched": "True",
-  "terms": "[\"united\", \"arab\", \"emirates\", \"tourism\"]",
-  "domains": "[\"阿拉伯文旅\"]",
-  "non_tourism": "False"
+  "matched": true,
+  "terms": [
+   "united",
+   "arab",
+   "emirates",
+   "tourism"
+  ],
+  "domains": [
+   "阿拉伯文旅"
+  ],
+  "non_tourism": false
  },
  "10.1007/978-3-319-01669-6_913-1": {
   "title": "Saudi Arabia Tourism",
   "year": "2023",
-  "matched": "True",
-  "terms": "[\"saudi\", \"arabia\", \"tourism\"]",
-  "domains": "[\"阿拉伯文旅\"]",
-  "non_tourism": "False"
+  "matched": true,
+  "terms": [
+   "saudi",
+   "arabia",
+   "tourism"
+  ],
+  "domains": [
+   "阿拉伯文旅"
+  ],
+  "non_tourism": false
  },
  "10.1007/978-3-319-01669-6_534-1": {
   "title": "Saudi Arabia, tourism",
   "year": "2015",
-  "matched": "True",
-  "terms": "[\"saudi\", \"arabia\", \"tourism\"]",
-  "domains": "[\"阿拉伯文旅\"]",
-  "non_tourism": "False"
+  "matched": true,
+  "terms": [
+   "saudi",
+   "arabia",
+   "tourism"
+  ],
+  "domains": [
+   "阿拉伯文旅"
+  ],
+  "non_tourism": false
  },
  "10.4135/9781483368924.n394": {
   "title": "Saudi Arabia",
   "year": "2017",
-  "matched": "True",
-  "terms": "[\"saudi\", \"arabia\"]",
-  "domains": "[\"阿拉伯文旅\"]",
-  "non_tourism": "False"
+  "matched": true,
+  "terms": [
+   "saudi",
+   "arabia"
+  ],
+  "domains": [
+   "阿拉伯文旅"
+  ],
+  "non_tourism": false
  },
  "10.21608/ijecth.2018.181055": {
   "title": "THE ROLE OF TRADITIONAL CRAFTS CENTERS IN MAINTAINING HERITAGE AND ITS IMPACT ON PROMOTING TOURISM (CASE STUDY: FOUSTAT TRADITIONAL CRAFTS CENTER – CAIRO, EGYPT)",
   "year": "2018",
-  "matched": "True",
-  "terms": "[\"traditional\", \"crafts\", \"centers\", \"maintaining\", \"heritage\", \"promoting\", \"tourism\", \"foustat\", \"center\", \"cairo\", \"egypt\"]",
-  "domains": "[\"阿拉伯文旅\"]",
-  "non_tourism": "False"
+  "matched": true,
+  "terms": [
+   "traditional",
+   "crafts",
+   "centers",
+   "maintaining",
+   "heritage",
+   "promoting",
+   "tourism",
+   "foustat",
+   "center",
+   "cairo",
+   "egypt"
+  ],
+  "domains": [
+   "阿拉伯文旅"
+  ],
+  "non_tourism": false
  },
  "10.1007/978-3-319-01669-6_323-1": {
   "title": "Egypt, tourism",
   "year": "2014",
-  "matched": "True",
-  "terms": "[\"egypt\", \"tourism\"]",
-  "domains": "[\"阿拉伯文旅\"]",
-  "non_tourism": "False"
+  "matched": true,
+  "terms": [
+   "egypt",
+   "tourism"
+  ],
+  "domains": [
+   "阿拉伯文旅"
+  ],
+  "non_tourism": false
  },
  "10.1080/14766825.2010.540370": {
   "title": "Cultural tourism and sustainable local development",
   "year": "2011",
-  "matched": "True",
-  "terms": "[\"cultural\", \"tourism\", \"sustainable\", \"local\", \"development\"]",
-  "domains": "[\"阿拉伯文旅\"]",
-  "non_tourism": "False"
+  "matched": true,
+  "terms": [
+   "cultural",
+   "tourism",
+   "sustainable",
+   "local",
+   "development"
+  ],
+  "domains": [
+   "阿拉伯文旅"
+  ],
+  "non_tourism": false
  },
  "10.1016/j.daach.2019.e00114": {
   "title": "Narralive – Creating and experiencing mobile digital storytelling in cultural heritage",
   "year": "2019",
-  "matched": "True",
-  "terms": "[\"narralive\", \"creating\", \"experiencing\", \"mobile\", \"digital\", \"storytelling\", \"cultural\", \"heritage\"]",
-  "domains": "[\"阿拉伯文旅\"]",
-  "non_tourism": "False"
+  "matched": true,
+  "terms": [
+   "narralive",
+   "creating",
+   "experiencing",
+   "mobile",
+   "digital",
+   "storytelling",
+   "cultural",
+   "heritage"
+  ],
+  "domains": [
+   "阿拉伯文旅"
+  ],
+  "non_tourism": false
  },
  "10.2307/j.ctv3029tgz.8": {
   "title": "United Arab Emirates",
   "year": "2019",
-  "matched": "True",
-  "terms": "[\"united\", \"arab\", \"emirates\"]",
-  "domains": "[\"阿拉伯文旅\"]",
-  "non_tourism": "False"
+  "matched": true,
+  "terms": [
+   "united",
+   "arab",
+   "emirates"
+  ],
+  "domains": [
+   "阿拉伯文旅"
+  ],
+  "non_tourism": false
  },
  "10.1093/oso/9780197538616.003.0026": {
   "title": "Halal Tourism",
   "year": "2021",
-  "matched": "True",
-  "terms": "[\"halal\", \"tourism\"]",
-  "domains": "[\"阿拉伯文旅\"]",
-  "non_tourism": "False"
+  "matched": true,
+  "terms": [
+   "halal",
+   "tourism"
+  ],
+  "domains": [
+   "阿拉伯文旅"
+  ],
+  "non_tourism": false
  },
  "الاستثمار المستدام في مباني التراث العمراني (دراسة تحليلية)": {
   "title": "الاستثمار المستدام في مباني التراث العمراني (دراسة تحليلية)",
