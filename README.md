@@ -88,3 +88,13 @@ deploy/
 - 本部署版**不包含 1148 份 PDF**（太大了），只包含文本元数据
 - 如果你想包含 PDF，需要自己上传到对象存储（如 AWS S3）
 - DeepSeek Key 在 Railway 用环境变量设置，**不要写在代码里**
+
+
+## ⚠️ 数据红线（2026-08-26/27 实测）
+
+1. **match_topics.py 禁止全量重跑**：全量重跑会破坏阿语匹配（主题 1174→1115、
+   阿语 25/27→12/27、non_tourism 3524→0，8/26 实测已回滚）。阿语相关变更只能走增量。
+2. **阿语增强走增量脚本**：scripts/enhance_arabic_assignments.py（dry-run → 人工确认合并），
+   不要直接编辑 topic_assignments.json。
+3. **已知质量问题**：现有 topic_assignments 阿语 terms 为单字符碎片伪匹配（8/19 产物，
+   0/255 命中词表），修复涉及数据变更，需人工拍板。
