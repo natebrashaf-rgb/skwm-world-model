@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "timestamp": "2026-08-27",
+    "data_version": "已验证",
+    "description": "基于DOI验证的阿语文献（15篇已验证，12篇排除）"
+  },
+  "task_c": {
+    "data_version": "已验证",
+    "b1_count": 12221,
+    "arabic_count": 15,
+    "q1_jaccard": 0.9832744970345957,
+    "q1_trend_change": false,
+    "q2_new_topics": 47,
+    "q3_sample_size": 15,
+    "q3_year_coverage": 5
+  },
+  "task_d": {
+    "total": 15,
+    "has_pdf": 3,
+    "text_extracted": 0,
+    "human_read": 0,
+    "tourism_core": 5,
+    "tourism_maybe": 7,
+    "tourism_none": 3,
+    "level_distribution": {
+      "L1_文旅核心": 5,
+      "L2_文化认同": 7,
+      "L5_其他": 3
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "timestamp": "2026-08-27",
+    "description": "基于已验证阿语文献的state_vectors"
+  },
+  "data_summary": {
+    "original_b1": 12233,
+    "arabic_total": 27,
+    "arabic_verified": 15,
+    "arabic_unverified": 12,
+    "filtered_b1": 12221
+  },
+  "c0_baseline": {
+    "count": 12206,
+    "sha256": "67067fe64f411dabe58dcefc172d32916c7344d676cb7ea76d1bf8c53a18e384",
+    "years": "1912-2026",
+    "topics": 42851
+  },
+  "c1_with_verified_arabic": {
+    "count": 12221,
+    "sha256": "cd7707f8043466bab093e6bd0cbd6143402fac312e18e1133f5e62b6a5872f9f",
+    "years": "1912-2026",
+    "topics": 43126
+  },
+  "files": {
+    "b1_filtered": "data/B1_文献主表_已验证.json",
+    "sv_c0": "output/state_vectors_C0_verified.json",
+    "sv_c1": "output/state_vectors_C1_verified.json"
+  }
+}

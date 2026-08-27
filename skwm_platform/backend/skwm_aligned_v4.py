@@ -18,7 +18,7 @@
 """
 import json, os, random, sys, pickle, itertools, re
 from typing import List, Tuple, Dict, Any, Optional, Callable
-from collections import defaultdict
+from collections import defaultdict, Counter
 from pathlib import Path
 from datetime import datetime
 import numpy as np
@@ -166,6 +166,16 @@ class DataLayer:
         self.year_range = [1895, 2026]
         self.n_snapshots = 0
         self.n_state_vectors = 0
+        
+        # E+R+S 扩展数据
+        self.collab_edges = []   # R: 合作边 [{source, target, weight}]
+        self.citation_edges = [] # R: 引文边 [{source, target}]
+        self.paper_count = 10000 # E: 文献实体数（知识图谱v2.1）
+        self.author_count = 1137 # E: 作者实体数
+        self._entity_years = {}  # 实体出现在哪些年份（S:传播范围）
+        self._collab_intensity = {}  # 实体合作强度（S:合作强度）
+        self._institutions = {}  # 机构画像 {name: {heat, growth, ...})
+        self._authors = {}       # 作者画像 {name: collab_count}
     
     def load(self, verbose: bool = True):
         if verbose: print("📦 加载数据层 (策划案: 数据资源层+知识组织层)...")
@@ -417,6 +427,61 @@ class DataLayer:
 
         preds.sort(key=lambda x: -x["predicted_heat"])
         return preds[:20]
+    
+    def _generate_demo_data(self):
+        """生成演示数据（当真实数据不可用时）"""
+        import random
+        random.seed(42)
+        
+        # 生成27年切片 (2000-2026)
+        years = list(range(2000, 2027))
+        demo_topics = [
+            "旅游", "文化", "遗产", "数字", "阿拉伯", "一带一路", "合作",
+            "智慧", "可持续", "融合", "文物", "传播", "教育", "AI", "知识图谱"
+        ]
+        
+        for year in years:
+            year_str = str(year)
+            # 每年10-15个主题
+            n_topics = min(len(demo_topics), 10 + (year - 2000) // 3)
+            selected = demo_topics[:n_topics]
+            
+            # 生成节点
+            nodes = selected
+            edges = []
+            for i, t1 in enumerate(selected):
+                for t2 in selected[i+1:]:
+                    if random.random() < 0.3:  # 30%概率有边
+                        edges.append({"u": t1, "v": t2, "w": random.randint(1, 5)})
+            
+            self.snapshots[year_str] = {
+                "nodes": nodes,
+                "edges": edges,
+                "n_nodes": len(nodes),
+                "n_edges": len(edges),
+            }
+            
+            # 生成状态向量 [热度, 增速, 中心度, 连接数]
+            self.state_vectors[year_str] = {}
+            for topic in selected:
+                heat = random.randint(100, 1000)
+                growth = random.randint(-50, 200)
+                centrality = round(random.uniform(0.1, 0.9), 3)
+                connections = random.randint(5, 50)
+                self.state_vectors[year_str][topic] = [heat, growth, centrality, connections]
+        
+        self.year_range = [2000, 2026]
+        self.n_snapshots = len(years)
+        self.n_state_vectors = sum(len(v) for v in self.state_vectors.values())
+    
+    def _detect_lang(self, name: str) -> str:
+        """S: 语言分布检测"""
+        has_zh = bool(re.search(r'[\u4e00-\u9fff\u3400-\u4dbf]', name))
+        has_ar = bool(re.search(r'[\u0600-\u06ff\u0750-\u077f]', name))
+        if has_zh and has_ar: return "中阿混合"
+        if has_zh: return "中文"
+        if has_ar: return "阿语"
+        return "英文/其他"
     
     def counterfactual(self, bridge: str, year: int) -> Dict:
         """T: 反事实分析（策划案「因果推理」）"""
