@@ -1,0 +1,193 @@
+{
+  "summary": {
+    "total": 27,
+    "verified": 15,
+    "not_found": 0,
+    "no_doi_found": 1,
+    "no_doi_not_found": 10,
+    "uncertain": 1,
+    "credibility": "59.3%"
+  },
+  "details": {
+    "verified": [
+      {
+        "doi": "10.34120/ajh.v28i109.2183",
+        "title": "أنت عربي! يا للصدفة. فأنا أحب الحمص. المزة ومشهيات التواصل الثقافي. “Oh, you’re an Arab - I love hummus!” Mezze: Cultural Dialogue Appetizers.",
+        "year": 2010,
+        "source": "CrossRef",
+        "status": "verified"
+      },
+      {
+        "doi": "10.37134/sibawayh.vol2.2.8.2021",
+        "title": "استعمال معمل اللغة للتدريس اللغة الأجنبية: اللغة العربية نموذجا\nUtilization of Language Laboratory for Teaching Arabic as A Second Language",
+        "year": 2021,
+        "source": "CrossRef",
+        "status": "verified"
+      },
+      {
+        "doi": "10.63939/jsms.2025-vol8.n29.10-32",
+        "title": "السياحة الرياضية ودورها في تنمية وتطوير القطاع السياحي: دراسة حالة كأس العالم 2022 بدولة قطر Sports Tourism and Its Role in the Development and Advancement of the Tourism Sector: A Case Study of the 2022 FIFA World Cup in Qatar",
+        "year": 2025,
+        "source": "CrossRef",
+        "status": "verified"
+      },
+      {
+        "doi": "10.21608/rmshreq.2021.412859",
+        "title": "论伊斯兰教法在华的深度本土化成果 ——中国伊斯兰习惯法 مآثر تأقلم الأحكام الفقهية مع الطابع الصيني (فقه الأعراف بالصين)",
+        "year": 2021,
+        "source": "CrossRef",
+        "status": "verified"
+      },
+      {
+        "doi": "10.21608/jsh.2024.399015",
+        "title": "مفهوم السلام في الإسلام وأثره Concept and Impact of Peace in Islam 伊斯兰教和平观及其影响",
+        "year": 2024,
+        "source": "CrossRef",
+        "status": "verified"
+      },
+      {
+        "doi": "10.21608/jfhsc.2025.505974",
+        "title": "阿汉语否定工具使用错误的对比研究：以学习汉语的阿拉伯学生和学习阿拉伯语的中国学生为例 دراسة مقارنة لأخطاء استخدام أدوات النفي بين العربية والصينية: نموذج الطلاب العرب دارسي الصينية والطلاب الصينين دارسي العربية",
+        "year": 2025,
+        "source": "CrossRef",
+        "status": "verified"
+      },
+      {
+        "doi": "10.21608/jfabsu.2023.97111.1115",
+        "title": "《由社会语言学角度浅谈微信的语言》 跨科学研究 莎蜜博士 贝尼苏韦夫大学语言学院中文系讲师 (مدخل إلى لغة الويتشات من زاوية علم اللغة الاجتماعي – دراسة بينية)",
+        "year": 2022,
+        "source": "CrossRef",
+        "status": "verified"
+      },
+      {
+        "doi": "10.3998/mpub.11373292.cmp.838",
+        "title": "The Color of Paradise, Rang-e Khodā,رنگ خدا Image 1",
+        "year": null,
+        "source": "CrossRef",
+        "status": "verified"
+      },
+      {
+        "doi": "10.70910/ijal1(1)4",
+        "title": "المعنى في الخط العربي Significance of Arabic Calligraphy",
+        "year": 2024,
+        "source": "CrossRef",
+        "status": "verified"
+      },
+      {
+        "doi": "10.47832/2717-8293.16.26",
+        "title": "الماء والسياحة في المجالات الواحية الصحراوية - الواحات المغربية نموذجا",
+        "year": 2022,
+        "source": "CrossRef",
+        "status": "verified"
+      },
+      {
+        "doi": "10.21608/jsh.2024.360574",
+        "title": "الثقافة الإسلامية في الصين (التعليم المسجدي في الصين نموذجًا) Chinese Islamic Culture Mosque Education in China as a Case Study 中国伊斯兰教文化 ——以中国伊斯兰教经堂教育为例",
+        "year": 2024,
+        "source": "CrossRef (重试成功)",
+        "status": "verified"
+      },
+      {
+        "doi": "10.1515/caas-2025-2003",
+        "title": "ترجمة أدب نسائياته ووظيفته في العالم العربي / The Translation and Reception of Shanghai Literature in the Arab World",
+        "year": 2025,
+        "source": "CrossRef (重试成功)",
+        "status": "verified"
+      },
+      {
+        "doi": "10.17977/um082v3i12023p44-58",
+        "title": "الخط العربي تاريخ و إبداع   (Arabic Calligraphy, History and Creativity)",
+        "year": 2022,
+        "source": "CrossRef (重试成功)",
+        "status": "verified"
+      },
+      {
+        "doi": "10.18860/ijazarabi.v5i1.13174",
+        "title": "Development Of Arabic Calligraphy Learning Material  Base On Self-Learning/ تطوير مادة تعليم الخط العربي على ضوء تعلم الذاتي",
+        "year": 2022,
+        "source": "CrossRef (重试成功)",
+        "status": "verified"
+      },
+      {
+        "doi": "10.58205/fber.v3i1.1462",
+        "title": "متطلبات تطوير مشروعات السياحة الصحراوية في ضوء أهداف التنمية المستدامة",
+        "year": 2019,
+        "source": "CrossRef (重试成功)",
+        "status": "verified"
+      }
+    ],
+    "not_found": [],
+    "no_doi_found": [
+      {
+        "title": "أهمية دراسة المصادر التاريخية",
+        "year": 2021,
+        "found_title": "أهمية المصادر الأدبية في دراسة التاريخ الاجتماعي والعلمي للدولة الأموية (41هـ -132هـ/662م-750م) -كتب الأمالي أنموذجا-",
+        "found_year": 2020,
+        "found_doi": "10.37138/emirj.v34i1.1249",
+        "relevance": 23.923836,
+        "status": "found_by_title"
+      }
+    ],
+    "no_doi_not_found": [
+      {
+        "title": "الاستثمار المستدام في مباني التراث العمراني (دراسة تحليلية)",
+        "year": 2017,
+        "status": "not_found"
+      },
+      {
+        "title": "الروابط بين الطبيعة والثقافة والنزاعات وتأثيرات التغير المناخي",
+        "year": 2025,
+        "status": "not_found"
+      },
+      {
+        "title": "التطريز بالخيوط الذكية لبعض المطرزات السعودية",
+        "year": 2022,
+        "status": "not_found"
+      },
+      {
+        "title": "صناعة المخطوط في العراق",
+        "year": 2020,
+        "status": "not_found"
+      },
+      {
+        "title": "مخطوطة صفة المياه الحادة المعدنية",
+        "year": 2020,
+        "status": "not_found"
+      },
+      {
+        "title": "تحقيق القسم الثالث من مخطوطة الآداب الطبية",
+        "year": 2020,
+        "status": "not_found"
+      },
+      {
+        "title": "ألواح الرصاص دراسة تاريخية",
+        "year": 2022,
+        "status": "not_found"
+      },
+      {
+        "title": "الأوبئة في التراث الطبي العربي والإسلامي",
+        "year": 2021,
+        "status": "not_found"
+      },
+      {
+        "title": "القدس منارة الشعر العربي",
+        "year": 2012,
+        "status": "not_found"
+      },
+      {
+        "title": "منطقة الحياد العراقية السعودية",
+        "year": 2020,
+        "status": "not_found"
+      }
+    ],
+    "uncertain": [
+      {
+        "doi": "10.34120/ajh.v31i.2397",
+        "title": "الاستغراب وأفق الحوار الحضاري. Occidentalism and the Horizons of Civilizational Dialogue.",
+        "year": 2024,
+        "error": "错误: IncompleteRead(8428 bytes read)",
+        "status": "uncertain"
+      }
+    ]
+  }
+}
