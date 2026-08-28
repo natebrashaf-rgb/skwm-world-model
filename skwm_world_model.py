@@ -138,10 +138,8 @@ class RSSM(nn.Module):
         return h, z
 
     def step(self, h: torch.Tensor, z: torch.Tensor, a: torch.Tensor,
-             embed: torch.Tensor | None = None
-             ) -> tuple[torch.Tensor, torch.Tensor,
-                        torch.distributions.Normal,
-                        torch.distributions.Normal | None]:
+             embed = None
+             ):
         """单步递推
 
         Args:
@@ -285,7 +283,7 @@ class WorldModel(nn.Module):
         torch.save({"model": self.state_dict(), "config": self.c.__dict__}, path)
 
     @classmethod
-    def load(cls, path: str, device: torch.device | None = None) -> "WorldModel":
+    def load(cls, path: str, device=None) -> "WorldModel":
         """加载模型权重"""
         data = torch.load(path, map_location=device or torch.device("cpu"), weights_only=False)
         c = WMConfig(**data.get("config", {})) if isinstance(data.get("config"), dict) else data.get("config", WMConfig())
@@ -330,7 +328,7 @@ class SKWMWorldModelAdapter:
     动作=对该主题的干预编码。
     """
 
-    def __init__(self, wm: WorldModel, device: torch.device | None = None):
+    def __init__(self, wm: WorldModel, device=None):
         self.wm = wm
         self.device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.wm.to(self.device)

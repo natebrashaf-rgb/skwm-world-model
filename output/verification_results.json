@@ -88,5 +88,85 @@
     "is_china_arab_related": false,
     "notes": "",
     "verified_at": "2026-08-27T18:30:33.094161"
+  },
+  "7": {
+    "doi": "10.21608/jfhsc.2025.505974",
+    "title": "阿汉语否定工具使用错误的对比研究：以学习汉语的阿拉伯学生和学习阿拉伯语的中国学生为例 دراسة مقارنة لأخطاء استخدام أدوات النفي بين العربية والصينية: نموذج الطلاب العرب دارسي الصينية والطلاب الصينين دارسي العربية",
+    "year": 2025,
+    "tourism_class": "core",
+    "is_arabic_content": false,
+    "is_china_arab_related": true,
+    "notes": "",
+    "verified_at": "2026-08-27T19:25:57.488525"
+  },
+  "8": {
+    "doi": "10.21608/jfabsu.2023.97111.1115",
+    "title": "《由社会语言学角度浅谈微信的语言》 跨科学研究 莎蜜博士 贝尼苏韦夫大学语言学院中文系讲师 (مدخل إلى لغة الويتشات من زاوية علم اللغة الاجتماعي – دراسة بينية)",
+    "year": 2022,
+    "tourism_class": "none",
+    "is_arabic_content": false,
+    "is_china_arab_related": true,
+    "notes": "",
+    "verified_at": "2026-08-27T19:26:07.354217"
+  },
+  "9": {
+    "doi": "10.17977/um082v3i12023p44-58",
+    "title": "الخط العربي تاريخ و إبداع   (Arabic Calligraphy, History and Creativity)",
+    "year": null,
+    "tourism_class": "none",
+    "is_arabic_content": true,
+    "is_china_arab_related": false,
+    "notes": "",
+    "verified_at": "2026-08-27T19:26:18.687027"
+  },
+  "10": {
+    "doi": "10.3998/mpub.11373292.cmp.838",
+    "title": "The Color of Paradise, Rang-e Khodā,رنگ خدا Image 1",
+    "year": null,
+    "tourism_class": "none",
+    "is_arabic_content": false,
+    "is_china_arab_related": false,
+    "notes": "",
+    "verified_at": "2026-08-27T19:26:32.670876"
+  },
+  "11": {
+    "doi": "10.18860/ijazarabi.v5i1.13174",
+    "title": "Development Of Arabic Calligraphy Learning Material  Base On Self-Learning/ تطوير مادة تعليم الخط العربي على ضوء تعلم الذاتي",
+    "year": null,
+    "tourism_class": "none",
+    "is_arabic_content": false,
+    "is_china_arab_related": false,
+    "notes": "",
+    "verified_at": "2026-08-27T19:26:48.155010"
+  },
+  "12": {
+    "doi": "10.70910/ijal1(1)4",
+    "title": "المعنى في الخط العربي Significance of Arabic Calligraphy",
+    "year": null,
+    "tourism_class": "none",
+    "is_arabic_content": true,
+    "is_china_arab_related": false,
+    "notes": "",
+    "verified_at": "2026-08-27T19:26:57.037395"
+  },
+  "13": {
+    "doi": "10.58205/fber.v3i1.1462",
+    "title": "متطلبات تطوير مشروعات السياحة الصحراوية في ضوء أهداف التنمية المستدامة",
+    "year": 2019,
+    "tourism_class": "maybe",
+    "is_arabic_content": true,
+    "is_china_arab_related": false,
+    "notes": "",
+    "verified_at": "2026-08-27T19:27:07.553347"
+  },
+  "14": {
+    "doi": "10.47832/2717-8293.16.26",
+    "title": "الماء والسياحة في المجالات الواحية الصحراوية - الواحات المغربية نموذجا",
+    "year": 2022,
+    "tourism_class": "maybe",
+    "is_arabic_content": true,
+    "is_china_arab_related": false,
+    "notes": "",
+    "verified_at": "2026-08-27T19:27:15.636842"
   }
 }

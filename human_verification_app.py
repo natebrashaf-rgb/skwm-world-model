@@ -54,7 +54,22 @@ def save_verification_results(results):
 # ============================================================
 B1_DATA = load_b1()
 ARABIC_TEXTS = load_arabic_texts()
-ARABIC_PAPERS = [p for p in B1_DATA if p.get("language") == "ar"]
+
+# 加载DOI验证结果，只保留已验证的阿语文献
+def load_verified_dois():
+    """加载已验证的DOI列表"""
+    path = OUTPUT_DIR / "arabic_papers_verification.json"
+    if path.exists():
+        data = json.load(open(path, encoding='utf-8'))
+        verified_dois = set()
+        for r in data.get("details", {}).get("verified", []):
+            if r.get("doi"):
+                verified_dois.add(r["doi"])
+        return verified_dois
+    return set()
+
+VERIFIED_DOIS = load_verified_dois()
+ARABIC_PAPERS = [p for p in B1_DATA if p.get("language") == "ar" and p.get("doi") in VERIFIED_DOIS]
 
 # ============================================================
 # 路由

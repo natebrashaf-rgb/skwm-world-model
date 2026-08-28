@@ -1,0 +1,175 @@
+============================================================
+阿语文献人工验证工具
+============================================================
+阿语文献总数: 15
+启动服务器: http://localhost:5000
+============================================================
+ * Serving Flask app 'human_verification_app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-113-098
+127.0.0.1 - - [27/Aug/2026 19:25:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:25:46] "GET /api/papers HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:25:46] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:25:51] "GET /api/paper/7 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:25:51] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:25:57] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:25:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:25:59] "GET /api/papers HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:25:59] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:01] "GET /api/paper/8 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:01] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:07] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:09] "GET /api/papers HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:09] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:11] "GET /api/paper/9 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:11] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:18] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:20] "GET /api/papers HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:20] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:22] "GET /api/paper/10 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:22] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:32] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:34] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:34] "GET /api/papers HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:34] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:35] "GET /api/paper/11 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:35] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:48] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:49] "GET /api/papers HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:49] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:52] "GET /api/paper/12 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:52] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:57] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:58] "GET /api/papers HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:26:58] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:27:00] "GET /api/paper/13 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:27:00] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:27:07] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:27:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:27:09] "GET /api/papers HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:27:09] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:27:11] "GET /api/paper/14 HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:27:11] "GET /api/results HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:27:15] "POST /api/save HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:27:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:27:17] "GET /api/papers HTTP/1.1" 200 -
+127.0.0.1 - - [27/Aug/2026 19:27:17] "GET /api/results HTTP/1.1" 200 -
+ * Detected change in '/Users/brashaf./Documents/布拉沙夫绝密档案/世界模型线上项目/deploy/skwm_world_model.py', reloading
+============================================================
+阿语文献人工验证工具
+============================================================
+阿语文献总数: 15
+启动服务器: http://localhost:5000
+============================================================
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-113-098
+ * Detected change in '/Users/brashaf./Documents/布拉沙夫绝密档案/世界模型线上项目/deploy/skwm_world_model.py', reloading
+============================================================
+阿语文献人工验证工具
+============================================================
+阿语文献总数: 15
+启动服务器: http://localhost:5000
+============================================================
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-113-098
+ * Detected change in '/Users/brashaf./Documents/布拉沙夫绝密档案/世界模型线上项目/deploy/skwm_world_model.py', reloading
+============================================================
+阿语文献人工验证工具
+============================================================
+阿语文献总数: 15
+启动服务器: http://localhost:5000
+============================================================
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-113-098
+ * Detected change in '/Users/brashaf./Documents/布拉沙夫绝密档案/世界模型线上项目/deploy/train_rssm_v3.py', reloading
+============================================================
+阿语文献人工验证工具
+============================================================
+阿语文献总数: 15
+启动服务器: http://localhost:5000
+============================================================
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-113-098
+ * Detected change in '/Users/brashaf./Documents/布拉沙夫绝密档案/世界模型线上项目/deploy/skmw_platform/backend/skwm_world_model.py', reloading
+============================================================
+阿语文献人工验证工具
+============================================================
+阿语文献总数: 15
+启动服务器: http://localhost:5000
+============================================================
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-113-098
+ * Detected change in '/Users/brashaf./Documents/布拉沙夫绝密档案/世界模型线上项目/deploy/skmw_platform/backend/skwm_world_model.py', reloading
+============================================================
+阿语文献人工验证工具
+============================================================
+阿语文献总数: 15
+启动服务器: http://localhost:5000
+============================================================
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-113-098
+ * Detected change in '/Users/brashaf./Documents/布拉沙夫绝密档案/世界模型线上项目/deploy/skmw_platform/backend/skwm_world_model.py', reloading
+============================================================
+阿语文献人工验证工具
+============================================================
+阿语文献总数: 15
+启动服务器: http://localhost:5000
+============================================================
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-113-098
+ * Detected change in '/Users/brashaf./Documents/布拉沙夫绝密档案/世界模型线上项目/deploy/train_rssm_v3.py', reloading
+============================================================
+阿语文献人工验证工具
+============================================================
+阿语文献总数: 15
+启动服务器: http://localhost:5000
+============================================================
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-113-098
+ * Detected change in '/Users/brashaf./Documents/布拉沙夫绝密档案/世界模型线上项目/deploy/train_rssm_v3.py', reloading
+============================================================
+阿语文献人工验证工具
+============================================================
+阿语文献总数: 15
+启动服务器: http://localhost:5000
+============================================================
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-113-098
+ * Detected change in '/Users/brashaf./Documents/布拉沙夫绝密档案/世界模型线上项目/deploy/train_rssm_v3.py', reloading
+============================================================
+阿语文献人工验证工具
+============================================================
+阿语文献总数: 15
+启动服务器: http://localhost:5000
+============================================================
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-113-098
+ * Detected change in '/Users/brashaf./Documents/布拉沙夫绝密档案/世界模型线上项目/deploy/train_rssm_v3.py', reloading
+============================================================
+阿语文献人工验证工具
+============================================================
+阿语文献总数: 15
+启动服务器: http://localhost:5000
+============================================================
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 129-113-098

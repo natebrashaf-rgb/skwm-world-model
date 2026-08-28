@@ -1,0 +1,128 @@
+{
+  "version": "v3",
+  "training_config": {
+    "seed": 42,
+    "years": [
+      1995,
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "train_years": [
+      1995,
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019
+    ],
+    "test_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "split_year": 2020,
+    "T": 8,
+    "x_dim": 4,
+    "a_dim": 4,
+    "n_models": 3,
+    "n_epochs": 3000,
+    "batch_size": 128,
+    "data_augmentation": true,
+    "curriculum_learning": true,
+    "early_stopping": true
+  },
+  "data_info": {
+    "total_papers": 12233,
+    "year_range": [
+      1912,
+      2026
+    ],
+    "n_topics": 100,
+    "n_arabic_topics": 0,
+    "n_train_sequences": 1700
+  },
+  "M2_rssm_ensemble": {
+    "h1": {
+      "MAE": 7.238,
+      "RMSE": 12.5243,
+      "Uncertainty": 0.0,
+      "n_eval_points": 5
+    },
+    "h3": {
+      "MAE": 14.53,
+      "RMSE": 22.8364,
+      "Uncertainty": 0.0,
+      "n_eval_points": 5
+    },
+    "h5": {
+      "MAE": 19.71,
+      "RMSE": 32.0509,
+      "Uncertainty": 0.0,
+      "n_eval_points": 5
+    }
+  },
+  "M2_by_language": {
+    "zh": {
+      "MAE": 13.826,
+      "n_topics": 1
+    },
+    "en": {
+      "MAE": 13.826,
+      "n_topics": 99
+    }
+  },
+  "improvements": [
+    "数据增强: 对阿拉伯语主题增加2倍样本",
+    "模型改进: 简化架构 + LayerNorm + Dropout",
+    "训练策略: 课程学习 + 早停 + 学习率调度",
+    "集成预测: 3个模型集成 + 不确定性估计"
+  ]
+}
