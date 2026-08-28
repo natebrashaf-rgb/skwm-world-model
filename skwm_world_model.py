@@ -138,8 +138,7 @@ class RSSM(nn.Module):
         return h, z
 
     def step(self, h: torch.Tensor, z: torch.Tensor, a: torch.Tensor,
-             embed = None
-             ):
+             embed=None, deterministic: bool = False):
         """单步递推
 
         Args:
@@ -150,18 +149,28 @@ class RSSM(nn.Module):
         Returns:
             (h_new, z_new, prior_dist, post_dist_or_None)
         """
-        h = self.cell(torch.cat([z, a], -1), h)      # 递推 h_t
+        if h.ndim != 2 or h.shape[-1] != self.c.deter:
+            raise ValueError(f"h must have shape [B, {self.c.deter}], got {tuple(h.shape)}")
+        if z.ndim != 2 or z.shape[-1] != self.c.stoch:
+            raise ValueError(f"z must have shape [B, {self.c.stoch}], got {tuple(z.shape)}")
+        if a.ndim != 2 or a.shape[-1] != self.c.a_dim:
+            raise ValueError(f"a must have shape [B, {self.c.a_dim}], got {tuple(a.shape)}")
+        if h.shape[0] != z.shape[0] or h.shape[0] != a.shape[0]:
+            raise ValueError("h, z and a must have the same batch size")
 
+        h = self.cell(torch.cat([z, a], -1), h)      # 递推 h_t
         prior = self._dist(self.prior(h))             # 先验 p_φ(z|h)
 
         if embed is None:
-            # imagine 模式: 不用观测, 用先验采样
-            z = prior.rsample()
+            # imagine 模式: 不用观测, 用先验采样或均值
+            z = prior.mean if deterministic else prior.rsample()
             return h, z, prior, None
 
+        if embed.ndim != 2 or embed.shape[0] != h.shape[0] or embed.shape[-1] != self.c.hidden:
+            raise ValueError(f"embed must have shape [B, {self.c.hidden}], got {tuple(embed.shape)}")
         # observe 模式: 后验 q_φ(z|h,x)
         post = self._dist(self.post(torch.cat([h, embed], -1)))
-        z = post.rsample()
+        z = post.mean if deterministic else post.rsample()
         return h, z, prior, post
 
 
@@ -196,7 +205,15 @@ class WorldModel(nn.Module):
         Returns:
             (hs, zs, priors, posts) 各步潜状态
         """
+        if x_seq.ndim != 3 or x_seq.shape[-1] != self.c.x_dim:
+            raise ValueError(f"x_seq must have shape [B, T, {self.c.x_dim}], got {tuple(x_seq.shape)}")
+        if a_seq.ndim != 3 or a_seq.shape[-1] != self.c.a_dim:
+            raise ValueError(f"a_seq must have shape [B, T, {self.c.a_dim}], got {tuple(a_seq.shape)}")
+        if x_seq.shape[:2] != a_seq.shape[:2]:
+            raise ValueError("x_seq and a_seq must have matching B and T dimensions")
         B, T = x_seq.shape[:2]
+        if T == 0:
+            raise ValueError("sequence length T must be positive")
         h, z = self.rssm.initial(B, x_seq.device)
         hs, zs, priors, posts = [], [], [], []
 
@@ -251,8 +268,8 @@ class WorldModel(nn.Module):
         }
 
     @torch.no_grad()
-    def imagine(self, x0: torch.Tensor, a_future: torch.Tensor
-                ) -> torch.Tensor:
+    def imagine(self, x0: torch.Tensor, a_future: torch.Tensor,
+                deterministic: bool = False) -> torch.Tensor:
         """Algorithm 3: 潜在想象 rollout = 预测未来 / 反事实
 
         Args:
@@ -261,19 +278,28 @@ class WorldModel(nn.Module):
         Returns:
             [B, L, x_dim] 未来 L 年预测状态
         """
+        if x0.ndim != 2 or x0.shape[-1] != self.c.x_dim:
+            raise ValueError(f"x0 must have shape [B, {self.c.x_dim}], got {tuple(x0.shape)}")
+        if a_future.ndim != 3 or a_future.shape[-1] != self.c.a_dim:
+            raise ValueError(f"a_future must have shape [B, L, {self.c.a_dim}], got {tuple(a_future.shape)}")
+        if x0.shape[0] != a_future.shape[0]:
+            raise ValueError("x0 and a_future must have the same batch size")
         B = x0.shape[0]
+        L = a_future.shape[1]
+        if L == 0:
+            return x0.new_empty((B, 0, self.c.x_dim))
         h, z = self.rssm.initial(B, x0.device)
 
         # 用已知起始观测初始化潜状态
         h, z, _, _ = self.rssm.step(
             h, z, torch.zeros(B, self.c.a_dim, device=x0.device),
-            self.enc(x0))
+            self.enc(x0), deterministic=deterministic)
 
         preds = []
-        L = a_future.shape[1]
         for t in range(L):
             h, z, _, _ = self.rssm.step(
-                h, z, a_future[:, t], embed=None)    # [*]用先验->脱离数据
+                h, z, a_future[:, t], embed=None,
+                deterministic=deterministic)           # 用先验->脱离数据
             preds.append(self.dec(h, z))
 
         return torch.stack(preds, 1)                  # [B, L, x_dim]
@@ -349,7 +375,7 @@ class SKWMWorldModelAdapter:
             a[1] = 1.0                            # 第二维标记有干预
         # 如有边干预, 可编码到剩余维度
         edge_ops = control.get("edge_interventions", [])
-        if edge_ops and topic_idx < self.wm.c.a_dim - 2:
+        if edge_ops:
             for j, op in enumerate(edge_ops[:self.wm.c.a_dim - 2]):
                 a[2 + j] = 1.0 if op[0] == "add" else -1.0
         return a
@@ -363,8 +389,12 @@ class SKWMWorldModelAdapter:
         """
         from skwm_closed_loop import KnowledgeState
 
+        if horizon <= 0:
+            raise ValueError("horizon must be a positive integer")
         topics = list(o.vec.keys())
         N = len(topics)
+        if N == 0:
+            raise ValueError("state must contain at least one topic")
 
         # --- 构造 x0: [N, x_dim], 每个主题为一条轨迹 ---
         x0_np = np.array([o.vec[t] for t in topics])          # [N, x_dim]
@@ -394,7 +424,13 @@ class SKWMWorldModelAdapter:
         """
         from skwm_closed_loop import KnowledgeState
 
+        if horizon <= 0:
+            raise ValueError("horizon must be a positive integer")
+        if B <= 0:
+            raise ValueError("B must be a positive integer")
         topics = list(o.vec.keys())
+        if not topics:
+            raise ValueError("state must contain at least one topic")
         x0_np = np.array([o.vec[t] for t in topics])
         x0 = torch.tensor(x0_np, dtype=torch.float32, device=self.device)
 
