@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "pinned_at": "2026-08-28",
+    "purpose": "M0/M1/M2 模型对照实验 + 静态/RSSM 服务对照实验 的数据基线",
+    "base_version": "B1 12,233（含 27 条阿语）；verified 12,221 仅用于 C/D 核验分支，不在本实验使用",
+    "git_commit": "c23b591"
+  },
+  "files": [
+    {
+      "file": "data/B1_文献主表.json",
+      "role": "文献主表 B1（终版底盘）",
+      "expected": "12,233 条（含 27 条阿语）",
+      "sha256": "a56fac85a22d3c84012b44c7c7fbd991863ac9f956ea8be514b2b09a6a4a8f4d",
+      "bytes": 6522548,
+      "n_papers": 12233,
+      "language_dist": {
+        "en": 11626,
+        "zh": 565,
+        "ar": 27,
+        "fr": 4,
+        "fa": 7,
+        "tr": 2,
+        "pt": 1,
+        "ro": 1
+      }
+    },
+    {
+      "file": "data/topic_assignments.json",
+      "role": "主题分配（terms 修复版）",
+      "expected": "12,233 键，terms_version=3332966f",
+      "sha256": "3332966f91a1b7e2ffd46f9bf395f3682c1eebbcc4a5c5872c48f4f8905d0f95",
+      "bytes": 3376751
+    },
+    {
+      "file": "data/core_terms.json",
+      "role": "三语受控词表",
+      "expected": "9,014 词",
+      "sha256": "63dac6b6734c3f61a110bca7a4a6474c8a6be8d6c48aaa2e487ade5122c35b3d",
+      "bytes": 1667039
+    },
+    {
+      "file": "data/state_vectors.json",
+      "role": "状态向量现行版（=C1 含27条阿语）",
+      "expected": "1912-2026",
+      "sha256": "f6f5820a1149d1f60ec11120434693c606743f093b928c1c54b08de6dd0b292d",
+      "bytes": 1559068
+    },
+    {
+      "file": "data/state_vectors_C0_20260827.json",
+      "role": "C0 状态向量（排除27条阿语）",
+      "expected": "12,206 篇 → 42,851 条目",
+      "sha256": "67067fe64f411dabe58dcefc172d32916c7344d676cb7ea76d1bf8c53a18e384",
+      "bytes": 1530865
+    },
+    {
+      "file": "data/state_vectors_C1_20260827.json",
+      "role": "C1 状态向量（包含27条阿语）",
+      "expected": "12,233 篇 → 43,642 条目",
+      "sha256": "f6f5820a1149d1f60ec11120434693c606743f093b928c1c54b08de6dd0b292d",
+      "bytes": 1559068
+    },
+    {
+      "file": "data/pdf_texts.json",
+      "role": "PDF 全文文本",
+      "expected": "6,063 篇",
+      "sha256": "a8b5d73cfcb9ade5cc5f3e2d9c398e77915dee4028205c2fdedfa1a152c363aa",
+      "bytes": 31520611
+    },
+    {
+      "file": "model_rssm.pt",
+      "role": "RSSM 世界模型权重",
+      "expected": "M2 模型",
+      "sha256": "2e9ef7e402bfa6849a5d7d73c67adc06b1a4a0fdebce23b540fb5e9335221913",
+      "bytes": 745845
+    }
+  ]
+}
