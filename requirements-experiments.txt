@@ -1,0 +1,11 @@
+# 实验专用依赖（2026-09-01 补）
+# 注意：不要覆盖仓库根目录的 requirements.txt——那份 103 字节是后端/部署用的（fastapi/flask 等）。
+# 本文件给跑实验用：pip install -r requirements-experiments.txt
+
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+torch>=2.0.0        # RSSM(M2) 需要；只跑惯性基线/ML 基线可暂不装
+neo4j>=5.0.0        # 仅 S0 图库基线（neo4j_service_query.py）需要

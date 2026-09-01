@@ -1,0 +1,23 @@
+{
+  "name": "rolling_split_20260901",
+  "data": "data/state_vectors_C1_20260827.json",
+  "data_sha256_note": "见 output/data_version_manifest_12233.json",
+  "cutoffs": [2014, 2016, 2018, 2020],
+  "horizons": [1, 3, 5],
+  "train_rule": "每个截点只用 year <= cutoff 的数据训练",
+  "target_rule": "目标窗口 = (cutoff, cutoff+h]，逐目标年出样本行",
+  "excluded_years": [2026],
+  "excluded_reason": "2026 为截至 8 月的部分年度，不与完整年度直接比较",
+  "missing_year_policy": "skip（不补零、不插值）；Part A 为与 c0c1 对账保留旧补 0 口径并在摘要注明",
+  "min_train_len": 3,
+  "seed": 42,
+  "top_k": 10,
+  "rssm_in_rolling": false,
+  "rssm_note": "RSSM 预训练 checkpoint 见过全时间线，早截点构成前瞻泄漏；滚动回测默认排除，--with-rssm 强制加入时结果只作对照",
+  "assertions": [
+    "history_end <= train_cutoff",
+    "history_end < target_year",
+    "target_year > train_cutoff",
+    "target_year != 2026"
+  ]
+}
