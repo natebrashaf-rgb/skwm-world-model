@@ -1,0 +1,65 @@
+[
+  {
+    "horizon": 1,
+    "target_year": 2020,
+    "method": "last",
+    "mae": 6.43,
+    "rmse": 11.462547709824374
+  },
+  {
+    "horizon": 1,
+    "target_year": 2020,
+    "method": "moving_avg",
+    "mae": 9.96,
+    "rmse": 16.516725529663024
+  },
+  {
+    "horizon": 1,
+    "target_year": 2020,
+    "method": "linear",
+    "mae": 14.700399999999997,
+    "rmse": 24.70395717289034
+  },
+  {
+    "horizon": 3,
+    "target_year": 2022,
+    "method": "last",
+    "mae": 12.26,
+    "rmse": 20.09527307602462
+  },
+  {
+    "horizon": 3,
+    "target_year": 2022,
+    "method": "moving_avg",
+    "mae": 14.556666666666665,
+    "rmse": 24.638159202523404
+  },
+  {
+    "horizon": 3,
+    "target_year": 2022,
+    "method": "linear",
+    "mae": 16.727984615384617,
+    "rmse": 27.872894397721044
+  },
+  {
+    "horizon": 5,
+    "target_year": 2024,
+    "method": "last",
+    "mae": 20.57,
+    "rmse": 32.33713036124263
+  },
+  {
+    "horizon": 5,
+    "target_year": 2024,
+    "method": "moving_avg",
+    "mae": 21.633333333333336,
+    "rmse": 33.56122100811523
+  },
+  {
+    "horizon": 5,
+    "target_year": 2024,
+    "method": "linear",
+    "mae": 22.367415384615384,
+    "rmse": 34.38199828794408
+  }
+]

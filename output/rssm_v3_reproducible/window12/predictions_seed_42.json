@@ -1,0 +1,53 @@
+[
+  {
+    "spearman": -0.3735432699614226,
+    "precision_at_10": 0.0,
+    "top10_overlap": 0.0,
+    "ndcg_at_10": 0.031637452361940724,
+    "model": "window12",
+    "seed": 42,
+    "horizon": 1,
+    "forecast_origin": 2019,
+    "history_start": 2008,
+    "history_end": 2019,
+    "target_year": 2020,
+    "train_cutoff": 2019,
+    "topic_count": 100,
+    "mae": 26.696717198342085,
+    "rmse": 50.98801730640395
+  },
+  {
+    "spearman": -0.04993896744168062,
+    "precision_at_10": 0.0,
+    "top10_overlap": 0.0,
+    "ndcg_at_10": 0.10580288919402239,
+    "model": "window12",
+    "seed": 42,
+    "horizon": 3,
+    "forecast_origin": 2019,
+    "history_start": 2008,
+    "history_end": 2019,
+    "target_year": 2022,
+    "train_cutoff": 2019,
+    "topic_count": 100,
+    "mae": 29.748583481907843,
+    "rmse": 54.08525475298871
+  },
+  {
+    "spearman": 0.2729815799665745,
+    "precision_at_10": 0.0,
+    "top10_overlap": 0.0,
+    "ndcg_at_10": 0.2115913558311247,
+    "model": "window12",
+    "seed": 42,
+    "horizon": 5,
+    "forecast_origin": 2019,
+    "history_start": 2008,
+    "history_end": 2019,
+    "target_year": 2024,
+    "train_cutoff": 2019,
+    "topic_count": 100,
+    "mae": 35.37528356850147,
+    "rmse": 59.62989547128671
+  }
+]

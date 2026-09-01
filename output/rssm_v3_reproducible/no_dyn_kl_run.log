@@ -1,0 +1,2 @@
+[no_dyn_kl seed=42] real-data training
+{"config": "no_dyn_kl", "seeds": [42], "best_val": [0.28057236472765607]}

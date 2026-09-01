@@ -1,0 +1,135 @@
+{
+  "data_source": "data/state_vectors.json + data/B1_文献主表.json",
+  "real_data": true,
+  "train_cutoff": 2019,
+  "fit_window_end": 2015,
+  "validation_window": "2017-2019",
+  "test_origins": [
+    2019
+  ],
+  "test_targets_min": 2020,
+  "seeds": [
+    42
+  ],
+  "steps": 600,
+  "batch": 128,
+  "config": {
+    "name": "window12",
+    "use_stoch": true,
+    "use_deter": true,
+    "use_log": true,
+    "T": 12,
+    "stoch": 32,
+    "beta_dyn": 1.0,
+    "beta_rep": 0.1
+  },
+  "results": [
+    {
+      "config": {
+        "name": "window12",
+        "use_stoch": true,
+        "use_deter": true,
+        "use_log": true,
+        "T": 12,
+        "stoch": 32,
+        "beta_dyn": 1.0,
+        "beta_rep": 0.1
+      },
+      "seed": 42,
+      "n_fit": 1000,
+      "n_val": 300,
+      "train_log": [
+        {
+          "step": 0,
+          "loss": 1.8281880617141724,
+          "recon": 0.7281880378723145,
+          "dyn": 1.0,
+          "rep": 1.0,
+          "val_loss": 2.0971898635228476,
+          "grad_norm": 0.3966068625450134
+        },
+        {
+          "step": 200,
+          "loss": 1.2906556129455566,
+          "recon": 0.1818864941596985,
+          "dyn": 1.0079718828201294,
+          "rep": 1.0079718828201294,
+          "val_loss": 1.5367597341537476,
+          "grad_norm": 0.45575660467147827
+        },
+        {
+          "step": 400,
+          "loss": 1.217596411705017,
+          "recon": 0.11759638041257858,
+          "dyn": 1.0,
+          "rep": 1.0,
+          "val_loss": 1.4666316111882527,
+          "grad_norm": 0.22982701659202576
+        },
+        {
+          "step": 599,
+          "loss": 1.2239800691604614,
+          "recon": 0.10207109898328781,
+          "dyn": 1.0199172496795654,
+          "rep": 1.0199172496795654,
+          "val_loss": 1.476711908976237,
+          "grad_norm": 0.3199152648448944
+        }
+      ],
+      "best_val_loss": 1.4666316111882527,
+      "predictions": [
+        {
+          "spearman": -0.3735432699614226,
+          "precision_at_10": 0.0,
+          "top10_overlap": 0.0,
+          "ndcg_at_10": 0.031637452361940724,
+          "model": "window12",
+          "seed": 42,
+          "horizon": 1,
+          "forecast_origin": 2019,
+          "history_start": 2008,
+          "history_end": 2019,
+          "target_year": 2020,
+          "train_cutoff": 2019,
+          "topic_count": 100,
+          "mae": 26.696717198342085,
+          "rmse": 50.98801730640395
+        },
+        {
+          "spearman": -0.04993896744168062,
+          "precision_at_10": 0.0,
+          "top10_overlap": 0.0,
+          "ndcg_at_10": 0.10580288919402239,
+          "model": "window12",
+          "seed": 42,
+          "horizon": 3,
+          "forecast_origin": 2019,
+          "history_start": 2008,
+          "history_end": 2019,
+          "target_year": 2022,
+          "train_cutoff": 2019,
+          "topic_count": 100,
+          "mae": 29.748583481907843,
+          "rmse": 54.08525475298871
+        },
+        {
+          "spearman": 0.2729815799665745,
+          "precision_at_10": 0.0,
+          "top10_overlap": 0.0,
+          "ndcg_at_10": 0.2115913558311247,
+          "model": "window12",
+          "seed": 42,
+          "horizon": 5,
+          "forecast_origin": 2019,
+          "history_start": 2008,
+          "history_end": 2019,
+          "target_year": 2024,
+          "train_cutoff": 2019,
+          "topic_count": 100,
+          "mae": 35.37528356850147,
+          "rmse": 59.62989547128671
+        }
+      ]
+    }
+  ]
+}
