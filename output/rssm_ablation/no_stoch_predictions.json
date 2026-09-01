@@ -1,0 +1,152 @@
+[
+  {
+    "mae": 29.861351335048674,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.1730712359636788,
+    "eval_year": 2019,
+    "horizon": 1,
+    "n_topics": 100
+  },
+  {
+    "mae": 32.17036345005035,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.16511366273975892,
+    "eval_year": 2020,
+    "horizon": 1,
+    "n_topics": 100
+  },
+  {
+    "mae": 32.66542402505875,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.17781344462607993,
+    "eval_year": 2021,
+    "horizon": 1,
+    "n_topics": 100
+  },
+  {
+    "mae": 34.12752094507218,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.14536357105092765,
+    "eval_year": 2022,
+    "horizon": 1,
+    "n_topics": 100
+  },
+  {
+    "mae": 38.25455729007721,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.14861205341786277,
+    "eval_year": 2023,
+    "horizon": 1,
+    "n_topics": 100
+  },
+  {
+    "mae": 29.66900175690651,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.1730712359636788,
+    "eval_year": 2017,
+    "horizon": 3,
+    "n_topics": 100
+  },
+  {
+    "mae": 31.97138112783432,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.16511366273975892,
+    "eval_year": 2018,
+    "horizon": 3,
+    "n_topics": 100
+  },
+  {
+    "mae": 32.43327798247337,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.17781344462607993,
+    "eval_year": 2019,
+    "horizon": 3,
+    "n_topics": 100
+  },
+  {
+    "mae": 33.842312949895856,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.14536357105092765,
+    "eval_year": 2020,
+    "horizon": 3,
+    "n_topics": 100
+  },
+  {
+    "mae": 37.94945106267929,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.14861205341786277,
+    "eval_year": 2021,
+    "horizon": 3,
+    "n_topics": 100
+  },
+  {
+    "mae": 29.45863497018814,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.1730712359636788,
+    "eval_year": 2015,
+    "horizon": 5,
+    "n_topics": 100
+  },
+  {
+    "mae": 31.753760313987733,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.16511366273975892,
+    "eval_year": 2016,
+    "horizon": 5,
+    "n_topics": 100
+  },
+  {
+    "mae": 32.184261689186094,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.17781344462607993,
+    "eval_year": 2017,
+    "horizon": 5,
+    "n_topics": 100
+  },
+  {
+    "mae": 33.535264439582825,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.14536357105092765,
+    "eval_year": 2018,
+    "horizon": 5,
+    "n_topics": 100
+  },
+  {
+    "mae": 37.6206404709816,
+    "spearman": 0.0,
+    "p_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "ndcg_at_10": 0.14861205341786277,
+    "eval_year": 2019,
+    "horizon": 5,
+    "n_topics": 100
+  }
+]
