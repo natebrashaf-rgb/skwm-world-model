@@ -1,2 +1,6 @@
 [stoch64 seed=42] real-data training
-{"config": "stoch64", "seeds": [42], "best_val": [1.5809439818064372]}
+[stoch64 seed=123] real-data training
+[stoch64 seed=2026] real-data training
+[stoch64 seed=3407] real-data training
+[stoch64 seed=7777] real-data training
+{"config": "stoch64", "seeds": [42, 123, 2026, 3407, 7777], "best_val": [1.6168685754140217, 1.6261521577835083, 1.5932751099268596, 1.6364348729451497, 1.6011053323745728]}

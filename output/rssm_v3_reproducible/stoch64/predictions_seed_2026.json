@@ -1,0 +1,53 @@
+[
+  {
+    "spearman": -0.37462939794285616,
+    "precision_at_10": 0.0,
+    "top10_overlap": 0.0,
+    "ndcg_at_10": 0.031637452361940724,
+    "model": "stoch64",
+    "seed": 2026,
+    "horizon": 1,
+    "forecast_origin": 2019,
+    "history_start": 2012,
+    "history_end": 2019,
+    "target_year": 2020,
+    "train_cutoff": 2019,
+    "topic_count": 100,
+    "mae": 25.62201048955321,
+    "rmse": 49.73382141829916
+  },
+  {
+    "spearman": -0.0413347512871334,
+    "precision_at_10": 0.0,
+    "top10_overlap": 0.0,
+    "ndcg_at_10": 0.10580288919402239,
+    "model": "stoch64",
+    "seed": 2026,
+    "horizon": 3,
+    "forecast_origin": 2019,
+    "history_start": 2012,
+    "history_end": 2019,
+    "target_year": 2022,
+    "train_cutoff": 2019,
+    "topic_count": 100,
+    "mae": 27.601171332895756,
+    "rmse": 51.46037031971274
+  },
+  {
+    "spearman": 0.2585325809450761,
+    "precision_at_10": 0.0,
+    "top10_overlap": 0.0,
+    "ndcg_at_10": 0.2115913558311247,
+    "model": "stoch64",
+    "seed": 2026,
+    "horizon": 5,
+    "forecast_origin": 2019,
+    "history_start": 2012,
+    "history_end": 2019,
+    "target_year": 2024,
+    "train_cutoff": 2019,
+    "topic_count": 100,
+    "mae": 33.31592024385929,
+    "rmse": 57.47451523778473
+  }
+]

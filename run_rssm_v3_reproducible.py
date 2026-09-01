@@ -54,7 +54,7 @@ def train(model,fit,val,seed,steps,batch,beta_dyn,beta_rep):
     return logs,best
 
 def evaluate(model,kwm,config,seed):
-    years=list(range(1995,2025)); train_cut=2019; rows=[]
+    years=list(range(1995,2025)); train_cut=2019; rows=[]; audit=[]
     for h in (1,3,5):
         origins=[train_cut] if train_cut+h<=2024 else []
         for origin in origins:
@@ -63,16 +63,18 @@ def evaluate(model,kwm,config,seed):
                 x0=torch.tensor(np.asarray([state.vec[topic]],dtype=np.float32)); actions=torch.zeros(1,h,4)
                 with torch.no_grad(): p=model.imagine(x0,actions,True)[0,-1,0].item()
                 pred.append(p); actual.append(float(kwm.get_state(origin+h).vec[topic][0]))
-            pred=np.asarray(pred); actual=np.asarray(actual); growth_pred=pred-np.asarray([state.vec[t][0] for t in kwm.topics]); growth_actual=actual-np.asarray([state.vec[t][0] for t in kwm.topics]); m=rank_metrics(growth_pred,growth_actual)
+            pred=np.asarray(pred); actual=np.asarray(actual); current=np.asarray([state.vec[t][0] for t in kwm.topics]); growth_pred=pred-current; growth_actual=actual-current; m=rank_metrics(growth_pred,growth_actual)
+            for topic, pp, aa in zip(kwm.topics, pred, actual):
+                audit.append({'model':config['name'],'seed':seed,'horizon':h,'forecast_origin':origin,'history_start':origin-config['T']+1,'history_end':origin,'target_year':origin+h,'train_cutoff':train_cut,'topic_id':topic,'prediction':float(pp),'actual':float(aa),'predicted_growth':float(pp-current[list(kwm.topics).index(topic)]),'actual_growth':float(aa-current[list(kwm.topics).index(topic)])})
             m.update({'model':config['name'],'seed':seed,'horizon':h,'forecast_origin':origin,'history_start':origin-config['T']+1,'history_end':origin,'target_year':origin+h,'train_cutoff':train_cut,'topic_count':len(kwm.topics),'mae':float(np.mean(np.abs(pred-actual))),'rmse':float(np.sqrt(np.mean((pred-actual)**2)))})
             assert m['history_end']<m['target_year'] and m['target_year']>train_cut
             rows.append(m)
-    return rows
+    return rows, audit
 
 def run_one(config,seed,steps,batch,kwm):
     model=AblationRSSM(stoch=config['stoch'],use_stoch=config['use_stoch'],use_deter=config['use_deter'],use_log=config['use_log'])
-    fit,val=split_windows(kwm,config['T'],config['use_log']); logs,best=train(model,fit,val,seed,steps,batch,config['beta_dyn'],config['beta_rep']); rows=evaluate(model,kwm,config,seed)
-    return {'config':config,'seed':seed,'n_fit':len(fit),'n_val':len(val),'train_log':logs,'best_val_loss':best,'predictions':rows},model
+    fit,val=split_windows(kwm,config['T'],config['use_log']); logs,best=train(model,fit,val,seed,steps,batch,config['beta_dyn'],config['beta_rep']); rows,audit=evaluate(model,kwm,config,seed)
+    return {'config':config,'seed':seed,'n_fit':len(fit),'n_val':len(val),'train_log':logs,'best_val_loss':best,'predictions':rows,'audit':audit},model
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--config',required=True); ap.add_argument('--steps',type=int,default=1200); ap.add_argument('--batch',type=int,default=128); ap.add_argument('--seeds',nargs='*',type=int,default=SEEDS); args=ap.parse_args()
@@ -84,6 +86,6 @@ def main():
       'no_dyn_kl':{'name':'no_dyn_kl','use_stoch':True,'use_deter':True,'use_log':True,'T':8,'stoch':32,'beta_dyn':0.,'beta_rep':.1}}
     cfg=configs[args.config]; out=OUT/args.config; out.mkdir(parents=True,exist_ok=True); kwm=load_data(); allr=[]
     for seed in args.seeds:
-        print(f'[{args.config} seed={seed}] real-data training',flush=True); r,m=run_one(cfg,seed,args.steps,args.batch,kwm); allr.append(r); torch.save({'model':m.state_dict(),'config':cfg,'seed':seed},out/f'model_seed_{seed}.pt'); (out/f'training_seed_{seed}.json').write_text(json.dumps({'config':cfg,'seed':seed,'n_fit':r['n_fit'],'n_val':r['n_val'],'best_val_loss':r['best_val_loss'],'train_log':r['train_log']},ensure_ascii=False,indent=2),encoding='utf-8'); (out/f'predictions_seed_{seed}.json').write_text(json.dumps(r['predictions'],ensure_ascii=False,indent=2),encoding='utf-8')
+        print(f'[{args.config} seed={seed}] real-data training',flush=True); r,m=run_one(cfg,seed,args.steps,args.batch,kwm); allr.append(r); torch.save({'model':m.state_dict(),'config':cfg,'seed':seed},out/f'model_seed_{seed}.pt'); (out/f'training_seed_{seed}.json').write_text(json.dumps({'config':cfg,'seed':seed,'n_fit':r['n_fit'],'n_val':r['n_val'],'best_val_loss':r['best_val_loss'],'train_log':r['train_log']},ensure_ascii=False,indent=2),encoding='utf-8'); (out/f'predictions_seed_{seed}.json').write_text(json.dumps(r['predictions'],ensure_ascii=False,indent=2),encoding='utf-8'); (out/f'audit_seed_{seed}.json').write_text(json.dumps(r['audit'],ensure_ascii=False,indent=2),encoding='utf-8')
     summary={'data_source':'data/state_vectors.json + data/B1_文献主表.json','real_data':True,'train_cutoff':2019,'fit_window_end':2015,'validation_window':'2017-2019','test_origins':[2019],'test_targets_min':2020,'seeds':args.seeds,'steps':args.steps,'batch':args.batch,'config':cfg,'results':allr}; (out/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps({'config':args.config,'seeds':args.seeds,'best_val':[r['best_val_loss'] for r in allr]},ensure_ascii=False),flush=True)
 if __name__=='__main__': main()
