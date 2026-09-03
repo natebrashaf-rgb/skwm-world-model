@@ -1,0 +1,6 @@
+[full seed=42] real-data training
+[full seed=123] real-data training
+[full seed=2026] real-data training
+[full seed=3407] real-data training
+[full seed=7777] real-data training
+{"config": "full", "seeds": [42, 123, 2026, 3407, 7777], "best_val": [1.609989841779073, 1.5983725786209106, 1.588998556137085, 1.5900733868281047, 1.6402398347854614]}

@@ -6,7 +6,7 @@ import torch
 from scipy.stats import spearmanr
 
 ROOT=Path(__file__).resolve().parent
-OUT=ROOT/'output'/'rssm_v3_reproducible'
+OUT=ROOT/'output'/'rssm_v3_reproducible_corrected'
 SEEDS=[42,123,2026,3407,7777]
 from run_rssm_ablation import AblationRSSM, build_windows
 

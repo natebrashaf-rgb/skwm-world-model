@@ -1,0 +1,38 @@
+{
+  "configs": [
+    "full",
+    "no_log",
+    "window12",
+    "stoch64",
+    "no_dyn_kl"
+  ],
+  "hash_rows": 25,
+  "audit_rows": 7500,
+  "topic_count": 100,
+  "topic_selection": {
+    "selection_rule": "top 100 by 2019 heat among topics observed by 2019",
+    "candidate_pre2019_count": 2274,
+    "latest_topic_count": 2346,
+    "selected": {
+      "count": 100,
+      "median_heat_2019": 247.5,
+      "zero_heat_2019_ratio": 0.0,
+      "median_nonzero_years": 35.0,
+      "observed_by_2019_ratio": 1.0
+    },
+    "all_pre2019_candidates": {
+      "count": 2274,
+      "median_heat_2019": 17.0,
+      "zero_heat_2019_ratio": 0.12269129287598944,
+      "median_nonzero_years": 17.0,
+      "observed_by_2019_ratio": 1.0
+    },
+    "all_latest_topics": {
+      "count": 2346,
+      "median_heat_2019": 15.0,
+      "zero_heat_2019_ratio": 0.25831202046035806,
+      "median_nonzero_years": 16.0,
+      "observed_by_2019_ratio": 0.8090366581415175
+    }
+  }
+}

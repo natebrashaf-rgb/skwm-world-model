@@ -1,0 +1,6 @@
+[window12 seed=42] real-data training
+[window12 seed=123] real-data training
+[window12 seed=2026] real-data training
+[window12 seed=3407] real-data training
+[window12 seed=7777] real-data training
+{"config": "window12", "seeds": [42, 123, 2026, 3407, 7777], "best_val": [1.599178671836853, 1.629501183827718, 1.5747768084208171, 1.5795004765192668, 1.5884790023167927]}

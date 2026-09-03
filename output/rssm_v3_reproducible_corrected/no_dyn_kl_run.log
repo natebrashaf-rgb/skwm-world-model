@@ -1,0 +1,6 @@
+[no_dyn_kl seed=42] real-data training
+[no_dyn_kl seed=123] real-data training
+[no_dyn_kl seed=2026] real-data training
+[no_dyn_kl seed=3407] real-data training
+[no_dyn_kl seed=7777] real-data training
+{"config": "no_dyn_kl", "seeds": [42, 123, 2026, 3407, 7777], "best_val": [0.4482646584510803, 0.4869941174983978, 0.4973799486955007, 0.47895092765490216, 0.47527335087458294]}
