@@ -54,8 +54,15 @@ def main():
     c0c1_path = BASE / "output" / "experiment_model_c0c1" / "experiment_model_c0c1_results.json"
     c0c1 = json.loads(c0c1_path.read_text(encoding="utf-8")) if c0c1_path.exists() else None
 
-    leakage_cands = sorted(OUT.glob("leakage_audit_*.json"))
-    leakage = json.loads(leakage_cands[-1].read_text(encoding="utf-8")) if leakage_cands else None
+    # leakage 审计结果：只认与当天主输出同日的文件（audit_leakage.py 无 tag 默认名 = leakage_audit_<today>.json）。
+    # 教训：早期用 glob 取字典序最后一个曾错取到 leakage_audit_v13_backup.json（'v' > '2'），
+    # 导致 delivery 内 leakage_audit.json 是旧 v1.3 表的 FAIL 结果——整链矛盾。修复：固定同日文件名 + 显式校验 pass。
+    leak_path = OUT / f"leakage_audit_{date.today().strftime('%Y%m%d')}.json"
+    if not leak_path.exists():
+        raise SystemExit(f"缺少当日泄漏审计 {leak_path}——先跑 audit_leakage.py")
+    leakage = json.loads(leak_path.read_text(encoding="utf-8"))
+    if not leakage.get("pass"):
+        raise SystemExit(f"泄漏审计未通过（pass={leakage.get('pass')}）——禁止打包 FAIL 审计进 delivery")
 
     # ---------------- results.json 组装 ----------------
     pa = main_res["partA_same_window"]["overall"]

@@ -173,10 +173,12 @@
   },
   "leakage_audit": {
     "date": "2026-09-04",
-    "manifest_path": "output\\baselines_rolling\\split_manifest.csv",
-    "manifest_tag": "v13_backup",
+    "manifest_path": "E:\\大挑\\rail_deploy\\output\\baselines_rolling\\split_manifest.csv",
+    "manifest_tag": "",
+    "manifest_version": "v1.4_with_horizon",
     "n_rows": 914670,
-    "n_duplicates": 282116,
+    "n_duplicates": 0,
+    "n_expected_cross_horizon_duplicates": 0,
     "checks": {
       "1_history_end_le_train_cutoff": {
         "violations": 0,
@@ -199,7 +201,7 @@
         "must_be": 0
       },
       "6_no_duplicate_rows": {
-        "violations": 282116,
+        "violations": 0,
         "must_be": 0
       },
       "7_no_missing_prediction": {
@@ -235,11 +237,12 @@
       }
     },
     "n_violations_total": 0,
-    "pass": false,
+    "pass": true,
     "rows_by_part": {
       "A_same_window": 410130,
       "B_rolling": 504540
-    }
+    },
+    "note_cross_horizon": null
   },
   "git": {
     "code_commit": "01eef48 audit: baselines rolling v1.4.1 (origin-only audit, manifest horizon columns, leakage audit PASS, deterministic tie-break)"
