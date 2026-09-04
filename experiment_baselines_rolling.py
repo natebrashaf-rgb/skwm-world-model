@@ -27,6 +27,14 @@ v1.2（2026-09-02 凌晨，对账 FAIL 18 格定性后修）：Part A 指标聚�
   总和排名后跨年均值。根因＝聚合口径差，非数据错、非运行随机性。xgboost 残差属训练环境波动
   （范围已记录），rssm 若仍有残差看 n_topics 是否与 c0c1 的 n_topic_evals 逐格相等。
 
+v1.3（2026-09-02 上午，方也小白 review 后修）：
+  ① Spearman 拆双名：cross_topic_spearman＝逐目标年在共同主题间排序相关（h=1/3/5 均成立，正式口径）；
+     temporal_spearman＝主题内部窗向量相关，仅窗长 >=3 计算（h=1 单点退化，不再报告）。
+     Part A 保留 c0c1 窗内口径的 Spearman 字段（仅供对账，不作排序能力报告）。
+  ② Part A 定位锁死（方也小白原文口径）：「在完全复刻旧 c0c1 评测口径后，三种既有 M0 基线结果
+     可被一致复现」——Part A 保留旧口径（缺失补 0、允许 2026 目标年）就是为了对账，
+     不能写成「Part A 证明旧结果无部分年度/缺失值偏差」。正式结论只从 Part B 出。
+
 用法：
   python experiment_baselines_rolling.py            # 完整跑 Part A + Part B
   python experiment_baselines_rolling.py --selftest # 合成小数据冒烟（仅验证代码能跑，数字无意义，禁止引用）
@@ -132,7 +140,9 @@ class Manifest:
 
 
 def metrics_block(preds_map, actuals_map, top_k=TOP_K):
-    """preds_map/actuals_map: {model或topic: [数值列表]}。返回 MAE/RMSE/Spearman/P@K/NDCG@K。"""
+    """preds_map/actuals_map: {model或topic: [数值列表]}。
+    返回 MAE/RMSE/temporal_spearman/P@K/NDCG@K。
+    v1.3：temporal_spearman 只对窗长 >=3 的主题计算（h=1 单点退化不报告，方也小白 9/2 口径）。"""
     maes, rmses, sps = [], [], []
     for topic, a in actuals_map.items():
         if topic not in preds_map:
@@ -140,18 +150,44 @@ def metrics_block(preds_map, actuals_map, top_k=TOP_K):
         p = preds_map[topic]
         maes.append(compute_mae(p, a))
         rmses.append(compute_rmse(p, a))
-        sps.append(compute_spearman(p, a))
+        if len(a) >= 3:
+            # v1.3：temporal_spearman 仅窗长 >=3（h=1 单点无法计算秩相关）
+            sps.append(compute_spearman(p, a))
     common = [t for t in actuals_map if t in preds_map]
     actual_ranking = sorted(common, key=lambda t: sum(actuals_map[t]), reverse=True)
     pred_ranking = sorted(common, key=lambda t: sum(preds_map[t]), reverse=True)
     return {
         "MAE": round(float(np.mean(maes)), 4) if maes else None,
         "RMSE": round(float(np.mean(rmses)), 4) if rmses else None,
-        "Spearman": round(float(np.mean(sps)), 4) if sps else None,
+        "temporal_spearman": round(float(np.mean(sps)), 4) if sps else None,
         f"Precision@{top_k}": round(compute_precision_at_k(pred_ranking, actual_ranking, top_k), 4),
         f"NDCG@{top_k}": round(compute_ndcg_at_k(pred_ranking, actual_ranking, top_k), 4),
         "n_topics": len(actuals_map),
     }
+
+
+def cross_topic_spearman_by_year(preds_map, actuals_map, years_map, min_topics=10):
+    """v1.3（方也小白 9/2 口径）：对窗口内每个目标日历年，在共同主题间计算跨主题 Spearman，
+    再对年份取均值。返回 (均值或None, {年: 值})。主题数 < min_topics 或常数序列（NaN）的年份跳过。"""
+    all_years = sorted({y for ys in years_map.values() for y in ys})
+    per_year = {}
+    for ty in all_years:
+        pv, av = [], []
+        for t, ys in years_map.items():
+            if t not in preds_map or ty not in ys:
+                continue
+            i = ys.index(ty)
+            pv.append(preds_map[t][i])
+            av.append(actuals_map[t][i])
+        if len(pv) < min_topics:
+            continue
+        sp = compute_spearman(pv, av)
+        if sp is None or sp != sp:   # None 或 NaN（常数序列）
+            continue
+        per_year[ty] = round(float(sp), 4)
+    if not per_year:
+        return None, {}
+    return round(float(np.mean(list(per_year.values()))), 4), per_year
 
 
 # ---------------------------------------------------------------------------
@@ -242,6 +278,14 @@ def part_a_same_window(all_ts, years, manifest, notes):
                     per_model_agg[name]["MAE"].append(compute_mae(preds[name][topic], actuals[topic]))
                     per_model_agg[name]["RMSE"].append(compute_rmse(preds[name][topic], actuals[topic]))
                     per_model_agg[name]["Spearman"].append(compute_spearman(preds[name][topic], actuals[topic]))
+                # v1.3：cross_topic_spearman（方也小白 9/2 口径）——逐窗口步在共同主题间算秩相关，池化；
+                # 上面的窗内 Spearman 是 c0c1 口径，仅供对账，不作为排序能力报告。
+                for i in range(h):
+                    pv = [preds[name][t][i] for t in common]
+                    av = [actuals[t][i] for t in common]
+                    sp = compute_spearman(pv, av)
+                    if sp is not None and sp == sp:   # 排除常数序列产生的 NaN
+                        per_model_agg[name]["cross_topic_spearman"].append(sp)
                 per_model_agg[name]["n_topics"].append(len(common))
 
         overall[h] = {}
@@ -316,6 +360,7 @@ def part_b_rolling(all_ts, years, manifest, notes, with_rssm=False):
             window = [y for y in range(cutoff + 1, cutoff + h + 1) if y < PARTIAL_YEAR]
             preds = defaultdict(dict)
             actuals = {}
+            years_map = {}   # v1.3：topic -> 实际有观测的目标年列表（cross_topic_spearman 按日历年对齐用）
             for topic, series in all_ts.items():
                 train_series = [s for s in series if s["year"] <= cutoff]
                 if len(train_series) < MIN_TRAIN_LEN:
@@ -328,6 +373,7 @@ def part_b_rolling(all_ts, years, manifest, notes, with_rssm=False):
                 a_years = sorted(fut_map)
                 a_vals = [fut_map[y] for y in a_years]
                 actuals[topic] = a_vals
+                years_map[topic] = a_years
                 full_pred = {}
                 for name, model in [("naive_last", M0Baseline("last")),
                                     ("moving_avg", M0Baseline("moving_avg")),
@@ -350,6 +396,10 @@ def part_b_rolling(all_ts, years, manifest, notes, with_rssm=False):
             for name in ["naive_last", "moving_avg", "linear", "drift"] + (["xgboost"] if m1_ok else []) + (["rssm"] if m2 is not None else []):
                 if preds.get(name):
                     cell[name] = metrics_block(preds[name], actuals)
+                    # v1.3：cross_topic_spearman——逐目标日历年在共同主题间计算，跨年均值（h=1 也成立）
+                    ct_mean, ct_per_year = cross_topic_spearman_by_year(preds[name], actuals, years_map)
+                    cell[name]["cross_topic_spearman"] = ct_mean
+                    cell[name]["cross_topic_spearman_per_year"] = ct_per_year
             results[str(cutoff)][f"h={h}"] = {"eval_window": window, "overall": cell}
             line = "  ".join(f"{n}={c['MAE']}" for n, c in cell.items())
             print(f"[Part B] cp={cutoff} h={h} 窗口{window}: {line}")
@@ -454,10 +504,10 @@ def main():
     lines.append("\n## Part A 同窗口基线（C1）")
     for h in HORIZONS:
         lines.append(f"\n### h={h} 评测年={part_a['eval_plan'][str(h)]}")
-        lines.append("| 模型 | MAE | RMSE | Spearman | P@10 | NDCG@10 | n主题 |")
-        lines.append("|---|---|---|---|---|---|---|")
+        lines.append("| 模型 | MAE | RMSE | cross_topic_spearman | Spearman(对账口径,c0c1) | P@10 | NDCG@10 | n主题 |")
+        lines.append("|---|---|---|---|---|---|---|---|")
         for name, v in part_a["overall"].get(str(h), {}).items():
-            lines.append(f"| {name} | {v.get('MAE')} | {v.get('RMSE')} | {v.get('Spearman')} "
+            lines.append(f"| {name} | {v.get('MAE')} | {v.get('RMSE')} | {v.get('cross_topic_spearman')} | {v.get('Spearman')} "
                          f"| {v.get(f'Precision@{TOP_K}')} | {v.get(f'NDCG@{TOP_K}')} | {v.get('n_topics')} |")
     lines.append("\n## Part A 与 c0c1 对账")
     if crosscheck["status"] == "done":
@@ -469,14 +519,14 @@ def main():
             lines.append("\n全部 PASS。")
     else:
         lines.append(f"\n跳过：{crosscheck['reason']}")
-    lines.append("\n## Part B 滚动回测（MAE / Spearman / P@10）")
+    lines.append("\n## Part B 滚动回测（MAE / cross_topic_spearman / P@10）")
     for cutoff, cells in part_b.items():
         lines.append(f"\n### 截点 {cutoff}")
-        lines.append("| 视野 | 模型 | MAE | Spearman | P@10 | n主题 |")
-        lines.append("|---|---|---|---|---|---|")
+        lines.append("| 视野 | 模型 | MAE | cross_topic_spearman | temporal_spearman(窗长>=3) | P@10 | n主题 |")
+        lines.append("|---|---|---|---|---|---|---|")
         for hk, cell in cells.items():
             for name, v in cell["overall"].items():
-                lines.append(f"| {hk} | {name} | {v.get('MAE')} | {v.get('Spearman')} "
+                lines.append(f"| {hk} | {name} | {v.get('MAE')} | {v.get('cross_topic_spearman')} | {v.get('temporal_spearman')} "
                              f"| {v.get(f'Precision@{TOP_K}')} | {v.get('n_topics')} |")
     lines.append("\n## 我没查的部分")
     lines.append("")
