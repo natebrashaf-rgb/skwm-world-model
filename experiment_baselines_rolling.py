@@ -35,6 +35,22 @@ v1.3（2026-09-02 上午，方也小白 review 后修）：
      可被一致复现」——Part A 保留旧口径（缺失补 0、允许 2026 目标年）就是为了对账，
      不能写成「Part A 证明旧结果无部分年度/缺失值偏差」。正式结论只从 Part B 出。
 
+v1.4（2026-09-04，组长第二轮审计后修）：
+  ① meta 新增 data_sha256 实测值（不再只引用仓库根 data_version_manifest_12233.json）；
+  ② meta 新增 origin_audit：逐 rolling origin 报告 history_end_max / target_year_min /
+     n_test_topics / n_test_rows / train_rows 范围，constraint_ok 字段显式验证
+     「训练只用 <= origin、测试目标 > origin」；
+  ③ split_manifest.csv 扩列：id / horizon / train_rows / feature_fit_end /
+     preprocessing_fit_end(N/A_no_scaler) / random_seed——逐样本可追溯 origin-only
+     （本实验无 scaler/imputer/全局统计，XGBoost 树模型直接吃原始 lookback 特征）；
+     horizon 列区分不同评测视野下同一目标年的预测样本，消除跨 h 重复行；
+  ④ 修正：旧版 meta 的 data_sha256_note 引用 output/ 下不存在路径 → 改仓库根实际位置并实测 SHA。
+
+v1.4.1（2026-09-04，三轮复跑发现 Part B NDCG 4 格跨进程漂移后修）：
+  排名并列（tie）时以主题名为次级排序键——消除 PYTHONHASHSEED 对 set/dict 迭代序的影响，
+  使 P@10/NDCG@10 在纯计算模型上跨进程逐位一致（修复前 NDCG 漂移 0.0027）。
+  无 tie 的格排序结果与 v1.4 完全一致（只影响并列断点）。
+
 用法：
   python experiment_baselines_rolling.py            # 完整跑 Part A + Part B
   python experiment_baselines_rolling.py --selftest # 合成小数据冒烟（仅验证代码能跑，数字无意义，禁止引用）
@@ -104,10 +120,17 @@ class DriftBaseline:
 # 通用件
 # ---------------------------------------------------------------------------
 class Manifest:
-    """逐样本审计表 + 断言。任何一行违反时间约束，脚本直接崩（不允许静默）。"""
+    """逐样本审计表 + 断言。任何一行违反时间约束，脚本直接崩（不允许静默）。
+    v1.4：每行补 id/horizon/train_rows/feature_fit_end/preprocessing_fit_end/random_seed，
+    满足「逐样本可追溯 origin-only」审计要求。
+    列序（见 HEADER）：同一 (part, model, origin, horizon, topic, target_year) 行唯一——
+    不同评测视野(h)下同一目标年的预测样本以 horizon 区分，不构成物理样本重复。"""
 
-    HEADER = ["part", "model", "origin", "history_start", "history_end",
-              "train_cutoff", "target_year", "topic_id", "prediction", "actual"]
+    HEADER = ["id", "part", "model", "origin", "horizon", "history_start", "history_end",
+              "train_cutoff", "target_year", "topic_id", "prediction", "actual",
+              "train_rows", "feature_fit_end", "preprocessing_fit_end", "random_seed"]
+    # 列索引常量（build_origin_audit 等按名取，防手数错位）
+    COL = {n: i for i, n in enumerate(HEADER)}
 
     def __init__(self):
         self.rows = []
@@ -116,7 +139,7 @@ class Manifest:
         self.n_skipped_short_history = 0
         self.n_errors = 0
 
-    def add(self, part, model, origin, train_series, target_year, topic, prediction, actual,
+    def add(self, part, model, origin, eval_h, train_series, target_year, topic, prediction, actual,
             allow_partial_year=False):
         history_start = train_series[0]["year"]
         history_end = train_series[-1]["year"]
@@ -128,9 +151,13 @@ class Manifest:
         if not allow_partial_year:
             assert target_year != PARTIAL_YEAR, f"部分年度混入: {topic} target={target_year}"
         self.n_asserted += 1
-        self.rows.append([part, model, origin, history_start, history_end,
-                          train_cutoff, target_year, topic,
-                          round(float(prediction), 6), round(float(actual), 6)])
+        # v1.4：逐行可追溯字段。train_rows=该主题用于预测的历史样本数；
+        # feature_fit_end=特征窗口终点（=history_end，lookback 特征只用到该年）；
+        # preprocessing_fit_end：本实验无 scaler/imputer/全局统计（树模型吃原始特征），记 N/A。
+        self.rows.append([len(self.rows) + 1, part, model, origin, eval_h,
+                          history_start, history_end, train_cutoff, target_year, topic,
+                          round(float(prediction), 6), round(float(actual), 6),
+                          len(train_series), history_end, "N/A_no_scaler", SEED])
 
     def write(self, path: Path):
         with open(path, "w", encoding="utf-8-sig", newline="") as f:
@@ -154,8 +181,10 @@ def metrics_block(preds_map, actuals_map, top_k=TOP_K):
             # v1.3：temporal_spearman 仅窗长 >=3（h=1 单点无法计算秩相关）
             sps.append(compute_spearman(p, a))
     common = [t for t in actuals_map if t in preds_map]
-    actual_ranking = sorted(common, key=lambda t: sum(actuals_map[t]), reverse=True)
-    pred_ranking = sorted(common, key=lambda t: sum(preds_map[t]), reverse=True)
+    # v1.4.1：排名并列（tie）时以主题名作次级键——消除 PYTHONHASHSEED 跨进程对 set/dict 迭代序的
+    # 影响（曾致 NDCG 第 4 位小数跨进程漂移 0.0027）。无 tie 时排序结果与旧版完全一致。
+    actual_ranking = sorted(common, key=lambda t: (sum(actuals_map[t]), t), reverse=True)
+    pred_ranking = sorted(common, key=lambda t: (sum(preds_map[t]), t), reverse=True)
     return {
         "MAE": round(float(np.mean(maes)), 4) if maes else None,
         "RMSE": round(float(np.mean(rmses)), 4) if rmses else None,
@@ -254,7 +283,7 @@ def part_a_same_window(all_ts, years, manifest, notes):
                     if topic not in p:
                         continue
                     for hh in range(1, h + 1):
-                        manifest.add("A_same_window", name, eval_year, train_series,
+                        manifest.add("A_same_window", name, eval_year, h, train_series,
                                      eval_year + hh, topic, p[topic][hh - 1], a[hh - 1],
                                      allow_partial_year=True)  # 与 c0c1 对账口径：目标年可含 2026
 
@@ -268,8 +297,9 @@ def part_a_same_window(all_ts, years, manifest, notes):
                 common = [t for t in actuals if t in preds[name]]
                 if not common:
                     continue
-                actual_ranking = sorted(common, key=lambda t: sum(actuals[t]), reverse=True)
-                pred_ranking = sorted(common, key=lambda t: sum(preds[name][t]), reverse=True)
+                # v1.4.1 tie-breaker（同 metrics_block 注释）
+                actual_ranking = sorted(common, key=lambda t: (sum(actuals[t]), t), reverse=True)
+                pred_ranking = sorted(common, key=lambda t: (sum(preds[name][t]), t), reverse=True)
                 per_model_agg[name][f"Precision@{TOP_K}"].append(
                     compute_precision_at_k(pred_ranking, actual_ranking, TOP_K))
                 per_model_agg[name][f"NDCG@{TOP_K}"].append(
@@ -390,7 +420,7 @@ def part_b_rolling(all_ts, years, manifest, notes, with_rssm=False):
                 for name, p in full_pred.items():
                     preds[name][topic] = [p[ty - cutoff - 1] for ty in a_years]  # 按年偏移取预测，缺失年不错位
                     for ty in a_years:
-                        manifest.add("B_rolling", name, cutoff, train_series,
+                        manifest.add("B_rolling", name, cutoff, h, train_series,
                                      ty, topic, p[ty - cutoff - 1], fut_map[ty])
             cell = {}
             for name in ["naive_last", "moving_avg", "linear", "drift"] + (["xgboost"] if m1_ok else []) + (["rssm"] if m2 is not None else []):
@@ -428,6 +458,43 @@ def selftest():
 
 
 # ---------------------------------------------------------------------------
+def build_origin_audit(rows):
+    """v1.4：从逐样本 manifest 汇总每个 rolling origin 的训练/测试时间边界审计。
+    断言本身在 Manifest.add 已逐行执行（越界直接崩），此处为显式落盘报告。
+    origin 约束：history_end_max <= origin（训练只用 <= origin 数据）；
+    target_year_min > origin（测试目标严格在 origin 之后）。"""
+    C = Manifest.COL
+    stat = {}
+    topics_by_origin = {}
+    for r in rows:
+        if r[C["part"]] != "B_rolling":
+            continue
+        origin = int(r[C["origin"]])
+        st = stat.setdefault(origin, {
+            "n_test_rows": 0,
+            "train_rows_min": None, "train_rows_max": None,
+            "history_end_max": None, "target_year_min": None,
+        })
+        topics_by_origin.setdefault(origin, set()).add(r[C["topic_id"]])
+        st["n_test_rows"] += 1
+        he = int(r[C["history_end"]]); ty = int(r[C["target_year"]]); tr = int(r[C["train_rows"]])
+        st["history_end_max"] = he if st["history_end_max"] is None else max(st["history_end_max"], he)
+        st["target_year_min"] = ty if st["target_year_min"] is None else min(st["target_year_min"], ty)
+        st["train_rows_min"] = tr if st["train_rows_min"] is None else min(st["train_rows_min"], tr)
+        st["train_rows_max"] = tr if st["train_rows_max"] is None else max(st["train_rows_max"], tr)
+    return {str(k): {
+        "origin": k,
+        "n_test_topics": len(topics_by_origin.get(k, set())),
+        "n_test_rows": v["n_test_rows"],
+        "history_end_max": v["history_end_max"],
+        "target_year_min": v["target_year_min"],
+        "train_rows_min": v["train_rows_min"],
+        "train_rows_max": v["train_rows_max"],
+        "constraint_ok": (v["history_end_max"] is not None and v["history_end_max"] <= k
+                          and v["target_year_min"] is not None and v["target_year_min"] > k),
+    } for k, v in sorted(stat.items())}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--selftest", action="store_true", help="合成数据冒烟自检（不碰真实数据）")
@@ -462,13 +529,16 @@ def main():
     part_b = part_b_rolling(all_ts, years, manifest, notes, with_rssm=args.with_rssm)
 
     from datetime import date
+    import hashlib
     stamp = date.today().strftime("%Y%m%d")
+    data_sha = hashlib.sha256(data_path.read_bytes()).hexdigest()
     res = {
         "meta": {
             "date": str(date.today()),
             "seed": SEED,
             "data": str(data_path),
-            "data_sha256_note": "见 output/data_version_manifest_12233.json",
+            "data_sha256": data_sha,  # v1.4：实测值，不再只引用外部文件
+            "data_sha256_note": "C1 数据文件 SHA-256（v1.4 起在 meta 内实测；另见仓库根 data_version_manifest_12233.json）",
             "cutoffs": CUTOFFS,
             "horizons": HORIZONS,
             "top_k": TOP_K,
@@ -483,6 +553,8 @@ def main():
                 "n_skipped_short_history": manifest.n_skipped_short_history,
                 "n_errors": manifest.n_errors,
             },
+            # v1.4：逐 origin 时间边界审计（history_end_max<=origin 且 target_year_min>origin）
+            "origin_audit": build_origin_audit(manifest.rows),
             "notes": notes,
         },
         "partA_same_window": part_a,

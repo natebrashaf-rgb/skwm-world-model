@@ -1,0 +1,247 @@
+{
+  "schema": "skwm_baselines_rolling_results_v1.4",
+  "date": "2026-09-04",
+  "data": {
+    "file": "E:\\大挑\\rail_deploy\\data\\state_vectors_C1_20260827.json",
+    "sha256": "f6f5820a1149d1f60ec11120434693c606743f093b928c1c54b08de6dd0b292d",
+    "papers_B1": 12233,
+    "state_vectors_rows": 43642
+  },
+  "paper_numbers": {
+    "h1_naive_last_cross_topic_spearman": 0.9283,
+    "h3_naive_last_cross_topic_spearman": 0.8312,
+    "h5_naive_last_cross_topic_spearman": 0.7511,
+    "h1_naive_last_MAE": 12.6891,
+    "h5_naive_last_MAE": 23.0199,
+    "field_source": {
+      "h1/h3/h5_naive_last_cross_topic_spearman": "partA_same_window.overall.<h>.naive_last.cross_topic_spearman（跨目标年逐主题秩相关，池化；h=1/3/5 均成立，正式排序口径）",
+      "temporal_spearman": "partB_rolling.<cutoff>.h=<h>.overall.<model>.temporal_spearman（主题内窗向量相关，仅窗长>=3，h=1=None）"
+    },
+    "partB_xgboost_temporal_spearman_range": {
+      "2014": {
+        "h=3": 0.1747,
+        "h=5": 0.2064
+      },
+      "2016": {
+        "h=3": 0.2909,
+        "h=5": 0.3854
+      },
+      "2018": {
+        "h=3": 0.3138,
+        "h=5": 0.381
+      },
+      "2020": {
+        "h=3": 0.3023,
+        "h=5": 0.3479
+      }
+    },
+    "partB_naive_last_cross_topic_by_origin": {
+      "2014": {
+        "h=1": 0.9126,
+        "h=3": 0.8252,
+        "h=5": 0.7505
+      },
+      "2016": {
+        "h=1": 0.8846,
+        "h=3": 0.8161,
+        "h=5": 0.7525
+      },
+      "2018": {
+        "h=1": 0.929,
+        "h=3": 0.8576,
+        "h=5": 0.7772
+      },
+      "2020": {
+        "h=1": 0.9282,
+        "h=3": 0.8533,
+        "h=5": 0.7715
+      }
+    }
+  },
+  "reconciliation_vs_c0c1": {
+    "ref_file": "E:\\大挑\\rail_deploy\\output\\experiment_model_c0c1\\experiment_model_c0c1_results.json",
+    "ref_date": "2026-08-28",
+    "n_rows": 45,
+    "n_fail": 10,
+    "fail_rows": [
+      {
+        "horizon": 1,
+        "model": "xgboost",
+        "metric": "MAE",
+        "本脚本": 20.6459,
+        "c0c1": 20.3987,
+        "diff": 0.2472,
+        "verdict": "FAIL"
+      },
+      {
+        "horizon": 1,
+        "model": "xgboost",
+        "metric": "Precision@10",
+        "本脚本": 0.8,
+        "c0c1": 0.7667,
+        "diff": 0.0333,
+        "verdict": "FAIL"
+      },
+      {
+        "horizon": 1,
+        "model": "rssm",
+        "metric": "Precision@10",
+        "本脚本": 0.2667,
+        "c0c1": 0.3,
+        "diff": 0.0333,
+        "verdict": "FAIL"
+      },
+      {
+        "horizon": 3,
+        "model": "xgboost",
+        "metric": "MAE",
+        "本脚本": 20.5697,
+        "c0c1": 20.6071,
+        "diff": 0.0374,
+        "verdict": "FAIL"
+      },
+      {
+        "horizon": 3,
+        "model": "xgboost",
+        "metric": "Precision@10",
+        "本脚本": 0.8333,
+        "c0c1": 0.8,
+        "diff": 0.0333,
+        "verdict": "FAIL"
+      },
+      {
+        "horizon": 3,
+        "model": "rssm",
+        "metric": "MAE",
+        "本脚本": 61.566,
+        "c0c1": 61.5774,
+        "diff": 0.0114,
+        "verdict": "FAIL"
+      },
+      {
+        "horizon": 3,
+        "model": "rssm",
+        "metric": "Spearman",
+        "本脚本": 0.0561,
+        "c0c1": 0.0344,
+        "diff": 0.0217,
+        "verdict": "FAIL"
+      },
+      {
+        "horizon": 3,
+        "model": "rssm",
+        "metric": "Precision@10",
+        "本脚本": 0.3333,
+        "c0c1": 0.1333,
+        "diff": 0.2,
+        "verdict": "FAIL"
+      },
+      {
+        "horizon": 5,
+        "model": "xgboost",
+        "metric": "MAE",
+        "本脚本": 23.0936,
+        "c0c1": 23.257,
+        "diff": 0.1634,
+        "verdict": "FAIL"
+      },
+      {
+        "horizon": 5,
+        "model": "rssm",
+        "metric": "Precision@10",
+        "本脚本": 0.2667,
+        "c0c1": 0.4,
+        "diff": 0.1333,
+        "verdict": "FAIL"
+      }
+    ],
+    "run1_3_range_evidence": {
+      "xgboost_h1_MAE_range": [
+        20.5124,
+        20.6459
+      ],
+      "rssm_h1_MAE_range": [
+        71.0083,
+        71.0582
+      ],
+      "rssm_h1_P10_values": [
+        0.3,
+        0.2333,
+        0.2667
+      ]
+    }
+  },
+  "leakage_audit": {
+    "date": "2026-09-04",
+    "manifest_path": "output\\baselines_rolling\\split_manifest.csv",
+    "manifest_tag": "v13_backup",
+    "n_rows": 914670,
+    "n_duplicates": 282116,
+    "checks": {
+      "1_history_end_le_train_cutoff": {
+        "violations": 0,
+        "must_be": 0
+      },
+      "2_train_cutoff_lt_target": {
+        "violations": 0,
+        "must_be": 0
+      },
+      "3_train_years_le_origin": {
+        "violations": 0,
+        "must_be": 0
+      },
+      "4_test_years_gt_origin": {
+        "violations": 0,
+        "must_be": 0
+      },
+      "5_no_train_test_overlap": {
+        "violations": 0,
+        "must_be": 0
+      },
+      "6_no_duplicate_rows": {
+        "violations": 282116,
+        "must_be": 0
+      },
+      "7_no_missing_prediction": {
+        "violations": 0,
+        "must_be": 0
+      },
+      "7b_no_missing_actual": {
+        "violations": 0,
+        "must_be": 0
+      },
+      "7c_target_within_h_window": {
+        "violations": 0,
+        "must_be": 0
+      },
+      "4b_no_partial_year_in_B": {
+        "violations": 0,
+        "must_be": 0
+      },
+      "8_no_preprocessing_future_fit": {
+        "violations": 0,
+        "must_be": 0,
+        "note": "无 scaler/imputer/全局统计：XGBoost/M0/M2 均直接消费原始 lookback 特征，无全局 fit 步骤，故 8/9/10 项由「代码无此类步骤 + 逐行 history_end<target_year 断言」共同保证"
+      },
+      "9_no_scaler_future_fit": {
+        "violations": 0,
+        "must_be": 0,
+        "note": "无 scaler/imputer/全局统计：XGBoost/M0/M2 均直接消费原始 lookback 特征，无全局 fit 步骤，故 8/9/10 项由「代码无此类步骤 + 逐行 history_end<target_year 断言」共同保证"
+      },
+      "10_no_feature_eng_future_data": {
+        "violations": 0,
+        "must_be": 0,
+        "note": "lookback=5 特征窗口终点=history_end<target_year（逐行断言），且 XGBoost 训练标签年<=origin（train_until 内 break）"
+      }
+    },
+    "n_violations_total": 0,
+    "pass": false,
+    "rows_by_part": {
+      "A_same_window": 410130,
+      "B_rolling": 504540
+    }
+  },
+  "git": {
+    "code_commit": "9612874 experiment: baselines rolling v1.3"
+  }
+}

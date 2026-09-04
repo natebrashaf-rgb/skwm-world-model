@@ -1,0 +1,73 @@
+{
+  "date": "2026-09-04",
+  "manifest_path": "E:\\大挑\\rail_deploy\\output\\baselines_rolling\\split_manifest.csv",
+  "manifest_tag": "",
+  "manifest_version": "v1.4_with_horizon",
+  "n_rows": 914670,
+  "n_duplicates": 0,
+  "n_expected_cross_horizon_duplicates": 0,
+  "checks": {
+    "1_history_end_le_train_cutoff": {
+      "violations": 0,
+      "must_be": 0
+    },
+    "2_train_cutoff_lt_target": {
+      "violations": 0,
+      "must_be": 0
+    },
+    "3_train_years_le_origin": {
+      "violations": 0,
+      "must_be": 0
+    },
+    "4_test_years_gt_origin": {
+      "violations": 0,
+      "must_be": 0
+    },
+    "5_no_train_test_overlap": {
+      "violations": 0,
+      "must_be": 0
+    },
+    "6_no_duplicate_rows": {
+      "violations": 0,
+      "must_be": 0
+    },
+    "7_no_missing_prediction": {
+      "violations": 0,
+      "must_be": 0
+    },
+    "7b_no_missing_actual": {
+      "violations": 0,
+      "must_be": 0
+    },
+    "7c_target_within_h_window": {
+      "violations": 0,
+      "must_be": 0
+    },
+    "4b_no_partial_year_in_B": {
+      "violations": 0,
+      "must_be": 0
+    },
+    "8_no_preprocessing_future_fit": {
+      "violations": 0,
+      "must_be": 0,
+      "note": "无 scaler/imputer/全局统计：XGBoost/M0/M2 均直接消费原始 lookback 特征，无全局 fit 步骤，故 8/9/10 项由「代码无此类步骤 + 逐行 history_end<target_year 断言」共同保证"
+    },
+    "9_no_scaler_future_fit": {
+      "violations": 0,
+      "must_be": 0,
+      "note": "无 scaler/imputer/全局统计：XGBoost/M0/M2 均直接消费原始 lookback 特征，无全局 fit 步骤，故 8/9/10 项由「代码无此类步骤 + 逐行 history_end<target_year 断言」共同保证"
+    },
+    "10_no_feature_eng_future_data": {
+      "violations": 0,
+      "must_be": 0,
+      "note": "lookback=5 特征窗口终点=history_end<target_year（逐行断言），且 XGBoost 训练标签年<=origin（train_until 内 break）"
+    }
+  },
+  "n_violations_total": 0,
+  "pass": true,
+  "rows_by_part": {
+    "A_same_window": 410130,
+    "B_rolling": 504540
+  },
+  "note_cross_horizon": null
+}
