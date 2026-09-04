@@ -242,6 +242,6 @@
     }
   },
   "git": {
-    "code_commit": "9612874 experiment: baselines rolling v1.3"
+    "code_commit": "01eef48 audit: baselines rolling v1.4.1 (origin-only audit, manifest horizon columns, leakage audit PASS, deterministic tie-break)"
   }
 }

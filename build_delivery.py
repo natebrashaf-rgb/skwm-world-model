@@ -113,7 +113,7 @@ def main():
         },
         "leakage_audit": leakage,
         "git": {
-            "code_commit": "9612874 experiment: baselines rolling v1.3",  # v1.4 commit 后在 FINAL_AUDIT_REPORT 更新
+            "code_commit": "01eef48 audit: baselines rolling v1.4.1 (origin-only audit, manifest horizon columns, leakage audit PASS, deterministic tie-break)",
         },
     }
 
